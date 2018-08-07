@@ -1,8 +1,6 @@
 title: IPFB Projects
 description: >- 
   List projects made in ifpb
-baseurl: "/projects"
-url: "https://ifpb.github.io" 
 
 # Build settings
 markdown: kramdown
