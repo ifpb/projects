@@ -1,0 +1,29 @@
+{
+  "title": "Do you trip?",
+  "description": "Uma página web com intuito de indicar diretrizes para o usuário, fornecendo formas de encontrar suas necessidades específicas (hotéis, aluguel de carro, voo e etc) utilizando API do Amadeu.",
+  "demo": "https://pahferreira.github.io/doyoutrip/index.html",
+  "repository": "https://github.com/pahferreira/doyoutrip",
+  "course": "cstsi",
+  "session": "2017.2",
+  "subject": "ls",
+  "topics": [
+    "js"
+  ],
+  "owners": [
+    {
+      "id": "20171370002",
+      "name": "Paulo Henrique",
+      "github": "https://github.com/pahferreira"
+    },
+    {
+      "id": "20171370032",
+      "name": "William Abdon",
+      "github": "https://github.com/willabdon"
+    },
+    {
+      "id": "",
+      "name": "Pablo Dias",
+      "github": "https://github.com/pablo-dias"
+    }
+  ]
+}

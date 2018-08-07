@@ -1,0 +1,19 @@
+{
+  "title": "Beto da Coxinha",
+  "description": "Completar o desenvolvimento da pagina web criada na cadeira LM, adicionando recursos JavaScript para que possa simular de forma mais completa um e-commerce para à lanchonete fictícia.",
+  "demo": "https://henrifrade.github.io/Beto-da-coxinha/site/",
+  "repository": "https://github.com/Henrifrade/Beto-da-coxinha",
+  "course": "cstsi",
+  "session": "2017.2",
+  "subject": "ls",
+  "topics": [
+    "js"
+  ],
+  "owners": [
+    {
+      "id": "",
+      "name": "Henrique Frade",
+      "github": "https://github.com/Henrifrade"
+    }
+  ]
+}

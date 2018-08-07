@@ -1,0 +1,29 @@
+{
+  "title": "Our Movies",
+  "description": "OurMovies será um projeto voltado à aqueles que buscam diversas informadas ao mundo da sétima arte. A API TMDB será uma base de dados que auxiliará nas informações necessárias.",
+  "demo": "http://neilprado.github.io/ourmovies/",
+  "repository": "https://github.com/neilprado/ourmovies",
+  "course": "cstsi",
+  "session": "2017.2",
+  "subject": "ls",
+  "topics": [
+    "js"
+  ],
+  "owners": [
+    {
+      "id": "20171370045",
+      "name": "Neil Prado",
+      "github": "https://github.com/neilprado"
+    },
+    {
+      "id": "20171370024",
+      "name": "Kevin Mélo",
+      "github": "https://github.com/KevinMeloDuarte"
+    },
+    {
+      "id": "20171370035",
+      "name": "Erick Cristhian",
+      "github": ""
+    }
+  ]
+}
