@@ -7,7 +7,7 @@ layout: default
   {% assign project = project_hash[1] %}
     <div class="project">
       <a href="{{ project.demo | default: project.repository }}" target="_blank"  class="project-image">
-        <img src="{{ project.preview | default: "assets/tumbnails/project-placeholder.png" }}" alt="{{ project.title }}">
+        <img src="{{ project.preview | default: "assets/thumbnails/project-placeholder.png" }}" alt="{{ project.title }}">
       </a>
       <a href="{{ project.repository }}" target="_blank" class="project-title">
         {{ project.repository | replace: "https://github.com/", "" }}
