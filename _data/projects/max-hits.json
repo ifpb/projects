@@ -1,0 +1,18 @@
+{
+  "title": "Max Hits",
+  "description": "Aplicação web que utiliza a API do Last.fm para listar os Hits Eletrônicos mais tocados no mundo e no Brasil.",
+  "demo": "https://gelguimaraes.github.io/Max-Hits/",
+  "repository": "https://github.com/gelguimaraes/Max-Hits",
+  "course": "cstsi",
+  "session": "2017.2",
+  "subject": "ls",
+  "topics": [
+    "js"
+  ],
+  "owners": [{
+      "id": "20171370010",
+      "name": "Gesoaldo Guimarães",
+      "github": "https://github.com/gelguimaraes/"
+    }
+  ]
+}
