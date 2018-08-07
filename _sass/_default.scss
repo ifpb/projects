@@ -24,8 +24,9 @@ body {
 .projects {
   margin: 3rem 1rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: minmax(300px, 360px);
   grid-gap: 1rem;
+  justify-content: center;
 
   .project {
     padding: 1rem;
@@ -71,5 +72,23 @@ body {
       }
     }
 
+  }
+}
+
+@media all and (min-width: 700px) {
+  .projects {
+    grid-template-columns: repeat(auto-fill, minmax(330px, 360px));
+  }
+}
+
+@media all and (min-width: 1000px) {
+  .projects {
+    grid-template-columns: repeat(auto-fill, minmax(330px, 360px));
+  }
+}
+
+@media all and (min-width: 1420px) {
+  .projects {
+    grid-template-columns: repeat(auto-fill, minmax(330px, 360px));
   }
 }
