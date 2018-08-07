@@ -6,7 +6,7 @@ layout: default
   {% for project_hash in site.data.projects %}
   {% assign project = project_hash[1] %}
     <div class="project">
-      <img src="{{ project.preview | default: "/assets/img/project-placeholder.png" }}" alt="{{ project.title }}" class="project-image">
+      <img src="{{ project.preview | default: "projects/assets/img/project-placeholder.png" }}" alt="{{ project.title }}" class="project-image">
       <a href="{{ project.repository }}" class="project-title">{{ project.repository | replace: "https://github.com/", "" }}</a>
       <ul class="project-tags">
         {% for topic in project.topics  %}
