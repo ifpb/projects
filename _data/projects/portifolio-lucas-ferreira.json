@@ -1,0 +1,19 @@
+{
+  "title": "Portfolio profissional",
+  "description": "Um portfolio falando um pouco sobre mim e mostrando coisas que eu já fiz profissionalmente",
+  "demo": "https://lucasfrosty.github.io",
+  "repository": "https://github.com/lucasfrosty/lucasfrosty.github.io",
+  "course": "cstsi",
+  "session": "2018.1",
+  "subject": "lm",
+  "topics": [
+    "js"
+  ],
+  "owners": [
+    {
+      "id": "20172370023",
+      "name": "Lucas Ferreira",
+      "github": "https://github.com/lucasfrosty"
+    }
+  ]
+}

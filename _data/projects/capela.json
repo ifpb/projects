@@ -1,0 +1,20 @@
+{
+  "title": "capela",
+  "description": "Site para o estúdio de criação capela, especializado em produção de conteúdo para a igreja católica e pequenos negócios.",
+  "demo": "https://angela-oliveira.github.io/capela",
+  "repository": "https://github.com/angela-oliveira/capela",
+  "course": "cstsi",
+  "session": "2018.1",
+  "subject": "lm",
+  "topics": [
+    "html",
+    "css"
+  ],
+  "owners": [
+    {
+      "id": "20181370028",
+      "name": "Ângela Márcia Ramos de Oliveira",
+      "github": "https://github.com/angela-oliveira"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "title": "marvelist",
+  "description": "",
+  "demo": "https://henrifrade.github.io/Marvelist/",
+  "repository": "https://github.com/Henrifrade/Marvelist",
+  "course": "cstsi",
+  "session": "2018.1",
+  "subject": "ls",
+  "topics": [
+    "js"
+  ],
+  "owners": [
+    {
+      "id": "20171370027",
+      "name": "Bruno Gabriel",
+      "github": "https://github.com/Brunbg"
+    },
+    {
+      "id": "20171370006",
+      "name": "Felipe Silva",
+      "github": "https://github.com/felipersdf"
+    },
+    {
+      "id": "20171370031",
+      "name": "Henrique Frade",
+      "github": "https://github.com/Henrifrade"
+    }
+  ]
+}

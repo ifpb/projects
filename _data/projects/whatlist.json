@@ -1,0 +1,19 @@
+{
+  "title": "whatlist",
+  "description": "Uma aplicação onde você pode criar sua própria \"playlist\" de filmes e séries para assistir futuramente. Além disso, ela também mostra informações desses filmes/séries através da API do TMDb.",
+  "demo": "https://whatlist.netlify.com",
+  "repository": "https://github.com/lucasfrosty/whatlist",
+  "course": "cstsi",
+  "session": "2018.1",
+  "subject": "ls",
+  "topics": [
+    "js"
+  ],
+  "owners": [
+    {
+      "id": "20172370023",
+      "name": "Lucas Ferreira",
+      "github": "https://github.com/lucasfrosty"
+    }
+  ]
+}
