@@ -47,7 +47,11 @@ body {
     }
 
     .project-image {
-      margin-bottom: .5rem;
+      text-decoration: none;
+      
+      img {
+        margin-bottom: .5rem;
+      }
     }
 
     .project-tags {
