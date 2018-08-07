@@ -1,28 +1,25 @@
 {
   "title": "Império Veículos",
-  "description": "",
-  "demo": "https://henrifrade.github.io/Marvelist/",
-  "repository": "https://github.com/Henrifrade/Marvelist",
+  "description": "Site de uma loja de carros usados que visa mostrar ofertas de carros disponíveis para venda, valores e condições de pagamento como também facilitar o contato entre o cliente e a empresa.",
+  "preview": "assets/thumbnails/imperio-veiculo.png",
+  "demo": "https://brunof85.github.io/imperio-veiculos/",
+  "repository": "https://github.com/brunof85/imperio-veiculos",
   "course": "cstsi",
   "session": "2018.1",
   "subject": "ls",
   "topics": [
     "js"
   ],
-  "owners": [{
-      "id": "20171370027",
-      "name": "Bruno Gabriel",
-      "github": "https://github.com/Brunbg"
+  "owners": [
+    {
+      "id": "20162370051",
+      "name": "Bruno Figueiredo",
+      "github": "https://github.com/brunof85/imperio-veiculos"
     },
     {
-      "id": "20171370006",
-      "name": "Felipe Silva",
-      "github": "https://github.com/felipersdf"
-    },
-    {
-      "id": "20171370031",
-      "name": "Henrique Frade",
-      "github": "https://github.com/Henrifrade"
+      "id": "20172370043",
+      "name": "Fabricio Gabriel De Araujo",
+      "github": ""
     }
   ]
 }

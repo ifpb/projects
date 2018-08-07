@@ -1,6 +1,7 @@
 {
   "title": "Portfolio profissional",
   "description": "Um portfolio falando um pouco sobre mim e mostrando coisas que eu já fiz profissionalmente",
+  "preview": "assets/thumbnails/portifolio-lucas-ferreira.png",
   "demo": "https://lucasfrosty.github.io",
   "repository": "https://github.com/lucasfrosty/lucasfrosty.github.io",
   "course": "cstsi",

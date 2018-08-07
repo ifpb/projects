@@ -1,6 +1,7 @@
 {
   "title": "capela",
   "description": "Site para o estúdio de criação capela, especializado em produção de conteúdo para a igreja católica e pequenos negócios.",
+  "preview": "assets/thumbnails/capela.png",
   "demo": "https://angela-oliveira.github.io/capela",
   "repository": "https://github.com/angela-oliveira/capela",
   "course": "cstsi",

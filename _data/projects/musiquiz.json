@@ -1,6 +1,7 @@
 {
   "title": "Beto da Coxinha",
   "description": "Jogo para testar os conhecimentos musicais do usuário.",
+  "preview": "assets/thumbnails/musiquiz.png",
   "demo": "https://kmlporto.github.io/QuizMusic/",
   "repository": "https://github.com/kmlporto/QuizMusic",
   "course": "cstsi",

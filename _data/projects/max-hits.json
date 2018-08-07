@@ -1,6 +1,7 @@
 {
   "title": "Max Hits",
   "description": "Aplicação web que utiliza a API do Last.fm para listar os Hits Eletrônicos mais tocados no mundo e no Brasil.",
+  "preview": "assets/thumbnails/max-hits.png",
   "demo": "https://gelguimaraes.github.io/Max-Hits/",
   "repository": "https://github.com/gelguimaraes/Max-Hits",
   "course": "cstsi",
