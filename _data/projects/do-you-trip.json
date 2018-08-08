@@ -12,20 +12,8 @@
     "js"
   ],
   "owners": [
-    {
-      "id": "20171370002",
-      "name": "Paulo Henrique",
-      "github": "https://github.com/pahferreira"
-    },
-    {
-      "id": "20171370032",
-      "name": "William Abdon",
-      "github": "https://github.com/willabdon"
-    },
-    {
-      "id": "",
-      "name": "Pablo Dias",
-      "github": "https://github.com/pablo-dias"
-    }
+    20171370002,
+    20171370032,
+    20171370029
   ]
 }

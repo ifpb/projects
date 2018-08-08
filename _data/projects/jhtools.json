@@ -1,0 +1,26 @@
+{
+  "title": "JH-tools",
+  "description": "O JH-tools é uma interface Web para um conjunto de ferramentas de análise de redes de computadores.",
+  "repository": "https://github.com/jpdlp/JH-tools",
+  "course": "cstrc",
+  "session": "2017.2",
+  "subject": "dw",
+  "campus": "João Pessoa",
+  "topics": [
+    "ping",
+    "php",
+    "js"
+  ],
+  "owners": [
+    {
+      "id": "",
+      "name": "João Paulo",
+      "github": "https://github.com/jpdlp"
+    },
+    {
+      "id": "",
+      "name": "José Hermano",
+      "github": ""
+    }
+  ]
+}

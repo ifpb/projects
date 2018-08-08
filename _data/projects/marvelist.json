@@ -11,20 +11,9 @@
   "topics": [
     "js"
   ],
-  "owners": [{
-      "id": "20171370027",
-      "name": "Bruno Gabriel",
-      "github": "https://github.com/Brunbg"
-    },
-    {
-      "id": "20171370006",
-      "name": "Felipe Silva",
-      "github": "https://github.com/felipersdf"
-    },
-    {
-      "id": "20171370031",
-      "name": "Henrique Frade",
-      "github": "https://github.com/Henrifrade"
-    }
+  "owners": [
+    20171370027,
+    20171370006,
+    20171370031
   ]
 }

@@ -1,0 +1,19 @@
+{
+  "title": "Portal Marvel",
+  "description": "Portal para aos fãs dos quadrinhos da Marvel.",
+  "preview": "assets/thumbnails/portal-marvel.jpg",
+  "demo": "https://glauciomendonca.github.io/Projeto-Marvel/",
+  "repository": "https://github.com/GlaucioMendonca/Projeto-Marvel",
+  "course": "cstsi",
+  "session": "2016.2",
+  "subject": "ls",
+  "campus": "João Pessoa",
+  "topics": [
+    "js"
+  ],
+  "owners": [
+    20161370010,
+    20161370003,
+    20161370018
+  ]
+}

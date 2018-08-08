@@ -1,0 +1,18 @@
+{
+  "title": "Rhema Hotel Pousada",
+  "description": "Site sobre um hotel pousada de tambaú.",
+  "repository": "https://github.com/adrianonna/rhemahotelpousada.github.io",
+  "course": "cstsi",
+  "session": "2017.2",
+  "subject": "lm",
+  "campus": "João Pessoa",
+  "topics": [
+    "html",
+    "css"
+  ],
+  "owners": [{
+    "id": "",
+    "name": "Adriano",
+    "github": "https://github.com/adrianonna/"
+  }]
+}

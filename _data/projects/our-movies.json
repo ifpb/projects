@@ -12,20 +12,8 @@
     "js"
   ],
   "owners": [
-    {
-      "id": "20171370045",
-      "name": "Neil Prado",
-      "github": "https://github.com/neilprado"
-    },
-    {
-      "id": "20171370024",
-      "name": "Kevin Mélo",
-      "github": "https://github.com/KevinMeloDuarte"
-    },
-    {
-      "id": "20171370035",
-      "name": "Erick Cristhian",
-      "github": ""
-    }
+    20171370045,
+    20171370024,
+    20171370035
   ]
 }

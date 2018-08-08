@@ -1,0 +1,18 @@
+{
+  "title": "Cron Dashboard",
+  "description": "Dashboard para agendamento de tarefas.",
+  "preview": "assets/thumbnails/cron-dashboard.png",
+  "repository": "https://github.com/genildoalvesn/dhcp-conf",
+  "course": "cstrc",
+  "session": "2017.2",
+  "subject": "dw",
+  "campus": "João Pessoa",
+  "topics": [
+    "cron",
+    "php",
+    "js"
+  ],
+  "owners": [
+    20141380408
+  ]
+}

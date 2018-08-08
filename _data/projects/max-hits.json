@@ -11,10 +11,7 @@
   "topics": [
     "js"
   ],
-  "owners": [{
-      "id": "20171370010",
-      "name": "Gesoaldo Guimarães",
-      "github": "https://github.com/gelguimaraes/"
-    }
+  "owners": [
+    20171370010
   ]
 }

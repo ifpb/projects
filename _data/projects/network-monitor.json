@@ -1,0 +1,32 @@
+{
+  "title": "Network Monitor",
+  "description": "Aplicação que monitora dispositivos conectados à rede, com interface web, coletando informações como IP, nome, tipo, usuário logado(se houver), entre outras.",
+  "preview": "assets/thumbnails/network-monitor.png",
+  "repository": "https://github.com/BelarminoM/NetworkMonitor",
+  "course": "cstrc",
+  "session": "2017.2",
+  "subject": "dw",
+  "campus": "João Pessoa",
+  "topics": [
+    "java",
+    "php",
+    "js"
+  ],
+  "owners": [
+    {
+      "id": "",
+      "name": "Miguel Cabral",
+      "github": "https://github.com/BelarminoM"
+    },
+    {
+      "id": "",
+      "name": "Eric Vinicius",
+      "github": "https://github.com/EricViniciusPSantos"
+    },
+    {
+      "id": "",
+      "name": "Edson Vieira",
+      "github": "https://github.com/EdsonLuisvieira"
+    }
+  ]
+}

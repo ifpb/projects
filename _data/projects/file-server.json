@@ -1,0 +1,18 @@
+{
+  "title": "Open Torrent",
+  "description": "Servidor de arquivos minimalista baseado em HTTP, desenvolvido em Node.js, motivado pela necessidade de compartilhar arquivos usando um computador que só tem acesso externo a Internet pela porta 80.",
+  "preview": "assets/thumbnails/file-server.png",
+  "demo": "https://ajunior.github.io/fileserver/",
+  "repository": "https://github.com/ajunior/fileserver",
+  "course": "cstsi",
+  "session": "2016.2",
+  "subject": "ls",
+  "campus": "João Pessoa",
+  "topics": [
+    "js"
+  ],
+  "owners": [
+    20121610335,
+    20142370333
+  ]
+}

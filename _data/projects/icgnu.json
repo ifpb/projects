@@ -1,0 +1,31 @@
+{
+  "title": "IGCNU - Interface SAMBA",
+  "description": "Desenvolvimento de uma interface web para facilitar a manipulação da ferramenta SAMBA.",
+  "repository": "https://github.com/tduarte23/icgnu",
+  "course": "cstrc",
+  "session": "2017.2",
+  "subject": "dw",
+  "campus": "João Pessoa",
+  "topics": [
+    "samba",
+    "php",
+    "js"
+  ],
+  "owners": [
+    {
+      "id": "",
+      "name": "Jorge Gomes",
+      "github": "https://github.com/genildoalvesn/"
+    },
+    {
+      "id": "",
+      "name": "Igor Oliveira",
+      "github": ""
+    },
+    {
+      "id": "",
+      "name": "Thómas Duarte",
+      "github": "https://github.com/tduarte23/"
+    }
+  ]
+}

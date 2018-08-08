@@ -1,7 +1,7 @@
 {
   "title": "Beto da Coxinha",
   "description": "Aplicação em Angular é resultado curso on-line de Jorge Sant Ana. No site pode-se fazer buscas por ofertas, navegar entre tipos de fornecedores e fazer pedido.",
-  "repository": "assets/https://github.com/helder-rangel/angular",
+  "repository": "https://github.com/helder-rangel/angular",
   "course": "cstsi",
   "session": "2017.2",
   "subject": "ls",

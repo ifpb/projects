@@ -12,20 +12,8 @@
     "js"
   ],
   "owners": [
-    {
-      "id": "20171370033",
-      "name": "Fabrício Liberato",
-      "github": ""
-    },
-    {
-      "id": "20171370041",
-      "name": "Kamila Porto",
-      "github": "https://github.com/kmlporto/"
-    },
-    {
-      "id": "20171370003",
-      "name": "Rafael Lins",
-      "github": ""
-    }
+    20171370033,
+    20171370041,
+    20171370003
   ]
 }

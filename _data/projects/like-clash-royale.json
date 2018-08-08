@@ -12,20 +12,8 @@
     "js"
   ],
   "owners": [
-    {
-      "id": "20171370011",
-      "name": "Tales Medeiros",
-      "github": "https://github.com/Tales313/"
-    },
-    {
-      "id": "20171370018",
-      "name": "John Oliver",
-      "github": ""
-    },
-    {
-      "id": "20171370019",
-      "name": "Marlon Fernando",
-      "github": ""
-    }
+    20171370011,
+    20171370018,
+    20171370019
   ]
 }

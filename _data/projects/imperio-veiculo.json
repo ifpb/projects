@@ -12,15 +12,7 @@
     "js"
   ],
   "owners": [
-    {
-      "id": "20162370051",
-      "name": "Bruno Figueiredo",
-      "github": "https://github.com/brunof85/imperio-veiculos"
-    },
-    {
-      "id": "20172370043",
-      "name": "Fabricio Gabriel De Araujo",
-      "github": ""
-    }
+    20162370051,
+    20172370043
   ]
 }

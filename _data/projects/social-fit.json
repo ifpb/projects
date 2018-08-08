@@ -1,0 +1,26 @@
+{
+  "title": "Social Fit",
+  "description": "Rede social destinada às pessoas envolvidas em atividades físicas como Academia e CrossFit de forma que elas possam compartilhar seus resultados com os amigos. Também se destina à divulgação de eventos relacionados à área o que seria interessante para as empresas envolvidas nesta área.",
+  "preview": "assets/thumbnails/social-fit.png",
+  "repository": "https://github.com/social-fit/social-fit",
+  "course": "cstrc",
+  "session": "2017.2",
+  "subject": "dw",
+  "campus": "João Pessoa",
+  "topics": [
+    "php",
+    "js"
+  ],
+  "owners": [
+    {
+      "id": "",
+      "name": "José Anderson Silva dos Santos",
+      "github": "https://github.com/joseanderson1995silva/"
+    },
+    {
+      "id": "",
+      "name": "Walisson da Silva Soares",
+      "github": "https://github.com/walissonsilva/"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Art'Kids",
+  "description": "Elaborar um site para uma loja de decoração de festas.",
+  "preview": "assets/thumbnails/art-kids.jpg",
+  "demo": "https://karolinelima.github.io/Art-kids/",
+  "repository": "https://github.com/KarolineLima/Art-kids",
+  "course": "cstsi",
+  "session": "2017.2",
+  "subject": "lm",
+  "campus": "João Pessoa",
+  "topics": [
+    "html",
+    "css"
+  ],
+  "owners": [
+    20172370012
+  ]
+}
