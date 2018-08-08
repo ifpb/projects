@@ -1,0 +1,20 @@
+{
+  "title": "Ricardo Amighini",
+  "description": "Site para o fotografo Ricardo Amighini.",
+  "preview": "assets/thumbnails/ricardo-amighini.png",
+  "demo": "https://romerocaetano.github.io/Portfolio-Fotografia/",
+  "repository": "https://github.com/romerocaetano/Portfolio-Fotografia",
+  "course": "cstsi",
+  "session": "2018.1",
+  "subject": "lm",
+  "campus": "João Pessoa",
+  "topics": [
+    "html",
+    "css"
+  ],
+  "owners": [
+    20181370009,
+    20181370006,
+    20181370020
+  ]
+}

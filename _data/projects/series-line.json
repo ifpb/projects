@@ -1,0 +1,18 @@
+{
+  "title": "Series Line",
+  "description": "Uma aplicão web que mostra informações sobre seriados. Através da dados da API do TV Maze",
+  "demo": "https://renathavictor.github.io/seriesline/",
+  "repository": "https://github.com/renathavictor/seriesline",
+  "course": "cstsi",
+  "session": "2018.1",
+  "subject": "ls",
+  "campus": "João Pessoa",
+  "topics": [
+    "js"
+  ],
+  "owners": [
+    20172370020,
+    20172370016,
+    20151370219
+  ]
+}
