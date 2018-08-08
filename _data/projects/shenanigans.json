@@ -1,0 +1,17 @@
+{
+  "title": "Shenanigans",
+  "description": "Shenanigans - API de Hearthstone",
+  "preview": "assets/thumbnails/shenanigans.png",
+  "demo": "https://joaopab1337.github.io/shenanigans/index.html",
+  "repository": "https://github.com/joaopab1337/shenanigans",
+  "course": "cstsi",
+  "session": "2017.1",
+  "subject": "ls",
+  "campus": "João Pessoa",
+  "topics": [
+    "js"
+  ],
+  "owners": [
+    20162370005
+  ]
+}

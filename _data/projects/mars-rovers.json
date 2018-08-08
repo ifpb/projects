@@ -1,0 +1,17 @@
+{
+  "title": "Mars Rovers",
+  "description": "Uma página que lista fotos de marte capturadas pelo Rover a partir de uma data (terrestre) informada pelo usuário.",
+  "preview": "assets/thumbnails/mars-rovers.png",
+  "demo": "https://larissamoreira.github.io/marsrover/",
+  "repository": "https://github.com/larissamoreira/marsrover",
+  "course": "cstsi",
+  "session": "2017.1",
+  "subject": "ls",
+  "campus": "João Pessoa",
+  "topics": [
+    "js"
+  ],
+  "owners": [
+    20162370005
+  ]
+}

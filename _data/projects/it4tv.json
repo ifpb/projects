@@ -1,0 +1,17 @@
+{
+  "title": "it4tv",
+  "description": "it4tv",
+  "preview": "assets/thumbnails/it4tv.png",
+  "demo": "https://williamolima.github.io/it4tv/",
+  "repository": "https://github.com/williamolima/it4tv",
+  "course": "cstsi",
+  "session": "2017.1",
+  "subject": "ls",
+  "campus": "João Pessoa",
+  "topics": [
+    "js"
+  ],
+  "owners": [
+    20162370030
+  ]
+}
