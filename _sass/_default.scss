@@ -62,9 +62,10 @@ body {
       list-style: none;
       display: flex;
       flex-flow: row wrap;
+      justify-content: center;
       
       li {
-        margin: 0 .2rem;
+        margin: .1rem .2rem;
         font-size: .9rem;
         border: 1px solid #ccc; 
         border-radius: 5px;

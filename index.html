@@ -16,9 +16,8 @@ layout: default
         {% for topic in project.topics  %}
           <li>{{ topic }}</li>
         {% endfor %}
-        <li>{{ project.subject }}</li>
-        <li>{{ project.course }}</li>
-        <li>{{ project.session }}</li>
+        <li>{{ project.subject }}-{{ project.session }}</li>
+        <li>{{ project.course }}-{{ project.campus | replace: "João Pessoa", "jp" }}</li>
       </ul>
     </div>
   {% endfor %}

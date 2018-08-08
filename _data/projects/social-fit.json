@@ -8,19 +8,12 @@
   "subject": "dw",
   "campus": "João Pessoa",
   "topics": [
+    "embarcado",
     "php",
     "js"
   ],
   "owners": [
-    {
-      "id": "",
-      "name": "José Anderson Silva dos Santos",
-      "github": "https://github.com/joseanderson1995silva/"
-    },
-    {
-      "id": "",
-      "name": "Walisson da Silva Soares",
-      "github": "https://github.com/walissonsilva/"
-    }
+    20141610047,
+    20132610048
   ]
 }

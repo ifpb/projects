@@ -9,6 +9,10 @@
   "subject": "lm",
   "campus": "João Pessoa",
   "topics": [
+    "sass",
+    "jquery",
+    "bootstrap",
+    "eslint",
     "js"
   ],
   "owners": [
