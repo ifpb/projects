@@ -1,6 +1,7 @@
 {
   "title": "Series Line",
   "description": "Uma aplicão web que mostra informações sobre seriados. Através da dados da API do TV Maze",
+  "preview": "assets/thumbnails/series-line.png",
   "demo": "https://renathavictor.github.io/seriesline/",
   "repository": "https://github.com/renathavictor/seriesline",
   "course": "cstsi",
