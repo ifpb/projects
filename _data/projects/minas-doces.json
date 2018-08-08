@@ -1,0 +1,19 @@
+{
+  "title": "Minas Doces",
+  "description": "O objetivo da construção desse site seria para ajudar a impulsionar uma loja de doces.",
+  "preview": "assets/thumbnails/minas-doces.jpg",
+  "demo": "https://felipersdf.github.io/Mimas-Doces/",
+  "repository": "https://github.com/felipersdf/Mimas-Doces",
+  "course": "cstsi",
+  "session": "2017.1",
+  "subject": "lm",
+  "campus": "João Pessoa",
+  "topics": [
+    "html",
+    "css"
+  ],
+  "owners": [
+    20171370026,
+    20171370026
+  ]
+}

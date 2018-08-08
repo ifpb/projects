@@ -2,7 +2,7 @@
   "title": "Cron Dashboard",
   "description": "Dashboard para agendamento de tarefas.",
   "preview": "assets/thumbnails/cron-dashboard.png",
-  "repository": "https://github.com/genildoalvesn/dhcp-conf",
+  "repository": "https://github.com/clebiane/CronDashboard",
   "course": "cstrc",
   "session": "2017.2",
   "subject": "dw",

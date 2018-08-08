@@ -1,0 +1,18 @@
+{
+  "title": "Speed",
+  "description": "Speed",
+  "preview": "assets/thumbnails/speed.png",
+  "demo": "https://kmlporto.github.io/Speed/",
+  "repository": "https://github.com/kmlporto/Speed",
+  "course": "cstsi",
+  "session": "2017.1",
+  "subject": "lm",
+  "campus": "João Pessoa",
+  "topics": [
+    "html",
+    "css"
+  ],
+  "owners": [
+    20171370041
+  ]
+}

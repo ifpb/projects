@@ -1,0 +1,20 @@
+{
+  "title": "Grude PB",
+  "description": "Grude PB",
+  "preview": "assets/thumbnails/grude-pb.png",
+  "demo": "https://rencesar.github.io/projeto_lm/",
+  "repository": "https://github.com/rencesar/projeto_lm",
+  "course": "cstsi",
+  "session": "2017.1",
+  "subject": "lm",
+  "campus": "João Pessoa",
+  "topics": [
+    "html",
+    "css"
+  ],
+  "owners": [
+    20171370013,
+    20171370029,
+    20162370015
+  ]
+}

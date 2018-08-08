@@ -1,0 +1,18 @@
+{
+  "title": "Steven Universe",
+  "description": "Steven Universe.",
+  "preview": "assets/thumbnails/steven-universe.png",
+  "demo": "https://larissamoreira.github.io/steven-universe/",
+  "repository": "https://github.com/larissamoreira/steven-universe",
+  "course": "cstsi",
+  "session": "2016.2",
+  "subject": "lm",
+  "campus": "João Pessoa",
+  "topics": [
+    "html",
+    "css"
+  ],
+  "owners": [
+    20162370007
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Oficina Experimental",
+  "description": "Oficina Experimental.",
+  "preview": "assets/thumbnails/oficina-experimental.png",
+  "demo": "https://aaronsantos.github.io/oficina-experimental/",
+  "repository": "https://github.com/Aaronsantos/oficina-experimental",
+  "course": "cstsi",
+  "session": "2016.2",
+  "subject": "lm",
+  "campus": "João Pessoa",
+  "topics": [
+    "html",
+    "css"
+  ],
+  "owners": [
+    20162370007
+  ]
+}
