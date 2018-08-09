@@ -1,0 +1,18 @@
+{
+  "title": "Samuel Cabral Fotografia",
+  "description": "Site de fotografia.",
+  "preview": "assets/thumbnails/samuel-fotografia.jpg",
+  "demo": "https://samueldcabral.github.io/samuelcabralfotografia/",
+  "repository": "https://github.com/samueldcabral/samuelcabralfotografia",
+  "course": "cstsi",
+  "session": "2017.2",
+  "subject": "lm",
+  "campus": "João Pessoa",
+  "topics": [
+    "html",
+    "css"
+  ],
+  "owners": [
+    20172370019
+  ]
+}

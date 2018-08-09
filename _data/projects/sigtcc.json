@@ -1,0 +1,24 @@
+{
+  "title": "Sig TCC",
+  "description": "Sistema de gerenciamento de trabalho de conclusão de curso",
+  "repository": "https://github.com/ifpb/SigTcc",
+  "course": "cstsi",
+  "session": "2016.2",
+  "subject": "daw",
+  "campus": "João Pessoa",
+  "topics": [
+    "ruby",
+    "rails"
+  ],
+  "owners": [
+    20131370078,
+    20141370020,
+    20141370526,
+    20122370052,
+    20141370461,
+    20122370397,
+    20141370500,
+    20112370041,
+    20141370429
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Saborelly",
+  "description": "Site para lanchonetes e similares",
+  "preview": "assets/thumbnails/saborelly.png",
+  "demo": "https://nouaraduanne.github.io/projeto_saborelly/",
+  "repository": "https://github.com/nouaraduanne/projeto_saborelly",
+  "course": "cstsi",
+  "session": "2017.2",
+  "subject": "lm",
+  "campus": "João Pessoa",
+  "topics": [
+    "html",
+    "css"
+  ],
+  "owners": [
+    20171370023
+  ]
+}

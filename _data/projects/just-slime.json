@@ -1,0 +1,17 @@
+{
+  "title": "Just Slime",
+  "description": "Site para uma empresa fictícia.",
+  "preview": "assets/thumbnails/just-slime.png",
+  "demo": "https://kcristhines.github.io/just_slime/",
+  "repository": "https://github.com/kcristhines/just_slime",
+  "course": "cstsi",
+  "session": "2017.2",
+  "subject": "ls",
+  "campus": "João Pessoa",
+  "topics": [
+    "js"
+  ],
+  "owners": [
+    20171370007
+  ]
+}

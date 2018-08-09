@@ -1,0 +1,20 @@
+{
+  "title": "Chamada Virtual",
+  "description": "O projeto tem como intuito simplificar a atividade da chamada realizada pelos professores diariamente por meio de imagem.",
+  "preview": "assets/thumbnails/chamada-virtual.png",
+  "repository": "https://github.com/W-santos/chamada-vitual",
+  "course": "cstrc",
+  "session": "2017.1",
+  "subject": "dw",
+  "campus": "João Pessoa",
+  "topics": [
+    "opncv",
+    "php",
+    "js"
+  ],
+  "owners": [
+    20152380080,
+    20161610014,
+    20141610039
+  ]
+}

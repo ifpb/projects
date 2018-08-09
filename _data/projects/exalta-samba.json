@@ -1,0 +1,18 @@
+{
+  "title": "Exaltasamba",
+  "description": "O Sistema tem como objetivo principal implementar um serviço web para facilitar a configuração e uso do samba para compartilhamento de arquivos.",
+  "repository": "https://github.com/gabbezerra/Exaltasamba",
+  "course": "cstrc",
+  "session": "2016.2",
+  "subject": "dw",
+  "campus": "João Pessoa",
+  "topics": [
+    "samba",
+    "php",
+    "js"
+  ],
+  "owners": [
+    20151380265,
+    20151380389
+  ]
+}

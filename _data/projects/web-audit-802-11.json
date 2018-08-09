@@ -1,0 +1,19 @@
+{
+  "title": "WebAudit 802.11",
+  "description": "O projeto visa fornercer um interface Web para que possam ser realizados testes de penatração em redes sem fio que utilizem o tipo de criptografia WEP utilizando o pacote Aircrack-ng do Kali Linux.",
+  "preview": "assets/thumbnails/web-audit-802-11.png",
+  "repository": "https://github.com/patrickmcdias/ProjetoDW",
+  "course": "cstrc",
+  "session": "2017.1",
+  "subject": "dw",
+  "campus": "João Pessoa",
+  "topics": [
+    "aircrack-ng",
+    "php",
+    "js"
+  ],
+  "owners": [
+    20142380045,
+    20141380254
+  ]
+}

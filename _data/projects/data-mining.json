@@ -1,0 +1,20 @@
+{
+  "title": "Data Mining",
+  "description": "Site sobre Data Mining  (Mineração de Dados) com o objetivo de mostrar sua importância na tomada de decisões e vantagens estratégicas para as empresas.",
+  "preview": "assets/thumbnails/data-mining.jpg",
+  "demo": "https://dssdamiao.github.io/projeto-data-mining/",
+  "repository": "https://github.com/dssdamiao/projeto-data-mining",
+  "course": "cstsi",
+  "session": "2017.2",
+  "subject": "lm",
+  "campus": "João Pessoa",
+  "topics": [
+    "html",
+    "css"
+  ],
+  "owners": [
+    20172370036,
+    20172370022,
+    20172370028
+  ]
+}

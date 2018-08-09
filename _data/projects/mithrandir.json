@@ -1,0 +1,19 @@
+{
+  "title": "Mithrandir",
+  "description": "Mithrandir Firewall",
+  "preview": "assets/thumbnails/mithrandir.png",
+  "repository": "https://github.com/patrickmcdias/Mithrandir",
+  "course": "cstrc",
+  "session": "2014.1",
+  "subject": "dw",
+  "campus": "João Pessoa",
+  "topics": [
+    "samba-tool",
+    "php",
+    "js"
+  ],
+  "owners": [
+    20151380044,
+    20151380079
+  ]
+}

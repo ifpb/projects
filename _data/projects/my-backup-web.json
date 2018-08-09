@@ -1,0 +1,19 @@
+{
+  "title": "MyBackupWeb",
+  "description": "O Sistema permite gerenciar backups.",
+  "preview": "assets/thumbnails/my-backup-web.png",
+  "repository": "https://github.com/AnaGilvanDWProjeto/projeto-DW20162",
+  "course": "cstrc",
+  "session": "2016.2",
+  "subject": "dw",
+  "campus": "João Pessoa",
+  "topics": [
+    "snmp ",
+    "php",
+    "js"
+  ],
+  "owners": [
+    20122380112,
+    20122380287
+  ]
+}

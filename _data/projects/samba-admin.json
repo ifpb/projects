@@ -1,0 +1,17 @@
+{
+  "title": "Samba Admin",
+  "description": "Gerenciamento Web Para Samba 4",
+  "repository": "https://github.com/nettoandrade/ifpb-samba4",
+  "course": "cstrc",
+  "session": "2014.1",
+  "subject": "dw",
+  "campus": "João Pessoa",
+  "topics": [
+    "samba-tool",
+    "php",
+    "js"
+  ],
+  "owners": [
+    20122380163
+  ]
+}
