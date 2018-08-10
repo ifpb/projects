@@ -1,0 +1,22 @@
+{
+  "title": "pH Meter Online",
+  "description": "Aplicação que armazena leituras de amostras de pHs de diferentes ambientes.",
+  "preview": "assets/thumbnails/ph-meter.png",
+  "repository": "https://gitlab.com/luanarbarros/projeto-pH-site",
+  "course": "cstrc",
+  "session": "2018.1",
+  "subject": "dw",
+  "campus": "João Pessoa",
+  "topics": [
+    "PDI",
+    "Scripts Octave/MatLab",
+    "php",
+    "js",
+    "mysql"
+  ],
+  "owners": [
+    20162380024,
+    20162380004,
+    20122610231
+  ]
+}

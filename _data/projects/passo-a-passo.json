@@ -1,0 +1,19 @@
+{
+  "title": "Passo a Passo",
+  "description": "Passo a Passo.",
+  "preview": "assets/thumbnails/passo-a-passo.jpg",
+  "repository": "https://github.com/gabrielsp07/Passo-a-Passo",
+  "course": "cstrc",
+  "session": "2018.1",
+  "subject": "dw",
+  "campus": "João Pessoa",
+  "topics": [
+    "esp8266",
+    "php",
+    "js",
+    "mysql"
+  ],
+  "owners": [
+    20141610411
+  ]
+}

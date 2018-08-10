@@ -1,0 +1,21 @@
+{
+  "title": "Flowing",
+  "description": "Flowing.",
+  "preview": "assets/thumbnails/flowing.png",
+  "repository": "https://gitlab.com/angeloplacebo/flowing",
+  "course": "cstrc",
+  "session": "2018.1",
+  "subject": "dw",
+  "campus": "João Pessoa",
+  "topics": [
+    "esp8266",
+    "php",
+    "js",
+    "mysql"
+  ],
+  "owners": [
+    20162380029,
+    20162380026,
+    20172610014
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Sr Brownie",
+  "description": "Sr Brownie",
+  "preview": "assets/thumbnails/srbrownie.jpg",
+  "demo": "https://LaisAmaral.github.io/srbrownie/",
+  "repository": "https://github.com/LaisAmaral/srbrownie",
+  "course": "cstsi",
+  "session": "2018.1",
+  "subject": "lm",
+  "campus": "João Pessoa",
+  "topics": [
+    "html",
+    "css"
+  ],
+  "owners": [
+    20171370034,
+    20172370023
+  ]
+}

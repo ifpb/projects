@@ -1,0 +1,21 @@
+{
+  "title": "Web Bacula",
+  "description": "Web Bacula.",
+  "preview": "assets/thumbnails/web-bacula.png",
+  "repository": "https://github.com/alessioaarf/web-bacula",
+  "course": "cstrc",
+  "session": "2018.1",
+  "subject": "dw",
+  "campus": "João Pessoa",
+  "topics": [
+    "bacula",
+    "php",
+    "js",
+    "mysql"
+  ],
+  "owners": [
+    20131380375,
+    20132380379,
+    20122380260
+  ]
+}

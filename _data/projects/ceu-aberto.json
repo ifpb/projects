@@ -1,0 +1,21 @@
+{
+  "title": "Céu Aberto",
+  "description": "Uma página web para monitoramento de um sistema automatizado encarregado de detectar quando houver concentração de água nas lajes e calhas dos telhados.",
+  "preview": "assets/thumbnails/ceu-aberto.png",
+  "demo": "https://whatlist.netlify.com",
+  "repository": "https://github.com/alyssonmendes/ceu-aberto",
+  "course": "cstrc",
+  "session": "2018.1",
+  "subject": "dw",
+  "campus": "João Pessoa",
+  "topics": [
+    "esp8266",
+    "php",
+    "js"
+  ],
+  "owners": [
+    20171610022,
+    20171610004,
+    20171610001
+  ]
+}
