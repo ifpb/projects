@@ -1,0 +1,18 @@
+{
+  "title": "Pousada",
+  "description": "Pousada",
+  "preview": "assets/thumbnails/pousada.png",
+  "demo": "https://adrianonna.github.io/Pousada/",
+  "repository": "https://github.com/adrianonna/Pousada",
+  "course": "cstsi",
+  "session": "2018.1",
+  "subject": "ls",
+  "campus": "João Pessoa",
+  "topics": [
+    "js"
+  ],
+  "owners": [
+    20162370039,
+    20152370352
+  ]
+}

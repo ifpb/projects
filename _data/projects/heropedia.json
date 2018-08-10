@@ -1,0 +1,19 @@
+{
+  "title": "Heropedia",
+  "description": "Uma Wikipedia de Heróis!",
+  "preview": "assets/thumbnails/heropedia.png",
+  "demo": "https://pablo-dias.github.io/heropedia/",
+  "repository": "https://github.com/pablo-dias/heropedia",
+  "course": "cstsi",
+  "session": "2018.1",
+  "subject": "ls",
+  "campus": "João Pessoa",
+  "topics": [
+    "js"
+  ],
+  "owners": [
+    20171370029,
+    20172370007,
+    20172370012
+  ]
+}

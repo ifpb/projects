@@ -1,0 +1,16 @@
+{
+  "title": "Search Países",
+  "description": "Aplicação criada com o intuito de mostrar as características existentes em cada país como: Continente, Capital, Moeda, Idioma",
+  "repository": "https://github.com/magdavrm/Search_Paises",
+  "course": "cstsi",
+  "session": "2018.1",
+  "subject": "ls",
+  "campus": "João Pessoa",
+  "topics": [
+    "js"
+  ],
+  "owners": [
+    20142370120,
+    20162370015
+  ]
+}

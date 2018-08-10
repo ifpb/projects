@@ -1,0 +1,17 @@
+{
+  "title": "MacdeMarco_Fanpage",
+  "description": "Uma aplicação que exibe informações sobre toda discografia e letras do cantor Mac deMarco através da API da Vagalume.",
+  "preview": "assets/thumbnails/mac-demarco.png",
+  "demo": "https://yanevasquez.github.io/MacdeMarco_Fanpage/",
+  "repository": "https://github.com/yanevasquez/MacdeMarco_Fanpage",
+  "course": "cstsi",
+  "session": "2018.1",
+  "subject": "ls",
+  "campus": "João Pessoa",
+  "topics": [
+    "js"
+  ],
+  "owners": [
+    20171370037 
+  ]
+}
