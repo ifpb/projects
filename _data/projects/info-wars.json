@@ -6,11 +6,10 @@
   "repository": "https://github.com/taysamendes/Info-Wars",
   "course": "cstsi",
   "session": "2018.1",
-  "subject": "lm",
+  "subject": "ls",
   "campus": "João Pessoa",
   "topics": [
-    "html",
-    "css"
+    "js"
   ],
   "owners": [
     20161370020,

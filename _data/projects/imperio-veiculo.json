@@ -6,10 +6,11 @@
   "repository": "https://github.com/brunof85/imperio-veiculos",
   "course": "cstsi",
   "session": "2018.1",
-  "subject": "ls",
+  "subject": "lm",
   "campus": "João Pessoa",
   "topics": [
-    "js"
+    "html",
+    "css"
   ],
   "owners": [
     20162370051,
