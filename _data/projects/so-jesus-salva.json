@@ -1,13 +1,13 @@
 {
   "title": "Só Jesus Salva",
   "description": "SJS é uma banda criada em 2011 que anuncia o evangelho de uma forma diferente usando como estratégia o rap cristão para influenciar os jovens.",
-  "preview": "assets/thumbnails/so-jesus-salva.png",
+  "preview": "so-jesus-salva.png",
   "demo": "https://tales313.github.io/So_Jesus_Salva/",
   "repository": "https://github.com/Tales313/So_Jesus_Salva",
   "course": "cstsi",
   "session": "2017.1",
   "subject": "lm",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "html",
     "css"

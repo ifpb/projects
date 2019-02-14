@@ -1,13 +1,13 @@
 {
   "title": "Chef em Casa",
   "description": "Chef em Casa é uma aplicação para encontrar Chef's de cozinha que trabalham de forma livre em festas/eventos particulares de acordo com a necessidade do cliente.",
-  "preview": "assets/thumbnails/chef-em-casa.png",
+  "preview": "chef-em-casa.png",
   "demo": "http://chef-em-casa.herokuapp.com",
   "repository": "https://github.com/caiocosta08/chef-em-casa",
   "course": "cstsi",
   "session": "2017.2",
   "subject": "ls",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "js"
   ],

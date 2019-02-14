@@ -1,13 +1,13 @@
 {
   "title": "So Sweet Brownies",
   "description": "Site para empresa fictícia de doces.",
-  "preview": "assets/thumbnails/so-sweet-brownies.png",
+  "preview": "so-sweet-brownies.png",
   "demo": "https://acsapassos.github.io/so-sweet/",
   "repository": "https://github.com/acsapassos/so-sweet",
   "course": "cstsi",
   "session": "2017.2",
   "subject": "lm",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "html",
     "css"

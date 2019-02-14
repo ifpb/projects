@@ -1,13 +1,13 @@
 {
   "title": "Music Search",
   "description": "Music Search",
-  "preview": "assets/thumbnails/music-search.png",
+  "preview": "music-search.png",
   "demo": "https://lucascvasconcelos.github.io/Music-Search/",
   "repository": "https://github.com/lucascvasconcelos/Music-Search",
   "course": "cstsi",
   "session": "2018.1",
   "subject": "ls",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "js"
   ],

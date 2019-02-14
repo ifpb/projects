@@ -1,13 +1,13 @@
 {
   "title": "Seahorse Institute",
   "description": "Seahorse Institute",
-  "preview": "assets/thumbnails/seahorse-institute.png",
+  "preview": "seahorse-institute.png",
   "demo": "https://fricaro.github.io/seahorse-institute/",
   "repository": "https://github.com/fricaro/seahorse-institute",
   "course": "cstsi",
   "session": "2018.1",
   "subject": "lm",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "html",
     "css"

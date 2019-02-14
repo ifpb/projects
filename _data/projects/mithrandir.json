@@ -1,12 +1,12 @@
 {
   "title": "Mithrandir",
   "description": "Mithrandir Firewall",
-  "preview": "assets/thumbnails/mithrandir.png",
+  "preview": "mithrandir.png",
   "repository": "https://github.com/patrickmcdias/Mithrandir",
   "course": "cstrc",
   "session": "2014.1",
   "subject": "dw",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "samba-tool",
     "php",

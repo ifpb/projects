@@ -1,13 +1,13 @@
 {
   "title": "Do you trip?",
   "description": "Uma página web com intuito de indicar diretrizes para o usuário, fornecendo formas de encontrar suas necessidades específicas (hotéis, aluguel de carro, voo e etc) utilizando API do Amadeu.",
-  "preview": "assets/thumbnails/do-you-trip.png",
+  "preview": "do-you-trip.png",
   "demo": "https://pahferreira.github.io/doyoutrip/index.html",
   "repository": "https://github.com/pahferreira/doyoutrip",
   "course": "cstsi",
   "session": "2017.2",
   "subject": "ls",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "js"
   ],

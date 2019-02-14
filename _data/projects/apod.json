@@ -1,13 +1,13 @@
 {
   "title": "apod",
   "description": "apod",
-  "preview": "assets/thumbnails/apod.png",
+  "preview": "apod.png",
   "demo": "https://elileal.github.io/APOD/",
   "repository": "https://github.com/elileal/APOD",
   "course": "cstsi",
   "session": "2017.1",
   "subject": "ls",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "js"
   ],

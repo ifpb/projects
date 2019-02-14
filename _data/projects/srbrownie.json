@@ -1,13 +1,13 @@
 {
   "title": "Sr Brownie",
   "description": "Sr Brownie",
-  "preview": "assets/thumbnails/srbrownie.jpg",
+  "preview": "srbrownie.jpg",
   "demo": "https://LaisAmaral.github.io/srbrownie/",
   "repository": "https://github.com/LaisAmaral/srbrownie",
   "course": "cstsi",
   "session": "2018.1",
   "subject": "lm",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "html",
     "css"

@@ -1,13 +1,13 @@
 {
   "title": "Donos do Amanhã",
   "description": "Proposta de Site para o Donos do Amanhã",
-  "preview": "assets/thumbnails/donos-do-amanha.png",
+  "preview": "donos-do-amanha.png",
   "demo": "https://marciorfp.github.io/website-donos-do-amanha/",
   "repository": "https://github.com/marciorfp/website-donos-do-amanha",
   "course": "cstsi",
   "session": "2016.2",
   "subject": "lm",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "html",
     "css"

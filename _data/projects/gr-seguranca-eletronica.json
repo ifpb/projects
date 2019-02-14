@@ -1,13 +1,13 @@
 {
   "title": "GR Segurança Eletrônica",
   "description": "Página GR Segurança Eletrônica.",
-  "preview": "assets/thumbnails/gr-seguranca-eletronica.png",
+  "preview": "gr-seguranca-eletronica.png",
   "demo": "https://filipeassuncao1.github.io/projeto-lm/",
   "repository": "https://github.com/FilipeAssuncao1/projeto-lm",
   "course": "cstsi",
   "session": "2017.2",
   "subject": "lm",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "html",
     "css"

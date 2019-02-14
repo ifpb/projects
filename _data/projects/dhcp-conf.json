@@ -1,12 +1,12 @@
 {
   "title": "DHCP Conf",
   "description": "Aplicação web para cadastro de hosts e dentro de uma  rede interna e controle dos hosts.",
-  "preview": "assets/thumbnails/dhcp-conf.png",
+  "preview": "dhcp-conf.png",
   "repository": "https://github.com/genildoalvesn/dhcp-conf",
   "course": "cstrc",
   "session": "2017.2",
   "subject": "dw",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "dhcp",
     "php",

@@ -1,12 +1,12 @@
 {
   "title": "SAN IFPB",
   "description": "O Sistema de Alerta e Notificações tem como objetivo a realização de envios de SMS via pagina web.",
-  "preview": "assets/thumbnails/san-ifpb.png",
+  "preview": "san-ifpb.png",
   "repository": "https://github.com/raissahonorato/projetosan-ifpb",
   "course": "cstrc",
   "session": "2017.1",
   "subject": "dw",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "sms",
     "php",

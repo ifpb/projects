@@ -1,13 +1,13 @@
 {
   "title": "Git Index",
   "description": "Uma aplicação client-side que consulte informações sobre um dado usuário do Github.",
-  "preview": "assets/thumbnails/git-index.png",
+  "preview": "git-index.png",
   "demo": "https://aaronsantos.github.io/gitindex/",
   "repository": "https://github.com/Aaronsantos/gitindex",
   "course": "cstsi",
   "session": "2017.1",
   "subject": "ls",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "js"
   ],

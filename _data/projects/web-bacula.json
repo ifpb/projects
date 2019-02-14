@@ -1,12 +1,12 @@
 {
   "title": "Web Bacula",
   "description": "Web Bacula.",
-  "preview": "assets/thumbnails/web-bacula.png",
+  "preview": "web-bacula.png",
   "repository": "https://github.com/alessioaarf/web-bacula",
   "course": "cstrc",
   "session": "2018.1",
   "subject": "dw",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "bacula",
     "php",

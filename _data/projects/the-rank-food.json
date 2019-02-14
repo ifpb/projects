@@ -1,13 +1,13 @@
 {
   "title": "The Rank Food",
   "description": "The Rank Foot",
-  "preview": "assets/thumbnails/the-rank-food.png",
+  "preview": "the-rank-food.png",
   "demo": "",
   "repository": "https://github.com/wellingtonPLF/Vs-RankingProject",
   "course": "cstsi",
   "session": "2018.1",
   "subject": "lm",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "html",
     "css"

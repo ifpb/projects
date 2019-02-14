@@ -1,13 +1,13 @@
 {
   "title": "Rabuscos",
   "description": "Blog pessoal com crônicas e contos.",
-  "preview": "assets/thumbnails/rabuscos.png",
+  "preview": "rabuscos.png",
   "demo": "https://janainafelix.github.io/Rabuscos/",
   "repository": "https://github.com/janainafelix/Rabuscos",
   "course": "cstsi",
   "session": "2017.2",
   "subject": "ls",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "html",
     "css"

@@ -1,13 +1,13 @@
 {
   "title": "Like Clash Royale",
   "description": "Like Clash Royale é um site que visa trazer informações sobre cartas, baús e arenas do jogo Clash Royale.",
-  "preview": "assets/thumbnails/like-clash-royale.jpg",
+  "preview": "like-clash-royale.jpg",
   "demo": "https://tales313.github.io/Like_Clash_Royale/",
   "repository": "https://github.com/Tales313/Like_Clash_Royale",
   "course": "cstsi",
   "session": "2017.2",
   "subject": "ls",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "js"
   ],

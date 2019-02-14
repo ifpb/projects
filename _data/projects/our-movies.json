@@ -1,13 +1,13 @@
 {
   "title": "Our Movies",
   "description": "OurMovies será um projeto voltado à aqueles que buscam diversas informadas ao mundo da sétima arte. A API TMDB será uma base de dados que auxiliará nas informações necessárias.",
-  "preview": "assets/thumbnails/ourmovies.png",
+  "preview": "ourmovies.png",
   "demo": "https://neilprado.github.io/ourmovies/site/",
   "repository": "https://github.com/neilprado/ourmovies",
   "course": "cstsi",
   "session": "2017.2",
   "subject": "ls",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "js"
   ],

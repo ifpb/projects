@@ -1,13 +1,13 @@
 {
   "title": "Musiquiz",
   "description": "Jogo para testar os conhecimentos musicais do usuário.",
-  "preview": "assets/thumbnails/musiquiz.png",
+  "preview": "musiquiz.png",
   "demo": "https://kmlporto.github.io/QuizMusic/",
   "repository": "https://github.com/kmlporto/QuizMusic",
   "course": "cstsi",
   "session": "2017.2",
   "subject": "ls",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "js"
   ],

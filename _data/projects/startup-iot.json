@@ -1,13 +1,13 @@
 {
   "title": "Startup IoT",
   "description": "Site para a biblioteca do Instituto Federal da Paraíba",
-  "preview": "assets/thumbnails/startup-iot.png",
+  "preview": "startup-iot.png",
   "demo": "https://tiagoribeirotsi.github.io/Startup_IoT_ProjetoLM/",
   "repository": "https://github.com/TiagoRibeiroTSI/Startup_IoT_ProjetoLM",
   "course": "cstsi",
   "session": "2018.1",
   "subject": "lm",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "html",
     "css"

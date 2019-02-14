@@ -1,13 +1,13 @@
 {
   "title": "Marvelist",
   "description": "",
-  "preview": "assets/thumbnails/marvelist.png",
+  "preview": "marvelist.png",
   "demo": "https://henrifrade.github.io/Marvelist/",
   "repository": "https://github.com/Henrifrade/Marvelist",
   "course": "cstsi",
   "session": "2018.1",
   "subject": "ls",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "js"
   ],

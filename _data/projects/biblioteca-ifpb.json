@@ -1,13 +1,13 @@
 {
   "title": "Biblioteca IFPB",
   "description": "Site para a biblioteca do Instituto Federal da Paraíba",
-  "preview": "assets/thumbnails/biblioteca-ifpb.png",
+  "preview": "biblioteca-ifpb.png",
   "demo": "https://mauriciopcj.github.io/biblioteca/",
   "repository": "https://github.com/mauriciopcj/biblioteca",
   "course": "cstsi",
   "session": "2018.1",
   "subject": "lm",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "html",
     "css"

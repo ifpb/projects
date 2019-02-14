@@ -1,12 +1,12 @@
 {
   "title": "Flowing",
   "description": "Flowing.",
-  "preview": "assets/thumbnails/flowing.png",
+  "preview": "flowing.png",
   "repository": "https://gitlab.com/angeloplacebo/flowing",
   "course": "cstrc",
   "session": "2018.1",
   "subject": "dw",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "esp8266",
     "php",

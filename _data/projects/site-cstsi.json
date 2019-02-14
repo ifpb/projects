@@ -1,13 +1,13 @@
 {
   "title": "Site do CSTSI",
   "description": "Site que apresenta sobre o curso de Sistemas para Internet.",
-  "preview": "assets/thumbnails/site-cstsi.png",
+  "preview": "site-cstsi.png",
   "demo": "https://renathavictor.github.io/projetoLM/",
   "repository": "https://github.com/renathavictor/projetoLM",
   "course": "cstsi",
   "session": "2017.2",
   "subject": "lm",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "html",
     "css"

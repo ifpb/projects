@@ -1,12 +1,12 @@
 {
   "title": "Cron Dashboard",
   "description": "Dashboard para agendamento de tarefas.",
-  "preview": "assets/thumbnails/cron-dashboard.png",
+  "preview": "cron-dashboard.png",
   "repository": "https://github.com/clebiane/CronDashboard",
   "course": "cstrc",
   "session": "2017.2",
   "subject": "dw",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "cron",
     "php",

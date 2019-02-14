@@ -1,13 +1,13 @@
 {
   "title": "Banda Apolo",
   "description": "Site objetivo e informativo para a banda apolo.",
-  "preview": "assets/thumbnails/banda-apolo.png",
+  "preview": "banda-apolo.png",
   "demo": "https://pahferreira.github.io/bandaapolo/",
   "repository": "https://github.com/pahferreira/bandaapolo",
   "course": "cstsi",
   "session": "2017.1",
   "subject": "lm",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "html",
     "css"

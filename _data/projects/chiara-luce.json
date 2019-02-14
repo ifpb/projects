@@ -1,13 +1,13 @@
 {
   "title": "Chiara Luce",
   "description": "Chiara Luce",
-  "preview": "assets/thumbnails/chiara-luce.jpg",
+  "preview": "chiara-luce.jpg",
   "demo": "https://caiocosta08.github.io/chiara-luce/",
   "repository": "https://github.com/caiocosta08/chiara-luce",
   "course": "cstsi",
   "session": "2017.1",
   "subject": "lm",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "html",
     "css"

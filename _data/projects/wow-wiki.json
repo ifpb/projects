@@ -1,13 +1,13 @@
 {
   "title": "WoW Wiki",
   "description": "WoW Wiki",
-  "preview": "assets/thumbnails/wow-wiki.png",
+  "preview": "wow-wiki.png",
   "demo": "https://aleffkol.github.io/WoWWiki/",
   "repository": "https://github.com/aleffkol/WoWWiki",
   "course": "cstsi",
   "session": "2018.1",
   "subject": "ls",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "js"
   ],

@@ -1,13 +1,13 @@
 {
   "title": "Samuel Cabral Fotografia",
   "description": "Site de fotografia.",
-  "preview": "assets/thumbnails/samuel-fotografia.jpg",
+  "preview": "samuel-fotografia.jpg",
   "demo": "https://samueldcabral.github.io/samuelcabralfotografia/",
   "repository": "https://github.com/samueldcabral/samuelcabralfotografia",
   "course": "cstsi",
   "session": "2017.2",
   "subject": "lm",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "html",
     "css"

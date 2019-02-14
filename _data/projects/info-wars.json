@@ -1,13 +1,13 @@
 {
   "title": "Info Wars",
   "description": "O portal oferece informações detalhadas sobre os Filmes, Planetas e Naves da saga..",
-  "preview": "assets/thumbnails/info-wars.png",
+  "preview": "info-wars.png",
   "demo": "https://taysamendes.github.io/Info-Wars/",
   "repository": "https://github.com/taysamendes/Info-Wars",
   "course": "cstsi",
   "session": "2018.1",
   "subject": "ls",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "js"
   ],

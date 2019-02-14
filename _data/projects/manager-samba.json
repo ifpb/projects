@@ -1,12 +1,12 @@
 {
   "title": "MS - Manager samba",
   "description": "Prover um ambiente de serviço Web com uma interface gráfica de gerenciamento do serviço Samba de forma agrádevel, flexível e dinâmica.",
-  "preview": "assets/thumbnails/manager-samba.png",
+  "preview": "manager-samba.png",
   "repository": "https://github.com/andersonsaleslima/Projeto-DW",
   "course": "cstrc",
   "session": "2017.1",
   "subject": "dw",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "samba",
     "php",

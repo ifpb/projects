@@ -1,13 +1,13 @@
 {
   "title": "Império Veículos",
   "description": "Site de uma loja de carros usados que visa mostrar ofertas de carros disponíveis para venda, valores e condições de pagamento como também facilitar o contato entre o cliente e a empresa.",
-  "preview": "assets/thumbnails/imperio-veiculo.png",
+  "preview": "imperio-veiculo.png",
   "demo": "https://brunof85.github.io/imperio-veiculos/",
   "repository": "https://github.com/brunof85/imperio-veiculos",
   "course": "cstsi",
   "session": "2018.1",
   "subject": "lm",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "html",
     "css"

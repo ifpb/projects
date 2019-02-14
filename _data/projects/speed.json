@@ -1,13 +1,13 @@
 {
   "title": "Speed",
   "description": "Speed",
-  "preview": "assets/thumbnails/speed.png",
+  "preview": "speed.png",
   "demo": "https://kmlporto.github.io/Speed/",
   "repository": "https://github.com/kmlporto/Speed",
   "course": "cstsi",
   "session": "2017.1",
   "subject": "lm",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "html",
     "css"

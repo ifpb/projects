@@ -1,12 +1,12 @@
 {
   "title": "gbse",
   "description": "Projeto para bloqueio de sites e extensões através da utilização de uma interface web para o servidor proxy squid3",
-  "preview": "assets/thumbnails/gbse.png",
+  "preview": "gbse.png",
   "repository": "https://github.com/WillardRuben/gbse",
   "course": "cstsi",
   "session": "2017.1",
   "subject": "dw",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "samba-tool",
     "php",

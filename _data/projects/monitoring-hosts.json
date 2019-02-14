@@ -1,12 +1,12 @@
 {
   "title": "Monitoring Hosts",
   "description": "O Sistema tem uma interface simples e intuitiva que nos permite, através do protocolo SNMP, monitorar hosts em uma rede e visualizar detalhadamente dados coletados",
-  "preview": "assets/thumbnails/monitoring-hosts.png",
+  "preview": "monitoring-hosts.png",
   "repository": "https://github.com/brun0evangelista/projetoDw",
   "course": "cstrc",
   "session": "2016.2",
   "subject": "dw",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "snmp ",
     "php",

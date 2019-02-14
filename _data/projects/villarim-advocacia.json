@@ -1,13 +1,13 @@
 {
   "title": "Vilarrim Advocacia",
   "description": "O Projeto Vilarrim Advocacia trata-se de um site institucional e de informação acerca dos serviços prestados pelo profissional da área Jurídica Tadeu Villarim.",
-  "preview": "assets/thumbnails/villarim-advocacia.png",
+  "preview": "villarim-advocacia.png",
   "demo": "https://gelguimaraes.github.io/villarim-advocacia/site/",
   "repository": "https://github.com/gelguimaraes/villarim-advocacia",
   "course": "cstsi",
   "session": "2017.1",
   "subject": "lm",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "html",
     "css"

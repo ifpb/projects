@@ -1,13 +1,13 @@
 {
   "title": "Pastel",
   "description": "Pastel",
-  "preview": "assets/thumbnails/pastel.jpg",
+  "preview": "pastel.jpg",
   "demo": "https://assmblyus.github.io/ProjetoLM/index.html",
   "repository": "https://github.com/assmblyus/ProjetoLM",
   "course": "cstsi",
   "session": "2018.1",
   "subject": "lm",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "html",
     "css"

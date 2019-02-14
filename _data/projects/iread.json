@@ -1,13 +1,13 @@
 {
   "title": "Iread",
   "description": "Iread",
-  "preview": "assets/thumbnails/iread.jpg",
+  "preview": "iread.jpg",
   "demo": "https://Arushidesu.github.io/iread/",
   "repository": "https://github.com/Arushidesu/iread",
   "course": "cstsi",
   "session": "2018.1",
   "subject": "lm",
-  "campus": "João Pessoa",
+  "campus": "ifpb-jp",
   "topics": [
     "html",
     "css"
