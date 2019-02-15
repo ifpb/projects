@@ -1,0 +1,19 @@
+{
+  "title": "RockNation",
+  "description": "Site de uma loja fictícia de roupas de bandas de rock",
+  "preview": "rocknation.png",
+  "demo": "https://renataalbq.github.io/rocknation/",
+  "repository": "https://github.com/renataalbq/rocknation",
+  "course": "cstsi",
+  "session": "2018.2",
+  "subject": "lm",
+  "campus": "ifpb-jp",
+  "topics": [
+    "html",
+    "css"
+  ],
+  "owners": [
+    20182370024
+    20172370043
+
+  ]
