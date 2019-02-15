@@ -1,0 +1,17 @@
+{
+    "title": "AniZoneX",
+    "description": "Este site procura oferecer animes na melhor qualidade disponível",
+    "preview": "AniZoneX.jpg",
+    "demo": "https://ifpb.github.io/projects/",
+    "repository": "https://github.com/ifpb/projects",
+    "course": "cstsi",
+    "session": "2018.2",
+    "subject": "lm",
+    "campus": "ifpb-jp",
+    "topics": [
+      "lm"
+    ],
+    "owners": [
+      20182370033
+    ]
+  }
