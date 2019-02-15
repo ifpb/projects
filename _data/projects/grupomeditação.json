@@ -1,0 +1,18 @@
+{
+    "title": "Grupo Meditação",
+    "description": "Site destinado a divulgação do grupo de meditação",
+    "preview": "Grupomeditacao.png",
+    "demo": "https://lutercia.github.io/Medita-o-Pronto-html/",
+    "repository": "https://github.com/Lutercia/Medita-o-Pronto-html",
+    "course": "cstsi",
+    "session": "2018.2",
+    "subject": "lm",
+    "campus": "ifpb-jp",
+    "topics": [
+      "html",
+      "css"
+    ],
+    "owners": [
+   20181370017
+    ]
+  }
