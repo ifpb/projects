@@ -1,8 +1,8 @@
 {
     "title": "PokeCenter",
     "description": "Site para apreciar cultura japonesa e seus video games. Shout out to Pokemon!",
-    "preview": "projects-ifpb.png",
-    "demo": "",
+    "preview": "pokecenter.png",
+    "demo": "https://fricaro.github.io/pokecenter/",
     "repository": "https://github.com/fricaro/pokecenter",
     "course": "cstsi",
     "session": "2018.2",
