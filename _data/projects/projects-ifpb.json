@@ -1,0 +1,17 @@
+{
+  "title": "Projects IFPB",
+  "description": "Este portal tem como objetivo listar projetos construídos pelos alunos do IFPB.",
+  "preview": "projects-ifpb.png",
+  "demo": "https://ifpb.github.io/projects/",
+  "repository": "https://github.com/ifpb/projects",
+  "course": "cstsi",
+  "session": "2019.1",
+  "subject": "ls",
+  "campus": "ifpb-jp",
+  "topics": [
+    "js"
+  ],
+  "owners": [
+    20051370420
+  ]
+}

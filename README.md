@@ -6,11 +6,11 @@ O primeiro passo seria incluir o dados do projeto adicionando um arquivo em `_da
 
 ```json
 {
-  "title": "titulo-do-projeto",
-  "description": "Descreva do que se trata o projeto.",
-  "preview": "titulo-do-projeto.png",
-  "demo": "https://usuario.github.io/titulo-do-projeto",
-  "repository": "https://github.com/usuario/titulo-do-projeto",
+  "title": "Projects IFPB",
+  "description": "Este portal tem como objetivo listar projetos construídos pelos alunos do IFPB.",
+  "preview": "projects-ifpb.png",
+  "demo": "https://ifpb.github.io/projects/",
+  "repository": "https://github.com/ifpb/projects",
   "course": "cstsi",
   "session": "2019.1",
   "subject": "ls",
