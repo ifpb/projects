@@ -1,0 +1,22 @@
+
+{
+  "title": "Python Documentation",
+  "description": "Mini documentação do python que seja 'beginner friendly' para iniciantes no mundo da programação.",
+  "preview": "learn_py.png",
+  "demo": "danilomarques1.github.io/Projeto-LM",
+  "repository": "https://github.com/DaniloMarques1/Projeto-LM",
+  "course": "csti",
+  "session": "2018.2",
+  "subject": "lm",
+  "campus": "ifpb-jp",
+  "topics": [
+    "html",
+    "css"
+
+  ],
+  "owners": [
+    20182370036,
+    2012370016,
+    20182370023
+  ] 
+}
