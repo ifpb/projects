@@ -1,9 +1,9 @@
 {
     "title": "Firewall Web Basic",
     "description": "Este projeto tem a finalidade de criar regras basicas de firewall via web.",
-    "preview": "projects-ifpb.png",
+    "preview": "firewall-web-basic.png",
     "demo": "",
-    "repository": "https://github.com/ifpb/projects",
+    "repository": "https://github.com/IlloAtayde/desenv-web",
     "course": "cstrc",
     "session": "2018.2",
     "subject": "dw",
@@ -16,6 +16,6 @@
     ],
     "owners": [
       20161380041,
-      20152380137,
+      20152380137
     ]
   }
