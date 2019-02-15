@@ -1,0 +1,22 @@
+{
+    "title": "Irrigação Residencial Inteligente Sistemática",
+    "description": "Sistema inteligente, com aplicação web e protótipo, no qual o usuário consiga automatizar sua irrigação. Dados do ambiente serão coletados por sensores de umidade do solo e temperatura, informando dinamicamente ao sistema Web. Os interesses do usuário e dados dos sensores serão interpretados pelo microcontrolador(ESP32), acionando a irrigação ideal.",
+    "preview": "iris.png",
+    "demo": "https://ifpb.github.io/projects/",
+    "repository": "https://github.com/mateusgomesc7/IRIS",
+    "course": "csbee",
+    "session": "2018.2",
+    "subject": "dw",
+    "campus": "ifpb-jp",
+    "topics": [
+      "js",
+      "ESP32",
+      "php",
+      "mysql",
+      "html"
+    ],
+    "owners": [
+      20162610012,
+      20162610015
+    ]
+  }
