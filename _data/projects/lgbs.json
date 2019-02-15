@@ -1,7 +1,7 @@
 {
     "title": "Shell frontend lvm - LBGS",
     "description": "Este portal tem como objetivo alterar lvm de maneira gráfica junto de listar algumas utilizades para o usuario.",
-    "preview": "lgbs.png",
+    "preview": "lbgs.png",
     "demo": "",
     "repository": "https://github.com/MaxNobrega/projetodw20182-LBGS",
     "course": "cstrc",
