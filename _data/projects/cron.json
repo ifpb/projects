@@ -1,0 +1,20 @@
+{
+  "title": "cron",
+  "description": "Criar um interface grafica para o uso do Cron(Agendador de tarefas)",
+  "preview": "cron.png",
+  "repository": "https://github.com/eatereyes/CronProject",
+  "course": "cstrc",
+  "session": "2018.2",
+  "subject": "dw",
+  "campus": "ifpb-jp",
+  "topics": [
+    "cron",
+    "php",
+    "MySQL",
+    "js"
+  ],
+  "owners": [
+    20171380012,
+    20152380145
+  ]
+}
