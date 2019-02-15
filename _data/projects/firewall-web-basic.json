@@ -9,7 +9,10 @@
     "subject": "dw",
     "campus": "ifpb-jp",
     "topics": [
-      "js"
+      "js",
+      "php",
+      "mysql",
+      "firewall"
     ],
     "owners": [
       20161380041,
