@@ -1,0 +1,17 @@
+{
+    "title": "The Office",
+    "description": "Este site tem como objetivo informar sobre a série americana The Office",
+    "preview": "projects-ifpb.png",
+    "demo": "https://maluqueiroz.github.io/theoffice.html",
+    "repository": "https://github.com/maluqueiroz/maluqueiroz.github.io",
+    "course": "cstsi",
+    "session": "2019.1",
+    "subject": "ls",
+    "campus": "ifpb-jp",
+    "topics": [
+      "js"
+    ],
+    "owners": [
+      20181370005
+    ]
+  }
