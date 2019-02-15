@@ -1,7 +1,7 @@
 {
   "title": "Cron",
   "description": "Criar um interface grafica para o uso do Cron(Agendador de tarefas)",
-  "preview": "https://github.com/eatereyes/projects/blob/master/assets/thumbnails/projects/cron.png",
+  "preview": "cron.png",
   "repository": "https://github.com/eatereyes/CronProject",
   "course": "CST REDES",
   "session": "2018.2",
