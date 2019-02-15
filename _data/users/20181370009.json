@@ -1,4 +1,11 @@
-{
-  "id": 20181370009,
-  "name": "Romero Caetano Reis Junior"
+{ 
+  "id": "20181370009",
+  "nomeCompactado": "Romero Caetano",
+  "nome": "Romero Caetano Reis Junior",
+  "email": "romero.reis2000@gmail.com",
+  "avatar": "romero.jpg",
+  "curso": "cstsi",
+  "campus": "ifpb-jp",
+  "github": "https://github.com/RomeroCaetano",
+  "linkedin":"www.linkedin.com/in/romero-reis"
 }
