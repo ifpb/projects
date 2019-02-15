@@ -1,0 +1,17 @@
+{
+    "title": "Info-Movies",
+    "description": "Uma página que fornece informações sobre filmes e séries.",
+    "preview": "info-movies.png",
+    "demo": "https://lucas-salles.github.io/info-movies/",
+    "repository": "https://github.com/lucas-salles/info-movies",
+    "course": "cstsi",
+    "session": "2018.2",
+    "subject": "ls",
+    "campus": "ifpb-jp",
+    "topics": [
+      "js"
+    ],
+    "owners": [
+      20181370042
+    ]
+}
