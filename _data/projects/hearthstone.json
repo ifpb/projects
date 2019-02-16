@@ -1,0 +1,17 @@
+{
+  "title": "Hearthstone",
+  "description": "Este site tem como objetivo disponibilizar uma biblioteca de cards do jogo Hearthstone, possibilitando também a criação de decks.",
+  "preview": "hearthstone.png",
+  "demo": "https://mauriciopcj.github.io/hearthstone",
+  "repository": "https://github.com/mauriciopcj/hearthstone",
+  "course": "cstsi",
+  "session": "2018.2",
+  "subject": "ls",
+  "campus": "ifpb-jp",
+  "topics": [
+    "js"
+  ],
+  "owners": [
+    20181370027
+  ]
+}
