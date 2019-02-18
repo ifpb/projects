@@ -1,0 +1,17 @@
+{
+    "title": "JR Automotivo",
+    "description": "Este site tem como objetivo divulgar os serviços da oficina.",
+    "preview": "jrautomotivo.png",
+    "demo": "https://guigomes94.github.io/jrautomotivo/",
+    "repository": "https://github.com/guigomes94/jrautomotivo/",
+    "course": "cstsi",
+    "session": "2018.2",
+    "subject": "lm",
+    "campus": "ifpb-jp",
+    "topics": [
+      "lm"
+    ],
+    "owners": [
+      20182370007
+    ]
+  }
