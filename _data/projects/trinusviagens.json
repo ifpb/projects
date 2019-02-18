@@ -1,0 +1,20 @@
+{
+    "title": "Trinus Viagens",
+    "description": "Este portal tem como objetivo ofercer pacotes de viagens.",
+    "preview": "trinusviagens.png",
+    "demo": "https://hidekazu1999.github.io/trinusviagens/pages/index.html",
+    "repository": "https://github.com/Hidekazu1999/trinusviagens",
+    "course": "cstsi",
+    "session": "2018.2",
+    "subject": "lm",
+    "campus": "ifpb-jp",
+    "topics": [
+      "html",
+      "css"
+    ],
+    "owners": [
+      20182370032,
+      20182370045,
+      20182370040
+    ]
+  }
