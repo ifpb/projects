@@ -1,0 +1,19 @@
+{
+    "title": "MakerArtes",
+    "description": "Site de venda de trabalhos artisticos e contrato de serviços",
+    "preview": "makerartes.png",
+    "demo": "https://26messias26.github.io/projetolm.makerartes/",
+    "repository": "https://github.com/26messias26/projetolm.makerartes",
+    "course": "cstsi",
+    "session": "2018.2",
+    "subject": "lm",
+    "campus": "ifpb-jp",
+    "topics": [
+      "html",
+      "css"
+    ],
+    "owners": [
+      20182370029,
+      20182370030
+    ]
+  }
