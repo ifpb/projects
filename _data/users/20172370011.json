@@ -1,4 +1,9 @@
-{
-  "id": 20172370011,
-  "name": "Dhiego"
-}
+{ 
+    "id": "20172370011",
+    "nomeCompactado": "Dhiego bandeira nóbrega",
+    "nome": "Dhiego bandeira nóbrega",
+    "email": "diegocdbc2@gmail.com",
+    "avatar": "20172370011.jpg",
+    "curso": "cstsi",
+    "campus": "ifpb-jp"
+  }

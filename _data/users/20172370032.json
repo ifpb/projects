@@ -1,4 +1,9 @@
-{
-  "id": 20172370032,
-  "name": "Gabriel Santos"
-}
+{ 
+    "id": "20172370032",
+    "nomeCompactado": "Gabriel santos de lima franco",
+    "nome": "Gabriel santos de lima franco",
+    "email": "88181514gabriel@gmail.com",
+    "avatar": "20172370032.jpg",
+    "curso": "cstsi",
+    "campus": "ifpb-jp"
+  }
