@@ -1,0 +1,17 @@
+{
+  "title": "Central Code",
+  "description": "O Website Central-Code é um projeto da disciplina linguagem de script do curso T.S.I, inspirado pelo exploitdb.com baseia-se em disponibilizar de forma simples e fácil shellcoders para exploração de várias das vulnerabilidades conhecidas para diversas plataformas.",
+  "preview": "imgCentralCode.png",
+  "demo": "https://r7k8iz9.github.io/centralcode/",
+  "repository": "https://github.com/r7k8iz9/centralcode",
+  "course": "cstsi",
+  "session": "2018.2",
+  "subject": "ls",
+  "campus": "ifpb-jp",
+  "topics": [
+    "js"
+  ],
+  "owners": [
+    20181370014
+  ]
+}
