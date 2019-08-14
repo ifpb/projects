@@ -1,0 +1,19 @@
+{
+  "title": "DevWork Search",
+  "description": "DevWork Search é uma plataforma em que o usuário pode procurar empresas de tecnologia em sua cidade.",
+  "preview": "devworksearch.jpg",
+  "demo": "https://addijs.github.io/DevWorksearch/",
+  "repository": "https://github.com/addijs/DevWorksearch",
+  "course": "cstsi",
+  "session": "2019.1",
+  "subject": "ls",
+  "campus": "ifpb-jp",
+  "topics": [
+    "js"
+  ],
+  "owners": [
+    20182370004,
+    20182370019,
+    20182370015
+  ]
+}
