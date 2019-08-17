@@ -1,0 +1,1 @@
+[{"Destino":"0.0.0.0","Roteador":"172.18.0.1","MascaraGen":"0.0.0.0","Opcoes":"UG","MSS":"0","Janela":"0","irtt":"0","Iface":"eth0"},{"Destino":"172.18.0.0","Roteador":"0.0.0.0","MascaraGen":"255.255.0.0","Opcoes":"U","MSS":"0","Janela":"0","irtt":"0","Iface":"eth0"}]

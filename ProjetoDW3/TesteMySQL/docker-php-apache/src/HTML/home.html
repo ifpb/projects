@@ -1,0 +1,213 @@
+<?php
+  session_start();
+  if(!isset($_SESSION['auth']) || $_SESSION['auth'] === false)
+    header('Location: ../login-php/login.php');
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Ruda" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link href="../CSS/home.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="../HTML/home.html">SERVER MONITOR</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end admin-link" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="#">
+            <i class="material-icons">date_range</i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#">
+            <i class="material-icons">notifications</i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="../login-php/logout.php">
+            <img class="user" src="../IMG/admin.png" alt="admin">
+          </a>
+        </li>
+    </div>
+  </nav>
+  <main class="container" id="res">
+
+    <div class="row">
+      <div class="col">
+        <section class="card" id="hostname">
+          <header class="card-header btn btn-info"><i class="material-icons text-center">info_outline</i> GENERAL INFO</header>
+          <main class="card-body">
+            <table class="table info">
+              <tbody>
+              </tbody>
+            </table>
+          </main>
+        </section>
+      </div>
+
+      <div class="col">
+        <section id="cpu-status" class="card">
+          <header class="card-header btn btn-info"><i class="material-icons">memory</i>  CPU LOAD</header>
+          <main class="card-body">
+            <table class="table cpui">
+              <thead>
+                <tr>
+                  <!--
+                    <th>Instant</th>
+                  <th>Load Average</th>
+                  -->
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+            <div class="chart my-3">
+              <canvas id="cpu-chart" width="60" height="30"></canvas>
+            </div>
+          </main>
+        </section>
+      </div>
+
+      <div class="col">
+        <section id="memory-status" class="card">
+          <header class="card-header btn btn-info"><i class="material-icons">straighten</i>  MEMORY</header>
+          <main class="card-body">
+            <div id="memory-size"></div>
+            <table class="table mem">
+              <thead>
+                <tr>
+                  <th>Used</th>
+                  <th>Total</th>
+                  <th>Avaliable</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+            <div class="chart my-3">
+              <canvas id="memory-chart" width="60" height="30"></canvas>
+            </div>
+          </main>
+        </section>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+          
+        <section class="card">
+            <a href="../PHP/processosall.php" class="custom-card">
+          <header class="card-header btn-info"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>PROCESSOS</header>
+        </a>
+          <main class="card-body">
+            <h2 style="text-align:center;">TOP 4</h2>
+            <table id="top-process" class="table pro">
+              <thead>
+                <tr>
+                  <th>PID</th>
+                  <th>USER</th>
+                  <th>CPU%</th>
+                  <th>MEM%</th>
+                  <th>Command</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </main>
+        </section>
+      </div>
+
+      <div class="col">
+        <section class="card">
+          <header class="card-header btn btn-info"><i class="material-icons">storage</i>  DISK USAGE</header>
+          <main class="card-body">
+            <table id="disk-usage" class="table hd">
+              <thead>
+                <tr>
+                  <th>Tamanho</th>
+                  <th>Usado</th>
+                  <th>Sist. Arquivo</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </main>
+        </section>
+      </div>
+
+      <div class="col">
+        <section class="card">
+          <header class="card-header btn btn-info"><i class="material-icons">cloud_queue</i>  NETWORK INTERFACES</header>
+          <main class="card-body">
+            <table class="table net">
+              <thead>
+                <tr>
+                  <th>Destino</th>
+                  <th>Roteador</th>
+                  <th>Iface</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+              <tfoot>
+              </tfoot>
+            </table>
+          </main>
+        </section>
+      </div>
+    </div>
+
+<!--PHP-->
+
+    <?php
+    include('../PHP/processos.php');
+    include('../PHP/cpuinfo.php');
+    include('../PHP/generalinfo.php');
+    include('../PHP/hdinfo.php');
+    include('../PHP/netinfo.php');
+    include('../PHP/memoinfo.php');
+    include('auth.php');
+    ?>
+
+  </main>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+    integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+  <script src="../JAVASCRIPT/jason.js"></script>
+  <script src="../JAVASCRIPT/mouseon.js"></script>
+  <script src="../JAVASCRIPT/teste.js"></script>
+
+  <!--PHP-->
+  <script src="../PHP/processos.php"></script>
+  <script src="../PHP/buscaprocesso.php"></script>
+  <script src="../PHP/cpuinfo.php"></script>
+  <script src="../PHP/generalinfo.php"></script>
+  <script src="../PHP/hdinfo.php"></script>
+  <script src="../PHP/memoinfo.php"></script>
+  <script src="../PHP/netinfo.php"></script>
+  <script src="auth.php"></script>
+
+</body>
+
+</html>

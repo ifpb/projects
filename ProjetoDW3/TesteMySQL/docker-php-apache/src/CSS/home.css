@@ -1,0 +1,75 @@
+body {
+    color: #797979;
+    background: #f2f2f2;
+    font-family: 'Ruda', sans-serif;
+    padding: 0px !important;
+    margin: 0px !important;
+    font-size: 13px;
+    margin: 0;
+  }
+  
+  a.custom-card,
+  a.custom-card:hover {
+    color: inherit;
+    font-family: 'Ruda', sans-serif;
+    font-size: 16px;
+  }
+
+  /* navbar */
+  .navbar {
+    background: #008b8b;
+    border-bottom: 1px solid black;
+    padding: .4rem 1rem;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .navbar .navbar-brand {
+    color: #ffffff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.7rem;
+  }
+  
+  .navbar .admin-link .material-icons {
+    font-size: 30px;
+  }
+  
+  .navbar img.user {
+    width: 30px;
+    border-radius: 50%;
+    margin-left: 5px;
+  }
+  
+  /* main form */
+  .container form button {
+    background-color: #797979;
+    color: #fff;
+    font-size: .5rem;
+  }
+  
+  /* main cards */
+  .container .row {
+    margin: 2rem auto;
+  }
+  .card-header{
+      background: #008b8b;
+      color: white;
+      text-align: center;
+  }
+  .table{
+      text-align: center;
+  }
+  .material-icons{
+    position: relative;
+  }
+ .card-body {
+  min-height: 308px;
+ }
+ .col{
+  max-width: 410px;
+ }
