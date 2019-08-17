@@ -1,7 +1,7 @@
 {
   "title": "Firewall Guard",
   "description": "Este projeto consiste em uma aplicação Web para gerenciar as configurações do serviço de Firewall.",
-  "preview": "https://camo.githubusercontent.com/b77a1d1cee66c6bce5fc410b1de9d9766e3173f7/68747470733a2f2f692e696d6775722e636f6d2f554852494b41772e706e67",
+  "preview": "firewall-guard.png",
   "repository": "https://github.com/elizot/firewall-guard",
   "course": "cstrc",
   "session": "2019.1",
