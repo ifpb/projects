@@ -1,8 +1,7 @@
 {
   "title": "Server Monitoring",
   "description": "Dashboard web para monitoramento e informações do servidor(es).",
-  "preview": "preview.png",
-  "demo": "https://ifpb.github.io/projects/",
+  "preview": "server-monitor.png",
   "repository": "https://github.com/JacKanguru/dwprojeto",
   "course": "cstrc",
   "session": "2019.1",
