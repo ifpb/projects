@@ -1,0 +1,298 @@
+[
+    {
+        "cod":11,
+        "nome":"Algoritmos e Programação Estruturada",
+        "periodo": 1,
+        "requisito": 0,
+        "cht": 83,
+        "chs":5
+    },
+    {
+        "cod":12,
+        "nome":"Fundamentos da Computação",
+        "periodo": 1,
+        "requisito": 0,
+        "cht": 50,
+        "chs":3
+    },
+    {
+        "cod":13,
+        "nome":"Fundamentos de Redes de Computadores",
+        "periodo": 1,
+        "requisito": 0,
+        "cht": 67,
+        "chs":4
+    },
+    {
+        "cod":14,
+        "nome":"Língua Portuguesa",
+        "periodo": 1,
+        "requisito": 0,
+        "cht": 50,
+        "chs":3
+    },
+    {
+        "cod":15,
+        "nome":"Linguagem de Marcação",
+        "periodo": 1,
+        "requisito": 0,
+        "cht": 63,
+        "chs":4
+    },
+    {
+        "cod":16,
+        "nome":"Matemática Aplicada a SI",
+        "periodo": 1,
+        "requisito": 0,
+        "cht": 83,
+        "chs":5
+    },
+    {
+        "cod":21,
+        "nome":"Banco de Dados I",
+        "periodo": 2,
+        "requisito": 12,
+        "cht": 67,
+        "chs":4
+    },
+    {
+        "cod":22,
+        "nome":"Ciência, Tecnologia e Meio Ambiente",
+        "periodo": 2,
+        "requisito": 0,
+        "cht": 33,
+        "chs":2
+    },
+    {
+        "cod":23,
+        "nome":"Estrutura de Dados",
+        "periodo": 2,
+        "requisito": 11,
+        "cht": 67,
+        "chs":4
+    },
+    {
+        "cod":24,
+        "nome":"Fundamentos da  Metodologia",
+        "periodo": 2,
+        "requisito": 14,
+        "cht": 33,
+        "chs":2
+    },
+    {
+        "cod":25,
+        "nome":"Linguagem de Script",
+        "periodo": 2,
+        "requisito": [11,15],
+        "cht": 67,
+        "chs":4
+    },
+    {
+        "cod":26,
+        "nome":"Protocolos",
+        "periodo": 2,
+        "requisito": 13,
+        "cht": 67,
+        "chs":4
+    },
+    {
+        "cod":27,
+        "nome":"Sistemas Operacionais",
+        "periodo": 2,
+        "requisito": 12,
+        "cht": 83,
+        "chs":5
+    },
+    {
+        "cod":31,
+        "nome":"Banco de Dados II",
+        "periodo": 3,
+        "requisito": [21,25],
+        "cht": 83,
+        "chs":5
+    },
+    {
+        "cod":32,
+        "nome":"Interação Humano-Computador",
+        "periodo": 3,
+        "requisito": 25,
+        "cht": 67,
+        "chs":4
+    },
+    {
+        "cod":33,
+        "nome":"Lingua Inglesa",
+        "periodo": 3,
+        "requisito": 0,
+        "cht": 50,
+        "chs":3
+    },
+    {
+        "cod":34,
+        "nome":"Probabilidade e Estatítica",
+        "periodo": 3,
+        "requisito": 16,
+        "cht": 67,
+        "chs":4
+    },
+    {
+        "cod":35,
+        "nome":"Programação Orientada a Objetos",
+        "periodo": 3,
+        "requisito": 23,
+        "cht": 100,
+        "chs":6
+    },
+    {
+        "cod":36,
+        "nome":"Psicologia do Trabalho",
+        "periodo": 3,
+        "requisito": 0,
+        "cht": 50,
+        "chs":3
+    },
+    {
+        "cod":41,
+        "nome":"Análise e Projeto de Sistemas",
+        "periodo": 4,
+        "requisito": [21,35],
+        "cht": 67,
+        "chs":4
+    },
+    {
+        "cod":42,
+        "nome":"Ética e Direitos Humanos",
+        "periodo": 4,
+        "requisito": 0,
+        "cht": 33,
+        "chs":2
+    },
+    {
+        "cod":43,
+        "nome":"Legislação Social",
+        "periodo": 4,
+        "requisito": 0,
+        "cht": 50,
+        "chs":3
+    },
+    {
+        "cod":44,
+        "nome":"Métodos e Técnica de Pesquisa",
+        "periodo": 4,
+        "requisito": [24,34],
+        "cht": 50,
+        "chs":3
+    },
+    {
+        "cod":45,
+        "nome":"Persistência de Objetos",
+        "periodo": 4,
+        "requisito": [31,35],
+        "cht": 67,
+        "chs":4
+    },
+    {
+        "cod":46,
+        "nome":"Programação para Web I",
+        "periodo": 4,
+        "requisito": [21,25,35],
+        "cht": 67,
+        "chs":4
+    },
+    {
+        "cod":47,
+        "nome":"Segurança de Dados",
+        "periodo": 4,
+        "requisito": 26,
+        "cht": 50,
+        "chs":3
+    },
+    {
+        "cod":51,
+        "nome":"Comércio Eletrônico",
+        "periodo": 5,
+        "requisito": [46, 47],
+        "cht": 50,
+        "chs":3
+    },
+    {
+        "cod":52,
+        "nome":"Empreendedorismo",
+        "periodo": 5,
+        "requisito": 0,
+        "cht": 57,
+        "chs":4
+    },
+    {
+        "cod":53,
+        "nome":"Gerência de Projetos de Software",
+        "periodo": 5,
+        "requisito": [41,48],
+        "cht": 67,
+        "chs":4
+    },
+    {
+        "cod":54,
+        "nome":"Padrões de Projeto de Software",
+        "periodo": 5,
+        "requisito": 41,
+        "cht": 67,
+        "chs":4
+    },
+    {
+        "cod":55,
+        "nome":"Programação para Dispositivos Móveis",
+        "periodo": 5,
+        "requisito": 35,
+        "cht": 67,
+        "chs":4
+    },
+    {
+        "cod":56,
+        "nome":"Programação para Web II",
+        "periodo": 5,
+        "requisito": [41, 45, 46],
+        "cht": 100,
+        "chs":6
+    },
+    {
+        "cod":61,
+        "nome":"Desenvolvimento Ágil para Web",
+        "periodo": 6,
+        "requisito": 48,
+        "cht": 50,
+        "chs":3
+    },
+    {
+        "cod":62,
+        "nome":"Desenvolvimento e Execussão de Projeotos de Software",
+        "periodo": 6,
+        "requisito": [53,56],
+        "cht": 67,
+        "chs":4
+    },
+    {
+        "cod":63,
+        "nome":"Inteligência Empresarial",
+        "periodo": 6,
+        "requisito": 31,
+        "cht": 67,
+        "chs":4
+    },
+    {
+        "cod":64,
+        "nome":"Programação Distribuída",
+        "periodo": 6,
+        "requisito": 56,
+        "cht": 50,
+        "chs":3
+    },
+    {
+        "cod":65,
+        "nome":"Tópicos Especiais",
+        "periodo": 6,
+        "requisito": 0,
+        "cht": 50,
+        "chs":3
+    }
+]
