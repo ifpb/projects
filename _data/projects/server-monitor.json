@@ -1,0 +1,21 @@
+{
+  "title": "Server Monitoring",
+  "description": "Dashboard web para monitoramento e informações do servidor(es).",
+  "preview": "server-monitor.png",
+  "repository": "https://github.com/JacKanguru/dwprojeto",
+  "course": "cstrc",
+  "session": "2019.1",
+  "subject": "dw",
+  "campus": "ifpb-jp",
+  "topics": [
+    "js",
+    "php",
+    "css",
+    "html",
+    "mysql"
+  ],
+  "owners": [
+    "20171380023",
+    "20171380013"
+  ]
+}
