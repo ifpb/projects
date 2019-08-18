@@ -1,0 +1,20 @@
+{
+  "title": "Vanguarda Restaurante",
+  "description": "Este site simula o atendimento de um restaurante",
+  "preview": "image-cart.jpg",
+  "demo": "",
+  "repository": "https://github.com/jiyose12/IFPB-vanguarda-restaurante",
+  "course": "cstsi",
+  "session": "2019.1",
+  "subject": "pw1",
+  "campus": "ifpb-jp",
+  "topics": [
+    "laravel",
+    "php",
+    "migration",
+    "eloquent"
+  ],
+  "owners": [
+    20152370123
+  ]
+}

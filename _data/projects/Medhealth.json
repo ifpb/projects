@@ -1,0 +1,19 @@
+{
+    "title": "Medhealth",
+    "description": "Sistema de gerenciamento de medicamentos para pessoas que fazem uso frequente.",
+    "preview": "medhealth.png",
+    "repository": "https://github.com/diego98martins/gerenciadordemedicamentos",
+    "course": "csbee",
+    "session": "2019.1",
+    "subject": "dw",
+    "campus": "ifpb-jp",
+    "topics": [
+      "js",
+      "html",
+      "php",
+      "css"
+    ],
+    "owners": [
+      20171610018
+    ]
+  }

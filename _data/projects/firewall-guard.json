@@ -1,0 +1,18 @@
+{
+  "title": "Firewall Guard",
+  "description": "Este projeto consiste em uma aplicação Web para gerenciar as configurações do serviço de Firewall.",
+  "preview": "firewall-guard.png",
+  "repository": "https://github.com/elizot/firewall-guard",
+  "course": "cstrc",
+  "session": "2019.1",
+  "subject": "ls",
+  "campus": "ifpb-jp",
+  "topics": [
+    "js","html", "css", "php", "mysql"    
+  ],
+  "owners": [
+    20172380006,
+    20172380040,
+    20172380033
+  ]
+}
