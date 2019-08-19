@@ -1,0 +1,17 @@
+{
+    "title": "Egressos IFPB",
+    "description": "Este projeto tem como objetivo listar os alunos egressos  do IFPB.",
+    "preview": "egressos-ifpb.jpg",
+    "demo": "https://angela-oliveira.github.io/egressos-ifpb/",
+    "repository": "https://github.com/angela-oliveira/egressos-ifpb",
+    "course": "cstsi",
+    "session": "2019.1",
+    "subject": "ls",
+    "campus": "ifpb-jp",
+    "topics": [
+      "js"
+    ],
+    "owners": [
+      20181370028
+    ]
+  }
