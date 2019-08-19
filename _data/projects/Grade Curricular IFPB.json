@@ -1,0 +1,17 @@
+{
+  "title": "Grade Curricular IFPB",
+  "description": "Esse projeto tem como objetivo listar as cadeiras do curso de TSI do IFPB e seus requisitos",
+  "preview": "grade-curricular-ifpb.png",
+  "demo": "https://ifpb.github.io/projects/",
+  "repository": "https://github.com/ifpb/projects",
+  "course": "cstsi",
+  "session": "2019.1",
+  "subject": "ls",
+  "campus": "ifpb-jp",
+  "topics": [
+    "js"
+  ],
+  "owners": [
+    20181370037
+  ]
+}
