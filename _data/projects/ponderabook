@@ -1,0 +1,17 @@
+{
+  "title": "Pondera Book",
+  "description": "Site que possibilita a avaliação de livros.",
+  "preview": "ponderabook.png",
+  "demo": "https://26messias26.github.io/PonderaBook",
+  "repository": "https://github.com/26messias26/PonderaBook",
+  "course": "cstsi",
+  "session": "2019.1",
+  "subject": "ls",
+  "campus": "ifpb-jp",
+  "topics": [
+    "js","javascript","google books"
+  ],
+  "owners": [
+    20182370029, 20182370028
+  ]
+}
