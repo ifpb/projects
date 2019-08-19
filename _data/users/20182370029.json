@@ -1,4 +1,12 @@
 { 
-    "id": "20182370029",
-    "nomeCompactado": "Messias Souza"
-  }
+  "id": "20182370029",
+  "nomeCompactado": "Messias Souza",
+  "nome": "Messias Severino de Souza",
+  "email": "messias26severino@gmail.com",
+  "avatar": "20182370029.png",
+  "curso": "cstsi",
+  "campus": "ifpb-jp",
+  "linkedin": "https://www.linkedin.com/in/messias-severino-904838176/",
+  "github": "https://github.com/26messias26",
+  "facebook": "https://www.facebook.com/messias.severino.26"
+}
