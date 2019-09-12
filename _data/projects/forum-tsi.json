@@ -1,0 +1,18 @@
+{
+  "title": "Forum TSI",
+  "description": "Criação de um fórum para discutir disciplinas e assuntos relacionados ao curso de TSI utilizando o framework laravel.",
+  "preview": "musi-collab.jpg",
+  "demo": "",
+  "repository": "https://github.com/felipersdf/ForumDiscussao",
+  "course": "cstsi",
+  "session": "2019.1",
+  "subject": "pw",
+  "campus": "ifpb-jp",
+  "topics": [
+    "php",
+    "laravel"
+  ],
+  "owners": [
+    20171370006
+  ]
+}
