@@ -1,0 +1,18 @@
+{
+  "title": "Cinema LM",
+  "description": "Página de cinema com filmes em cartaz, estrutura e contato.",
+  "preview": "cinema-lm.png",
+  "demo": "https://dicardoso.github.io/cinemaLM/",
+  "repository": "https://github.com/dicardoso/cinemaLM/",
+  "course": "cstsi",
+  "session": "2019.1",
+  "subject": "lm",
+  "campus": "ifpb-jp",
+  "topics": [
+    "html",
+    "css"
+  ],
+  "owners": [
+    20191370005
+  ]
+}
