@@ -1,0 +1,19 @@
+{
+    "title": "Tributo a Isao Takahata",
+    "description": "Um site tributo com a biografia e filmografia do diretor do Studio Ghibili.",
+    "preview": "tributo-isao-takahata.png",
+    "demo": "https://alvesitalo.github.io/isaotakahata",
+    "repository": "https://github.com/alvesitalo/isaotakahata",
+    "course": "cstsi",
+    "session": "2019.2",
+    "subject": "lm",
+    "campus": "ifpb-jp",
+    "topics": [
+      "html5",
+      "css3"
+    ],
+    "owners": [
+      20191370001,
+      20192370026
+    ]
+  }
