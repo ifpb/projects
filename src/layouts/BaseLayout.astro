@@ -10,12 +10,16 @@ const { pageTitle } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
+    <title>{pageTitle ?? 'Projetos'}</title>
   </head>
   <body class="bg-gray-100">
     <NavBar />
     <div class="container lg:max-w-screen-lg mx-auto px-4 py-16">
-      <h1 class="text-center pb-16 text-4xl font-bold">{pageTitle}</h1>
+      {
+        pageTitle && (
+          <h1 class="text-center pb-16 text-4xl font-bold">{pageTitle}</h1>
+        )
+      }
       <slot />
     </div>
   </body>
