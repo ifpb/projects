@@ -2,24 +2,27 @@
 import { getCollection } from 'astro:content';
 import ProjectCard from '../../../components/ProjectCard.astro';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import {
-  getAllProjectsTags,
-  getProjectsByTag,
-} from '../../../helpers/projects';
+import { getAllProjectTags, getProjectsByTag } from '../../../helpers/projects';
 import PaginationIndex from '../../../components/PaginationIndex.astro';
 import { PAGE_SIZE } from '../../../consts';
 
 export async function getStaticPaths({ paginate }) {
   const allProjects = await getCollection('projects');
 
-  const tags = getAllProjectsTags(allProjects);
+  allProjects.sort((a, b) => a.data.title.localeCompare(b.data.title));
 
-  return tags.map((tag) => {
-    return paginate(getProjectsByTag(allProjects, tag), {
+  const tags = await getAllProjectTags();
+
+  const page = tags.map(async (tag) => {
+    const projects = await getProjectsByTag(tag);
+
+    return paginate(projects, {
       params: { tag },
       pageSize: PAGE_SIZE,
     });
   });
+
+  return Promise.all(page);
 }
 
 const { page } = Astro.props;

@@ -4,21 +4,37 @@ import StudentCard from '../../components/StudentCard.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PaginationIndex from '../../components/PaginationIndex.astro';
 import { PAGE_SIZE } from '../../consts';
+import { getAllStudentTagGroups } from '../../helpers/students';
+import Filter from '../../components/Filter.astro';
 
 export async function getStaticPaths({ paginate }) {
   const allStudents = await getCollection('students');
 
-  return paginate(allStudents, { pageSize: PAGE_SIZE });
+  const tags = await getAllStudentTagGroups();
+
+  allStudents.sort(
+    (a, b) =>
+      Number(!!b.data.isGraduated) - Number(!!a.data.isGraduated) ||
+      a.data.compactName.localeCompare(b.data.compactName)
+  );
+
+  return paginate(allStudents, {
+    pageSize: PAGE_SIZE,
+    props: { tags },
+  });
 }
 
-const { page } = Astro.props;
+const { page, tags } = Astro.props;
 ---
 
-<BaseLayout pageTitle="Estudantes">
+<BaseLayout pageTitle="Alunos do IFPB">
   <div
-    class="grid justify-items-stretch gap-5 grid-cols-1 md:grid-cols-3 lg:grid-cols-4"
+    class="grid justify-items-center gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mx-auto"
   >
     {page.data.map((student) => <StudentCard student={student} />)}
   </div>
+
   {page.lastPage > 1 && <PaginationIndex page={page} pagePath="/students" />}
+
+  <!-- <Filter tags={tags} /> -->
 </BaseLayout>

@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon';
+import { getProjectsByStudent } from '../helpers/projects';
 
 const { student } = Astro.props;
 
@@ -28,8 +29,12 @@ let icons = [
   },
 ];
 
+const projects = await getProjectsByStudent(student.data.id);
+
+const hasProjects = projects.length > 0;
+
 let links = icons
-  .filter((link) => student.data[link.name] || link.name === 'code')
+  .filter((link) => student.data[link.name] || hasProjects)
   .map((link) => ({
     ...link,
     url: link.name === 'code' ? codeUrl : student.data[link.name],
@@ -49,7 +54,7 @@ let links = icons
     <img
       src={student.data.avatar}
       alt={student.data.name}
-      class="animate-pulse bg-gray-300 object-cover w-[233px] h-[233px] mx-auto max-sm:mt-2"
+      class="animate-pulse bg-gray-300 object-cover w-[233px] h-[233px] mx-auto"
       onload="this.onload=null;this.classList.remove('animate-pulse');"
       onerror="this.onerror=null;this.classList.remove('animate-pulse', 'bg-neutral-400');this.src='/projects/imgs/avatar.svg';"
     />

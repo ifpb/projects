@@ -8,6 +8,8 @@ import { PAGE_SIZE } from '../../consts';
 export async function getStaticPaths({ paginate }) {
   const allProjects = await getCollection('projects');
 
+  allProjects.sort((a, b) => a.data.title.localeCompare(b.data.title));
+
   return paginate(allProjects, { pageSize: PAGE_SIZE });
 }
 

@@ -3,29 +3,34 @@ import { getCollection } from 'astro:content';
 import StudentCard from '../../../components/StudentCard.astro';
 import ProjectCard from '../../../components/ProjectCard.astro';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getProjectsByStudent } from '../../../helpers/projects';
 
 export async function getStaticPaths() {
   const allStudents = await getCollection('students');
 
-  const allProjects = await getCollection('projects');
+  await allStudents.forEach(async (student) => {
+    student.projects = await getProjectsByStudent(student.data.id);
+  });
 
-  return await Promise.all(
-    allStudents.map((student) => {
-      const filteredProjects = allProjects.filter(({ data: { owners } }) => {
-        return owners.some((id) => id === student.data.id);
-      });
+  allStudents.sort((a, b) =>
+    a.data.compactName.localeCompare(b.data.compactName)
+  );
 
+  const studentPage = allStudents
+    .filter((student) => student.projects)
+    .map((student) => {
       return {
         params: {
           student: student.data.id,
         },
         props: {
-          projects: filteredProjects,
+          projects: student.projects,
           student,
         },
       };
-    })
-  );
+    });
+
+  return studentPage;
 }
 
 const { projects, student } = Astro.props;

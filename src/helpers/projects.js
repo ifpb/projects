@@ -1,24 +1,56 @@
+import { getCollection } from 'astro:content';
+
 export function getProjectTags(project) {
-  const tags = [
-    project.data.subject,
-    `${project.data.subject}-${project.data.semester}`,
-    `${project.data.course}-${project.data.campus}`,
-    ...project.data.tags,
+  const {
+    data: { subject, semester, course, campus, tags },
+  } = project;
+
+  const projectTags = [
+    subject,
+    `${subject}-${semester}`,
+    `${course}-${campus}`,
+    ...tags,
   ];
 
-  tags.sort();
+  projectTags.sort();
 
-  return tags;
+  return projectTags;
 }
 
-export function getAllProjectsTags(projects) {
-  const tags = projects.reduce((acc, project) => {
+export async function getAllProjectTags() {
+  const projects = await getCollection('projects');
+
+  const repeatedTags = projects.reduce((acc, project) => {
     return [...acc, ...getProjectTags(project)];
   }, []);
 
-  return [...new Set(tags)];
+  const uniqueTags = [...new Set(repeatedTags)];
+
+  uniqueTags.sort();
+
+  return uniqueTags;
 }
 
-export function getProjectsByTag(projects, tag) {
-  return projects.filter((project) => getProjectTags(project).includes(tag));
+export async function getProjectsByTag(tag) {
+  const projects = await getCollection('projects');
+
+  const allProjects = projects.filter((project) =>
+    getProjectTags(project).includes(tag)
+  );
+
+  allProjects.sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+  return allProjects;
+}
+
+export async function getProjectsByStudent(studentId) {
+  const projects = await getCollection('projects');
+
+  const allProjects = projects.filter(({ data: { owners } }) => {
+    return owners.some((id) => id === studentId);
+  });
+
+  allProjects.sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+  return allProjects;
 }
