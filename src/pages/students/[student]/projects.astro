@@ -1,0 +1,45 @@
+---
+import { getCollection } from 'astro:content';
+import StudentCard from '../../../components/StudentCard.astro';
+import ProjectCard from '../../../components/ProjectCard.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const allStudents = await getCollection('students');
+
+  const allProjects = await getCollection('projects');
+
+  return await Promise.all(
+    allStudents.map((student) => {
+      const filteredProjects = allProjects.filter(({ data: { owners } }) => {
+        return owners.some((id) => id === student.data.id);
+      });
+
+      return {
+        params: {
+          student: student.data.id,
+        },
+        props: {
+          projects: filteredProjects,
+          student,
+        },
+      };
+    })
+  );
+}
+
+const { projects, student } = Astro.props;
+---
+
+<BaseLayout pageTitle={`Projetos de ${student.data.compactName}`}>
+  <div class="flex gap-5 items-start">
+    <div>
+      {(<StudentCard student={student} />)}
+    </div>
+    <div
+      class="grid justify-items-stretch gap-5 grid-cols-1 md:grid-cols-3 lg:grid-cols-4"
+    >
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,23 @@
+---
+import { Icon } from 'astro-icon';
+---
+
+<style is:global>
+  header [astro-icon='icon-park:github-one'] path {
+    stroke: #fff;
+  }
+</style>
+
+<header class="bg-gray-900 text-white">
+  <section class="container lg:max-w-screen-lg mx-auto px-4 py-6">
+    <nav class="flex items-center justify-between">
+      <a class="text-2xl font-bold font-heading" href="/projects/"> Projetos</a>
+
+      <div class="flex items-center space-x-5">
+        <a class="hover:text-gray-200" href="https://github.com/ifpb/projects">
+          <Icon name="icon-park:github-one" size={32} />
+        </a>
+      </div>
+    </nav>
+  </section>
+</header>

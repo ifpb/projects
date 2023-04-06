@@ -1,0 +1,39 @@
+---
+import { getProjectTags } from '../helpers/projects';
+
+const { project } = Astro.props;
+
+const tags = getProjectTags(project);
+---
+
+<div
+  class="rounded-md overflow-hidden shadow-lg bg-white py-2 px-4 text-center"
+>
+  <a href={project.data.page} target="_blank">
+    <img
+      src="/imgs/project-placeholder.png"
+      class="object-cover"
+      alt={project.data.title}
+      onerror="this.onerror=null;this.src='/imgs/project-placeholder.png';"
+    />
+  </a>
+  <a
+    href={project.data.repository}
+    target="_blank"
+    class="mb-3 font-bold hover:scale-105 transition duration-500"
+  >
+    {project.data.repository.replace('https://github.com/', '')}
+  </a>
+  <nav>
+    {
+      tags.map((tag) => (
+        <a
+          href={`/projects/codes/${tag}/1/`}
+          class="no-underline cursor-pointer text-sm font-semibold text-gray-700 my-1 mr-1 hover:scale-105 transition duration-500"
+        >
+          {tag}
+        </a>
+      ))
+    }
+  </nav>
+</div>

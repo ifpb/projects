@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import ProjectCard from '../../components/ProjectCard.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths({ paginate }) {
+  const allProjects = await getCollection('projects');
+
+  return paginate(allProjects, { pageSize: 12 });
+}
+
+const { page } = Astro.props;
+---
+
+<BaseLayout pageTitle="Projetos">
+  <div
+    class="grid justify-items-stretch gap-5 grid-cols-1 md:grid-cols-3 lg:grid-cols-4"
+  >
+    {page.data.map((project) => <ProjectCard project={project} />)}
+  </div>
+</BaseLayout>

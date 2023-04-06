@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+import ProjectCard from '../../../components/ProjectCard.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import {
+  getAllProjectsTags,
+  getProjectsByTag,
+} from '../../../helpers/projects';
+
+export async function getStaticPaths({ paginate }) {
+  const allProjects = await getCollection('projects');
+
+  const tags = getAllProjectsTags(allProjects);
+
+  return tags.map((tag) => {
+    return paginate(getProjectsByTag(allProjects, tag), {
+      params: { tag },
+      pageSize: 12,
+    });
+  });
+}
+
+const { page } = Astro.props;
+const { tag } = Astro.params;
+---
+
+<BaseLayout pageTitle={`Projetos de ${tag}`}>
+  <div
+    class="grid justify-items-stretch gap-5 grid-cols-1 md:grid-cols-3 lg:grid-cols-4"
+  >
+    {page.data.map((project) => <ProjectCard project={project} />)}
+  </div>
+</BaseLayout>
