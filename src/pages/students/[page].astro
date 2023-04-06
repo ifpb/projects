@@ -2,11 +2,13 @@
 import { getCollection } from 'astro:content';
 import StudentCard from '../../components/StudentCard.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PaginationIndex from '../../components/PaginationIndex.astro';
+import { PAGE_SIZE } from '../../consts';
 
 export async function getStaticPaths({ paginate }) {
   const allStudents = await getCollection('students');
 
-  return paginate(allStudents, { pageSize: 12 });
+  return paginate(allStudents, { pageSize: PAGE_SIZE });
 }
 
 const { page } = Astro.props;
@@ -18,4 +20,5 @@ const { page } = Astro.props;
   >
     {page.data.map((student) => <StudentCard student={student} />)}
   </div>
+  {page.lastPage > 1 && <PaginationIndex page={page} pagePath="/students" />}
 </BaseLayout>

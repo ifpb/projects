@@ -12,7 +12,7 @@ const tags = getProjectTags(project);
   <a href={project.data.page} target="_blank">
     <img
       src={project.data.preview ?? '/projects/imgs/project-placeholder.png'}
-      class="animate-pulse bg-neutral-400 object-cover w-full h-[200px] md:h-[150px]"
+      class="animate-pulse bg-gray-300 object-cover w-full h-[200px] md:h-[150px]"
       alt={project.data.title}
       onload="this.onload=null;this.classList.remove('animate-pulse');"
       onerror="this.onerror=null;this.classList.remove('animate-pulse', 'bg-neutral-400');this.src='/projects/imgs/project-placeholder.png';"

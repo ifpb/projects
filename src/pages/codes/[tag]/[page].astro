@@ -6,6 +6,8 @@ import {
   getAllProjectsTags,
   getProjectsByTag,
 } from '../../../helpers/projects';
+import PaginationIndex from '../../../components/PaginationIndex.astro';
+import { PAGE_SIZE } from '../../../consts';
 
 export async function getStaticPaths({ paginate }) {
   const allProjects = await getCollection('projects');
@@ -15,7 +17,7 @@ export async function getStaticPaths({ paginate }) {
   return tags.map((tag) => {
     return paginate(getProjectsByTag(allProjects, tag), {
       params: { tag },
-      pageSize: 12,
+      pageSize: PAGE_SIZE,
     });
   });
 }
@@ -30,4 +32,9 @@ const { tag } = Astro.params;
   >
     {page.data.map((project) => <ProjectCard project={project} />)}
   </div>
+  {
+    page.lastPage > 1 && (
+      <PaginationIndex page={page} pagePath={`/codes/${tag}`} />
+    )
+  }
 </BaseLayout>
