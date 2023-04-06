@@ -1,6 +1,7 @@
 ---
 title: IFPB Projects
 description: Este portal tem como objetivo listar projetos construídos pelos alunos do IFPB.
+preview: https://raw.githubusercontent.com/ifpb/projects/main/preview.png
 page: https://ifpb.github.io/projects/
 repository: https://github.com/ifpb/projects
 course: cstsi
