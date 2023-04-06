@@ -3,7 +3,7 @@ import { Icon } from 'astro-icon';
 
 const { student } = Astro.props;
 
-const codeUrl = `/projects/students/${student.data.id}/projects.html`;
+const codeUrl = `/projects/students/${student.data.id}/`;
 
 let icons = [
   {
@@ -43,31 +43,33 @@ let links = icons
 </style>
 
 <div
-  class="rounded-md overflow-hidden shadow-lg bg-white text-center w-[233px]"
+  class="rounded-md overflow-hidden shadow-lg bg-white text-center md:w-[233px]"
 >
   <figure>
     <img
       src={student.data.avatar}
       alt={student.data.name}
-      class="animate-pulse bg-neutral-400 object-cover w-[233px] h-[233px]"
+      class="animate-pulse bg-neutral-400 object-cover w-[233px] h-[233px] mx-auto max-sm:mt-2"
       onload="this.onload=null;this.classList.remove('animate-pulse');"
       onerror="this.onerror=null;this.classList.remove('animate-pulse', 'bg-neutral-400');this.src='/projects/imgs/avatar.svg';"
     />
   </figure>
-  <div class="px-6 py-2">
-    <div class="font-bold text-xl">{student.data.compactName}</div>
-  </div>
-  <div class="flex justify-center pb-2">
-    {
-      links.map((link) => (
-        <a
-          href={link.url}
-          target="_blank"
-          class="hover:scale-110 transition duration-500"
-        >
-          <Icon name={link.icon} size={32} class={`${link.name}-link`} />
-        </a>
-      ))
-    }
+  <div>
+    <div class="px-6 py-2">
+      <div class="font-bold text-xl">{student.data.compactName}</div>
+    </div>
+    <div class="flex justify-center pb-2">
+      {
+        links.map((link) => (
+          <a
+            href={link.url}
+            target="_blank"
+            class="hover:scale-110 transition duration-500"
+          >
+            <Icon name={link.icon} size={32} class={`${link.name}-link`} />
+          </a>
+        ))
+      }
+    </div>
   </div>
 </div>
