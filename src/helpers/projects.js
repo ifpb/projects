@@ -17,6 +17,33 @@ export function getProjectTags(project) {
   return projectTags;
 }
 
+export function getProjectTagGroups(project) {
+  const {
+    data: { subject, semester, course, campus, tags },
+  } = project;
+
+  const projectTags = {
+    subject: {
+      name: 'disciplina',
+      values: [subject],
+    },
+    semester: {
+      name: 'semestre',
+      values: [`${subject}-${semester}`],
+    },
+    course: {
+      name: 'curso',
+      values: [`${course}-${campus}`],
+    },
+    tags: {
+      name: 'tags',
+      values: tags,
+    },
+  };
+
+  return projectTags;
+}
+
 export async function getAllProjectTags() {
   const projects = await getCollection('projects');
 
@@ -29,6 +56,29 @@ export async function getAllProjectTags() {
   uniqueTags.sort();
 
   return uniqueTags;
+}
+
+export async function getAllProjectTagGroups() {
+  const projects = await getCollection('projects');
+
+  const tags = projects.reduce((acc, project) => {
+    const tagGroups = getProjectTagGroups(project);
+
+    for (const key in tagGroups) {
+      const values = acc[key]
+        ? [...acc[key].values, ...tagGroups[key].values]
+        : tagGroups[key].values;
+
+      acc[key] = {
+        name: tagGroups[key].name,
+        values: [...new Set(values)].sort(),
+      };
+    }
+
+    return acc;
+  }, {});
+
+  return tags;
 }
 
 export async function getProjectsByTag(tag) {

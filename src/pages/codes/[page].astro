@@ -1,26 +1,35 @@
 ---
 import { getCollection } from 'astro:content';
 import ProjectCard from '../../components/ProjectCard.astro';
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import FilterLayout from '../../layouts/FilterLayout.astro';
 import PaginationIndex from '../../components/PaginationIndex.astro';
 import { PAGE_SIZE } from '../../consts';
+import { getAllProjectTagGroups } from '../../helpers/projects';
 
 export async function getStaticPaths({ paginate }) {
   const allProjects = await getCollection('projects');
 
   allProjects.sort((a, b) => a.data.title.localeCompare(b.data.title));
 
-  return paginate(allProjects, { pageSize: PAGE_SIZE });
+  const tags = await getAllProjectTagGroups();
+
+  return paginate(allProjects, {
+    pageSize: PAGE_SIZE,
+    props: { tags },
+  });
 }
 
-const { page } = Astro.props;
+const { page, tags } = Astro.props;
 ---
 
-<BaseLayout pageTitle="Projetos">
-  <div
-    class="grid justify-items-stretch gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-  >
-    {page.data.map((project) => <ProjectCard project={project} />)}
-  </div>
-  {page.lastPage > 1 && <PaginationIndex page={page} pagePath="/codes" />}
-</BaseLayout>
+<FilterLayout pageTitle="Projetos do IFPB" tags={tags}>
+  <main>
+    <div
+      class="grid justify-items-stretch gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+    >
+      {page.data.map((project) => <ProjectCard project={project} />)}
+    </div>
+
+    {page.lastPage > 1 && <PaginationIndex page={page} pagePath="/codes" />}
+  </main>
+</FilterLayout>

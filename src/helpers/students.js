@@ -1,11 +1,18 @@
 import { getCollection } from 'astro:content';
 
+function getStudentSemester(id) {
+  const year = String(id).slice(0, 4);
+  const semester = String(id).slice(4, 5);
+
+  return `${year}.${semester}`;
+}
+
 export function getStudentTags(student) {
   const {
     data: { id, course, campus, isGraduated },
   } = student;
 
-  const semester = `${String(id).slice(0, 4)}.${String(id).slice(4, 5)}`;
+  const semester = getStudentSemester(id);
 
   const studentTags = [
     course,
@@ -25,7 +32,7 @@ export function getStudentTagGropus(student) {
     data: { id, course, campus, isGraduated },
   } = student;
 
-  const semester = `${String(id).slice(0, 4)}.${String(id).slice(4, 5)}`;
+  const semester = getStudentSemester(id);
 
   const studentTags = {
     course: {
@@ -34,17 +41,16 @@ export function getStudentTagGropus(student) {
     },
     semester: {
       name: 'semestre',
-      values: [semester],
-      // values: [semester, `${course}-${semester}`],
+      values: [`${course}-${semester}`],
     },
-    campus: {
-      name: 'campus',
-      values: [campus],
-    },
-    status: {
-      name: 'situação',
-      values: [isGraduated ? 'egresso' : 'cursando'],
-    },
+    // campus: {
+    //   name: 'campus',
+    //   values: [campus],
+    // },
+    // status: {
+    //   name: 'situação',
+    //   values: [isGraduated ? 'egresso' : 'cursando'],
+    // },
   };
 
   return studentTags;
