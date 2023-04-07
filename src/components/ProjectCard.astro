@@ -6,31 +6,29 @@ const { project } = Astro.props;
 const tags = getProjectTags(project);
 ---
 
-<div
-  class="rounded-md overflow-hidden shadow-lg bg-white py-2 px-4 text-center"
->
-  <a href={project.data.page} target="_blank">
-    <img
-      src={project.data.preview ?? '/projects/imgs/project-placeholder.png'}
-      class="animate-pulse bg-gray-300 object-cover w-full h-[200px] md:h-[150px]"
-      alt={project.data.title}
-      onload="this.onload=null;this.classList.remove('animate-pulse');"
-      onerror="this.onerror=null;this.classList.remove('animate-pulse', 'bg-neutral-400');this.src='/projects/imgs/project-placeholder.png';"
-    />
-  </a>
-  <a
-    href={project.data.repository}
-    target="_blank"
-    class="mb-3 font-bold hover:scale-105 transition duration-500"
-  >
-    {project.data.repository.replace('https://github.com/', '')}
-  </a>
-  <nav>
+<div class="rounded-md overflow-hidden shadow-lg bg-white text-center">
+  <figure class="overflow-hidden">
+    <a href={project.data.page} target="_blank">
+      <img
+        src={project.data.preview ?? '/projects/imgs/project-placeholder.png'}
+        class="animate-pulse bg-gray-300 object-cover w-full h-[200px] md:h-[150px] hover:scale-105 transition duration-500"
+        alt={project.data.title}
+        onload="this.onload=null;this.classList.remove('animate-pulse');"
+        onerror="this.onerror=null;this.classList.remove('animate-pulse', 'bg-neutral-400');this.src='/projects/imgs/project-placeholder.png';"
+      />
+    </a>
+  </figure>
+  <p class="my-3">
+    <a href={project.data.repository} target="_blank" class="font-bold">
+      {project.data.repository.replace('https://github.com/', '')}
+    </a>
+  </p>
+  <nav class="mb-3">
     {
       tags.map((tag) => (
         <a
           href={`/projects/codes/${tag}/1/`}
-          class="no-underline cursor-pointer text-sm font-semibold text-gray-700 my-1 mr-1 hover:scale-105 transition duration-500"
+          class="no-underline cursor-pointer text-sm font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 my-1 mr-1 py-1 px-2 rounded-full"
         >
           {tag}
         </a>

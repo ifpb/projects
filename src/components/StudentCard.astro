@@ -50,11 +50,11 @@ let links = icons
 <div
   class="rounded-md overflow-hidden shadow-lg bg-white text-center md:w-[233px]"
 >
-  <figure>
+  <figure class="w-[233px] h-[233px] overflow-hidden">
     <img
       src={student.data.avatar}
       alt={student.data.name}
-      class="animate-pulse bg-gray-300 object-cover w-[233px] h-[233px] mx-auto"
+      class="animate-pulse bg-gray-300 object-cover w-[233px] h-[233px] mx-auto hover:scale-105 transition duration-500"
       onload="this.onload=null;this.classList.remove('animate-pulse');"
       onerror="this.onerror=null;this.classList.remove('animate-pulse', 'bg-neutral-400');this.src='/projects/imgs/avatar.svg';"
     />
