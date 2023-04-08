@@ -9,13 +9,13 @@ export default function Filter({ tags }) {
   };
 
   return isShow ? (
-    <div className="fixed h-full w-full z-50 right-0 top-0">
+    <>
       <div
-        className="fixed h-full w-full right-0 top-0 bg-black bg-opacity-50 z-[-1]"
+        className="fixed h-full w-full right-0 top-0 bg-black bg-opacity-50 z-0"
         onClick={toogleShow}
       ></div>
 
-      <div className="fixed h-full w-1/3 max-sm:w-2/3 right-0 top-0 bg-gray-100 shadow-lg p-4">
+      <div className="absolute w-1/3 max-sm:w-2/3 right-0 top-0 bg-gray-100 shadow-lg p-4 z-50">
         <Icon
           icon="material-symbols:close"
           className="float-right text-2xl cursor-pointer"
@@ -36,7 +36,7 @@ export default function Filter({ tags }) {
           </div>
         ))}
       </div>
-    </div>
+    </>
   ) : (
     <Icon
       icon="material-symbols:filter-alt"

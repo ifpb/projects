@@ -9,9 +9,13 @@ import { getAllStudentTagGroups } from '../../helpers/students';
 export async function getStaticPaths({ paginate }) {
   const allStudents = await getCollection('students');
 
+  // Sort students by graduation status, twitter presence, semester and name
   allStudents.sort(
     (a, b) =>
       Number(!!b.data.isGraduated) - Number(!!a.data.isGraduated) ||
+      Number(!!b.data.twitter) - Number(!!a.data.twitter) ||
+      Number(String(a.data.id).slice(0, 5)) -
+        Number(String(b.data.id).slice(0, 5)) ||
       a.data.compactName.localeCompare(b.data.compactName)
   );
 
@@ -26,10 +30,10 @@ export async function getStaticPaths({ paginate }) {
 const { page, tags } = Astro.props;
 ---
 
-<FilterLayout pageTitle="Alunos do IFPB" tags={tags}>
+<FilterLayout pageTitle="Alunos" tags={tags}>
   <main>
     <div
-      class="grid justify-items-center gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mx-auto"
+      class="grid place-content-center place-items-center gap-5 grid-cols-1 md:grid-cols-[repeat(2,_auto)] lg:grid-cols-[repeat(3,_auto)] xl:grid-cols-4 mx-auto"
     >
       {page.data.map((student) => <StudentCard student={student} />)}
     </div>
