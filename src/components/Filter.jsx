@@ -15,7 +15,7 @@ export default function Filter({ tags }) {
         onClick={toogleShow}
       ></div>
 
-      <div className="absolute w-1/3 max-sm:w-2/3 right-0 top-0 bg-gray-100 shadow-lg p-4 z-50">
+      <div className="absolute w-2/3 md:w-1/3 lg:w-1/4 right-0 top-0 bottom-0 bg-gray-100 shadow-lg p-4 z-50">
         <Icon
           icon="material-symbols:close"
           className="float-right text-2xl cursor-pointer"
@@ -38,10 +38,12 @@ export default function Filter({ tags }) {
       </div>
     </>
   ) : (
-    <Icon
-      icon="material-symbols:filter-alt"
-      className="float-right text-4xl cursor-pointer mt-0.5"
-      onClick={toogleShow}
-    />
+    <div className="relative">
+      <Icon
+        icon="material-symbols:filter-alt"
+        className="absolute right-0 mr-[10%] md:mr-32 lg:mr-32 xl:mr-0 text-4xl cursor-pointer mt-0.5"
+        onClick={toogleShow}
+      />
+    </div>
   );
 }

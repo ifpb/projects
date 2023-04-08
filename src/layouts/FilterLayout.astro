@@ -13,11 +13,14 @@ const { pageTitle, tags } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
   </head>
-  <body class="bg-gray-100">
+  <body class="bg-gray-100 relative">
     <NavBar />
+
     <div class="container lg:max-w-screen-lg mx-auto px-4 py-16">
       <Filter tags={tags} client:visible />
+
       <h1 class="text-center pb-16 text-4xl font-bold">{pageTitle}</h1>
+
       <slot />
     </div>
   </body>
