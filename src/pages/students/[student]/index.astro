@@ -8,29 +8,27 @@ import { getProjectsByStudent } from '../../../helpers/projects';
 export async function getStaticPaths() {
   const allStudents = await getCollection('students');
 
-  await allStudents.forEach(async (student) => {
-    student.projects = await getProjectsByStudent(student.data.id);
-  });
-
-  allStudents.sort((a, b) =>
-    a.data.compactName.localeCompare(b.data.compactName)
-  );
-
   const studentPage = allStudents
-    .filter((student) => student.projects)
-    .map((student) => {
-      return {
-        params: {
-          student: student.data.id,
-        },
-        props: {
-          projects: student.projects,
-          student,
-        },
-      };
-    });
+    .map(async (student) => {
+      const projects = await getProjectsByStudent(student.data.id);
 
-  return studentPage;
+      if (projects) {
+        return {
+          params: {
+            student: student.data.id,
+          },
+          props: {
+            projects,
+            student,
+          },
+        };
+      } else {
+        return null;
+      }
+    })
+    .filter((hasProject) => hasProject !== null);
+
+  return Promise.all(studentPage);
 }
 
 const { projects, student } = Astro.props;
