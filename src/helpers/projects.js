@@ -81,26 +81,40 @@ export async function getAllProjectTagGroups() {
   return tags;
 }
 
+function sortProjects(a, b) {
+  return a.data.title.localeCompare(b.data.title);
+}
+
+export async function getProjects() {
+  const projects = await getCollection('projects');
+
+  projects.sort(sortProjects);
+
+  return projects;
+}
+
 export async function getProjectsByTag(tag) {
   const projects = await getCollection('projects');
 
-  const allProjects = projects.filter((project) =>
+  const filteredProjects = projects.filter((project) =>
     getProjectTags(project).includes(tag)
   );
 
-  allProjects.sort((a, b) => a.data.title.localeCompare(b.data.title));
+  filteredProjects.sort(sortProjects);
 
-  return allProjects;
+  return filteredProjects;
 }
 
-export async function getProjectsByStudent(studentId) {
+export async function getProjectsByStudent(student) {
   const projects = await getCollection('projects');
 
-  const allProjects = projects.filter(({ data: { owners } }) => {
-    return owners.some((id) => id === studentId);
+  const ids = student.data.courses.map((student) => student.id);
+
+  const filteredProjects = projects.filter(({ data: { owners } }) => {
+    return owners.some((id) => ids.includes(id));
   });
 
-  allProjects.sort((a, b) => a.data.title.localeCompare(b.data.title));
+  filteredProjects.sort(sortProjects);
 
-  return allProjects;
+  return filteredProjects;
 }

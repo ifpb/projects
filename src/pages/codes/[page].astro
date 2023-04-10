@@ -1,19 +1,16 @@
 ---
-import { getCollection } from 'astro:content';
 import ProjectCard from '../../components/ProjectCard.astro';
 import FilterLayout from '../../layouts/FilterLayout.astro';
 import PaginationIndex from '../../components/PaginationIndex.astro';
 import { PAGE_SIZE } from '../../consts';
-import { getAllProjectTagGroups } from '../../helpers/projects';
+import { getAllProjectTagGroups, getProjects } from '../../helpers/projects';
 
 export async function getStaticPaths({ paginate }) {
-  const allProjects = await getCollection('projects');
-
-  allProjects.sort((a, b) => a.data.title.localeCompare(b.data.title));
+  const projects = await getProjects();
 
   const tags = await getAllProjectTagGroups();
 
-  return paginate(allProjects, {
+  return paginate(projects, {
     pageSize: PAGE_SIZE,
     props: { tags },
   });
@@ -22,7 +19,7 @@ export async function getStaticPaths({ paginate }) {
 const { page, tags } = Astro.props;
 ---
 
-<FilterLayout pageTitle="Projetos" tags={tags}>
+<FilterLayout pageTitle="Projetos" type="codes" tags={tags}>
   <main>
     <div
       class="grid justify-items-stretch gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"

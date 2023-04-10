@@ -1,6 +1,7 @@
 ---
 import { Icon } from 'astro-icon';
 import { getProjectsByStudent } from '../helpers/projects';
+import { getStudentTags } from '../helpers/students';
 
 const { student } = Astro.props;
 
@@ -29,20 +30,22 @@ let icons = [
   },
 ];
 
-const projects = await getProjectsByStudent(student.data.id);
+const projects = await getProjectsByStudent(student);
 
 const hasProjects = projects.length > 0;
 
 if (hasProjects) {
-  student.data.code = codeUrl;
+  student.data.addresses.code = codeUrl;
 }
 
 let links = icons
-  .filter((link) => student.data[link.name])
+  .filter((link) => student.data.addresses[link.name])
   .map((link) => ({
     ...link,
-    url: student.data[link.name],
+    url: student.data.addresses[link.name],
   }));
+
+const tags = await getStudentTags(student);
 ---
 
 <style is:global>
@@ -53,13 +56,14 @@ let links = icons
 
 <div
   class="rounded-md overflow-hidden shadow-lg bg-white text-center md:w-[233px]"
+  data-tags={tags.join('-')}
 >
-  <figure class="w-[233px] h-[233px] overflow-hidden">
-    <a href={student.data.linkedin} target="_blank">
+  <figure class="w-[233px] h-[233px] mx-auto overflow-hidden">
+    <a href={student.data.addresses.linkedin} target="_blank">
       <img
         src={student.data.avatar}
-        alt={student.data.name}
-        class="animate-pulse bg-gray-300 object-cover w-[233px] h-[233px] mx-auto hover:scale-105 transition duration-500 cursor-pointer"
+        alt={student.data.name.full}
+        class="animate-pulse bg-gray-300 object-cover w-[233px] h-[233px] hover:scale-105 transition duration-500 cursor-pointer"
         onload="this.onload=null;this.classList.remove('animate-pulse');"
         onerror="this.onerror=null;this.classList.remove('animate-pulse', 'bg-neutral-400');this.src='/projects/imgs/avatar.svg';"
       />
@@ -67,7 +71,7 @@ let links = icons
   </figure>
   <div>
     <div class="px-6 py-2">
-      <div class="font-bold text-xl">{student.data.compactName}</div>
+      <div class="font-bold text-xl">{student.data.name.compact}</div>
     </div>
     <div class="flex justify-center pb-2">
       {

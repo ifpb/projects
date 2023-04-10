@@ -2,7 +2,7 @@
 import Filter from '../components/Filter';
 import NavBar from '../components/NavBar.astro';
 
-const { pageTitle, tags } = Astro.props;
+const { pageTitle, tags, type } = Astro.props;
 ---
 
 <html lang="en">
@@ -17,7 +17,7 @@ const { pageTitle, tags } = Astro.props;
     <NavBar />
 
     <div class="container lg:max-w-screen-lg mx-auto px-4 py-16">
-      <Filter tags={tags} client:visible />
+      <Filter type={type} tags={tags} client:visible />
 
       <h1 class="text-center pb-16 text-4xl font-bold">{pageTitle}</h1>
 
