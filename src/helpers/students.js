@@ -131,6 +131,22 @@ export async function getStudents() {
   return students;
 }
 
+export async function getStudentsByProject(project) {
+  const students = await getCollection('students');
+
+  const filteredStudents = await students.reduce(async (acc, student) => {
+    if (project.data.owners.includes(student.data.id)) {
+      return [...(await acc), student];
+    } else {
+      return acc;
+    }
+  }, []);
+
+  filteredStudents.sort(sortStudents);
+
+  return filteredStudents;
+}
+
 export async function getStudentsByTag(tag) {
   const students = await getCollection('students');
 

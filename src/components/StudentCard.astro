@@ -48,14 +48,8 @@ let links = icons
 const tags = await getStudentTags(student);
 ---
 
-<style is:global>
-  [astro-icon='icon-park:github-one'].github-link path {
-    stroke-width: 3;
-  }
-</style>
-
 <div
-  class="rounded-md overflow-hidden shadow-lg bg-white text-center md:w-[233px]"
+  class="student-card student-card rounded-md overflow-hidden shadow-lg bg-white text-center md:w-[233px]"
   data-tags={tags.join('-')}
 >
   <figure class="w-[233px] h-[233px] mx-auto overflow-hidden">
@@ -81,7 +75,11 @@ const tags = await getStudentTags(student);
             target="_blank"
             class="hover:scale-110 transition duration-500"
           >
-            <Icon name={link.icon} size={32} class={`${link.name}-link`} />
+            <Icon
+              name={link.icon}
+              size={32}
+              class={`${link.name}-student-link`}
+            />
           </a>
         ))
       }

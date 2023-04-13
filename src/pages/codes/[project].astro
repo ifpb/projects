@@ -1,0 +1,79 @@
+---
+import { getProjectId, getProjects } from '../../helpers/projects';
+import { getStudentsByProject } from '../../helpers/students';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const projects = await getProjects();
+
+  const page = projects.map(async (project) => {
+    const projectId = getProjectId(project);
+
+    const students = await getStudentsByProject(project);
+
+    return {
+      params: { project: projectId },
+      props: {
+        project,
+        students,
+      },
+    };
+  });
+
+  return await Promise.all(page);
+}
+
+const { project, students } = Astro.props;
+---
+
+<BaseLayout>
+  <h1
+    class="text-center pb-16 text-4xl font-bold"
+    data-pagefind-filter="tipo:Projeto"
+  >
+    {project.data.title}
+  </h1>
+  <div class="flex gap-5">
+    <div>
+      <a class="underline" href={project.data.page}>
+        <img
+          src={project.data.preview}
+          alt={project.data.title}
+          class="border"
+        />
+      </a>
+    </div>
+    <div>
+      <div class="mb-2">
+        <div class="font-bold text-lg">Descrição:</div>
+        {project.data.description}
+      </div>
+      <div class="mb-2">
+        <div class="font-bold text-lg">Repositório:</div>
+        <a class="underline" href={project.data.repository}
+          >{project.data.repository}</a
+        >
+      </div>
+      <div class="mb-2">
+        <div class="font-bold text-lg">Disciplina:</div>
+        {project.data.subject}-{project.data.semester} ({project.data.course}-{
+          project.data.campus
+        })
+      </div>
+      <div class="mb-2">
+        <div class="font-bold text-lg">Alunos:</div>
+        {
+          students.map((student) => (
+            <a class="underline" href={`/projects/students/${student.data.id}`}>
+              {student.data.name.compact}
+            </a>
+          ))
+        }
+      </div>
+      <div class="mb-2">
+        <div class="font-bold text-lg">Tags:</div>
+        {project.data.tags.join(', ')}
+      </div>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,9 +1,9 @@
 ---
-import ProjectCard from '../../components/ProjectCard.astro';
-import FilterLayout from '../../layouts/FilterLayout.astro';
-import PaginationIndex from '../../components/PaginationIndex.astro';
-import { PAGE_SIZE } from '../../consts';
-import { getAllProjectTagGroups, getProjects } from '../../helpers/projects';
+import ProjectCard from '../../../components/ProjectCard.astro';
+import FilterLayout from '../../../layouts/FilterLayout.astro';
+import PaginationIndex from '../../../components/PaginationIndex.astro';
+import { PAGE_SIZE } from '../../../consts';
+import { getAllProjectTagGroups, getProjects } from '../../../helpers/projects';
 
 export async function getStaticPaths({ paginate }) {
   const projects = await getProjects();
@@ -20,13 +20,17 @@ const { page, tags } = Astro.props;
 ---
 
 <FilterLayout pageTitle="Projetos" type="codes" tags={tags}>
-  <main>
+  <main data-pagefind-ignore>
     <div
       class="grid justify-items-stretch gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
     >
       {page.data.map((project) => <ProjectCard project={project} />)}
     </div>
 
-    {page.lastPage > 1 && <PaginationIndex page={page} pagePath="/codes" />}
+    {
+      page.lastPage > 1 && (
+        <PaginationIndex page={page} pagePath="/codes/page" />
+      )
+    }
   </main>
 </FilterLayout>

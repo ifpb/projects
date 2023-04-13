@@ -1,6 +1,9 @@
 ---
 import Filter from '../components/Filter';
 import NavBar from '../components/NavBar.astro';
+import PageFindSearch from '../components/PageFindSearch.astro';
+
+import '../styles/global.css';
 
 const { pageTitle, tags, type } = Astro.props;
 ---
@@ -12,6 +15,9 @@ const { pageTitle, tags, type } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <link href="/projects/_pagefind/pagefind-ui.css" rel="stylesheet" />
+    <script src="/projects/_pagefind/pagefind-ui.js" type="text/javascript"
+    ></script>
   </head>
   <body class="bg-gray-100 relative">
     <NavBar />
@@ -20,6 +26,8 @@ const { pageTitle, tags, type } = Astro.props;
       <Filter type={type} tags={tags} client:visible />
 
       <h1 class="text-center pb-16 text-4xl font-bold">{pageTitle}</h1>
+
+      <PageFindSearch />
 
       <slot />
     </div>

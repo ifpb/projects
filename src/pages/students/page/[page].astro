@@ -1,9 +1,9 @@
 ---
-import StudentCard from '../../components/StudentCard.astro';
-import FilterLayout from '../../layouts/FilterLayout.astro';
-import PaginationIndex from '../../components/PaginationIndex.astro';
-import { PAGE_SIZE } from '../../consts';
-import { getAllStudentTagGroups, getStudents } from '../../helpers/students';
+import StudentCard from '../../../components/StudentCard.astro';
+import FilterLayout from '../../../layouts/FilterLayout.astro';
+import PaginationIndex from '../../../components/PaginationIndex.astro';
+import { PAGE_SIZE } from '../../../consts';
+import { getAllStudentTagGroups, getStudents } from '../../../helpers/students';
 
 export async function getStaticPaths({ paginate }) {
   const students = await getStudents();
@@ -20,13 +20,17 @@ const { page, tags } = Astro.props;
 ---
 
 <FilterLayout pageTitle="Alunos" type="students" tags={tags}>
-  <main>
+  <main data-pagefind-ignore>
     <div
       class="grid justify-center justify-items-center gap-5 grid-cols-1 md:grid-cols-[repeat(2,_auto)] lg:grid-cols-[repeat(3,_auto)] xl:grid-cols-4 mx-auto"
     >
       {page.data.map((student) => <StudentCard student={student} />)}
     </div>
 
-    {page.lastPage > 1 && <PaginationIndex page={page} pagePath="/students" />}
+    {
+      page.lastPage > 1 && (
+        <PaginationIndex page={page} pagePath="/students/page" />
+      )
+    }
   </main>
 </FilterLayout>

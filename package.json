@@ -6,7 +6,9 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "postbuild": "pagefind --source dist/",
     "preview": "astro preview",
+    "previewpf": "astro build && npm run postbuild && astro preview",
     "astro": "astro"
   },
   "dependencies": {
@@ -21,6 +23,7 @@
   },
   "devDependencies": {
     "@iconify/react": "^4.1.0",
-    "astro-icon": "^0.8.0"
+    "astro-icon": "^0.8.0",
+    "pagefind": "^0.12.0"
   }
 }

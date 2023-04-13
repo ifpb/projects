@@ -1,5 +1,9 @@
 import { getCollection } from 'astro:content';
 
+export function getProjectId(project) {
+  return project.data.repository.split('github.com/').at(-1).replace('/', '-');
+}
+
 export function getProjectTags(project) {
   const {
     data: { subject, semester, course, campus, tags },

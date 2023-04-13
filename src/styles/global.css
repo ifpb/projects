@@ -1,0 +1,11 @@
+.student-card .github-student-link path {
+  stroke-width: 3;
+}
+
+.project-card .github-project-link path:first-child {
+  fill: #fff;
+}
+
+header .github-project-link path {
+  fill: #f4f4f5;
+}

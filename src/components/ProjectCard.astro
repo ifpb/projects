@@ -1,12 +1,17 @@
 ---
-import { getProjectTags } from '../helpers/projects';
+import { Icon } from 'astro-icon';
+import { getProjectId, getProjectTags } from '../helpers/projects';
 
 const { project } = Astro.props;
 
 const tags = getProjectTags(project);
+
+const projectId = getProjectId(project);
 ---
 
-<div class="rounded-md overflow-hidden shadow-lg bg-white text-center">
+<div
+  class="project-card relative rounded-md overflow-hidden shadow-lg bg-white text-center"
+>
   <figure class="overflow-hidden">
     <a href={project.data.page} target="_blank">
       <img
@@ -18,9 +23,14 @@ const tags = getProjectTags(project);
       />
     </a>
   </figure>
-  <p class="my-3">
+  <div class="absolute top-2 right-2">
     <a href={project.data.repository} target="_blank" class="font-bold">
-      {project.data.repository.replace('https://github.com/', '')}
+      <Icon name="uim:github" size={32} class="github-project-link" />
+    </a>
+  </div>
+  <p class="my-3">
+    <a href={`/projects/codes/${projectId}`} target="_blank" class="font-bold">
+      {project.data.title}
     </a>
   </p>
   <nav class="mb-3">
