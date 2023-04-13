@@ -1,4 +1,5 @@
 import { getCollection } from 'astro:content';
+import { getStudentsByProject } from './students';
 
 export function getProjectId(project) {
   return project.data.repository.split('github.com/').at(-1).replace('/', '-');
@@ -94,7 +95,12 @@ export async function getProjects() {
 
   projects.sort(sortProjects);
 
-  return projects;
+  return await Promise.all(
+    projects.map(async (project) => ({
+      ...project,
+      students: await getStudentsByProject(project),
+    }))
+  );
 }
 
 export async function getProjectsByTag(tag) {
@@ -106,7 +112,12 @@ export async function getProjectsByTag(tag) {
 
   filteredProjects.sort(sortProjects);
 
-  return filteredProjects;
+  return await Promise.all(
+    filteredProjects.map(async (project) => ({
+      ...project,
+      students: await getStudentsByProject(project),
+    }))
+  );
 }
 
 export async function getProjectsByStudent(student) {
@@ -120,5 +131,10 @@ export async function getProjectsByStudent(student) {
 
   filteredProjects.sort(sortProjects);
 
-  return filteredProjects;
+  return await Promise.all(
+    filteredProjects.map(async (project) => ({
+      ...project,
+      students: await getStudentsByProject(project),
+    }))
+  );
 }

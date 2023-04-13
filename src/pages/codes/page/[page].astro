@@ -4,6 +4,7 @@ import FilterLayout from '../../../layouts/FilterLayout.astro';
 import PaginationIndex from '../../../components/PaginationIndex.astro';
 import { PAGE_SIZE } from '../../../consts';
 import { getAllProjectTagGroups, getProjects } from '../../../helpers/projects';
+import { getStudentsByProject } from '../../../helpers/students';
 
 export async function getStaticPaths({ paginate }) {
   const projects = await getProjects();

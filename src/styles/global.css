@@ -4,6 +4,7 @@
 
 .project-card .github-project-link path:first-child {
   fill: #fff;
+  opacity: 1;
 }
 
 header .github-project-link path {

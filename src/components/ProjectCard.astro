@@ -10,24 +10,43 @@ const projectId = getProjectId(project);
 ---
 
 <div
-  class="project-card relative rounded-md overflow-hidden shadow-lg bg-white text-center"
+  class="project-card rounded-md overflow-hidden shadow-lg bg-white text-center"
 >
-  <figure class="overflow-hidden">
-    <a href={project.data.page} target="_blank">
-      <img
-        src={project.data.preview ?? '/projects/imgs/project-placeholder.png'}
-        class="animate-pulse bg-gray-300 object-cover w-full h-[200px] md:h-[150px] hover:scale-105 transition duration-500"
-        alt={project.data.title}
-        onload="this.onload=null;this.classList.remove('animate-pulse');"
-        onerror="this.onerror=null;this.classList.remove('animate-pulse', 'bg-neutral-400');this.src='/projects/imgs/project-placeholder.png';"
-      />
-    </a>
-  </figure>
-  <div class="absolute top-2 right-2">
-    <a href={project.data.repository} target="_blank" class="font-bold">
-      <Icon name="uim:github" size={32} class="github-project-link" />
-    </a>
-  </div>
+  <section class="relative">
+    <figure class="overflow-hidden">
+      <a href={project.data.page} target="_blank">
+        <img
+          src={project.data.preview ?? '/projects/imgs/project-placeholder.png'}
+          class="animate-pulse bg-gray-300 object-cover w-full h-[200px] md:h-[150px] hover:scale-105 transition duration-500"
+          alt={project.data.title}
+          onload="this.onload=null;this.classList.remove('animate-pulse');"
+          onerror="this.onerror=null;this.classList.remove('animate-pulse', 'bg-neutral-400');this.src='/projects/imgs/project-placeholder.png';"
+        />
+      </a>
+    </figure>
+    <div class="absolute top-2 right-2">
+      <a href={project.data.repository} target="_blank" class="font-bold">
+        <Icon name="uim:github" size={32} class="github-project-link" />
+      </a>
+    </div>
+    <ul class="absolute bottom-2 right-4 flex">
+      {
+        !!project.students.length &&
+          project.students.map((student) => (
+            <li class="-mr-2 border-2 border-gray-100 rounded-full">
+              <a href={student.data.addresses.github} target="_blank">
+                <img
+                  src={`${student.data.avatar}?size=32`}
+                  alt={student.data.name.full}
+                  title={student.data.name.full}
+                  class="rounded-full"
+                />
+              </a>
+            </li>
+          ))
+      }
+    </ul>
+  </section>
   <p class="my-3">
     <a href={`/projects/codes/${projectId}`} target="_blank" class="font-bold">
       {project.data.title}
