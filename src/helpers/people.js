@@ -17,11 +17,18 @@ function getStudentSemesterId(id) {
   const year = String(id).slice(0, 4);
   const semester = String(id).slice(4, 5);
 
-  return `${year}.${semester}`;
+  return Number(`${year}.${semester}`);
 }
 
-function getFirstSemesterCourseIds(student) {
-  return Math.trunc(student.data.occupations[0].id / 100000);
+function getFirstSemesterCourseId(student) {
+  if (isStudent(student)) {
+    const firstId = student.data.occupations
+      .filter((occupation) => occupation.type === 'student')
+      .map((course) => course.id)
+      .sort()[0];
+
+    return firstId;
+  }
 }
 
 function hasPersonId(person, id) {
@@ -144,11 +151,43 @@ export async function getAllPeopleTagGroups() {
 }
 
 // Sort people by graduation status, twitter presence, semester and name
+function personRank(person) {
+  const weights = {
+    isProfessor: {
+      value: 1,
+      status: isProfessor(person),
+    },
+    isFinished: {
+      value: 2,
+      status: hasFinishedSomeCourse(person),
+    },
+    weightedId: {
+      value: isStudent(person)
+        ? 1000 / getStudentSemesterId(getFirstSemesterCourseId(person))
+        : 1,
+      status: true,
+    },
+    hasTwitter: {
+      value: 1,
+      status: !!person.data.addresses.twitter,
+    },
+    //TODO countCourses 0.2
+  };
+
+  let rank = Object.values(weights).reduce((acc, weight) => {
+    return acc + !!Number(weight.status) * weight.value;
+  }, 0);
+
+  if (isProfessor(person) && hasFinishedSomeCourse(person)) {
+    rank -= 1;
+  }
+
+  return rank;
+}
+
 function sortPeople(a, b) {
   return (
-    Number(!!hasFinishedSomeCourse(b)) - Number(!!hasFinishedSomeCourse(a)) ||
-    Number(!!b.data.addresses.twitter) - Number(!!a.data.addresses.twitter) ||
-    getFirstSemesterCourseIds(a) - getFirstSemesterCourseIds(b) ||
+    personRank(b) - personRank(a) ||
     a.data.name.compact.localeCompare(b.data.name.compact)
   );
 }
