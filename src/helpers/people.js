@@ -24,6 +24,10 @@ function getFirstSemesterCourseIds(student) {
   return Math.trunc(student.data.occupations[0].id / 100000);
 }
 
+function hasPersonId(person, id) {
+  return person.data.occupations.some((occupation) => occupation.id === id);
+}
+
 function hasFinishedSomeCourse(student) {
   return student.data.occupations.some((course) => course.isFinished);
 }
@@ -161,7 +165,7 @@ export async function getPeopleByProject(project) {
   const people = await getCollection('people');
 
   const filteredPeople = await people.reduce(async (acc, person) => {
-    if (project.data.owners.includes(person.data.id)) {
+    if (project.data.owners.some((ownerId) => hasPersonId(person, ownerId))) {
       return [...(await acc), person];
     } else {
       return acc;

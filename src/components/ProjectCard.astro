@@ -13,7 +13,7 @@ export interface Props {
 
 const { project } = Astro.props;
 
-const tags = getProjectTags(project);
+const tags: string[] = getProjectTags(project);
 
 const projectId = getProjectId(project);
 ---
