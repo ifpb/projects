@@ -10,6 +10,9 @@ occupations:
   campus: ifpb-jp
   course: cstsi
   isFinished: true
+- id: 2721029
+  type: employee
+  campus: reitoria
 addresses:
   github: https://github.com/fvcdaniel
   linkedin: https://www.linkedin.com/in/daniel-cardoso-51b52b29/

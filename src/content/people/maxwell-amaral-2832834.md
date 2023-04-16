@@ -11,4 +11,5 @@ occupations:
 addresses:
   github: https://github.com/maxwellamaral
   linkedin: https://www.linkedin.com/in/maxwellcc/
+  twitter: https://twitter.com/maxwellielpo
 ---

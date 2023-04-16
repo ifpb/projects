@@ -6,6 +6,12 @@ const occupationProfessor = z.object({
   campus: z.string(),
 });
 
+const occupationEmployee = z.object({
+  id: z.number(),
+  type: z.literal('employee'),
+  campus: z.string(),
+});
+
 const occupationStudent = z.object({
   id: z.number(),
   type: z.literal('student'),
@@ -22,7 +28,9 @@ const peopleCollection = defineCollection({
       full: z.string(),
     }),
     avatar: z.string().url(),
-    occupations: z.array(z.union([occupationProfessor, occupationStudent])),
+    occupations: z.array(
+      z.union([occupationProfessor, occupationStudent, occupationEmployee])
+    ),
     addresses: z.object({
       github: z.string().url(),
       linkedin: z.string().url(),
