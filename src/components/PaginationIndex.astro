@@ -1,4 +1,16 @@
 ---
+export interface Props {
+  pagePath: string;
+  page: {
+    currentPage: number;
+    lastPage: number;
+    url: {
+      prev: string;
+      next: string;
+    };
+  };
+}
+
 const { page, pagePath } = Astro.props;
 
 const pages = [...Array(page.lastPage).keys()].map(

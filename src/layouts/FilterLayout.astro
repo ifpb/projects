@@ -5,6 +5,12 @@ import PageFindSearch from '../components/PageFindSearch.astro';
 
 import '../styles/global.css';
 
+export interface Propos {
+  pageTitle: string;
+  tags: string[];
+  type: string;
+}
+
 const { pageTitle, tags, type } = Astro.props;
 ---
 

@@ -1,10 +1,26 @@
 ---
+import { CollectionEntry } from 'astro:content';
 import ProjectCard from '../../../components/ProjectCard.astro';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { getAllProjectTags, getProjectsByTag } from '../../../helpers/projects';
 import PaginationIndex from '../../../components/PaginationIndex.astro';
 import { PAGE_SIZE } from '../../../consts';
-import { getStudentsByProject } from '../../../helpers/students';
+
+type ProjectsWithPeople = CollectionEntry<'projects'> & {
+  people: CollectionEntry<'people'>[];
+};
+
+export interface Props {
+  page: {
+    data: ProjectsWithPeople[];
+    currentPage: number;
+    lastPage: number;
+    url: {
+      prev: string;
+      next: string;
+    };
+  };
+}
 
 export async function getStaticPaths({ paginate }) {
   const tags = await getAllProjectTags();

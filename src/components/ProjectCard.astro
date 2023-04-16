@@ -1,6 +1,15 @@
 ---
+import type { CollectionEntry } from 'astro:content';
 import { Icon } from 'astro-icon';
 import { getProjectId, getProjectTags } from '../helpers/projects';
+
+type ProjectsWithPeople = CollectionEntry<'projects'> & {
+  people: CollectionEntry<'people'>[];
+};
+
+export interface Props {
+  project: ProjectsWithPeople;
+}
 
 const { project } = Astro.props;
 
@@ -12,13 +21,13 @@ const projectId = getProjectId(project);
 <div
   class="project-card rounded-md overflow-hidden shadow-lg bg-white text-center"
 >
-  <section class="relative">
+  <section class="relative z-0">
     <figure class="overflow-hidden">
       <a href={project.data.page} target="_blank">
         <img
           src={project.data.preview ?? '/projects/imgs/project-placeholder.png'}
           class="animate-pulse bg-gray-300 object-cover w-full h-[200px] md:h-[150px] hover:scale-105 transition duration-500"
-          alt={project.data.title}
+          alt={project.data.name}
           onload="this.onload=null;this.classList.remove('animate-pulse');"
           onerror="this.onerror=null;this.classList.remove('animate-pulse', 'bg-neutral-400');this.src='/projects/imgs/project-placeholder.png';"
         />
@@ -31,14 +40,14 @@ const projectId = getProjectId(project);
     </div>
     <ul class="absolute bottom-2 right-4 flex">
       {
-        !!project.students.length &&
-          project.students.map((student) => (
+        !!project.people?.length &&
+          project.people?.map((person) => (
             <li class="-mr-2 border-2 border-gray-100 rounded-full">
-              <a href={student.data.addresses.github} target="_blank">
+              <a href={person.data.addresses.github} target="_blank">
                 <img
-                  src={`${student.data.avatar}?size=32`}
-                  alt={student.data.name.full}
-                  title={student.data.name.full}
+                  src={`${person.data.avatar}?size=32`}
+                  alt={person.data.name.full}
+                  title={person.data.name.full}
                   class="rounded-full"
                 />
               </a>
@@ -49,7 +58,7 @@ const projectId = getProjectId(project);
   </section>
   <p class="my-3">
     <a href={`/projects/codes/${projectId}`} target="_blank" class="font-bold">
-      {project.data.title}
+      {project.data.name}
     </a>
   </p>
   <nav class="mb-3">

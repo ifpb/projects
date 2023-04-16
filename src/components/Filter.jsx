@@ -11,7 +11,7 @@ export default function Filter({ type, tags }) {
   return isShow ? (
     <>
       <div
-        className="fixed h-full w-full right-0 top-0 bg-black bg-opacity-50 z-0"
+        className="fixed h-full w-full right-0 top-0 bg-black bg-opacity-50 z-10"
         onClick={toogleShow}
       ></div>
 

@@ -1,5 +1,9 @@
 import { getCollection } from 'astro:content';
-import { getStudentsByProject } from './students';
+import { getPeopleByProject } from './people';
+
+export function isSubjectProject(project) {
+  return project.data.category.type === 'subject';
+}
 
 export function getProjectId(project) {
   return project.data.repository.split('github.com/').at(-1).replace('/', '-');
@@ -7,15 +11,17 @@ export function getProjectId(project) {
 
 export function getProjectTags(project) {
   const {
-    data: { subject, semester, course, campus, tags },
+    data: {
+      category: { subject, semester, course, campus },
+      tags,
+    },
   } = project;
 
-  const projectTags = [
-    subject,
-    `${subject}-${semester}`,
-    `${course}-${campus}`,
-    ...tags,
-  ];
+  const projectTags = tags;
+
+  if (isSubjectProject(project)) {
+    projectTags.push(subject, `${subject}-${semester}`, `${course}-${campus}`);
+  }
 
   projectTags.sort();
 
@@ -27,24 +33,30 @@ export function getProjectTagGroups(project) {
     data: { subject, semester, course, campus, tags },
   } = project;
 
-  const projectTags = {
-    subject: {
-      name: 'disciplina',
-      values: [subject],
-    },
-    semester: {
-      name: 'semestre',
-      values: [`${subject}-${semester}`],
-    },
-    course: {
-      name: 'curso',
-      values: [`${course}-${campus}`],
-    },
+  let projectTags = {
     tags: {
       name: 'tags',
       values: tags,
     },
   };
+
+  if (isSubjectProject(project)) {
+    projectTags = {
+      ...projectTags,
+      subject: {
+        name: 'disciplina',
+        values: [subject],
+      },
+      semester: {
+        name: 'semestre',
+        values: [`${subject}-${semester}`],
+      },
+      course: {
+        name: 'curso',
+        values: [`${course}-${campus}`],
+      },
+    };
+  }
 
   return projectTags;
 }
@@ -87,7 +99,7 @@ export async function getAllProjectTagGroups() {
 }
 
 function sortProjects(a, b) {
-  return a.data.title.localeCompare(b.data.title);
+  return a.data.name.localeCompare(b.data.name);
 }
 
 export async function getProjects() {
@@ -98,7 +110,7 @@ export async function getProjects() {
   return await Promise.all(
     projects.map(async (project) => ({
       ...project,
-      students: await getStudentsByProject(project),
+      people: await getPeopleByProject(project),
     }))
   );
 }
@@ -115,15 +127,15 @@ export async function getProjectsByTag(tag) {
   return await Promise.all(
     filteredProjects.map(async (project) => ({
       ...project,
-      students: await getStudentsByProject(project),
+      people: await getPeopleByProject(project),
     }))
   );
 }
 
-export async function getProjectsByStudent(student) {
+export async function getProjectsByPerson(person) {
   const projects = await getCollection('projects');
 
-  const ids = student.data.courses.map((student) => student.id);
+  const ids = person.data.occupations.map((occupation) => occupation.id);
 
   const filteredProjects = projects.filter(({ data: { owners } }) => {
     return owners.some((id) => ids.includes(id));
@@ -134,7 +146,7 @@ export async function getProjectsByStudent(student) {
   return await Promise.all(
     filteredProjects.map(async (project) => ({
       ...project,
-      students: await getStudentsByProject(project),
+      people: await getPeopleByProject(project),
     }))
   );
 }

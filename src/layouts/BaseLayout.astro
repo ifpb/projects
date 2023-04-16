@@ -3,6 +3,10 @@ import NavBar from '../components/NavBar.astro';
 
 import '../styles/global.css';
 
+export interface Props {
+  pageTitle?: string;
+}
+
 const { pageTitle } = Astro.props;
 ---
 

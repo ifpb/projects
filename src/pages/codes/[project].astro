@@ -1,7 +1,17 @@
 ---
-import { getProjectId, getProjects } from '../../helpers/projects';
-import { getStudentsByProject } from '../../helpers/students';
+import { CollectionEntry } from 'astro:content';
+import {
+  getProjectId,
+  getProjects,
+  isSubjectProject,
+} from '../../helpers/projects';
+import { getPeopleByProject } from '../../helpers/people';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export interface Props {
+  project: CollectionEntry<'projects'>;
+  people: CollectionEntry<'people'>[];
+}
 
 export async function getStaticPaths() {
   const projects = await getProjects();
@@ -9,13 +19,13 @@ export async function getStaticPaths() {
   const page = projects.map(async (project) => {
     const projectId = getProjectId(project);
 
-    const students = await getStudentsByProject(project);
+    const people = await getPeopleByProject(project);
 
     return {
       params: { project: projectId },
       props: {
         project,
-        students,
+        people,
       },
     };
   });
@@ -23,7 +33,7 @@ export async function getStaticPaths() {
   return await Promise.all(page);
 }
 
-const { project, students } = Astro.props;
+const { project, people } = Astro.props;
 ---
 
 <BaseLayout>
@@ -31,14 +41,14 @@ const { project, students } = Astro.props;
     class="text-center pb-16 text-4xl font-bold"
     data-pagefind-filter="tipo:Projeto"
   >
-    {project.data.title}
+    {project.data.name}
   </h1>
   <div class="flex gap-5">
     <div>
       <a class="underline" href={project.data.page}>
         <img
           src={project.data.preview}
-          alt={project.data.title}
+          alt={project.data.name}
           class="border"
         />
       </a>
@@ -54,18 +64,21 @@ const { project, students } = Astro.props;
           >{project.data.repository}</a
         >
       </div>
+      {
+        isSubjectProject(project) && (
+          <div class="mb-2">
+            <div class="font-bold text-lg">Disciplina:</div>
+            {project.data.subject}-{project.data.semester} (
+            {project.data.course}-{project.data.campus})
+          </div>
+        )
+      }
       <div class="mb-2">
-        <div class="font-bold text-lg">Disciplina:</div>
-        {project.data.subject}-{project.data.semester} ({project.data.course}-{
-          project.data.campus
-        })
-      </div>
-      <div class="mb-2">
-        <div class="font-bold text-lg">Alunos:</div>
+        <div class="font-bold text-lg">Colaboradores:</div>
         {
-          students.map((student) => (
-            <a class="underline" href={`/projects/students/${student.data.id}`}>
-              {student.data.name.compact}
+          people.map((person) => (
+            <a class="underline" href={`/projects/people/${person.data.id}`}>
+              {person.data.name.compact}
             </a>
           ))
         }

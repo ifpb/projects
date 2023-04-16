@@ -1,0 +1,93 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { Icon } from 'astro-icon';
+import { getProjectsByPerson } from '../helpers/projects';
+import { getPersonTags } from '../helpers/people';
+
+export interface Props {
+  person: CollectionEntry<'people'>;
+}
+
+const { person } = Astro.props;
+
+const codeUrl = `/projects/people/${person.data.id}/`;
+
+let icons = [
+  {
+    name: 'code',
+    icon: 'ph:code',
+  },
+  {
+    name: 'linkedin',
+    icon: 'ph:linkedin-logo',
+  },
+  {
+    name: 'github',
+    icon: 'icon-park:github-one',
+  },
+  {
+    name: 'twitter',
+    icon: 'ph:twitter-logo',
+  },
+  {
+    name: 'instagram',
+    icon: 'ph:instagram-logo',
+  },
+];
+
+const projects = await getProjectsByPerson(person);
+
+const hasProjects = projects.length > 0;
+
+if (hasProjects) {
+  person.data.addresses.code = codeUrl;
+}
+
+let links = icons
+  .filter((link) => person.data.addresses[link.name])
+  .map((link) => ({
+    ...link,
+    url: person.data.addresses[link.name],
+  }));
+
+const tags = await getPersonTags(person);
+---
+
+<div
+  class="person-card rounded-md overflow-hidden shadow-lg bg-white text-center md:w-[233px]"
+  data-tags={tags.join('-')}
+>
+  <figure class="w-[233px] h-[233px] mx-auto overflow-hidden">
+    <a href={person.data.addresses.linkedin} target="_blank">
+      <img
+        src={person.data.avatar}
+        alt={person.data.name.full}
+        class="animate-pulse bg-gray-300 object-cover w-[233px] h-[233px] hover:scale-105 transition duration-500 cursor-pointer"
+        onload="this.onload=null;this.classList.remove('animate-pulse');"
+        onerror="this.onerror=null;this.classList.remove('animate-pulse', 'bg-neutral-400');this.src='/projects/imgs/avatar.svg';"
+      />
+    </a>
+  </figure>
+  <div>
+    <div class="px-6 py-2">
+      <div class="font-bold text-xl">{person.data.name.compact}</div>
+    </div>
+    <div class="flex justify-center pb-2">
+      {
+        links.map((link) => (
+          <a
+            href={link.url}
+            target="_blank"
+            class="hover:scale-110 transition duration-500"
+          >
+            <Icon
+              name={link.icon}
+              size={32}
+              class={`${link.name}-person-link`}
+            />
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</div>
