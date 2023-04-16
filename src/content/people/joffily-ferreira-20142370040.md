@@ -14,5 +14,5 @@ addresses:
   email: joffilyferreira@gmail.com
   github: https://github.com/joffilyfe
   linkedin: https://www.linkedin.com/in/joffily/
-  twitter: twitter.com/joffilyfe
+  twitter: https://twitter.com/joffilyfe
 ---

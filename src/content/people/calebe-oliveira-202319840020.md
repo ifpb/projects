@@ -11,7 +11,8 @@ occupations:
   course: csbee
   isFinished: true
 - id: 202319840020
-  name: cmpti
+  type: student
+  course: cmpti
   campus: ifpb-jp
 addresses:
   github: https://github.com/calebeof

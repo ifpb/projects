@@ -37,7 +37,10 @@ async function hasProjects(person) {
 export async function getPersonTags(person) {
   const campi = person.data.occupations.map((occupation) => occupation.campus);
 
-  const tags = [...campi, (await hasProjects(person)) ? 'código' : 'noCode'];
+  const tags = [
+    ...campi,
+    (await hasProjects(person)) ? 'código' : 'sem código',
+  ];
 
   const courses = person.data.occupations
     .filter((occupation) => occupation.type === 'student')
