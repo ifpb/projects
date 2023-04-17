@@ -4,7 +4,8 @@ description: RunSys é um sistema de gerenciamento de dispositivos de rede, dese
 preview: https://raw.githubusercontent.com/mr-reinaldo/runsys/main/screenshots/dashboard-page.png
 repository: https://github.com/mr-reinaldo/runsys
 category:
-  type: project
+  type: subject
+  subject: dw
   semester: 2022.2
   course: cstrc
   campus: ifpb-jp
