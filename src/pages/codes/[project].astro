@@ -8,6 +8,15 @@ import {
 import { getPeopleByProject } from '../../helpers/people';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
+interface ProjectProps {
+  category: {
+    course: string;
+    campus: string;
+    semester: string;
+    subject: string;
+  };
+}
+
 export interface Props {
   project: CollectionEntry<'projects'>;
   people: CollectionEntry<'people'>[];
@@ -34,6 +43,8 @@ export async function getStaticPaths() {
 }
 
 const { project, people } = Astro.props;
+
+const category = project.data.category as ProjectProps['category'];
 ---
 
 <BaseLayout>
@@ -68,8 +79,8 @@ const { project, people } = Astro.props;
         isSubjectProject(project) && (
           <div class="mb-2">
             <div class="font-bold text-lg">Disciplina:</div>
-            {project.data.subject}-{project.data.semester} (
-            {project.data.course}-{project.data.campus})
+            {category.subject}-{category.semester}
+            {`(${category.course}-${category.campus})`}
           </div>
         )
       }
