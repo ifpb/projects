@@ -10,51 +10,64 @@ export function getProjectId(project) {
 }
 
 export function getProjectTags(project) {
-  const {
-    data: {
-      category: { subject, semester, course, campus },
-      tags,
-    },
-  } = project;
-
-  const projectTags = tags;
-
   if (isSubjectProject(project)) {
-    projectTags.push(subject, `${subject}-${semester}`, `${course}-${campus}`);
+    const {
+      data: {
+        category: { subject, semester, course, campus },
+        tags,
+      },
+    } = project;
+
+    const projectTags = [
+      ...tags,
+      subject,
+      `${subject}-${semester}`,
+      `${course}-${campus}`,
+    ];
+
+    projectTags.sort();
+
+    return projectTags;
+  } else {
+    const {
+      data: {
+        tags,
+        category: { type, campus },
+      },
+    } = project;
+
+    const projectTags = [...tags, type, campus];
+
+    projectTags.sort();
+
+    return projectTags;
   }
-
-  projectTags.sort();
-
-  return projectTags;
 }
 
 export function getProjectTagGroups(project) {
-  const {
-    data: { subject, semester, course, campus, tags },
-  } = project;
-
-  let projectTags = {
+  const projectTags = {
     tags: {
       name: 'tags',
-      values: tags,
+      values: project.data.tags,
     },
   };
 
   if (isSubjectProject(project)) {
-    projectTags = {
-      ...projectTags,
-      subject: {
-        name: 'disciplina',
-        values: [subject],
-      },
-      semester: {
-        name: 'semestre',
-        values: [`${subject}-${semester}`],
-      },
-      course: {
-        name: 'curso',
-        values: [`${course}-${campus}`],
-      },
+    const { subject, semester, course, campus } = project.data.category;
+
+    projectTags.subject = {
+      name: 'disciplina',
+      values: [subject],
+    };
+
+    projectTags.semester = {
+      name: 'semestre',
+      values: [`${subject}-${semester}`],
+    };
+
+    projectTags.course = {
+      name: 'curso',
+      values: [`${course}-${campus}`],
     };
   }
 
