@@ -12,7 +12,7 @@ occupations:
   isFinished: false
 addresses:
   github: https://github.com/abrantedevops
-  linkedin: https://www.linkedin.com/in/thiago-abrante-de-souza-257424273
+  linkedin: https://www.linkedin.com/in/thiago-abrante-de-souza-6a4587139
   lattes: http://lattes.cnpq.br/6099753662304837
   email: tlhiag0@hotmail.com
 ---
