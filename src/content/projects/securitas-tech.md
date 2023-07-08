@@ -1,3 +1,4 @@
+---
 name: Securitas Tech
 description: Portal para uma empresa de tecnologia e segurança digital apaixonada por conectar pessoas e garantir que todos possam explorar as oportunidades do mundo digital com confiança.
 preview: https://raw.githubusercontent.com/lucaskaiquee/Projeto_LM/main/Securitas-tech_resized.png
@@ -15,4 +16,6 @@ tags:
   - tailwind
 owners:
   - 20231370019
+  - 20231370027
+  - 20231370006
 ---

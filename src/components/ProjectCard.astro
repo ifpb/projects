@@ -28,7 +28,9 @@ const projectId = getProjectId(project);
           src={project.data.preview ?? '/projects/imgs/project-placeholder.png'}
           class="animate-pulse bg-gray-300 object-cover w-full h-[200px] md:h-[150px] hover:scale-105 transition duration-500"
           alt={project.data.name}
-          onload="this.onload=null;this.classList.remove('animate-pulse');"
+          onload="
+          this.onload = null; this.classList.remove('animate-pulse');
+"
           onerror="this.onerror=null;this.classList.remove('animate-pulse', 'bg-neutral-400');this.src='/projects/imgs/project-placeholder.png';"
         />
       </a>
@@ -48,7 +50,7 @@ const projectId = getProjectId(project);
                   src={`${person.data.avatar}?size=32`}
                   alt={person.data.name.full}
                   title={person.data.name.full}
-                  class="rounded-full"
+                  class="rounded-full w-8"
                 />
               </a>
             </li>

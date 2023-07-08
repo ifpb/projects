@@ -86,13 +86,24 @@ const category = project.data.category as ProjectProps['category'];
       }
       <div class="mb-2">
         <div class="font-bold text-lg">Colaboradores:</div>
-        {
-          people.map((person) => (
-            <a class="underline" href={`/projects/people/${person.data.id}`}>
-              {person.data.name.compact}
-            </a>
-          ))
-        }
+        <ul class="list-disc list-inside">
+          {
+            people
+              .sort((a, b) =>
+                a.data.name.compact.localeCompare(b.data.name.compact)
+              )
+              .map((person) => (
+                <li>
+                  <a
+                    class="underline"
+                    href={`/projects/people/${person.data.id}`}
+                  >
+                    {person.data.name.compact}
+                  </a>
+                </li>
+              ))
+          }
+        </ul>
       </div>
       <div class="mb-2">
         <div class="font-bold text-lg">Tags:</div>
