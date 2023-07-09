@@ -11,5 +11,5 @@ occupations:
     course: cstsi
 addresses:
   github: https://github.com/LuizFernando12
-  linkedin: 
+  linkedin: https://www.linkedin.com/in/luiz-gomes-480708282
 ---
