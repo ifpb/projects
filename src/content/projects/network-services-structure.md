@@ -13,8 +13,6 @@ tags:
 - vagrant
 - ansible
 - docker
-- docker-compose
-- docker hub repository
 - nginx
 - bind9
 - apache

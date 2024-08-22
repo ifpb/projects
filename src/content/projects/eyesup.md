@@ -10,13 +10,9 @@ category:
   course: cstrc
   campus: ifpb-jp
 tags:
-- html
-- css
-- js
 - bootstrap
 - chartjs
 - leafletjs
-- nodejs
 - express
 - prisma
 - jwt
