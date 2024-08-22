@@ -12,8 +12,8 @@ occupations:
 addresses:
   github: https://github.com/amaraldsn
   linkedin: https://www.linkedin.com/in/natanael-amaral-a8661b264/
-  twiiter: https://twitter.com/AmaralDzn
-  site: https://amaraldzn.github.io/
+  youtube: https://www.youtube.com/@amaraldsn
+  site: https://amaraldsn.github.io/
   instagram: https://www.instagram.com/amaraldsn/
   email: dznamaral@gmail.com
 ---
