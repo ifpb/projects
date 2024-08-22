@@ -1,9 +1,9 @@
 ---
 name: Brasil em Cena
 description: Este projeto tem como objetivo enfatizar toda a nossa diversidade cultural em conteúdos audiovisuais, propagando demasiadamente a nossa cultura brasileira.
-preview: https://raw.githubusercontent.com/amaraldzn/bremcena/main/preview.png
-page: https://amaraldzn.github.io/bremcena/
-repository: https://github.com/amaraldzn/bremcena
+preview: https://raw.githubusercontent.com/amaraldsn/bremcena/main/preview.png
+page: https://amaraldsn.github.io/bremcena/
+repository: https://github.com/amaraldsn/bremcena
 category:
   type: subject
   subject: lm
