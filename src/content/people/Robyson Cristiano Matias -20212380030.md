@@ -2,7 +2,7 @@
 id: 20212380030
 name:
   compact: Robyson Cristiano
-  full: Robyson Cristiano MAtias
+  full: Robyson Cristiano Matias
 avatar: https://github.com/yWestSide.png
 occupations:
 - id: 20212380030
