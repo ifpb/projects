@@ -6,7 +6,7 @@ name:
 avatar: https://github.com/l1ckyndev.png
 occupations:
 - id: 20222380034
-  type: Aluno
+  type: student
   campus: ifpb-jp
   course: cstrc
 addresses:
