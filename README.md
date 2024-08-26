@@ -2,7 +2,7 @@
 
 O objetivo deste repositório consiste em exibir projetos dos alunos no IFPB. Caso você ainda não possua projetos neste base, ou se você deseja atualizar alguma informação, basta fazer um Pull Request enviando os seus dados.
 
-O primeiro passo seria incluir o dados do projeto adicionando um arquivo em `src/content/projects/titulo-do-projeto.md` seguindo este formato:
+O primeiro passo seria incluir o dados do projeto adicionando, no diretório [src/content/projects/](https://github.com/ifpb/projects/tree/main/src/content/projects), um arquivo seguindo este formato `src/content/projects/titulo-do-projeto.md`:
 
 ```yaml
 ---
@@ -25,7 +25,7 @@ owners:
 ---
 ```
 
-Além da descrição do projeto, cada integrante deve incluir suas informação no arquivo `src/content/people/nome-compacto-e-numero-da-matricula.md` seguindo o formato:
+Além da descrição do projeto, cada integrante deve incluir suas informação, no diretório [src/content/people/](https://github.com/ifpb/projects/tree/main/src/content/people), um arquivo seguindo este `src/content/people/nome-compacto-e-numero-da-matricula.md`:
 
 ```yaml
 ---
