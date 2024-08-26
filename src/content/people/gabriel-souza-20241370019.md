@@ -1,3 +1,4 @@
+---
 id: 20241370019
 name:
   compact: Gabriel Souza
@@ -12,3 +13,4 @@ occupations:
 addresses:
   github: https://github.com/gabrielsndev
   linkedin: https://www.linkedin.com/in/gabriel-sn/
+---
