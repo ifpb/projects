@@ -1,0 +1,16 @@
+---
+id: 20211380027
+name:
+  compact: Júlio Cézar
+  full: Júlio Cézar Netto de Araújo
+avatar: https://avatars.githubusercontent.com/u/130713358?v=4&size=64
+occupations:
+- id: 20211380027
+  type: student
+  campus: ifpb-jp
+  course: cstsi
+addresses:
+  linkedin: https://www.linkedin.com/in/j%C3%BAlio-c%C3%A9zar-97a992290/
+  github: https://github.com/Julio-Cezar4
+  email: juliocezarnettodearaujo@gmail.com
+---
