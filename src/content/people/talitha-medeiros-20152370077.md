@@ -12,6 +12,6 @@ occupations:
   isFinished: true
 addresses:
   github: https://github.com/talithamedeiros
-  linkedin: https://www.linkedin.com/in/talithamedeirosribeiro/
+  linkedin: https://www.linkedin.com/in/talithamedeiros/
   email: medeirostalitha@gmail.com
 ---

@@ -11,6 +11,6 @@ occupations:
     course: cstsi
 addresses:
   github: https://github.com/JessyeKessia
-  linkedin: https://www.linkedin.com/in/jessye-pereira-b4733b1b7/
+  linkedin: https://www.linkedin.com/in/jessyepereira/
   email: jessye.kessia@academico.ifpb.edu.br
 ---
