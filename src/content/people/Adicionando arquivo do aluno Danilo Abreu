@@ -1,0 +1,16 @@
+---
+id: 20241370004
+name:
+  compact: Danilo Abreu
+  full: Danilo da Silva Abreu
+avatar: https://github.com/DaniloAbreu83.png
+occupations:
+- id: 20241370004
+  type: student
+  campus: ifpb-jp
+  course: CSTSI
+  isFinished: false
+addresses:
+  github: https://github.com/DaniloAbreu83
+  linkedin: https://www.linkedin.com/in/danil-da-silva-abreu
+---
