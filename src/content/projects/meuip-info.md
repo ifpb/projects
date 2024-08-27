@@ -5,7 +5,7 @@ preview: https://raw.githubusercontent.com/yWestSide/projeto-dw/main/site-main/s
 repository: https://github.com/yWestSide/projeto-dw
 category:
   type: subject
-  subject: ls
+  subject: dw
   semester: 2024.1
   course: cstrc
   campus: ifpb-jp
