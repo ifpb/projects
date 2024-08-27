@@ -1,7 +1,7 @@
 ---
 id: 20231370009
 name:
-  compact: Alessandro Rodrigues
+  compact: Alessandro Souza
   full: Alessandro Rodrigues de Souza Júnior
 avatar: https://github.com/alessandrojunior1.png
 occupations:
