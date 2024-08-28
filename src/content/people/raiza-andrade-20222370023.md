@@ -11,6 +11,6 @@ occupations:
     course: cstsi
 addresses:
   github: https://github.com/raizaft
-  linkedin: https://www.linkedin.com/in/raizaft/
+  linkedin: https://www.linkedin.com/in/raizatomazoni/
   email: raiza.andrade@academico.ifpb.edu.br
 ---

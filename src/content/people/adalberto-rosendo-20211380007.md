@@ -8,8 +8,7 @@ occupations:
 - id: 20211380007
   type: student
   campus: ifpb-jp
-  course: CSTRC
-  isFinished: false
+  course: cstrc
 addresses:
   github: https://github.com/adalbertorosendoo
   linkedin: https://www.linkedin.com/in/adalberto-rosendo-494b201b4/
