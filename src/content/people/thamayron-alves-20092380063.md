@@ -12,6 +12,6 @@ occupations:
   isFinished: true
 addresses:
   github: https://github.com/thamayron
-  linkedin: https://www.linkedin.com/in/talithamedeirosribeiro/
+  linkedin: https://www.linkedin.com/in/thamayron-alves/
   email: thamayron@gmail.com
 ---

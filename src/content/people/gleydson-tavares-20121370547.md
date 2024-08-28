@@ -12,6 +12,6 @@ occupations:
   isFinished: true
 addresses:
   github: https://github.com/g13ydson
-  linkedin: https://www.linkedin.com/in/gleydsontavares/
+  linkedin: https://www.linkedin.com/in/gleydson-tavares/
   email: tavares.gleydson@gmail.com
 ---

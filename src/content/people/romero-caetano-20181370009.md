@@ -11,6 +11,6 @@ occupations:
   course: cstsi
 addresses:
   github: https://github.com/RomeroCaetano
-  linkedin: https://www.linkedin.com/in/romero-reis
+  linkedin: https://www.linkedin.com/in/romero-caetano/
   email: romero.reis2000@gmail.com
 ---
