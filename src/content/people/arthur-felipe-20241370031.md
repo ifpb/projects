@@ -3,7 +3,7 @@ id: 20241370031
 name:
   compact: Arthur Araújo
   full: Arthur Felipe Araújo da Silva
-avatar: https://github.com/AdriandersonLira.png
+avatar: https://github.com/arthurfaraujo.png
 occupations:
 - id: 20241370031
   type: student
