@@ -8,7 +8,7 @@ category:
   type: subject
   subject: dw
   semester: 2024.1
-  course: cstsi
+  course: cstrc
   campus: ifpb-jp
 tags:
   - html
@@ -19,4 +19,3 @@ tags:
 owners:
   - 20221380016
   - 20202380028
----
