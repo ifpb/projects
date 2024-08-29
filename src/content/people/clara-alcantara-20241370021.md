@@ -8,7 +8,7 @@ occupations:
 - id: 20241370021
   type: student
   campus: ifpb-jp
-  course: CSTSI
+  course: cstsi
   isFinished: false
 addresses:
   github: https://github.com/oiclai

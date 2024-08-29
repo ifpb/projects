@@ -13,9 +13,22 @@ export interface Props {
 
 const { page, pagePath } = Astro.props;
 
-const pages = [...Array(page.lastPage).keys()].map(
-  (pageNumber) => pageNumber + 1
-);
+function getPageNumbers(
+  size: number,
+  lastPage: number,
+  currentPage: number
+): number[] {
+  let pages = [];
+  let start = Math.max(1, currentPage - Math.floor(size / 2));
+  let end = Math.min(lastPage, start + size - 1);
+  start = Math.max(1, end - size + 1);
+  for (let i = start; i <= end; i++) {
+    pages.push(i);
+  }
+  return pages;
+}
+
+const pages = getPageNumbers(5, page.lastPage, page.currentPage);
 ---
 
 <div class="mt-12 flex items-center flex-wrap justify-center">
