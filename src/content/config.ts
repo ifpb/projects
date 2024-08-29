@@ -1,22 +1,35 @@
 import { z, defineCollection } from 'astro:content';
 
+const campus = z.enum(['ifpb-jp', 'ifpb-cg', 'ifpb-gb', 'reitoria']);
+
+const course = z.enum([
+  'cstsi',
+  'cstrc',
+  'csbee',
+  'csbes',
+  'cmpti',
+  'cstt',
+  'ctie',
+  'ctii',
+]);
+
 const occupationProfessor = z.object({
   id: z.number(),
   type: z.literal('professor'),
-  campus: z.string(),
+  campus,
 });
 
 const occupationEmployee = z.object({
   id: z.number(),
   type: z.literal('employee'),
-  campus: z.string(),
+  campus,
 });
 
 const occupationStudent = z.object({
   id: z.number(),
   type: z.literal('student'),
-  campus: z.string(),
-  course: z.string(),
+  campus,
+  course,
   isFinished: z.boolean().optional(),
 });
 
@@ -48,23 +61,23 @@ const subjectProject = z.object({
   type: z.literal('subject'),
   subject: z.string(),
   semester: z.number(),
-  course: z.string(),
-  campus: z.string(),
+  course,
+  campus,
 });
 
 const researchProject = z.object({
   type: z.literal('research'),
-  campus: z.string(),
+  campus,
 });
 
 const extensionProject = z.object({
   type: z.literal('extension'),
-  campus: z.string(),
+  campus,
 });
 
 const openSourceProject = z.object({
   type: z.literal('open source'),
-  campus: z.string(),
+  campus,
 });
 
 const projectCollection = defineCollection({
