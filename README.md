@@ -42,7 +42,7 @@ occupations:
   isFinished: true
 addresses:
   github: https://github.com/luizchaves
-  linkedin: https://www.linkedin.com/in/luizcrchaves/
+  linkedin: https://www.linkedin.com/in/luizcarloschaves/
   twitter: http://twitter.com/luizchavesjp
   lattes: http://lattes.cnpq.br/7165875430419020
   researchgate: https://www.researchgate.net/profile/Luiz_Rodrigues_Chaves
