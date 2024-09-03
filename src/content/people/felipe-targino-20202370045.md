@@ -1,4 +1,3 @@
-
 ---
 id: 20202370045
 name:
@@ -8,11 +7,11 @@ avatar: https://github.com/targinofelipe1.png
 occupations:
 - id: 20202370045
   type: student
-  campus: IFPB - Campus João Pessoa
+  campus: ifpb-jp
   course: cstsi
   isFinished: false
 addresses:
-  github: https://github.com/targinofelipe1
   linkedin: https://www.linkedin.com/in/felipe-targino/
+  github: https://github.com/targinofelipe1
   email: targino.felipe@academico.ifpb.edu.br
 ---
