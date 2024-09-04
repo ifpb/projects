@@ -33,7 +33,7 @@ id: 20051370420
 name:
   compact: Luiz Chaves
   full: Luiz Carlos Rodrigues Chaves
-avatar: https://github.com/lucachaves.png
+avatar: https://github.com/luizchaves.png
 occupations:
 - id: 20051370420
   type: student
@@ -41,8 +41,8 @@ occupations:
   course: cstsi
   isFinished: true
 addresses:
-  github: https://github.com/lucachaves
-  linkedin: https://www.linkedin.com/in/luizcrchaves/
+  github: https://github.com/luizchaves
+  linkedin: https://www.linkedin.com/in/luizcarloschaves/
   twitter: http://twitter.com/luizchavesjp
   lattes: http://lattes.cnpq.br/7165875430419020
   researchgate: https://www.researchgate.net/profile/Luiz_Rodrigues_Chaves
