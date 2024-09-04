@@ -1,0 +1,15 @@
+id: 20232370022
+name:
+  compact: Laila de Aquino
+  full: Laila de Aquino
+avatar: 
+occupations:
+- id: 20232370022
+  type: student
+  campus: ifpb-jp
+  course: cstsi
+  isFinished: true
+addresses:
+  github: https://github.com/lailaaquino
+  linkedin:https://www.linkedin.com/in/laila-aquino-847597270/
+ ---
