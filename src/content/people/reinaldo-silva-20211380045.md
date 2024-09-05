@@ -12,5 +12,6 @@ occupations:
 addresses:
   github: https://github.com/mr-reinaldo
   linkedin: https://www.linkedin.com/in/jreinaldosilva
+  lattes: http://lattes.cnpq.br/6045563020573282
   email: josereinaldo.pessoal@gmail.com
 ---
