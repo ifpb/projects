@@ -80,6 +80,13 @@ const openSourceProject = z.object({
   campus,
 });
 
+const workshopProject = z.object({
+  type: z.literal('workshop'),
+  event: z.string(),
+  year: z.number().int(),
+  campus,
+});
+
 const projectCollection = defineCollection({
   schema: z.object({
     name: z.string(),
@@ -92,6 +99,7 @@ const projectCollection = defineCollection({
       researchProject,
       extensionProject,
       openSourceProject,
+      workshopProject,
     ]),
     tags: z.array(z.string()),
     owners: z.array(z.number()),
