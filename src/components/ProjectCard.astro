@@ -23,7 +23,7 @@ const projectId = getProjectId(project);
 >
   <section class="relative z-0">
     <figure class="overflow-hidden shadow-md">
-      <a href={project.data.page} target="_blank">
+      <a href={project.data.page || project.data.repository} target="_blank">
         <img
           src={project.data.preview ?? '/projects/imgs/project-placeholder.png'}
           class="animate-pulse bg-gray-300 object-cover w-full h-[200px] md:h-[150px] hover:scale-105 transition duration-500"
