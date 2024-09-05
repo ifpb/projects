@@ -13,7 +13,7 @@ function isProfessor(person) {
   );
 }
 
-function getStudentSemesterId(id) {
+export function getStudentSemesterId(id) {
   const year = String(id).slice(0, 4);
   const semester = String(id).slice(4, 5);
 
