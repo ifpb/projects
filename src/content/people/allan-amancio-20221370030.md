@@ -9,7 +9,7 @@ occupations:
   type: student
   campus: ifpb-jp
   course: cstsi
-  isFinished: true
+  isFinished: false
 addresses:
   github: https://github.com/AllanSmithll
   linkedin: https://www.linkedin.com/in/allansmill/
