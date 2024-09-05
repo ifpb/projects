@@ -3,7 +3,7 @@ id: 20221370030
 name:
   compact: Allan Amâncio
   full: Allan Alves Amâncio
-avatar: https://avatars.githubusercontent.com/u/101681192?v=4
+avatar: https://github.com/AllanSmithll.png
 occupations:
 - id: 20221370030
   type: student
@@ -12,7 +12,7 @@ occupations:
   isFinished: true
 addresses:
   github: https://github.com/AllanSmithll
-  linkedin: https://www.linkedin.com/in/allansmill/
+  linkedin: https://www.linkedin.com/in/allansmithll/
   lattes: http://lattes.cnpq.br/0376332803105836
   email: contato.allanamancio@gmail.com
 ---
