@@ -1,0 +1,18 @@
+---
+id: 20221370017
+name:
+  compact: Samuel Merson
+  full: Samuel Merson Neves de Lima Filho
+avatar: https://github.com/Samuel-MN0211.png
+occupations:
+- id: 20221370017
+  type: student
+  campus: ifpb-jp
+  course: cstsi
+  isFinished: false
+addresses:
+  github: https://github.com/Samuel-MN0211
+  linkedin: https://www.linkedin.com/in/samuelmersonf/
+  lattes: http://lattes.cnpq.br/8688349441190436
+  email: smerson0211@gmail.com
+---
