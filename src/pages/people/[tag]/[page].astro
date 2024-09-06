@@ -1,11 +1,11 @@
 ---
 import { CollectionEntry } from 'astro:content';
-import { getCollection } from 'astro:content';
 import PersonCard from '../../../components/PersonCard.astro';
 import PaginationIndex from '../../../components/PaginationIndex.astro';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { getAllPersonTags, getPeopleByTag } from '../../../helpers/people';
 import { PAGE_SIZE } from '../../../consts';
+import { getCourseName } from '../../../helpers/courses';
 
 export interface Props {
   page: {
@@ -36,30 +36,9 @@ export async function getStaticPaths({ paginate }) {
 
 const { page } = Astro.props;
 const { tag } = Astro.params;
-const courses = await getCollection('courses');
-
-const getCourseByAbbreviation = (abbreviation: string) => {
-  return courses.find((course) => course?.data?.abbreviation === abbreviation);
-};
-
-const getCourseName = (tag: string) => {
-  const [abbreviation, semester] = tag.split('-');
-
-  const course = getCourseByAbbreviation(abbreviation);
-
-  const courseName = `${course?.data?.level?.compact} em ${course?.data?.name}`;
-
-  if (semester) {
-    return `${courseName} (${semester})`;
-  } else if (course) {
-    return courseName;
-  } else {
-    return abbreviation;
-  }
-};
 ---
 
-<BaseLayout pageTitle={`${getCourseName(tag)}`}>
+<BaseLayout pageTitle={getCourseName(tag)}>
   <div
     class="grid justify-center justify-items-center gap-5 grid-cols-1 md:grid-cols-[repeat(2,_233px)] lg:grid-cols-[repeat(3,_233px)] xl:grid-cols-4 mx-auto"
     data-pagefind-ignore
@@ -68,7 +47,7 @@ const getCourseName = (tag: string) => {
   </div>
   {
     page.lastPage > 1 && (
-      <PaginationIndex page={page} pagePath={`/people/${tag}`} />
+      <PaginationIndex page={page} type="people" index={tag} />
     )
   }
 </BaseLayout>

@@ -48,7 +48,15 @@ async function hasProjects(person) {
 export async function getPersonTags(person) {
   const campi = person.data.occupations.map((occupation) => occupation.campus);
 
-  const tags = [...campi, (await hasProjects(person)) && 'projetos'];
+  const tags = [...campi];
+
+  if (await hasProjects(person)) {
+    tags.push('projetos');
+  }
+
+  if (hasFinishedSomeCourse(person)) {
+    tags.push('egresso');
+  }
 
   const courses = person.data.occupations
     .filter((occupation) => occupation.type === 'student')
@@ -58,18 +66,12 @@ export async function getPersonTags(person) {
     .filter((occupation) => occupation.type === 'student')
     .map((occupation) => getStudentSemesterId(occupation.id));
 
-  const coursesBySemeter = semesters.map(
+  const coursesBySemester = semesters.map(
     (semester, index) => `${courses[index]}-${semester}`
   );
 
   if (isStudent(person)) {
-    tags.push(
-      'aluno',
-      ...courses,
-      ...semesters,
-      ...coursesBySemeter,
-      hasFinishedSomeCourse(person) ? 'egresso' : 'incompleto'
-    );
+    tags.push('aluno', ...courses, ...semesters, ...coursesBySemester);
   }
 
   if (isProfessor(person)) {
@@ -90,7 +92,7 @@ export function getPersonTagGropus(person) {
     .filter((occupation) => occupation.type === 'student')
     .map((course) => getStudentSemesterId(course.id));
 
-  const coursesBySemeter = semesters.map(
+  const coursesBySemester = semesters.map(
     (semester, index) => `${courses[index]}-${semester}`
   );
 
@@ -101,7 +103,7 @@ export function getPersonTagGropus(person) {
     },
     semester: {
       name: 'semestre',
-      values: coursesBySemeter,
+      values: coursesBySemester,
     },
   };
 

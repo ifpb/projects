@@ -2,7 +2,11 @@
 import type { CollectionEntry } from 'astro:content';
 import { Icon } from 'astro-icon';
 import { getProjectsByPerson } from '../helpers/projects';
-import { getPersonTags, getStudentSemesterId } from '../helpers/people';
+import { getPersonTags } from '../helpers/people';
+import {
+  getCourseAbbreviationByOccupation,
+  getCourseAbbreviationCampusByOccupation,
+} from '../helpers/courses';
 
 export interface Props {
   person: CollectionEntry<'people'>;
@@ -96,12 +100,12 @@ const tags = await getPersonTags(person);
           .filter((occupation) => occupation.course)
           .map((occupation) => (
             <a
-              href={`/projects/people/${
-                occupation.course
-              }-${getStudentSemesterId(occupation.id)}/1`}
+              href={`/projects/people/${getCourseAbbreviationByOccupation(
+                occupation
+              )}/1`}
               class="text-[10px] pointer text-[10px] inline-block font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 m-0.5 py-px px-0.5 rounded-full"
             >
-              {`${occupation.course}-${getStudentSemesterId(occupation.id)}`}
+              {getCourseAbbreviationCampusByOccupation(occupation)}
             </a>
           ))
       }

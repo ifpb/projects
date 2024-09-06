@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import { Icon } from '@iconify/react';
+import {
+  getCourseByAbbreviation,
+  getSemesterCourses,
+} from '../helpers/courses';
 
 export default function Filter({ type, tags }) {
   const [isShow, setIsShow] = useState(false);
@@ -22,19 +26,44 @@ export default function Filter({ type, tags }) {
           onClick={toogleShow}
         />
         <h1 className="font-bold text-xl capitalize text-center mb-8">Tags</h1>
-        {Object.values(tags).map((tag, index) => (
-          <div key={index}>
-            <h3 className="font-semibold text-lg capitalize">{tag.name}</h3>
-            {tag.values.map((value) => (
-              <a
-                href={`/projects/${type}/${value}/1`}
-                className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blueGray-500 bg-white hover:bg-gray-600 hover:text-white transition duration-500 uppercase last:mr-0 mr-1 mt-1"
-              >
-                {value}
-              </a>
-            ))}
-          </div>
-        ))}
+        {type === 'codes' &&
+          Object.values(tags).map((tag, index) => (
+            <div key={index} class="mb-4">
+              <h3 className="font-semibold text-lg capitalize">{tag.name}</h3>
+              {tag.values.map((value) => (
+                <a
+                  href={`/projects/${type}/${value}/1`}
+                  className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blueGray-500 bg-white hover:bg-gray-600 hover:text-white transition duration-500 uppercase last:mr-0 mr-1 mt-1"
+                >
+                  {value}
+                </a>
+              ))}
+            </div>
+          ))}
+        {type === 'people' &&
+          Object.entries(getSemesterCourses(tags.semester.values)).map(
+            ([course, semesters]) => (
+              <div key={course} class="mb-4">
+                <h3 className="font-semibold text-lg">
+                  {getCourseByAbbreviation(course).data.name}
+                </h3>
+                <a
+                  href={`/projects/${type}/${course}/1`}
+                  className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blueGray-500 bg-white hover:bg-gray-600 hover:text-white transition duration-500 lowercase last:mr-0 mr-1 mt-1"
+                >
+                  {course}
+                </a>
+                {semesters.map((semester) => (
+                  <a
+                    href={`/projects/${type}/${course}-${semester}/1`}
+                    className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blueGray-500 bg-white hover:bg-gray-600 hover:text-white transition duration-500 last:mr-0 mr-1 mt-1"
+                  >
+                    {semester}
+                  </a>
+                ))}
+              </div>
+            )
+          )}
       </div>
     </>
   ) : (

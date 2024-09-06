@@ -1,6 +1,7 @@
 ---
 export interface Props {
-  pagePath: string;
+  type: string;
+  index: string;
   page: {
     currentPage: number;
     lastPage: number;
@@ -11,7 +12,9 @@ export interface Props {
   };
 }
 
-const { page, pagePath } = Astro.props;
+const { page, type, index } = Astro.props;
+
+const pagePath = `/${type}/${index}`;
 
 page.url.first = `${pagePath}/1`;
 page.url.last = `${pagePath}/${page.lastPage}`;

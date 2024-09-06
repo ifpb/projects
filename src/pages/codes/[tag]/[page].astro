@@ -50,7 +50,7 @@ const { tag } = Astro.params;
   </div>
   {
     page.lastPage > 1 && (
-      <PaginationIndex page={page} pagePath={`/codes/${tag}`} />
+      <PaginationIndex page={page} type="codes" index={tag} />
     )
   }
 </BaseLayout>
