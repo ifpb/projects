@@ -82,7 +82,7 @@ No campo `owners` é possível adicionar uma lista alunos, caso o projeto tenha 
 
 Para enviar seus dados é necessário fazer o Pull Request (PR). Inicialmente é preciso fazer uma cópia/fork deste repositório (`ifpb/projects` - upstream), clonar o repositório copiado (`seu-username/projects` - origin) e adicionar os arquivos de alunos e projetos conforme descrito anteriormente. Caso já tenha feito o fork, basta atualizar o seu repositório local antes de fazer o PR.
 
-Após inclusão dos arquivos é recomendado fazer um testar localmente para ver como ficou seus dados no projeto. Para isso, você precisa ter o [Node.js](https://nodejs.org/) instalado e executar os seguintes comandos:
+Após inclusão dos arquivos é recomendado fazer um teste localmente para ver como ficou seus dados. Para isso, você precisa ter o [Node.js](https://nodejs.org/) instalado e executar os seguintes comandos:
 
 ```bash
 $ npm install
@@ -90,9 +90,7 @@ $ npm run build
 $ npm run preview
 ```
 
-Na mensagem de commit, informe o que foi feito, por exemplo, `content: Adicionando o aluno Luiz Chaves` ou `content: Adicionando o projeto IFPB Projects`.
-
-Caso não tenha nenhum erro, abra o navegador e acesse o endereço sugerido no terminal. Se deu tudo certo, faça o PR e aguarde a aprovação, mas antes do PR lembre de atualizar o seu repositório local (origin) com o repositório original (upstream).
+Caso não tenha nenhum erro, abra o navegador e acesse o endereço sugerido no terminal. Se deu tudo certo, gere o commit dos arquivos e os envie em um PR, depois é só aguardar a aprovação para que as informações apareçam em [https://ifpb.github.io/projects/](https://ifpb.github.io/projects/), mas antes do PR lembre de atualizar o seu repositório local (origin) com o repositório original (upstream), e ao gerar a mensagem de commit informe o que foi feito, por exemplo, `content: Adicionando o aluno Luiz Chaves` ou `content: Adicionando o projeto IFPB Projects`.
 
 Gostou da ideia? Então avise aos seus colegas e compartilhe seus projetos do IFPB!
 
