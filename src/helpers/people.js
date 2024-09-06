@@ -1,13 +1,13 @@
 import { getCollection } from 'astro:content';
 import { getProjectsByPerson } from './projects';
 
-function isStudent(person) {
+export function isStudent(person) {
   return person.data.occupations.some(
     (occupation) => occupation.type === 'student'
   );
 }
 
-function isProfessor(person) {
+export function isProfessor(person) {
   return person.data.occupations.some(
     (occupation) => occupation.type === 'professor'
   );

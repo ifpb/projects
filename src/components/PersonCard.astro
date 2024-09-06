@@ -2,7 +2,7 @@
 import type { CollectionEntry } from 'astro:content';
 import { Icon } from 'astro-icon';
 import { getProjectsByPerson } from '../helpers/projects';
-import { getPersonTags } from '../helpers/people';
+import { getPersonTags, isProfessor } from '../helpers/people';
 import {
   getCourseAbbreviationByOccupation,
   getCourseAbbreviationCampusByOccupation,
@@ -110,9 +110,7 @@ const tags = await getPersonTags(person);
           ))
       }
       {
-        person.data.occupations.some(
-          (occupation) => occupation.type === 'professor'
-        ) && (
+        isProfessor(person) && (
           <span class="text-[10px] pointer text-[10px] inline-block font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 m-0.5 py-px px-0.5 rounded-full">
             professor
           </span>
