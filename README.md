@@ -1,10 +1,10 @@
-# Projetos do IFPB
+# Estudantes e Projetos do IFPB
 
-O objetivo deste repositório consiste em exibir alunos e projetos do IFPB. Caso você ainda não possua projetos, não está na lista dos alunos, ou se você deseja atualizar alguma informação, basta fazer um Pull Request (PR) enviando os seus dados.
+O objetivo deste repositório consiste em exibir os alunos e os projetos do IFPB. Caso você ainda não possua projetos, não está na lista dos alunos, ou se você deseja atualizar alguma informação existente, basta fazer um Pull Request (PR) enviando os seus dados. A seguir, é apresentado como fazer o cadastro de alunos e projetos, e as orientações para o PR.
 
 ## Cadastro de alunos
 
-O primeiro passo seria incluir o dados do aluno adicionando, no diretório no diretório [src/content/people/](https://github.com/ifpb/projects/tree/main/src/content/people), um arquivo seguindo este `src/content/people/nome-compacto-e-numero-da-matricula.md`:
+O primeiro passo seria incluir o dados do aluno adicionando um arquivo seguindo este formato `nome-compacto-e-numero-da-matricula.md`, no diretório no diretório [src/content/people/](https://github.com/ifpb/projects/tree/main/src/content/people):
 
 ```yaml
 ---
@@ -29,21 +29,24 @@ addresses:
 ---
 ```
 
-Detalhe, vamos padronizar o `id` como sendo a sua matrícula do curso, ou do IFPB caso seja servidor, e os seguintes campos serão obrigatórios:
+Vamos padronizar o `id` como sendo a sua matrícula do curso, ou a do IFPB no caso de servidor, e os seguintes campos serão obrigatórios para estudante segundo a [definição de coleção do Astro.js](https://docs.astro.build/en/guides/content-collections/#defining-a-collection-schema) no arquivo [src/content/config.ts](https://github.com/ifpb/projects/tree/main/src/content/config.ts) (Esquema feito com [Zod](https://zod.dev/)):
 
 - `id`
 - `name.compact`
 - `name.full`
 - `avatar`
-- `occupations.*`
-- `addresses.linkedin`
+- `occupations.$.id`
+- `occupations.$.type`
+- `occupations.$.campus`
+- `occupations.$.course`
 - `addresses.gihtub`
+- `addresses.linkedin`
 
-A imagem de avatar deve ser a do seu perfil do github, por exemplo, o endereço do avatar do código é https://github.com/luizchaves e a imagem de avatar é https://github.com/luizchaves.png.
+A imagem de avatar deve ser a do seu perfil do github, por exemplo, o endereço do avatar do exemplo é https://github.com/luizchaves, logo a imagem avatar deve ser https://github.com/luizchaves.png.
 
 ## Cadastro de projetos
 
-O próximo passo seria incluir os dados do projeto adicionando, no diretório [src/content/projects/](https://github.com/ifpb/projects/tree/main/src/content/projects), um arquivo seguindo este formato `src/content/projects/titulo-do-projeto.md`:
+O próximo passo seria incluir os dados do projeto adicionando um arquivo seguindo este formato `titulo-do-projeto.md`, no diretório [src/content/projects/](https://github.com/ifpb/projects/tree/main/src/content/projects):
 
 ```yaml
 ---
@@ -66,11 +69,20 @@ owners:
 ---
 ```
 
-A imagem do preview do projeto deve ser colocada no próprio repositório do projeto com a extensão `.png` e tamanho sugerido de `500x262` px.
+Este exemplo é um projeto do tipo `projeto de disciplina`, no arquivo [src/content/config.ts](https://github.com/ifpb/projects/tree/main/src/content/config.ts) é possível ver outros tipos de projetos. No projeto de disciplina existem três endereços do projeto:
 
-## Testar localmente
 
-Antes de fazer o Pull Request (PR) é recomendado fazer um testar localmente para ver como ficou o seu projeto. Para isso, você precisa ter o [Node.js](https://nodejs.org/) instalado. Depois, basta fazer o fork, clonar o repositório copiado e executar os seguintes comandos:
+- `repository` - Endereço do repositório do projeto no Github;
+- `preview` - Endereço da imagem de preview do projeto (print screen), que deve ser colocada no próprio repositório do projeto com a extensão `.png` e tamanho sugerido de `500x262px`;
+- `page` - Site do projeto em execução, caso exista (opcional).
+
+No campo `owners` é possível adicionar uma lista alunos, caso o projeto tenha mais de um colaborador, informando a matrícula do aluno, depois é importante que cada aluno faça seu o cadastrado de suas informações.
+
+## Pull Request
+
+Para enviar seus dados é necessário fazer o Pull Request (PR). Inicialmente é preciso fazer uma cópia/fork deste repositório (`ifpb/projects` - upstream), clonar o repositório copiado (`seu-username/projects` - origin) e adicionar os arquivos de alunos e projetos conforme descrito anteriormente. Caso já tenha feito o fork, basta atualizar o seu repositório local antes de fazer o PR.
+
+Após inclusão dos arquivos é recomendado fazer um testar localmente para ver como ficou seus dados no projeto. Para isso, você precisa ter o [Node.js](https://nodejs.org/) instalado e executar os seguintes comandos:
 
 ```bash
 $ npm install
@@ -78,7 +90,9 @@ $ npm run build
 $ npm run preview
 ```
 
-Caso não tenha nenhum erro, abra o navegador e acesse o endereço sugerido no terminal.
+Na mensagem de commit, informe o que foi feito, por exemplo, `content: Adicionando o aluno Luiz Chaves` ou `content: Adicionando o projeto IFPB Projects`.
+
+Caso não tenha nenhum erro, abra o navegador e acesse o endereço sugerido no terminal. Se deu tudo certo, faça o PR e aguarde a aprovação, mas antes do PR lembre de atualizar o seu repositório local (origin) com o repositório original (upstream).
 
 Gostou da ideia? Então avise aos seus colegas e compartilhe seus projetos do IFPB!
 
