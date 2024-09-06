@@ -89,7 +89,8 @@ const tags = await getPersonTags(person);
         ))
       }
     </div>
-    <!-- <div class="absolute bottom-1 right-1">
+    <!-- <div class="absolute bottom-1 right-1" -->
+    <div>
       {
         person.data.occupations
           .filter((occupation) => occupation.course)
@@ -98,11 +99,20 @@ const tags = await getPersonTags(person);
               href={`/projects/people/${
                 occupation.course
               }-${getStudentSemesterId(occupation.id)}/1`}
-              class="text-[10px] block pointer"
+              class="text-[10px] pointer text-[10px] inline-block font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 m-0.5 py-px px-0.5 rounded-full"
             >
               {`${occupation.course}-${getStudentSemesterId(occupation.id)}`}
             </a>
           ))
+      }
+    </div>
+    <!-- <div>
+      {
+        tags.map((tag) => (
+          <span class="text-[10px] inline-block font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 m-0.5 py-px px-0.5 rounded-full">
+            {tag}
+          </span>
+        ))
       }
     </div> -->
   </div>
