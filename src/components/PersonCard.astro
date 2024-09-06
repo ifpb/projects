@@ -105,6 +105,15 @@ const tags = await getPersonTags(person);
             </a>
           ))
       }
+      {
+        person.data.occupations.some(
+          (occupation) => occupation.type === 'professor'
+        ) && (
+          <span class="text-[10px] pointer text-[10px] inline-block font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 m-0.5 py-px px-0.5 rounded-full">
+            professor
+          </span>
+        )
+      }
     </div>
     <!-- <div>
       {
