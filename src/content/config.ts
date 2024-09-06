@@ -98,7 +98,7 @@ const projectCollection = defineCollection({
   schema: z.object({
     name: z.string(),
     description: z.string(),
-    repository: z.string().url().optional(),
+    repository: z.string().url(),
     preview: z.string().url().optional(),
     page: z.string().url().optional(),
     category: z.union([
