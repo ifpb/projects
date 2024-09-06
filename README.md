@@ -4,7 +4,7 @@ O objetivo deste repositório consiste em exibir os alunos e os projetos do IFPB
 
 ## Cadastro de alunos
 
-O primeiro passo seria incluir o dados do aluno adicionando um arquivo seguindo este formato `name-compact-matricula.md`, no diretório no diretório [src/content/people/](https://github.com/ifpb/projects/tree/main/src/content/people), por exemplo, o arquivo `luiz-chaves-20051370420.md`:
+O primeiro passo seria incluir o dados do aluno adicionando um arquivo seguindo este formato `name-compact-id.md`, no diretório no diretório [src/content/people/](https://github.com/ifpb/projects/tree/main/src/content/people), por exemplo, o arquivo `luiz-chaves-20051370420.md`:
 
 ```yaml
 ---
