@@ -3,11 +3,11 @@ import { z, defineCollection } from 'astro:content';
 const campus = z.enum(['ifpb-jp', 'ifpb-cg', 'ifpb-gb', 'reitoria']);
 
 const course = z.enum([
-  'cstsi',
-  'cstrc',
+  'cmpti',
   'csbee',
   'csbes',
-  'cmpti',
+  'cstrc',
+  'cstsi',
   'cstt',
   'ctie',
   'ctii',
@@ -31,6 +31,20 @@ const occupationStudent = z.object({
   campus,
   course,
   isFinished: z.boolean().optional(),
+});
+
+const courseCollection = defineCollection({
+  schema: z.object({
+    id: z.string(),
+    name: z.string(),
+    abbreviation: z.string(),
+    level: z.object({
+      compact: z.string(),
+      full: z.string(),
+    }),
+    campus,
+    page: z.string().optional(),
+  }),
 });
 
 const peopleCollection = defineCollection({
@@ -101,4 +115,5 @@ const projectCollection = defineCollection({
 export const collections = {
   people: peopleCollection,
   projects: projectCollection,
+  courses: courseCollection,
 };
