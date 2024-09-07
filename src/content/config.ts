@@ -1,5 +1,11 @@
 import { z, defineCollection } from 'astro:content';
 
+const id = z.number().refine((num) => {
+  const length = num.toString().length;
+
+  return [12, 11, 7].includes(length);
+});
+
 const campus = z.enum(['ifpb-jp', 'ifpb-cg', 'ifpb-gb', 'reitoria']);
 
 const course = z.enum([
@@ -13,26 +19,74 @@ const course = z.enum([
   'ctii',
 ]);
 
-const occupationProfessor = z.object({
-  id: z.number(),
+const addresses = z.object({
+  github: z.string().url().optional(),
+  linkedin: z.string().url().optional(),
+  homepage: z.string().optional(),
+  twitter: z.string().url().optional(),
+  bluesky: z.string().url().optional(),
+  threads: z.string().url().optional(),
+  stackoverflow: z.string().url().optional(),
+  lattes: z.string().url().optional(),
+  researchgate: z.string().url().optional(),
+  instagram: z.string().url().optional(),
+  email: z.string().email().optional(),
+});
+
+// occupation
+const professorOccupation = z.object({
+  id,
   type: z.literal('professor'),
   campus,
 });
 
-const occupationEmployee = z.object({
-  id: z.number(),
+const employeeOccupation = z.object({
+  id,
   type: z.literal('employee'),
   campus,
 });
 
-const occupationStudent = z.object({
-  id: z.number(),
+const studentOccupation = z.object({
+  id,
   type: z.literal('student'),
   campus,
   course,
   isFinished: z.boolean().optional(),
 });
 
+// project category
+const projectCategory = z.object({
+  campus,
+});
+
+const subjectProjectCategory = projectCategory.extend({
+  type: z.literal('subject'),
+  subject: z.string(),
+  semester: z.number().refine((value) => {
+    const regex = /^\d{4}\.[12]$/;
+
+    return regex.test(value.toFixed(1));
+  }),
+  course,
+  campus,
+});
+
+const researchProjectCategory = projectCategory.extend({
+  type: z.literal('research'),
+  campus,
+});
+
+const extensionProjectCategory = projectCategory.extend({
+  type: z.literal('extension'),
+  campus,
+});
+
+const openSourceProjectCategory = projectCategory.extend({
+  type: z.literal('open source'),
+  campus,
+});
+
+// collections
 const courseCollection = defineCollection({
   schema: z.object({
     id: z.string(),
@@ -43,72 +97,44 @@ const courseCollection = defineCollection({
       full: z.string(),
     }),
     campus,
-    page: z.string().optional(),
+    addresses: addresses.optional(),
   }),
 });
 
 const peopleCollection = defineCollection({
   schema: z.object({
-    id: z.number(),
+    id,
     name: z.object({
       compact: z.string(),
       full: z.string(),
     }),
     avatar: z.string().url(),
     occupations: z.array(
-      z.union([occupationProfessor, occupationStudent, occupationEmployee])
+      z.union([professorOccupation, employeeOccupation, studentOccupation])
     ),
-    addresses: z.object({
+    addresses: addresses.extend({
       github: z.string().url(),
       linkedin: z.string().url(),
-      twitter: z.string().url().optional(),
-      stackoverflow: z.string().url().optional(),
-      lattes: z.string().url().optional(),
-      researchgate: z.string().url().optional(),
-      instagram: z.string().url().optional(),
-      email: z.string().email().optional(),
     }),
   }),
-});
-
-const subjectProject = z.object({
-  type: z.literal('subject'),
-  subject: z.string(),
-  semester: z.number(),
-  course,
-  campus,
-});
-
-const researchProject = z.object({
-  type: z.literal('research'),
-  campus,
-});
-
-const extensionProject = z.object({
-  type: z.literal('extension'),
-  campus,
-});
-
-const openSourceProject = z.object({
-  type: z.literal('open source'),
-  campus,
 });
 
 const projectCollection = defineCollection({
   schema: z.object({
     name: z.string(),
     description: z.string(),
-    repository: z.string().url(),
-    preview: z.string().url().optional(),
-    page: z.string().url().optional(),
+    addresses: addresses.extend({
+      repository: z.string().url(),
+      preview: z.string().url().optional(),
+    }),
     category: z.union([
-      subjectProject,
-      researchProject,
-      extensionProject,
-      openSourceProject,
+      subjectProjectCategory,
+      researchProjectCategory,
+      extensionProjectCategory,
+      openSourceProjectCategory,
     ]),
     tags: z.array(z.string()),
-    owners: z.array(z.number()),
+    owners: z.array(id),
   }),
 });
 

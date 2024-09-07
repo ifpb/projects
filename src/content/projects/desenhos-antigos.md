@@ -1,9 +1,10 @@
 ---
 name: Desenhos antigos
 description: Este site fala sobre alguns desenhos que marcaram a infância de muitos.
-preview: https://raw.githubusercontent.com/teooodbs/desenhos-antigos/main/desenhos-site.png
-repository: https://github.com/teooodbs/desenhos-antigos
-page: https://teooodbs.github.io/desenhos-antigos/
+addresses:
+  preview: https://raw.githubusercontent.com/teooodbs/desenhos-antigos/main/desenhos-site.png
+  repository: https://github.com/teooodbs/desenhos-antigos
+  homepage: https://teooodbs.github.io/desenhos-antigos/
 category:
   type: subject
   subject: lm

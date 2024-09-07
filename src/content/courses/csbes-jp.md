@@ -6,4 +6,7 @@ level:
   compact: Graduação
   full: Curso Superior de Tecnologia
 campus: ifpb-jp
+addresses:
+  instagram: https://www.instagram.com/eng.software.ifpb/
+  email: eng.software.ifpb@gmail.com
 ---

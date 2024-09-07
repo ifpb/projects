@@ -1,8 +1,9 @@
 ---
 name: Let's Brownie
 description: Este projeto é uma aplicação web para linktree de uma empresa de doces, a fim de direcionar seus clientes.
-preview: https://raw.githubusercontent.com/leticiazlopes/projLs1/main/preview.png
-repository: https://github.com/leticiazlopes/projLs1
+addresses:
+  preview: https://raw.githubusercontent.com/leticiazlopes/projLs1/main/preview.png
+  repository: https://github.com/leticiazlopes/projLs1
 category:
   type: subject
   subject: ls

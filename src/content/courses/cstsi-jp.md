@@ -6,5 +6,6 @@ level:
   compact: Graduação
   full: Curso Superior de Tecnologia
 campus: ifpb-jp
-page: https://estudante.ifpb.edu.br/cursos/42/
+addresses:
+  homepage: https://estudante.ifpb.edu.br/cursos/42/
 ---

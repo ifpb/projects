@@ -1,9 +1,10 @@
 ---
 name: LMCULT
 description: Nossa ideia de projeto será, não apenas um site, mas uma locadora virtual. Estamos apresentando uma versão mais moderna das locadoras retrôs, trazendo de volta clássicos dos filmes, como ''A Noite dos Mortos-Vivos'' e ''King Kong'', disponibilizando-os na biblioteca virtual do site através de recomendação e redirecionamento para a compra ou download do filme. Bom filme.
-preview: https://raw.githubusercontent.com/dougcarneiro/lm_cult/main/images/noivafrankeinsteinpc.jpg
-page: https://dougcarneiro.github.io/lm_cult/
-repository: https://github.com/dougcarneiro/lm_cult
+addresses:
+  preview: https://raw.githubusercontent.com/dougcarneiro/lm_cult/main/images/noivafrankeinsteinpc.jpg
+  homepage: https://dougcarneiro.github.io/lm_cult/
+  repository: https://github.com/dougcarneiro/lm_cult
 category:
   type: subject
   subject: lm

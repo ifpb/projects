@@ -56,9 +56,9 @@ const category = project.data.category as ProjectProps['category'];
   </h1>
   <div class="flex gap-5">
     <div>
-      <a class="underline" href={project.data.page}>
+      <a class="underline" href={project.data.addresses.homepage}>
         <img
-          src={project.data.preview}
+          src={project.data.addresses.preview}
           alt={project.data.name}
           class="border"
         />
@@ -71,8 +71,8 @@ const category = project.data.category as ProjectProps['category'];
       </div>
       <div class="mb-2">
         <div class="font-bold text-lg">Repositório:</div>
-        <a class="underline" href={project.data.repository}
-          >{project.data.repository}</a
+        <a class="underline" href={project.data.addresses.repository}
+          >{project.data.addresses.repository}</a
         >
       </div>
       {

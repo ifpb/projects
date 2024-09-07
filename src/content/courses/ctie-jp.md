@@ -6,5 +6,6 @@ level:
   compact: Técnico Integrado ao Médio
   full: Curso Técnico Integrado ao Ensino Médio
 campus: ifpb-jp
-page: https://estudante.ifpb.edu.br/cursos/164/
+addresses:
+  homepage: https://estudante.ifpb.edu.br/cursos/164/
 ---

@@ -6,7 +6,10 @@ export function isSubjectProject(project) {
 }
 
 export function getProjectId(project) {
-  return project.data.repository.split('github.com/').at(-1).replace('/', '-');
+  return project.data.addresses.repository
+    .split('github.com/')
+    .at(-1)
+    .replace('/', '-');
 }
 
 export function getProjectTags(project) {

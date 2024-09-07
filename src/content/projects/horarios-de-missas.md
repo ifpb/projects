@@ -1,9 +1,10 @@
 ---
 name: Horários de Missa
-description: Este projeto é uma aplicação web simples que consiste em agrupar horários de missa na cidade de Jo]ao Pessoa, categorizadps por bairro
-preview: https://raw.githubusercontent.com/oiclai/HorariosDeMissa/main/preview.png
-page: https://oiclai.github.io/HorariosDeMissa/
-repository: https://github.com/oiclai/HorariosDeMissa
+description: Este projeto é uma aplicação web simples que consiste em agrupar horários de missa na cidade de João Pessoa, categorizadas por bairro
+addresses:
+  preview: https://raw.githubusercontent.com/oiclai/HorariosDeMissa/main/preview.png
+  homepage: https://oiclai.github.io/HorariosDeMissa/
+  repository: https://github.com/oiclai/HorariosDeMissa
 category:
   type: subject
   subject: lm

@@ -52,9 +52,10 @@ O próximo passo seria incluir os dados do projeto adicionando um arquivo seguin
 ---
 name: IFPB Projects
 description: Este portal tem como objetivo listar projetos construídos pelos alunos do IFPB.
-preview: https://raw.githubusercontent.com/ifpb/projects/master/preview.png
-page: https://ifpb.github.io/projects/
-repository: https://github.com/ifpb/projects
+addresses:
+  preview: https://raw.githubusercontent.com/ifpb/projects/main/preview.png
+  homepage: https://ifpb.github.io/projects/
+  repository: https://github.com/ifpb/projects
 category:
   type: subject
   subject: ls
@@ -69,12 +70,12 @@ owners:
 ---
 ```
 
-Este exemplo é um projeto do tipo `projeto de disciplina`, no arquivo [src/content/config.ts](https://github.com/ifpb/projects/tree/main/src/content/config.ts) é possível ver outros tipos de projetos. No projeto de disciplina existem três endereços do projeto:
+Este exemplo é um projeto do tipo `projeto de disciplina`, no arquivo [src/content/config.ts](https://github.com/ifpb/projects/tree/main/src/content/config.ts) é possível ver outros tipos de projetos. Neste exemplo de projeto de disciplina existem estes endereços do projeto:
 
 
-- `repository` - Endereço do repositório do projeto no Github;
-- `preview` - Endereço da imagem de preview do projeto (print screen), que deve ser colocada no próprio repositório do projeto com a extensão `.png` e tamanho sugerido de `500x262px`;
-- `page` - Site do projeto em execução, caso exista (opcional).
+- `addresses.repository` - Endereço do repositório do projeto no Github (obrigatório);
+- `addresses.preview` - Endereço da imagem de preview do projeto (print screen), que deve ser colocada no próprio repositório do projeto com a extensão `.png` e tamanho sugerido de `500x262px` (obrigatório);
+- `addresses.homepage` - Site do projeto em execução, caso exista (opcional).
 
 No campo `owners` é possível adicionar uma lista alunos, caso o projeto tenha mais de um colaborador, informando a matrícula do aluno, depois é importante que cada aluno faça seu o cadastrado de suas informações.
 
