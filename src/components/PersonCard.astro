@@ -103,7 +103,7 @@ const tags = await getPersonTags(person);
               href={`/projects/people/${getCourseAbbreviationByOccupation(
                 occupation
               )}/1`}
-              class="text-[10px] pointer text-[10px] inline-block font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 m-0.5 py-px px-0.5 rounded-full"
+              class="text-[10px] pointer inline-block font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 m-0.5 py-px px-0.5 rounded-full"
             >
               {getCourseAbbreviationCampusByOccupation(occupation)}
             </a>
@@ -111,7 +111,7 @@ const tags = await getPersonTags(person);
       }
       {
         isProfessor(person) && (
-          <span class="text-[10px] pointer text-[10px] inline-block font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 m-0.5 py-px px-0.5 rounded-full">
+          <span class="text-[10px] pointer inline-block font-semibold text-gray-700 bg-gray-100 m-0.5 py-px px-0.5 rounded-full">
             professor
           </span>
         )
