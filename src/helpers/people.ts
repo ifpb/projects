@@ -1,26 +1,27 @@
-import { getCollection } from 'astro:content';
+import { CollectionEntry, getCollection } from 'astro:content';
 import { getProjectsByPerson } from './projects';
+import { Student } from '../content/config';
 
-export function isStudent(person) {
+export function isStudent(person: CollectionEntry<'people'>) {
   return person.data.occupations.some(
     (occupation) => occupation.type === 'student'
   );
 }
 
-export function isProfessor(person) {
+export function isProfessor(person: CollectionEntry<'people'>) {
   return person.data.occupations.some(
     (occupation) => occupation.type === 'professor'
   );
 }
 
-export function getStudentSemesterId(id) {
+export function getStudentSemesterId(id: number) {
   const year = String(id).slice(0, 4);
   const semester = String(id).slice(4, 5);
 
   return Number(`${year}.${semester}`);
 }
 
-function getFirstSemesterCourseId(student) {
+function getFirstSemesterCourseId(student: CollectionEntry<'people'>) {
   if (isStudent(student)) {
     const firstId = student.data.occupations
       .filter((occupation) => occupation.type === 'student')
@@ -31,24 +32,26 @@ function getFirstSemesterCourseId(student) {
   }
 }
 
-function hasPersonId(person, id) {
+function hasPersonId(person: CollectionEntry<'people'>, id: number) {
   return person.data.occupations.some((occupation) => occupation.id === id);
 }
 
-function hasFinishedSomeCourse(student) {
-  return student.data.occupations.some((course) => course.isFinished);
+function hasFinishedSomeCourse(person: CollectionEntry<'people'>) {
+  return person.data.occupations.some(
+    (occupation: Student) => occupation.isFinished
+  );
 }
 
-async function hasProjects(person) {
+async function hasProjects(person: CollectionEntry<'people'>) {
   const projects = await getProjectsByPerson(person);
 
   return !!projects.length;
 }
 
-export async function getPersonTags(person) {
+export async function getPersonTags(person: CollectionEntry<'people'>) {
   const campi = person.data.occupations.map((occupation) => occupation.campus);
 
-  const tags = [...campi];
+  const tags: string[] = [...campi];
 
   if (await hasProjects(person)) {
     tags.push('projetos');
@@ -64,7 +67,7 @@ export async function getPersonTags(person) {
 
   const semesters = person.data.occupations
     .filter((occupation) => occupation.type === 'student')
-    .map((occupation) => getStudentSemesterId(occupation.id));
+    .map((occupation) => String(getStudentSemesterId(occupation.id)));
 
   const coursesBySemester = semesters.map(
     (semester, index) => `${courses[index]}-${semester}`
@@ -83,7 +86,19 @@ export async function getPersonTags(person) {
   return tags;
 }
 
-export function getPersonTagGropus(person) {
+async function getPeopleTagsMap(people: CollectionEntry<'people'>[]) {
+  const peopleTags = await Promise.all(
+    people.map<Promise<[number, string[]]>>(async (person) => {
+      const tags = await getPersonTags(person);
+
+      return [person.data.id, tags];
+    })
+  );
+
+  return new Map(peopleTags);
+}
+
+export function getPersonTagGroups(person: CollectionEntry<'people'>) {
   const courses = person.data.occupations
     .filter((occupation) => occupation.type === 'student')
     .map((occupation) => occupation.course);
@@ -113,11 +128,13 @@ export function getPersonTagGropus(person) {
 export async function getAllPersonTags() {
   const people = await getCollection('people');
 
-  const repeatedTags = await people.reduce(async (acc, person) => {
-    const tags = await getPersonTags(person);
+  const peopleTags = await getPeopleTagsMap(people);
 
-    return [...(await acc), ...tags];
-  }, Promise.resolve([]));
+  const repeatedTags = people.reduce((acc: string[], person) => {
+    const tags = peopleTags.get(person.data.id);
+
+    return [...acc, ...tags];
+  }, []);
 
   const uniqueTags = [...new Set(repeatedTags)];
 
@@ -130,7 +147,7 @@ export async function getAllPeopleTagGroups() {
   const people = await getCollection('people');
 
   const tags = people.reduce((acc, person) => {
-    const tagGroups = getPersonTagGropus(person);
+    const tagGroups = getPersonTagGroups(person);
 
     for (const key in tagGroups) {
       const values = acc[key]
@@ -150,7 +167,7 @@ export async function getAllPeopleTagGroups() {
 }
 
 // Sort people by graduation status, twitter presence, semester and name
-function personRank(person) {
+function personRank(person: CollectionEntry<'people'>) {
   const weights = {
     isProfessor: {
       value: 1,
@@ -174,7 +191,7 @@ function personRank(person) {
   };
 
   let rank = Object.values(weights).reduce((acc, weight) => {
-    return acc + !!Number(weight.status) * weight.value;
+    return acc + Number(!!Number(weight.status)) * weight.value;
   }, 0);
 
   if (isProfessor(person) && hasFinishedSomeCourse(person)) {
@@ -184,7 +201,10 @@ function personRank(person) {
   return rank;
 }
 
-function sortPeople(a, b) {
+function sortPeople(
+  a: CollectionEntry<'people'>,
+  b: CollectionEntry<'people'>
+) {
   return (
     personRank(b) - personRank(a) ||
     a.data.name.compact.localeCompare(b.data.name.compact)
@@ -199,34 +219,35 @@ export async function getPeople() {
   return people;
 }
 
-export async function getPeopleByProject(project) {
+export async function getPeopleByProject(project: CollectionEntry<'projects'>) {
   const people = await getCollection('people');
 
-  const filteredPeople = await people.reduce(async (acc, person) => {
-    if (project.data.owners.some((ownerId) => hasPersonId(person, ownerId))) {
-      return [...(await acc), person];
-    } else {
-      return acc;
-    }
-  }, []);
+  const filteredPeople = people.reduce(
+    (acc: CollectionEntry<'people'>[], person) => {
+      if (project.data.owners.some((ownerId) => hasPersonId(person, ownerId))) {
+        return [...acc, person];
+      } else {
+        return acc;
+      }
+    },
+    []
+  );
 
   filteredPeople.sort(sortPeople);
 
   return filteredPeople;
 }
 
-export async function getPeopleByTag(tag) {
+export async function getPeopleByTag(tag: string) {
   const people = await getCollection('people');
 
-  const filteredPeople = await people.reduce(async (acc, person) => {
-    const tags = await getPersonTags(person);
+  const peopleTags = await getPeopleTagsMap(people);
 
-    if (tags.includes(tag)) {
-      return [...(await acc), person];
-    } else {
-      return acc;
-    }
-  }, []);
+  const filteredPeople = people.filter((person) => {
+    const tags = peopleTags.get(person.data.id);
+
+    return tags.includes(tag);
+  });
 
   filteredPeople.sort(sortPeople);
 
@@ -234,19 +255,5 @@ export async function getPeopleByTag(tag) {
 }
 
 export async function getPeopleWithProjects() {
-  const people = await getCollection('people');
-
-  const filteredPeople = await people.reduce(async (acc, person) => {
-    const tags = await getPersonTags(person);
-
-    if (tags.includes('código')) {
-      return [...(await acc), person];
-    } else {
-      return acc;
-    }
-  }, []);
-
-  filteredPeople.sort(sortPeople);
-
-  return filteredPeople;
+  return await getPeopleByTag('projetos');
 }

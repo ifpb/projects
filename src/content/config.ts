@@ -1,5 +1,19 @@
 import { z, defineCollection } from 'astro:content';
 
+export type SubjectProject = z.infer<typeof subjectProjectCategory>;
+export type ResearchProject = z.infer<typeof subjectProjectCategory>;
+export type ExtensionProject = z.infer<typeof subjectProjectCategory>;
+export type OpenSourceProject = z.infer<typeof subjectProjectCategory>;
+export type ProjectCategory =
+  | SubjectProject
+  | ResearchProject
+  | ExtensionProject
+  | OpenSourceProject;
+export type Professor = z.infer<typeof professorOccupation>;
+export type Employee = z.infer<typeof employeeOccupation>;
+export type Student = z.infer<typeof studentOccupation>;
+export type Occupation = Professor | Employee | Student;
+
 const id = z.number().refine((num) => {
   const length = num.toString().length;
 

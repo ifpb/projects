@@ -1,25 +1,27 @@
+import { SubjectProject } from './../content/config';
 import { getCollection } from 'astro:content';
 import { getPeopleByProject } from './people';
+import type { CollectionEntry } from 'astro:content';
 
-export function isSubjectProject(project) {
+export function isSubjectProject(project: CollectionEntry<'projects'>) {
   return project.data.category.type === 'subject';
 }
 
-export function getProjectId(project) {
+export function getProjectId(project: CollectionEntry<'projects'>) {
   return project.data.addresses.repository
     .split('github.com/')
     .at(-1)
     .replace('/', '-');
 }
 
-export function getProjectTags(project) {
+export function getProjectTags(project: CollectionEntry<'projects'>) {
   if (isSubjectProject(project)) {
     const {
       data: {
         category: { subject, semester, course, campus },
         tags,
       },
-    } = project;
+    } = project as { data: { category: SubjectProject; tags: string[] } };
 
     const projectTags = [
       ...tags,
@@ -47,40 +49,47 @@ export function getProjectTags(project) {
   }
 }
 
-export function getProjectTagGroups(project) {
-  const projectTags = {
-    tags: {
-      name: 'tags',
-      values: project.data.tags,
-    },
-  };
-
+export function getProjectTagGroups(project: CollectionEntry<'projects'>) {
   if (isSubjectProject(project)) {
-    const { subject, semester, course, campus } = project.data.category;
+    const { subject, semester, course, campus } = project.data
+      .category as SubjectProject;
 
-    projectTags.subject = {
-      name: 'disciplina',
-      values: [subject],
+    const projectTags = {
+      tags: {
+        name: 'tags',
+        values: project.data.tags,
+      },
+      subject: {
+        name: 'disciplina',
+        values: [subject],
+      },
+      semester: {
+        name: 'semestre',
+        values: [`${subject}-${semester}`],
+      },
+      course: {
+        name: 'curso',
+        values: [`${course}-${campus}`],
+      },
     };
 
-    projectTags.semester = {
-      name: 'semestre',
-      values: [`${subject}-${semester}`],
+    return projectTags;
+  } else {
+    const projectTags = {
+      tags: {
+        name: 'tags',
+        values: project.data.tags,
+      },
     };
 
-    projectTags.course = {
-      name: 'curso',
-      values: [`${course}-${campus}`],
-    };
+    return projectTags;
   }
-
-  return projectTags;
 }
 
 export async function getAllProjectTags() {
   const projects = await getCollection('projects');
 
-  const repeatedTags = projects.reduce((acc, project) => {
+  const repeatedTags = projects.reduce((acc: string[], project) => {
     return [...acc, ...getProjectTags(project)];
   }, []);
 
@@ -114,7 +123,10 @@ export async function getAllProjectTagGroups() {
   return tags;
 }
 
-function sortProjects(a, b) {
+function sortProjects(
+  a: CollectionEntry<'projects'>,
+  b: CollectionEntry<'projects'>
+) {
   return a.data.name.localeCompare(b.data.name);
 }
 
@@ -131,7 +143,7 @@ export async function getProjects() {
   );
 }
 
-export async function getProjectsByTag(tag) {
+export async function getProjectsByTag(tag: string) {
   const projects = await getCollection('projects');
 
   const filteredProjects = projects.filter((project) =>
@@ -148,7 +160,7 @@ export async function getProjectsByTag(tag) {
   );
 }
 
-export async function getProjectsByPerson(person) {
+export async function getProjectsByPerson(person: CollectionEntry<'people'>) {
   const projects = await getCollection('projects');
 
   const ids = person.data.occupations.map((occupation) => occupation.id);
