@@ -43,7 +43,7 @@ const { page, tags } = Astro.props;
 
     {
       page.lastPage > 1 && (
-        <PaginationIndex page={page} type="codes" index={tags} />
+        <PaginationIndex page={page} type="codes" index="page" />
       )
     }
   </main>
