@@ -2,6 +2,7 @@
 id: ctie-jp
 name: Eletrotécnica
 abbreviation: ctie
+department: Unidade Acadêmica de Controle e Processos Industriais
 level:
   compact: Técnico Integrado ao Médio
   full: Curso Técnico Integrado ao Ensino Médio

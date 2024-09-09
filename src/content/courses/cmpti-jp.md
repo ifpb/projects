@@ -3,6 +3,7 @@
 id: cmpti-jp
 name: Tecnologia da Informação
 abbreviation: cmpti
+department: Unidade Acadêmica de Informação e Comunicação
 level:
   compact: Mestrado
   full: Metrado Profissional

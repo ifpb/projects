@@ -3,6 +3,7 @@
 id: ctii-jp
 name: Informática
 abbreviation: ctii
+department: Unidade Acadêmica de Informação e Comunicação
 level:
   # ETIM: Educação Técnica Integrada ao Médio
   compact: Técnico Integrado ao Médio
