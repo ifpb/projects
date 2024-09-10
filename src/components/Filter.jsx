@@ -30,14 +30,20 @@ export default function Filter({ type, tags }) {
           Object.values(tags).map((tag, index) => (
             <div key={index} class="mb-4">
               <h3 className="font-semibold text-lg capitalize">{tag.name}</h3>
-              {tag.values.map((value) => (
-                <a
-                  href={`/projects/${type}/${value}/1`}
-                  className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blueGray-500 bg-white hover:bg-gray-600 hover:text-white transition duration-500 uppercase last:mr-0 mr-1 mt-1"
-                >
-                  {value}
-                </a>
-              ))}
+              <nav>
+                <ul>
+                  {tag.values.map((value) => (
+                    <li>
+                      <a
+                        href={`/projects/${type}/${value}/1`}
+                        className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blueGray-500 bg-white hover:bg-gray-600 hover:text-white transition duration-500 uppercase last:mr-0 mr-1 mt-1"
+                      >
+                        {value}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
             </div>
           ))}
         {type === 'people' &&
@@ -47,23 +53,44 @@ export default function Filter({ type, tags }) {
                 <h3 className="font-semibold text-lg">
                   {getCourseByAbbreviation(course).data.name}
                 </h3>
-                <a
-                  href={`/projects/${type}/${course}/1`}
-                  className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blueGray-500 bg-white hover:bg-gray-600 hover:text-white transition duration-500 lowercase last:mr-0 mr-1 mt-1"
-                >
-                  {course}
-                </a>
-                {semesters.map((semester) => (
+                <nav>
                   <a
-                    href={`/projects/${type}/${course}-${semester}/1`}
-                    className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blueGray-500 bg-white hover:bg-gray-600 hover:text-white transition duration-500 last:mr-0 mr-1 mt-1"
+                    href={`/projects/${type}/${course}/1`}
+                    className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blueGray-500 bg-white hover:bg-gray-600 hover:text-white transition duration-500 lowercase last:mr-0 mr-1 mt-1"
                   >
-                    {semester}
+                    {course}
                   </a>
-                ))}
+                  {semesters.map((semester) => (
+                    <a
+                      href={`/projects/${type}/${course}-${semester}/1`}
+                      className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blueGray-500 bg-white hover:bg-gray-600 hover:text-white transition duration-500 last:mr-0 mr-1 mt-1"
+                    >
+                      {semester}
+                    </a>
+                  ))}
+                </nav>
               </div>
             )
           )}
+        {type === 'people' && (
+          <div class="mb-4">
+            <h3 className="font-semibold text-lg">Outros</h3>
+            <nav>
+              <a
+                href={`/projects/${type}/professor/1`}
+                className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blueGray-500 bg-white hover:bg-gray-600 hover:text-white transition duration-500 lowercase last:mr-0 mr-1 mt-1"
+              >
+                professor
+              </a>
+              <a
+                href={`/projects/${type}/egresso/1`}
+                className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blueGray-500 bg-white hover:bg-gray-600 hover:text-white transition duration-500 lowercase last:mr-0 mr-1 mt-1"
+              >
+                egresso
+              </a>
+            </nav>
+          </div>
+        )}
       </div>
     </>
   ) : (

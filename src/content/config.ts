@@ -27,11 +27,7 @@ export const campi = {
   reitoria: 'Reitoria',
 };
 
-const campusCode = Object.keys(campi) as [keyof typeof campi];
-
-const campus = z.enum(campusCode);
-
-const course = z.enum([
+export const abbreviationCourses = [
   'cmpti',
   'csbee',
   'csbes',
@@ -40,7 +36,13 @@ const course = z.enum([
   'cstt',
   'ctie',
   'ctii',
-]);
+] as const;
+
+const campusCode = Object.keys(campi) as [keyof typeof campi];
+
+const campus = z.enum(campusCode);
+
+const course = z.enum([...abbreviationCourses]);
 
 const addresses = z.object({
   github: z.string().url().optional(),

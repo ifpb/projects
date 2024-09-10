@@ -6,6 +6,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import { getAllPersonTags, getPeopleByTag } from '@/helpers/people';
 import { PAGE_SIZE } from '@/consts';
 import { getCourseName } from '@/helpers/courses';
+import { abbreviationCourses } from '@/content/config';
 
 export interface Props {
   page: {
@@ -40,9 +41,13 @@ export async function getStaticPaths({ paginate }) {
 
 const { page } = Astro.props;
 const { tag } = Astro.params;
+
+const pageTitle = abbreviationCourses.some((course) => tag.includes(course))
+  ? getCourseName(tag)
+  : tag[0].toUpperCase() + tag.slice(1);
 ---
 
-<BaseLayout pageTitle={getCourseName(tag)}>
+<BaseLayout pageTitle={pageTitle}>
   <div
     class="grid justify-center justify-items-center gap-5 grid-cols-1 md:grid-cols-[repeat(2,_233px)] lg:grid-cols-[repeat(3,_233px)] xl:grid-cols-4 mx-auto"
     data-pagefind-ignore
