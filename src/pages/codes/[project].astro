@@ -1,12 +1,12 @@
 ---
-import { CollectionEntry } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
 import {
   getProjectId,
   getProjects,
   isSubjectProject,
-} from '../../helpers/projects';
-import { getPeopleByProject } from '../../helpers/people';
-import BaseLayout from '../../layouts/BaseLayout.astro';
+} from '@/helpers/projects';
+import { getPeopleByProject } from '@/helpers/people';
+import BaseLayout from '@/layouts/BaseLayout.astro';
 
 interface ProjectProps {
   category: {
