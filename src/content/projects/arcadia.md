@@ -7,8 +7,8 @@ addresses:
   repository: https://github.com/themattery/Stranger-Things-Website
 category:
   type: subject
-  subject: si
-  semester: 2023.1
+  subject: ls
+  semester: 2024.1
   course: cstsi
   campus: ifpb-jp
 tags:
