@@ -4,61 +4,49 @@ import { Icon } from 'astro-icon';
 
 <header class="bg-gray-900 text-white">
   <section class="container lg:max-w-screen-lg mx-auto px-4 py-6">
-    <nav class="flex items-center justify-between">
-      <a class="text-2xl font-bold font-heading" href="/projects/">
-        IFPB Code
-      </a>
+    <nav class="flex flex-col md:flex-row">
+      <div class="flex items-center justify-between grow">
+        <a class="text-2xl font-bold font-heading" href="/projects/">
+          IFPB Code
+        </a>
 
-      <div class="flex items-center gap-4">
-        <div class="flex items-center space-x-5">
+        <div class="flex items-center gap-4">
           <a
             class="hover:text-gray-200"
             href="https://github.com/ifpb/projects"
           >
-            <Icon name="mdi:github" size={40} class="github-project-link" />
+            <Icon name="mdi:github" size={24} class="github-project-link" />
           </a>
+          <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
         </div>
-        <nav class="md:-order-1">
-          <ul class="hidden md:flex space-x-6">
-            <li>
-              <a href="/projects/codes/page/1">Projetos</a>
-            </li>
-            <li>
-              <a href="/projects/people/page/1">Pessoas</a>
-            </li>
-          </ul>
-          <div class="md:hidden">
-            <button id="menu-btn" class="text-white focus:outline-none">
-              <svg
-                class="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"></path>
-              </svg>
-            </button>
-          </div>
-        </nav>
       </div>
+      <ul
+        id="menu"
+        class="hidden md:flex md:items-center max-md:pt-4 max-md:space-y-4 md:pl-4 md:space-x-6 transform max-md:-translate-y-full"
+      >
+        <li>
+          <a href="/projects/codes/page/1">Projetos</a>
+        </li>
+        <li>
+          <a href="/projects/people/page/1">Pessoas</a>
+        </li>
+      </ul>
     </nav>
   </section>
-  <ul
-    id="menu"
-    class="hidden md:hidden p-4 space-y-4 transform -translate-y-full opacity-0 transition-all duration-500 ease-in-out"
-  >
-    <li>
-      <a href="/projects/codes/page/1">Projetos</a>
-    </li>
-    <li>
-      <a href="/projects/people/page/1">Pessoas</a>
-    </li>
-  </ul>
 </header>
 
 <script>
@@ -67,9 +55,7 @@ import { Icon } from 'astro-icon';
 
   menuBtn.addEventListener('click', () => {
     menu.classList.toggle('hidden');
-    menu.classList.toggle('opacity-100');
-    menu.classList.toggle('opacity-0');
-    menu.classList.toggle('translate-y-0');
-    menu.classList.toggle('-translate-y-full');
+    menu.classList.toggle('max-md:translate-y-0');
+    menu.classList.toggle('max-md:-translate-y-full');
   });
 </script>
