@@ -14,6 +14,12 @@ export function isProfessor(person: CollectionEntry<'people'>) {
   );
 }
 
+export function isFinished(person: CollectionEntry<'people'>) {
+  return person.data.occupations.some(
+    (occupation: Student) => occupation?.isFinished === true
+  );
+}
+
 export function getStudentSemesterId(id: number) {
   const year = String(id).slice(0, 4);
   const semester = String(id).slice(4, 5);
