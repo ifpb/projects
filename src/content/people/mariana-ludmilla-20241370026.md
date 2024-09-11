@@ -1,0 +1,23 @@
+---
+id: 20241370026
+name:
+  compact: Mariana Ludmilla
+  full: Mariana Ludmilla de Lima Maroja Limeira
+avatar: https://github.com/ludmillamaroja.png
+occupations:
+- id: 20201780010
+  type: student
+  campus: ifpb-jp
+  course: ctii
+  isFinished: true
+- id: 20241370026
+  type: student
+  campus: ifpb-jp
+  course: cstsi
+  isFinished: false
+addresses:
+  github: https://github.com/ludmillamaroja
+  linkedin: https://www.linkedin.com/in/mariana-ludmilla-de-lima-maroja-limeira/
+  instagram: https://www.instagram.com/ludmilla_maroja/
+  email: ludmilla.maroja@academico.ifpb.edu.br
+---
