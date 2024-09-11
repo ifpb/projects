@@ -80,6 +80,7 @@ Este exemplo é um projeto do tipo `projeto de disciplina`, no arquivo [src/cont
 - `addresses.repository` - Endereço do repositório do projeto no Github (obrigatório);
 - `addresses.preview` - Endereço da imagem de preview do projeto (print screen), que deve ser colocada no próprio repositório do projeto com a extensão `.png` e tamanho sugerido de `500x262px` (obrigatório);
 - `addresses.homepage` - Site do projeto em execução, caso exista (opcional).
+- `addresses.template` - Site do template/protótipo do projeto, caso exista (opcional).
 
 No campo `owners` é possível adicionar uma lista alunos, caso o projeto tenha mais de um colaborador, informando a matrícula do aluno, depois é importante que cada aluno faça seu o cadastrado de suas informações.
 
