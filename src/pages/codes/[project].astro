@@ -58,14 +58,14 @@ const category = project.data.category as ProjectProps['category'];
   </h1>
   <div class="flex flex-col md:flex-row gap-5">
     { project.data.addresses.preview && (
-      <div class="w-full md:w-[50%]">
+      <div class="image-preview w-full md:w-[50%]">
         <a class="underline" href={project.data.addresses.homepage}>
           <img
             src={project.data.addresses.preview}
             alt={project.data.name}
             class="border w-full"
             onload="this.onload = null; this.classList.remove('animate-pulse');"
-            onerror="this.onerror = null; this.closest('.grow').classList.add('hidden');"
+            onerror="this.onerror = null; this.closest('.image-preview').classList.add('hidden');"
           />
         </a>
       </div>
