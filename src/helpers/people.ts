@@ -1,5 +1,5 @@
 import type { CollectionEntry } from 'astro:content';
-import type { Student } from '../content/config';
+import type { Student } from '@/content/config';
 import { getCollection } from 'astro:content';
 import { getProjectsByPerson } from './projects';
 

@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
 import { Icon } from '@iconify/react';
-import {
-  getCourseByAbbreviation,
-  getSemesterCourses,
-} from '../helpers/courses';
+import { getCourseByAbbreviation, getSemesterCourses } from '@/helpers/courses';
 
 export default function Filter({ type, tags }) {
   const [isShow, setIsShow] = useState(false);
 
-  const toogleShow = () => {
+  const toggleShow = () => {
     setIsShow(!isShow);
   };
 
@@ -16,36 +13,36 @@ export default function Filter({ type, tags }) {
     <>
       <div
         className="fixed h-full w-full right-0 top-0 bg-black bg-opacity-50 z-10"
-        onClick={toogleShow}
+        onClick={toggleShow}
       ></div>
 
       <div className="absolute w-2/3 md:w-1/3 lg:w-1/4 min-h-screen right-0 top-0 bottom-0 bg-gray-100 shadow-lg p-4 z-50">
         <Icon
           icon="material-symbols:close"
           className="float-right text-2xl cursor-pointer"
-          onClick={toogleShow}
+          onClick={toggleShow}
         />
         <h1 className="font-bold text-xl capitalize text-center mb-8">Tags</h1>
         {type === 'codes' &&
-          Object.values(tags).map((tag, index) => (
-            <div key={index} class="mb-4">
-              <h3 className="font-semibold text-lg capitalize">{tag.name}</h3>
-              <nav>
-                <ul>
-                  {tag.values.map((value) => (
-                    <li>
+          Object.values(tags)
+            .sort((a, b) => a.name.localeCompare(b.name))
+            .map((tag, index) => (
+              <div key={index} class="mb-4">
+                <h3 className="font-semibold text-lg capitalize">{tag.name}</h3>
+                <nav>
+                  {tag.values
+                    .sort((a, b) => a.localeCompare(b))
+                    .map((value) => (
                       <a
                         href={`/projects/${type}/${value}/1`}
                         className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blueGray-500 bg-white hover:bg-gray-600 hover:text-white transition duration-500 uppercase last:mr-0 mr-1 mt-1"
                       >
                         {value}
                       </a>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-            </div>
-          ))}
+                    ))}
+                </nav>
+              </div>
+            ))}
         {type === 'people' &&
           Object.entries(getSemesterCourses(tags.semester.values)).map(
             ([course, semesters]) => (
@@ -98,7 +95,7 @@ export default function Filter({ type, tags }) {
       <Icon
         icon="material-symbols:filter-alt"
         className="absolute right-0 mr-[10%] md:mr-32 lg:mr-32 xl:mr-0 text-4xl cursor-pointer mt-0.5"
-        onClick={toogleShow}
+        onClick={toggleShow}
       />
     </div>
   );

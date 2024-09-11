@@ -6,7 +6,7 @@ import FilterLayout from '@/layouts/FilterLayout.astro';
 import { getAllProjectTagGroups, getProjects } from '@/helpers/projects';
 import { PAGE_SIZE } from '@/consts';
 
-type ProjectsWithPeople = CollectionEntry<'projects'> & {
+export type ProjectsWithPeople = CollectionEntry<'projects'> & {
   people: CollectionEntry<'people'>[];
 };
 
@@ -30,7 +30,7 @@ export async function getStaticPaths({ paginate }) {
   });
 }
 
-const { page, tags } = Astro.props;
+const { page, tags }: Props = Astro.props;
 ---
 
 <FilterLayout pageTitle="Projetos" type="codes" tags={tags}>

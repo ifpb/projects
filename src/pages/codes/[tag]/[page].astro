@@ -46,7 +46,7 @@ const { page }: Props = Astro.props;
 const { tag } = Astro.params;
 ---
 
-<BaseLayout pageTitle={`Projetos de ${tag}`}>
+<BaseLayout pageTitle={`Projetos de ${tag.toUpperCase()}`}>
   <div
     class="grid justify-items-stretch gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
     data-pagefind-ignore

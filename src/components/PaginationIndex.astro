@@ -1,18 +1,24 @@
 ---
+import type { ProjectsWithPeople } from '@/pages/codes/page/[page].astro';
+import type { CollectionEntry } from 'astro:content';
+
 export interface Props {
   type: string;
   index: string;
   page: {
+    data: (ProjectsWithPeople | CollectionEntry<'people'>)[];
     currentPage: number;
     lastPage: number;
-    url: {
+    url?: {
+      first?: string;
       prev: string;
       next: string;
+      last?: string;
     };
   };
 }
 
-const { page, type, index } = Astro.props;
+const { page, type, index }: Props = Astro.props;
 
 const pagePath = `/${type}/${index}`;
 
