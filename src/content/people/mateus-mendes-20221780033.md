@@ -12,5 +12,4 @@ occupations:
 addresses:
   github: https://github.com/VOTRON157
   linkedin: https://www.linkedin.com/in/mateus-mendes-091202253/
-  email: mateusgomesc7@gmail.com
 ---
