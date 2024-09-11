@@ -1,10 +1,10 @@
 ---
-import { CollectionEntry } from 'astro:content';
-import PersonCard from '../../components/PersonCard.astro';
-import ProjectCard from '../../components/ProjectCard.astro';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getProjectsByPerson } from '../../helpers/projects';
-import { getPeople } from '../../helpers/people';
+import type { CollectionEntry } from 'astro:content';
+import PersonCard from '@/components/PersonCard.astro';
+import ProjectCard from '@/components/ProjectCard.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getProjectsByPerson } from '@/helpers/projects';
+import { getPeople } from '@/helpers/people';
 
 type ProjectsWithPeople = CollectionEntry<'projects'> & {
   people: CollectionEntry<'people'>[];
@@ -45,10 +45,15 @@ const { person, projects } = Astro.props;
   >
     {person.data.name.compact}
   </h1>
-  <div class="flex gap-5 flex-col md:flex-row md:items-start">
+  <div
+    class="flex gap-5 flex-col md:flex-row items-center md:justify-center md:items-start"
+  >
     <div>
       <PersonCard person={person} />
     </div>
+
+    <h1 class="md:hidden text-3xl mt-8 mb-4 font-semibold">Projetos</h1>
+
     {
       !!projects.length ? (
         <div class="grid justify-items-stretch gap-5 grid-cols-1 md:grid-cols-2">

@@ -7,8 +7,8 @@ avatar: https://github.com/calebeof.png
 occupations:
 - id: 20141720047
   type: student
-  campus: ifpb-jp
   course: csbee
+  campus: ifpb-jp
   isFinished: true
 - id: 202319840020
   type: student

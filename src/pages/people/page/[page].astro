@@ -1,10 +1,10 @@
 ---
-import { CollectionEntry } from 'astro:content';
-import PersonCard from '../../../components/PersonCard.astro';
-import PaginationIndex from '../../../components/PaginationIndex.astro';
-import FilterLayout from '../../../layouts/FilterLayout.astro';
-import { PAGE_SIZE } from '../../../consts';
-import { getAllPeopleTagGroups, getPeople } from '../../../helpers/people';
+import type { CollectionEntry } from 'astro:content';
+import PersonCard from '@/components/PersonCard.astro';
+import PaginationIndex from '@/components/PaginationIndex.astro';
+import FilterLayout from '@/layouts/FilterLayout.astro';
+import { PAGE_SIZE } from '@/consts';
+import { getAllPeopleTagGroups, getPeople } from '@/helpers/people';
 
 export interface Props {
   page: {
@@ -34,7 +34,7 @@ const { page, tags } = Astro.props;
 ---
 
 <FilterLayout pageTitle="Pessoas" type="people" tags={tags}>
-  <main data-pagefind-ignore>
+  <main>
     <div
       class="grid justify-center justify-items-center gap-5 grid-cols-1 md:grid-cols-[repeat(2,_233px)] lg:grid-cols-[repeat(3,_233px)] xl:grid-cols-4 mx-auto"
     >

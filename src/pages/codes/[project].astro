@@ -1,12 +1,14 @@
 ---
-import { CollectionEntry } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
 import {
   getProjectId,
   getProjects,
   isSubjectProject,
-} from '../../helpers/projects';
-import { getPeopleByProject } from '../../helpers/people';
-import BaseLayout from '../../layouts/BaseLayout.astro';
+} from '@/helpers/projects';
+import { getPeopleByProject } from '@/helpers/people';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getCourseByAbbreviation } from '@/helpers/courses';
+import { campi } from '@/content/config';
 
 interface ProjectProps {
   category: {
@@ -42,7 +44,7 @@ export async function getStaticPaths() {
   return await Promise.all(page);
 }
 
-const { project, people } = Astro.props;
+const { project, people }: Props = Astro.props;
 
 const category = project.data.category as ProjectProps['category'];
 ---
@@ -54,17 +56,21 @@ const category = project.data.category as ProjectProps['category'];
   >
     {project.data.name}
   </h1>
-  <div class="flex gap-5">
-    <div>
-      <a class="underline" href={project.data.addresses.homepage}>
-        <img
-          src={project.data.addresses.preview}
-          alt={project.data.name}
-          class="border"
-        />
-      </a>
-    </div>
-    <div>
+  <div class="flex flex-col md:flex-row gap-5">
+    { project.data.addresses.preview && (
+      <div class="image-preview w-full md:w-[50%]">
+        <a class="underline" href={project.data.addresses.homepage}>
+          <img
+            src={project.data.addresses.preview}
+            alt={project.data.name}
+            class="border w-full"
+            onload="this.onload = null; this.classList.remove('animate-pulse');"
+            onerror="this.onerror = null; this.closest('.image-preview').classList.add('hidden');"
+          />
+        </a>
+      </div>
+    )}
+    <div class="w-full md:w-[50%]">
       <div class="mb-2">
         <div class="font-bold text-lg">Descrição:</div>
         {project.data.description}
@@ -78,9 +84,23 @@ const category = project.data.category as ProjectProps['category'];
       {
         isSubjectProject(project) && (
           <div class="mb-2">
+            <div class="font-bold text-lg">Curso:</div>
+            <a
+              href={`/projects/codes/${category.course}-${category.campus}/1/`}
+              class="underline"
+            >
+              {getCourseByAbbreviation(category.course).data.name}{' '}({campi[category.campus]})
+            </a>
+          </div>
+
+          <div class="mb-2">
             <div class="font-bold text-lg">Disciplina:</div>
-            {category.subject}-{category.semester}
-            {`(${category.course}-${category.campus})`}
+            <a
+              href={`/projects/codes/${category.subject}-${category.semester}/1/`}
+              class="underline"
+            >
+              {category.subject}-{category.semester}
+            </a>
           </div>
         )
       }
@@ -92,22 +112,31 @@ const category = project.data.category as ProjectProps['category'];
               .sort((a, b) =>
                 a.data.name.compact.localeCompare(b.data.name.compact)
               )
-              .map((person) => (
+              .map(({ data: { id, name } }) => (
                 <li>
-                  <a
-                    class="underline"
-                    href={`/projects/people/${person.data.id}`}
-                  >
-                    {person.data.name.compact}
+                  <a class="underline" href={`/projects/people/${id}`}>
+                    {name.full}
                   </a>
                 </li>
               ))
           }
         </ul>
       </div>
+
       <div class="mb-2">
         <div class="font-bold text-lg">Tags:</div>
-        {project.data.tags.join(', ')}
+        <nav class="mb-2">
+          {
+            project.data.tags.map((tag) => (
+              <a
+                href={`/projects/codes/${tag}/1/`}
+                class="inline-block text-xs font-semibold text-gray-600 bg-gray-200 hover:bg-gray-300 my-1 mx-1 py-1 px-2 rounded-full"
+              >
+                {tag}
+              </a>
+            ))
+          }
+        </nav>
       </div>
     </div>
   </div>

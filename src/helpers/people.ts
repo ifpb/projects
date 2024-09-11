@@ -1,6 +1,7 @@
-import { CollectionEntry, getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import type { Student } from '@/content/config';
+import { getCollection } from 'astro:content';
 import { getProjectsByPerson } from './projects';
-import { Student } from '../content/config';
 
 export function isStudent(person: CollectionEntry<'people'>) {
   return person.data.occupations.some(
@@ -11,6 +12,12 @@ export function isStudent(person: CollectionEntry<'people'>) {
 export function isProfessor(person: CollectionEntry<'people'>) {
   return person.data.occupations.some(
     (occupation) => occupation.type === 'professor'
+  );
+}
+
+export function isFinished(person: CollectionEntry<'people'>) {
+  return person.data.occupations.some(
+    (occupation: Student) => occupation?.isFinished === true
   );
 }
 
