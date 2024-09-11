@@ -1,6 +1,6 @@
 ---
-name: ifpb.github.io
-description: Este portal tem como objetivo listar projetos construídos pelos alunos do IFPB.
+name: Home da UAI-IFPB
+description: Este portal tem como objetivo ser um landing page da UAI do IFPB.
 addresses:
   preview: https://raw.githubusercontent.com/ifpb/ifpb.github.io/main/preview.png
   homepage: https://ifpb.github.io/
