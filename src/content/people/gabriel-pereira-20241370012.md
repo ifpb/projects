@@ -3,7 +3,7 @@ id: 20241370012
 name:
   compact: Gabriel Pereira
   full: Gabriel Pereira de Carvalho
-avatar: https://avatars.githubusercontent.com/u/172326354?v=4
+avatar: https://github.com/gabrielcarvalhowas.png
 occupations:
 - id: 20241370012
   type: student
