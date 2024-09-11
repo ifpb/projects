@@ -48,7 +48,6 @@ const addresses = z.object({
   github: z.string().url().optional(),
   linkedin: z.string().url().optional(),
   homepage: z.string().optional(),
-  projects: z.string().optional(),
   twitter: z.string().url().optional(),
   bluesky: z.string().url().optional(),
   threads: z.string().url().optional(),
@@ -143,6 +142,7 @@ const peopleCollection = defineCollection({
     addresses: addresses.extend({
       github: z.string().url(),
       linkedin: z.string().url(),
+      projects: z.string().optional(),
     }),
   }),
 });
@@ -154,6 +154,7 @@ const projectCollection = defineCollection({
     addresses: addresses.extend({
       repository: z.string().url(),
       preview: z.string().url().optional(),
+      template: z.string().url().optional(),
     }),
     category: z.union([
       subjectProjectCategory,

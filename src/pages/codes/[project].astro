@@ -81,6 +81,14 @@ const category = project.data.category as ProjectProps['category'];
           >{project.data.addresses.repository}</a
         >
       </div>
+      { project.data.addresses.template && (
+        <div class="mb-2">
+          <div class="font-bold text-lg">Template:</div>
+          <a class="underline" href={project.data.addresses.template}>
+            {project.data.addresses.template}
+          </a>
+        </div>
+      )}
       {
         isSubjectProject(project) && (
           <div class="mb-2">
