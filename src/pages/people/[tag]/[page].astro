@@ -43,7 +43,9 @@ const { page } = Astro.props;
 const { tag } = Astro.params;
 
 const pageTitle = abbreviationCourses.some((course) => tag.includes(course))
-  ? getCourseName(tag)
+  ? tag.includes('egresso')
+    ? `Egresso | ${getCourseName(tag.split('-')[1])}`
+    : getCourseName(tag)
   : tag[0].toUpperCase() + tag.slice(1);
 ---
 

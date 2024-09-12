@@ -76,7 +76,7 @@ const studentOccupation = z.object({
   type: z.literal('student'),
   campus,
   course,
-  isFinished: z.boolean().optional(),
+  isFinished: z.boolean(),
 });
 
 // project category

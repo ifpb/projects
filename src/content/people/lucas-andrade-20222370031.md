@@ -9,6 +9,7 @@ occupations:
     type: student
     campus: ifpb-jp
     course: cstsi
+    isFinished: false
 addresses:
   github: https://github.com/LucasAndrade912
   linkedin: https://www.linkedin.com/in/lucasandrade912/

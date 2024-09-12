@@ -9,6 +9,7 @@ occupations:
   type: student
   campus: ifpb-jp
   course: cstrc
+  isFinished: false
 addresses:
   github: https://github.com/PeedroNunes
   linkedin: https://www.linkedin.com/in/pedro-nunes-61b982191/

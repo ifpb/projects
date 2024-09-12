@@ -9,6 +9,7 @@ occupations:
   type: student
   campus: ifpb-jp
   course: cstsi
+  isFinished: false
 addresses:
   github: https://github.com/alessandrojunior1
   linkedin: https://www.linkedin.com/in/alessandro-rodrigues-de-souza-junior-28243a272/

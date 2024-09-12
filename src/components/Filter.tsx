@@ -2,7 +2,18 @@ import React, { useState } from 'react';
 import { Icon } from '@iconify/react';
 import { getCourseByAbbreviation, getSemesterCourses } from '@/helpers/courses';
 
-export default function Filter({ type, tags }) {
+interface TagGroup {
+  name: string;
+  values: string[];
+}
+
+interface FilterProps {
+  type: string;
+  tags: { course: TagGroup; semester: TagGroup };
+  allTags: string[];
+}
+
+export default function Filter({ type, tags, allTags }: FilterProps) {
   const [isShow, setIsShow] = useState(false);
 
   const toggleShow = () => {
@@ -27,7 +38,7 @@ export default function Filter({ type, tags }) {
           Object.values(tags)
             .sort((a, b) => a.name.localeCompare(b.name))
             .map((tag, index) => (
-              <div key={index} class="mb-4">
+              <div key={index} className="mb-4">
                 <h3 className="font-semibold text-lg capitalize">{tag.name}</h3>
                 <nav>
                   {tag.values
@@ -45,8 +56,8 @@ export default function Filter({ type, tags }) {
             ))}
         {type === 'people' &&
           Object.entries(getSemesterCourses(tags.semester.values)).map(
-            ([course, semesters]) => (
-              <div key={course} class="mb-4">
+            ([course, semesters]: [string, string[]]) => (
+              <div key={course} className="mb-4">
                 <h3 className="font-semibold text-lg">
                   {getCourseByAbbreviation(course).data.name}
                 </h3>
@@ -57,6 +68,14 @@ export default function Filter({ type, tags }) {
                   >
                     {course}
                   </a>
+                  {allTags.includes(`egresso-${course}`) && (
+                    <a
+                      href={`/projects/${type}/egresso-${course}/1`}
+                      className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blueGray-500 bg-white hover:bg-gray-600 hover:text-white transition duration-500 lowercase last:mr-0 mr-1 mt-1"
+                    >
+                      {course}-egressos
+                    </a>
+                  )}
                   {semesters.map((semester) => (
                     <a
                       href={`/projects/${type}/${course}-${semester}/1`}
@@ -70,7 +89,7 @@ export default function Filter({ type, tags }) {
             )
           )}
         {type === 'people' && (
-          <div class="mb-4">
+          <div className="mb-4">
             <h3 className="font-semibold text-lg">Outros</h3>
             <nav>
               <a
@@ -83,7 +102,7 @@ export default function Filter({ type, tags }) {
                 href={`/projects/${type}/egresso/1`}
                 className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blueGray-500 bg-white hover:bg-gray-600 hover:text-white transition duration-500 lowercase last:mr-0 mr-1 mt-1"
               >
-                egresso
+                egressos
               </a>
             </nav>
           </div>

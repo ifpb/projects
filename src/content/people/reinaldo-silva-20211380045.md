@@ -9,6 +9,7 @@ occupations:
   type: student
   campus: ifpb-jp
   course: cstrc
+  isFinished: true
 addresses:
   github: https://github.com/mr-reinaldo
   linkedin: https://www.linkedin.com/in/jreinaldosilva

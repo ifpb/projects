@@ -15,12 +15,6 @@ export function isProfessor(person: CollectionEntry<'people'>) {
   );
 }
 
-export function isFinished(person: CollectionEntry<'people'>) {
-  return person.data.occupations.some(
-    (occupation: Student) => occupation?.isFinished === true
-  );
-}
-
 export function getStudentSemesterId(id: number) {
   const year = String(id).slice(0, 4);
   const semester = String(id).slice(4, 5);
@@ -43,7 +37,7 @@ function hasPersonId(person: CollectionEntry<'people'>, id: number) {
   return person.data.occupations.some((occupation) => occupation.id === id);
 }
 
-function hasFinishedSomeCourse(person: CollectionEntry<'people'>) {
+export function isFinishedSomeCourse(person: CollectionEntry<'people'>) {
   return person.data.occupations.some(
     (occupation: Student) => occupation.isFinished
   );
@@ -64,8 +58,18 @@ export async function getPersonTags(person: CollectionEntry<'people'>) {
     tags.push('projetos');
   }
 
-  if (hasFinishedSomeCourse(person)) {
+  if (isFinishedSomeCourse(person)) {
     tags.push('egresso');
+
+    const courses = person.data.occupations
+      .filter((occupation: Student) => occupation.isFinished)
+      .map(
+        (occupation: Student) =>
+          // `egresso-${occupation.course}-${occupation.campus.split('-')[1]}`
+          `egresso-${occupation.course}`
+      );
+
+    tags.push(...courses);
   }
 
   const courses = person.data.occupations
@@ -182,7 +186,7 @@ function personRank(person: CollectionEntry<'people'>) {
     },
     isFinished: {
       value: 2,
-      status: hasFinishedSomeCourse(person),
+      status: isFinishedSomeCourse(person),
     },
     weightedId: {
       value: isStudent(person)
@@ -201,7 +205,7 @@ function personRank(person: CollectionEntry<'people'>) {
     return acc + Number(!!Number(weight.status)) * weight.value;
   }, 0);
 
-  if (isProfessor(person) && hasFinishedSomeCourse(person)) {
+  if (isProfessor(person) && isFinishedSomeCourse(person)) {
     rank -= 1;
   }
 

@@ -9,6 +9,7 @@ occupations:
   type: student
   campus: ifpb-jp
   course: cstsi
+  isFinished: false
 addresses:
   github: https://github.com/amaraldsn
   linkedin: https://www.linkedin.com/in/natanael-amaral-a8661b264/

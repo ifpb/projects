@@ -2,6 +2,7 @@
 import Filter from '@/components/Filter';
 import NavBar from '@/components/NavBar.astro';
 import PageFindSearch from '@/components/PageFindSearch.astro';
+import { getAllPersonTags } from '@/helpers/people';
 
 import '@/styles/global.css';
 
@@ -10,6 +11,8 @@ export interface Propos {
   tags: string[];
   type: string;
 }
+
+const allTags = await getAllPersonTags();
 
 const { pageTitle, tags, type } = Astro.props;
 ---
@@ -29,7 +32,7 @@ const { pageTitle, tags, type } = Astro.props;
     <NavBar />
 
     <div class="container lg:max-w-screen-lg mx-auto px-4 py-16">
-      <Filter type={type} tags={tags} client:visible />
+      <Filter type={type} tags={tags} allTags={allTags} client:visible />
 
       <h1 class="text-center pb-16 text-4xl font-bold">{pageTitle}</h1>
 

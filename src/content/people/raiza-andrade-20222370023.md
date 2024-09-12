@@ -9,6 +9,7 @@ occupations:
     type: student
     campus: ifpb-jp
     course: cstsi
+    isFinished: false
 addresses:
   github: https://github.com/raizaft
   linkedin: https://www.linkedin.com/in/raizatomazoni/

@@ -9,6 +9,7 @@ occupations:
   type: student
   campus: ifpb-jp
   course: cstsi
+  isFinished: true
 addresses:
   github: https://github.com/mauriciopcj
   linkedin: https://www.linkedin.com/in/maur%C3%ADcio-pereira-4b954216b

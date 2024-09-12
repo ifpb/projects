@@ -5,7 +5,7 @@ import { Icon } from 'astro-icon';
 import { getProjectsByPerson } from '@/helpers/projects';
 import {
   getPersonTags,
-  isFinished,
+  isFinishedSomeCourse,
   isProfessor,
   isStudent,
 } from '@/helpers/people';
@@ -31,10 +31,6 @@ let icons = [
     name: 'github',
     icon: 'icon-park:github-one',
   },
-  // {
-  //   name: 'twitter',
-  //   icon: 'ph:twitter-logo',
-  // },
   {
     name: 'instagram',
     icon: 'ph:instagram-logo',
@@ -121,7 +117,7 @@ const tags = await getPersonTags(person);
             ))
       }
       {
-        isFinished(person) && (
+        isFinishedSomeCourse(person) && (
           <a
             href={`/projects/people/egresso/1`}
             class="text-[10px] pointer inline-block font-semibold text-gray-700 bg-gray-100 m-0.5 py-px px-0.5 rounded-full"

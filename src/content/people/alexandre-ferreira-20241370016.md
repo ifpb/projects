@@ -9,6 +9,7 @@ occupations:
   type: student
   campus: ifpb-jp
   course: cstsi
+  isFinished: false
 addresses:
   email: alexandre.fsnt@gmail.com
   github: https://github.com/Alexandre-Ferreira01

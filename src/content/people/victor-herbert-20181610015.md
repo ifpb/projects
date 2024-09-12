@@ -9,6 +9,7 @@ occupations:
   type: student
   campus: ifpb-jp
   course: csbee
+  isFinished: true
 addresses:
   github: https://github.com/VictorHerbert
   linkedin: https://www.linkedin.com/in/victorherbert/

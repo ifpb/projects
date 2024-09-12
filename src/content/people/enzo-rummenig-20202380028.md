@@ -9,6 +9,7 @@ occupations:
   type: student
   campus: ifpb-jp
   course: cstrc
+  isFinished: false
 addresses:
   github: https://github.com/enzorummenigif
   linkedin: https://www.linkedin.com/in/enzo-rummenig-27805b295?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
