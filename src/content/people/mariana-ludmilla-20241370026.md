@@ -17,7 +17,7 @@ occupations:
   isFinished: false
 addresses:
   github: https://github.com/LudmillaMaroja
-  linkedin: https://www.linkedin.com/in/mariana-ludmilla-de-lima-maroja-limeira/
+  linkedin: https://www.linkedin.com/in/mariana-ludmilla-de-lima-maroja-limeira-48170922b/
   instagram: https://www.instagram.com/ludmilla_maroja/
   email: ludmilla.maroja@academico.ifpb.edu.br
 ---
