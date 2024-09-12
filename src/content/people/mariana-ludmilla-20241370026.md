@@ -16,7 +16,7 @@ occupations:
   course: cstsi
   isFinished: false
 addresses:
-  github: https://github.com/ludmillamaroja
+  github: https://github.com/LudmillaMaroja
   linkedin: https://www.linkedin.com/in/mariana-ludmilla-de-lima-maroja-limeira/
   instagram: https://www.instagram.com/ludmilla_maroja/
   email: ludmilla.maroja@academico.ifpb.edu.br
