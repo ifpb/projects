@@ -1,9 +1,9 @@
 ---
-id: 20051370420
+id: 20241370007
 name:
   compact: Felipe Raimundo
   full: Felipe Oliveira Raimundo
-avatar: https://github.com/Felipe.png
+avatar: https://github.com/Felipejjjj.png
 occupations:
 - id: 20211780035
   type: student
@@ -17,6 +17,6 @@ occupations:
   isFinished: false
 addresses:
   github: https://github.com/Felipejjjj
-  linkedin: https://www.linkedin.com/in//
+  linkedin: https://www.linkedin.com/in/felipe-raimundo-925619304/
   email: raimundo.felipe@academico.ifpb.edu.br
 ---
