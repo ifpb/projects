@@ -6,6 +6,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import { getProjectsByPerson } from '@/helpers/projects';
 import { getPeople } from '@/helpers/people';
 import { getSubjectByProject } from '@/helpers/courses';
+import { isSubjectProject } from '@/helpers/projects';
 
 type ProjectsWithPeople = CollectionEntry<'projects'> & {
   people: CollectionEntry<'people'>[];
@@ -38,7 +39,9 @@ export async function getStaticPaths() {
 
 const { person, projects } = Astro.props;
 
-const subjects = projects.map((project) => getSubjectByProject(project));
+const subjects = projects
+  .filter((projects) => isSubjectProject(projects))
+  .map((project) => getSubjectByProject(project));
 ---
 
 <BaseLayout>
@@ -74,20 +77,24 @@ const subjects = projects.map((project) => getSubjectByProject(project));
         )
       }
 
-      <h1 class="text-3xl max-md:mt-8 mb-4 font-semibold">Turmas</h1>
+      {
+        !!subjects.length && (
+          <h1 class="text-3xl max-md:mt-8 mb-4 font-semibold">Turmas</h1>
 
-      <div class="tags">
-        {
-          subjects.map((subject) => (
-            <a
-              href={`/projects/people/${subject}/1`}
-              class="text-[10px] pointer inline-block font-semibold text-gray-700 bg-white hover:bg-gray-200 m-0.5 py-px px-1 rounded-full"
-            >
-              {subject}
-            </a>
-          ))
-        }
-      </div>
+          <div class="tags">
+            {
+              subjects.map((subject) => (
+                <a
+                  href={`/projects/people/${subject}/1`}
+                  class="text-[10px] pointer inline-block font-semibold text-gray-700 bg-white hover:bg-gray-200 m-0.5 py-px px-1 rounded-full"
+                >
+                  {subject}
+                </a>
+              ))
+            }
+          </div>
+        )
+      }
     </div>
   </div>
 </BaseLayout>
