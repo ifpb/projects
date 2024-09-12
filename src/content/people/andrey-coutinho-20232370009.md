@@ -5,6 +5,11 @@ name:
   full: Andrey Vasconcelos Coutinho
 avatar: https://github.com/Androka2004.png
 occupations:
+- id: 20201780033
+  type: student
+  campus: ifpb-jp
+  course: ctii
+  isFinished: true
 - id: 20232370009
   type: student
   campus: ifpb-jp
