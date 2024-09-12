@@ -6,7 +6,7 @@ addresses:
   repository: https://github.com/produtoresifpb/lp2proj
 category:
   type: subject
-  subject: lm
+  subject: lp2
   semester: 2024.1
   course: ctii
   campus: ifpb-jp
