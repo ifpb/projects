@@ -5,6 +5,7 @@ import ProjectCard from '@/components/ProjectCard.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { getProjectsByPerson } from '@/helpers/projects';
 import { getPeople } from '@/helpers/people';
+import { getSubjectByProject } from '@/helpers/courses';
 
 type ProjectsWithPeople = CollectionEntry<'projects'> & {
   people: CollectionEntry<'people'>[];
@@ -36,6 +37,8 @@ export async function getStaticPaths() {
 }
 
 const { person, projects } = Astro.props;
+
+const subjects = projects.map((project) => getSubjectByProject(project));
 ---
 
 <BaseLayout>
@@ -52,22 +55,39 @@ const { person, projects } = Astro.props;
       <PersonCard person={person} />
     </div>
 
-    <h1 class="md:hidden text-3xl mt-8 mb-4 font-semibold">Projetos</h1>
+    <div class="space-y-4">
+      <h1 class="text-3xl max-md:mt-8 font-semibold">Projetos</h1>
 
-    {
-      !!projects.length ? (
-        <div class="grid justify-items-stretch gap-5 grid-cols-1 md:grid-cols-2">
-          {projects.map((project) => (
-            <ProjectCard project={project} />
-          ))}
-        </div>
-      ) : (
-        <div>
-          <p class="text-xl font-semibold">
-            Nenhum projeto cadastrado no momento.
-          </p>
-        </div>
-      )
-    }
+      {
+        !!projects.length ? (
+          <div class="grid justify-items-stretch gap-5 grid-cols-1 md:grid-cols-2">
+            {projects.map((project) => (
+              <ProjectCard project={project} />
+            ))}
+          </div>
+        ) : (
+          <div>
+            <p class="text-xl font-semibold">
+              Nenhum projeto cadastrado no momento.
+            </p>
+          </div>
+        )
+      }
+
+      <h1 class="text-3xl max-md:mt-8 mb-4 font-semibold">Turmas</h1>
+
+      <div class="tags">
+        {
+          subjects.map((subject) => (
+            <a
+              href={`/projects/people/${subject}/1`}
+              class="text-[10px] pointer inline-block font-semibold text-gray-700 bg-white hover:bg-gray-200 m-0.5 py-px px-1 rounded-full"
+            >
+              {subject}
+            </a>
+          ))
+        }
+      </div>
+    </div>
   </div>
 </BaseLayout>

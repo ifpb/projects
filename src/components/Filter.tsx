@@ -104,6 +104,12 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
               >
                 egressos
               </a>
+              <a
+                href={`/projects/${type}/projetos/1`}
+                className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blueGray-500 bg-white hover:bg-gray-600 hover:text-white transition duration-500 lowercase last:mr-0 mr-1 mt-1"
+              >
+                projetos
+              </a>
             </nav>
           </div>
         )}

@@ -1,7 +1,8 @@
 import type { CollectionEntry } from 'astro:content';
 import type { Student } from '@/content/config';
 import { getCollection } from 'astro:content';
-import { getProjectsByPerson } from './projects';
+import { getProjectsByPerson, isSubjectProject } from './projects';
+import { getSubjectByProject } from './courses';
 
 export function isStudent(person: CollectionEntry<'people'>) {
   return person.data.occupations.some(
@@ -63,13 +64,12 @@ export async function getPersonTags(person: CollectionEntry<'people'>) {
 
     const courses = person.data.occupations
       .filter((occupation: Student) => occupation.isFinished)
-      .map(
-        (occupation: Student) =>
-          // `egresso-${occupation.course}-${occupation.campus.split('-')[1]}`
-          `egresso-${occupation.course}`
-      );
+      .map((occupation: Student) => [
+        `egresso-${occupation.course}-${occupation.campus.split('-')[1]}`,
+        `egresso-${occupation.course}`,
+      ]);
 
-    tags.push(...courses);
+    tags.push(...courses.flat());
   }
 
   const courses = person.data.occupations
@@ -84,8 +84,18 @@ export async function getPersonTags(person: CollectionEntry<'people'>) {
     (semester, index) => `${courses[index]}-${semester}`
   );
 
+  const subjects = (await getProjectsByPerson(person))
+    .filter((project) => isSubjectProject(project))
+    .map((project) => getSubjectByProject(project));
+
   if (isStudent(person)) {
-    tags.push('aluno', ...courses, ...semesters, ...coursesBySemester);
+    tags.push(
+      'aluno',
+      ...courses,
+      ...semesters,
+      ...coursesBySemester,
+      ...subjects
+    );
   }
 
   if (isProfessor(person)) {
