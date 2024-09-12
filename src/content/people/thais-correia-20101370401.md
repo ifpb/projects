@@ -13,5 +13,6 @@ occupations:
 addresses:
   github: https://github.com/ThaisCorreia
   linkedin: https://www.linkedin.com/in/thaiscorreia/
+  instagram: https://www.instagram.com/tnmcorreia/
   email: tnmcorreia@gmail.com
 ---

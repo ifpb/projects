@@ -11,7 +11,6 @@ occupations:
   course: cstsi
   isFinished: false
 addresses:
-  email: jaeniaps@gmail.com
   github: https://github.com/ajunior
   linkedin: https://www.linkedin.com/in/a-jr/
 ---
