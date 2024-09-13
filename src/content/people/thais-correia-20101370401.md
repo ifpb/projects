@@ -1,9 +1,9 @@
 ---
 id: 20101370401
 name:
-  compact: Thais Correia
+  compact: Thais Peixoto
   full: Thais Noronha de Medeiros Correia
-avatar: https://github.com/ThaisCorreia.png
+avatar: https://github.com/thaispeixoto.png
 occupations:
 - id: 20101370401
   type: student
@@ -11,7 +11,7 @@ occupations:
   course: cstsi
   isFinished: true
 addresses:
-  github: https://github.com/ThaisCorreia
+  github: https://github.com/thaispeixoto
   linkedin: https://www.linkedin.com/in/thaiscorreia/
   instagram: https://www.instagram.com/tnmcorreia/
   email: tnmcorreia@gmail.com
