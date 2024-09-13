@@ -204,10 +204,10 @@ function personRank(person: CollectionEntry<'people'>) {
         : 1,
       status: true,
     },
-    hasTwitter: {
-      value: 1,
-      status: !!person.data.addresses.twitter,
-    },
+    // hasTwitter: {
+    //   value: 1,
+    //   status: !!person.data.addresses.twitter,
+    // },
     //TODO countCourses 0.2
   };
 
