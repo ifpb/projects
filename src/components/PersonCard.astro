@@ -39,6 +39,10 @@ let icons = [
     name: 'instagram',
     icon: 'ph:instagram-logo',
   },
+  {
+    name: 'homepage',
+    icon: 'ph:address-book',
+  },
 ];
 
 const { person } = Astro.props;
@@ -68,15 +72,15 @@ const tags = await getPersonTags(person);
 ---
 
 <div
-  class="person-card rounded-md overflow-hidden shadow-lg bg-white text-center w-[233px] relative"
+  class="person-card rounded-md overflow-hidden shadow-lg bg-white text-center w-full relative"
   data-tags={tags.join('-')}
 >
-  <figure class="w-[233px] h-[233px] mx-auto overflow-hidden">
+  <figure class="mx-auto overflow-hidden">
     <a href={addresses.linkedin} target="_blank">
       <img
         src={avatar}
         alt={name.full}
-        class="animate-pulse bg-gray-300 object-cover w-[233px] h-[233px] hover:scale-105 transition duration-500 cursor-pointer"
+        class="animate-pulse bg-gray-300 object-cover w-full h-[233px] hover:scale-105 transition duration-500 cursor-pointer"
         onload="this.onload=null;this.classList.remove('animate-pulse');"
         onerror="this.onerror=null;this.classList.remove('animate-pulse', 'bg-neutral-400');this.src='/projects/imgs/avatar.svg';"
       />
