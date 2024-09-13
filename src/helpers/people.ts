@@ -247,7 +247,7 @@ function sortPeople(
     Number(isProfessor(b)) - Number(!!isProfessor(a)) ||
     Number(String(a.data.id).substring(0, 6)) -
       Number(String(b.data.id).substring(0, 6)) ||
-    getFirstCourseByPeople(a).localeCompare(getCourseByPeople(b)) ||
+    getFirstCourseByPeople(a).localeCompare(getFirstCourseByPeople(b)) ||
     a.data.name.compact.localeCompare(b.data.name.compact) // ||
     // a.data.name.compact.localeCompare(b.data.name.compact)
   );
