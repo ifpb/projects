@@ -143,6 +143,7 @@ const peopleCollection = defineCollection({
       github: z.string().url(),
       linkedin: z.string().url(),
       projects: z.string().optional(),
+      figma: z.string().optional(),
     }),
   }),
 });
