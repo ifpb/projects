@@ -15,5 +15,6 @@ addresses:
   linkedin: https://www.linkedin.com/in/brunojppb
   twitter: https://twitter.com/brunojppb
   stackoverflow: https://stackoverflow.com/users/2301092/bruno-paulino
+  homepage: https://bpaulino.com/
   email: brunojppb@gmail.com
 ---

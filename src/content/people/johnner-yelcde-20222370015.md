@@ -5,6 +5,11 @@ name:
   full: Johnner Yelcde da Cruz Castro
 avatar: https://github.com/Yelcde.png
 occupations:
+- id: 20191780024
+  type: student
+  campus: ifpb-jp
+  course: ctii
+  isFinished: true
 - id: 20222370015
   type: student
   campus: ifpb-jp
@@ -13,4 +18,5 @@ occupations:
 addresses:
   github: https://github.com/Yelcde
   linkedin: https://www.linkedin.com/in/johnner-yelcde-8b2736253/
+  homepage: https://yelcde.github.io/Curriculo-Online/
 ---

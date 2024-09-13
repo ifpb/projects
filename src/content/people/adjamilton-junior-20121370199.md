@@ -13,4 +13,5 @@ occupations:
 addresses:
   github: https://github.com/ajunior
   linkedin: https://www.linkedin.com/in/a-jr/
+  homepage: https://ajunior.dev/
 ---

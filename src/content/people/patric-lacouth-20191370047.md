@@ -10,7 +10,11 @@ occupations:
   campus: ifpb-jp
   course: cstsi
   isFinished: false
+- id: 1938469
+  type: professor
+  campus: ifpb-jp
 addresses:
   github: https://github.com/lacouth
   linkedin: https://www.linkedin.com/in/lacouth/
+  email: patric.silva@ifpb.edu.br
 ---

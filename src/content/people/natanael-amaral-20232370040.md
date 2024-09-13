@@ -14,6 +14,7 @@ addresses:
   github: https://github.com/amaraldsn
   linkedin: https://www.linkedin.com/in/natanael-amaral-a8661b264/
   youtube: https://www.youtube.com/@amaraldsn
+  homepage: https://amaraldsn.github.io/
   site: https://amaraldsn.github.io/
   instagram: https://www.instagram.com/amaraldsn/
   email: dznamaral@gmail.com

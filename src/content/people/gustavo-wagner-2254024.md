@@ -12,4 +12,5 @@ addresses:
   github: https://github.com/gugawag
   linkedin: https://www.linkedin.com/in/gugawag/
   twitter: https://twitter.com/gugawag
+  homepage: http://gustavowagner.com/paginaPessoal/index.htm
 ---

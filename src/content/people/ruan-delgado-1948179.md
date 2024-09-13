@@ -12,4 +12,5 @@ addresses:
   github: https://github.com/ruandg
   linkedin: https://www.linkedin.com/in/ruan-delgado-gomes-52702b22/
   twitter: https://twitter.com/ruandg
+  homepage: https://ruandg.github.io/
 ---

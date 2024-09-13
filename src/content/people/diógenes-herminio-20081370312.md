@@ -14,5 +14,6 @@ addresses:
   github: https://www.github.com/diofeher/
   linkedin: https://www.linkedin.com/in/diofeher/
   twitter: https://www.twitter.com/diofeher/
+  homepage: https://diofeher.net/
   email: diofeher@gmail.com
 ---
