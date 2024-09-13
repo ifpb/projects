@@ -1,7 +1,7 @@
 ---
 id: 20182370024
 name:
-  compact: Renata Albuquerque
+  compact: Renata Cardoso
   full: Renata Albuquerque Cardoso
 avatar: https://github.com/renataalbq.png
 occupations:

@@ -1,7 +1,7 @@
 ---
 id: 20221780026
 name:
-  compact: Danilo Beuttenmuller
+  compact: Danilo Cavalcante
   full: Danilo Cavalcante Beuttenmuller
 avatar: https://github.com/danilocb21.png
 occupations:
