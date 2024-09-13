@@ -2,6 +2,7 @@
 import Filter from '@/components/Filter';
 import NavBar from '@/components/NavBar.astro';
 import PageFindSearch from '@/components/PageFindSearch.astro';
+import { GOOGLE_ANALYTICS_ID } from '@/consts';
 import { getAllPersonTags } from '@/helpers/people';
 
 import '@/styles/global.css';
@@ -31,7 +32,9 @@ const { pageTitle, tags, type } = Astro.props;
   <body class="bg-gray-100 relative">
     <NavBar />
 
-    <div class="container lg:max-w-screen-lg mx-auto px-4 py-16">
+    <div
+      class="container lg:max-w-screen-lg md:max-w-screen-xl mx-auto px-4 py-16"
+    >
       <Filter type={type} tags={tags} allTags={allTags} client:visible />
 
       <h1 class="text-center pb-16 text-4xl font-bold">{pageTitle}</h1>
@@ -40,5 +43,20 @@ const { pageTitle, tags, type } = Astro.props;
 
       <slot />
     </div>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`}
+    ></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', GOOGLE_ANALYTICS_ID);
+    </script>
   </body>
 </html>
