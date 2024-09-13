@@ -242,14 +242,20 @@ function sortPeople(
   a: CollectionEntry<'people'>,
   b: CollectionEntry<'people'>
 ) {
+  const isOnlyProfessor = (person: CollectionEntry<'people'>) =>
+    Number(isProfessor(person) && !isStudent(person));
+
+  const getSubId = (person: CollectionEntry<'people'>) =>
+    isOnlyProfessor(person)
+      ? 99999
+      : Number(String(person.data.id).substring(0, 6));
+
   return (
     // personRank(b) - personRank(a) ||
-    Number(isProfessor(b)) - Number(!!isProfessor(a)) ||
-    Number(String(a.data.id).substring(0, 6)) -
-      Number(String(b.data.id).substring(0, 6)) ||
+    isOnlyProfessor(a) - isOnlyProfessor(b) ||
+    getSubId(a) - getSubId(b) ||
     getFirstCourseByPeople(a).localeCompare(getFirstCourseByPeople(b)) ||
-    a.data.name.compact.localeCompare(b.data.name.compact) // ||
-    // a.data.name.compact.localeCompare(b.data.name.compact)
+    a.data.name.compact.localeCompare(b.data.name.compact)
   );
 }
 
