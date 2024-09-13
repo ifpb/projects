@@ -13,6 +13,22 @@ export function getCourseByAbbreviation(abbreviation: string) {
   );
 }
 
+export function getFirstCourseByPeople(person: CollectionEntry<'people'>) {
+  const { occupations } = person.data;
+
+  const studentOccupation = occupations.find(
+    (occupation) => occupation.type === 'student'
+  );
+
+  if (studentOccupation) {
+    const { course } = studentOccupation;
+
+    return course;
+  } else {
+    return occupations[0].type;
+  }
+}
+
 export function getSubjectByProject(project: CollectionEntry<'projects'>) {
   const subjects: string[] = [];
 

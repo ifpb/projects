@@ -2,7 +2,7 @@ import type { CollectionEntry } from 'astro:content';
 import type { Student } from '@/content/config';
 import { getCollection } from 'astro:content';
 import { getProjectsByPerson, isSubjectProject } from './projects';
-import { getSubjectByProject } from './courses';
+import { getFirstCourseByPeople, getSubjectByProject } from './courses';
 
 export function isStudent(person: CollectionEntry<'people'>) {
   return person.data.occupations.some(
@@ -243,8 +243,13 @@ function sortPeople(
   b: CollectionEntry<'people'>
 ) {
   return (
-    personRank(b) - personRank(a) ||
-    a.data.name.compact.localeCompare(b.data.name.compact)
+    // personRank(b) - personRank(a) ||
+    Number(isProfessor(b)) - Number(!!isProfessor(a)) ||
+    Number(String(a.data.id).substring(0, 6)) -
+      Number(String(b.data.id).substring(0, 6)) ||
+    getFirstCourseByPeople(a).localeCompare(getCourseByPeople(b)) ||
+    a.data.name.compact.localeCompare(b.data.name.compact) // ||
+    // a.data.name.compact.localeCompare(b.data.name.compact)
   );
 }
 
