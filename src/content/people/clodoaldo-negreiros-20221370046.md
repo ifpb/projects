@@ -1,7 +1,7 @@
 ---
 id: 20221370046
 name:
-  compact: Clodoaldo Negreiros
+  compact: Clodoaldo Santos
   full: Clodoaldo dos Santos Negreiros Junior
 avatar: https://github.com/ClodsNegreiros.png
 occupations:
