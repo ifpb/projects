@@ -110,6 +110,18 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
               >
                 projetos
               </a>
+              <a
+                href={`/projects/${type}/homepage/1`}
+                className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blueGray-500 bg-white hover:bg-gray-600 hover:text-white transition duration-500 lowercase last:mr-0 mr-1 mt-1"
+              >
+                homepage
+              </a>
+              <a
+                href={`/projects/${type}/figma/1`}
+                className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blueGray-500 bg-white hover:bg-gray-600 hover:text-white transition duration-500 lowercase last:mr-0 mr-1 mt-1"
+              >
+                figma
+              </a>
             </nav>
           </div>
         )}

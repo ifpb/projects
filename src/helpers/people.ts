@@ -44,6 +44,14 @@ export function isFinishedSomeCourse(person: CollectionEntry<'people'>) {
   );
 }
 
+export function hasHomepage(person: CollectionEntry<'people'>) {
+  return !!person.data.addresses.homepage;
+}
+
+export function hasFigma(person: CollectionEntry<'people'>) {
+  return !!person.data.addresses.figma;
+}
+
 async function hasProjects(person: CollectionEntry<'people'>) {
   const projects = await getProjectsByPerson(person);
 
@@ -57,6 +65,14 @@ export async function getPersonTags(person: CollectionEntry<'people'>) {
 
   if (await hasProjects(person)) {
     tags.push('projetos');
+  }
+
+  if (hasHomepage(person)) {
+    tags.push('homepage');
+  }
+
+  if (hasFigma(person)) {
+    tags.push('figma');
   }
 
   if (isFinishedSomeCourse(person)) {

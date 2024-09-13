@@ -9,10 +9,13 @@ export type ProjectCategory =
   | ResearchProject
   | ExtensionProject
   | OpenSourceProject;
+
 export type Professor = z.infer<typeof professorOccupation>;
 export type Employee = z.infer<typeof employeeOccupation>;
 export type Student = z.infer<typeof studentOccupation>;
 export type Occupation = Student | Professor | Employee;
+
+export type Address = z.infer<typeof addresses>;
 
 const id = z.number().refine((num) => {
   const length = num.toString().length;
@@ -55,6 +58,9 @@ const addresses = z.object({
   lattes: z.string().url().optional(),
   researchgate: z.string().url().optional(),
   instagram: z.string().url().optional(),
+  tiktok: z.string().url().optional(),
+  youtube: z.string().url().optional(),
+  twitch: z.string().url().optional(),
   email: z.string().email().optional(),
 });
 
