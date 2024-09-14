@@ -1,5 +1,6 @@
 ---
 import Filter from '@/components/Filter';
+import GoogleAnalytics from '@/components/GoogleAnalytics.astro';
 import NavBar from '@/components/NavBar.astro';
 import PageFindSearch from '@/components/PageFindSearch.astro';
 import { GOOGLE_ANALYTICS_ID } from '@/consts';
@@ -42,19 +43,6 @@ const { pageTitle, tags, type } = Astro.props;
       <slot />
     </div>
 
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`}
-    ></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-
-      gtag('config', GOOGLE_ANALYTICS_ID);
-    </script>
+    <GoogleAnalytics />
   </body>
 </html>

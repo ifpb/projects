@@ -2,6 +2,7 @@
 import NavBar from '@/components/NavBar.astro';
 
 import '../styles/global.css';
+import GoogleAnalytics from '@/components/GoogleAnalytics.astro';
 
 export interface Props {
   pageTitle?: string;
@@ -28,5 +29,7 @@ const { pageTitle } = Astro.props;
       }
       <slot />
     </div>
+
+    <GoogleAnalytics />
   </body>
 </html>
