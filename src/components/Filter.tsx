@@ -17,7 +17,7 @@ function Badge({ url, value }: { url: string; value: string }) {
   return (
     <a
       href={url}
-      className="text-xs font-semibold inline-block py-1 px-2 rounded-full bg-white hover:bg-gray-500 hover:text-white transition duration-300 uppercase last:mr-0 mr-1 mb-1"
+      className="text-xs font-semibold inline-block uppercase last:mr-0 mr-1 mb-1 py-1 px-2 rounded-full bg-white hover:bg-gray-700 hover:text-white transition duration-300"
     >
       {value}
     </a>
