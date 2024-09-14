@@ -32,9 +32,7 @@ const { pageTitle, tags, type } = Astro.props;
   <body class="bg-gray-100 relative">
     <NavBar />
 
-    <div
-      class="container lg:max-w-screen-lg md:max-w-screen-xl mx-auto px-4 py-16"
-    >
+    <div class="container lg:max-w-screen-lg mx-auto px-4 py-16">
       <Filter type={type} tags={tags} allTags={allTags} client:visible />
 
       <h1 class="text-center pb-16 text-4xl font-bold">{pageTitle}</h1>

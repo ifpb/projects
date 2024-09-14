@@ -2,6 +2,7 @@
 import type { CollectionEntry } from 'astro:content';
 import { Icon } from 'astro-icon';
 import { getProjectId, getProjectTags } from '@/helpers/projects';
+import Badge from './Badge.astro';
 
 type ProjectsWithPeople = CollectionEntry<'projects'> & {
   people: CollectionEntry<'people'>[];
@@ -85,15 +86,6 @@ const projectId = getProjectId(project);
     </a>
   </p>
   <nav class="mb-3">
-    {
-      tags.map((tag) => (
-        <a
-          href={`/projects/codes/${tag}/1/`}
-          class="inline-block text-xs font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 my-1 mx-1 py-1 px-2 rounded-full"
-        >
-          {tag}
-        </a>
-      ))
-    }
+    {tags.map((tag) => <Badge url={`/projects/codes/${tag}/1/`} text={tag} />)}
   </nav>
 </div>

@@ -7,6 +7,7 @@ import { getProjectsByPerson } from '@/helpers/projects';
 import { getPeople } from '@/helpers/people';
 import { getSubjectByProject } from '@/helpers/courses';
 import { isSubjectProject } from '@/helpers/projects';
+import Badge from '@/components/Badge.astro';
 
 type ProjectsWithPeople = CollectionEntry<'projects'> & {
   people: CollectionEntry<'people'>[];
@@ -83,14 +84,7 @@ const subjects = projects
 
           <div class="tags">
             {
-              subjects.map((subject) => (
-                <a
-                  href={`/projects/people/${subject}/1`}
-                  class="text-[10px] pointer inline-block font-semibold text-gray-700 bg-white hover:bg-gray-200 m-0.5 py-px px-1 rounded-full"
-                >
-                  {subject}
-                </a>
-              ))
+              subjects.map((subject) => <Badge url={`/projects/people/${subject}/1`} text={subject} />)
             }
           </div>
         )

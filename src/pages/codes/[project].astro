@@ -9,6 +9,7 @@ import { getPeopleByProject } from '@/helpers/people';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { getCourseByAbbreviation } from '@/helpers/courses';
 import { campi } from '@/content/config';
+import Badge from '@/components/Badge.astro';
 
 interface ProjectProps {
   category: {
@@ -135,14 +136,7 @@ const category = project.data.category as ProjectProps['category'];
         <div class="font-bold text-lg">Tags:</div>
         <nav class="mb-2">
           {
-            project.data.tags.map((tag) => (
-              <a
-                href={`/projects/codes/${tag}/1/`}
-                class="inline-block text-xs font-semibold text-gray-600 bg-gray-200 hover:bg-gray-300 my-1 mx-1 py-1 px-2 rounded-full"
-              >
-                {tag}
-              </a>
-            ))
+            project.data.tags.map((tag) => <Badge url={`/projects/codes/${tag}/1/`} text={tag} />)
           }
         </nav>
       </div>

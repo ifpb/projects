@@ -13,6 +13,17 @@ interface FilterProps {
   allTags: string[];
 }
 
+function Badge({ url, value }: { url: string; value: string }) {
+  return (
+    <a
+      href={url}
+      className="text-xs font-semibold inline-block py-1 px-2 rounded-full bg-white hover:bg-gray-500 hover:text-white transition duration-300 uppercase last:mr-0 mr-1 mb-1"
+    >
+      {value}
+    </a>
+  );
+}
+
 export default function Filter({ type, tags, allTags }: FilterProps) {
   const [isShow, setIsShow] = useState(false);
 
@@ -27,7 +38,7 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
         onClick={toggleShow}
       ></div>
 
-      <div className="absolute w-2/3 md:w-1/3 lg:w-1/4 min-h-screen right-0 top-0 bottom-0 bg-gray-100 shadow-lg p-4 z-50">
+      <div className="absolute w-2/3 md:w-1/3 lg:w-1/4 max-w-[400px] min-h-screen right-0 top-0 bottom-0 bg-gray-100 shadow-lg p-4 z-50">
         <Icon
           icon="material-symbols:close"
           className="float-right text-2xl cursor-pointer"
@@ -44,12 +55,10 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
                   {tag.values
                     .sort((a, b) => a.localeCompare(b))
                     .map((value) => (
-                      <a
-                        href={`/projects/${type}/${value}/1`}
-                        className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blueGray-500 bg-white hover:bg-gray-600 hover:text-white transition duration-500 uppercase last:mr-0 mr-1 mt-1"
-                      >
-                        {value}
-                      </a>
+                      <Badge
+                        url={`/projects/${type}/${value}/1`}
+                        value={value}
+                      />
                     ))}
                 </nav>
               </div>
@@ -62,27 +71,20 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
                   {getCourseByAbbreviation(course).data.name}
                 </h3>
                 <nav>
-                  <a
-                    href={`/projects/${type}/${course}/1`}
-                    className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blueGray-500 bg-white hover:bg-gray-600 hover:text-white transition duration-500 lowercase last:mr-0 mr-1 mt-1"
-                  >
-                    {course}
-                  </a>
+                  <Badge url={`/projects/${type}/${course}/1`} value={course} />
+
                   {allTags.includes(`egresso-${course}`) && (
-                    <a
-                      href={`/projects/${type}/egresso-${course}/1`}
-                      className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blueGray-500 bg-white hover:bg-gray-600 hover:text-white transition duration-500 lowercase last:mr-0 mr-1 mt-1"
-                    >
-                      {course}-egressos
-                    </a>
+                    <Badge
+                      url={`/projects/${type}/egresso-${course}/1`}
+                      value={`${course}-egressos`}
+                    />
                   )}
+
                   {semesters.map((semester) => (
-                    <a
-                      href={`/projects/${type}/${course}-${semester}/1`}
-                      className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blueGray-500 bg-white hover:bg-gray-600 hover:text-white transition duration-500 last:mr-0 mr-1 mt-1"
-                    >
-                      {semester}
-                    </a>
+                    <Badge
+                      url={`/projects/${type}/${course}-${semester}/1`}
+                      value={semester}
+                    />
                   ))}
                 </nav>
               </div>
@@ -92,36 +94,11 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
           <div className="mb-4">
             <h3 className="font-semibold text-lg">Outros</h3>
             <nav>
-              <a
-                href={`/projects/${type}/professor/1`}
-                className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blueGray-500 bg-white hover:bg-gray-600 hover:text-white transition duration-500 lowercase last:mr-0 mr-1 mt-1"
-              >
-                professor
-              </a>
-              <a
-                href={`/projects/${type}/egresso/1`}
-                className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blueGray-500 bg-white hover:bg-gray-600 hover:text-white transition duration-500 lowercase last:mr-0 mr-1 mt-1"
-              >
-                egressos
-              </a>
-              <a
-                href={`/projects/${type}/projetos/1`}
-                className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blueGray-500 bg-white hover:bg-gray-600 hover:text-white transition duration-500 lowercase last:mr-0 mr-1 mt-1"
-              >
-                projetos
-              </a>
-              <a
-                href={`/projects/${type}/homepage/1`}
-                className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blueGray-500 bg-white hover:bg-gray-600 hover:text-white transition duration-500 lowercase last:mr-0 mr-1 mt-1"
-              >
-                homepage
-              </a>
-              <a
-                href={`/projects/${type}/figma/1`}
-                className="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blueGray-500 bg-white hover:bg-gray-600 hover:text-white transition duration-500 lowercase last:mr-0 mr-1 mt-1"
-              >
-                figma
-              </a>
+              <Badge url={`/projects/${type}/professor/1`} value="professor" />
+              <Badge url={`/projects/${type}/egresso/1`} value="egressos" />
+              <Badge url={`/projects/${type}/projetos/1`} value="projetos" />
+              <Badge url={`/projects/${type}/homepage/1`} value="homepage" />
+              <Badge url={`/projects/${type}/figma/1`} value="figma" />
             </nav>
           </div>
         )}

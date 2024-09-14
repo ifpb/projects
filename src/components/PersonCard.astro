@@ -13,6 +13,7 @@ import {
   getCourseAbbreviationByOccupation,
   getCourseAbbreviationCampusByOccupation,
 } from '@/helpers/courses';
+import Badge from './Badge.astro';
 
 export interface Props {
   person: CollectionEntry<'people'>;
@@ -110,50 +111,33 @@ const tags = await getPersonTags(person);
         ))
       }
     </div>
-    <div class="tags">
+    <div class="tags pb-4 space-x-px">
       {
         isStudent(person) &&
           occupations
             .filter((occupation: Student) => occupation.course)
             .map((occupation) => (
-              <a
-                href={`/projects/people/${getCourseAbbreviationByOccupation(occupation)}/1`}
-                class="text-[10px] pointer inline-block font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 m-0.5 py-px px-0.5 rounded-full"
-              >
-                {getCourseAbbreviationCampusByOccupation(occupation)}
-              </a>
+              <Badge
+                url={`/projects/people/${getCourseAbbreviationByOccupation(occupation)}/1`}
+                text={getCourseAbbreviationCampusByOccupation(occupation)}
+              />
             ))
       }
       {
         isFinishedSomeCourse(person) && (
-          <a
-            href={`/projects/people/egresso/1`}
-            class="text-[10px] pointer inline-block font-semibold text-gray-700 bg-gray-100 m-0.5 py-px px-0.5 rounded-full"
-          >
-            egresso
-          </a>
+          <Badge url="/projects/people/egresso/1" text="egresso" />
         )
       }
       {
         isProfessor(person) && (
-          <a
-            href={`/projects/people/professor/1`}
-            class="text-[10px] pointer inline-block font-semibold text-gray-700 bg-gray-100 m-0.5 py-px px-0.5 rounded-full"
-          >
-            professor
-          </a>
+          <Badge url="/projects/people/professor/1" text="professor" />
         )
       }
     </div>
     <!-- <div>
       {
         tags.map((tag) => (
-          <a
-            href={`/projects/people/${tag}/1`}
-            class="text-[10px] inline-block font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 m-0.5 py-px px-0.5 rounded-full"
-          >
-            {tag}
-          </a>
+          <Badge url={`/projects/people/${tag}/1`} text={tag} />
         ))
       }
     </div> -->
