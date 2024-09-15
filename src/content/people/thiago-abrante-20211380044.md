@@ -9,6 +9,7 @@ occupations:
   type: student
   campus: ifpb-jp
   course: cstrc
+  isFinished: false
 addresses:
   github: https://github.com/oneabrante
   linkedin: https://www.linkedin.com/in/thiago-abrante-de-souza-6a4587139

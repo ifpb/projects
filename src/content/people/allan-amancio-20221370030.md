@@ -13,6 +13,7 @@ occupations:
 addresses:
   github: https://github.com/AllanSmithll
   linkedin: https://www.linkedin.com/in/allansmithll/
+  homepage: https://allansmithll.github.io/
   lattes: http://lattes.cnpq.br/0376332803105836
   email: contato.allanamancio@gmail.com
 ---

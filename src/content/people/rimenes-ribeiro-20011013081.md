@@ -14,5 +14,6 @@ addresses:
   github: https://github.com/rimenes
   linkedin: https://www.linkedin.com/in/rimenes/
   twitter: https://twitter.com/rimenes
+  homepage: https://rimenesribeiro.com/
   email: rima@rimenesribeiro.com
 ---

@@ -36,7 +36,7 @@ const { page, tags } = Astro.props;
 <FilterLayout pageTitle="Pessoas" type="people" tags={tags}>
   <main>
     <div
-      class="grid justify-center justify-items-center gap-5 grid-cols-1 md:grid-cols-[repeat(2,_233px)] lg:grid-cols-[repeat(3,_233px)] xl:grid-cols-4 mx-auto"
+      class="grid justify-center gap-5 grid-cols-1 min-[320px]:grid-cols-[250px] sm:grid-cols-[repeat(2,_250px)] lg:grid-cols-[repeat(3,_250px)] xl:grid-cols-4 mx-auto"
     >
       {page.data.map((person) => <PersonCard person={person} />)}
     </div>

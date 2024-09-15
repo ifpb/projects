@@ -5,10 +5,16 @@ name:
   full: Lucas Andrade dos Santos
 avatar: https://github.com/LucasAndrade912.png
 occupations:
+  - id: 20191780034
+    type: student
+    campus: ifpb-jp
+    course: ctii
+    isFinished: true
   - id: 20222370031
     type: student
     campus: ifpb-jp
     course: cstsi
+    isFinished: false
 addresses:
   github: https://github.com/LucasAndrade912
   linkedin: https://www.linkedin.com/in/lucasandrade912/

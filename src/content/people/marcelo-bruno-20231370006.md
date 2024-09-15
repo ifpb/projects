@@ -9,6 +9,7 @@ occupations:
     type: student
     campus: ifpb-jp
     course: cstsi
+    isFinished: false
 addresses:
   github: https://github.com/marceelobruno
   linkedin: http://linkedin.com/in/marcelo-bruno-

@@ -2,6 +2,7 @@
 import type { CollectionEntry } from 'astro:content';
 import { Icon } from 'astro-icon';
 import { getProjectId, getProjectTags } from '@/helpers/projects';
+import Badge from './Badge.astro';
 
 type ProjectsWithPeople = CollectionEntry<'projects'> & {
   people: CollectionEntry<'people'>[];
@@ -38,16 +39,31 @@ const projectId = getProjectId(project);
       </a>
     </figure>
     <div class="absolute top-2 right-2">
-      <a href={addresses.repository} target="_blank" class="font-bold">
-        <Icon name="uim:github" size={32} class="github-project-link" />
-      </a>
+      <ul class="flex">
+        {
+          addresses.template && (
+            <li class="-mr-2 bg-black border-2 border-gray-100 rounded-full overflow-hidden">
+              <a href={addresses.template} target="_blank" class="font-bold">
+                <Icon name="logos:figma" size={32} class="figma-project-link" />
+              </a>
+            </li>
+          )
+        }
+        <li
+          class="-mr-2 bg-black border-2 border-gray-100 rounded-full overflow-hidden"
+        >
+          <a href={addresses.repository} target="_blank" class="font-bold">
+            <Icon name="uim:github" size={32} class="github-project-link" />
+          </a>
+        </li>
+      </ul>
     </div>
     <ul class="absolute bottom-2 right-4 flex">
       {
         !!project.people?.length &&
-          project.people?.map(({ data: { addresses, avatar, name } }) => (
+          project.people?.map(({ data: { id, avatar, name } }) => (
             <li class="-mr-2 border-2 border-gray-100 rounded-full">
-              <a href={addresses.github} target="_blank">
+              <a href={`/projects/people/${id}/`} target="_blank">
                 <img
                   src={`${avatar}?size=32`}
                   alt={name.full}
@@ -61,20 +77,15 @@ const projectId = getProjectId(project);
     </ul>
   </section>
   <p class="my-3">
-    <a href={`/projects/codes/${projectId}`} target="_blank" class="font-bold">
+    <a
+      href={`/projects/codes/${projectId}`}
+      target="_blank"
+      class="font-bold underline"
+    >
       {name}
     </a>
   </p>
   <nav class="mb-3">
-    {
-      tags.map((tag) => (
-        <a
-          href={`/projects/codes/${tag}/1/`}
-          class="inline-block text-xs font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 my-1 mx-1 py-1 px-2 rounded-full"
-        >
-          {tag}
-        </a>
-      ))
-    }
+    {tags.map((tag) => <Badge url={`/projects/codes/${tag}/1/`} text={tag} />)}
   </nav>
 </div>

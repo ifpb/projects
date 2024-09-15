@@ -9,6 +9,7 @@ occupations:
     type: student
     campus: ifpb-jp
     course: cstsi
+    isFinished: false
 addresses:
   github: https://github.com/LuizFernando12
   linkedin: https://www.linkedin.com/in/luiz-gomes-480708282

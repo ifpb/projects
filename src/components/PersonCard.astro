@@ -5,7 +5,7 @@ import { Icon } from 'astro-icon';
 import { getProjectsByPerson } from '@/helpers/projects';
 import {
   getPersonTags,
-  isFinished,
+  isFinishedSomeCourse,
   isProfessor,
   isStudent,
 } from '@/helpers/people';
@@ -13,6 +13,7 @@ import {
   getCourseAbbreviationByOccupation,
   getCourseAbbreviationCampusByOccupation,
 } from '@/helpers/courses';
+import Badge from './Badge.astro';
 
 export interface Props {
   person: CollectionEntry<'people'>;
@@ -31,13 +32,17 @@ let icons = [
     name: 'github',
     icon: 'icon-park:github-one',
   },
-  // {
-  //   name: 'twitter',
-  //   icon: 'ph:twitter-logo',
-  // },
+  {
+    name: 'figma',
+    icon: 'ph:figma-logo',
+  },
   {
     name: 'instagram',
     icon: 'ph:instagram-logo',
+  },
+  {
+    name: 'homepage',
+    icon: 'ph:address-book',
   },
 ];
 
@@ -68,15 +73,15 @@ const tags = await getPersonTags(person);
 ---
 
 <div
-  class="person-card rounded-md overflow-hidden shadow-lg bg-white text-center w-[233px] relative"
+  class="person-card rounded-md overflow-hidden shadow-lg bg-white text-center w-full relative"
   data-tags={tags.join('-')}
 >
-  <figure class="w-[233px] h-[233px] mx-auto overflow-hidden">
+  <figure class="mx-auto overflow-hidden">
     <a href={addresses.linkedin} target="_blank">
       <img
         src={avatar}
         alt={name.full}
-        class="animate-pulse bg-gray-300 object-cover w-[233px] h-[233px] hover:scale-105 transition duration-500 cursor-pointer"
+        class="animate-pulse bg-gray-300 object-cover w-full h-[233px] hover:scale-105 transition duration-500 cursor-pointer"
         onload="this.onload=null;this.classList.remove('animate-pulse');"
         onerror="this.onerror=null;this.classList.remove('animate-pulse', 'bg-neutral-400');this.src='/projects/imgs/avatar.svg';"
       />
@@ -106,50 +111,33 @@ const tags = await getPersonTags(person);
         ))
       }
     </div>
-    <div class="tags">
+    <div class="tags pb-4 space-x-px">
       {
         isStudent(person) &&
           occupations
             .filter((occupation: Student) => occupation.course)
             .map((occupation) => (
-              <a
-                href={`/projects/people/${getCourseAbbreviationByOccupation(occupation)}/1`}
-                class="text-[10px] pointer inline-block font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 m-0.5 py-px px-0.5 rounded-full"
-              >
-                {getCourseAbbreviationCampusByOccupation(occupation)}
-              </a>
+              <Badge
+                url={`/projects/people/${getCourseAbbreviationByOccupation(occupation)}/1`}
+                text={getCourseAbbreviationCampusByOccupation(occupation)}
+              />
             ))
       }
       {
-        isFinished(person) && (
-          <a
-            href={`/projects/people/egresso/1`}
-            class="text-[10px] pointer inline-block font-semibold text-gray-700 bg-gray-100 m-0.5 py-px px-0.5 rounded-full"
-          >
-            egresso
-          </a>
+        isFinishedSomeCourse(person) && (
+          <Badge url="/projects/people/egresso/1" text="egresso" />
         )
       }
       {
         isProfessor(person) && (
-          <a
-            href={`/projects/people/professor/1`}
-            class="text-[10px] pointer inline-block font-semibold text-gray-700 bg-gray-100 m-0.5 py-px px-0.5 rounded-full"
-          >
-            professor
-          </a>
+          <Badge url="/projects/people/professor/1" text="professor" />
         )
       }
     </div>
     <!-- <div>
       {
         tags.map((tag) => (
-          <a
-            href={`/projects/people/${tag}/1`}
-            class="text-[10px] inline-block font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 m-0.5 py-px px-0.5 rounded-full"
-          >
-            {tag}
-          </a>
+          <Badge url={`/projects/people/${tag}/1`} text={tag} />
         ))
       }
     </div> -->

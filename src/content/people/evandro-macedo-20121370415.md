@@ -15,4 +15,6 @@ addresses:
   linkedin: https://www.linkedin.com/in/evandrohcm
   twitter: https://twitter.com/evandromacedo_
   email: evandro.hcm@gmail.com
+  facebook: https://facebook.com/macedoevandro
+  instagram: https://www.instagram.com/evan.macedo
 ---

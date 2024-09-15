@@ -1,7 +1,8 @@
 import type { CollectionEntry } from 'astro:content';
 import type { Student } from '@/content/config';
 import { getCollection } from 'astro:content';
-import { getProjectsByPerson } from './projects';
+import { getProjectsByPerson, isSubjectProject } from './projects';
+import { getFirstCourseByPeople, getSubjectByProject } from './courses';
 
 export function isStudent(person: CollectionEntry<'people'>) {
   return person.data.occupations.some(
@@ -12,12 +13,6 @@ export function isStudent(person: CollectionEntry<'people'>) {
 export function isProfessor(person: CollectionEntry<'people'>) {
   return person.data.occupations.some(
     (occupation) => occupation.type === 'professor'
-  );
-}
-
-export function isFinished(person: CollectionEntry<'people'>) {
-  return person.data.occupations.some(
-    (occupation: Student) => occupation?.isFinished === true
   );
 }
 
@@ -43,10 +38,18 @@ function hasPersonId(person: CollectionEntry<'people'>, id: number) {
   return person.data.occupations.some((occupation) => occupation.id === id);
 }
 
-function hasFinishedSomeCourse(person: CollectionEntry<'people'>) {
+export function isFinishedSomeCourse(person: CollectionEntry<'people'>) {
   return person.data.occupations.some(
     (occupation: Student) => occupation.isFinished
   );
+}
+
+export function hasHomepage(person: CollectionEntry<'people'>) {
+  return !!person.data.addresses.homepage;
+}
+
+export function hasFigma(person: CollectionEntry<'people'>) {
+  return !!person.data.addresses.figma;
 }
 
 async function hasProjects(person: CollectionEntry<'people'>) {
@@ -64,8 +67,25 @@ export async function getPersonTags(person: CollectionEntry<'people'>) {
     tags.push('projetos');
   }
 
-  if (hasFinishedSomeCourse(person)) {
+  if (hasHomepage(person)) {
+    tags.push('homepage');
+  }
+
+  if (hasFigma(person)) {
+    tags.push('figma');
+  }
+
+  if (isFinishedSomeCourse(person)) {
     tags.push('egresso');
+
+    const courses = person.data.occupations
+      .filter((occupation: Student) => occupation.isFinished)
+      .map((occupation: Student) => [
+        `egresso-${occupation.course}-${occupation.campus.split('-')[1]}`,
+        `egresso-${occupation.course}`,
+      ]);
+
+    tags.push(...courses.flat());
   }
 
   const courses = person.data.occupations
@@ -80,8 +100,18 @@ export async function getPersonTags(person: CollectionEntry<'people'>) {
     (semester, index) => `${courses[index]}-${semester}`
   );
 
+  const subjects = (await getProjectsByPerson(person))
+    .filter((project) => isSubjectProject(project))
+    .map((project) => getSubjectByProject(project));
+
   if (isStudent(person)) {
-    tags.push('aluno', ...courses, ...semesters, ...coursesBySemester);
+    tags.push(
+      'aluno',
+      ...courses,
+      ...semesters,
+      ...coursesBySemester,
+      ...subjects
+    );
   }
 
   if (isProfessor(person)) {
@@ -182,7 +212,7 @@ function personRank(person: CollectionEntry<'people'>) {
     },
     isFinished: {
       value: 2,
-      status: hasFinishedSomeCourse(person),
+      status: isFinishedSomeCourse(person),
     },
     weightedId: {
       value: isStudent(person)
@@ -190,10 +220,10 @@ function personRank(person: CollectionEntry<'people'>) {
         : 1,
       status: true,
     },
-    hasTwitter: {
-      value: 1,
-      status: !!person.data.addresses.twitter,
-    },
+    // hasTwitter: {
+    //   value: 1,
+    //   status: !!person.data.addresses.twitter,
+    // },
     //TODO countCourses 0.2
   };
 
@@ -201,7 +231,7 @@ function personRank(person: CollectionEntry<'people'>) {
     return acc + Number(!!Number(weight.status)) * weight.value;
   }, 0);
 
-  if (isProfessor(person) && hasFinishedSomeCourse(person)) {
+  if (isProfessor(person) && isFinishedSomeCourse(person)) {
     rank -= 1;
   }
 
@@ -212,8 +242,19 @@ function sortPeople(
   a: CollectionEntry<'people'>,
   b: CollectionEntry<'people'>
 ) {
+  const isOnlyProfessor = (person: CollectionEntry<'people'>) =>
+    Number(isProfessor(person) && !isStudent(person));
+
+  const getSubId = (person: CollectionEntry<'people'>) =>
+    isOnlyProfessor(person)
+      ? 99999
+      : Number(String(person.data.id).substring(0, 6));
+
   return (
-    personRank(b) - personRank(a) ||
+    // personRank(b) - personRank(a) ||
+    isOnlyProfessor(a) - isOnlyProfessor(b) ||
+    getSubId(a) - getSubId(b) ||
+    getFirstCourseByPeople(a).localeCompare(getFirstCourseByPeople(b)) ||
     a.data.name.compact.localeCompare(b.data.name.compact)
   );
 }

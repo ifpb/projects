@@ -9,6 +9,7 @@ occupations:
   type: student
   campus: ifpb-jp
   course: cstsi
+  isFinished: false
 addresses:
   github: https://github.com/RomeroCaetano
   linkedin: https://www.linkedin.com/in/romero-caetano/

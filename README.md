@@ -4,7 +4,7 @@ O objetivo deste repositório consiste em exibir os alunos e os projetos do IFPB
 
 ## Cadastro de alunos
 
-O primeiro passo seria incluir o dados do aluno adicionando um arquivo seguindo este formato `name-compact-id.md`, no diretório no diretório [src/content/people/](https://github.com/ifpb/projects/tree/main/src/content/people), por exemplo, o arquivo `luiz-chaves-20051370420.md`:
+O primeiro passo seria incluir o dados do aluno adicionando um arquivo seguindo este formato `name-compact-id.md`, no diretório no diretório `src/content/people/`, por exemplo, o arquivo `luiz-chaves-20051370420.md`:
 
 ```yaml
 ---
@@ -22,10 +22,13 @@ occupations:
 addresses:
   github: https://github.com/luizchaves
   linkedin: https://www.linkedin.com/in/luizcarloschaves/
-  twitter: http://twitter.com/luizchavesjp
   lattes: http://lattes.cnpq.br/7165875430419020
   researchgate: https://www.researchgate.net/profile/Luiz_Rodrigues_Chaves
-  email: lucachaves@gmail.com
+  instagram: https://www.instagram.com/luizcrchaves/
+  threads: https://www.threads.net/@luizcrchves
+  bluesky: https://bsky.app/profile/luizcarloschaves.bsky.social
+  twitter: http://twitter.com/luizchavesjp
+  email: luiz.chaves@ifpb.edu.br
 ---
 ```
 
@@ -46,16 +49,17 @@ A imagem de avatar deve ser a do seu perfil do github, por exemplo, o endereço 
 
 ## Cadastro de projetos
 
-O próximo passo seria incluir os dados do projeto adicionando um arquivo seguindo este formato `titulo-do-projeto.md`, no diretório [src/content/projects/](https://github.com/ifpb/projects/tree/main/src/content/projects), por exemplo, o arquivo `ifpb-projects.md`:
+O próximo passo seria incluir os dados do projeto adicionando um arquivo seguindo este formato `titulo-do-projeto.md`, no diretório `src/content/projects/`, por exemplo, o arquivo `ifpb-projects.md`:
 
 ```yaml
 ---
-name: IFPB Projects
-description: Este portal tem como objetivo listar projetos construídos pelos alunos do IFPB.
+name: Home da UAI-IFPB
+description: Este portal tem como objetivo ser um landing page da UAI do IFPB.
 addresses:
-  preview: https://raw.githubusercontent.com/ifpb/projects/main/preview.png
-  homepage: https://ifpb.github.io/projects/
-  repository: https://github.com/ifpb/projects
+  preview: https://raw.githubusercontent.com/ifpb/ifpb.github.io/main/preview.png
+  homepage: https://ifpb.github.io/
+  repository: https://github.com/ifpb/ifpb.github.io
+  template: https://www.figma.com/design/tgIYBEusxWkzNX803dBgUs/ifpb.github.io?node-id=0-1&t=Y6u5fodNP8JCcDHw-1
 category:
   type: subject
   subject: ls
@@ -76,6 +80,7 @@ Este exemplo é um projeto do tipo `projeto de disciplina`, no arquivo [src/cont
 - `addresses.repository` - Endereço do repositório do projeto no Github (obrigatório);
 - `addresses.preview` - Endereço da imagem de preview do projeto (print screen), que deve ser colocada no próprio repositório do projeto com a extensão `.png` e tamanho sugerido de `500x262px` (obrigatório);
 - `addresses.homepage` - Site do projeto em execução, caso exista (opcional).
+- `addresses.template` - Site do template/protótipo do projeto, caso exista (opcional).
 
 No campo `owners` é possível adicionar uma lista alunos, caso o projeto tenha mais de um colaborador, informando a matrícula do aluno, depois é importante que cada aluno faça seu o cadastrado de suas informações.
 

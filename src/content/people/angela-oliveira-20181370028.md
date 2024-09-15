@@ -9,6 +9,7 @@ occupations:
   type: student
   campus: ifpb-jp
   course: cstsi
+  isFinished: true
 addresses:
   github: https://github.com/angela-oliveira
   linkedin: https://www.linkedin.com/in/angela-mr-oliveira/

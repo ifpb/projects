@@ -9,10 +9,13 @@ export type ProjectCategory =
   | ResearchProject
   | ExtensionProject
   | OpenSourceProject;
+
 export type Professor = z.infer<typeof professorOccupation>;
 export type Employee = z.infer<typeof employeeOccupation>;
 export type Student = z.infer<typeof studentOccupation>;
 export type Occupation = Student | Professor | Employee;
+
+export type Address = z.infer<typeof addresses>;
 
 const id = z.number().refine((num) => {
   const length = num.toString().length;
@@ -48,7 +51,6 @@ const addresses = z.object({
   github: z.string().url().optional(),
   linkedin: z.string().url().optional(),
   homepage: z.string().optional(),
-  projects: z.string().optional(),
   twitter: z.string().url().optional(),
   bluesky: z.string().url().optional(),
   threads: z.string().url().optional(),
@@ -56,6 +58,9 @@ const addresses = z.object({
   lattes: z.string().url().optional(),
   researchgate: z.string().url().optional(),
   instagram: z.string().url().optional(),
+  tiktok: z.string().url().optional(),
+  youtube: z.string().url().optional(),
+  twitch: z.string().url().optional(),
   email: z.string().email().optional(),
 });
 
@@ -77,7 +82,7 @@ const studentOccupation = z.object({
   type: z.literal('student'),
   campus,
   course,
-  isFinished: z.boolean().optional(),
+  isFinished: z.boolean(),
 });
 
 // project category
@@ -143,6 +148,8 @@ const peopleCollection = defineCollection({
     addresses: addresses.extend({
       github: z.string().url(),
       linkedin: z.string().url(),
+      projects: z.string().optional(),
+      figma: z.string().optional(),
     }),
   }),
 });
@@ -154,6 +161,7 @@ const projectCollection = defineCollection({
     addresses: addresses.extend({
       repository: z.string().url(),
       preview: z.string().url().optional(),
+      template: z.string().url().optional(),
     }),
     category: z.union([
       subjectProjectCategory,
