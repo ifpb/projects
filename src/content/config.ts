@@ -27,6 +27,7 @@ export const campi = {
   'ifpb-jp': 'João Pessoa',
   'ifpb-cg': 'Campina Grande',
   'ifpb-gb': 'Guarabira',
+  'ifpb-cz': 'Cajazeiras',
   reitoria: 'Reitoria',
 };
 
