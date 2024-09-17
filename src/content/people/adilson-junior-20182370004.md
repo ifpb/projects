@@ -1,7 +1,7 @@
 ---
 id: 20182370004
 name:
-  compact: Adilson
+  compact: Adilson Júnior
   full: Adilson da Silva Costa Júnior
 avatar: https://github.com/addijs.png
 occupations:
