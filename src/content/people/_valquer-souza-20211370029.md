@@ -1,16 +1,16 @@
 ---
-id: 20191370005
+id: 20211370029
 name:
-  compact: Diogo Cardoso
-  full: Diogo Gomes Cardoso
+  compact: Valquer Souza
+  full: Valquer Rafael e Silva Souza
 avatar: https://github.com/_.png
 occupations:
-- id: 20191370005
+- id: 20211370029
   type: student
   campus: ifpb-jp
   course: cstsi
   isFinished: true
 addresses:
   github: https://github.com/_
-  linkedin: https://www.linkedin.com/in/digocardoso/
+  linkedin: https://www.linkedin.com/in/valquer-souza/
 ---
