@@ -18,4 +18,5 @@ occupations:
 addresses:
   github: https://github.com/Nicoly-Almeida
   linkedin: https://www.linkedin.com/in/nicoly-almeida-2694b4191/
+  figma: https://www.figma.com/@nicolyalmeida
 ---
