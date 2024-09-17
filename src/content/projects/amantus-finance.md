@@ -13,19 +13,18 @@ category:
 tags:
   - angular
   - bootstrap
-  - firebase
+  # - firebase
   - firebase-auth
   - firestore
-  - font-awesome
+  # - font-awesome
   - hibernate
-  - html
-  - java
-  - jpa
-  - json
-  - json-server
-  - maven
-  - node.js
-  - pgadmin4
+  # - java
+  # - jpa
+  # - json
+  # - json-server
+  # - maven
+  # - node.js
+  # - pgadmin4
   - postgresql
   - sass
   - spring-boot
