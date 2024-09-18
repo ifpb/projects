@@ -89,9 +89,8 @@ const tags = await getPersonTags(person);
   </figure>
   <div>
     <div class="px-6 py-2">
-      <div class="font-bold text-xl">{name.compact}</div>
-      <div class="hidden" data-pagefind-filter="tipo:Pessoas">
-        {name.full}
+      <div class="font-bold text-xl" data-pagefind-ignore>
+        {name.compact}
       </div>
     </div>
     <div class="flex justify-center pb-2">

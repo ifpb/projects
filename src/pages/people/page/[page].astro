@@ -37,6 +37,7 @@ const { page, tags } = Astro.props;
   <main>
     <div
       class="grid justify-center gap-5 grid-cols-1 min-[320px]:grid-cols-[250px] sm:grid-cols-[repeat(2,_250px)] lg:grid-cols-[repeat(3,_250px)] xl:grid-cols-4 mx-auto"
+      data-pagefind-ignore
     >
       {page.data.map((person) => <PersonCard person={person} />)}
     </div>
