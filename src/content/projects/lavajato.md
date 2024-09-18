@@ -2,7 +2,7 @@
 name: Lava-jato
 description: Projeto de site de agendamentos de lava-jato.
 addresses:
-  preview: https://github.com/ThalesLimaF/Lava-jato/main/preview.png
+  preview: https://raw.githubusercontent.com/ThalesLimaF/Lava-jato/main/preview.png
   homepage: https://ThalesLimaF.github.io/Lava-jato
   repository: https://github.com/ThalesLimaF/Lava-jato
 category:

@@ -2,7 +2,7 @@
 name: Rede Brota
 description: O intuito será a criação de uma rede social voltada para entusiastas em plantas. Você poderá obter informações para o cuidado e manuseio adequado destas, contando com informações tais como iluminação, rega, tipo de solo, etc.
 addresses:
-  preview: https://github.com/MelquisedequeVital/Projeto_Brota-LM_2024.1/main/preview.png
+  preview: https://raw.githubusercontent.com/MelquisedequeVital/Projeto_Brota-LM_2024.1/main/preview.png
   homepage: https://melquisedequevital.github.io/Projeto_Brota-LM_2024.1/
   repository: https://github.com/MelquisedequeVital/Projeto_Brota-LM_2024.1
 category:
