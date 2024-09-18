@@ -12,7 +12,7 @@ tags:
   - css
   - html
 addresses:
-  preview: https://raw.githubusercontent.com/adalbertorosendoo/Projeto-DW/main/Projeto/transferir.png
+  preview: https://raw.githubusercontent.com/adalbertorosendoo/Projeto-DW/main/Projeto/preview.png
   repository: https://github.com/adalbertorosendoo/Projeto-DW
 owners:
   - 20211380007
