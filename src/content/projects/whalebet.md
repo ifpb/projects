@@ -1,6 +1,6 @@
 ---
 name: Whalebet
-description: ...
+description: O projeto consiste em criar um layout de um site de aposta esportiva, especificamente surf.
 addresses:
   preview: https://github.com/pauloant/lm-projeto-whalebet/main/preview.png
   homepage: https://pauloant.github.io/lm-projeto-whalebet/

@@ -1,6 +1,6 @@
 ---
 name: Pixel Views
-description: ...
+description: Um site que aborda o tema de jogos eletrônicos, contendo reviews, notícias recentes e etc.
 addresses:
   preview: https://github.com/Felipejjjj/pixel-view/main/preview.png
   homepage: https://felipejjjj.github.io/pixel-view/
