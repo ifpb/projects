@@ -1,10 +1,9 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import PersonCard from '@/components/PersonCard.astro';
-import PaginationIndex from '@/components/PaginationIndex.astro';
 import FilterLayout from '@/layouts/FilterLayout.astro';
-import { PAGE_SIZE } from '@/consts';
+import PersonGrid from '@/components/PersonGrid.astro';
 import { getAllPeopleTagGroups, getPeople } from '@/helpers/people';
+import { PAGE_SIZE } from '@/consts';
 
 export interface Props {
   page: {
@@ -17,6 +16,7 @@ export interface Props {
     };
   };
   tags: string[];
+  index: string;
 }
 
 export async function getStaticPaths({ paginate }) {
@@ -25,27 +25,14 @@ export async function getStaticPaths({ paginate }) {
   const tags = await getAllPeopleTagGroups();
 
   return paginate(people, {
+    props: { index: 'page', tags },
     pageSize: PAGE_SIZE,
-    props: { tags },
   });
 }
 
-const { page, tags } = Astro.props;
+const { page, index, tags } = Astro.props;
 ---
 
 <FilterLayout pageTitle="Pessoas" type="people" tags={tags}>
-  <main>
-    <div
-      class="grid justify-center gap-5 grid-cols-1 min-[320px]:grid-cols-[250px] sm:grid-cols-[repeat(2,_250px)] lg:grid-cols-[repeat(3,_250px)] xl:grid-cols-4 mx-auto"
-      data-pagefind-ignore
-    >
-      {page.data.map((person) => <PersonCard person={person} />)}
-    </div>
-
-    {
-      page.lastPage > 1 && (
-        <PaginationIndex page={page} type="people" index="page" />
-      )
-    }
-  </main>
+  <PersonGrid page={page} type="people" index={index} />
 </FilterLayout>

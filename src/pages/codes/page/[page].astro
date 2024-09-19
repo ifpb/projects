@@ -1,8 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import ProjectCard from '@/components/ProjectCard.astro';
-import PaginationIndex from '@/components/PaginationIndex.astro';
 import FilterLayout from '@/layouts/FilterLayout.astro';
+import ProjectGrid from '@/components/ProjectGrid.astro';
 import { getAllProjectTagGroups, getProjects } from '@/helpers/projects';
 import { PAGE_SIZE } from '@/consts';
 
@@ -34,17 +33,5 @@ const { page, tags }: Props = Astro.props;
 ---
 
 <FilterLayout pageTitle="Projetos" type="codes" tags={tags}>
-  <main data-pagefind-ignore>
-    <div
-      class="grid justify-items-stretch gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-    >
-      {page.data.map((project) => <ProjectCard project={project} />)}
-    </div>
-
-    {
-      page.lastPage > 1 && (
-        <PaginationIndex page={page} type="codes" index="page" />
-      )
-    }
-  </main>
+  <ProjectGrid page={page} type="codes" index="page" />
 </FilterLayout>
