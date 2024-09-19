@@ -3,7 +3,7 @@ id: 20241370009
 name:
   compact: Jonas Sarmento
   full: Jonas Gabriel Sarmento de Figueiredo
-avatar: https://github.com/JonasIFPB.png
+avatar: https://github.com/Jonasgabs.png
 occupations:
 - id: 20201720063
   type: student
@@ -16,7 +16,7 @@ occupations:
   course: cstsi
   isFinished: false
 addresses:
-  github: https://github.com/JonasIFPB
+  github: https://github.com/Jonasgabs
   linkedin: https://www.linkedin.com/in/jonas-sarmento
   email: jonas.sarmento@academico.ifpb.edu.br
 ---
