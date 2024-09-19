@@ -58,6 +58,8 @@ const addresses = z.object({
   stackoverflow: z.string().url().optional(),
   lattes: z.string().url().optional(),
   researchgate: z.string().url().optional(),
+  orcid: z.string().url().optional(),
+  googleScholar: z.string().url().optional(),
   instagram: z.string().url().optional(),
   tiktok: z.string().url().optional(),
   youtube: z.string().url().optional(),

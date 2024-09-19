@@ -23,26 +23,42 @@ let icons = [
   {
     name: 'projects',
     icon: 'ph:code',
+    size: 32,
   },
   {
     name: 'linkedin',
     icon: 'ph:linkedin-logo',
+    size: 32,
   },
   {
     name: 'github',
     icon: 'icon-park:github-one',
+    size: 32,
   },
   {
     name: 'figma',
     icon: 'ph:figma-logo',
+    size: 32,
   },
   {
     name: 'instagram',
     icon: 'ph:instagram-logo',
+    size: 32,
   },
   {
     name: 'homepage',
-    icon: 'ph:address-book',
+    icon: 'ph:identification-badge',
+    size: 32,
+    // icon: 'ph:address-book',
+  },
+  {
+    name: 'researchgate',
+    icon: 'la:researchgate',
+    size: 36,
+    // icon: 'simple-icons:researchgate',
+    // icon: 'ph:graduation-cap',
+    // icon: 'ph:student',
+    // icon: 'ph:flask',
   },
 ];
 
@@ -99,11 +115,11 @@ const tags = await getPersonTags(person);
           <a
             href={link.url}
             target="_blank"
-            class="hover:scale-110 transition duration-500"
+            class="hover:scale-110 transition duration-500 flex items-center justify-center"
           >
             <Icon
               name={link.icon}
-              size={32}
+              size={link.size}
               class={`${link.name}-person-link`}
             />
           </a>
