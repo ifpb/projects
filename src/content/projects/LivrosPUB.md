@@ -1,9 +1,8 @@
 ---
 name: LivrosPUB
-description: acervo de livros com dominio publico
-adress:
+description: acervo de livros com domínio público
+addresses:
   preview: https://raw.githubusercontent.com/JulioCBMO/projeto-ls-2024-1/master/preview.png
-  page: https://github.com/JulioCBMO/projeto-ls-2024-1
   repository: https://github.com/JulioCBMO/projeto-ls-2024-1
 category:
   type: subject
