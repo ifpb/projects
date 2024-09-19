@@ -63,6 +63,28 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
                 </nav>
               </div>
             ))}
+        {type === 'codes' && (
+          <div className="mb-4">
+            <h3 className="font-semibold text-lg">Tipo</h3>
+            <nav>
+              <Badge url={`/projects/codes/subject/1`} value="Disciplina" />
+              {/* <Badge url={`/projects/codes/research/1`} value="Pesquisa" /> */}
+              {/* <Badge url={`/projects/codes/extension/1`} value="Extensão" /> */}
+              <Badge
+                url={`/projects/codes/open%20source/1`}
+                value="Open Source"
+              />
+            </nav>
+          </div>
+        )}
+        {type === 'codes' && (
+          <div className="mb-4">
+            <h3 className="font-semibold text-lg">Outros</h3>
+            <nav>
+              <Badge url={`/projects/codes/figma/1`} value="figma" />
+            </nav>
+          </div>
+        )}
         {type === 'people' &&
           Object.entries(getSemesterCourses(tags.semester.values)).map(
             ([course, semesters]: [string, string[]]) => (
@@ -71,18 +93,18 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
                   {getCourseByAbbreviation(course).data.name}
                 </h3>
                 <nav>
-                  <Badge url={`/projects/${type}/${course}/1`} value={course} />
+                  <Badge url={`/projects/people/${course}/1`} value={course} />
 
                   {allTags.includes(`egresso-${course}`) && (
                     <Badge
-                      url={`/projects/${type}/egresso-${course}/1`}
+                      url={`/projects/people/egresso-${course}/1`}
                       value={`${course}-egressos`}
                     />
                   )}
 
                   {semesters.map((semester) => (
                     <Badge
-                      url={`/projects/${type}/${course}-${semester}/1`}
+                      url={`/projects/people/${course}-${semester}/1`}
                       value={semester}
                     />
                   ))}
@@ -94,11 +116,11 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
           <div className="mb-4">
             <h3 className="font-semibold text-lg">Outros</h3>
             <nav>
-              <Badge url={`/projects/${type}/professor/1`} value="professor" />
-              <Badge url={`/projects/${type}/egresso/1`} value="egressos" />
-              <Badge url={`/projects/${type}/projetos/1`} value="projetos" />
-              <Badge url={`/projects/${type}/homepage/1`} value="homepage" />
-              <Badge url={`/projects/${type}/figma/1`} value="figma" />
+              <Badge url={`/projects/people/professor/1`} value="professor" />
+              <Badge url={`/projects/people/egresso/1`} value="egressos" />
+              <Badge url={`/projects/people/projetos/1`} value="projetos" />
+              <Badge url={`/projects/people/homepage/1`} value="homepage" />
+              <Badge url={`/projects/people/figma/1`} value="figma" />
             </nav>
           </div>
         )}

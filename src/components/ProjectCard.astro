@@ -86,6 +86,11 @@ const projectId = getProjectId(project);
     </a>
   </p>
   <nav class="m-3 px-2 space-x-1">
-    {tags.map((tag) => <Badge url={`/projects/codes/${tag}/1/`} text={tag} />)}
+    {
+      tags
+        .filter((tag, index, self) => self.indexOf(tag) === index)
+        .filter((tag) => tag !== 'subject')
+        .map((tag) => <Badge url={`/projects/codes/${tag}/1/`} text={tag} />)
+    }
   </nav>
 </div>

@@ -42,10 +42,22 @@ export async function getStaticPaths({ paginate }) {
 }
 
 const { page }: Props = Astro.props;
-const { tag } = Astro.params;
+let { tag } = Astro.params;
+
+if (tag === 'subject') {
+  tag = 'Disciplina';
+} else if (tag === 'research') {
+  tag = 'Pesquisa';
+} else if (tag === 'extension') {
+  tag = 'Extensão';
+} else if (tag === 'open source') {
+  tag = 'Open Source';
+} else {
+  tag = tag.toUpperCase();
+}
 ---
 
-<BaseLayout pageTitle={`Projetos de ${tag.toUpperCase()}`}>
+<BaseLayout pageTitle={`Projetos de ${tag}`}>
   <div
     class="grid justify-items-stretch gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
     data-pagefind-ignore

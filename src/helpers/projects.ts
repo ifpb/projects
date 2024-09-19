@@ -18,19 +18,32 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
   if (isSubjectProject(project)) {
     const {
       data: {
-        category: { subject, semester, course, campus },
+        category: { type, subject, semester, course, campus },
+        addresses: { template },
         tags,
       },
-    } = project as { data: { category: SubjectProject; tags: string[] } };
+    } = project as {
+      data: {
+        category: SubjectProject;
+        tags: string[];
+        addresses: { template?: string };
+      };
+    };
 
-    const projectTags = [
-      ...tags,
-      subject,
-      `${subject}-${semester}`,
-      `${course}-${campus}`,
-    ];
+    const projectTags = tags;
 
     projectTags.sort();
+
+    if (template) {
+      projectTags.unshift('figma');
+    }
+
+    projectTags.unshift(
+      type,
+      subject,
+      `${subject}-${semester}`,
+      `${course}-${campus.split('-')[1]}`
+    );
 
     return projectTags;
   } else {
@@ -38,12 +51,19 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
       data: {
         tags,
         category: { type, campus },
+        addresses: { template },
       },
     } = project;
 
-    const projectTags = [...tags, type, campus];
+    const projectTags = tags;
 
     projectTags.sort();
+
+    if (template) {
+      projectTags.unshift('figma');
+    }
+
+    projectTags.unshift(type, campus);
 
     return projectTags;
   }
