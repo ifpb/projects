@@ -7,6 +7,7 @@ addresses:
 category:
   type: subject
   subject: dw
+  period: 4
   semester: 2022.2
   course: cstrc
   campus: ifpb-jp

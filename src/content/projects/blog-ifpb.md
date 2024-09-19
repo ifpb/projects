@@ -7,13 +7,13 @@ addresses:
 category:
   type: subject
   subject: lp2
+  period: 3
   semester: 2024.1
   course: ctii
   campus: ifpb-jp
 tags:
   - reactjs
-  - javascript
-  - css
+  - expressjs
 owners:
   - 20221780015
 ---

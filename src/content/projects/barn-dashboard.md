@@ -8,8 +8,12 @@ category:
   type: open source
   campus: ifpb-jp
 tags:
-  - js
-  - astro.js
+  - python
+  - tensorflow
+  - keras
+  - opencv
+  - flask
+  - SQL Alchemy
 owners:
   - 2680962
 ---

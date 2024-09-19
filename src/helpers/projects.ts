@@ -127,7 +127,22 @@ function sortProjects(
   a: CollectionEntry<'projects'>,
   b: CollectionEntry<'projects'>
 ) {
-  return a.data.name.localeCompare(b.data.name);
+  const hasPreview = (project: CollectionEntry<'projects'>) =>
+    !!project.data.addresses.preview;
+
+  const getPeriod = (project: CollectionEntry<'projects'>) =>
+    project.data.category.type === 'subject' && project.data.category.period;
+
+  const getSemester = (project: CollectionEntry<'projects'>) =>
+    project.data.category.type === 'subject' && project.data.category.semester;
+
+  return (
+    Number(isSubjectProject(a)) - Number(isSubjectProject(b)) ||
+    Number(hasPreview(b)) - Number(hasPreview(a)) ||
+    getPeriod(b) - getPeriod(a) ||
+    getSemester(a) - getSemester(b) ||
+    a.data.name.localeCompare(b.data.name)
+  );
 }
 
 export async function getProjects() {

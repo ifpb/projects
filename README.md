@@ -22,12 +22,8 @@ occupations:
 addresses:
   github: https://github.com/luizchaves
   linkedin: https://www.linkedin.com/in/luizcarloschaves/
-  lattes: http://lattes.cnpq.br/7165875430419020
-  researchgate: https://www.researchgate.net/profile/Luiz_Rodrigues_Chaves
   instagram: https://www.instagram.com/luizcrchaves/
-  threads: https://www.threads.net/@luizcrchves
   bluesky: https://bsky.app/profile/luizcarloschaves.bsky.social
-  twitter: http://twitter.com/luizchavesjp
   email: luiz.chaves@ifpb.edu.br
 ---
 ```
@@ -63,6 +59,7 @@ addresses:
 category:
   type: subject
   subject: ls
+  period: 2
   semester: 2023.1
   course: cstsi
   campus: ifpb-jp

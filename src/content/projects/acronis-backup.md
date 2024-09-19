@@ -4,6 +4,7 @@ description: Este projeto é uma aplicação web simples que permite aos usuári
 category:
   type: subject
   subject: dw
+  period: 4
   semester: 2024.1
   course: cstrc
   campus: ifpb-jp

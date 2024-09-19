@@ -5,7 +5,6 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import { getAllProjectTags, getProjectsByTag } from '@/helpers/projects';
 import PaginationIndex from '@/components/PaginationIndex.astro';
 import { PAGE_SIZE } from '@/consts';
-import type { Propos } from '@/layouts/FilterLayout.astro';
 
 type ProjectsWithPeople = CollectionEntry<'projects'> & {
   people: CollectionEntry<'people'>[];
