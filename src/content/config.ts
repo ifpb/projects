@@ -35,6 +35,7 @@ export const abbreviationCourses = [
   'cmpti',
   'csbee',
   'csbes',
+  'cstads',
   'cstrc',
   'cstsi',
   'cstt',
