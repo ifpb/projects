@@ -2,7 +2,11 @@ import type { CollectionEntry } from 'astro:content';
 import type { Student } from '@/content/config';
 import { getCollection } from 'astro:content';
 import { getProjectsByPerson, isSubjectProject } from './projects';
-import { getFirstCourseByPeople, getSubjectByProject } from './courses';
+import {
+  getCourseByAbbreviation,
+  getFirstCourseByPeople,
+  getSubjectByProject,
+} from './courses';
 
 export function isStudent(person: CollectionEntry<'people'>) {
   return person.data.occupations.some(
@@ -21,6 +25,20 @@ export function getStudentSemesterId(id: number) {
   const semester = String(id).slice(4, 5);
 
   return Number(`${year}.${semester}`);
+}
+
+export function getStudentTimeIdByOccupation(occupation) {
+  if (occupation.type === 'student') {
+    const { course: abbreviation } = occupation;
+
+    const course = getCourseByAbbreviation(abbreviation);
+
+    if (course.data.level.compact === 'Técnico Integrado ao Médio') {
+      return String(occupation.id).slice(0, 4);
+    } else {
+      return getStudentSemesterId(occupation.id);
+    }
+  }
 }
 
 function getFirstSemesterCourseId(student: CollectionEntry<'people'>) {
@@ -94,7 +112,7 @@ export async function getPersonTags(person: CollectionEntry<'people'>) {
 
   const semesters = person.data.occupations
     .filter((occupation) => occupation.type === 'student')
-    .map((occupation) => String(getStudentSemesterId(occupation.id)));
+    .map((occupation) => String(getStudentTimeIdByOccupation(occupation)));
 
   const coursesBySemester = semesters.map(
     (semester, index) => `${courses[index]}-${semester}`
@@ -106,7 +124,7 @@ export async function getPersonTags(person: CollectionEntry<'people'>) {
 
   if (isStudent(person)) {
     tags.push(
-      'aluno',
+      'student',
       ...courses,
       ...semesters,
       ...coursesBySemester,
@@ -142,7 +160,7 @@ export function getPersonTagGroups(person: CollectionEntry<'people'>) {
 
   const semesters = person.data.occupations
     .filter((occupation) => occupation.type === 'student')
-    .map((course) => getStudentSemesterId(course.id));
+    .map((course) => getStudentTimeIdByOccupation(course));
 
   const coursesBySemester = semesters.map(
     (semester, index) => `${courses[index]}-${semester}`

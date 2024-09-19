@@ -99,9 +99,9 @@ const subjectProjectCategory = projectCategory.extend({
   subject: z.string(),
   period: z.number(),
   semester: z.number().refine((value) => {
-    const regex = /^\d{4}\.[12]$/;
+    const regex = /^\d{4}(\.[12])?$/;
 
-    return regex.test(value.toFixed(1));
+    return regex.test(String(value));
   }),
   course,
   campus,

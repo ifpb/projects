@@ -8,7 +8,7 @@ category:
   type: subject
   subject: lp2
   period: 3
-  semester: 2024.1
+  semester: 2024
   course: ctii
   campus: ifpb-jp
 tags:
