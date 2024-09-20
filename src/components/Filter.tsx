@@ -121,6 +121,10 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
               <Badge url={`/projects/people/projetos/1`} value="projetos" />
               <Badge url={`/projects/people/homepage/1`} value="homepage" />
               <Badge url={`/projects/people/figma/1`} value="figma" />
+              <Badge
+                url={`/projects/people/researchgate/1`}
+                value="researchgate"
+              />
             </nav>
           </div>
         )}

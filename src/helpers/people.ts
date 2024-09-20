@@ -70,6 +70,10 @@ export function hasFigma(person: CollectionEntry<'people'>) {
   return !!person.data.addresses.figma;
 }
 
+export function hasResearchGate(person: CollectionEntry<'people'>) {
+  return !!person.data.addresses.researchgate;
+}
+
 async function hasProjects(person: CollectionEntry<'people'>) {
   const projects = await getProjectsByPerson(person);
 
@@ -91,6 +95,10 @@ export async function getPersonTags(person: CollectionEntry<'people'>) {
 
   if (hasFigma(person)) {
     tags.push('figma');
+  }
+
+  if (hasResearchGate(person)) {
+    tags.push('researchgate');
   }
 
   if (isFinishedSomeCourse(person)) {
