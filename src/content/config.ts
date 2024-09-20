@@ -51,6 +51,7 @@ const course = z.enum([...abbreviationCourses]);
 
 const addresses = z.object({
   github: z.string().url().optional(),
+  gitlab: z.string().url().optional(),
   linkedin: z.string().url().optional(),
   homepage: z.string().optional(),
   twitter: z.string().url().optional(),

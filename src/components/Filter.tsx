@@ -68,7 +68,7 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
             <h3 className="font-semibold text-lg">Tipo</h3>
             <nav>
               <Badge url={`/projects/codes/subject/1`} value="Disciplina" />
-              {/* <Badge url={`/projects/codes/research/1`} value="Pesquisa" /> */}
+              <Badge url={`/projects/codes/research/1`} value="Pesquisa" />
               {/* <Badge url={`/projects/codes/extension/1`} value="Extensão" /> */}
               <Badge
                 url={`/projects/codes/open%20source/1`}

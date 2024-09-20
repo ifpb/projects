@@ -7,6 +7,14 @@ export function isSubjectProject(project: CollectionEntry<'projects'>) {
   return project.data.category.type === 'subject';
 }
 
+export function isResearchProject(project: CollectionEntry<'projects'>) {
+  return project.data.category.type === 'research';
+}
+
+export function isExtensionProject(project: CollectionEntry<'projects'>) {
+  return project.data.category.type === 'extension';
+}
+
 export function getProjectId(project: CollectionEntry<'projects'>) {
   return project.data.addresses.repository
     .split('github.com/')
@@ -157,6 +165,8 @@ function sortProjects(
     project.data.category.type === 'subject' && project.data.category.semester;
 
   return (
+    Number(isResearchProject(b)) - Number(isResearchProject(a)) ||
+    Number(isExtensionProject(b)) - Number(isExtensionProject(a)) ||
     Number(isSubjectProject(a)) - Number(isSubjectProject(b)) ||
     Number(hasPreview(b)) - Number(hasPreview(a)) ||
     getPeriod(b) - getPeriod(a) ||
