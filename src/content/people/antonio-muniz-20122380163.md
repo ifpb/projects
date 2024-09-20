@@ -3,7 +3,7 @@ id: 20122380163
 name:
   compact: Antônio Muniz
   full: Antônio Muniz de Andrade Neto
-avatar:
+avatar: https://github.com/nettoandrade.png
 occupations:
 - id: 20122380163
   type: student
@@ -13,4 +13,5 @@ occupations:
 addresses:
   email: antoniomunizdeandrade@gmail.com
   linkedin: https://www.linkedin.com/in/ant%C3%B4nio-muniz-79783a78/
+  github: https://github.com/nettoandrade
 ---
