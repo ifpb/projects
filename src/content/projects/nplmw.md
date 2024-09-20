@@ -5,7 +5,7 @@ addresses:
   preview: https://raw.githubusercontent.com/mr-reinaldo/NPLMW/main/printscreen/image.png
   repository: https://github.com/mr-reinaldo/NPLMW
 category:
-  type: open source
+  type: research
   campus: ifpb-jp
 tags:
 - vue.js
