@@ -1,0 +1,58 @@
+---
+export interface Props {
+  pagePath: string;
+  page: {
+    currentPage: number;
+    lastPage: number;
+    url: {
+      prev: string;
+      next: string;
+    };
+  };
+}
+
+const { page, pagePath } = Astro.props;
+
+const pages = [...Array(page.lastPage).keys()].map(
+  (pageNumber) => pageNumber + 1
+);
+---
+
+<div class="mt-12 flex items-center flex-wrap justify-center">
+  <nav aria-label="Page navigation">
+    <ul class="flex flex-row">
+      <li>
+        <a
+          href={page.url.prev ? `/projects${page.url.prev}` : ''}
+          class="px-4 py-2 text-slate-600 transition-colors duration-150 bg-white border border-r-0 border-slate-600 rounded-l-lg focus:shadow-outline hover:bg-slate-100"
+        >
+          &laquo;
+        </a>
+      </li>
+      {
+        pages.map((pageNumber) => (
+          <li>
+            <a
+              href={`/projects${pagePath}/${pageNumber}`}
+              class={`${
+                pageNumber === page.currentPage
+                  ? 'text-white bg-slate-600'
+                  : 'text-slate-600 bg-white'
+              } px-4 py-2 border border-r-0 border-slate-600 focus:shadow-outline transition-colors duration-150`}
+            >
+              {pageNumber}
+            </a>
+          </li>
+        ))
+      }
+      <li>
+        <a
+          href={page.url.next ? `/projects${page.url.next}` : ''}
+          class="px-4 py-2 text-slate-600 transition-colors duration-150 bg-white border border-slate-600 rounded-r-lg focus:shadow-outline hover:bg-slate-100"
+        >
+          &raquo;
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>

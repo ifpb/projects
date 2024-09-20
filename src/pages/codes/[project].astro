@@ -1,0 +1,114 @@
+---
+import { CollectionEntry } from 'astro:content';
+import {
+  getProjectId,
+  getProjects,
+  isSubjectProject,
+} from '../../helpers/projects';
+import { getPeopleByProject } from '../../helpers/people';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+interface ProjectProps {
+  category: {
+    course: string;
+    campus: string;
+    semester: string;
+    subject: string;
+  };
+}
+
+export interface Props {
+  project: CollectionEntry<'projects'>;
+  people: CollectionEntry<'people'>[];
+}
+
+export async function getStaticPaths() {
+  const projects = await getProjects();
+
+  const page = projects.map(async (project) => {
+    const projectId = getProjectId(project);
+
+    const people = await getPeopleByProject(project);
+
+    return {
+      params: { project: projectId },
+      props: {
+        project,
+        people,
+      },
+    };
+  });
+
+  return await Promise.all(page);
+}
+
+const { project, people } = Astro.props;
+
+const category = project.data.category as ProjectProps['category'];
+---
+
+<BaseLayout>
+  <h1
+    class="text-center pb-16 text-4xl font-bold"
+    data-pagefind-filter="tipo:Projeto"
+  >
+    {project.data.name}
+  </h1>
+  <div class="flex gap-5">
+    <div>
+      <a class="underline" href={project.data.page}>
+        <img
+          src={project.data.preview}
+          alt={project.data.name}
+          class="border"
+        />
+      </a>
+    </div>
+    <div>
+      <div class="mb-2">
+        <div class="font-bold text-lg">Descrição:</div>
+        {project.data.description}
+      </div>
+      <div class="mb-2">
+        <div class="font-bold text-lg">Repositório:</div>
+        <a class="underline" href={project.data.repository}
+          >{project.data.repository}</a
+        >
+      </div>
+      {
+        isSubjectProject(project) && (
+          <div class="mb-2">
+            <div class="font-bold text-lg">Disciplina:</div>
+            {category.subject}-{category.semester}
+            {`(${category.course}-${category.campus})`}
+          </div>
+        )
+      }
+      <div class="mb-2">
+        <div class="font-bold text-lg">Colaboradores:</div>
+        <ul class="list-disc list-inside">
+          {
+            people
+              .sort((a, b) =>
+                a.data.name.compact.localeCompare(b.data.name.compact)
+              )
+              .map((person) => (
+                <li>
+                  <a
+                    class="underline"
+                    href={`/projects/people/${person.data.id}`}
+                  >
+                    {person.data.name.compact}
+                  </a>
+                </li>
+              ))
+          }
+        </ul>
+      </div>
+      <div class="mb-2">
+        <div class="font-bold text-lg">Tags:</div>
+        {project.data.tags.join(', ')}
+      </div>
+    </div>
+  </div>
+</BaseLayout>

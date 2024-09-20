@@ -1,0 +1,56 @@
+---
+import { CollectionEntry } from 'astro:content';
+import ProjectCard from '../../../components/ProjectCard.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getAllProjectTags, getProjectsByTag } from '../../../helpers/projects';
+import PaginationIndex from '../../../components/PaginationIndex.astro';
+import { PAGE_SIZE } from '../../../consts';
+
+type ProjectsWithPeople = CollectionEntry<'projects'> & {
+  people: CollectionEntry<'people'>[];
+};
+
+export interface Props {
+  page: {
+    data: ProjectsWithPeople[];
+    currentPage: number;
+    lastPage: number;
+    url: {
+      prev: string;
+      next: string;
+    };
+  };
+}
+
+export async function getStaticPaths({ paginate }) {
+  const tags = await getAllProjectTags();
+
+  const page = tags.map(async (tag) => {
+    const projects = await getProjectsByTag(tag);
+
+    return paginate(projects, {
+      params: { tag },
+      pageSize: PAGE_SIZE,
+    });
+  });
+
+  return await Promise.all(page);
+}
+
+const { page } = Astro.props;
+const { tag } = Astro.params;
+---
+
+<BaseLayout pageTitle={`Projetos de ${tag}`}>
+  <div
+    class="grid justify-items-stretch gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+    data-pagefind-ignore
+  >
+    {page.data.map((project) => <ProjectCard project={project} />)}
+  </div>
+  {
+    page.lastPage > 1 && (
+      <PaginationIndex page={page} pagePath={`/codes/${tag}`} />
+    )
+  }
+</BaseLayout>

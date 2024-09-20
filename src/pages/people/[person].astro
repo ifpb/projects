@@ -1,0 +1,68 @@
+---
+import { CollectionEntry } from 'astro:content';
+import PersonCard from '../../components/PersonCard.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getProjectsByPerson } from '../../helpers/projects';
+import { getPeople } from '../../helpers/people';
+
+type ProjectsWithPeople = CollectionEntry<'projects'> & {
+  people: CollectionEntry<'people'>[];
+};
+
+export interface Props {
+  projects: ProjectsWithPeople[];
+  person: CollectionEntry<'people'>;
+}
+
+export async function getStaticPaths() {
+  const people = await getPeople();
+
+  const page = people.map(async (person) => {
+    const projects = await getProjectsByPerson(person);
+
+    return {
+      params: {
+        person: person.data.id,
+      },
+      props: {
+        person,
+        projects,
+      },
+    };
+  });
+
+  return await Promise.all(page);
+}
+
+const { person, projects } = Astro.props;
+---
+
+<BaseLayout>
+  <h1
+    class="text-center pb-16 text-4xl font-bold"
+    data-pagefind-filter="tipo:Pessoas"
+  >
+    {person.data.name.compact}
+  </h1>
+  <div class="flex gap-5 flex-col md:flex-row md:items-start">
+    <div>
+      <PersonCard person={person} />
+    </div>
+    {
+      !!projects.length ? (
+        <div class="grid justify-items-stretch gap-5 grid-cols-1 md:grid-cols-2">
+          {projects.map((project) => (
+            <ProjectCard project={project} />
+          ))}
+        </div>
+      ) : (
+        <div>
+          <p class="text-xl font-semibold">
+            Nenhum projeto cadastrado no momento.
+          </p>
+        </div>
+      )
+    }
+  </div>
+</BaseLayout>

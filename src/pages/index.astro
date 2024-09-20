@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+  <div class="mx-auto max-w-2xl py-8 sm:py-12 lg:py-14" data-pagefind-ignore>
+    <div class="text-center">
+      <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+        Projetos do IFPB
+      </h1>
+      <p class="mt-6 text-lg leading-8 text-gray-600">
+        Este site tem como foco compartilhar projetos desenvolvidos pelos
+        durante os projetos e disciplinas dos cursos do IFPB.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a
+          class="block w-full rounded border border-gray-900 bg-gray-900 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-gray-900 focus:outline-none active:text-opacity-75 sm:w-auto"
+          href="/projects/codes/page/1"
+        >
+          Projetos
+        </a>
+
+        <a
+          class="block w-full rounded border border-gray-900 px-12 py-3 text-sm font-medium text-gray-900 hover:bg-gray-900 hover:text-white focus:outline-none active:bg-gray-500 sm:w-auto"
+          href="/projects/people/page/1"
+        >
+          Alunos e Professores
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

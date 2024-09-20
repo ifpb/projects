@@ -1,0 +1,50 @@
+---
+import { CollectionEntry } from 'astro:content';
+import ProjectCard from '../../../components/ProjectCard.astro';
+import PaginationIndex from '../../../components/PaginationIndex.astro';
+import FilterLayout from '../../../layouts/FilterLayout.astro';
+import { getAllProjectTagGroups, getProjects } from '../../../helpers/projects';
+import { PAGE_SIZE } from '../../../consts';
+
+type ProjectsWithPeople = CollectionEntry<'projects'> & {
+  people: CollectionEntry<'people'>[];
+};
+
+export interface Props {
+  page: {
+    data: ProjectsWithPeople[];
+    currentPage: number;
+    lastPage: number;
+  };
+  tags: Record<string, Record<string, string[]>>;
+}
+
+export async function getStaticPaths({ paginate }) {
+  const projects = await getProjects();
+
+  const tags = await getAllProjectTagGroups();
+
+  return paginate(projects, {
+    pageSize: PAGE_SIZE,
+    props: { tags },
+  });
+}
+
+const { page, tags } = Astro.props;
+---
+
+<FilterLayout pageTitle="Projetos" type="codes" tags={tags}>
+  <main data-pagefind-ignore>
+    <div
+      class="grid justify-items-stretch gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+    >
+      {page.data.map((project) => <ProjectCard project={project} />)}
+    </div>
+
+    {
+      page.lastPage > 1 && (
+        <PaginationIndex page={page} pagePath="/codes/page" />
+      )
+    }
+  </main>
+</FilterLayout>

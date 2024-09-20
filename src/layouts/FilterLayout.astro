@@ -1,0 +1,41 @@
+---
+import Filter from '../components/Filter';
+import NavBar from '../components/NavBar.astro';
+import PageFindSearch from '../components/PageFindSearch.astro';
+
+import '../styles/global.css';
+
+export interface Propos {
+  pageTitle: string;
+  tags: string[];
+  type: string;
+}
+
+const { pageTitle, tags, type } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+    <link href="/projects/_pagefind/pagefind-ui.css" rel="stylesheet" />
+    <script src="/projects/_pagefind/pagefind-ui.js" type="text/javascript"
+    ></script>
+  </head>
+  <body class="bg-gray-100 relative">
+    <NavBar />
+
+    <div class="container lg:max-w-screen-lg mx-auto px-4 py-16">
+      <Filter type={type} tags={tags} client:visible />
+
+      <h1 class="text-center pb-16 text-4xl font-bold">{pageTitle}</h1>
+
+      <PageFindSearch />
+
+      <slot />
+    </div>
+  </body>
+</html>
