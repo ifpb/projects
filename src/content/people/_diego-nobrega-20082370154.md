@@ -12,5 +12,5 @@ occupations:
   isFinished: true
 addresses:
   email: diegomadson@msn.com
-  linkedin: https://www.linkedin.com/in/diego-madson-nobrega-b8854b2b/
+  linkedin: https://www.linkedin.com/in/diego-n%C3%B3brega-b8854b2b/
 ---

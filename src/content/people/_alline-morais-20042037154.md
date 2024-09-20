@@ -12,5 +12,5 @@ occupations:
   isFinished: true
 addresses:
   email: allinemorais@gmail.com
-  linkedin: https://www.linkedin.com/in/alline-morais-psm-pspo-50002094/
+  linkedin: https://www.linkedin.com/in/alline-morais-bb57ab329/
 ---

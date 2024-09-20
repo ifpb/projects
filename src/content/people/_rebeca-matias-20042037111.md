@@ -11,5 +11,5 @@ occupations:
   course: cstsi
   isFinished: true
 addresses:
-  linkedin: https://www.linkedin.com/in/rebeca-mahéo-5a98b12a/
+  linkedin: https://www.linkedin.com/in/rebeca-dantas-5a98b12a/
 ---

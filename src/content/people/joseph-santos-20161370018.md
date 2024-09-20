@@ -3,7 +3,7 @@ id: 20161370018
 name:
   compact: Joseph Santos
   full: Joseph Adrian Almeida dos Santos
-avatar: https://github.com/_.png
+avatar: https://github.com/Josephadrian123.png
 occupations:
 - id: 20161370018
   type: student
@@ -11,6 +11,6 @@ occupations:
   course: cstsi
   isFinished: true
 addresses:
-  github: https://github.com/_
+  github: https://github.com/Josephadrian123
   linkedin: https://www.linkedin.com/in/josephaasantos/
 ---

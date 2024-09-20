@@ -13,4 +13,5 @@ addresses:
   linkedin: https://www.linkedin.com/in/ruan-delgado-gomes-52702b22/
   twitter: https://twitter.com/ruandg
   homepage: https://ruandg.github.io/
+  researchgate: https://www.researchgate.net/profile/Ruan-Gomes
 ---

@@ -12,4 +12,5 @@ addresses:
   github: https://github.com/fenrrir
   linkedin: https://www.linkedin.com/in/rodrigopmaraujo/
   twitter: https://twitter.com/rodrigopmaraujo
+  researchgate: https://www.researchgate.net/profile/Rodrigo-Araujo-3
 ---

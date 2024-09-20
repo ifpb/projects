@@ -12,5 +12,5 @@ occupations:
   isFinished: true
 addresses:
   email: dias.jbr@gmail.com
-  linkedin: https://www.linkedin.com/in/alexandre-dias-833a306a/
+  linkedin: https://www.linkedin.com/in/alexxmorais/
 ---

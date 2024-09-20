@@ -13,4 +13,5 @@ addresses:
   linkedin: https://www.linkedin.com/in/maxwellcc/
   twitter: https://twitter.com/maxwellielpo
   homepage: https://www.maxwellanderson.com.br/
+  researchgate: https://www.researchgate.net/profile/Maxwell-Amaral
 ---

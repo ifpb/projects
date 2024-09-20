@@ -12,4 +12,6 @@ addresses:
   github: https://github.com/pdmjr
   linkedin: https://www.linkedin.com/in/pdmjr/
   twitter: https://twitter.com/PauloDitarso
+  researchgate: https://www.researchgate.net/profile/Paulo-Ditarso-Maciel-Jr
+  googleScholar: https://scholar.google.com/citations?user=ltQoTxwAAAAJ&hl=pt-BR
 ---

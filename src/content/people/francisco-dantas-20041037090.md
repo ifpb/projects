@@ -16,4 +16,5 @@ occupations:
 addresses:
   github: https://github.com/franciscodnn
   linkedin: https://www.linkedin.com/in/francisco-dantas-nobre-neto-76a003138/
+  researchgate: https://www.researchgate.net/profile/Francisco-Dantas-Nobre-Neto
 ---

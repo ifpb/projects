@@ -16,4 +16,5 @@ occupations:
 addresses:
   github: https://github.com/elainecjaufcg
   linkedin: https://www.linkedin.com/in/elaine-araujo-31730618/
+  researchgate: https://www.researchgate.net/profile/Elaine-Araujo-11
 ---
