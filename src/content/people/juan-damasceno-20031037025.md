@@ -1,5 +1,4 @@
 ---
-id: 20031037025
 name:
   compact: Juan Damasceno
   full: Juan di Carlo Damasceno

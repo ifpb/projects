@@ -1,5 +1,4 @@
 ---
-id: 20181370028
 name:
   compact: Ângela Oliveira
   full: Ângela Márcia Ramos de Oliveira

@@ -1,5 +1,4 @@
 ---
-id: 20061370180
 name:
   compact: Erisvaldo Gadelha
   full: Erisvaldo Gadelha Saraiva Junior

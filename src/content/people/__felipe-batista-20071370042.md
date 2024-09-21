@@ -1,5 +1,4 @@
 ---
-id: 20071370042
 name:
   compact: Felipe Batista
   full: Felipe Dantas de Assis e M. Batista

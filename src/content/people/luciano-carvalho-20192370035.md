@@ -1,5 +1,4 @@
 ---
-id: 20192370035
 name:
   compact: Luciano Carvalho
   full: Luciano de Carvalho Souza Filho

@@ -1,5 +1,4 @@
 ---
-id: 20071370514
 name:
   compact: Giancarlo Leite Cavalcanti de Andrade
   full: Giancarlo Leite Cavalcanti de Andrade

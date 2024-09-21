@@ -1,5 +1,4 @@
 ---
-id: 20032037062
 name:
   compact: Ugo Cavalcanti
   full: Ugo da Costa Cavalcanti

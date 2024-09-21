@@ -1,5 +1,4 @@
 ---
-id: 20122380228
 name:
   compact: Laís Nascimento
   full: Laís Maria do Bomfim Nascimento

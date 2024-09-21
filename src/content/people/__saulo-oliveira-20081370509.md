@@ -1,5 +1,4 @@
 ---
-id: 20081370509
 name:
   compact: Saulo Oliveira
   full: Saulo Ranieri de Oliveira

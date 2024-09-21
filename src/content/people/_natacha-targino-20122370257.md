@@ -1,5 +1,4 @@
 ---
-id: 20122370257
 name:
   compact: Natacha Targino
   full: Natacha Targino Rodrigues Simões Brasileiro

@@ -1,5 +1,4 @@
 ---
-id: 20051370039
 name:
   compact: Vinicius Artur
   full: Vinicius Souto Brandão Artur

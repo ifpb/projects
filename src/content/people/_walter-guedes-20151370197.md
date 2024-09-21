@@ -1,5 +1,4 @@
 ---
-id: 20151370049
 name:
   compact: Walter Guedes
   full: Walter Edmundo De Souza Guedes

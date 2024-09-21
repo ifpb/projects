@@ -1,5 +1,4 @@
 ---
-id: 20101370320
 name:
   compact: Marcelo Júnior
   full: Marcelo Freitas Araujo Júnior

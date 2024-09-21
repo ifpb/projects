@@ -1,5 +1,4 @@
 ---
-id: 20231370020
 name:
   compact: Ananda Guedes
   full: Ananda Guedes do Ó

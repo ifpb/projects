@@ -1,5 +1,4 @@
 ---
-id: 20042037165
 name:
   compact: Elaine Araújo
   full: Elaine Cristina Juvino de Araújo

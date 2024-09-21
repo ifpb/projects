@@ -1,5 +1,4 @@
 ---
-id: 20051370241
 name:
   compact: Helder Vieira
   full: Helder Vieira da Silva

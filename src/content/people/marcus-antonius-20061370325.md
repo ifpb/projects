@@ -1,5 +1,4 @@
 ---
-id: 20061370325
 name:
   compact: Marcus Antonius
   full: Marcus Antonius Virginio Farias de Queiroz

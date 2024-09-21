@@ -1,5 +1,4 @@
 ---
-id: 20221780026
 name:
   compact: Danilo Cavalcante
   full: Danilo Cavalcante Beuttenmuller

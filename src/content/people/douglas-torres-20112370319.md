@@ -1,5 +1,4 @@
 ---
-id: 20112370319
 name:
   compact: Douglas Torres
   full: Douglas Gadelha Firmino Torres

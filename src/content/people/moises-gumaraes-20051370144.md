@@ -1,5 +1,4 @@
 ---
-id: 20051370144
 name:
   compact: Moisés Guimarães
   full: Moisés Guimarães de Medeiros

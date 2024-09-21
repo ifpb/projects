@@ -1,5 +1,5 @@
 import type { CollectionEntry } from 'astro:content';
-import type { Student } from '@/content/config';
+import type { Student, Occupation } from '@/content/config';
 import { getCollection } from 'astro:content';
 import { getProjectsByPerson, isSubjectProject } from './projects';
 import {
@@ -7,6 +7,16 @@ import {
   getFirstCourseByPeople,
   getSubjectByProject,
 } from './courses';
+
+export function getPersonId(person: CollectionEntry<'people'>) {
+  if (isStudent(person)) {
+    return person.data.occupations
+      .filter((Occupation) => Occupation.type === 'student')
+      .at(-1).id;
+  } else {
+    return person.data.occupations.at(-1).id;
+  }
+}
 
 export function isStudent(person: CollectionEntry<'people'>) {
   return person.data.occupations.some(
@@ -154,7 +164,7 @@ async function getPeopleTagsMap(people: CollectionEntry<'people'>[]) {
     people.map<Promise<[number, string[]]>>(async (person) => {
       const tags = await getPersonTags(person);
 
-      return [person.data.id, tags];
+      return [getPersonId(person), tags];
     })
   );
 
@@ -194,7 +204,7 @@ export async function getAllPersonTags() {
   const peopleTags = await getPeopleTagsMap(people);
 
   const repeatedTags = people.reduce((acc: string[], person) => {
-    const tags = peopleTags.get(person.data.id);
+    const tags = peopleTags.get(getPersonId(person));
 
     return [...acc, ...tags];
   }, []);
@@ -274,7 +284,7 @@ function sortPeople(
   const getSubId = (person: CollectionEntry<'people'>) =>
     isOnlyProfessor(person)
       ? 99999
-      : Number(String(person.data.id).substring(0, 6));
+      : Number(String(getPersonId(person)).substring(0, 6));
 
   return (
     // personRank(b) - personRank(a) ||
@@ -318,7 +328,7 @@ export async function getPeopleByTag(tag: string) {
   const peopleTags = await getPeopleTagsMap(people);
 
   const filteredPeople = people.filter((person) => {
-    const tags = peopleTags.get(person.data.id);
+    const tags = peopleTags.get(getPersonId(person));
 
     return tags.includes(tag);
   });

@@ -1,5 +1,4 @@
 ---
-id: 20091370153
 name:
   compact: Rogério Nóbrega
   full: Rogério César da Nóbrega

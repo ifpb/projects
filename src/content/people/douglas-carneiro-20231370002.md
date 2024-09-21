@@ -1,5 +1,4 @@
 ---
-id: 20231370002
 name:
   compact: Douglas Carneiro
   full: Douglas Emerson Ferreira Carneiro

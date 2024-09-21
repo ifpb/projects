@@ -1,5 +1,4 @@
 ---
-id: 20241370012
 name:
   compact: Gabriel Pereira
   full: Gabriel Pereira de Carvalho

@@ -1,5 +1,4 @@
 ---
-id: 20041037095
 name:
   compact: Lucas Cavalcanti
   full: Lucas Cavalcanti Cruz

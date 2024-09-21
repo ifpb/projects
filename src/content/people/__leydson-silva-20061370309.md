@@ -1,5 +1,4 @@
 ---
-id: 20061370309
 name:
   compact: Leydson Silva
   full: Leydson Barbosa Silva

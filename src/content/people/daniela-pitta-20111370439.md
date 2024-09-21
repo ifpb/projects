@@ -1,5 +1,4 @@
 ---
-id: 20111370439
 name:
   compact: Daniela Pitta
   full: Daniela Pitta de Jesus

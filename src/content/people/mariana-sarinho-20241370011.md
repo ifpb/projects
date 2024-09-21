@@ -1,5 +1,4 @@
 ---
-id: 20241370011
 name:
   compact: Mariana Sarinho
   full: Mariana dos Santos Sarinho

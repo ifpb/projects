@@ -4,6 +4,7 @@ import type { Student } from '@/content/config';
 import { Icon } from 'astro-icon';
 import { getProjectsByPerson } from '@/helpers/projects';
 import {
+  getPersonId,
   getPersonTags,
   isFinishedSomeCourse,
   isProfessor,
@@ -65,8 +66,10 @@ let icons = [
 const { person } = Astro.props;
 
 const {
-  data: { id, name, addresses, avatar, occupations },
+  data: { name, addresses, avatar, occupations },
 } = person;
+
+const id = getPersonId(person);
 
 const codeUrl = `/projects/people/${id}/`;
 

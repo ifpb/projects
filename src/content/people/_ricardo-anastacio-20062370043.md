@@ -1,5 +1,4 @@
 ---
-id: 20062370043
 name:
   compact: Ricardo Anastacio
   full: Ricardo Anastacio de Souza

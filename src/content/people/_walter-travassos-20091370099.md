@@ -1,5 +1,4 @@
 ---
-id: 20091370099
 name:
   compact: Walter Travassos
   full: Walter Travassos Sarinho

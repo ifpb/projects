@@ -1,5 +1,4 @@
 ---
-id: 20082370308
 name:
   compact: Arthur Luckwu
   full: Arthur Varela Luckwu de Oliveira

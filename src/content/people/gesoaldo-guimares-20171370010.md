@@ -1,5 +1,4 @@
 ---
-id: 20171370010
 name:
   compact: Gesoaldo Oliveira
   full: Gesoaldo Oliveira Guimarães

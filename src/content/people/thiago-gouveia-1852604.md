@@ -1,5 +1,4 @@
 ---
-id: 1852604
 name:
   compact: Thiago Gouveia
   full: Thiago Gouveia da Silva

@@ -1,5 +1,4 @@
 ---
-id: 20081370339
 name:
   compact: Samuel Junior
   full: Samuel Ferreira de Lima Junior

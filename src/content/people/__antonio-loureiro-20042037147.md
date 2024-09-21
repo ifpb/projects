@@ -1,5 +1,4 @@
 ---
-id: 20042037147
 name:
   compact: Antonio Loureiro
   full: Antonio Loureiro Cavalcanti Filho

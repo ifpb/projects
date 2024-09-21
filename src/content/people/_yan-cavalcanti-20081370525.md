@@ -1,5 +1,4 @@
 ---
-id: 20081370525
 name:
   compact: Yan Cavalcanti
   full: Yan de Oliveira Cavalcanti

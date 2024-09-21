@@ -1,5 +1,4 @@
 ---
-id: 20092370416
 name:
   compact: Nailson Cunha
   full: Nailson dos Santos Cunha

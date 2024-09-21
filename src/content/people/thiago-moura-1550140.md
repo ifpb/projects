@@ -1,5 +1,4 @@
 ---
-id: 1550140
 name:
   compact: Thiago Moura
   full: Thiago Jose Marques Moura

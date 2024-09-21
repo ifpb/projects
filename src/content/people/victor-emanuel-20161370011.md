@@ -1,5 +1,4 @@
 ---
-id: 20161370011
 name:
   compact: Victor Emanuel
   full: Victor Emanuel Ramalho Ribeiro

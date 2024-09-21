@@ -1,5 +1,4 @@
 ---
-id: 20061370406
 name:
   compact: Vitor Hugo Campos
   full: Vitor Hugo Campos

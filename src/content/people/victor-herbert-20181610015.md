@@ -1,5 +1,4 @@
 ---
-id: 20181610015
 name:
   compact: Victor Herbert
   full: Victor Herbert Ferreira de Sousa

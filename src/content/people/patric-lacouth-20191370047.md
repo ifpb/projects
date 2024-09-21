@@ -1,5 +1,4 @@
 ---
-id: 20191370047
 name:
   compact: Patric Lacouth
   full: Patric Lacouth da Silva

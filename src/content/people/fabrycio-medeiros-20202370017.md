@@ -1,5 +1,4 @@
 ---
-id: 20202370017
 name:
   compact: Fabrycio Medeiros
   full: Fabrycio Érico de Medeiros

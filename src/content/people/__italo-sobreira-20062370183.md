@@ -1,5 +1,4 @@
 ---
-id: 20062370183
 name:
   compact: Italo Sobreira
   full: Italo Anderson Pessoa de A. Sobreira

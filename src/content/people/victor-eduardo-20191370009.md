@@ -1,5 +1,4 @@
 ---
-id: 20191370009
 name:
   compact: Victor Eduardo
   full: Victor Eduardo Japyassu Nobrega

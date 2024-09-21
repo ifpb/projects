@@ -1,5 +1,4 @@
 ---
-id: 20191370046
 name:
   compact: Gustavo Galisa
   full: Gustavo Sousa Galisa Albuquerque

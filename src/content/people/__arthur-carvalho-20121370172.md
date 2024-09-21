@@ -1,5 +1,4 @@
 ---
-id: 20121370172
 name:
   compact: Arthur Carvalho
   full: Arthur Emanuel Brandão Carvalho

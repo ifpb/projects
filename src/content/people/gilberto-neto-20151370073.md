@@ -1,5 +1,4 @@
 ---
-id: 20151370073
 name:
   compact: Gilberto Neto
   full: Gilberto Firmino de Souza Neto

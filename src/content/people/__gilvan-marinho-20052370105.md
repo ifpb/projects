@@ -1,5 +1,4 @@
 ---
-id: 20052370105
 name:
   compact: Gilvan Marinho
   full: Gilvan Marinho dos Santos

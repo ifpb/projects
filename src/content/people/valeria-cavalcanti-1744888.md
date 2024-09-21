@@ -1,5 +1,4 @@
 ---
-id: 1744888
 name:
   compact: Valéria Cavalcanti
   full: Valeria Maria Bezerra Cavalcanti Maciel

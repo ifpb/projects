@@ -1,5 +1,4 @@
 ---
-id: 20091370374
 name:
   compact: D'angellys Cavalcanti
   full: D'angellys Cavalcanti Feitosa

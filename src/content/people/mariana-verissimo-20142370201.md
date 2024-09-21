@@ -1,5 +1,4 @@
 ---
-id: 20142370201
 name:
   compact: Marianna Veríssimo
   full: Marianna Soares Veríssimo

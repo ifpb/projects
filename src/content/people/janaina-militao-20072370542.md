@@ -1,5 +1,4 @@
 ---
-id: 20072370542
 name:
   compact: Janaina Militão
   full: Janaina Militão do Nascimento

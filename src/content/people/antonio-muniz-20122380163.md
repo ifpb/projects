@@ -1,5 +1,4 @@
 ---
-id: 20122380163
 name:
   compact: Antônio Muniz
   full: Antônio Muniz de Andrade Neto

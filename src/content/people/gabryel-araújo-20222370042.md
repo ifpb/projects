@@ -1,5 +1,4 @@
 ---
-id: 20222370042
 name:
   compact: Gabryel Araújo
   full: Gabryel Araujo de Sousa Dias

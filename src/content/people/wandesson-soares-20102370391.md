@@ -1,5 +1,4 @@
 ---
-id: 20102370391
 name:
   compact: Wandesson Soares
   full: Wandesson da Silva Soares

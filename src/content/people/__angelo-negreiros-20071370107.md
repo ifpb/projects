@@ -1,5 +1,4 @@
 ---
-id: 20071370107
 name:
   compact: Ângelo Negreiros
   full: Ângelo Lemos Vidal de Negreiros

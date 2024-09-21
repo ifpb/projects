@@ -1,5 +1,4 @@
 ---
-id: 20241370026
 name:
   compact: Mariana Ludmilla
   full: Mariana Ludmilla de Lima Maroja Limeira

@@ -1,5 +1,4 @@
 ---
-id: 20101370380
 name:
   compact: Rafael Figueiredo
   full: Rafael Felipe de Figueiredo Pereira

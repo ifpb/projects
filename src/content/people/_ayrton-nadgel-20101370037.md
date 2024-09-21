@@ -1,5 +1,4 @@
 ---
-id: 20101370037
 name:
   compact: Ayrton Nádgel
   full: Ayrton Nádgel de Souza Silva

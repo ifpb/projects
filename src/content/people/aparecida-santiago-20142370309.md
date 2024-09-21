@@ -1,5 +1,4 @@
 ---
-id: 20142370309
 name:
   compact: Aparecida Santiago
   full: Maria Aparecida da Silva Santiago

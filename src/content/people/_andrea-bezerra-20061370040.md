@@ -1,5 +1,4 @@
 ---
-id: 20061370040
 name:
   compact: Andréa Bezerra
   full: Andréa Fernanda Fontes Bezerra

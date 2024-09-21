@@ -1,5 +1,4 @@
 ---
-id: 20071370069
 name:
   compact: Rodolfo Forte
   full: Rodolfo Gonçalves de Sousa Forte

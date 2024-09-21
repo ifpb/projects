@@ -1,5 +1,4 @@
 ---
-id: 20212370047
 name:
   compact: Ricardo França
   full: Ricardo Franca Soares

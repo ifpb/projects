@@ -1,5 +1,4 @@
 ---
-id: 20091370129
 name:
   compact: Otacílio Vicente
   full: Otacílio Vicente Ferreira Neto

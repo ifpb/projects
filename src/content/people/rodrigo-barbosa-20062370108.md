@@ -1,5 +1,4 @@
 ---
-id: 20062370108
 name:
   compact: Rodrigo Barbosa
   full: Rodrigo Barbosa Costa de Carvalho

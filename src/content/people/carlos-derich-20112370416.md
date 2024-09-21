@@ -1,5 +1,4 @@
 ---
-id: 20112370416
 name:
   compact: Carlos Derich
   full: José Carlos Derich Pacheco André Carneiro

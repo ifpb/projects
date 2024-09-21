@@ -1,5 +1,4 @@
 ---
-id: 20031037024
 name:
   compact: Jose Wendell Silva
   full: Jose Wendell de Morais Silva

@@ -1,5 +1,4 @@
 ---
-id: 20062370221
 name:
   compact: Higor Delgado
   full: Higor Delgado Leite Benicio

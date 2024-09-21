@@ -1,5 +1,4 @@
 ---
-id: 20082370073
 name:
   compact: Geysa Jerônimo
   full: Geysa de Souza Jerônimo

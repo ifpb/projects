@@ -1,5 +1,4 @@
 ---
-id: 20042037115
 name:
   compact: Marcus Philippe
   full: Marcus Philippe da Costa Leite

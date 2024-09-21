@@ -1,5 +1,4 @@
 ---
-id: 20181370027
 name:
   compact: Maurício Pereira
   full: Maurício Pereira da Costa Junior

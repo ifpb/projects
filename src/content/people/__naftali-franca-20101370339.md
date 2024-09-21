@@ -1,5 +1,4 @@
 ---
-id: 20101370339
 name:
   compact: Naftali França
   full: Naftali Augusto Borges de França

@@ -1,5 +1,4 @@
 ---
-id: 20152370298
 name:
   compact: José Raimundo
   full: José Raimundo Barbosa

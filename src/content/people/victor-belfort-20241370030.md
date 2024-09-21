@@ -1,5 +1,4 @@
 ---
-id: 20241370030
 name:
   compact: Victor Belfort
   full: Victor Belfort de Aquino Bezerra

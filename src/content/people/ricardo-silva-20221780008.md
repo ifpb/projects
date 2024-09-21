@@ -1,5 +1,4 @@
 ---
-id: 20221780008
 name:
   compact: Ricardo Silva
   full: Ricardo da Silva Júnior

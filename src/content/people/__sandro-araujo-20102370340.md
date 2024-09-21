@@ -1,5 +1,4 @@
 ---
-id: 20102370340
 name:
   compact: Sandro Araujo
   full: Sandro Lopes Izidro Araujo

@@ -1,5 +1,4 @@
 ---
-id: 20212380001
 name:
   compact: Pedro Nunes
   full: Pedro Augusto Ferreira Nunes

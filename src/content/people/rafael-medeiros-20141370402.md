@@ -1,5 +1,4 @@
 ---
-id: 20141370402
 name:
   compact: Rafael Medeiros
   full: Rafael Figueirêdo de Medeiros

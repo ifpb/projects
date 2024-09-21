@@ -1,5 +1,4 @@
 ---
-id: 20092370351
 name:
   compact: Kássio Oliveira
   full: Kássio Kiarelly Soares de Oliveira

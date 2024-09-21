@@ -1,5 +1,4 @@
 ---
-id: 273980
 name:
   compact: Jaildo Pequeno
   full: Jaildo Tavares Pequeno

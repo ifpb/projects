@@ -1,5 +1,4 @@
 ---
-id: 20132370284
 name:
   compact: André Alencar
   full: André de Alencar Oliveira da Costa

@@ -1,5 +1,4 @@
 ---
-id: 20131370078
 name:
   compact: Antônio Palitot
   full: Antônio de Pádua Palitot Júnior

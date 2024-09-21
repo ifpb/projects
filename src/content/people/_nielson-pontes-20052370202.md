@@ -1,5 +1,4 @@
 ---
-id: 20052370202
 name:
   compact: Nielson Pontes
   full: Nielson José Pontes da Silva Júnior

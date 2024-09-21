@@ -1,5 +1,4 @@
 ---
-id: 20151370120
 name:
   compact: Lucas Rodrigues
   full: Lucas Rafael de Oliveira Rodrigues

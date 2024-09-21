@@ -1,5 +1,4 @@
 ---
-id: 20062370167
 name:
   compact: Thales Gadioli
   full: Thales Gadioli Cavalcante Brito

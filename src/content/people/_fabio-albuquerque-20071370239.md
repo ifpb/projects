@@ -1,5 +1,4 @@
 ---
-id: 20071370239
 name:
   compact: Fábio Albuquerque
   full: Fábio Cruz Barbosa de Albuquerque

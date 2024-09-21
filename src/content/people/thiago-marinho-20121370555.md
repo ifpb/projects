@@ -1,5 +1,4 @@
 ---
-id: 20121370555
 name:
   compact: Thiago Marinho
   full: Thiago Figueiredo Costa Marinho

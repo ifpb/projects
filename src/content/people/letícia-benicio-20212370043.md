@@ -1,5 +1,4 @@
 ---
-id: 20212370043
 name:
   compact: Letícia Benício
   full: Letícia Benício Araújo

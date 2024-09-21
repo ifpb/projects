@@ -1,5 +1,4 @@
 ---
-id: 20102370090
 name:
   compact: Denilson Dantas
   full: Denilson Henrique Dantas

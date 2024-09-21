@@ -1,5 +1,4 @@
 ---
-id: 20241370009
 name:
   compact: Jonas Sarmento
   full: Jonas Gabriel Sarmento de Figueiredo

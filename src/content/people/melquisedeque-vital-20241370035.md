@@ -1,5 +1,4 @@
 ---
-id: 20241370035
 name:
   compact: Melquisedeque Vital
   full: Melquisedeque Vital de Albuquerque

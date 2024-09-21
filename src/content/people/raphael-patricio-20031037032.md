@@ -1,5 +1,4 @@
 ---
-id: 20031037032
 name:
   compact: Raphael Patricio
   full: Raphael Freire de Araujo Patricio

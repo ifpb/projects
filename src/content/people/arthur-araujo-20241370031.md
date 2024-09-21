@@ -1,5 +1,4 @@
 ---
-id: 20241370031
 name:
   compact: Arthur Araújo
   full: Arthur Felipe Araújo da Silva

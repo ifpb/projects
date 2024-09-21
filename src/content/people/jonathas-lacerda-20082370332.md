@@ -1,5 +1,4 @@
 ---
-id: 20082370332
 name:
   compact: Jonathas Lacerda
   full: Jonathas Santos de Lacerda

@@ -1,5 +1,4 @@
 ---
-id: 20052370377
 name:
   compact: Jonathan Silva
   full: Jonathan Maciel Barrêto da Silva

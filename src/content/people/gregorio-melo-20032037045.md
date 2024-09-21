@@ -1,5 +1,4 @@
 ---
-id: 20032037045
 name:
   compact: Gregório Melo
   full: Gregório Enrico Linhares de Melo

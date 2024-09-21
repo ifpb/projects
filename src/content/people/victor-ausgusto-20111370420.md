@@ -1,5 +1,4 @@
 ---
-id: 20111370420
 name:
   compact: Victor Augusto
   full: Victor Augusto Pinto Costa

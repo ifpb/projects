@@ -1,5 +1,4 @@
 ---
-id: 20141370500
 name:
   compact: Sérgio Campos
   full: Sérgio Campos da Silva

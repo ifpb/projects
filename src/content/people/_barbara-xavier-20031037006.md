@@ -1,5 +1,4 @@
 ---
-id: 20031037006
 name:
   compact: Barbara Xavier
   full: Barbara de Assis Xavier

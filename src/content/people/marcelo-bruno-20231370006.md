@@ -1,5 +1,4 @@
 ---
-id: 20231370006
 name:
   compact: Marcelo Bruno
   full: Marcelo Bruno Oliveira da Silva

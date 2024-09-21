@@ -1,5 +1,4 @@
 ---
-id: 20151370359
 name:
   compact: Alber Jonathas
   full: Alber Jonathas Nunes Paz

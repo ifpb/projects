@@ -143,7 +143,7 @@ const courseCollection = defineCollection({
 
 const peopleCollection = defineCollection({
   schema: z.object({
-    id,
+    id: id.optional(),
     name: z.object({
       compact: z.string(),
       full: z.string(),

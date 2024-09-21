@@ -1,5 +1,4 @@
 ---
-id: 20081370282
 name:
   compact: Romero Medeiros
   full: Romero Meireles Fernandes de Medeiros

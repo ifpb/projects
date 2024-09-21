@@ -1,5 +1,4 @@
 ---
-id: 20181370022
 name:
   compact: Wellington Lima
   full: Wellington Pessoa de Lima Filho

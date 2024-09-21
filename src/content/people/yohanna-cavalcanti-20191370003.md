@@ -1,5 +1,4 @@
 ---
-id: 20191370003
 name:
   compact: Yohanna Cavalcanti
   full: Yohanna de Oliveira Cavalcanti

@@ -1,5 +1,4 @@
 ---
-id: 20191370026
 name:
   compact: Mayara Pereira
   full: Mayara Gomes Pereira

@@ -1,5 +1,4 @@
 ---
-id: 20031037082
 name:
   compact: Ricardo Nóbrega
   full: Ricardo do Amaral Nóbrega

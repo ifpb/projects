@@ -1,5 +1,4 @@
 ---
-id: 20231370009
 name:
   compact: Alessandro Souza
   full: Alessandro Rodrigues de Souza Júnior

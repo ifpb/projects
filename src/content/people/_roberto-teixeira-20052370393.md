@@ -1,5 +1,4 @@
 ---
-id: 20052370393
 name:
   compact: Roberto Teixeira
   full: Roberto Teixeira de Carvalho Filho

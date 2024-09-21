@@ -1,5 +1,4 @@
 ---
-id: 20172370023
 name:
   compact: Lucas Ferreira
   full: Lucas Ferreira de Araújo

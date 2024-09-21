@@ -1,5 +1,4 @@
 ---
-id: 20241370029
 name:
   compact: Daniel Batista
   full: Daniel Batista Borba Orengo

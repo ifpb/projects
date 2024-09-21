@@ -1,5 +1,4 @@
 ---
-id: 20072370461
 name:
   compact: Douglas Silva
   full: Douglas Limeira Silva

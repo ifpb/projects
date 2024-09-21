@@ -1,5 +1,4 @@
 ---
-id: 20031037008
 name:
   compact: Bettowen Oliveira
   full: Bettowen Carvalho de Oliveira

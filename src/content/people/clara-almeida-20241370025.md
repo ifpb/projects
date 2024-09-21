@@ -1,5 +1,4 @@
 ---
-id: 20241370025
 name:
   compact: Clara Almeida
   full: Maria Clara Almeida Gomes Silva

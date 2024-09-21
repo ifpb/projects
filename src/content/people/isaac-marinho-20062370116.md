@@ -1,5 +1,4 @@
 ---
-id: 20062370116
 name:
   compact: Isaac Marinho
   full: Isaac de Morais Marinho dos Santos

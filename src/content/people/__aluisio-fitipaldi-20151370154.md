@@ -1,5 +1,4 @@
 ---
-id: 20151370154
 name:
   compact: Aluisio Fitipaldi
   full: Aluisio Lins Fitipaldi

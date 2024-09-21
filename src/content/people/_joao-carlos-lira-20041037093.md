@@ -1,5 +1,4 @@
 ---
-id: 20041037093
 name:
   compact: João Carlos Lira
   full: João Carlos de Lucena Lira

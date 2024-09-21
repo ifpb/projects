@@ -1,5 +1,4 @@
 ---
-id: 20071370492
 name:
   compact: Igor Sobreiro
   full: Igor Dutra Sobreira

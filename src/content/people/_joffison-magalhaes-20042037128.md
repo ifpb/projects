@@ -1,5 +1,4 @@
 ---
-id: 20042037128
 name:
   compact: Joffison Magalhães
   full: Joffison da Silva Magalhães

@@ -1,5 +1,4 @@
 ---
-id: 20052370334
 name:
   compact: Cirino Refosco
   full: Cirino Ferreira Refosco

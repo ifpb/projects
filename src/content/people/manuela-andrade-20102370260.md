@@ -1,5 +1,4 @@
 ---
-id: 20102370260
 name:
   compact: Manuela Andrade
   full: Manuela Barreto Lopes de Andrade

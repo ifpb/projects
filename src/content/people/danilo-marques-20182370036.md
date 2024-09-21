@@ -1,5 +1,4 @@
 ---
-id: 20182370036
 name:
   compact: Danilo Marques
   full: Danilo Marques de Oliveira

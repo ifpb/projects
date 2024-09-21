@@ -1,5 +1,4 @@
 ---
-id: 20061370430
 name:
   compact: Geyson Kennedy
   full: Geyson Kennedy de Moura Pereira

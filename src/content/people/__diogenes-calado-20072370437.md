@@ -1,5 +1,4 @@
 ---
-id: 20072370437
 name:
   compact: Diógenes Calado
   full: Diógenes Calado da Silva

@@ -1,5 +1,4 @@
 ---
-id: 20151370286
 name:
   compact: Rafael Albuquerque Cardoso
   full: Rafael Albuquerque Cardoso

@@ -1,5 +1,4 @@
 ---
-id: 20131370442
 name:
   compact: Victor Pereira
   full: João Victor Pereira dos Santos

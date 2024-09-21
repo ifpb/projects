@@ -1,5 +1,4 @@
 ---
-id: 20171370035
 name:
   compact: Erick Cristhian
   full: Erick Cristhian Moura da Silva

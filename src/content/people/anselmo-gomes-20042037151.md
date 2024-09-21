@@ -1,5 +1,4 @@
 ---
-id: 20042037151
 name:
   compact: Anselmo Gomes
   full: Anselmo Lacerda Gomes

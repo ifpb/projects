@@ -1,5 +1,4 @@
 ---
-id: 20191370014
 name:
   compact: Lucas Henrique
   full: Lucas Henrique Serrano Soares

@@ -1,5 +1,4 @@
 ---
-id: 20031037029
 name:
   compact: Maurício Linhares
   full: Maurício Linhares de Aragão Junior

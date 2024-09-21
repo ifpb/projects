@@ -1,5 +1,4 @@
 ---
-id: 20062370280
 name:
   compact: Sheyla Medeiros
   full: Sheyla Natália de Medeiros

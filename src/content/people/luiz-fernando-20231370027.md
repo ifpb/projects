@@ -1,5 +1,4 @@
 ---
-id: 20231370027
 name:
   compact: Luiz Fernando
   full: Luiz Fernando de Albuquerque Gomes

@@ -1,5 +1,4 @@
 ---
-id: 1508373
 name:
   compact: Francisco Petrônio
   full: Francisco Petrônio Alencar de Medeiros

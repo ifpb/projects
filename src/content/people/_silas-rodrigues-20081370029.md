@@ -1,5 +1,4 @@
 ---
-id: 20081370029
 name:
   compact: Silas Rodrigues
   full: Silas Rodrigues do Rêgo Junior

@@ -1,5 +1,4 @@
 ---
-id: 20202370005
 name:
   compact: Ronaldo Filho
   full: Ronaldo Paulo da Silva Filho

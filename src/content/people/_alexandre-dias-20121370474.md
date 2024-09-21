@@ -1,5 +1,4 @@
 ---
-id: 20121370474
 name:
   compact: Alexandre Dias
   full: Alexandre Dias Sales De Morais

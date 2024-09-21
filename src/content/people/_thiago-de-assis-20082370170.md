@@ -1,5 +1,4 @@
 ---
-id: 20082370170
 name:
   compact: Thiago de Assis
   full: Thiago Paulino de Assis

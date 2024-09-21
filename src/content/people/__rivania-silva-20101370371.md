@@ -1,5 +1,4 @@
 ---
-id: 20101370371
 name:
   compact: Rivania Silva
   full: Rivania de Sousa Barros da Silva

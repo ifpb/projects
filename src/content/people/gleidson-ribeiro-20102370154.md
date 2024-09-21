@@ -1,5 +1,4 @@
 ---
-id: 20102370154
 name:
   compact: Gleidson Ribeiro
   full: Gleidson de Sousa Ribeiro

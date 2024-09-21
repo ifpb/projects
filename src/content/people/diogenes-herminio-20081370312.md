@@ -1,5 +1,4 @@
 ---
-id: 20081370312
 name:
   compact: Diógenes Hermínio
   full: Diógenes Augusto Fernandes Hermínio

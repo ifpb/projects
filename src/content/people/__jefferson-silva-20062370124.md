@@ -1,5 +1,4 @@
 ---
-id: 20062370124
 name:
   compact: Jefferson Silva
   full: Jefferson Silva de Souza

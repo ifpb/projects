@@ -1,5 +1,4 @@
 ---
-id: 20051370438
 name:
   compact: Wesley Menezes
   full: Wesley Willame Dias Menezes

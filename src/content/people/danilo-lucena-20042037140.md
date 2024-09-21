@@ -1,5 +1,4 @@
 ---
-id: 20042037140
 name:
   compact: Danilo Lucena
   full: Danilo Carlos Gouveia de Lucena

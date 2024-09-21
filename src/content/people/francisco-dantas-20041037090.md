@@ -1,5 +1,4 @@
 ---
-id: 20041037090
 name:
   compact: Francisco Dantas
   full: Francisco Dantas Nóbrega Neto

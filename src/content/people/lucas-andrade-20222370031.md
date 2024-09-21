@@ -1,5 +1,4 @@
 ---
-id: 20222370031
 name:
   compact: Lucas Andrade
   full: Lucas Andrade dos Santos

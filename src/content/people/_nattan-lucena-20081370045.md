@@ -1,5 +1,4 @@
 ---
-id: 20081370045
 name:
   compact: Nattan Lucena
   full: Nattan de Oliveira Lucena

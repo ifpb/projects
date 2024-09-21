@@ -1,5 +1,4 @@
 ---
-id: 20121370199
 name:
   compact: Adjamilton Junior
   full: Adjamilton Medeiros de Almeida Junior

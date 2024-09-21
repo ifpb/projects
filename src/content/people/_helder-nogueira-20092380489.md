@@ -1,5 +1,4 @@
 ---
-id: 20092380489
 name:
   compact: Helder Nogueira
   full: Helder Nogueira de Moura

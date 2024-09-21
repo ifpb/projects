@@ -1,5 +1,4 @@
 ---
-id: 20232370037
 name:
   compact: Letícia Lopes
   full: Letícia Lopes Lima

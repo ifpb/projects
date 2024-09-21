@@ -1,5 +1,4 @@
 ---
-id: 20082370154
 name:
   compact: Diego Nóbrega
   full: Diego Madson de Andrade Nóbrega

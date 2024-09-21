@@ -1,5 +1,4 @@
 ---
-id: 20141370429
 name:
   compact: Washington Bruno
   full: Washington Bruno Rodrigues Cavalcante

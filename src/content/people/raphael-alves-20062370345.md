@@ -1,5 +1,4 @@
 ---
-id: 20062370345
 name:
   compact: Raphael Alves
   full: Raphael Medeiros Alves

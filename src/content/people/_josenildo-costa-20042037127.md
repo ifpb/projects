@@ -1,5 +1,4 @@
 ---
-id: 20042037127
 name:
   compact: Josenildo Costa
   full: Josenildo Santos da Costa

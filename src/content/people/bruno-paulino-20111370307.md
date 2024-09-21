@@ -1,5 +1,4 @@
 ---
-id: 20111370307
 name:
   compact: Bruno Paulino
   full: Bruno de Araújo Paulino

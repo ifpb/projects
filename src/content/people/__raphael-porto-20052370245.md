@@ -1,5 +1,4 @@
 ---
-id: 20052370245
 name:
   compact: Raphael Porto
   full: Raphael de Almeida Porto

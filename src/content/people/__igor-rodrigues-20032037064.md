@@ -1,5 +1,4 @@
 ---
-id: 20032037064
 name:
   compact: Igor Rodrigues
   full: Igor Magalhães Rodrigues

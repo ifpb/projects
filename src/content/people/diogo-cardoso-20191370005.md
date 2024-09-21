@@ -1,5 +1,4 @@
 ---
-id: 20191370005
 name:
   compact: Diogo Cardoso
   full: Diogo Gomes Cardoso

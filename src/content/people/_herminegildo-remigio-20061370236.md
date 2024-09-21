@@ -1,5 +1,4 @@
 ---
-id: 20061370236
 name:
   compact: Herminegildo Remigio
   full: Herminegildo Remigio da Rocha Neto

@@ -1,5 +1,4 @@
 ---
-id: 20062370205
 name:
   compact: Breno Queiroz
   full: Breno Queiroz Vasconcelos de Souza

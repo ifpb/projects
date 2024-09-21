@@ -1,5 +1,4 @@
 ---
-id: 20241370018
 name:
   compact: Murilo Maciel
   full: Murilo Maciel Rodrigues

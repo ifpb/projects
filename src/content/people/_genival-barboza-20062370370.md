@@ -1,5 +1,4 @@
 ---
-id: 20062370370
 name:
   compact: Genival Barboza
   full: Genival Gomes Barboza Neto

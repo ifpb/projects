@@ -1,5 +1,4 @@
 ---
-id: 20051370373
 name:
   compact: Rodrigo Gouveia
   full: Rodrigo de Araujo Gouveia

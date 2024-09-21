@@ -1,5 +1,4 @@
 ---
-id: 20241370021
 name:
   compact: Clara Alcântara
   full: Clara Brito Palmeira Nunes de Alcântara

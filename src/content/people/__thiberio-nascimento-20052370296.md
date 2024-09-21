@@ -1,5 +1,4 @@
 ---
-id: 20052370296
 name:
   compact: Thiberio Nascimento
   full: Thiberio Oliveira do Nascimento

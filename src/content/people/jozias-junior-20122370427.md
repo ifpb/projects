@@ -1,5 +1,4 @@
 ---
-id: 20122370427
 name:
   compact: Jozias Júnior
   full: Jozias Rolim de Araújo Júnior

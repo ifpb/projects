@@ -1,5 +1,4 @@
 ---
-id: 20091370188
 name:
   compact: Davi Bandeira
   full: Davi Cavalcanti Pinto Bandeira

@@ -1,5 +1,4 @@
 ---
-id: 20132370403
 name:
   compact: Anderson Araújo
   full: Anderson de Araújo Gomes

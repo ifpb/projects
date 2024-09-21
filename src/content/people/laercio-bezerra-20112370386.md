@@ -1,5 +1,4 @@
 ---
-id: 20112370386
 name:
   compact: Laércio Bezerra
   full: Laércio de Souza Bezerra

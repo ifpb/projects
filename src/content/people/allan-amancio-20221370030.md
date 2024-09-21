@@ -1,5 +1,4 @@
 ---
-id: 20221370030
 name:
   compact: Allan Amâncio
   full: Allan Alves Amâncio

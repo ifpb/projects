@@ -1,5 +1,4 @@
 ---
-id: 20091370331
 name:
   compact: Didier Ferreira
   full: Didier Braz Ferreira

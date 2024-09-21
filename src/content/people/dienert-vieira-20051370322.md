@@ -1,5 +1,4 @@
 ---
-id: 20051370322
 name:
   compact: Diénert Vieira
   full: Diénert de Alencar Vieira

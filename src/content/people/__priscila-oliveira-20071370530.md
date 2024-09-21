@@ -1,5 +1,4 @@
 ---
-id: 20071370530
 name:
   compact: Priscila Oliveira
   full: Priscila Navarro Peixoto de Oliveira

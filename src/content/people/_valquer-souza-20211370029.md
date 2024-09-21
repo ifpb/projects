@@ -1,5 +1,4 @@
 ---
-id: 20211370029
 name:
   compact: Valquer Souza
   full: Valquer Rafael e Silva Souza

@@ -1,5 +1,4 @@
 ---
-id: 20102370120
 name:
   compact: Érycson Nóbrega
   full: Érycson Gomes da Nóbrega

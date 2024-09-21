@@ -1,5 +1,4 @@
 ---
-id: 20061370155
 name:
   compact: Diêgo Bulhões
   full: Diêgo Michel Ferreira Bulhões

@@ -1,5 +1,4 @@
 ---
-id: 20151370324
 name:
   compact: Wanderson Andrade
   full: Wanderson Izidro de Andrade

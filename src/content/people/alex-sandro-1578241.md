@@ -1,5 +1,4 @@
 ---
-id: 1578241
 name:
   compact: Alex Sandro
   full: Alex Sandro da Cunha Rego

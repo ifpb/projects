@@ -1,5 +1,4 @@
 ---
-id: 20241370028
 name:
   compact: Clodoaldo Tang
   full: Clodoaldo Tang

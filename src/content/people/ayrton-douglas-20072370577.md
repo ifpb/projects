@@ -1,5 +1,4 @@
 ---
-id: 202119840013
 name:
   compact: Ayrton Douglas
   full: Ayrton Douglas Rodrigues Herculano

@@ -1,5 +1,4 @@
 ---
-id: 20121370415
 name:
   compact: Evandro Macedo
   full: Evandro Henrique Cordeiro de Macedo

@@ -1,5 +1,4 @@
 ---
-id: 20102380273
 name:
   compact: José Amarildo
   full: José Amarildo de Lima Filho

@@ -1,5 +1,4 @@
 ---
-id: 20042037161
 name:
   compact: Torquato Neto
   full: Torquato Barbosa de Lima Neto

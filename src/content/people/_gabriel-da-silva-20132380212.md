@@ -1,5 +1,4 @@
 ---
-id: 20132380212
 name:
   compact: Gabriel da Silva
   full: Gabriel da Silva Cavalcante

@@ -1,5 +1,4 @@
 ---
-id: 20172370012
 name:
   compact: Karoline Lima
   full: Karoline Andrade da Silva Lima

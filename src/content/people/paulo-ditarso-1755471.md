@@ -1,5 +1,4 @@
 ---
-id: 1755471
 name:
   compact: Paulo Ditarso
   full: Paulo Ditarso Maciel Junior

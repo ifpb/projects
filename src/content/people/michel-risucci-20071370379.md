@@ -1,5 +1,4 @@
 ---
-id: 20071370379
 name:
   compact: Michel Risucci
   full: Michel Alessandro Brasil Risucci de França

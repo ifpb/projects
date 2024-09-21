@@ -1,5 +1,4 @@
 ---
-id: 20182370030
 name:
   compact: Andréia Berto
   full: Andréia de Lima Berto

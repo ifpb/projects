@@ -1,5 +1,4 @@
 ---
-id: 20181370020
 name:
   compact: Rafael Oliveira
   full: Rafael Oliveira Batista

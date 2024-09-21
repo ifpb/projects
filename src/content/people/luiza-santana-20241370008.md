@@ -1,5 +1,4 @@
 ---
-id: 20241370008
 name:
   compact: Luíza Santana
   full: Maria Luíza do Nascimento Santana

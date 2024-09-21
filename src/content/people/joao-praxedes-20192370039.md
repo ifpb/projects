@@ -1,5 +1,4 @@
 ---
-id: 20192370039
 name:
   compact: João Praxedes
   full: João Fernandes Praxedes Neto

@@ -1,5 +1,4 @@
 ---
-id: 20181370004
 name:
   compact: Gabriel Borsero
   full: Gabriel Borsero Estrela Bernardo

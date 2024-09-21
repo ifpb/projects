@@ -1,5 +1,4 @@
 ---
-id: 20182370004
 name:
   compact: Adilson Júnior
   full: Adilson da Silva Costa Júnior

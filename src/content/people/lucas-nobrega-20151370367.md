@@ -1,5 +1,4 @@
 ---
-id: 20151370367
 name:
   compact: Lucas Nóbrega
   full: Lucas de Carvalho Vasconcelos Nóbrega

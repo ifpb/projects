@@ -1,5 +1,4 @@
 ---
-id: 20102370111
 name:
   compact: Emerson Raniere
   full: Emerson Raniere Oliveira Souza

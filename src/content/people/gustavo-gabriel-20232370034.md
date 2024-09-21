@@ -1,5 +1,4 @@
 ---
-id: 20232370034
 name:
   compact: Gustavo Gabriel
   full: Gutavo Gabriel Batista da Silva

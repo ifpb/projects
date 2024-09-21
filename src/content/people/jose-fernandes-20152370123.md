@@ -1,5 +1,4 @@
 ---
-id: 20152370123
 name:
   compact: José Fernandes
   full: José Raimundo Fernandes Filho

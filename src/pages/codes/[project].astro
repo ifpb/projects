@@ -5,7 +5,7 @@ import {
   getProjects,
   isSubjectProject,
 } from '@/helpers/projects';
-import { getPeopleByProject } from '@/helpers/people';
+import { getPeopleByProject, getPersonId } from '@/helpers/people';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { getCourseByAbbreviation } from '@/helpers/courses';
 import { campi } from '@/content/config';
@@ -119,12 +119,12 @@ const category = project.data.category as ProjectProps['category'];
           {
             people
               .sort((a, b) =>
-                a.data.name.compact.localeCompare(b.data.name.compact)
+                a.data.name.full.localeCompare(b.data.name.full)
               )
-              .map(({ data: { id, name } }) => (
+              .map((person) => (
                 <li>
-                  <a class="underline" href={`/projects/people/${id}`}>
-                    {name.full}
+                  <a class="underline" href={`/projects/people/${getPersonId(person)}`}>
+                    {person.data.name.full}
                   </a>
                 </li>
               ))
@@ -136,7 +136,9 @@ const category = project.data.category as ProjectProps['category'];
         <div class="font-bold text-lg">Tags:</div>
         <nav class="mb-2">
           {
-            project.data.tags.map((tag) => <Badge url={`/projects/codes/${tag}/1/`} text={tag} />)
+            project.data.tags
+              .filter((tag, index, self) => self.indexOf(tag) === index)
+              .map((tag) => <Badge url={`/projects/codes/${tag}/1/`} text={tag} />)
           }
         </nav>
       </div>

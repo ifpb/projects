@@ -1,5 +1,4 @@
 ---
-id: 20072370739
 name:
   compact: Tália Trigueiro
   full: Tália Bernardino Trigueiro de Almeida

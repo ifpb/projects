@@ -1,5 +1,4 @@
 ---
-id: 20082201026
 name:
   compact: Diogo Moreira
   full: Diogo Dantas Moreira

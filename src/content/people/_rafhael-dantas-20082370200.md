@@ -1,5 +1,4 @@
 ---
-id: 20082370200
 name:
   compact: Rafhael Dantas
   full: Rafhael Dantas da Silva

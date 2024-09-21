@@ -1,5 +1,4 @@
 ---
-id: 20091370137
 name:
   compact: Renan Gadelha
   full: Renan Marques Gadelha Rodrigues

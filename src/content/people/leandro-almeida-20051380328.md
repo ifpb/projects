@@ -1,5 +1,4 @@
 ---
-id: 20051380328
 name:
   compact: Leandro Almeida
   full: Leandro Cavalcanti de Almeida

@@ -1,5 +1,4 @@
 ---
-id: 20051370101
 name:
   compact: Leonel Freire
   full: Leonel Marques de Luna Freire

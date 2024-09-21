@@ -1,5 +1,4 @@
 ---
-id: 20151370049
 name:
   compact: Maurício de Lira
   full: Maurício Barbosa de Lira Filho

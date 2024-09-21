@@ -1,5 +1,4 @@
 ---
-id: 20031037002
 name:
   compact: Ana Cláudia Silva
   full: Ana Cláudia Costa da Silva

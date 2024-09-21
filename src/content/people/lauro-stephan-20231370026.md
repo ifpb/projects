@@ -1,5 +1,4 @@
 ---
-id: 20231370026
 name:
   compact: Lauro Stephan
   full: Lauro Stephan Lopes do Nascimento

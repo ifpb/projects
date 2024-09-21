@@ -1,5 +1,4 @@
 ---
-id: 20092370114
 name:
   compact: Natan Andrade
   full: Natan Brasileiro de Andrade

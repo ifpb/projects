@@ -1,5 +1,4 @@
 ---
-id: 20131370094
 name:
   compact: Anderson Leal
   full: Anderson de Oliveira Ferreira Leal

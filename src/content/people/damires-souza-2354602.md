@@ -1,5 +1,4 @@
 ---
-id: 1196487
 name:
   compact: Damires Souza
   full: Damires Yluska de Souza Fernandes

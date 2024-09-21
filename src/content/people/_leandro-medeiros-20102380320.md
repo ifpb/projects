@@ -1,5 +1,4 @@
 ---
-id: 20102380320
 name:
   compact: Leandro Medeiros
   full: Leandro Medeiros Silva

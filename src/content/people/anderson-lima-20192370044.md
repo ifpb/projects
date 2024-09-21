@@ -1,5 +1,4 @@
 ---
-id: 20192370044
 name:
   compact: Anderson Lima
   full: Anderson Lima

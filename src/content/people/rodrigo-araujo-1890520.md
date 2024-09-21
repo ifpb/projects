@@ -1,5 +1,4 @@
 ---
-id: 1890520
 name:
   compact: Rodrigo Araujo
   full: Rodrigo Pinheiro Marques de Araujo

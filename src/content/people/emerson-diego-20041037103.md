@@ -1,5 +1,4 @@
 ---
-id: 20041037103
 name:
   compact: Emerson Diego
   full: Emerson Diego da Costa Araújo

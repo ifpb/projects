@@ -1,5 +1,4 @@
 ---
-id: 20212370009
 name:
   compact: Caio Guilherme
   full: Caio André Guilherme de Miranda

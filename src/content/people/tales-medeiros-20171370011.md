@@ -1,5 +1,4 @@
 ---
-id: 20171370011
 name:
   compact: Tales Medeiros
   full: Tales Medeiros de Araujo

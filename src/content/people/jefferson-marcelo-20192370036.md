@@ -1,5 +1,4 @@
 ---
-id: 20192370036
 name:
   compact: Jefferson Marcelo
   full: Jefferson Marcelo Oliveira da Silva

@@ -1,5 +1,4 @@
 ---
-id: 20102370308
 name:
   compact: Rafael Navarro
   full: Rafael Navarro De Oliveira Santos

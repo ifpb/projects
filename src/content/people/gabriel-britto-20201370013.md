@@ -1,5 +1,4 @@
 ---
-id: 20201370013
 name:
   compact: Gabriel Britto
   full: Gabriel Souto de Britto

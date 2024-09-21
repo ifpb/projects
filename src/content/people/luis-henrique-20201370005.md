@@ -1,5 +1,4 @@
 ---
-id: 20201370005
 name:
   compact: Luís Henrique
   full: Luís Henrique Ferreira Freire

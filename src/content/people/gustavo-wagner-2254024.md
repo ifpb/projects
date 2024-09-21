@@ -1,5 +1,4 @@
 ---
-id: 2254024
 name:
   compact: Gustavo Wagner
   full: Gustavo Wagner Diniz Mendes

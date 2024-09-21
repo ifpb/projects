@@ -1,5 +1,4 @@
 ---
-id: 20072370712
 name:
   compact: Rharon Guedes
   full: Rharon Maia Guedes

@@ -1,5 +1,4 @@
 ---
-id: 20062370140
 name:
   compact: Ivandro Claudino
   full: Ivandro Claudino de Sá

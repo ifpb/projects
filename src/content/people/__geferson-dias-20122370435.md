@@ -1,5 +1,4 @@
 ---
-id: 20122370435
 name:
   compact: Geferson Dias
   full: Geferson Ribeiro Dias

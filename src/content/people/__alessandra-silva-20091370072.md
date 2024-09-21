@@ -1,5 +1,4 @@
 ---
-id: 20091370072
 name:
   compact: Alessandra Silva
   full: Alessandra Mendes da Silva

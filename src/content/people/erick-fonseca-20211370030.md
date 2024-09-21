@@ -1,5 +1,4 @@
 ---
-id: 20211370030
 name:
   compact: Erick Fonseca
   full: Erick Fonseca Martins Peixoto

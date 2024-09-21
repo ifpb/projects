@@ -1,5 +1,4 @@
 ---
-id: 20031037012
 name:
   compact: Claudio Piomonte
   full: Claudio de Magalhães Piomonte

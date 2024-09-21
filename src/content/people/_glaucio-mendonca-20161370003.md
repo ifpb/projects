@@ -1,5 +1,4 @@
 ---
-id: 20161370003
 name:
   compact: Glaúcio Mendonça
   full: Glaúcio Gabriel de Lima Mendonça

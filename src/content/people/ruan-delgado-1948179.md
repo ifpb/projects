@@ -1,5 +1,4 @@
 ---
-id: 1948179
 name:
   compact: Ruan Delgado
   full: Ruan Delgado Gomes

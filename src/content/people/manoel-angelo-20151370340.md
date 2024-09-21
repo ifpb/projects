@@ -1,5 +1,4 @@
 ---
-id: 20151370340
 name:
   compact: Manoel Angelo
   full: Manoel Angelo Da Silva Neto

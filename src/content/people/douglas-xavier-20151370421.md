@@ -1,5 +1,4 @@
 ---
-id: 20151370421
 name:
   compact: Douglas Xavier
   full: Douglas François Xavier Silva

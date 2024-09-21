@@ -1,5 +1,4 @@
 ---
-id: 20051370225
 name:
   compact: André Vinagre
   full: André Nobre Vinagre

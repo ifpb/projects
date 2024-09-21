@@ -1,5 +1,4 @@
 ---
-id: 20141380351
 name:
   compact: Suelando Alves
   full: Suelando Alves de Araújo

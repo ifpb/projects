@@ -1,5 +1,4 @@
 ---
-id: 20111380353
 name:
   compact: Romáryo Ricardo
   full: Romáryo de Lima Ricardo

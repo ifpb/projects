@@ -1,5 +1,4 @@
 ---
-id: 20162370039
 name:
   compact: Adriano Amaral
   full: Adriano Ney Nascimento do Amaral

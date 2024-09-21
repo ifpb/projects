@@ -1,5 +1,4 @@
 ---
-id: 20211380007
 name:
   compact: Adalberto Rosendo
   full: Adalberto Rosendo da Silva Júnior

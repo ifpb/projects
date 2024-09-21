@@ -1,5 +1,4 @@
 ---
-id: 20042037132
 name:
   compact: Giuseppe Anthony
   full: Giuseppe Anthony Nascimento de Lima

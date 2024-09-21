@@ -1,5 +1,4 @@
 ---
-id: 20071370549
 name:
   compact: Henrique Barreto
   full: Henrique Antunes Barreto de Almeida

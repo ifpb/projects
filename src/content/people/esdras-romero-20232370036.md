@@ -1,5 +1,4 @@
 ---
-id: 20232370036
 name:
   compact: Esdras Romero
   full: Esdras Romero Fonseca de Lima

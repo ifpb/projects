@@ -1,5 +1,4 @@
 ---
-id: 2354602
 name:
   compact: Márcio Ugulino
   full: Márcio Emanuel Ugulino de Araujo Junior

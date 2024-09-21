@@ -1,5 +1,4 @@
 ---
-id: 20241370019
 name:
   compact: Gabriel Souza
   full: Gabriel de Souza Nascimento

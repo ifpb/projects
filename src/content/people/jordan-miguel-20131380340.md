@@ -1,5 +1,4 @@
 ---
-id: 20131380340
 name:
   compact: Jordan Miguel
   full: Jordan Miguel Moreira Almeida de Matos

@@ -1,5 +1,4 @@
 ---
-id: 20041037089
 name:
   compact: Gustavo Cavalcanti
   full: Gustavo Cavalcanti

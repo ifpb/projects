@@ -1,5 +1,4 @@
 ---
-id: 20222380034
 name:
   compact: Lucas Vinicius
   full: Lucas Vinicius Barbosa Candido de Oliveira

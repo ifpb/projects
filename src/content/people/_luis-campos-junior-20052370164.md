@@ -1,5 +1,4 @@
 ---
-id: 20052370164
 name:
   compact: Luis Campos Junior
   full: Luis Campos Junior

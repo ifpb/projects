@@ -1,5 +1,4 @@
 ---
-id: 1096328
 name:
   compact: Heremita Lira
   full: Heremita Brasileiro Lira

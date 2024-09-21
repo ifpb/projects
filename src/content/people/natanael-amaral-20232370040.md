@@ -1,5 +1,4 @@
 ---
-id: 20232370040
 name:
   compact: Natanael Amaral
   full: Natanael do Amaral Lopes

@@ -1,5 +1,4 @@
 ---
-id: 20161370018
 name:
   compact: Joseph Santos
   full: Joseph Adrian Almeida dos Santos

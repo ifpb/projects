@@ -1,5 +1,4 @@
 ---
-id: 20131370027
 name:
   compact: Brunno Hofmann
   full: Brunno Hofmann Santana e Silva
