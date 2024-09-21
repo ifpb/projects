@@ -20,7 +20,7 @@ export type Address = z.infer<typeof addresses>;
 const id = z.number().refine((num) => {
   const length = num.toString().length;
 
-  return [12, 11, 7].includes(length);
+  return [12, 11, 7, 6].includes(length);
 });
 
 export const campi = {
@@ -153,8 +153,8 @@ const peopleCollection = defineCollection({
       z.union([professorOccupation, employeeOccupation, studentOccupation])
     ),
     addresses: addresses.extend({
-      github: z.string().url(),
       linkedin: z.string().url(),
+      github: z.string().url().optional(),
       projects: z.string().optional(),
       figma: z.string().optional(),
     }),
