@@ -11,4 +11,5 @@ occupations:
   course: cstsi
   isFinished: true
 addresses:
+  linkedin: https://www.linkedin.com/in/jos%C3%A9-wendell-de-morais-silva-2628601b5/
 ---

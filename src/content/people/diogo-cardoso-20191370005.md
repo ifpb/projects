@@ -1,11 +1,11 @@
 ---
-id: 201913700005
+id: 20191370005
 name:
   compact: Diogo Cardoso
   full: Diogo Gomes Cardoso
 avatar: https://github.com/dicardoso.png
 occupations:
-- id: 201913700005
+- id: 20191370005
   type: student
   campus: ifpb-jp
   course: cstsi

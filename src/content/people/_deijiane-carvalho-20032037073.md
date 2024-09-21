@@ -11,4 +11,5 @@ occupations:
   course: cstsi
   isFinished: true
 addresses:
+  linkedin: https://www.linkedin.com/in/deijiane-matsumoto-2a964a174/
 ---

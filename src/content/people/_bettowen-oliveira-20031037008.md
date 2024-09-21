@@ -12,4 +12,5 @@ occupations:
   isFinished: true
 addresses:
   email: bettowen@gmail.com
+  linkedin: https://www.linkedin.com/in/bettowen-carvalho-94962843/
 ---

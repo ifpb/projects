@@ -11,6 +11,7 @@ occupations:
 addresses:
   github: https://github.com/gugawag
   linkedin: https://www.linkedin.com/in/gugawag/
+  researchgate: https://www.researchgate.net/profile/Gustavo-Mendes-4
   twitter: https://twitter.com/gugawag
   homepage: http://gustavowagner.com/paginaPessoal/index.htm
 ---
