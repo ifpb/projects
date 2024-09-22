@@ -43,7 +43,11 @@ export function getStudentTimeIdByOccupation(occupation) {
 
     const course = getCourseByAbbreviation(abbreviation);
 
-    if (course.data.level.compact === 'Técnico Integrado ao Médio') {
+    if (
+      ['Técnico Integrado ao Médio', 'Mestrado'].includes(
+        course.data.level.compact
+      )
+    ) {
       return String(occupation.id).slice(0, 4);
     } else {
       return getStudentSemesterId(occupation.id);
