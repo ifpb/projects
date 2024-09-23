@@ -102,7 +102,7 @@ const tags = await getPersonTags(person);
         alt={name.full}
         class="animate-pulse bg-gray-300 object-cover w-full h-[233px] hover:scale-105 transition duration-500 cursor-pointer"
         onload="this.onload=null;this.classList.remove('animate-pulse');"
-        onerror="this.onerror=null;this.classList.remove('animate-pulse', 'bg-neutral-400');this.src='/projects/imgs/avatar.svg';"
+        onerror="this.onerror=null;['animate-pulse', 'text-white'].map(v=> this.classList.toggle(v));this.src='/projects/imgs/clarity-avatar-solid.svg';"
       />
     </a>
   </figure>

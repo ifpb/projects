@@ -62,7 +62,7 @@ const category = project.data.category as ProjectProps['category'];
       <div class="image-preview w-full md:w-[50%]">
         <a class="underline" href={project.data.addresses.homepage}>
           <img
-            src={project.data.addresses.preview}
+            src={project.data.addresses.preview ?? '/projects/imgs/project-placeholder.png'}
             alt={project.data.name}
             class="border w-full"
             onload="this.onload = null; this.classList.remove('animate-pulse');"

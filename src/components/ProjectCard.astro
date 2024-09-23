@@ -74,7 +74,9 @@ const projectId = getProjectId(project);
                     src={`${person.data.avatar}?size=32`}
                     alt={person.data.name.full}
                     title={person.data.name.full}
-                    class="rounded-full w-8"
+                    class="rounded-full w-8 object-cover"
+                    onload="this.onload = null; this.classList.remove('animate-pulse');"
+                    onerror="this.onerror=null;['animate-pulse', 'bg-gray-200', 'text-white'].map(v=> this.classList.toggle(v));this.src='/projects/imgs/carbon-user-avatar-filled-alt.svg';"
                   />
                 </a>
               </li>
