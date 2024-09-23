@@ -12,7 +12,7 @@ occupations:
   isFinished: false
 addresses:
   github: https://github.com/MM2K24
-  linkedin: https://www.linkedin.com/in/matheus-morais-60b263317?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
+  linkedin: https://www.linkedin.com/in/matheus-morais-60b263317/
   twitter: http://twitter.com/MM2K24
   email: moraismatheus666007@gmail.com
 ---
