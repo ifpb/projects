@@ -1,5 +1,4 @@
 ---
-id: 20092380063
 name:
   compact: Thamayron Alves
   full: Thamayron Alves Souza
@@ -13,5 +12,7 @@ occupations:
 addresses:
   github: https://github.com/thamayron
   linkedin: https://www.linkedin.com/in/thamayron-alves/
+  facebook: https://www.facebook.com/thamayron.alves
+  twitter: https://twitter.com/thamayron/
   email: thamayron@gmail.com
 ---

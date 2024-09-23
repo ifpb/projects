@@ -2,6 +2,8 @@
 import type { CollectionEntry } from 'astro:content';
 import { Icon } from 'astro-icon';
 import { getProjectId, getProjectTags } from '@/helpers/projects';
+import Badge from './Badge.astro';
+import { getPersonId } from '@/helpers/people';
 
 type ProjectsWithPeople = CollectionEntry<'projects'> & {
   people: CollectionEntry<'people'>[];
@@ -23,7 +25,7 @@ const projectId = getProjectId(project);
 ---
 
 <div
-  class="project-card rounded-md overflow-hidden shadow-lg bg-white text-center"
+  class="project-card md:max-w-[320px] rounded-md overflow-hidden shadow-lg bg-white text-center"
 >
   <section class="relative z-0">
     <figure class="overflow-hidden shadow-md">
@@ -60,18 +62,25 @@ const projectId = getProjectId(project);
     <ul class="absolute bottom-2 right-4 flex">
       {
         !!project.people?.length &&
-          project.people?.map(({ data: { id, avatar, name } }) => (
-            <li class="-mr-2 border-2 border-gray-100 rounded-full">
-              <a href={`/projects/people/${id}/`} target="_blank">
-                <img
-                  src={`${avatar}?size=32`}
-                  alt={name.full}
-                  title={name.full}
-                  class="rounded-full w-8"
-                />
-              </a>
-            </li>
-          ))
+          project.people
+            ?.sort((a, b) => a.data.name.full.localeCompare(b.data.name.full))
+            ?.map((person) => (
+              <li class="-mr-2 border-2 border-gray-100 rounded-full">
+                <a
+                  href={`/projects/people/${getPersonId(person)}/`}
+                  target="_blank"
+                >
+                  <img
+                    src={`${person.data.avatar}?size=32`}
+                    alt={person.data.name.full}
+                    title={person.data.name.full}
+                    class="rounded-full w-8 object-cover"
+                    onload="this.onload = null; this.classList.remove('animate-pulse');"
+                    onerror="this.onerror=null;['animate-pulse', 'bg-gray-200', 'text-white'].map(v=> this.classList.toggle(v));this.src='/projects/imgs/carbon-user-avatar-filled-alt.svg';"
+                  />
+                </a>
+              </li>
+            ))
       }
     </ul>
   </section>
@@ -84,16 +93,12 @@ const projectId = getProjectId(project);
       {name}
     </a>
   </p>
-  <nav class="mb-3">
+  <nav class="m-3 px-2 space-x-1">
     {
-      tags.map((tag) => (
-        <a
-          href={`/projects/codes/${tag}/1/`}
-          class="inline-block text-xs font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 my-1 mx-1 py-1 px-2 rounded-full"
-        >
-          {tag}
-        </a>
-      ))
+      tags
+        .filter((tag, index, self) => self.indexOf(tag) === index)
+        .filter((tag) => tag !== 'subject')
+        .map((tag) => <Badge url={`/projects/codes/${tag}/1/`} text={tag} />)
     }
   </nav>
 </div>

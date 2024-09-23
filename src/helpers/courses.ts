@@ -1,6 +1,8 @@
 import type { CollectionEntry } from 'astro:content';
+import type { SubjectProject } from '@/content/config';
 import { getCollection } from 'astro:content';
-import { getStudentSemesterId } from './people';
+import { getOccupationId } from './people';
+import { isSubjectProject } from './projects';
 
 const courses = await getCollection('courses');
 
@@ -9,6 +11,36 @@ export function getCourseByAbbreviation(abbreviation: string) {
     (course: CollectionEntry<'courses'>) =>
       course?.data?.abbreviation === abbreviation
   );
+}
+
+export function getFirstCourseByPeople(person: CollectionEntry<'people'>) {
+  const { occupations } = person.data;
+
+  const studentOccupation = occupations.find(
+    (occupation) => occupation.type === 'student'
+  );
+
+  if (studentOccupation) {
+    const { course } = studentOccupation;
+
+    return course;
+  } else {
+    return occupations[0].type;
+  }
+}
+
+export function getSubjectByProject(project: CollectionEntry<'projects'>) {
+  const subjects: string[] = [];
+
+  if (isSubjectProject(project)) {
+    const {
+      data: {
+        category: { subject, semester },
+      },
+    } = project as { data: { category: SubjectProject } };
+
+    return `${subject}-${semester}`;
+  }
 }
 
 export function getSemesterCourses(semesters: string[]) {
@@ -60,7 +92,7 @@ export function getCourseName(tag: string) {
 export function getCourseAbbreviationByOccupation(occupation) {
   const { course, id } = occupation;
 
-  return `${course}-${getStudentSemesterId(id)}`;
+  return `${course}-${getOccupationId(occupation)}`;
 }
 
 export function getCourseAbbreviationCampusByOccupation(occupation) {
@@ -68,5 +100,5 @@ export function getCourseAbbreviationCampusByOccupation(occupation) {
 
   const [, city] = campus.split('-');
 
-  return `${course}-${city}-${getStudentSemesterId(id)}`;
+  return `${course}-${city}-${getOccupationId(occupation)}`;
 }

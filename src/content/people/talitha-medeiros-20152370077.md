@@ -1,5 +1,4 @@
 ---
-id: 20152370077
 name:
   compact: Talitha Medeiros
   full: Talitha Alessandra Medeiros Ribeiro

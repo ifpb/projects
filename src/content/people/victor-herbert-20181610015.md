@@ -1,5 +1,4 @@
 ---
-id: 20181610015
 name:
   compact: Victor Herbert
   full: Victor Herbert Ferreira de Sousa
@@ -9,6 +8,7 @@ occupations:
   type: student
   campus: ifpb-jp
   course: csbee
+  isFinished: true
 addresses:
   github: https://github.com/VictorHerbert
   linkedin: https://www.linkedin.com/in/victorherbert/

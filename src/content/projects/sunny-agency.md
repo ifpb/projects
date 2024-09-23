@@ -8,6 +8,7 @@ addresses:
 category:
   type: subject
   subject: lm
+  period: 1
   semester: 2022.2
   course: cstsi
   campus: ifpb-jp

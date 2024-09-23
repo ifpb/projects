@@ -1,5 +1,4 @@
 ---
-id: 20211380035
 name:
   compact: Isabel Saturnino
   full: Maria Isabel Saturnino Da Silva Pereira
@@ -9,6 +8,7 @@ occupations:
   type: student
   campus: ifpb-jp
   course: cstrc
+  isFinished: false
 addresses:
   github: https://github.com/bellsatu
   linkedin: https://www.linkedin.com/in/isabel-saturnino-96a2a22ba

@@ -8,7 +8,8 @@
     "build": "astro build",
     "postbuild": "pagefind --site dist/",
     "preview": "astro preview",
-    "previewpf": "astro build && npm run postbuild && astro preview",
+    "buildpreview": "astro build && astro preview",
+    "buildpreviewpf": "astro build && npm run postbuild && astro preview",
     "astro": "astro"
   },
   "dependencies": {

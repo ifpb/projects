@@ -1,5 +1,4 @@
 ---
-id: 20011025083
 name:
   compact: Flaviano Flauber
   full: Flaviano Flauber de Lira Marinho

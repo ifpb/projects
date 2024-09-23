@@ -1,5 +1,4 @@
 ---
-id: 20011013081
 name:
   compact: Rimenes Ribeiro
   full: Rimenes Farias Ribeiro
@@ -14,5 +13,6 @@ addresses:
   github: https://github.com/rimenes
   linkedin: https://www.linkedin.com/in/rimenes/
   twitter: https://twitter.com/rimenes
+  homepage: https://rimenesribeiro.com/
   email: rima@rimenesribeiro.com
 ---

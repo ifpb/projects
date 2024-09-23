@@ -4,6 +4,7 @@ description: Este projeto é uma aplicação web simples que permite aos usuári
 category:
   type: subject
   subject: dw
+  period: 4
   semester: 2024.1
   course: cstrc
   campus: ifpb-jp
@@ -12,7 +13,7 @@ tags:
   - css
   - html
 addresses:
-  preview: https://raw.githubusercontent.com/adalbertorosendoo/Projeto-DW/main/Projeto/transferir.png
+  preview: https://raw.githubusercontent.com/adalbertorosendoo/Projeto-DW/main/preview.png
   repository: https://github.com/adalbertorosendoo/Projeto-DW
 owners:
   - 20211380007

@@ -1,5 +1,4 @@
 ---
-id: 20072370801
 name:
   compact: Daniel Cardoso
   full: Daniel Fernandes Vilar Cardoso

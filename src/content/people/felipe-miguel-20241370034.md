@@ -1,5 +1,4 @@
 ---
-id: 20241370034
 name:
   compact: Felipe Miguel
   full: Felipe Miguel da Costa Andrade

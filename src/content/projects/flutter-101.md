@@ -7,6 +7,7 @@ addresses:
 category:
   type: subject
   subject: pdm
+  period: 5
   semester: 2024.1
   course: cstsi
   campus: ifpb-jp

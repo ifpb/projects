@@ -9,21 +9,25 @@ export type ProjectCategory =
   | ResearchProject
   | ExtensionProject
   | OpenSourceProject;
+
 export type Professor = z.infer<typeof professorOccupation>;
 export type Employee = z.infer<typeof employeeOccupation>;
 export type Student = z.infer<typeof studentOccupation>;
 export type Occupation = Student | Professor | Employee;
 
+export type Address = z.infer<typeof addresses>;
+
 const id = z.number().refine((num) => {
   const length = num.toString().length;
 
-  return [12, 11, 7].includes(length);
+  return [12, 11, 7, 6].includes(length);
 });
 
 export const campi = {
   'ifpb-jp': 'João Pessoa',
   'ifpb-cg': 'Campina Grande',
   'ifpb-gb': 'Guarabira',
+  'ifpb-cz': 'Cajazeiras',
   reitoria: 'Reitoria',
 };
 
@@ -31,6 +35,7 @@ export const abbreviationCourses = [
   'cmpti',
   'csbee',
   'csbes',
+  'cstads',
   'cstrc',
   'cstsi',
   'cstt',
@@ -46,6 +51,7 @@ const course = z.enum([...abbreviationCourses]);
 
 const addresses = z.object({
   github: z.string().url().optional(),
+  gitlab: z.string().url().optional(),
   linkedin: z.string().url().optional(),
   homepage: z.string().optional(),
   twitter: z.string().url().optional(),
@@ -54,7 +60,13 @@ const addresses = z.object({
   stackoverflow: z.string().url().optional(),
   lattes: z.string().url().optional(),
   researchgate: z.string().url().optional(),
+  orcid: z.string().url().optional(),
+  googleScholar: z.string().url().optional(),
+  webOfScience: z.string().url().optional(),
   instagram: z.string().url().optional(),
+  tiktok: z.string().url().optional(),
+  youtube: z.string().url().optional(),
+  twitch: z.string().url().optional(),
   email: z.string().email().optional(),
 });
 
@@ -76,7 +88,7 @@ const studentOccupation = z.object({
   type: z.literal('student'),
   campus,
   course,
-  isFinished: z.boolean().optional(),
+  isFinished: z.boolean(),
 });
 
 // project category
@@ -87,10 +99,11 @@ const projectCategory = z.object({
 const subjectProjectCategory = projectCategory.extend({
   type: z.literal('subject'),
   subject: z.string(),
+  period: z.number(),
   semester: z.number().refine((value) => {
-    const regex = /^\d{4}\.[12]$/;
+    const regex = /^\d{4}(\.[12])?$/;
 
-    return regex.test(value.toFixed(1));
+    return regex.test(String(value));
   }),
   course,
   campus,
@@ -130,7 +143,7 @@ const courseCollection = defineCollection({
 
 const peopleCollection = defineCollection({
   schema: z.object({
-    id,
+    id: id.optional(),
     name: z.object({
       compact: z.string(),
       full: z.string(),
@@ -140,9 +153,10 @@ const peopleCollection = defineCollection({
       z.union([professorOccupation, employeeOccupation, studentOccupation])
     ),
     addresses: addresses.extend({
-      github: z.string().url(),
       linkedin: z.string().url(),
+      github: z.string().url().optional(),
       projects: z.string().optional(),
+      figma: z.string().optional(),
     }),
   }),
 });

@@ -1,5 +1,4 @@
 ---
-id: 20121370415
 name:
   compact: Evandro Macedo
   full: Evandro Henrique Cordeiro de Macedo
@@ -15,4 +14,6 @@ addresses:
   linkedin: https://www.linkedin.com/in/evandrohcm
   twitter: https://twitter.com/evandromacedo_
   email: evandro.hcm@gmail.com
+  facebook: https://facebook.com/macedoevandro
+  instagram: https://www.instagram.com/evan.macedo
 ---

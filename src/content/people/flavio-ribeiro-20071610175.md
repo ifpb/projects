@@ -1,5 +1,4 @@
 ---
-id: 20071610175
 name:
   compact: Flavio Ribeiro
   full: Flavio Ribeiro Nogueira Barbosa

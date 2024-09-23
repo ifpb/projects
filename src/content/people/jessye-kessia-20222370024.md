@@ -1,5 +1,4 @@
 ---
-id: 20222370024
 name:
   compact: Jessye Késsia
   full: Jessye Késsia de Carvalho Pereira
@@ -9,6 +8,7 @@ occupations:
     type: student
     campus: ifpb-jp
     course: cstsi
+    isFinished: false
 addresses:
   github: https://github.com/JessyeKessia
   linkedin: https://www.linkedin.com/in/jessyepereira/

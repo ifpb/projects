@@ -1,5 +1,4 @@
 ---
-id: 20162370005
 name:
   compact: Larissa Gusmão
   full: Larissa de Sousa Moreira Gusmão

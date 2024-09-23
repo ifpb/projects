@@ -1,5 +1,4 @@
 ---
-id: 20241370016
 name:
   compact: Alexandre Ferreira
   full: Alexandre Ferreira da silva neto
@@ -9,6 +8,7 @@ occupations:
   type: student
   campus: ifpb-jp
   course: cstsi
+  isFinished: false
 addresses:
   email: alexandre.fsnt@gmail.com
   github: https://github.com/Alexandre-Ferreira01

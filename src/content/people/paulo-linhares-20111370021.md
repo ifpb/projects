@@ -1,5 +1,4 @@
 ---
-id: 20111370021
 name:
   compact: Paulo Linhares
   full: Paulo Virgílio Gomes Linhares Neto

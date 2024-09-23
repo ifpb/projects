@@ -1,5 +1,4 @@
 ---
-id: 20222370020
 name:
   compact: Rafael Limeira
   full: Rafael Limeira de Castro Bueno
@@ -9,6 +8,7 @@ occupations:
     type: student
     campus: ifpb-jp
     course: cstsi
+    isFinished: false
 addresses:
   github: https://github.com/buenorafa/
   linkedin: https://www.linkedin.com/in/rafaelcabueno/

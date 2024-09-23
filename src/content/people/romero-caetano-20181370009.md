@@ -1,5 +1,4 @@
 ---
-id: 20181370009
 name:
   compact: Romero Caetano
   full: Romero Caetano Reis Junior
@@ -9,6 +8,7 @@ occupations:
   type: student
   campus: ifpb-jp
   course: cstsi
+  isFinished: false
 addresses:
   github: https://github.com/RomeroCaetano
   linkedin: https://www.linkedin.com/in/romero-caetano/

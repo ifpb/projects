@@ -1,5 +1,4 @@
 ---
-id: 20222370023
 name:
   compact: Raiza Andrade
   full: Raiza Andrade de Freitas Tomazoni
@@ -9,6 +8,7 @@ occupations:
     type: student
     campus: ifpb-jp
     course: cstsi
+    isFinished: false
 addresses:
   github: https://github.com/raizaft
   linkedin: https://www.linkedin.com/in/raizatomazoni/

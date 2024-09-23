@@ -1,5 +1,4 @@
 ---
-id: 20121370547
 name:
   compact: Gleydson Tavares
   full: Gleydson da Silva Tavares

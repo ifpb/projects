@@ -1,7 +1,46 @@
 import type { CollectionEntry } from 'astro:content';
-import type { Student } from '@/content/config';
+import type { Student, Occupation } from '@/content/config';
 import { getCollection } from 'astro:content';
-import { getProjectsByPerson } from './projects';
+import { getProjectsByPerson, isSubjectProject } from './projects';
+import {
+  getCourseByAbbreviation,
+  getFirstCourseByPeople,
+  getSubjectByProject,
+} from './courses';
+
+export function getPersonId(person: CollectionEntry<'people'>) {
+  if (isStudent(person)) {
+    return person.data.occupations
+      .filter((Occupation) => Occupation.type === 'student')
+      .at(-1).id;
+  } else {
+    return person.data.occupations.at(-1).id;
+  }
+}
+
+export function getOccupationId(occupation: Occupation) {
+  if (occupation.type === 'student') {
+    const { course: abbreviation } = occupation;
+
+    const course = getCourseByAbbreviation(abbreviation);
+
+    if (
+      ['Técnico Integrado ao Médio', 'Mestrado'].includes(
+        course.data.level.compact
+      )
+    ) {
+      return String(occupation.id).slice(0, 4);
+    } else {
+      const year = String(occupation.id).slice(0, 4);
+
+      const semester = String(occupation.id).slice(4, 5);
+
+      return `${year}.${semester}`;
+    }
+  } else {
+    return String(occupation.id);
+  }
+}
 
 export function isStudent(person: CollectionEntry<'people'>) {
   return person.data.occupations.some(
@@ -15,44 +54,92 @@ export function isProfessor(person: CollectionEntry<'people'>) {
   );
 }
 
-export function isFinished(person: CollectionEntry<'people'>) {
-  return person.data.occupations.some(
-    (occupation: Student) => occupation?.isFinished === true
-  );
-}
-
-export function getStudentSemesterId(id: number) {
-  const year = String(id).slice(0, 4);
-  const semester = String(id).slice(4, 5);
-
-  return Number(`${year}.${semester}`);
-}
-
-function getFirstSemesterCourseId(student: CollectionEntry<'people'>) {
-  if (isStudent(student)) {
-    const firstId = student.data.occupations
-      .filter((occupation) => occupation.type === 'student')
-      .map((course) => course.id)
-      .sort()[0];
-
-    return firstId;
-  }
+export function isOnlyProfessor(person: CollectionEntry<'people'>) {
+  return isProfessor(person) && !isStudent(person);
 }
 
 function hasPersonId(person: CollectionEntry<'people'>, id: number) {
   return person.data.occupations.some((occupation) => occupation.id === id);
 }
 
-function hasFinishedSomeCourse(person: CollectionEntry<'people'>) {
+export function isFinishedSomeCourse(person: CollectionEntry<'people'>) {
   return person.data.occupations.some(
     (occupation: Student) => occupation.isFinished
   );
 }
 
-async function hasProjects(person: CollectionEntry<'people'>) {
+export function hasHomepage(person: CollectionEntry<'people'>) {
+  return !!person.data.addresses.homepage;
+}
+
+export function hasFigma(person: CollectionEntry<'people'>) {
+  return !!person.data.addresses.figma;
+}
+
+export function hasResearchGate(person: CollectionEntry<'people'>) {
+  return !!person.data.addresses.researchgate;
+}
+
+export async function hasProjects(person: CollectionEntry<'people'>) {
   const projects = await getProjectsByPerson(person);
 
   return !!projects.length;
+}
+
+export async function getStudentTags(person: CollectionEntry<'people'>) {
+  const tags = [];
+
+  if (isStudent(person)) {
+    const courseOccupations = person.data.occupations.filter(
+      (occupation) => occupation.type === 'student'
+    );
+
+    const courses = courseOccupations.map((occupation) => occupation.course);
+
+    const courseEntries = courseOccupations.map((occupation) =>
+      getOccupationId(occupation)
+    );
+
+    const courseLevels = courseOccupations
+      .map((occupation) => {
+        const course = getCourseByAbbreviation(occupation.course);
+
+        return course.data.level.compact.split(' ')[0].toLocaleLowerCase();
+      })
+      .filter((level, index, self) => self.indexOf(level));
+
+    const coursesByEntry = courseEntries.map(
+      (courseEntry, index) => `${courses[index]}-${courseEntry}`
+    );
+
+    const subjects = (await getProjectsByPerson(person))
+      .filter((project) => isSubjectProject(project))
+      .map((project) => getSubjectByProject(project));
+
+    tags.push(
+      'student',
+      ...courses,
+      ...courseEntries,
+      ...courseLevels,
+      ...coursesByEntry,
+      ...subjects
+    );
+  }
+
+  if (isFinishedSomeCourse(person)) {
+    tags.push('egresso');
+
+    const courses = person.data.occupations
+      .filter((occupation: Student) => occupation.isFinished)
+      .map((occupation: Student) => [
+        `egresso-${occupation.course}-${occupation.campus.split('-')[1]}`,
+        `egresso-${occupation.course}`,
+      ]);
+
+    tags.push(...courses.flat());
+  }
+
+  return tags;
 }
 
 export async function getPersonTags(person: CollectionEntry<'people'>) {
@@ -64,29 +151,25 @@ export async function getPersonTags(person: CollectionEntry<'people'>) {
     tags.push('projetos');
   }
 
-  if (hasFinishedSomeCourse(person)) {
-    tags.push('egresso');
+  if (hasHomepage(person)) {
+    tags.push('homepage');
   }
 
-  const courses = person.data.occupations
-    .filter((occupation) => occupation.type === 'student')
-    .map((occupation) => occupation.course);
+  if (hasFigma(person)) {
+    tags.push('figma');
+  }
 
-  const semesters = person.data.occupations
-    .filter((occupation) => occupation.type === 'student')
-    .map((occupation) => String(getStudentSemesterId(occupation.id)));
-
-  const coursesBySemester = semesters.map(
-    (semester, index) => `${courses[index]}-${semester}`
-  );
-
-  if (isStudent(person)) {
-    tags.push('aluno', ...courses, ...semesters, ...coursesBySemester);
+  if (hasResearchGate(person)) {
+    tags.push('researchgate');
   }
 
   if (isProfessor(person)) {
     tags.push('professor');
   }
+
+  const studentTags = await getStudentTags(person);
+
+  tags.push(...studentTags);
 
   tags.sort();
 
@@ -98,7 +181,7 @@ async function getPeopleTagsMap(people: CollectionEntry<'people'>[]) {
     people.map<Promise<[number, string[]]>>(async (person) => {
       const tags = await getPersonTags(person);
 
-      return [person.data.id, tags];
+      return [getPersonId(person), tags];
     })
   );
 
@@ -112,7 +195,7 @@ export function getPersonTagGroups(person: CollectionEntry<'people'>) {
 
   const semesters = person.data.occupations
     .filter((occupation) => occupation.type === 'student')
-    .map((course) => getStudentSemesterId(course.id));
+    .map((course) => getOccupationId(course));
 
   const coursesBySemester = semesters.map(
     (semester, index) => `${courses[index]}-${semester}`
@@ -132,13 +215,31 @@ export function getPersonTagGroups(person: CollectionEntry<'people'>) {
   return tags;
 }
 
+export async function getAllStudentTags() {
+  const people = await getCollection('people');
+
+  const studentTags = await Promise.all(
+    people.map(async (person) => {
+      return getStudentTags(person);
+    })
+  );
+
+  const repeatedTags = studentTags.flat();
+
+  const uniqueTags = [...new Set(repeatedTags)];
+
+  uniqueTags.sort();
+
+  return uniqueTags;
+}
+
 export async function getAllPersonTags() {
   const people = await getCollection('people');
 
   const peopleTags = await getPeopleTagsMap(people);
 
   const repeatedTags = people.reduce((acc: string[], person) => {
-    const tags = peopleTags.get(person.data.id);
+    const tags = peopleTags.get(getPersonId(person));
 
     return [...acc, ...tags];
   }, []);
@@ -182,30 +283,51 @@ function personRank(person: CollectionEntry<'people'>) {
     },
     isFinished: {
       value: 2,
-      status: hasFinishedSomeCourse(person),
+      status: isFinishedSomeCourse(person),
     },
-    weightedId: {
-      value: isStudent(person)
-        ? 1000 / getStudentSemesterId(getFirstSemesterCourseId(person))
-        : 1,
-      status: true,
-    },
-    hasTwitter: {
-      value: 1,
-      status: !!person.data.addresses.twitter,
-    },
-    //TODO countCourses 0.2
+    // hasHomepage: {
+    //   value: 1,
+    //   status: !!person.data.addresses.homepage,
+    // },
   };
 
   let rank = Object.values(weights).reduce((acc, weight) => {
     return acc + Number(!!Number(weight.status)) * weight.value;
   }, 0);
 
-  if (isProfessor(person) && hasFinishedSomeCourse(person)) {
+  if (isProfessor(person) && isFinishedSomeCourse(person)) {
     rank -= 1;
   }
 
   return rank;
+}
+
+const getSortId = (person: CollectionEntry<'people'>) =>
+  isOnlyProfessor(person)
+    ? 99999
+    : Number(String(getPersonId(person)).substring(0, 6));
+
+function sortPeopleByTag(people: CollectionEntry<'people'>[], sortTag: string) {
+  const sortPeopleByTag = (
+    a: CollectionEntry<'people'>,
+    b: CollectionEntry<'people'>
+  ) => {
+    if (
+      /\w+-\d{4}(\.\d)?/.test(sortTag) ||
+      ['professor', 'researchgate'].includes(sortTag)
+    ) {
+      return a.data.name.compact.localeCompare(b.data.name.compact);
+    }
+
+    return (
+      Number(isOnlyProfessor(a)) - Number(isOnlyProfessor(b)) ||
+      getSortId(a) - getSortId(b) ||
+      getFirstCourseByPeople(a).localeCompare(getFirstCourseByPeople(b)) ||
+      a.data.name.compact.localeCompare(b.data.name.compact)
+    );
+  };
+
+  people.sort(sortPeopleByTag);
 }
 
 function sortPeople(
@@ -213,7 +335,10 @@ function sortPeople(
   b: CollectionEntry<'people'>
 ) {
   return (
-    personRank(b) - personRank(a) ||
+    // personRank(b) - personRank(a) ||
+    Number(isOnlyProfessor(a)) - Number(isOnlyProfessor(b)) ||
+    getSortId(a) - getSortId(b) ||
+    getFirstCourseByPeople(a).localeCompare(getFirstCourseByPeople(b)) ||
     a.data.name.compact.localeCompare(b.data.name.compact)
   );
 }
@@ -251,12 +376,12 @@ export async function getPeopleByTag(tag: string) {
   const peopleTags = await getPeopleTagsMap(people);
 
   const filteredPeople = people.filter((person) => {
-    const tags = peopleTags.get(person.data.id);
+    const tags = peopleTags.get(getPersonId(person));
 
     return tags.includes(tag);
   });
 
-  filteredPeople.sort(sortPeople);
+  sortPeopleByTag(filteredPeople, tag);
 
   return filteredPeople;
 }

@@ -1,5 +1,4 @@
 ---
-id: 1948179
 name:
   compact: Ruan Delgado
   full: Ruan Delgado Gomes
@@ -11,5 +10,9 @@ occupations:
 addresses:
   github: https://github.com/ruandg
   linkedin: https://www.linkedin.com/in/ruan-delgado-gomes-52702b22/
+  researchgate: https://www.researchgate.net/profile/Ruan-Gomes
+  lattes: http://lattes.cnpq.br/0944963449027456
+  email: ruan.gomes@ifpb.edu.br
   twitter: https://twitter.com/ruandg
+  homepage: https://ruandg.github.io/
 ---

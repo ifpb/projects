@@ -1,5 +1,4 @@
 ---
-id: 20231370020
 name:
   compact: Ananda Guedes
   full: Ananda Guedes do Ó
@@ -9,6 +8,7 @@ occupations:
   type: student
   campus: ifpb-jp
   course: cstsi
+  isFinished: false
 addresses:
   github: https://github.com/agu3des
   linkedin: https://www.linkedin.com/in/ananda-guedes/

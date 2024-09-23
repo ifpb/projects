@@ -8,6 +8,7 @@ addresses:
 category:
   type: subject
   subject: dw
+  period: 4
   semester: 2024.1
   course: cstrc
   campus: ifpb-jp

@@ -1,5 +1,4 @@
 ---
-id: 20052370210
 name:
   compact: Nielson Rolim
   full: Nielson Dias de Pontes Sobreira Rolim

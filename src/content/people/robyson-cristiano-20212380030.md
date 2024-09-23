@@ -1,5 +1,4 @@
 ---
-id: 20212380030
 name:
   compact: Robyson Cristiano
   full: Robyson Cristiano Matias
@@ -9,6 +8,7 @@ occupations:
   type: student
   campus: ifpb-jp
   course: cstrc
+  isFinished: false
 addresses:
   github: https://github.com/yWestSide
   linkedin: https://www.linkedin.com/in/robyson-cristiano-9ab961244/

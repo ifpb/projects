@@ -7,6 +7,7 @@ addresses:
 category:
   type: subject
   subject: asa
+  period: 4
   semester: 2023.1
   course: cstrc
   campus: ifpb-jp

@@ -1,5 +1,4 @@
 ---
-id: 20241370014
 name:
   compact: Eryk Oliveira
   full: Eryk de Oliveira Candido

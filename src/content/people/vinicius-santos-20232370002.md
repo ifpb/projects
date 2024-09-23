@@ -1,5 +1,4 @@
 ---
-id: 20232370002
 name:
   compact: Vinicius Santos
   full: Vinicius da Silva Santos

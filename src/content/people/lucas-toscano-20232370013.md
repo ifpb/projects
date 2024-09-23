@@ -1,5 +1,4 @@
 ---
-id: 20232370013
 name:
   compact: Lucas Toscano
   full: Lucas Emanuel Araújo Toscano

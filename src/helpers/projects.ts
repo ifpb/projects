@@ -7,9 +7,17 @@ export function isSubjectProject(project: CollectionEntry<'projects'>) {
   return project.data.category.type === 'subject';
 }
 
+export function isResearchProject(project: CollectionEntry<'projects'>) {
+  return project.data.category.type === 'research';
+}
+
+export function isExtensionProject(project: CollectionEntry<'projects'>) {
+  return project.data.category.type === 'extension';
+}
+
 export function getProjectId(project: CollectionEntry<'projects'>) {
   return project.data.addresses.repository
-    .split('github.com/')
+    .split(/(github|gitlab).com\//)
     .at(-1)
     .replace('/', '-');
 }
@@ -18,19 +26,32 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
   if (isSubjectProject(project)) {
     const {
       data: {
-        category: { subject, semester, course, campus },
+        category: { type, subject, semester, course, campus },
+        addresses: { template },
         tags,
       },
-    } = project as { data: { category: SubjectProject; tags: string[] } };
+    } = project as {
+      data: {
+        category: SubjectProject;
+        tags: string[];
+        addresses: { template?: string };
+      };
+    };
 
-    const projectTags = [
-      ...tags,
-      subject,
-      `${subject}-${semester}`,
-      `${course}-${campus}`,
-    ];
+    const projectTags = tags;
 
     projectTags.sort();
+
+    if (template) {
+      projectTags.unshift('figma');
+    }
+
+    projectTags.unshift(
+      type,
+      subject,
+      `${subject}-${semester}`,
+      `${course}-${campus.split('-')[1]}`
+    );
 
     return projectTags;
   } else {
@@ -38,12 +59,19 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
       data: {
         tags,
         category: { type, campus },
+        addresses: { template },
       },
     } = project;
 
-    const projectTags = [...tags, type, campus];
+    const projectTags = tags;
 
     projectTags.sort();
+
+    if (template) {
+      projectTags.unshift('figma');
+    }
+
+    projectTags.unshift(type, campus);
 
     return projectTags;
   }
@@ -127,7 +155,24 @@ function sortProjects(
   a: CollectionEntry<'projects'>,
   b: CollectionEntry<'projects'>
 ) {
-  return a.data.name.localeCompare(b.data.name);
+  const hasPreview = (project: CollectionEntry<'projects'>) =>
+    !!project.data.addresses.preview;
+
+  const getPeriod = (project: CollectionEntry<'projects'>) =>
+    project.data.category.type === 'subject' && project.data.category.period;
+
+  const getSemester = (project: CollectionEntry<'projects'>) =>
+    project.data.category.type === 'subject' && project.data.category.semester;
+
+  return (
+    Number(isResearchProject(b)) - Number(isResearchProject(a)) ||
+    Number(isExtensionProject(b)) - Number(isExtensionProject(a)) ||
+    Number(isSubjectProject(a)) - Number(isSubjectProject(b)) ||
+    Number(hasPreview(b)) - Number(hasPreview(a)) ||
+    getPeriod(b) - getPeriod(a) ||
+    getSemester(a) - getSemester(b) ||
+    a.data.name.localeCompare(b.data.name)
+  );
 }
 
 export async function getProjects() {

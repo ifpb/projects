@@ -7,6 +7,7 @@ addresses:
 category:
   type: subject
   subject: pob
+  period: 4
   semester: 2023.2
   course: cstsi
   campus: ifpb-jp

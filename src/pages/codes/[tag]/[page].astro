@@ -1,11 +1,9 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import ProjectCard from '@/components/ProjectCard.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import ProjectGrid from '@/components/ProjectGrid.astro';
 import { getAllProjectTags, getProjectsByTag } from '@/helpers/projects';
-import PaginationIndex from '@/components/PaginationIndex.astro';
 import { PAGE_SIZE } from '@/consts';
-import type { Propos } from '@/layouts/FilterLayout.astro';
 
 type ProjectsWithPeople = CollectionEntry<'projects'> & {
   people: CollectionEntry<'people'>[];
@@ -43,19 +41,24 @@ export async function getStaticPaths({ paginate }) {
 }
 
 const { page }: Props = Astro.props;
-const { tag } = Astro.params;
+let { tag } = Astro.params;
+
+const formatPageTitle = (tag: string) => {
+  const types = {
+    subject: 'Disciplina',
+    research: 'Pesquisa',
+    extension: 'Extensão',
+    'open source': 'Open Source',
+  };
+
+  const pageTitle = types[tag] || tag.toUpperCase();
+
+  return `Projetos de ${pageTitle}`;
+};
+
+const pageTitle = formatPageTitle(tag);
 ---
 
-<BaseLayout pageTitle={`Projetos de ${tag.toUpperCase()}`}>
-  <div
-    class="grid justify-items-stretch gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-    data-pagefind-ignore
-  >
-    {page.data.map((project) => <ProjectCard project={project} />)}
-  </div>
-  {
-    page.lastPage > 1 && (
-      <PaginationIndex page={page} type="codes" index={tag} />
-    )
-  }
+<BaseLayout pageTitle={pageTitle}>
+  <ProjectGrid page={page} type="codes" index={tag} />
 </BaseLayout>

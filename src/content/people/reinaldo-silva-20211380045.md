@@ -1,5 +1,4 @@
 ---
-id: 20211380045
 name:
   compact: Reinaldo Silva
   full: José Reinaldo da Silva Correia
@@ -9,6 +8,7 @@ occupations:
   type: student
   campus: ifpb-jp
   course: cstrc
+  isFinished: true
 addresses:
   github: https://github.com/mr-reinaldo
   linkedin: https://www.linkedin.com/in/jreinaldosilva
