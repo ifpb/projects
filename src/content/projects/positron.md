@@ -1,6 +1,6 @@
 ---
-name: WAVE
-description: Gerador de cargas múltiplas para experimentação em redes de computadores.
+name: POSITRON
+description: Efficient Allocation Scheme for Multifunctional IoT Devices.
 addresses:
   preview: https://raw.githubusercontent.com/ifpb/positron/refs/heads/main/topology.jpg
   repository: https://github.com/ifpb/positron
