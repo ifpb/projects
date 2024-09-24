@@ -2,7 +2,8 @@
 name:
   compact: Lauro Stephan
   full: Lauro Stephan Lopes do Nascimento
-avatar: https://github.com/steph4nn.png
+avatar:
+  default: https://github.com/steph4nn.png
 occupations:
 - id: 20231370026
   type: student

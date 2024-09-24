@@ -2,7 +2,8 @@
 name:
   compact: Jonathas Lacerda
   full: Jonathas Santos de Lacerda
-avatar: https://github.com/jonathaslacerda.png
+avatar:
+  default: https://github.com/jonathaslacerda.png
 occupations:
 - id: 20082370332
   type: student

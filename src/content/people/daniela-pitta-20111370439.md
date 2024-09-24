@@ -2,7 +2,8 @@
 name:
   compact: Daniela Pitta
   full: Daniela Pitta de Jesus
-avatar: https://github.com/dlpitta.png
+avatar:
+  default: https://github.com/dlpitta.png
 occupations:
 - id: 20111370439
   type: student

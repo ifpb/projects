@@ -2,7 +2,8 @@
 name:
   compact: Felipe Macedo
   full: Felipe Antonio Ramalho Macedo
-avatar: https://github.com/felipeifpb.png
+avatar:
+  default: https://github.com/felipeifpb.png
 occupations:
 - id: 20232370035
   type: student

@@ -2,7 +2,8 @@
 name:
   compact: Danilo Lucena
   full: Danilo Carlos Gouveia de Lucena
-avatar: https://github.com/ryganon.png
+avatar:
+  default: https://github.com/ryganon.png
 occupations:
 - id: 20042037140
   type: student

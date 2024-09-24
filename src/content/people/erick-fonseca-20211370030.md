@@ -2,7 +2,8 @@
 name:
   compact: Erick Fonseca
   full: Erick Fonseca Martins Peixoto
-avatar: https://github.com/Erickfonseca1.png
+avatar:
+  default: https://github.com/Erickfonseca1.png
 occupations:
 - id: 20211370030
   type: student

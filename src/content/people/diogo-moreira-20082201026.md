@@ -2,7 +2,8 @@
 name:
   compact: Diogo Moreira
   full: Diogo Dantas Moreira
-avatar: https://github.com/diogomoreira.png
+avatar:
+  default: https://github.com/diogomoreira.png
 occupations:
 - id: 20082201026
   type: student

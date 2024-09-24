@@ -2,7 +2,8 @@
 name:
   compact: Gustavo Wagner
   full: Gustavo Wagner Diniz Mendes
-avatar: https://github.com/gugawag.png
+avatar:
+  default: https://github.com/gugawag.png
 occupations:
 - id: 2254024
   type: professor

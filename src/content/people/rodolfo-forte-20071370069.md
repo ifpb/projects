@@ -2,7 +2,8 @@
 name:
   compact: Rodolfo Forte
   full: Rodolfo Gonçalves de Sousa Forte
-avatar: https://github.com/Tschis.png
+avatar:
+  default: https://github.com/Tschis.png
 occupations:
 - id: 20071370069
   type: student

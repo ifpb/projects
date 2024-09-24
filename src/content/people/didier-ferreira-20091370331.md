@@ -2,7 +2,8 @@
 name:
   compact: Didier Ferreira
   full: Didier Braz Ferreira
-avatar: https://github.com/didierpg.png
+avatar:
+  default: https://github.com/didierpg.png
 occupations:
 - id: 20091370331
   type: student

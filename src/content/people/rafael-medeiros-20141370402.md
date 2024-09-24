@@ -2,7 +2,8 @@
 name:
   compact: Rafael Medeiros
   full: Rafael Figueirêdo de Medeiros
-avatar: https://github.com/rafaelmedeirosjob.png
+avatar:
+  default: https://github.com/rafaelmedeirosjob.png
 occupations:
 - id: 20141370402
   type: student

@@ -2,7 +2,8 @@
 name:
   compact: Mariana Ludmilla
   full: Mariana Ludmilla de Lima Maroja Limeira
-avatar: https://github.com/ludmillamaroja.png
+avatar:
+  default: https://github.com/ludmillamaroja.png
 occupations:
 - id: 20201780010
   type: student

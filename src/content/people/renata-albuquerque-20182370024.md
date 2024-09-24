@@ -2,7 +2,8 @@
 name:
   compact: Renata Cardoso
   full: Renata Albuquerque Cardoso
-avatar: https://github.com/renataalbq.png
+avatar:
+  default: https://github.com/renataalbq.png
 occupations:
 - id: 20182370024
   type: student

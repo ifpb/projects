@@ -2,7 +2,8 @@
 name:
   compact: Matheus Rangel
   full: Matheus Ulysses Dantas Rangel
-avatar: https://github.com/matheusrangel.png
+avatar:
+  default: https://github.com/matheusrangel.png
 occupations:
 - id: 20102370286
   type: student

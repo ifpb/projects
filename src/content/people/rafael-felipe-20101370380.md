@@ -2,7 +2,8 @@
 name:
   compact: Rafael Figueiredo
   full: Rafael Felipe de Figueiredo Pereira
-avatar: https://github.com/rafaelmeli.png
+avatar:
+  default: https://github.com/rafaelmeli.png
 occupations:
 - id: 20101370380
   type: student

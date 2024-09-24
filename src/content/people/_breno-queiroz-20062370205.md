@@ -2,7 +2,8 @@
 name:
   compact: Breno Queiroz
   full: Breno Queiroz Vasconcelos de Souza
-avatar: https://github.com/BrenoQueirozOE.png
+avatar:
+  default: https://github.com/BrenoQueirozOE.png
 occupations:
 - id: 20062370205
   type: student

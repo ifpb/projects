@@ -2,7 +2,8 @@
 name:
   compact: Flávio Henrique
   full: Flávio Henrique Santos de Albuquerque
-avatar: https://github.com/flaviorique10.png
+avatar:
+  default: https://github.com/flaviorique10.png
 occupations:
 - id: 20232370024
   type: student

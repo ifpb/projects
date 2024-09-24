@@ -2,7 +2,8 @@
 name:
   compact: Danilo Cavalcante
   full: Danilo Cavalcante Beuttenmuller
-avatar: https://github.com/danilocb21.png
+avatar:
+  default: https://github.com/danilocb21.png
 occupations:
 - id: 20221780026
   type: student

@@ -2,7 +2,8 @@
 name:
   compact: Gabriel Britto
   full: Gabriel Souto de Britto
-avatar: https://github.com/gabebritto.png
+avatar:
+  default: https://github.com/gabebritto.png
 occupations:
 - id: 20201370013
   type: student

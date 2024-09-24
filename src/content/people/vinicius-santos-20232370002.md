@@ -2,7 +2,8 @@
 name:
   compact: Vinicius Santos
   full: Vinicius da Silva Santos
-avatar: https://github.com/Viniciusantos2.png
+avatar:
+  default: https://github.com/Viniciusantos2.png
 occupations:
 - id: 20232370002
   type: student

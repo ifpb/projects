@@ -2,7 +2,8 @@
 name:
   compact: Lucas Nóbrega
   full: Lucas de Carvalho Vasconcelos Nóbrega
-avatar: https://github.com/lucascvasconcelos.png
+avatar:
+  default: https://github.com/lucascvasconcelos.png
 occupations:
 - id: 20151370367
   type: student

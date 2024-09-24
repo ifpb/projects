@@ -2,7 +2,8 @@
 name:
   compact: Leandro Almeida
   full: Leandro Cavalcanti de Almeida
-avatar: https://github.com/leandrocalmeida.png
+avatar:
+  default: https://github.com/leandrocalmeida.png
 occupations:
 - id: 20051380328
   type: student

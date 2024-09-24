@@ -2,7 +2,8 @@
 name:
   compact: Reinaldo Silva
   full: José Reinaldo da Silva Correia
-avatar: https://github.com/mr-reinaldo.png
+avatar:
+  default: https://github.com/mr-reinaldo.png
 occupations:
 - id: 20211380045
   type: student

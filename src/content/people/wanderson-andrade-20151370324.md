@@ -2,7 +2,8 @@
 name:
   compact: Wanderson Andrade
   full: Wanderson Izidro de Andrade
-avatar: https://github.com/AndradeWI.png
+avatar:
+  default: https://github.com/AndradeWI.png
 occupations:
 - id: 20151370324
   type: student

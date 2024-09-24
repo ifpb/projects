@@ -2,7 +2,8 @@
 name:
   compact: Willma Tayanne
   full: Willma Tayanne Costa da Silva
-avatar: https://github.com/WillmaTayanne.png
+avatar:
+  default: https://github.com/WillmaTayanne.png
 occupations:
 - id: 20192370017
   type: student

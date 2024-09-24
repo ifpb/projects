@@ -2,7 +2,8 @@
 name:
   compact: Gesoaldo Oliveira
   full: Gesoaldo Oliveira Guimarães
-avatar: https://github.com/gelguimaraes.png
+avatar:
+  default: https://github.com/gelguimaraes.png
 occupations:
 - id: 20171370010
   type: student

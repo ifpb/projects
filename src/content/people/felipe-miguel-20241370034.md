@@ -2,7 +2,8 @@
 name:
   compact: Felipe Miguel
   full: Felipe Miguel da Costa Andrade
-avatar: https://github.com/FelipeM1805.png
+avatar:
+  default: https://github.com/FelipeM1805.png
 occupations:
 - id: 20241370034
   type: student

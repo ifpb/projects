@@ -2,7 +2,8 @@
 name:
   compact: Gabriel Souza
   full: Gabriel de Souza Nascimento
-avatar: https://github.com/gabrielsndev.png
+avatar:
+  default: https://github.com/gabrielsndev.png
 occupations:
 - id: 20241370019
   type: student

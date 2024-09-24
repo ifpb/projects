@@ -2,7 +2,8 @@
 name:
   compact: Letícia Benício
   full: Letícia Benício Araújo
-avatar: https://github.com/leticiabenicio.png
+avatar:
+  default: https://github.com/leticiabenicio.png
 occupations:
 - id: 20212370043
   type: student

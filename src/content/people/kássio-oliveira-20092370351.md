@@ -2,7 +2,8 @@
 name:
   compact: Kássio Oliveira
   full: Kássio Kiarelly Soares de Oliveira
-avatar: https://github.com/kassiokiarelly.png
+avatar:
+  default: https://github.com/kassiokiarelly.png
 occupations:
 - id: 20092370351
   type: student

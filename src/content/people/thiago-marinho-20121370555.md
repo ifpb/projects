@@ -2,7 +2,8 @@
 name:
   compact: Thiago Marinho
   full: Thiago Figueiredo Costa Marinho
-avatar: https://github.com/fcmthiago.png
+avatar:
+  default: https://github.com/fcmthiago.png
 occupations:
 - id: 20121370555
   type: student

@@ -2,7 +2,8 @@
 name:
   compact: André Alencar
   full: André de Alencar Oliveira da Costa
-avatar: https://github.com/andreealencar.png
+avatar:
+  default: https://github.com/andreealencar.png
 occupations:
 - id: 20132370284
   type: student

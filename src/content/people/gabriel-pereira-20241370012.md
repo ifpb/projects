@@ -2,7 +2,8 @@
 name:
   compact: Gabriel Pereira
   full: Gabriel Pereira de Carvalho
-avatar: https://github.com/gabrielcarvalhowas.png
+avatar:
+  default: https://github.com/gabrielcarvalhowas.png
 occupations:
 - id: 20241370012
   type: student

@@ -2,7 +2,8 @@
 name:
   compact: Yohanna Cavalcanti
   full: Yohanna de Oliveira Cavalcanti
-avatar: https://github.com/8b1tz.png
+avatar:
+  default: https://github.com/8b1tz.png
 occupations:
 - id: 20191370003
   type: student

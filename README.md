@@ -11,7 +11,8 @@ O primeiro passo seria incluir o dados do aluno adicionando um arquivo seguindo 
 name:
   compact: Luiz Chaves
   full: Luiz Carlos Rodrigues Chaves
-avatar: https://github.com/luizchaves.png
+avatar:
+  default: https://github.com/luizchaves.png
 occupations:
 - id: 20051370420
   type: student
@@ -31,7 +32,7 @@ Vamos padronizar o `id` como sendo a sua matrícula do curso, ou a do IFPB no ca
 
 - `name.compact`
 - `name.full`
-- `avatar`
+- `avatar.default`
 - `occupations.$.id`
 - `occupations.$.type`
 - `occupations.$.campus`

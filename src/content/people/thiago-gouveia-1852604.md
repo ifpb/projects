@@ -2,7 +2,8 @@
 name:
   compact: Thiago Gouveia
   full: Thiago Gouveia da Silva
-avatar: https://i1.rgstatic.net/ii/profile.image/575803421593600-1514293641203_Q128/Thiago-Gouveia.jpg
+avatar:
+  default: https://i1.rgstatic.net/ii/profile.image/575803421593600-1514293641203_Q128/Thiago-Gouveia.jpg
 occupations:
 - id: 1852604
   type: professor

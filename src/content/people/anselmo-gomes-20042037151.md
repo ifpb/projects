@@ -2,7 +2,8 @@
 name:
   compact: Anselmo Gomes
   full: Anselmo Lacerda Gomes
-avatar: https://github.com/AnselmoLacerda.png
+avatar:
+  default: https://github.com/AnselmoLacerda.png
 occupations:
 - id: 20042037151
   type: student

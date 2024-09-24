@@ -2,7 +2,8 @@
 name:
   compact: Marcelo Júnior
   full: Marcelo Freitas Araujo Júnior
-avatar: https://github.com/JrMarcello.png
+avatar:
+  default: https://github.com/JrMarcello.png
 occupations:
 - id: 20101370320
   type: student

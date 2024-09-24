@@ -2,7 +2,8 @@
 name:
   compact: Marcus Antonius
   full: Marcus Antonius Virginio Farias de Queiroz
-avatar: https://github.com/marcusantoniusvfq.png
+avatar:
+  default: https://github.com/marcusantoniusvfq.png
 occupations:
 - id: 20061370325
   type: student

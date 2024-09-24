@@ -2,7 +2,8 @@
 name:
   compact: Ronaldo Filho
   full: Ronaldo Paulo da Silva Filho
-avatar: https://github.com/ronaldofillho.png
+avatar:
+  default: https://github.com/ronaldofillho.png
 occupations:
 - id: 20202370005
   type: student

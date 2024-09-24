@@ -2,7 +2,8 @@
 name:
   compact: Diógenes Hermínio
   full: Diógenes Augusto Fernandes Hermínio
-avatar: https://www.github.com/diofeher.png
+avatar:
+  default: https://www.github.com/diofeher.png
 occupations:
 - id: 20081370312
   type: student

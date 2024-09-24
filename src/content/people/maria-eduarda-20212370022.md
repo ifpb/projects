@@ -2,7 +2,8 @@
 name:
   compact: Maria Eduarda
   full: Maria Eduarda Vitorino
-avatar: https://github.com/vtrnduda.png
+avatar:
+  default: https://github.com/vtrnduda.png
 occupations:
 - id: 20212370022
   type: student

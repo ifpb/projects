@@ -2,7 +2,8 @@
 name:
   compact: Lucas Cavalcanti
   full: Lucas Cavalcanti Cruz
-avatar: https://github.com/lucasjop.png
+avatar:
+  default: https://github.com/lucasjop.png
 occupations:
 - id: 20041037095
   type: student

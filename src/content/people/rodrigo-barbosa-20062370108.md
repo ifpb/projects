@@ -2,7 +2,8 @@
 name:
   compact: Rodrigo Barbosa
   full: Rodrigo Barbosa Costa de Carvalho
-avatar: https://github.com/rodrigobarbosa.png
+avatar:
+  default: https://github.com/rodrigobarbosa.png
 occupations:
 - id: 20062370108
   type: student

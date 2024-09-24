@@ -2,7 +2,8 @@
 name:
   compact: Lucas Ferreira
   full: Lucas Ferreira de Araújo
-avatar: https://github.com/lucasfrosty.png
+avatar:
+  default: https://github.com/lucasfrosty.png
 occupations:
 - id: 20172370023
   type: student

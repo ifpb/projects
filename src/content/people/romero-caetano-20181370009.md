@@ -2,7 +2,8 @@
 name:
   compact: Romero Caetano
   full: Romero Caetano Reis Junior
-avatar: https://github.com/RomeroCaetano.png
+avatar:
+  default: https://github.com/RomeroCaetano.png
 occupations:
 - id: 20181370009
   type: student

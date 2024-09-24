@@ -2,7 +2,8 @@
 name:
   compact: Clodoaldo Tang
   full: Clodoaldo Tang
-avatar: https://github.com/Clodo0.png
+avatar:
+  default: https://github.com/Clodo0.png
 occupations:
 - id: 20241370028
   type: student

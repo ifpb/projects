@@ -2,7 +2,8 @@
 name:
   compact: Felipe Raimundo
   full: Felipe Oliveira Raimundo
-avatar: https://github.com/Felipejjjj.png
+avatar:
+  default: https://github.com/Felipejjjj.png
 occupations:
 - id: 20211780035
   type: student

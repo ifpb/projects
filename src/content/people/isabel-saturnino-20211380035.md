@@ -2,7 +2,8 @@
 name:
   compact: Isabel Saturnino
   full: Maria Isabel Saturnino Da Silva Pereira
-avatar: https://github.com/bellsatu.png
+avatar:
+  default: https://github.com/bellsatu.png
 occupations:
 - id: 20211380035
   type: student

@@ -2,7 +2,8 @@
 name:
   compact: Felipe Cartaxo
   full: Felipe Cartaxo de Freitas
-avatar: https://github.com/felipecartaxo.png
+avatar:
+  default: https://github.com/felipecartaxo.png
 occupations:
 - id: 20221370005
   type: student

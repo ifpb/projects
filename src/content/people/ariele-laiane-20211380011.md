@@ -2,7 +2,8 @@
 name:
   compact: Ariele Laiane
   full: Ariele Laiane da Silva Amaral
-avatar: https://github.com/arielelaiane2017.png
+avatar:
+  default: https://github.com/arielelaiane2017.png
 occupations:
 - id: 20211380011
   type: student

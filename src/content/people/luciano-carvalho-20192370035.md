@@ -2,7 +2,8 @@
 name:
   compact: Luciano Carvalho
   full: Luciano de Carvalho Souza Filho
-avatar: https://github.com/lukkerr.png
+avatar:
+  default: https://github.com/lukkerr.png
 occupations:
 - id: 20192370035
   type: student

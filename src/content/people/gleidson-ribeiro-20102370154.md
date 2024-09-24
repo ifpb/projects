@@ -2,7 +2,8 @@
 name:
   compact: Gleidson Ribeiro
   full: Gleidson de Sousa Ribeiro
-avatar: https://github.com/gleidsonxd.png
+avatar:
+  default: https://github.com/gleidsonxd.png
 occupations:
 - id: 20102370154
   type: student

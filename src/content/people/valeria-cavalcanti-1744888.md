@@ -2,7 +2,8 @@
 name:
   compact: Valéria Cavalcanti
   full: Valeria Maria Bezerra Cavalcanti Maciel
-avatar: https://github.com/valeriacavalcanti.png
+avatar:
+  default: https://github.com/valeriacavalcanti.png
 occupations:
 - id: 1744888
   type: professor

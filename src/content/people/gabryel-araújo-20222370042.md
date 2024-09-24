@@ -2,7 +2,8 @@
 name:
   compact: Gabryel Araújo
   full: Gabryel Araujo de Sousa Dias
-avatar: https://github.com/gabryel-araujo.png
+avatar:
+  default: https://github.com/gabryel-araujo.png
 occupations:
 - id: 20222370042
   type: student

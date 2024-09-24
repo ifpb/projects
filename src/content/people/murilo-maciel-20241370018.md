@@ -2,7 +2,8 @@
 name:
   compact: Murilo Maciel
   full: Murilo Maciel Rodrigues
-avatar: https://github.com/Muciri.png
+avatar:
+  default: https://github.com/Muciri.png
 occupations:
 - id: 20241370018
   type: student

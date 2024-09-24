@@ -2,7 +2,8 @@
 name:
   compact: Erisvaldo Gadelha
   full: Erisvaldo Gadelha Saraiva Junior
-avatar: https://github.com/erisvaldojunior.png
+avatar:
+  default: https://github.com/erisvaldojunior.png
 occupations:
 - id: 20061370180
   type: student

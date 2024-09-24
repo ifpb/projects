@@ -3,7 +3,8 @@ id: 20241370001
 name:
   compact: Matheus Morais
   full: Matheus Morais de Souza Lima
-avatar: https://github.com/MM2K24.png
+avatar:
+  default: https://github.com/MM2K24.png
 occupations:
 - id: 20241370001
   type: student

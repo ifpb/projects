@@ -2,7 +2,8 @@
 name:
   compact: Raphael Alves
   full: Raphael Medeiros Alves
-avatar: https://github.com/raphaelmedeiros.png
+avatar:
+  default: https://github.com/raphaelmedeiros.png
 occupations:
 - id: 20062370345
   type: student

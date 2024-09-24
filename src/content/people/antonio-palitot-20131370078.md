@@ -2,7 +2,8 @@
 name:
   compact: Antônio Palitot
   full: Antônio de Pádua Palitot Júnior
-avatar: https://github.com/jrpalitot.png
+avatar:
+  default: https://github.com/jrpalitot.png
 occupations:
 - id: 20131370078
   type: student

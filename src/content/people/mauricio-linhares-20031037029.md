@@ -2,7 +2,8 @@
 name:
   compact: Maurício Linhares
   full: Maurício Linhares de Aragão Junior
-avatar: https://github.com/mauricio.png
+avatar:
+  default: https://github.com/mauricio.png
 occupations:
 - id: 20031037029
   type: student

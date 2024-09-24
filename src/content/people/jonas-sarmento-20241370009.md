@@ -2,7 +2,8 @@
 name:
   compact: Jonas Sarmento
   full: Jonas Gabriel Sarmento de Figueiredo
-avatar: https://github.com/Jonasgabs.png
+avatar:
+  default: https://github.com/Jonasgabs.png
 occupations:
 - id: 20201720063
   type: student

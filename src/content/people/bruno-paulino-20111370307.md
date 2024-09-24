@@ -2,7 +2,8 @@
 name:
   compact: Bruno Paulino
   full: Bruno de Araújo Paulino
-avatar: https://github.com/brunojppb.png
+avatar:
+  default: https://github.com/brunojppb.png
 occupations:
 - id: 20111370307
   type: student

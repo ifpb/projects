@@ -148,7 +148,12 @@ const peopleCollection = defineCollection({
       compact: z.string(),
       full: z.string(),
     }),
-    avatar: z.string().url(),
+    avatar: z.object({
+      default: z.string().url(),
+      github: z.string().url().optional(),
+      researchgate: z.string().url().optional(),
+      lattes: z.string().url().optional(),
+    }),
     occupations: z.array(
       z.union([professorOccupation, employeeOccupation, studentOccupation])
     ),

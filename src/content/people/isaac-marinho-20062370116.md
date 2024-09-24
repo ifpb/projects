@@ -2,7 +2,8 @@
 name:
   compact: Isaac Marinho
   full: Isaac de Morais Marinho dos Santos
-avatar: https://github.com/isaacmarinho.png
+avatar:
+  default: https://github.com/isaacmarinho.png
 occupations:
 - id: 20062370116
   type: student

@@ -2,7 +2,8 @@
 name:
   compact: Joerverson Santos
   full: Joerverson Barbosa Santos
-avatar: https://github.com/Joeverson.png
+avatar:
+  default: https://github.com/Joeverson.png
 occupations:
 - id: 20132370420
   type: student

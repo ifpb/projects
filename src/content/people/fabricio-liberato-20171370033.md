@@ -2,7 +2,8 @@
 name:
   compact: Fabrício Liberato
   full: Fabricio Liberato da Silva
-avatar: https://github.com/FabricioLiber.png
+avatar:
+  default: https://github.com/FabricioLiber.png
 occupations:
 - id: 20171370033
   type: student

@@ -2,7 +2,8 @@
 name:
   compact: Rosberg Linhares
   full: Rosberg Linhares Lacerda
-avatar: https://github.com/rosberglinhares.png
+avatar:
+  default: https://github.com/rosberglinhares.png
 occupations:
 - id: 20032037057
   type: student

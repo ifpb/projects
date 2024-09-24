@@ -2,7 +2,8 @@
 name:
   compact: Larissa Gusmão
   full: Larissa de Sousa Moreira Gusmão
-avatar: https://github.com/larissamoreira.png
+avatar:
+  default: https://github.com/larissamoreira.png
 occupations:
 - id: 20162370005
   type: student

@@ -2,7 +2,8 @@
 name:
   compact: Flavio Ribeiro
   full: Flavio Ribeiro Nogueira Barbosa
-avatar: https://github.com/flavioribeiro.png
+avatar:
+  default: https://github.com/flavioribeiro.png
 occupations:
 - id: 20071610175
   type: student

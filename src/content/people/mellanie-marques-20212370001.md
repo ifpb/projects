@@ -2,7 +2,8 @@
 name:
   compact: Mellanie Marques
   full: Mellanie Marques Fideles de Sousa
-avatar: https://github.com/Mellanie-Marques.png
+avatar:
+  default: https://github.com/Mellanie-Marques.png
 occupations:
 - id: 20212370001
   type: student

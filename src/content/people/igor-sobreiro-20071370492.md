@@ -2,7 +2,8 @@
 name:
   compact: Igor Sobreiro
   full: Igor Dutra Sobreira
-avatar: https://github.com/igorsobreira.png
+avatar:
+  default: https://github.com/igorsobreira.png
 occupations:
 - id: 20071370492
   type: student

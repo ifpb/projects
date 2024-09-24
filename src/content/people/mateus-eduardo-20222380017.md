@@ -2,7 +2,8 @@
 name:
   compact: Mateus Eduardo
   full: Mateus Eduardo Silva Dos Santos
-avatar: https://github.com/l3l0ch.png
+avatar:
+  default: https://github.com/l3l0ch.png
 occupations:
 - id: 20222380017
   type: student

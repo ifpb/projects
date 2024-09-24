@@ -2,7 +2,8 @@
 name:
   compact: Clara Almeida
   full: Maria Clara Almeida Gomes Silva
-avatar: https://github.com/euclaraalmeida.png
+avatar:
+  default: https://github.com/euclaraalmeida.png
 occupations:
 - id: 20241370025
   type: student

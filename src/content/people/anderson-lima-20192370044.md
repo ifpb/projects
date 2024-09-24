@@ -2,7 +2,8 @@
 name:
   compact: Anderson Lima
   full: Anderson Lima
-avatar: https://github.com/lima-anderson.png
+avatar:
+  default: https://github.com/lima-anderson.png
 occupations:
 - id: 20192370044
   type: student

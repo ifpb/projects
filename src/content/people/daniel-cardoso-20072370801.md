@@ -2,7 +2,8 @@
 name:
   compact: Daniel Cardoso
   full: Daniel Fernandes Vilar Cardoso
-avatar: https://github.com/fvcdaniel.png
+avatar:
+  default: https://github.com/fvcdaniel.png
 occupations:
 - id: 20072370801
   type: student

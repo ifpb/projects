@@ -2,7 +2,8 @@
 name:
   compact: Felipe Rodrigues
   full: Felipe da Silva Rodrigues
-avatar: https://github.com/felipersdf.png
+avatar:
+  default: https://github.com/felipersdf.png
 occupations:
 - id: 20171370006
   type: student

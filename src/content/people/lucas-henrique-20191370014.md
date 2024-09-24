@@ -2,7 +2,8 @@
 name:
   compact: Lucas Henrique
   full: Lucas Henrique Serrano Soares
-avatar: https://github.com/lucashss88.png
+avatar:
+  default: https://github.com/lucashss88.png
 occupations:
 - id: 20191370014
   type: student

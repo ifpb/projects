@@ -2,7 +2,8 @@
 name:
   compact: Juliana Ferreira
   full: uliana Ferreira Cavalcante
-avatar: https://github.com/julianafer.png
+avatar:
+  default: https://github.com/julianafer.png
 occupations:
 - id: 20221370031
   type: student

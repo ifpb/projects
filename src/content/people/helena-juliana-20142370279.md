@@ -2,7 +2,8 @@
 name:
   compact: Helena Juliana
   full: Helena Juliana Barros Miguel
-avatar: https://github.com/HelenaJuliana.png
+avatar:
+  default: https://github.com/HelenaJuliana.png
 occupations:
 - id: 20142370279
   type: student

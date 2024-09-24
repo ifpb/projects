@@ -2,7 +2,8 @@
 name:
   compact: Matheus Sousa
   full: Matheus Pereira de Sousa
-avatar: https://github.com/MatheusSousa5068.png
+avatar:
+  default: https://github.com/MatheusSousa5068.png
 occupations:
 - id: 20221370007
   type: student

@@ -2,7 +2,8 @@
 name:
   compact: Gabriel Borsero
   full: Gabriel Borsero Estrela Bernardo
-avatar: https://github.com/borserog.png
+avatar:
+  default: https://github.com/borserog.png
 occupations:
 - id: 20181370004
   type: student

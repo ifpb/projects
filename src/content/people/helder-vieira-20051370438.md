@@ -2,7 +2,8 @@
 name:
   compact: Helder Vieira
   full: Helder Vieira da Silva
-avatar: https://github.com/HelderVieira.png
+avatar:
+  default: https://github.com/HelderVieira.png
 occupations:
 - id: 20051370241
   type: student

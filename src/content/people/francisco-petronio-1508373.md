@@ -2,8 +2,10 @@
 name:
   compact: Francisco Petrônio
   full: Francisco Petrônio Alencar de Medeiros
-avatar: https://i1.rgstatic.net/ii/profile.image/434547960619012-1480615715387_Q128/Francisco-Medeiros-11.jpg
-# avatar: https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4762566A8
+avatar:
+  default: https://i1.rgstatic.net/ii/profile.image/434547960619012-1480615715387_Q128/Francisco-Medeiros-11.jpg
+  researchgate: https://i1.rgstatic.net/ii/profile.image/434547960619012-1480615715387_Q128/Francisco-Medeiros-11.jpg
+  lattes: https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4762566A8
 occupations:
 - id: 1508373
   type: professor

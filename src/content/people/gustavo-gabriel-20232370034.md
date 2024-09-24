@@ -2,7 +2,8 @@
 name:
   compact: Gustavo Gabriel
   full: Gutavo Gabriel Batista da Silva
-avatar: https://github.com/uGustavoB.png
+avatar:
+  default: https://github.com/uGustavoB.png
 occupations:
 - id: 20232370034
   type: student

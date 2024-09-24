@@ -2,7 +2,8 @@
 name:
   compact: Antônio Rodrigues
   full: Antônio Flávio Ferreira Rodrigues
-avatar: https://github.com/antonioflaviofr.png
+avatar:
+  default: https://github.com/antonioflaviofr.png
 occupations:
 - id: 20071380161
   type: student

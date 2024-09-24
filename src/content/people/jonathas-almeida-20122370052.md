@@ -2,7 +2,8 @@
 name:
   compact: Jonathas Almeida
   full: Jonathas Arestides de Almeida
-avatar: https://github.com/JonathasArts.png
+avatar:
+  default: https://github.com/JonathasArts.png
 occupations:
 - id: 20122370052
   type: student

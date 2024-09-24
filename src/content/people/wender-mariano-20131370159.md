@@ -2,7 +2,8 @@
 name:
   compact: Wender Mariano
   full: Wender Mariano Laurentino
-avatar: https://github.com/wendermrn.png
+avatar:
+  default: https://github.com/wendermrn.png
 occupations:
 - id: 20131370159
   type: student

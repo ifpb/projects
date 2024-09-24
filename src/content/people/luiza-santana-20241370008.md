@@ -2,7 +2,8 @@
 name:
   compact: Luíza Santana
   full: Maria Luíza do Nascimento Santana
-avatar: https://github.com/MariaLuizaSantana21.png
+avatar:
+  default: https://github.com/MariaLuizaSantana21.png
 occupations:
 - id: 20241370008
   type: student

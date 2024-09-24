@@ -2,7 +2,8 @@
 name:
   compact: Cássio Bastos
   full: Cássio Bastos Alves
-avatar: https://github.com/cass-bt.png
+avatar:
+  default: https://github.com/cass-bt.png
 occupations:
 - id: 20211380020
   type: student

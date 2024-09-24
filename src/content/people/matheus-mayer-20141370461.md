@@ -2,7 +2,8 @@
 name:
   compact: Matheus Mayer
   full: Matheus Mayer Duarte de Figueirêdo
-avatar: https://github.com/mayermatheus.png
+avatar:
+  default: https://github.com/mayermatheus.png
 occupations:
 - id: 20141370461
   type: student

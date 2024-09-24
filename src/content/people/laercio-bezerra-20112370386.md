@@ -2,7 +2,8 @@
 name:
   compact: Laércio Bezerra
   full: Laércio de Souza Bezerra
-avatar: https://github.com/laerciosb.png
+avatar:
+  default: https://github.com/laerciosb.png
 occupations:
 - id: 20112370386
   type: student

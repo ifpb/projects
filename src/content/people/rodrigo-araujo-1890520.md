@@ -2,7 +2,8 @@
 name:
   compact: Rodrigo Araujo
   full: Rodrigo Pinheiro Marques de Araujo
-avatar: https://github.com/fenrrir.png
+avatar:
+  default: https://github.com/fenrrir.png
 occupations:
 - id: 1890520
   type: professor

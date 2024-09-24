@@ -2,7 +2,8 @@
 name:
   compact: Jordan Miguel
   full: Jordan Miguel Moreira Almeida de Matos
-avatar: https://github.com/jordanmiguel.png
+avatar:
+  default: https://github.com/jordanmiguel.png
 occupations:
 - id: 20131380340
   type: student

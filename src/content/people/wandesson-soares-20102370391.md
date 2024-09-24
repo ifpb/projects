@@ -2,7 +2,8 @@
 name:
   compact: Wandesson Soares
   full: Wandesson da Silva Soares
-avatar: https://github.com/wandessonsoares.png
+avatar:
+  default: https://github.com/wandessonsoares.png
 occupations:
 - id: 20102370391
   type: student

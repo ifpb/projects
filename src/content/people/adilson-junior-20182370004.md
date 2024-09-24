@@ -2,7 +2,8 @@
 name:
   compact: Adilson Júnior
   full: Adilson da Silva Costa Júnior
-avatar: https://github.com/addijs.png
+avatar:
+  default: https://github.com/addijs.png
 occupations:
 - id: 20182370004
   type: student

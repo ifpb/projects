@@ -2,7 +2,8 @@
 name:
   compact: Talitha Medeiros
   full: Talitha Alessandra Medeiros Ribeiro
-avatar: https://github.com/talithamedeiros.png
+avatar:
+  default: https://github.com/talithamedeiros.png
 occupations:
 - id: 20152370077
   type: student

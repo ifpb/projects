@@ -2,8 +2,9 @@
 name:
   compact: Heremita Lira
   full: Heremita Brasileiro Lira
-avatar: https://i1.rgstatic.net/ii/profile.image/11431281079162768-1660570445490_Q128/Heremita-Lira.jpg
-# avatar: http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4700519D1
+avatar:
+  default: https://i1.rgstatic.net/ii/profile.image/11431281079162768-1660570445490_Q128/Heremita-Lira.jpg
+  lattes: http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4700519D1
 occupations:
 - id: 1096328
   type: professor

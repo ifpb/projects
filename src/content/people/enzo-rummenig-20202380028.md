@@ -2,7 +2,8 @@
 name:
   compact: Enzo Rummenig
   full: Enzo Rummenig Anchieta Santos Cavalcanti Farias
-avatar: https://github.com/enzorummenigif.png
+avatar:
+  default: https://github.com/enzorummenigif.png
 occupations:
 - id: 20202380028
   type: student

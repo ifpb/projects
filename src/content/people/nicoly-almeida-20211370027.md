@@ -2,7 +2,8 @@
 name:
   compact: Nicoly Almeida
   full: Nicoly Figueredo Pessoa de Almeida
-avatar: https://github.com/Nicoly-Almeida.png
+avatar:
+  default: https://github.com/Nicoly-Almeida.png
 occupations:
 - id: 20181780005
   type: student

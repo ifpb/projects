@@ -2,7 +2,8 @@
 name:
   compact: Messias Souza
   full: Messias Severino de Souza
-avatar: https://github.com/26messias26.png
+avatar:
+  default: https://github.com/26messias26.png
 occupations:
 - id: 20182370029
   type: student

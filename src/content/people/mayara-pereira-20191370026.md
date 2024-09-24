@@ -2,7 +2,8 @@
 name:
   compact: Mayara Pereira
   full: Mayara Gomes Pereira
-avatar: https://github.com/maygp.png
+avatar:
+  default: https://github.com/maygp.png
 occupations:
 - id: 20191370026
   type: student

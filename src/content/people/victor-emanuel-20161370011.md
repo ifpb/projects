@@ -2,7 +2,8 @@
 name:
   compact: Victor Emanuel
   full: Victor Emanuel Ramalho Ribeiro
-avatar: https://github.com/VERRibeiro.png
+avatar:
+  default: https://github.com/VERRibeiro.png
 occupations:
 - id: 20161370011
   type: student

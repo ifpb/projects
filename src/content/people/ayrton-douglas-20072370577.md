@@ -2,7 +2,8 @@
 name:
   compact: Ayrton Douglas
   full: Ayrton Douglas Rodrigues Herculano
-avatar: https://github.com/ayrtondouglas.png
+avatar:
+  default: https://github.com/ayrtondouglas.png
 occupations:
 - id: 20072370577
   type: student

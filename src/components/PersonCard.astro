@@ -101,7 +101,7 @@ const tags = await getPersonTags(person);
         src="/projects/imgs/people-placeholder.png"
         alt={name.full}
         class="animate-pulse bg-gray-300 object-cover w-full h-[233px] hover:scale-105 transition duration-500 cursor-pointer"
-        data-src={avatar}
+        data-src={avatar.default}
         onload="onLoadPersonImage(this)"
         onerror="onErrorPersonImage(this)"
       />

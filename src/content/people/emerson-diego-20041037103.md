@@ -2,7 +2,8 @@
 name:
   compact: Emerson Diego
   full: Emerson Diego da Costa Araújo
-avatar: https://github.com/emerson-diego.png
+avatar:
+  default: https://github.com/emerson-diego.png
 occupations:
 - id: 20041037103
   type: student

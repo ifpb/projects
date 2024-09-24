@@ -2,7 +2,8 @@
 name:
   compact: Manuela Andrade
   full: Manuela Barreto Lopes de Andrade
-avatar: https://github.com/manu-andrade.png
+avatar:
+  default: https://github.com/manu-andrade.png
 occupations:
 - id: 20102370260
   type: student

@@ -2,7 +2,8 @@
 name:
   compact: Victor Herbert
   full: Victor Herbert Ferreira de Sousa
-avatar: https://github.com/VictorHerbert.png
+avatar:
+  default: https://github.com/VictorHerbert.png
 occupations:
 - id: 20181610015
   type: student

@@ -2,7 +2,8 @@
 name:
   compact: Thayná Tolentino
   full: Thayná Rodrigues Lopes Tolentino
-avatar: https://github.com/thaynarlt.png
+avatar:
+  default: https://github.com/thaynarlt.png
 occupations:
 - id: 20231370022
   type: student

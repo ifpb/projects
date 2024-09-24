@@ -2,7 +2,8 @@
 name:
   compact: Walter Guedes
   full: Walter Edmundo De Souza Guedes
-avatar: https://github.com/edguedes.png
+avatar:
+  default: https://github.com/edguedes.png
 occupations:
 - id: 20151370197
   type: student

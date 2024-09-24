@@ -2,7 +2,8 @@
 name:
   compact: Jaqueline Fernandes
   full: Jaqueline Fernandes de Medeiros Duarte
-avatar: https://github.com/dhelly.png
+avatar:
+  default: https://github.com/dhelly.png
 occupations:
 - id: 20121370180
   type: student

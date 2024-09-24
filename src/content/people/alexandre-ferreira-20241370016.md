@@ -2,7 +2,8 @@
 name:
   compact: Alexandre Ferreira
   full: Alexandre Ferreira da silva neto
-avatar: https://github.com/Alexandre-Ferreira01.png
+avatar:
+  default: https://github.com/Alexandre-Ferreira01.png
 occupations:
 - id: 20241370016
   type: student

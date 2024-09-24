@@ -2,7 +2,8 @@
 name:
   compact: Aparecida Santiago
   full: Maria Aparecida da Silva Santiago
-avatar: https://github.com/mariasantiago1.png
+avatar:
+  default: https://github.com/mariasantiago1.png
 occupations:
 - id: 20142370309
   type: student

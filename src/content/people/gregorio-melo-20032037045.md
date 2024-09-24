@@ -2,7 +2,8 @@
 name:
   compact: Gregório Melo
   full: Gregório Enrico Linhares de Melo
-avatar: https://github.com/gregoriomelo.png
+avatar:
+  default: https://github.com/gregoriomelo.png
 occupations:
 - id: 20032037045
   type: student

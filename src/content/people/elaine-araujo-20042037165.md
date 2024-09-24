@@ -2,7 +2,8 @@
 name:
   compact: Elaine Araújo
   full: Elaine Cristina Juvino de Araújo
-avatar: https://github.com/elainecjaufcg.png
+avatar:
+  default: https://github.com/elainecjaufcg.png
 occupations:
 - id: 20042037165
   type: student

@@ -2,7 +2,8 @@
 name:
   compact: Julielison Lima
   full: Francisco Julielison Cunha de Lima
-avatar: https://github.com/Julielison.png
+avatar:
+  default: https://github.com/Julielison.png
 occupations:
 - id: 20232370016
   type: student

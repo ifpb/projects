@@ -2,7 +2,8 @@
 name:
   compact: Lucas Toscano
   full: Lucas Emanuel Araújo Toscano
-avatar: https://github.com/LucasToscano22.png
+avatar:
+  default: https://github.com/LucasToscano22.png
 occupations:
 - id: 20232370013
   type: student

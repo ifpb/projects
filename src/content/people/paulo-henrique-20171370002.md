@@ -2,7 +2,8 @@
 name:
   compact: Paulo Henrique
   full: Paulo Henrique dos Santos Ferreira
-avatar: https://github.com/pahferreira.png
+avatar:
+  default: https://github.com/pahferreira.png
 occupations:
 - id: 20171370002
   type: student

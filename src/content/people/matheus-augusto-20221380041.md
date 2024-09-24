@@ -2,7 +2,8 @@
 name:
   compact: Matheus Augusto
   full: Matheus Augusto Cavalcante Maia
-avatar: https://github.com/MatheusCMaia.png
+avatar:
+  default: https://github.com/MatheusCMaia.png
 occupations:
 - id: 20221380041
   type: student

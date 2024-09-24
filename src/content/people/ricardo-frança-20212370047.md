@@ -2,7 +2,8 @@
 name:
   compact: Ricardo França
   full: Ricardo Franca Soares
-avatar: https://github.com/rickfsoares.png
+avatar:
+  default: https://github.com/rickfsoares.png
 occupations:
 - id: 20212370047
   type: student

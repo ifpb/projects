@@ -2,7 +2,8 @@
 name:
   compact: Gilberto Neto
   full: Gilberto Firmino de Souza Neto
-avatar: https://github.com/GilbertoNeto.png
+avatar:
+  default: https://github.com/GilbertoNeto.png
 occupations:
 - id: 20151370073
   type: student

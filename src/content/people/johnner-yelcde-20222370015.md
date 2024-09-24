@@ -2,7 +2,8 @@
 name:
   compact: Johnner Yelcde
   full: Johnner Yelcde da Cruz Castro
-avatar: https://github.com/Yelcde.png
+avatar:
+  default: https://github.com/Yelcde.png
 occupations:
 - id: 20191780024
   type: student

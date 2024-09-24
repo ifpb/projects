@@ -2,7 +2,8 @@
 name:
   compact: Matheus Barbosa
   full: Matheus Barbosa Firmino de Souza
-avatar: https://github.com/themattery.png
+avatar:
+  default: https://github.com/themattery.png
 occupations:
 - id: 20222370007
   type: student

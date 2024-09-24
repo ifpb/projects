@@ -2,7 +2,8 @@
 name:
   compact: Rimenes Ribeiro
   full: Rimenes Farias Ribeiro
-avatar: https://github.com/rimenes.png
+avatar:
+  default: https://github.com/rimenes.png
 occupations:
 - id: 20011013081
   type: student

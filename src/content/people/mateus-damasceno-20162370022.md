@@ -2,7 +2,8 @@
 name:
   compact: Mateus Damasceno
   full: Mateus Salustiano Damasceno
-avatar: https://github.com/mtsdamasceno97.png
+avatar:
+  default: https://github.com/mtsdamasceno97.png
 occupations:
 - id: 20162370022
   type: student

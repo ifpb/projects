@@ -2,7 +2,8 @@
 name:
   compact: José Fernandes
   full: José Raimundo Fernandes Filho
-avatar: https://github.com/jiyose12.png
+avatar:
+  default: https://github.com/jiyose12.png
 occupations:
 - id: 20152370123
   type: student

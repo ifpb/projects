@@ -2,7 +2,8 @@
 name:
   compact: Rogério Nóbrega
   full: Rogério César da Nóbrega
-avatar: https://github.com/rogersdk.png
+avatar:
+  default: https://github.com/rogersdk.png
 occupations:
 - id: 20091370153
   type: student

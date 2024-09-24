@@ -2,7 +2,8 @@
 name:
   compact: Romero Medeiros
   full: Romero Meireles Fernandes de Medeiros
-avatar: https://github.com/romerobrjp.png
+avatar:
+  default: https://github.com/romerobrjp.png
 occupations:
 - id: 20081370282
   type: student

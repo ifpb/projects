@@ -2,7 +2,8 @@
 name:
   compact: Alexandre Menezes
   full: Alexandre Correia Lima de Menezes Filho
-avatar: https://github.com/xande8.png
+avatar:
+  default: https://github.com/xande8.png
 occupations:
 - id: 20241370020
   type: student

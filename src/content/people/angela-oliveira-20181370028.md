@@ -2,7 +2,8 @@
 name:
   compact: Ângela Oliveira
   full: Ângela Márcia Ramos de Oliveira
-avatar: https://github.com/angela-oliveira.png
+avatar:
+  default: https://github.com/angela-oliveira.png
 occupations:
 - id: 20181370028
   type: student

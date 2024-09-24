@@ -2,7 +2,8 @@
 name:
   compact: Myreliza Lima
   full: Myreliza de Lima Berto
-avatar: https://github.com/myrelii.png
+avatar:
+  default: https://github.com/myrelii.png
 occupations:
 - id: 20241370013
   type: student

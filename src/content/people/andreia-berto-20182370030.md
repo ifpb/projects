@@ -2,7 +2,8 @@
 name:
   compact: Andréia Berto
   full: Andréia de Lima Berto
-avatar: https://github.com/andreia23.png
+avatar:
+  default: https://github.com/andreia23.png
 occupations:
 - id: 20182370030
   type: student

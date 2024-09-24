@@ -2,7 +2,8 @@
 name:
   compact: Victor Augusto
   full: Victor Augusto Pinto Costa
-avatar: https://github.com/augustovictor.png
+avatar:
+  default: https://github.com/augustovictor.png
 occupations:
 - id: 20111370420
   type: student

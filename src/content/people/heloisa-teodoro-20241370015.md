@@ -2,7 +2,8 @@
 name:
   compact: Heloisa Teodoro
   full: Heloisa Teodoro Baptista Souza
-avatar: https://github.com/teooodbs.png
+avatar:
+  default: https://github.com/teooodbs.png
 occupations:
 - id: 20241370015
   type: student

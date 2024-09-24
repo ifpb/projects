@@ -2,7 +2,8 @@
 name:
   compact: Rafael Limeira
   full: Rafael Limeira de Castro Bueno
-avatar: https://github.com/buenorafa.png
+avatar:
+  default: https://github.com/buenorafa.png
 occupations:
   - id: 20222370020
     type: student

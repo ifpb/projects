@@ -2,7 +2,8 @@
 name:
   compact: Samuel Cabral
   full: Samuel Deschamps Cabral
-avatar: https://github.com/samueldcabral.png
+avatar:
+  default: https://github.com/samueldcabral.png
 occupations:
 - id: 20172370019
   type: student

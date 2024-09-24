@@ -2,7 +2,8 @@
 name:
   compact: Leonel Freire
   full: Leonel Marques de Luna Freire
-avatar: https://github.com/leonelfreire.png
+avatar:
+  default: https://github.com/leonelfreire.png
 occupations:
 - id: 20051370101
   type: student

@@ -2,7 +2,8 @@
 name:
   compact: Adjamilton Junior
   full: Adjamilton Medeiros de Almeida Junior
-avatar: https://github.com/ajunior.png
+avatar:
+  default: https://github.com/ajunior.png
 occupations:
 - id: 20121370199
   type: student

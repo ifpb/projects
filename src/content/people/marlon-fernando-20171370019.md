@@ -2,7 +2,8 @@
 name:
   compact: Marlon Fernando
   full: Marlon Fernando de Lima Freire Santos
-avatar: https://github.com/marlonfernando16.png
+avatar:
+  default: https://github.com/marlonfernando16.png
 occupations:
 - id: 20171370019
   type: student

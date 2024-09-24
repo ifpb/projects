@@ -2,7 +2,8 @@
 name:
   compact: Rodrigo Gouveia
   full: Rodrigo de Araujo Gouveia
-avatar: https://github.com/ragouveia.png
+avatar:
+  default: https://github.com/ragouveia.png
 occupations:
 - id: 20051370373
   type: student

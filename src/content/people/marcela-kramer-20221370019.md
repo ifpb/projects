@@ -2,7 +2,8 @@
 name:
   compact: Marcela Kramer
   full: Marcela Barreto de Oliveira Kramer
-avatar: https://github.com/marcelakramer.png
+avatar:
+  default: https://github.com/marcelakramer.png
 occupations:
 - id: 20221370019
   type: student

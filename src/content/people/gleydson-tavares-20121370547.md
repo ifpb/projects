@@ -2,7 +2,8 @@
 name:
   compact: Gleydson Tavares
   full: Gleydson da Silva Tavares
-avatar: https://github.com/g13ydson.png
+avatar:
+  default: https://github.com/g13ydson.png
 occupations:
 - id: 20121370547
   type: student

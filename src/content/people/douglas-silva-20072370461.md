@@ -2,7 +2,8 @@
 name:
   compact: Douglas Silva
   full: Douglas Limeira Silva
-avatar: https://github.com/DouglasLimeira.png
+avatar:
+  default: https://github.com/DouglasLimeira.png
 occupations:
 - id: 20072370461
   type: student

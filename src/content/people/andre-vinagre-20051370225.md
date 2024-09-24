@@ -2,7 +2,8 @@
 name:
   compact: André Vinagre
   full: André Nobre Vinagre
-avatar: https://github.com/andrenvinagre.png
+avatar:
+  default: https://github.com/andrenvinagre.png
 occupations:
 - id: 20051370225
   type: student

@@ -2,8 +2,9 @@
 name:
   compact: Jaildo Pequeno
   full: Jaildo Tavares Pequeno
-avatar: https://i1.rgstatic.net/ii/profile.image/11431281216110192-1704584568733_Q128/Jaildo-Pequeno.jpg
-# avatar: http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4700907U1
+avatar:
+  default: https://i1.rgstatic.net/ii/profile.image/11431281216110192-1704584568733_Q128/Jaildo-Pequeno.jpg
+  lattes: http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4700907U1
 occupations:
 - id: 273980
   type: professor

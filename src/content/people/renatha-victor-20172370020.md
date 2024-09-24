@@ -2,7 +2,8 @@
 name:
   compact: Renatha Victor
   full: Renatha do Nascimento Victor
-avatar: https://github.com/renathavictor.png
+avatar:
+  default: https://github.com/renathavictor.png
 occupations:
 - id: 20172370020
   type: student

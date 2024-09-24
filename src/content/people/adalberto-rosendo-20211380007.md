@@ -2,7 +2,8 @@
 name:
   compact: Adalberto Rosendo
   full: Adalberto Rosendo da Silva Júnior
-avatar: https://github.com/adalbertorosendoo.png
+avatar:
+  default: https://github.com/adalbertorosendoo.png
 occupations:
 - id: 20211380007
   type: student
