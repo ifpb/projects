@@ -2,7 +2,7 @@
 name:
   compact: Louise Fernandes
   full: Louise Fernandes Caetano
-avatar: https://github.com/Louise Fernandes.png
+avatar: https://github.com/louisefernandes.png
 occupations:
 - id: 20212370032
   type: student
@@ -10,6 +10,6 @@ occupations:
   course: cstsi
   isFinished: false
 addresses:
-  github: https://github.com/Louise Fernandes
+  github: https://github.com/louisefernandes
   linkedin: https://www.linkedin.com/in/louise-fernandes-3711a430b/
 ---
