@@ -2,6 +2,7 @@
 import type { CollectionEntry } from 'astro:content';
 import type { Student } from '@/content/config';
 import { Icon } from 'astro-icon';
+import Badge from '@/components/Badge.astro';
 import { getProjectsByPerson } from '@/helpers/projects';
 import {
   getPersonId,
@@ -14,7 +15,6 @@ import {
   getCourseAbbreviationByOccupation,
   getCourseAbbreviationCampusByOccupation,
 } from '@/helpers/courses';
-import Badge from './Badge.astro';
 
 export interface Props {
   person: CollectionEntry<'people'>;
@@ -98,11 +98,12 @@ const tags = await getPersonTags(person);
   <figure class="mx-auto overflow-hidden">
     <a href={addresses.linkedin} target="_blank">
       <img
-        src={avatar}
+        src="/projects/imgs/people-placeholder.png"
         alt={name.full}
         class="animate-pulse bg-gray-300 object-cover w-full h-[233px] hover:scale-105 transition duration-500 cursor-pointer"
-        onload="this.onload=null;this.classList.remove('animate-pulse');"
-        onerror="this.onerror=null;['animate-pulse', 'text-white'].map(v=> this.classList.toggle(v));this.src='/projects/imgs/clarity-avatar-solid.svg';"
+        data-src={avatar}
+        onload="onLoadPersonImage(this)"
+        onerror="onErrorPersonImage(this)"
       />
     </a>
   </figure>

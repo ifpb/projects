@@ -39,15 +39,19 @@ export async function getStaticPaths({ paginate }) {
 }
 
 const formatPageTitle = (tag: string) => {
+  let title = '';
+
   if (abbreviationCourses.some((course) => tag.includes(course))) {
     if (tag.includes('egresso')) {
-      return `Egresso | ${getCourseName(tag.split('-')[1])}`;
+      title = `Egresso | ${getCourseName(tag.split('-')[1])}`;
     } else {
-      return getCourseName(tag);
+      title = getCourseName(tag);
     }
   } else {
-    return tag[0].toUpperCase() + tag.slice(1);
+    title = tag[0].toUpperCase() + tag.slice(1);
   }
+
+  return `Pessoas | ${title}`;
 };
 
 const { page } = Astro.props;

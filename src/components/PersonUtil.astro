@@ -1,0 +1,49 @@
+<script is:inline>
+  async function getInfoImage(url) {
+    const response = await fetch(url, { method: 'HEAD' });
+
+    const contentType = response.headers.get('Content-Type');
+
+    const contentLength = Number(response.headers.get('Content-Length'));
+
+    return {
+      type: contentType,
+      length: contentLength,
+    };
+  }
+
+  async function getPersonImage(img, url) {
+    try {
+      if (url.includes('github')) {
+        const { type, length } = await getInfoImage(url);
+
+        if (length < 2000) {
+          url = '/projects/imgs/clarity-avatar-solid.svg';
+        }
+      }
+    } catch (error) {
+      console.error('Error on getPersonImage');
+      // console.error(error.message);
+    } finally {
+      img.src = url;
+    }
+  }
+
+  function onLoadPersonImage(img) {
+    img.onload = null;
+
+    const avatar = img.getAttribute('data-src');
+
+    getPersonImage(img, avatar);
+
+    img.classList.remove('animate-pulse');
+  }
+
+  function onErrorPersonImage(img) {
+    img.onerror = null;
+
+    img.src = '/projects/imgs/clarity-avatar-solid.svg';
+
+    img.classList.remove('animate-pulse');
+  }
+</script>

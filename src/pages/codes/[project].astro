@@ -1,15 +1,15 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Badge from '@/components/Badge.astro';
+import { getCourseByAbbreviation } from '@/helpers/courses';
+import { getPeopleByProject, getPersonId } from '@/helpers/people';
 import {
   getProjectId,
   getProjects,
   isSubjectProject,
 } from '@/helpers/projects';
-import { getPeopleByProject, getPersonId } from '@/helpers/people';
-import BaseLayout from '@/layouts/BaseLayout.astro';
-import { getCourseByAbbreviation } from '@/helpers/courses';
 import { campi } from '@/content/config';
-import Badge from '@/components/Badge.astro';
 
 interface ProjectProps {
   category: {

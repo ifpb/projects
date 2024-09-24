@@ -40,9 +40,6 @@ export async function getStaticPaths({ paginate }) {
   return page.flat();
 }
 
-const { page }: Props = Astro.props;
-let { tag } = Astro.params;
-
 const formatPageTitle = (tag: string) => {
   const types = {
     subject: 'Disciplina',
@@ -53,9 +50,11 @@ const formatPageTitle = (tag: string) => {
 
   const pageTitle = types[tag] || tag.toUpperCase();
 
-  return `Projetos de ${pageTitle}`;
+  return `Projetos | ${pageTitle}`;
 };
 
+const { page }: Props = Astro.props;
+const { tag } = Astro.params;
 const pageTitle = formatPageTitle(tag);
 ---
 
