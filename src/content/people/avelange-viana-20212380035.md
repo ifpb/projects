@@ -3,7 +3,8 @@ name:
   compact: Avelange Viana
   full: Avelange Viana Cordeiro
 avatar:
-  default: https://github.com/Avelangev.png
+  github: https://github.com/Avelangev.png
+  githubUC: https://avatars.githubusercontent.com/u/163849265?v=4
 occupations:
 - id: 20212380035
   type: student

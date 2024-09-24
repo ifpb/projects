@@ -3,7 +3,8 @@ name:
   compact: Marcelo Bruno
   full: Marcelo Bruno Oliveira da Silva
 avatar:
-  default: https://github.com/marceelobruno.png
+  github: https://github.com/marceelobruno.png
+  githubUC: https://avatars.githubusercontent.com/u/90216286?v=4
 occupations:
   - id: 20231370006
     type: student

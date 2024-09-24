@@ -69,14 +69,19 @@ const projectId = getProjectId(project);
                 <a
                   href={`/projects/people/${getPersonId(person)}/`}
                   target="_blank"
+                  class="animate-pulse"
                 >
                   <img
-                    src={`${person.data.avatar.default}?size=32`}
+                    src="/projects/imgs/people-placeholder.png"
                     alt={person.data.name.full}
                     title={person.data.name.full}
-                    class="rounded-full w-8 object-cover"
-                    onload="this.onload = null; this.classList.remove('animate-pulse');"
-                    onerror="this.onerror=null;['animate-pulse', 'bg-gray-200', 'text-white'].map(v=> this.classList.toggle(v));this.src='/projects/imgs/carbon-user-avatar-filled-alt.svg';"
+                    class="rounded-full bg-gray-300 object-cover w-8"
+                    data-src={
+                      person.data.avatar.githubUC ||
+                      person.data.avatar[person.data.avatar.default ?? 'github']
+                    }
+                    onload="onLoadPersonImage(this, 32)"
+                    onerror="onErrorPersonImage(this)"
                   />
                 </a>
               </li>

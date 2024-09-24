@@ -3,7 +3,8 @@ name:
   compact: Joseph Santos
   full: Joseph Adrian Almeida dos Santos
 avatar:
-  default: https://github.com/Josephadrian123.png
+  github: https://github.com/Josephadrian123.png
+  githubUC: https://avatars.githubusercontent.com/u/26861164?v=4
 occupations:
 - id: 20161370018
   type: student

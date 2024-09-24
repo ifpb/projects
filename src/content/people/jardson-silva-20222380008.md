@@ -3,7 +3,8 @@ name:
   compact: Jardson Silva
   full: Jardson Lúcio Peres da Silva
 avatar:
-  default: https://github.com/peresl.png
+  github: https://github.com/peresl.png
+  githubUC: https://avatars.githubusercontent.com/u/136630558?v=4
 occupations:
 - id: 20222380008
   type: student

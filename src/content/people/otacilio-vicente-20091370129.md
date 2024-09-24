@@ -3,7 +3,8 @@ name:
   compact: Otacílio Vicente
   full: Otacílio Vicente Ferreira Neto
 avatar:
-  default: https://github.com/OtacFerreiro.png
+  github: https://github.com/OtacFerreiro.png
+  githubUC: https://avatars.githubusercontent.com/u/3595626?v=4
 occupations:
 - id: 20091370129
   type: student

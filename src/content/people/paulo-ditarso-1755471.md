@@ -3,7 +3,8 @@ name:
   compact: Paulo Ditarso
   full: Paulo Ditarso Maciel Junior
 avatar:
-  default: https://github.com/pdmjr.png
+  github: https://github.com/pdmjr.png
+  githubUC: https://avatars.githubusercontent.com/u/63126093?v=4
 occupations:
 - id: 1755471
   type: professor

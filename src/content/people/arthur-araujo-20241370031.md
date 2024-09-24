@@ -3,7 +3,8 @@ name:
   compact: Arthur Araújo
   full: Arthur Felipe Araújo da Silva
 avatar:
-  default: https://github.com/arthurfaraujo.png
+  github: https://github.com/arthurfaraujo.png
+  githubUC: https://avatars.githubusercontent.com/u/92448606?v=4
 occupations:
 - id: 20211780021
   type: student

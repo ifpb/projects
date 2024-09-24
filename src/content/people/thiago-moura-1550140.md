@@ -3,7 +3,8 @@ name:
   compact: Thiago Moura
   full: Thiago Jose Marques Moura
 avatar:
-  default: https://github.com/tmoura.png
+  github: https://github.com/tmoura.png
+  githubUC: https://avatars.githubusercontent.com/u/1556272?v=4
 occupations:
 - id: 1550140
   type: professor

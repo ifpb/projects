@@ -3,7 +3,8 @@ name:
   compact: Pedro Tavares
   full: Pedro Mateus Tavares Leocádio
 avatar:
-  default: https://github.com/pedromtavares.png
+  github: https://github.com/pedromtavares.png
+  githubUC: https://avatars.githubusercontent.com/u/146907?v=4
 occupations:
 - id: 20081370207
   type: student

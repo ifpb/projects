@@ -3,7 +3,8 @@ name:
   compact: Daniel Batista
   full: Daniel Batista Borba Orengo
 avatar:
-  default: https://github.com/danielborb09.png
+  github: https://github.com/danielborb09.png
+  githubUC: https://avatars.githubusercontent.com/u/164682268?v=4
 occupations:
 - id: 20241370029
   type: student

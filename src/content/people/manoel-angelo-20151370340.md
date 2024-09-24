@@ -3,7 +3,8 @@ name:
   compact: Manoel Angelo
   full: Manoel Angelo Da Silva Neto
 avatar:
-  default: https://github.com/manoelangelo.png
+  github: https://github.com/manoelangelo.png
+  githubUC: https://avatars.githubusercontent.com/u/13137095?v=4
 occupations:
 - id: 20151370340
   type: student

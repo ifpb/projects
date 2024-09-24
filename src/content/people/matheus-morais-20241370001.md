@@ -4,7 +4,8 @@ name:
   compact: Matheus Morais
   full: Matheus Morais de Souza Lima
 avatar:
-  default: https://github.com/MM2K24.png
+  github: https://github.com/MM2K24.png
+  githubUC: https://avatars.githubusercontent.com/u/175043184?v=4
 occupations:
 - id: 20241370001
   type: student

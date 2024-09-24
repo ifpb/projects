@@ -3,7 +3,8 @@ name:
   compact: Pablo Bezerra
   full: Pablo Bezerra Guedes Lins de Albuquerque
 avatar:
-  default: https://github.com/Pablocst.png
+  github: https://github.com/Pablocst.png
+  githubUC: https://avatars.githubusercontent.com/u/23335267?v=4
 occupations:
 - id: 20152380064
   type: student

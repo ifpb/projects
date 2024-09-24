@@ -3,7 +3,8 @@ name:
   compact: Eryk Oliveira
   full: Eryk de Oliveira Candido
 avatar:
-  default: https://github.com/Eryk27.png
+  github: https://github.com/Eryk27.png
+  githubUC: https://avatars.githubusercontent.com/u/161753505?v=4
 occupations:
 - id: 20241370014
   type: student

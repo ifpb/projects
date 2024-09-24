@@ -3,7 +3,8 @@ name:
   compact: Rafael Oliveira
   full: Rafael Oliveira Batista
 avatar:
-  default: https://github.com/rafaeloliverone.png
+  github: https://github.com/rafaeloliverone.png
+  githubUC: https://avatars.githubusercontent.com/u/48067346?v=4
 occupations:
 - id: 20181370020
   type: student

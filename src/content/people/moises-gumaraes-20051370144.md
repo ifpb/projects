@@ -3,7 +3,8 @@ name:
   compact: Moisés Guimarães
   full: Moisés Guimarães de Medeiros
 avatar:
-  default: https://github.com/moisesguimaraes.png
+  github: https://github.com/moisesguimaraes.png
+  githubUC: https://avatars.githubusercontent.com/u/2158939?v=4
 occupations:
 - id: 20051370144
   type: student

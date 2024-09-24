@@ -3,7 +3,8 @@ name:
   compact: Clara Alcântara
   full: Clara Brito Palmeira Nunes de Alcântara
 avatar:
-  default: https://github.com/oiclai.png
+  github: https://github.com/oiclai.png
+  githubUC: https://avatars.githubusercontent.com/u/161838054?v=4
 occupations:
 - id: 20241370021
   type: student

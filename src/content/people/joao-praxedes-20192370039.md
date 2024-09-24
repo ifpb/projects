@@ -3,7 +3,8 @@ name:
   compact: João Praxedes
   full: João Fernandes Praxedes Neto
 avatar:
-  default: https://github.com/xuaoneto.png
+  github: https://github.com/xuaoneto.png
+  githubUC: https://avatars.githubusercontent.com/u/60081611?v=4
 occupations:
 - id: 20192370039
   type: student

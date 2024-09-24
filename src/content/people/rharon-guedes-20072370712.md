@@ -3,7 +3,8 @@ name:
   compact: Rharon Guedes
   full: Rharon Maia Guedes
 avatar:
-  default: https://github.com/rharon.png
+  github: https://github.com/rharon.png
+  githubUC: https://avatars.githubusercontent.com/u/26490962?v=4
 occupations:
 - id: 20072370712
   type: student

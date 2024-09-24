@@ -3,7 +3,8 @@ name:
   compact: Robyson Cristiano
   full: Robyson Cristiano Matias
 avatar:
-  default: https://github.com/yWestSide.png
+  github: https://github.com/yWestSide.png
+  githubUC: https://avatars.githubusercontent.com/u/152413939?v=4
 occupations:
 - id: 20212380030
   type: student

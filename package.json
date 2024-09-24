@@ -10,7 +10,8 @@
     "preview": "astro preview",
     "buildpreview": "astro build && astro preview",
     "buildpreviewpf": "astro build && npm run postbuild && astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "load:github:avatar": "tsx src/content/load-github-avatar.ts"
   },
   "dependencies": {
     "@astrojs/react": "^3.6.2",
@@ -28,6 +29,7 @@
     "pagefind": "^1.1.1",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.6"
+    "prettier-plugin-tailwindcss": "^0.6.6",
+    "tsx": "^4.19.1"
   }
 }

@@ -3,7 +3,8 @@ name:
   compact: Victor Eduardo
   full: Victor Eduardo Japyassu Nobrega
 avatar:
-  default: https://github.com/Victor-17.png
+  github: https://github.com/Victor-17.png
+  githubUC: https://avatars.githubusercontent.com/u/52470535?v=4
 occupations:
 - id: 20191370009
   type: student

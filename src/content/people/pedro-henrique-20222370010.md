@@ -3,7 +3,8 @@ name:
   compact: Pedro Henrique
   full: Pedro Henrique Barbosa de Sousa
 avatar:
-  default: https://github.com/Phenrique-sousa.png
+  github: https://github.com/Phenrique-sousa.png
+  githubUC: https://avatars.githubusercontent.com/u/110859887?v=4
 occupations:
 - id: 20222370010
   type: student

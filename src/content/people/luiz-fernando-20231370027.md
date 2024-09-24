@@ -3,7 +3,8 @@ name:
   compact: Luiz Fernando
   full: Luiz Fernando de Albuquerque Gomes
 avatar:
-  default: https://github.com/LuizFernando12.png
+  github: https://github.com/LuizFernando12.png
+  githubUC: https://avatars.githubusercontent.com/u/150639012?v=4
 occupations:
   - id: 20231370027
     type: student

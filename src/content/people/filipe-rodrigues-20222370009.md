@@ -3,7 +3,8 @@ name:
   compact: Filipe Rodrigues
   full: Filipe da Silva Rodrigues
 avatar:
-  default: https://github.com/filipe-rds.png
+  github: https://github.com/filipe-rds.png
+  githubUC: https://avatars.githubusercontent.com/u/73905894?v=4
 occupations:
 - id: 20222370009
   type: student

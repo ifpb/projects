@@ -12,33 +12,26 @@
     };
   }
 
-  async function getPersonImage(img, url) {
-    try {
-      if (url.includes('github')) {
-        const { type, length } = await getInfoImage(url);
+  async function getPersonImage(img, url, size) {
+    if (url.includes('avatars.githubusercontent.com')) {
+      const { type, length } = await getInfoImage(url);
 
-        if (length < 2000) {
-          url = '/projects/imgs/clarity-avatar-solid.svg';
-        }
+      if (length < 2000) {
+        url = '/projects/imgs/clarity-avatar-solid.svg';
       }
-    } catch (error) {
-      console.error('Error on getPersonImage');
-      // console.error(error.message);
-    } finally {
-      img.src = url;
     }
+
+    img.src = url;
+
+    img.parentElement.classList.remove('animate-pulse');
   }
 
-  function onLoadPersonImage(img) {
+  function onLoadPersonImage(img, size) {
     img.onload = null;
 
     const avatar = img.getAttribute('data-src');
 
-    // getPersonImage(img, avatar);
-
-    img.src = avatar;
-
-    img.classList.remove('animate-pulse');
+    getPersonImage(img, avatar, size);
   }
 
   function onErrorPersonImage(img) {
@@ -46,6 +39,6 @@
 
     img.src = '/projects/imgs/clarity-avatar-solid.svg';
 
-    img.classList.remove('animate-pulse');
+    img.parentElement.classList.remove('animate-pulse');
   }
 </script>

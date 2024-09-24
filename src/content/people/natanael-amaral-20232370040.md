@@ -3,7 +3,8 @@ name:
   compact: Natanael Amaral
   full: Natanael do Amaral Lopes
 avatar:
-  default: https://github.com/amaraldsn.png
+  github: https://github.com/amaraldsn.png
+  githubUC: https://avatars.githubusercontent.com/u/141788258?v=4
 occupations:
 - id: 20232370040
   type: student

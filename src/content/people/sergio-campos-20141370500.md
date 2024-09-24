@@ -3,7 +3,8 @@ name:
   compact: Sérgio Campos
   full: Sérgio Campos da Silva
 avatar:
-  default: https://github.com/camposdx.png
+  github: https://github.com/camposdx.png
+  githubUC: https://avatars.githubusercontent.com/u/165804226?v=4
 occupations:
 - id: 20141370500
   type: student

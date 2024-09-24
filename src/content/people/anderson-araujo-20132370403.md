@@ -3,7 +3,8 @@ name:
   compact: Anderson Araújo
   full: Anderson de Araújo Gomes
 avatar:
-  default: https://github.com/andersondevg.png
+  github: https://github.com/andersondevg.png
+  githubUC: https://avatars.githubusercontent.com/u/12386281?v=4
 occupations:
 - id: 20132370403
   type: student

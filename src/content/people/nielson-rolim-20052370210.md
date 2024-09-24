@@ -3,7 +3,8 @@ name:
   compact: Nielson Rolim
   full: Nielson Dias de Pontes Sobreira Rolim
 avatar:
-  default: https://github.com/nielsonrolim.png
+  github: https://github.com/nielsonrolim.png
+  githubUC: https://avatars.githubusercontent.com/u/607248?v=4
 occupations:
 - id: 20052370210
   type: student

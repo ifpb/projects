@@ -3,7 +3,8 @@ name:
   compact: Alex Sandro
   full: Alex Sandro da Cunha Rego
 avatar:
-  default: https://github.com/alex-ifpb.png
+  github: https://github.com/alex-ifpb.png
+  githubUC: https://avatars.githubusercontent.com/u/111515500?v=4
 occupations:
 - id: 1578241
   type: professor

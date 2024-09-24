@@ -3,7 +3,8 @@ name:
   compact: Márcio Ugulino
   full: Márcio Emanuel Ugulino de Araujo Junior
 avatar:
-  default: https://github.com/marciougulino.png
+  github: https://github.com/marciougulino.png
+  githubUC: https://avatars.githubusercontent.com/u/124619138?v=4
 occupations:
 - id: 2354602
   type: professor

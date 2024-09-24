@@ -3,7 +3,8 @@ name:
   compact: Mateus Lima
   full: Mateus de Morais Lima
 avatar:
-  default: https://github.com/Mateusdml.png
+  github: https://github.com/Mateusdml.png
+  githubUC: https://avatars.githubusercontent.com/u/26632503?v=4
 occupations:
 - id: 20151370189
   type: student

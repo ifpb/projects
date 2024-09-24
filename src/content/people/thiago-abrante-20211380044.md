@@ -3,7 +3,8 @@ name:
   compact: Thiago Abrante
   full: Thiago Abrante de Souza
 avatar:
-  default: https://github.com/oneabrante.png
+  github: https://github.com/oneabrante.png
+  githubUC: https://avatars.githubusercontent.com/u/89171200?v=4
 occupations:
 - id: 20211380044
   type: student

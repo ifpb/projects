@@ -3,7 +3,8 @@ name:
   compact: Flávio Correia
   full: Flávio Eduardo Correia Lima de Menezes
 avatar:
-  default: https://github.com/flavioclima.png
+  github: https://github.com/flavioclima.png
+  githubUC: https://avatars.githubusercontent.com/u/2501730?v=4
 occupations:
 - id: 20071370077
   type: student

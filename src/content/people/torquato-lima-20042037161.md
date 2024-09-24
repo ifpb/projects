@@ -3,7 +3,8 @@ name:
   compact: Torquato Neto
   full: Torquato Barbosa de Lima Neto
 avatar:
-  default: https://github.com/torquato.png
+  github: https://github.com/torquato.png
+  githubUC: https://avatars.githubusercontent.com/u/707590?v=4
 occupations:
 - id: 20042037161
   type: student

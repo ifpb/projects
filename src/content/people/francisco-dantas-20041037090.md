@@ -3,7 +3,8 @@ name:
   compact: Francisco Dantas
   full: Francisco Dantas Nóbrega Neto
 avatar:
-  default: https://github.com/franciscodnn.png
+  github: https://github.com/franciscodnn.png
+  githubUC: https://avatars.githubusercontent.com/u/9582739?v=4
 occupations:
 - id: 20041037090
   type: student

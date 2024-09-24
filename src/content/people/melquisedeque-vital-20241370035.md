@@ -3,7 +3,8 @@ name:
   compact: Melquisedeque Vital
   full: Melquisedeque Vital de Albuquerque
 avatar:
-  default: https://github.com/MelquisedequeVital.png
+  github: https://github.com/MelquisedequeVital.png
+  githubUC: https://avatars.githubusercontent.com/u/102006784?v=4
 occupations:
 - id: 20241370035
   type: student

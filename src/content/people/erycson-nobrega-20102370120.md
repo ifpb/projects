@@ -3,7 +3,8 @@ name:
   compact: Érycson Nóbrega
   full: Érycson Gomes da Nóbrega
 avatar:
-  default: https://github.com/erycson.png
+  github: https://github.com/erycson.png
+  githubUC: https://avatars.githubusercontent.com/u/2156082?v=4
 occupations:
 - id: 20102370120
   type: student

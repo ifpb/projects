@@ -3,7 +3,8 @@ name:
   compact: Valquer Souza
   full: Valquer Rafael e Silva Souza
 avatar:
-  default: https://github.com/valquerrafael.png
+  github: https://github.com/valquerrafael.png
+  githubUC: https://avatars.githubusercontent.com/u/88300460?v=4
 occupations:
 - id: 20211370029
   type: student

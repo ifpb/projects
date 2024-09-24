@@ -3,7 +3,8 @@ name:
   compact: Lucas Andrade
   full: Lucas Andrade dos Santos
 avatar:
-  default: https://github.com/LucasAndrade912.png
+  github: https://github.com/LucasAndrade912.png
+  githubUC: https://avatars.githubusercontent.com/u/74028164?v=4
 occupations:
   - id: 20191780034
     type: student

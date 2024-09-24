@@ -3,7 +3,8 @@ name:
   compact: Alessandro Souza
   full: Alessandro Rodrigues de Souza Júnior
 avatar:
-  default: https://github.com/alessandrojunior1.png
+  github: https://github.com/alessandrojunior1.png
+  githubUC: https://avatars.githubusercontent.com/u/130919708?v=4
 occupations:
 - id: 20231370009
   type: student

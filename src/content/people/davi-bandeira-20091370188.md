@@ -3,7 +3,8 @@ name:
   compact: Davi Bandeira
   full: Davi Cavalcanti Pinto Bandeira
 avatar:
-  default: https://github.com/davibandeira.png
+  github: https://github.com/davibandeira.png
+  githubUC: https://avatars.githubusercontent.com/u/547600?v=4
 occupations:
 - id: 20091370188
   type: student

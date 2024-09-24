@@ -3,7 +3,8 @@ name:
   compact: José Raimundo
   full: José Raimundo Barbosa
 avatar:
-  default: https://github.com/JoseRaimundo.png
+  github: https://github.com/JoseRaimundo.png
+  githubUC: https://avatars.githubusercontent.com/u/10813914?v=4
 occupations:
 - id: 20152370298
   type: student

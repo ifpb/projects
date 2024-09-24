@@ -3,7 +3,8 @@ name:
   compact: Raiza Andrade
   full: Raiza Andrade de Freitas Tomazoni
 avatar:
-  default: https://github.com/raizaft.png
+  github: https://github.com/raizaft.png
+  githubUC: https://avatars.githubusercontent.com/u/117646187?v=4
 occupations:
   - id: 20222370023
     type: student

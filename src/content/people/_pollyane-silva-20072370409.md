@@ -3,7 +3,8 @@ name:
   compact: Pollyane Silva
   full: Pollyane Carvalho da Silva
 avatar:
-  default: https://github.com/pollyoaks.png
+  github: https://github.com/pollyoaks.png
+  githubUC: https://avatars.githubusercontent.com/u/802416?v=4
 occupations:
 - id: 20072370409
   type: student

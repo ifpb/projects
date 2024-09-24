@@ -3,7 +3,8 @@ name:
   compact: Calebe Oliveira
   full: Calebe Oliveira de Figueirêdo
 avatar:
-  default: https://github.com/calebeof.png
+  github: https://github.com/calebeof.png
+  githubUC: https://avatars.githubusercontent.com/u/30943380?v=4
 occupations:
 - id: 20141720047
   type: student

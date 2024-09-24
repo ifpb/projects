@@ -3,7 +3,8 @@ name:
   compact: Marianna Veríssimo
   full: Marianna Soares Veríssimo
 avatar:
-  default: https://github.com/mariannave.png
+  github: https://github.com/mariannave.png
+  githubUC: https://avatars.githubusercontent.com/u/9520597?v=4
 occupations:
 - id: 20142370201
   type: student

@@ -3,7 +3,8 @@ name:
   compact: Fabrycio Medeiros
   full: Fabrycio Érico de Medeiros
 avatar:
-  default: https://github.com/FabrycioMedeiros.png
+  github: https://github.com/FabrycioMedeiros.png
+  githubUC: https://avatars.githubusercontent.com/u/82905533?v=4
 occupations:
 - id: 20202370017
   type: student

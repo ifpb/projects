@@ -149,10 +149,14 @@ const peopleCollection = defineCollection({
       full: z.string(),
     }),
     avatar: z.object({
-      default: z.string().url(),
+      default: z
+        .enum(['github', 'githubUC', 'researchgate', 'lattes', 'linkedin'])
+        .optional(),
       github: z.string().url().optional(),
+      githubUC: z.string().url().optional(),
       researchgate: z.string().url().optional(),
       lattes: z.string().url().optional(),
+      linkedin: z.string().url().optional(),
     }),
     occupations: z.array(
       z.union([professorOccupation, employeeOccupation, studentOccupation])

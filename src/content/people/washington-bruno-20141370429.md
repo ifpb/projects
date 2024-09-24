@@ -3,7 +3,8 @@ name:
   compact: Washington Bruno
   full: Washington Bruno Rodrigues Cavalcante
 avatar:
-  default: https://github.com/xinton.png
+  github: https://github.com/xinton.png
+  githubUC: https://avatars.githubusercontent.com/u/8519768?v=4
 occupations:
 - id: 20141370429
   type: student

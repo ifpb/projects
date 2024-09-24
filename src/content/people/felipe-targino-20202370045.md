@@ -3,7 +3,8 @@ name:
   compact: Felipe Targino
   full: Felipe Targino do Nascimento
 avatar:
-  default: https://github.com/targinofelipe1.png
+  github: https://github.com/targinofelipe1.png
+  githubUC: https://avatars.githubusercontent.com/u/88597995?v=4
 occupations:
 - id: 20202370045
   type: student

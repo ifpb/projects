@@ -3,7 +3,8 @@ name:
   compact: Rafael Albuquerque Cardoso
   full: Rafael Albuquerque Cardoso
 avatar:
-  default: https://github.com/rcardosoo.png
+  github: https://github.com/rcardosoo.png
+  githubUC: https://avatars.githubusercontent.com/u/9036497?v=4
 occupations:
 - id: 20151370286
   type: student

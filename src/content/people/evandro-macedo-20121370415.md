@@ -3,7 +3,8 @@ name:
   compact: Evandro Macedo
   full: Evandro Henrique Cordeiro de Macedo
 avatar:
-  default: https://github.com/evandromacedo.png
+  github: https://github.com/evandromacedo.png
+  githubUC: https://avatars.githubusercontent.com/u/3433276?v=4
 occupations:
 - id: 20121370415
   type: student

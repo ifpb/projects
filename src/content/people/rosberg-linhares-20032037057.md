@@ -3,7 +3,8 @@ name:
   compact: Rosberg Linhares
   full: Rosberg Linhares Lacerda
 avatar:
-  default: https://github.com/rosberglinhares.png
+  github: https://github.com/rosberglinhares.png
+  githubUC: https://avatars.githubusercontent.com/u/8103147?v=4
 occupations:
 - id: 20032037057
   type: student

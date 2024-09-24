@@ -3,7 +3,8 @@ name:
   compact: Andrey Coutinho
   full: Andrey Vasconcelos Coutinho
 avatar:
-  default: https://github.com/Androka2004.png
+  github: https://github.com/Androka2004.png
+  githubUC: https://avatars.githubusercontent.com/u/148481213?v=4
 occupations:
 - id: 20201780033
   type: student

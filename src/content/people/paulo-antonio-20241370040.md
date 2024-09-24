@@ -3,7 +3,8 @@ name:
   compact: Paulo Antônio
   full: Paulo Antônio Bastos de Farias
 avatar:
-  default: https://github.com/PauloAnt.png
+  github: https://github.com/PauloAnt.png
+  githubUC: https://avatars.githubusercontent.com/u/95085458?v=4
 occupations:
 - id: 20201780024
   type: student

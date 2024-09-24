@@ -3,7 +3,8 @@ name:
   compact: Nelson Fernandes
   full: Nelson Henrique Dantas Fernandes
 avatar:
-  default: https://github.com/nersoh.png
+  github: https://github.com/nersoh.png
+  githubUC: https://avatars.githubusercontent.com/u/1930729?v=4
 occupations:
 - id: 20111370269
   type: student

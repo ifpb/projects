@@ -3,7 +3,8 @@ name:
   compact: Henrique Guedes
   full: Henrique Gudes Simões
 avatar:
-  default: https://github.com/Henrique229.png
+  github: https://github.com/Henrique229.png
+  githubUC: https://avatars.githubusercontent.com/u/94745902?v=4
 occupations:
 - id: 20212380007
   type: student

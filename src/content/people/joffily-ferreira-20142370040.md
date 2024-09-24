@@ -3,7 +3,8 @@ name:
   compact: Joffily Ferreira
   full: Joffily Ferreira dos Santos
 avatar:
-  default: https://github.com/joffilyfe.png
+  github: https://github.com/joffilyfe.png
+  githubUC: https://avatars.githubusercontent.com/u/4604104?v=4
 occupations:
 - id: 20142370040
   type: student

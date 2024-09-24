@@ -3,7 +3,8 @@ name:
   compact: Maxwell Anderson
   full: Maxwell Anderson Ielpo do Amaral
 avatar:
-  default: https://github.com/maxwellamaral.png
+  github: https://github.com/maxwellamaral.png
+  githubUC: https://avatars.githubusercontent.com/u/107955034?v=4
 occupations:
 - id: 2832834
   type: professor

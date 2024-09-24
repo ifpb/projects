@@ -3,7 +3,8 @@ name:
   compact: Thamayron Alves
   full: Thamayron Alves Souza
 avatar:
-  default: https://github.com/thamayron.png
+  github: https://github.com/thamayron.png
+  githubUC: https://avatars.githubusercontent.com/u/13776577?v=4
 occupations:
 - id: 20092380063
   type: student

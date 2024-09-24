@@ -12,7 +12,7 @@ name:
   compact: Luiz Chaves
   full: Luiz Carlos Rodrigues Chaves
 avatar:
-  default: https://github.com/luizchaves.png
+  github: https://github.com/luizchaves.png
 occupations:
 - id: 20051370420
   type: student
@@ -32,7 +32,7 @@ Vamos padronizar o `id` como sendo a sua matrícula do curso, ou a do IFPB no ca
 
 - `name.compact`
 - `name.full`
-- `avatar.default`
+- `avatar.github`
 - `occupations.$.id`
 - `occupations.$.type`
 - `occupations.$.campus`

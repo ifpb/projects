@@ -3,7 +3,8 @@ name:
   compact: Allan Amâncio
   full: Allan Alves Amâncio
 avatar:
-  default: https://github.com/AllanSmithll.png
+  github: https://github.com/AllanSmithll.png
+  githubUC: https://avatars.githubusercontent.com/u/101681192?v=4
 occupations:
 - id: 20221370030
   type: student

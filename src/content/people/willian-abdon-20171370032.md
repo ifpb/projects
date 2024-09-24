@@ -3,7 +3,8 @@ name:
   compact: Willian Abdon
   full: Willian Pereira Abdon
 avatar:
-  default: https://github.com/willabdon.png
+  github: https://github.com/willabdon.png
+  githubUC: https://avatars.githubusercontent.com/u/28833719?v=4
 occupations:
 - id: 20171370032
   type: student

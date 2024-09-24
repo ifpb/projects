@@ -3,7 +3,8 @@ name:
   compact: Douglas Xavier
   full: Douglas François Xavier Silva
 avatar:
-  default: https://github.com/douglasfxavier.png
+  github: https://github.com/douglasfxavier.png
+  githubUC: https://avatars.githubusercontent.com/u/1514236?v=4
 occupations:
 - id: 20151370421
   type: student

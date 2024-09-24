@@ -3,7 +3,8 @@ name:
   compact: Adrianderson Lira
   full: Adrianderson Oliveira de Souza Lira
 avatar:
-  default: https://github.com/AdriandersonLira.png
+  github: https://github.com/AdriandersonLira.png
+  githubUC: https://avatars.githubusercontent.com/u/43156311?v=4
 occupations:
 - id: 20182370015
   type: student

@@ -96,12 +96,13 @@ const tags = await getPersonTags(person);
   data-tags={tags.join('-')}
 >
   <figure class="mx-auto overflow-hidden">
-    <a href={addresses.linkedin} target="_blank">
+    <a href={addresses.linkedin} target="_blank" class="animate-pulse">
       <img
         src="/projects/imgs/people-placeholder.png"
         alt={name.full}
-        class="animate-pulse bg-gray-300 object-cover w-full h-[233px] hover:scale-105 transition duration-500 cursor-pointer"
-        data-src={avatar.default}
+        title={name.full}
+        class="bg-gray-300 object-cover w-full h-[233px] hover:scale-105 transition duration-500"
+        data-src={avatar.githubUC || avatar[avatar.default ?? 'github']}
         onload="onLoadPersonImage(this)"
         onerror="onErrorPersonImage(this)"
       />

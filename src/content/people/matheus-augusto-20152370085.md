@@ -3,7 +3,8 @@ name:
   compact: Matheus Augusto
   full: Matheus Augusto Coutinho Costa
 avatar:
-  default: https://github.com/mattaugusto.png
+  github: https://github.com/mattaugusto.png
+  githubUC: https://avatars.githubusercontent.com/u/25754917?v=4
 occupations:
 - id: 20152370085
   type: student

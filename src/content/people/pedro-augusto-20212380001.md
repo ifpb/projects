@@ -3,7 +3,8 @@ name:
   compact: Pedro Nunes
   full: Pedro Augusto Ferreira Nunes
 avatar:
-  default: https://github.com/PeedroNunes.png
+  github: https://github.com/PeedroNunes.png
+  githubUC: https://avatars.githubusercontent.com/u/100137863?v=4
 occupations:
 - id: 20212380001
   type: student

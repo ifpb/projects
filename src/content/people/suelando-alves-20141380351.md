@@ -3,7 +3,8 @@ name:
   compact: Suelando Alves
   full: Suelando Alves de Araújo
 avatar:
-  default: https://github.com/suelando.png
+  github: https://github.com/suelando.png
+  githubUC: https://avatars.githubusercontent.com/u/20689059?v=4
 occupations:
 - id: 20141380351
   type: student

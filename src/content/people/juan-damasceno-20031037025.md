@@ -3,7 +3,8 @@ name:
   compact: Juan Damasceno
   full: Juan di Carlo Damasceno
 avatar:
-  default: https://github.com/jdamasceno.png
+  github: https://github.com/jdamasceno.png
+  githubUC: https://avatars.githubusercontent.com/u/1015791?v=4
 occupations:
 - id: 20031037025
   type: student

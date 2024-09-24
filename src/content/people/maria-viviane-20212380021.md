@@ -3,7 +3,8 @@ name:
   compact: Maria Viviane
   full: Maria Viviane Gomes Barbosa
 avatar:
-  default: https://github.com/vivianegms.png
+  github: https://github.com/vivianegms.png
+  githubUC: https://avatars.githubusercontent.com/u/152441752?v=4
 occupations:
 - id: 20212380021
   type: student

@@ -3,7 +3,8 @@ name:
   compact: Flaviano Flauber
   full: Flaviano Flauber de Lira Marinho
 avatar:
-  default: https://github.com/flauberjp.png
+  github: https://github.com/flauberjp.png
+  githubUC: https://avatars.githubusercontent.com/u/13665323?v=4
 occupations:
 - id: 20011025083
   type: student

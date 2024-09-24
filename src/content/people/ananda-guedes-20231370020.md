@@ -3,7 +3,8 @@ name:
   compact: Ananda Guedes
   full: Ananda Guedes do Ó
 avatar:
-  default: https://github.com/agu3des.png
+  github: https://github.com/agu3des.png
+  githubUC: https://avatars.githubusercontent.com/u/128645284?v=4
 occupations:
 - id: 20231370020
   type: student

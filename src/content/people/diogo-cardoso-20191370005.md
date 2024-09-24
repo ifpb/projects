@@ -3,7 +3,8 @@ name:
   compact: Diogo Cardoso
   full: Diogo Gomes Cardoso
 avatar:
-  default: https://github.com/dicardoso.png
+  github: https://github.com/dicardoso.png
+  githubUC: https://avatars.githubusercontent.com/u/32266873?v=4
 occupations:
 - id: 20191370005
   type: student

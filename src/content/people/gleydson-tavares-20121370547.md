@@ -3,7 +3,8 @@ name:
   compact: Gleydson Tavares
   full: Gleydson da Silva Tavares
 avatar:
-  default: https://github.com/g13ydson.png
+  github: https://github.com/g13ydson.png
+  githubUC: https://avatars.githubusercontent.com/u/1000342?v=4
 occupations:
 - id: 20121370547
   type: student

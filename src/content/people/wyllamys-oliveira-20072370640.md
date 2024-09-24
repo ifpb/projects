@@ -3,7 +3,8 @@ name:
   compact: Douglas Silva
   full: Douglas Limeira Silva
 avatar:
-  default: https://github.com/WyllCavalcante.png
+  github: https://github.com/WyllCavalcante.png
+  githubUC: https://avatars.githubusercontent.com/u/561495?v=4
 occupations:
 - id: 20072370640
   type: student

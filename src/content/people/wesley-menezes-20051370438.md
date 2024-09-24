@@ -3,7 +3,7 @@ name:
   compact: Wesley Menezes
   full: Wesley Willame Dias Menezes
 avatar:
-  default: http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4332216H4
+  default: lattes
   lattes: http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4332216H4
 occupations:
 - id: 20051370438

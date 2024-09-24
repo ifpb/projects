@@ -3,7 +3,8 @@ name:
   compact: Ruan Delgado
   full: Ruan Delgado Gomes
 avatar:
-  default: https://github.com/ruandg.png
+  github: https://github.com/ruandg.png
+  githubUC: https://avatars.githubusercontent.com/u/10169638?v=4
 occupations:
 - id: 1948179
   type: professor

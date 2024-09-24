@@ -3,7 +3,8 @@ name:
   compact: Antônio Muniz
   full: Antônio Muniz de Andrade Neto
 avatar:
-  default: https://github.com/nettoandrade.png
+  github: https://github.com/nettoandrade.png
+  githubUC: https://avatars.githubusercontent.com/u/5831273?v=4
 occupations:
 - id: 20122380163
   type: student
