@@ -11,7 +11,7 @@
     "buildpreview": "astro build && astro preview",
     "buildpreviewpf": "astro build && npm run postbuild && astro preview",
     "astro": "astro",
-    "load:github:avatar": "tsx src/content/load-github-avatar.ts"
+    "load:github:avatar": "tsx src/content/load-github-uc-avatar.ts"
   },
   "dependencies": {
     "@astrojs/react": "^3.6.2",
