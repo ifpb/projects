@@ -6,6 +6,7 @@ avatar:
   default: lattes
   lattes: https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4723625Y5
   researchgate: https://i1.rgstatic.net/ii/profile.image/272469848227856-1441973283071_Q128/Damires-Souza.jpg
+  github: https://github.com/Damires
 occupations:
 - id: 1196487
   type: professor

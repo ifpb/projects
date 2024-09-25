@@ -1,7 +1,7 @@
 ---
 name:
-  compact: Douglas Silva
-  full: Douglas Limeira Silva
+  compact: Wyllamys Cavalcante
+  full: Wyllamys Cavalcante de Oliveira
 avatar:
   github: https://github.com/WyllCavalcante.png
   githubUC: https://avatars.githubusercontent.com/u/561495?v=4

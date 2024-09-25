@@ -6,7 +6,7 @@ avatar:
   github: https://github.com/maygp.png
   githubUC: https://avatars.githubusercontent.com/u/20829057?v=4
 occupations:
-- id: 20191370026
+- id: 20161370013
   type: student
   campus: ifpb-jp
   course: cstsi
