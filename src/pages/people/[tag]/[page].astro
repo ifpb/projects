@@ -47,8 +47,12 @@ const formatPageTitle = (tag: string) => {
     } else {
       title = getCourseName(tag);
     }
+  } else if (tag === 'professor') {
+    title = 'Professores';
+  } else if (tag === 'egresso') {
+    title = 'Egresos';
   } else {
-    title = `Pessoas | ${tag[0].toUpperCase() + tag.slice(1)}`;
+    title = `Pessoas com ${tag[0].toUpperCase() + tag.slice(1)}`;
   }
 
   return title;
