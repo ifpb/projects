@@ -48,10 +48,10 @@ const formatPageTitle = (tag: string) => {
       title = getCourseName(tag);
     }
   } else {
-    title = tag[0].toUpperCase() + tag.slice(1);
+    title = `Pessoas | ${tag[0].toUpperCase() + tag.slice(1)}`;
   }
 
-  return `Pessoas | ${title}`;
+  return title;
 };
 
 const { page } = Astro.props;
