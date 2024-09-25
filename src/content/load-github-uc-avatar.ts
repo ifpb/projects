@@ -9,21 +9,22 @@ const randomDelay = (): Promise<void> => {
 async function processFile(filePath: string): Promise<void> {
   let content = fs.readFileSync(filePath, 'utf-8');
 
-  // const regex = /avatar:\n\s*default:\s*(https:\/\/github.com\/.+\.png)/;
-  const regex = /avatar:\n  default: (https:\/\/github.com\/.+\.png)/i;
-  const regexGithub =
-    /github:\s*(https:\/\/avatars\.githubusercontent\.com\/u\/\d+\?v=\d+)/i;
+  const regex = /avatar:\s*github:\s*(https:\/\/github.com\/.+\.png)/i;
+
+  const regexGithub = /avatars\.githubusercontent\.com\/u\/\d+/i;
 
   const match = content.match(regex);
 
   if (match && !regexGithub.test(content)) {
     const avatarDefaultUrl = match[1];
+
     const username = avatarDefaultUrl.match(
       /https:\/\/github\.com\/(.+)\.png/i
     )?.[1];
 
     if (username) {
-      await randomDelay(); // Add random delay before the request
+      await randomDelay();
+
       try {
         const response = await fetch(
           `https://api.github.com/users/${username}`
@@ -34,11 +35,15 @@ async function processFile(filePath: string): Promise<void> {
         }
 
         const data = await response.json();
+
         const avatarGithubUrl = data.avatar_url;
-        const replacement = `${match[0]}\n  github: ${avatarGithubUrl}`;
+
+        const replacement = `${match[0]}\n  githubUC: ${avatarGithubUrl}`;
+
         content = content.replace(match[0], replacement);
 
         fs.writeFileSync(filePath, content, 'utf-8');
+
         console.log(`File ${filePath} successfully modified.`);
       } catch (error) {
         console.error(`Error fetching avatar for ${avatarDefaultUrl}`);
