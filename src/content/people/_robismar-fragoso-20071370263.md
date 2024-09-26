@@ -11,4 +11,5 @@ occupations:
   isFinished: true
 addresses:
   email: prfrobismar@gmail.com
+  linkedin: https://www.linkedin.com/in/robismar-fragoso-386b67112/
 ---

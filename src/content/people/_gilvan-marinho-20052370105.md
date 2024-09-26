@@ -11,4 +11,5 @@ occupations:
   isFinished: true
 addresses:
   email: gilvansoft@hotmail.com
+  linkedin: https://www.linkedin.com/in/gilvan-marinho-b42581123/
 ---

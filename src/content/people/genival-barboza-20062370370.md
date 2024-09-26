@@ -3,6 +3,7 @@ name:
   compact: Genival Barboza
   full: Genival Gomes Barboza Neto
 avatar:
+  selected: none
 occupations:
 - id: 20062370370
   type: student

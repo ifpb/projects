@@ -10,5 +10,4 @@ occupations:
   course: cstsi
   isFinished: true
 addresses:
-  email: diogenes_c1@hotmail.com
 ---
