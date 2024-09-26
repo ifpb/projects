@@ -1,9 +1,9 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { Icon } from 'astro-icon';
+import Badge from '@/components/Badge.astro';
 import { getProjectId, getProjectTags } from '@/helpers/projects';
-import Badge from './Badge.astro';
-import { getPersonId } from '@/helpers/people';
+import { getAvatarImageUrl, getPersonId } from '@/helpers/people';
 
 type ProjectsWithPeople = CollectionEntry<'projects'> & {
   people: CollectionEntry<'people'>[];
@@ -76,10 +76,7 @@ const projectId = getProjectId(project);
                     alt={person.data.name.full}
                     title={person.data.name.full}
                     class="rounded-full bg-gray-300 object-cover w-8"
-                    data-src={
-                      person.data.avatar.githubUC ||
-                      person.data.avatar[person.data.avatar.default ?? 'github']
-                    }
+                    data-src={getAvatarImageUrl(person)}
                     onload="onLoadPersonImage(this, 32)"
                     onerror="onErrorPersonImage(this)"
                   />

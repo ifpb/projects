@@ -1,6 +1,6 @@
 ---
 name:
-  compact: Rafael Albuquerque Cardoso
+  compact: Rafael Cardoso
   full: Rafael Albuquerque Cardoso
 avatar:
   github: https://github.com/rcardosoo.png

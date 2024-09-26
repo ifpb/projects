@@ -1,8 +1,8 @@
 import type { CollectionEntry } from 'astro:content';
 import type { SubjectProject } from '@/content/config';
 import { getCollection } from 'astro:content';
-import { getOccupationId } from './people';
-import { isSubjectProject } from './projects';
+import { getOccupationId } from '@/helpers/people';
+import { isSubjectProject } from '@/helpers/projects';
 
 const courses = await getCollection('courses');
 

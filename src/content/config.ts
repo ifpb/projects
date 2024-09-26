@@ -149,8 +149,15 @@ const peopleCollection = defineCollection({
       full: z.string(),
     }),
     avatar: z.object({
-      default: z
-        .enum(['github', 'githubUC', 'researchgate', 'lattes', 'linkedin'])
+      selected: z
+        .enum([
+          'github',
+          'githubUC',
+          'researchgate',
+          'lattes',
+          'linkedin',
+          'none',
+        ])
         .optional(),
       github: z.string().url().optional(),
       githubUC: z.string().url().optional(),
@@ -162,7 +169,7 @@ const peopleCollection = defineCollection({
       z.union([professorOccupation, employeeOccupation, studentOccupation])
     ),
     addresses: addresses.extend({
-      linkedin: z.string().url(),
+      linkedin: z.string().url().optional(),
       github: z.string().url().optional(),
       projects: z.string().optional(),
       figma: z.string().optional(),

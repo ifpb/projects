@@ -1,12 +1,12 @@
 import type { CollectionEntry } from 'astro:content';
 import type { Student, Occupation } from '@/content/config';
 import { getCollection } from 'astro:content';
-import { getProjectsByPerson, isSubjectProject } from './projects';
+import { getProjectsByPerson, isSubjectProject } from '@/helpers/projects';
 import {
   getCourseByAbbreviation,
   getFirstCourseByPeople,
   getSubjectByProject,
-} from './courses';
+} from '@/helpers/courses';
 
 export function getPersonId(person: CollectionEntry<'people'>) {
   if (isStudent(person)) {
@@ -40,6 +40,18 @@ export function getOccupationId(occupation: Occupation) {
   } else {
     return String(occupation.id);
   }
+}
+
+export function getAvatarImageUrl(person: CollectionEntry<'people'>) {
+  const { avatar } = person.data;
+
+  if (avatar.selected === 'none') {
+    return 'none';
+  }
+
+  return avatar.selected
+    ? avatar[avatar.selected]
+    : avatar.githubUC || avatar.github;
 }
 
 export function isStudent(person: CollectionEntry<'people'>) {
