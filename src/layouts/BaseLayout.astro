@@ -11,10 +11,11 @@ export interface Propos {
   pageTitle: string;
   tags?: string[];
   type?: string;
+  pageFindFilter?: string;
 }
 
-const { pageTitle, tags, type } = Astro.props;
-
+const { pageTitle, tags, type, pageFindFilter } = Astro.props;
+console.log(pageFindFilter);
 const allTags = tags ? await getAllPersonTags() : [];
 ---
 
@@ -39,7 +40,14 @@ const allTags = tags ? await getAllPersonTags() : [];
       }
 
       {
-        pageTitle && (
+        pageTitle && pageFindFilter ? (
+          <h1
+            class="text-center pb-16 text-4xl font-bold"
+            data-pagefind-filter={pageFindFilter}
+          >
+            {pageTitle}
+          </h1>
+        ) : (
           <h1 class="text-center pb-16 text-4xl font-bold">{pageTitle}</h1>
         )
       }

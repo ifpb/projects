@@ -48,15 +48,11 @@ export async function getStaticPaths() {
 const { project, people }: Props = Astro.props;
 
 const category = project.data.category as ProjectProps['category'];
+
+const pageTitle = `Projeto | ${project.data.name}`;
 ---
 
-<BaseLayout>
-  <h1
-    class="text-center pb-16 text-4xl font-bold"
-    data-pagefind-filter="tipo:Projeto"
-  >
-    {project.data.name}
-  </h1>
+<BaseLayout pageTitle={pageTitle} pageFindFilter="tipo:Projeto">
   <div class="flex flex-col md:flex-row gap-5">
     { project.data.addresses.preview && (
       <div class="image-preview w-full md:w-[50%]">
