@@ -73,6 +73,8 @@ let icons = [
 
 const { person } = Astro.props;
 
+const isDev = import.meta.env.DEV;
+
 const {
   data: { name, addresses, avatar, occupations },
 } = person;
@@ -97,6 +99,8 @@ let links = icons
   }));
 
 const tags = await getPersonTags(person);
+
+export const fallbackImage = '/projects/imgs/clarity-avatar-solid.svg';
 ---
 
 <div
@@ -106,7 +110,7 @@ const tags = await getPersonTags(person);
   <figure class="mx-auto overflow-hidden">
     <a href={addresses.linkedin} target="_blank" class="animate-pulse">
       <img
-        src={getAvatarImageUrl(person)}
+        src={isDev ? fallbackImage : getAvatarImageUrl(person)}
         alt={name.full}
         title={name.full}
         class="bg-gray-300 object-cover w-full h-[233px] hover:scale-105 transition duration-500"
