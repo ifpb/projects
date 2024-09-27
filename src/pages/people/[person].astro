@@ -43,14 +43,12 @@ const { person, projects } = Astro.props;
 const subjects = projects
   .filter((projects) => isSubjectProject(projects))
   .map((project) => getSubjectByProject(project));
-
-const pageTitle = `${person.data.name.full}`;
 ---
 
 
 <PersonUtil />
 
-<BaseLayout pageTitle={pageTitle} pageFindFilter="tipo:Pessoas">
+<BaseLayout pageTitle={person.data.name.full} pageFindFilter="tipo:Pessoas">
   <div
     class="flex gap-5 flex-col md:flex-row items-center md:justify-center md:items-start"
   >

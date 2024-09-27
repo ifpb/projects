@@ -33,6 +33,6 @@ export async function getStaticPaths({ paginate }) {
 const { page, index, tags } = Astro.props;
 ---
 
-<BaseLayout pageTitle="IFPB" type="people" tags={tags}>
+<BaseLayout pageTitle="Pessoas" type="people" tags={tags}>
   <PersonGrid page={page} type="people" index={index} />
 </BaseLayout>
