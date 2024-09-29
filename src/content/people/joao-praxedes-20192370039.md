@@ -1,6 +1,6 @@
 ---
 name:
-  compact: João Praxedes
+  compact: João Fernandes
   full: João Fernandes Praxedes Neto
 avatar:
   github: https://github.com/xuaoneto.png
@@ -14,4 +14,5 @@ occupations:
 addresses:
   github: https://github.com/xuaoneto
   linkedin: https://www.linkedin.com/in/joao-fernandes-praxedes-neto/
+  homepage: https://joaofernandes-portfolio.vercel.app/
 ---

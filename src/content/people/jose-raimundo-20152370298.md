@@ -15,4 +15,5 @@ addresses:
   email: jsraimundob@gmail.com
   github: https://github.com/JoseRaimundo
   linkedin: https://www.linkedin.com/in/joseraimundob/
+  homepage: https://joseraimundo.github.io/
 ---
