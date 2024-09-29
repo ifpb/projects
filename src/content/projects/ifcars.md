@@ -1,10 +1,10 @@
 ---
-name: Loja de IFCARS
-description: A loja IFCARS é sua melhor modelo de loja para compras de carros luxuosos
+name: IFCARS
+description: IFCARS é uma loja virtual de carros esportivos. 
 addresses:
-  preview: https://raw.githubusercontent.com/2daniell/ifcars/main/preview.png
+  preview: https://raw.githubusercontent.com/2daniell/ifcars/refs/heads/tailwind/assets/preview.png
   homepage: https://2daniell.github.io/ifcars/
-  repository: https://github.com/2daniell/ifcars
+  repository: https://github.com/2daniell/ifcars/tree/tailwind
 category:
   type: subject
   subject: lm
@@ -14,6 +14,7 @@ category:
 tags:
   - html
   - css
+  - tailwind
 owners:
   - 20241370012
   - 20241370004
