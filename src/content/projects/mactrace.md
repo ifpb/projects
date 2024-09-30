@@ -2,7 +2,7 @@
 name: MACtrace
 description: Descubra a identidade dos fabricantes com o MacTrace.
 addresses:
-  preview: https://raw.githubusercontent.com/l3l0ch/Projeto-Dw/main/Projeto-main/projeto/image.png
+  preview: https://raw.githubusercontent.com/MateusEDSS/Projeto-Dw/main/public/front/images/image.png
   repository: https://github.com/l3l0ch/Projeto-Dw
 category:
   type: subject
