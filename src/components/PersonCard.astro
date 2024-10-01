@@ -5,7 +5,7 @@ import { Icon } from 'astro-icon';
 import Badge from '@/components/Badge.astro';
 import { getProjectsByPerson } from '@/helpers/projects';
 import {
-  getPersonId,
+  getFirstPersonId,
   getPersonTags,
   getAvatarImageUrl,
   isFinishedSomeCourse,
@@ -79,7 +79,7 @@ const {
   data: { name, addresses, avatar, occupations },
 } = person;
 
-const id = getPersonId(person);
+const id = getFirstPersonId(person);
 
 const codeUrl = `/projects/people/${id}/`;
 
