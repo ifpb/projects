@@ -1,0 +1,16 @@
+---
+name:
+  compact: Gabriel Felix
+  full: Gabriel Felix Emiliano da Costa Sousa
+avatar:
+  selected: linkedin
+  linkedin: https://media.licdn.com/dms/image/v2/D4D03AQFVNpEqAPj8gA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1696420538958?e=1733356800&v=beta&t=So5CR4iYVKVfa8fvbjWS2ccElWreTspu2LrQ9d8F4_4
+occupations:
+- id: 20222370006
+  type: student
+  campus: ifpb-jp
+  course: cstsi
+  isFinished: false
+addresses:
+  linkedin: https://www.linkedin.com/in/gabriel-f%C3%A9lix-780964269/
+---
