@@ -11,12 +11,12 @@ category:
   course: cstsi
   campus: ifpb-jp
 tags:
-  - HTML
-  - SCSS
-  - TypeScript
-  - Angular
-  - Spring Boot
-  - Firestore
+  - html
+  - scss
+  - typescript
+  - angular
+  - spring boot
+  - firestore
 owners:
   - 20222370016
   - 20221370012
