@@ -1,9 +1,10 @@
 ---
-id: 20171370011
 name:
   compact: Tales Medeiros
   full: Tales Medeiros de Araujo
-avatar: https://github.com/Tales313.png
+avatar:
+  github: https://github.com/Tales313.png
+  githubUC: https://avatars.githubusercontent.com/u/28072972?v=4
 occupations:
 - id: 20171370011
   type: student

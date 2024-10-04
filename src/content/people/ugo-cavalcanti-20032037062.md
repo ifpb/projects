@@ -1,9 +1,10 @@
 ---
-id: 20032037062
 name:
   compact: Ugo Cavalcanti
   full: Ugo da Costa Cavalcanti
-avatar: https://github.com/ugocavalcanti.png
+avatar:
+  github: https://github.com/ugocavalcanti.png
+  githubUC: https://avatars.githubusercontent.com/u/18397188?v=4
 occupations:
 - id: 20032037062
   type: student

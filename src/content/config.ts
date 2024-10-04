@@ -20,7 +20,7 @@ export type Address = z.infer<typeof addresses>;
 const id = z.number().refine((num) => {
   const length = num.toString().length;
 
-  return [12, 11, 7].includes(length);
+  return [12, 11, 7, 6].includes(length);
 });
 
 export const campi = {
@@ -54,6 +54,8 @@ const addresses = z.object({
   gitlab: z.string().url().optional(),
   linkedin: z.string().url().optional(),
   homepage: z.string().optional(),
+  medium: z.string().optional(),
+  devto: z.string().optional(),
   twitter: z.string().url().optional(),
   bluesky: z.string().url().optional(),
   threads: z.string().url().optional(),
@@ -62,6 +64,7 @@ const addresses = z.object({
   researchgate: z.string().url().optional(),
   orcid: z.string().url().optional(),
   googleScholar: z.string().url().optional(),
+  webOfScience: z.string().url().optional(),
   instagram: z.string().url().optional(),
   tiktok: z.string().url().optional(),
   youtube: z.string().url().optional(),
@@ -142,18 +145,34 @@ const courseCollection = defineCollection({
 
 const peopleCollection = defineCollection({
   schema: z.object({
-    id,
+    id: id.optional(),
     name: z.object({
       compact: z.string(),
       full: z.string(),
     }),
-    avatar: z.string().url(),
+    avatar: z.object({
+      selected: z
+        .enum([
+          'github',
+          'githubUC',
+          'researchgate',
+          'lattes',
+          'linkedin',
+          'none',
+        ])
+        .optional(),
+      github: z.string().url().optional(),
+      githubUC: z.string().url().optional(),
+      researchgate: z.string().url().optional(),
+      lattes: z.string().url().optional(),
+      linkedin: z.string().url().optional(),
+    }),
     occupations: z.array(
       z.union([professorOccupation, employeeOccupation, studentOccupation])
     ),
     addresses: addresses.extend({
-      github: z.string().url(),
-      linkedin: z.string().url(),
+      linkedin: z.string().url().optional(),
+      github: z.string().url().optional(),
       projects: z.string().optional(),
       figma: z.string().optional(),
     }),

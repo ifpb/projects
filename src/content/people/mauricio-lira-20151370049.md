@@ -1,9 +1,10 @@
 ---
-id: 20151370049
 name:
   compact: Maurício de Lira
   full: Maurício Barbosa de Lira Filho
-avatar: https://github.com/mauriciodlira.png
+avatar:
+  github: https://github.com/mauriciodlira.png
+  githubUC: https://avatars.githubusercontent.com/u/15882780?v=4
 occupations:
 - id: 20151370049
   type: student

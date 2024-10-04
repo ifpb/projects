@@ -1,9 +1,10 @@
 ---
-id: 20171370033
 name:
   compact: Fabrício Liberato
   full: Fabricio Liberato da Silva
-avatar: https://github.com/FabricioLiber.png
+avatar:
+  github: https://github.com/FabricioLiber.png
+  githubUC: https://avatars.githubusercontent.com/u/22638603?v=4
 occupations:
 - id: 20171370033
   type: student

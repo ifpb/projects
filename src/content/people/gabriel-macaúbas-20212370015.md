@@ -1,9 +1,10 @@
 ---
-id: 20212370015
 name:
   compact: Gabriel Macaúbas
   full: Gabriel Macaúbas Melo
-avatar: https://github.com/gabrielmacaubas.png
+avatar:
+  github: https://github.com/gabrielmacaubas.png
+  githubUC: https://avatars.githubusercontent.com/u/63072853?v=4
 occupations:
 - id: 20212370015
   type: student

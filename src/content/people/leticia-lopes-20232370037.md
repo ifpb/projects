@@ -1,9 +1,10 @@
 ---
-id: 20232370037
 name:
   compact: Letícia Lopes
   full: Letícia Lopes Lima
-avatar: https://github.com/leticiazlopes.png
+avatar:
+  github: https://github.com/leticiazlopes.png
+  githubUC: https://avatars.githubusercontent.com/u/129249488?v=4
 occupations:
 - id: 20232370037
   type: student

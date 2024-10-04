@@ -1,9 +1,10 @@
 ---
-id: 20122370427
 name:
   compact: Jozias Júnior
   full: Jozias Rolim de Araújo Júnior
-avatar: https://github.com/mocotinha.png
+avatar:
+  github: https://github.com/mocotinha.png
+  githubUC: https://avatars.githubusercontent.com/u/5109442?v=4
 occupations:
 - id: 20122370427
   type: student

@@ -1,9 +1,10 @@
 ---
-id: 20221370046
 name:
   compact: Clodoaldo Santos
   full: Clodoaldo dos Santos Negreiros Junior
-avatar: https://github.com/ClodsNegreiros.png
+avatar:
+  github: https://github.com/ClodsNegreiros.png
+  githubUC: https://avatars.githubusercontent.com/u/96806687?v=4
 occupations:
 - id: 20221370046
   type: student

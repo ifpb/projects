@@ -1,9 +1,10 @@
 ---
-id: 20042037115
 name:
   compact: Marcus Philippe
   full: Marcus Philippe da Costa Leite
-avatar: https://github.com/marcusphilippe.png
+avatar:
+  github: https://github.com/marcusphilippe.png
+  githubUC: https://avatars.githubusercontent.com/u/731958?v=4
 occupations:
 - id: 20042037115
   type: student

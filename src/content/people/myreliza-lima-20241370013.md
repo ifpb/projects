@@ -1,9 +1,10 @@
 ---
-id: 20241370013
 name:
   compact: Myreliza Lima
   full: Myreliza de Lima Berto
-avatar: https://github.com/myrelii.png
+avatar:
+  github: https://github.com/myrelii.png
+  githubUC: https://avatars.githubusercontent.com/u/164705004?v=4
 occupations:
 - id: 20241370013
   type: student

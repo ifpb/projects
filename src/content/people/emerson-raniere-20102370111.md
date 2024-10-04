@@ -1,9 +1,10 @@
 ---
-id: 20102370111
 name:
   compact: Emerson Raniere
   full: Emerson Raniere Oliveira Souza
-avatar: https://github.com/EmersonRaniere.png
+avatar:
+  github: https://github.com/EmersonRaniere.png
+  githubUC: https://avatars.githubusercontent.com/u/3751100?v=4
 occupations:
 - id: 20102370111
   type: student

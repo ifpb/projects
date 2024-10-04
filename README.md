@@ -8,11 +8,11 @@ O primeiro passo seria incluir o dados do aluno adicionando um arquivo seguindo 
 
 ```yaml
 ---
-id: 20051370420
 name:
   compact: Luiz Chaves
   full: Luiz Carlos Rodrigues Chaves
-avatar: https://github.com/luizchaves.png
+avatar:
+  github: https://github.com/luizchaves.png
 occupations:
 - id: 20051370420
   type: student
@@ -30,10 +30,9 @@ addresses:
 
 Vamos padronizar o `id` como sendo a sua matrícula do curso, ou a do IFPB no caso de servidor, e os seguintes campos serão obrigatórios para estudante segundo a [definição de coleção do Astro.js](https://docs.astro.build/en/guides/content-collections/#defining-a-collection-schema) no arquivo [src/content/config.ts](https://github.com/ifpb/projects/tree/main/src/content/config.ts) (Esquema feito com [Zod](https://zod.dev/)):
 
-- `id`
 - `name.compact`
 - `name.full`
-- `avatar`
+- `avatar.github`
 - `occupations.$.id`
 - `occupations.$.type`
 - `occupations.$.campus`

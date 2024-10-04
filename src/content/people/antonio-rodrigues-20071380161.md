@@ -1,11 +1,12 @@
 ---
-id: 201919840015
 name:
   compact: Antônio Rodrigues
   full: Antônio Flávio Ferreira Rodrigues
-avatar: https://github.com/antonioflaviofr.png
+avatar:
+  github: https://github.com/antonioflaviofr.png
+  githubUC: https://avatars.githubusercontent.com/u/5391383?v=4
 occupations:
-- id: 20052380070
+- id: 20071380161
   type: student
   campus: ifpb-jp
   course: cstrc

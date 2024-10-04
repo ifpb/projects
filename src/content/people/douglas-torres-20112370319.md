@@ -1,9 +1,10 @@
 ---
-id: 20112370319
 name:
   compact: Douglas Torres
   full: Douglas Gadelha Firmino Torres
-avatar: https://www.github.com/dougtorres.png
+avatar:
+  github: https://www.github.com/dougtorres.png
+  githubUC: https://avatars.githubusercontent.com/u/5951990?v=4
 occupations:
 - id: 20112370319
   type: student

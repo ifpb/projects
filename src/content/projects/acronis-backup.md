@@ -9,9 +9,11 @@ category:
   course: cstrc
   campus: ifpb-jp
 tags:
-  - js
-  - css
-  - html
+  - bootstrap
+  - express
+  - ssh2
+  - ssh2-sftp-client
+  - vagrant
 addresses:
   preview: https://raw.githubusercontent.com/adalbertorosendoo/Projeto-DW/main/preview.png
   repository: https://github.com/adalbertorosendoo/Projeto-DW

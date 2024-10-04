@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import FilterLayout from '@/layouts/FilterLayout.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
 import PersonGrid from '@/components/PersonGrid.astro';
 import { getAllPeopleTagGroups, getPeople } from '@/helpers/people';
 import { PAGE_SIZE } from '@/consts';
@@ -33,6 +33,6 @@ export async function getStaticPaths({ paginate }) {
 const { page, index, tags } = Astro.props;
 ---
 
-<FilterLayout pageTitle="Pessoas" type="people" tags={tags}>
+<BaseLayout pageTitle="Pessoas" type="people" tags={tags}>
   <PersonGrid page={page} type="people" index={index} />
-</FilterLayout>
+</BaseLayout>

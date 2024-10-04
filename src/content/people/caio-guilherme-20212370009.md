@@ -1,9 +1,10 @@
 ---
-id: 20212370009
 name:
   compact: Caio Guilherme
   full: Caio André Guilherme de Miranda
-avatar: https://github.com/agmcaio.png
+avatar:
+  github: https://github.com/agmcaio.png
+  githubUC: https://avatars.githubusercontent.com/u/89410898?v=4
 occupations:
 - id: 20212370009
   type: student

@@ -1,9 +1,10 @@
 ---
-id: 20241370030
 name:
   compact: Victor Belfort
   full: Victor Belfort de Aquino Bezerra
-avatar: https://github.com/belfortt.png
+avatar:
+  github: https://github.com/belfortt.png
+  githubUC: https://avatars.githubusercontent.com/u/162510665?v=4
 occupations:
 - id: 20241370030
   type: student

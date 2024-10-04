@@ -1,9 +1,10 @@
 ---
-id: 20031037032
 name:
   compact: Raphael Patricio
   full: Raphael Freire de Araujo Patricio
-avatar: https://github.com/raphaeljpb.png
+avatar:
+  github: https://github.com/raphaeljpb.png
+  githubUC: https://avatars.githubusercontent.com/u/558384?v=4
 occupations:
 - id: 20031037032
   type: student

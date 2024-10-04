@@ -1,9 +1,10 @@
 ---
-id: 20212370047
 name:
   compact: Ricardo França
   full: Ricardo Franca Soares
-avatar: https://github.com/rickfsoares.png
+avatar:
+  github: https://github.com/rickfsoares.png
+  githubUC: https://avatars.githubusercontent.com/u/56850984?v=4
 occupations:
 - id: 20212370047
   type: student

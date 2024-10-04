@@ -1,5 +1,4 @@
 ---
-id: 20092370165
 name:
   compact: Idjinne Ribeiro
   full: Idjinne Carollynne Borges Ribeiro

@@ -1,9 +1,10 @@
 ---
-id: 20132370403
 name:
   compact: Anderson Araújo
   full: Anderson de Araújo Gomes
-avatar: https://github.com/andersondevg.png
+avatar:
+  github: https://github.com/andersondevg.png
+  githubUC: https://avatars.githubusercontent.com/u/12386281?v=4
 occupations:
 - id: 20132370403
   type: student

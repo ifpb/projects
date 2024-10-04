@@ -1,15 +1,15 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Badge from '@/components/Badge.astro';
+import { getCourseByAbbreviation } from '@/helpers/courses';
+import { getPeopleByProject, getFirstPersonId } from '@/helpers/people';
 import {
   getProjectId,
   getProjects,
   isSubjectProject,
 } from '@/helpers/projects';
-import { getPeopleByProject } from '@/helpers/people';
-import BaseLayout from '@/layouts/BaseLayout.astro';
-import { getCourseByAbbreviation } from '@/helpers/courses';
 import { campi } from '@/content/config';
-import Badge from '@/components/Badge.astro';
 
 interface ProjectProps {
   category: {
@@ -48,21 +48,17 @@ export async function getStaticPaths() {
 const { project, people }: Props = Astro.props;
 
 const category = project.data.category as ProjectProps['category'];
+
+const pageTitle = `Projeto | ${project.data.name}`;
 ---
 
-<BaseLayout>
-  <h1
-    class="text-center pb-16 text-4xl font-bold"
-    data-pagefind-filter="tipo:Projeto"
-  >
-    {project.data.name}
-  </h1>
+<BaseLayout pageTitle={pageTitle} pageFindFilter="tipo:Projeto">
   <div class="flex flex-col md:flex-row gap-5">
     { project.data.addresses.preview && (
       <div class="image-preview w-full md:w-[50%]">
         <a class="underline" href={project.data.addresses.homepage}>
           <img
-            src={project.data.addresses.preview}
+            src={project.data.addresses.preview ?? '/projects/imgs/project-placeholder.png'}
             alt={project.data.name}
             class="border w-full"
             onload="this.onload = null; this.classList.remove('animate-pulse');"
@@ -119,12 +115,12 @@ const category = project.data.category as ProjectProps['category'];
           {
             people
               .sort((a, b) =>
-                a.data.name.compact.localeCompare(b.data.name.compact)
+                a.data.name.full.localeCompare(b.data.name.full)
               )
-              .map(({ data: { id, name } }) => (
+              .map((person) => (
                 <li>
-                  <a class="underline" href={`/projects/people/${id}`}>
-                    {name.full}
+                  <a class="underline" href={`/projects/people/${getFirstPersonId(person)}`}>
+                    {person.data.name.full}
                   </a>
                 </li>
               ))
@@ -136,7 +132,9 @@ const category = project.data.category as ProjectProps['category'];
         <div class="font-bold text-lg">Tags:</div>
         <nav class="mb-2">
           {
-            project.data.tags.map((tag) => <Badge url={`/projects/codes/${tag}/1/`} text={tag} />)
+            project.data.tags
+              .filter((tag, index, self) => self.indexOf(tag) === index)
+              .map((tag) => <Badge url={`/projects/codes/${tag}/1/`} text={tag} />)
           }
         </nav>
       </div>

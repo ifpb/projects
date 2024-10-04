@@ -1,9 +1,10 @@
 ---
-id: 20141370470
 name:
   compact: Francisco Braz
   full: Francisco Braz de Medeiros Neto
-avatar: https://github.com/Franciscobraz.png
+avatar:
+  github: https://github.com/Franciscobraz.png
+  githubUC: https://avatars.githubusercontent.com/u/13908366?v=4
 occupations:
 - id: 20141370470
   type: student

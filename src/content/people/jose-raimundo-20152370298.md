@@ -1,9 +1,10 @@
 ---
-id: 20152370298
 name:
   compact: José Raimundo
   full: José Raimundo Barbosa
-avatar: https://github.com/JoseRaimundo.png
+avatar:
+  github: https://github.com/JoseRaimundo.png
+  githubUC: https://avatars.githubusercontent.com/u/10813914?v=4
 occupations:
 - id: 20152370298
   type: student
@@ -14,4 +15,5 @@ addresses:
   email: jsraimundob@gmail.com
   github: https://github.com/JoseRaimundo
   linkedin: https://www.linkedin.com/in/joseraimundob/
+  homepage: https://joseraimundo.github.io/
 ---

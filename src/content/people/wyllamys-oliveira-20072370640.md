@@ -1,9 +1,10 @@
 ---
-id: 20072370640
 name:
-  compact: Douglas Silva
-  full: Douglas Limeira Silva
-avatar: https://github.com/WyllCavalcante.png
+  compact: Wyllamys Cavalcante
+  full: Wyllamys Cavalcante de Oliveira
+avatar:
+  github: https://github.com/WyllCavalcante.png
+  githubUC: https://avatars.githubusercontent.com/u/561495?v=4
 occupations:
 - id: 20072370640
   type: student

@@ -1,9 +1,10 @@
 ---
-id: 20092370076
 name:
   compact: Pablo Veinberg
   full: Pablo Sebastian Veinberg
-avatar: https://github.com/pveinberg.png
+avatar:
+  github: https://github.com/pveinberg.png
+  githubUC: https://avatars.githubusercontent.com/u/879657?v=4
 occupations:
 - id: 20092370076
   type: student

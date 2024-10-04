@@ -1,7 +1,7 @@
 import type { CollectionEntry } from 'astro:content';
-import type { SubjectProject } from './../content/config';
+import type { SubjectProject } from '@/content/config';
 import { getCollection } from 'astro:content';
-import { getPeopleByProject } from './people';
+import { getPeopleByProject } from '@/helpers/people';
 
 export function isSubjectProject(project: CollectionEntry<'projects'>) {
   return project.data.category.type === 'subject';

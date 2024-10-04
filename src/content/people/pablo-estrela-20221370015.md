@@ -1,9 +1,10 @@
 ---
-id: 20221370015
 name:
   compact: Pablo Estrela
   full: Pablo de Lima Marques Estrela
-avatar: https://github.com/eztrela.png
+avatar:
+  github: https://github.com/eztrela.png
+  githubUC: https://avatars.githubusercontent.com/u/102769647?v=4
 occupations:
   - id: 20221370015
     type: student

@@ -1,9 +1,10 @@
 ---
-id: 20192370027
 name:
   compact: Eduardo Porto
   full: Eduardo Henrique Fidelis Porto
-avatar: https://github.com/DuduPorto2000.png
+avatar:
+  github: https://github.com/DuduPorto2000.png
+  githubUC: https://avatars.githubusercontent.com/u/60082543?v=4
 occupations:
 - id: 20192370027
   type: student

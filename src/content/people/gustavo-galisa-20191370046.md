@@ -1,9 +1,10 @@
 ---
-id: 20191370046
 name:
   compact: Gustavo Galisa
   full: Gustavo Sousa Galisa Albuquerque
-avatar: https://github.com/gustavogalisa.png
+avatar:
+  github: https://github.com/gustavogalisa.png
+  githubUC: https://avatars.githubusercontent.com/u/44270471?v=4
 occupations:
 - id: 20191370046
   type: student

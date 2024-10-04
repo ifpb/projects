@@ -1,9 +1,10 @@
 ---
-id: 20151370359
 name:
   compact: Alber Jonathas
   full: Alber Jonathas Nunes Paz
-avatar: https://github.com/AlberJ.png
+avatar:
+  github: https://github.com/AlberJ.png
+  githubUC: https://avatars.githubusercontent.com/u/19240849?v=4
 occupations:
 - id: 20151370359
   type: student

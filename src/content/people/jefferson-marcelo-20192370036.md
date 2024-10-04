@@ -1,9 +1,10 @@
 ---
-id: 20192370036
 name:
   compact: Jefferson Marcelo
   full: Jefferson Marcelo Oliveira da Silva
-avatar: https://github.com/Jefferson-Marcelo.png
+avatar:
+  github: https://github.com/Jefferson-Marcelo.png
+  githubUC: https://avatars.githubusercontent.com/u/57568280?v=4
 occupations:
 - id: 20192370036
   type: student

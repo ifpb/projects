@@ -1,9 +1,10 @@
 ---
-id: 20181370027
 name:
   compact: Maurício Pereira
   full: Maurício Pereira da Costa Junior
-avatar: https://github.com/mauriciopcj.png
+avatar:
+  github: https://github.com/mauriciopcj.png
+  githubUC: https://avatars.githubusercontent.com/u/39006582?v=4
 occupations:
 - id: 20181370027
   type: student

@@ -1,5 +1,4 @@
 ---
-id: 20112370041
 name:
   compact: Tiago Barbosa
   full: Tiago Cesário Barbosa

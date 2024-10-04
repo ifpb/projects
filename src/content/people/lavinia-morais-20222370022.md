@@ -1,9 +1,10 @@
 ---
-id: 20222370022
 name:
   compact: Lavínia Morais
   full: Lavínia Rodrigues Morais
-avatar: https://github.com/Laviniarm.png
+avatar:
+  github: https://github.com/Laviniarm.png
+  githubUC: https://avatars.githubusercontent.com/u/96793999?v=4
 occupations:
 - id: 20222370022
   type: student

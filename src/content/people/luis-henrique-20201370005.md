@@ -1,9 +1,10 @@
 ---
-id: 20201370005
 name:
   compact: Luís Henrique
   full: Luís Henrique Ferreira Freire
-avatar: https://github.com/henrqueDev.png
+avatar:
+  github: https://github.com/henrqueDev.png
+  githubUC: https://avatars.githubusercontent.com/u/61325756?v=4
 occupations:
 - id: 20201370005
   type: student

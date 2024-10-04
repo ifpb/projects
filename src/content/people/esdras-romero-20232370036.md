@@ -1,9 +1,10 @@
 ---
-id: 20232370036
 name:
   compact: Esdras Romero
   full: Esdras Romero Fonseca de Lima
-avatar: https://github.com/Esdras-Romero.png
+avatar:
+  github: https://github.com/Esdras-Romero.png
+  githubUC: https://avatars.githubusercontent.com/u/180443543?v=4
 occupations:
 - id: 20232370036
   type: student

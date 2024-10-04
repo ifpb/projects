@@ -2,9 +2,12 @@
 import type { CollectionEntry } from 'astro:content';
 import type { Student } from '@/content/config';
 import { Icon } from 'astro-icon';
+import Badge from '@/components/Badge.astro';
 import { getProjectsByPerson } from '@/helpers/projects';
 import {
+  getFirstPersonId,
   getPersonTags,
+  getAvatarImageUrl,
   isFinishedSomeCourse,
   isProfessor,
   isStudent,
@@ -13,7 +16,6 @@ import {
   getCourseAbbreviationByOccupation,
   getCourseAbbreviationCampusByOccupation,
 } from '@/helpers/courses';
-import Badge from './Badge.astro';
 
 export interface Props {
   person: CollectionEntry<'people'>;
@@ -60,13 +62,24 @@ let icons = [
     // icon: 'ph:student',
     // icon: 'ph:flask',
   },
+  {
+    name: 'lattes',
+    // icon: 'academicons:lattes',
+    // icon: 'academicons:lattes-square',
+    image: '/projects/imgs/lattes.svg',
+    size: 24,
+  },
 ];
 
 const { person } = Astro.props;
 
+const isDev = import.meta.env.DEV;
+
 const {
-  data: { id, name, addresses, avatar, occupations },
+  data: { name, addresses, avatar, occupations },
 } = person;
+
+const id = getFirstPersonId(person);
 
 const codeUrl = `/projects/people/${id}/`;
 
@@ -86,6 +99,8 @@ let links = icons
   }));
 
 const tags = await getPersonTags(person);
+
+export const fallbackImage = '/projects/imgs/clarity-avatar-solid.svg';
 ---
 
 <div
@@ -93,13 +108,15 @@ const tags = await getPersonTags(person);
   data-tags={tags.join('-')}
 >
   <figure class="mx-auto overflow-hidden">
-    <a href={addresses.linkedin} target="_blank">
+    <a href={addresses.linkedin} target="_blank" class="animate-pulse">
       <img
-        src={avatar}
+        src={isDev ? fallbackImage : getAvatarImageUrl(person)}
         alt={name.full}
-        class="animate-pulse bg-gray-300 object-cover w-full h-[233px] hover:scale-105 transition duration-500 cursor-pointer"
-        onload="this.onload=null;this.classList.remove('animate-pulse');"
-        onerror="this.onerror=null;this.classList.remove('animate-pulse', 'bg-neutral-400');this.src='/projects/imgs/avatar.svg';"
+        title={name.full}
+        class="bg-gray-300 object-cover w-full h-[233px] hover:scale-105 transition duration-500"
+        data-src={getAvatarImageUrl(person)}
+        onload="onLoadPersonImage(this)"
+        onerror="onErrorPersonImage(this)"
       />
     </a>
   </figure>
@@ -117,11 +134,21 @@ const tags = await getPersonTags(person);
             target="_blank"
             class="hover:scale-110 transition duration-500 flex items-center justify-center"
           >
-            <Icon
-              name={link.icon}
-              size={link.size}
-              class={`${link.name}-person-link`}
-            />
+            {link.icon && (
+              <Icon
+                name={link.icon}
+                size={link.size}
+                class={`${link.name}-person-link`}
+              />
+            )}
+            {link.image && avatar.selected === 'none' && (
+              <img
+                src={link.image}
+                alt={link.name}
+                title={link.name}
+                width={link.size}
+              />
+            )}
           </a>
         ))
       }

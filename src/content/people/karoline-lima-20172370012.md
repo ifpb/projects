@@ -1,9 +1,10 @@
 ---
-id: 20172370012
 name:
   compact: Karoline Lima
   full: Karoline Andrade da Silva Lima
-avatar: https://github.com/KarolineLima.png
+avatar:
+  github: https://github.com/KarolineLima.png
+  githubUC: https://avatars.githubusercontent.com/u/32220908?v=4
 occupations:
 - id: 20172370012
   type: student

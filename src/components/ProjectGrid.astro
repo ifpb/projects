@@ -1,7 +1,8 @@
 ---
 import type { ProjectsWithPeople } from '@/pages/codes/page/[page].astro';
-import ProjectCard from './ProjectCard.astro';
-import PaginationIndex from './PaginationIndex.astro';
+import ProjectCard from '@/components/ProjectCard.astro';
+import PaginationIndex from '@/components/PaginationIndex.astro';
+import PersonUtil from '@/components/PersonUtil.astro';
 
 export interface Props {
   page: {
@@ -21,6 +22,8 @@ export interface Props {
 
 const { page, type, index }: Props = Astro.props;
 ---
+
+<PersonUtil />
 
 <main data-pagefind-ignore>
   <div

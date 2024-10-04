@@ -1,9 +1,10 @@
 ---
-id: 20182370036
 name:
   compact: Danilo Marques
   full: Danilo Marques de Oliveira
-avatar: https://github.com/DaniloMarques1.png
+avatar:
+  github: https://github.com/DaniloMarques1.png
+  githubUC: https://avatars.githubusercontent.com/u/29243594?v=4
 occupations:
 - id: 20182370036
   type: student

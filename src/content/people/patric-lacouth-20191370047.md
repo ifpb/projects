@@ -1,9 +1,10 @@
 ---
-id: 20191370047
 name:
   compact: Patric Lacouth
   full: Patric Lacouth da Silva
-avatar: https://github.com/lacouth.png
+avatar:
+  github: https://github.com/lacouth.png
+  githubUC: https://avatars.githubusercontent.com/u/6015076?v=4
 occupations:
 - id: 20191370047
   type: student

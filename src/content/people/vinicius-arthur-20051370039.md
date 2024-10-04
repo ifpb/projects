@@ -1,9 +1,10 @@
 ---
-id: 20051370039
 name:
   compact: Vinicius Artur
   full: Vinicius Souto Brandão Artur
-avatar: https://github.com/viniciusartur.png
+avatar:
+  github: https://github.com/viniciusartur.png
+  githubUC: https://avatars.githubusercontent.com/u/882211?v=4
 occupations:
 - id: 20051370039
   type: student

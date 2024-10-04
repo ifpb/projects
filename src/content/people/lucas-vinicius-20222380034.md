@@ -1,9 +1,10 @@
 ---
-id: 20222380034
 name:
   compact: Lucas Vinicius
   full: Lucas Vinicius Barbosa Candido de Oliveira
-avatar: https://github.com/l1ckyndev.png
+avatar:
+  github: https://github.com/l1ckyndev.png
+  githubUC: https://avatars.githubusercontent.com/u/120600392?v=4
 occupations:
 - id: 20222380034
   type: student

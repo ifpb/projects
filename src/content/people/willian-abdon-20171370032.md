@@ -1,9 +1,10 @@
 ---
-id: 20171370032
 name:
   compact: Willian Abdon
   full: Willian Pereira Abdon
-avatar: https://github.com/willabdon.png
+avatar:
+  github: https://github.com/willabdon.png
+  githubUC: https://avatars.githubusercontent.com/u/28833719?v=4
 occupations:
 - id: 20171370032
   type: student

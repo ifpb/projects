@@ -1,10 +1,10 @@
 import type { CollectionEntry } from 'astro:content';
 import type { SubjectProject } from '@/content/config';
 import { getCollection } from 'astro:content';
-import { getStudentSemesterId, getStudentTimeIdByOccupation } from './people';
-import { isSubjectProject } from './projects';
+import { getOccupationId } from '@/helpers/people';
+import { isSubjectProject } from '@/helpers/projects';
 
-const courses = await getCollection('courses');
+export const courses = await getCollection('courses');
 
 export function getCourseByAbbreviation(abbreviation: string) {
   return courses.find(
@@ -92,7 +92,7 @@ export function getCourseName(tag: string) {
 export function getCourseAbbreviationByOccupation(occupation) {
   const { course, id } = occupation;
 
-  return `${course}-${getStudentTimeIdByOccupation(occupation)}`;
+  return `${course}-${getOccupationId(occupation)}`;
 }
 
 export function getCourseAbbreviationCampusByOccupation(occupation) {
@@ -100,5 +100,5 @@ export function getCourseAbbreviationCampusByOccupation(occupation) {
 
   const [, city] = campus.split('-');
 
-  return `${course}-${city}-${getStudentTimeIdByOccupation(occupation)}`;
+  return `${course}-${city}-${getOccupationId(occupation)}`;
 }

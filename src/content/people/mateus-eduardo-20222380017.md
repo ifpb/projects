@@ -1,9 +1,10 @@
 ---
-id: 20222380017
 name:
   compact: Mateus Eduardo
   full: Mateus Eduardo Silva Dos Santos
-avatar: https://github.com/l3l0ch.png
+avatar:
+  github: https://github.com/MateusEDSS.png
+  githubUC: https://avatars.githubusercontent.com/u/118216413?v=4
 occupations:
 - id: 20222380017
   type: student
@@ -11,7 +12,7 @@ occupations:
   course: cstrc
   isFinished: false
 addresses:
-  github: https://github.com/l3l0ch
+  github: https://github.com/MateusEDSS
   linkedin: https://www.linkedin.com/in/mateus-santos-73710a164/
   email: mateus.santos.1@academico.ifpb.edu.br
 ---

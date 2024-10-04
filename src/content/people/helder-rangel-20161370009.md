@@ -1,9 +1,10 @@
 ---
-id: 20161370009
 name:
   compact: Helder Rangel
   full: Helder Jerônimo Leite Rangel
-avatar: https://github.com/helder-rangel.png
+avatar:
+  github: https://github.com/helder-rangel.png
+  githubUC: https://avatars.githubusercontent.com/u/19331291?v=4
 occupations:
 - id: 20161370009
   type: student

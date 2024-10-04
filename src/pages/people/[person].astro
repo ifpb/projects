@@ -1,13 +1,13 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
 import PersonCard from '@/components/PersonCard.astro';
 import ProjectCard from '@/components/ProjectCard.astro';
-import BaseLayout from '@/layouts/BaseLayout.astro';
-import { getProjectsByPerson } from '@/helpers/projects';
-import { getPeople } from '@/helpers/people';
-import { getSubjectByProject } from '@/helpers/courses';
-import { isSubjectProject } from '@/helpers/projects';
 import Badge from '@/components/Badge.astro';
+import { getProjectsByPerson, isSubjectProject } from '@/helpers/projects';
+import { getPeople, getFirstPersonId } from '@/helpers/people';
+import { getSubjectByProject } from '@/helpers/courses';
+import PersonUtil from '@/components/PersonUtil.astro';
 
 type ProjectsWithPeople = CollectionEntry<'projects'> & {
   people: CollectionEntry<'people'>[];
@@ -26,7 +26,7 @@ export async function getStaticPaths() {
 
     return {
       params: {
-        person: person.data.id,
+        person: getFirstPersonId(person),
       },
       props: {
         person,
@@ -45,13 +45,10 @@ const subjects = projects
   .map((project) => getSubjectByProject(project));
 ---
 
-<BaseLayout>
-  <h1
-    class="text-center pb-16 text-4xl font-bold"
-    data-pagefind-filter="tipo:Pessoas"
-  >
-    {person.data.name.full}
-  </h1>
+
+<PersonUtil />
+
+<BaseLayout pageTitle={person.data.name.full} pageFindFilter="tipo:Pessoas">
   <div
     class="flex gap-5 flex-col md:flex-row items-center md:justify-center md:items-start"
   >

@@ -1,9 +1,10 @@
 ---
-id: 20042037118
 name:
   compact: Marília Moura
   full: Marília de Moura Lucena Araújo
-avatar: https://github.com/mmoura-nc.png
+avatar:
+  github: https://github.com/mmoura-nc.png
+  githubUC: https://avatars.githubusercontent.com/u/52458135?v=4
 occupations:
 - id: 20042037118
   type: student

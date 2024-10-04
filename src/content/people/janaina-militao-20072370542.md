@@ -1,9 +1,10 @@
 ---
-id: 20072370542
 name:
   compact: Janaina Militão
   full: Janaina Militão do Nascimento
-avatar: https://github.com/janainamilitao.png
+avatar:
+  github: https://github.com/janainamilitao.png
+  githubUC: https://avatars.githubusercontent.com/u/41454633?v=4
 occupations:
 - id: 20072370542
   type: student

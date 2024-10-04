@@ -1,9 +1,10 @@
 ---
-id: 20071370379
 name:
   compact: Michel Risucci
   full: Michel Alessandro Brasil Risucci de França
-avatar: https://github.com/michelrisucci.png
+avatar:
+  github: https://github.com/michelrisucci.png
+  githubUC: https://avatars.githubusercontent.com/u/1094167?v=4
 occupations:
 - id: 20071370379
   type: student

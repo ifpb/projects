@@ -1,9 +1,10 @@
 ---
-id: 20151370286
 name:
-  compact: Rafael Albuquerque Cardoso
+  compact: Rafael Cardoso
   full: Rafael Albuquerque Cardoso
-avatar: https://github.com/rcardosoo.png
+avatar:
+  github: https://github.com/rcardosoo.png
+  githubUC: https://avatars.githubusercontent.com/u/9036497?v=4
 occupations:
 - id: 20151370286
   type: student

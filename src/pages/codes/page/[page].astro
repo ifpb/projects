@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import FilterLayout from '@/layouts/FilterLayout.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
 import ProjectGrid from '@/components/ProjectGrid.astro';
 import { getAllProjectTagGroups, getProjects } from '@/helpers/projects';
 import { PAGE_SIZE } from '@/consts';
@@ -32,6 +32,6 @@ export async function getStaticPaths({ paginate }) {
 const { page, tags }: Props = Astro.props;
 ---
 
-<FilterLayout pageTitle="Projetos" type="codes" tags={tags}>
+<BaseLayout pageTitle="Projetos" type="codes" tags={tags}>
   <ProjectGrid page={page} type="codes" index="page" />
-</FilterLayout>
+</BaseLayout>

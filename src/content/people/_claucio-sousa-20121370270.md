@@ -1,5 +1,4 @@
 ---
-id: 20121370270
 name:
   compact: Claucio Sousa
   full: Claucio De Oliveira Sousa

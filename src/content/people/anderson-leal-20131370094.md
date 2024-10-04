@@ -1,9 +1,10 @@
 ---
-id: 20131370094
 name:
   compact: Anderson Leal
   full: Anderson de Oliveira Ferreira Leal
-avatar: https://github.com/andersonleal.png
+avatar:
+  github: https://github.com/andersonleal.png
+  githubUC: https://avatars.githubusercontent.com/u/5047011?v=4
 occupations:
 - id: 20131370094
   type: student

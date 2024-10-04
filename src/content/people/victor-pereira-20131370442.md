@@ -1,9 +1,10 @@
 ---
-id: 20131370442
 name:
   compact: Victor Pereira
   full: João Victor Pereira dos Santos
-avatar: https://github.com/victorbss.png
+avatar:
+  github: https://github.com/victorbss.png
+  githubUC: https://avatars.githubusercontent.com/u/5431185?v=4
 occupations:
 - id: 20131370442
   type: student

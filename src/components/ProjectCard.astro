@@ -1,8 +1,9 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { Icon } from 'astro-icon';
+import Badge from '@/components/Badge.astro';
 import { getProjectId, getProjectTags } from '@/helpers/projects';
-import Badge from './Badge.astro';
+import { getAvatarImageUrl, getFirstPersonId } from '@/helpers/people';
 
 type ProjectsWithPeople = CollectionEntry<'projects'> & {
   people: CollectionEntry<'people'>[];
@@ -61,18 +62,27 @@ const projectId = getProjectId(project);
     <ul class="absolute bottom-2 right-4 flex">
       {
         !!project.people?.length &&
-          project.people?.map(({ data: { id, avatar, name } }) => (
-            <li class="-mr-2 border-2 border-gray-100 rounded-full">
-              <a href={`/projects/people/${id}/`} target="_blank">
-                <img
-                  src={`${avatar}?size=32`}
-                  alt={name.full}
-                  title={name.full}
-                  class="rounded-full w-8"
-                />
-              </a>
-            </li>
-          ))
+          project.people
+            ?.sort((a, b) => a.data.name.full.localeCompare(b.data.name.full))
+            ?.map((person) => (
+              <li class="-mr-2 border-2 border-gray-100 rounded-full">
+                <a
+                  href={`/projects/people/${getFirstPersonId(person)}/`}
+                  target="_blank"
+                  class="animate-pulse"
+                >
+                  <img
+                    src="/projects/imgs/people-placeholder.png"
+                    alt={person.data.name.full}
+                    title={person.data.name.full}
+                    class="rounded-full bg-gray-300 object-cover w-8"
+                    data-src={getAvatarImageUrl(person)}
+                    onload="onLoadPersonImage(this, 32)"
+                    onerror="onErrorPersonImage(this)"
+                  />
+                </a>
+              </li>
+            ))
       }
     </ul>
   </section>

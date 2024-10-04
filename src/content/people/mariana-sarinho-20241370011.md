@@ -1,9 +1,10 @@
 ---
-id: 20241370011
 name:
   compact: Mariana Sarinho
   full: Mariana dos Santos Sarinho
-avatar: https://github.com/marisarinho.png
+avatar:
+  github: https://github.com/marisarinho.png
+  githubUC: https://avatars.githubusercontent.com/u/164221246?v=4
 occupations:
 - id: 20241370011
   type: student

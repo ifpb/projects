@@ -1,9 +1,10 @@
 ---
-id: 20222370044
 name:
   compact: Venilson Neves
   full: Venilson Costa Neves
-avatar: https://github.com/venilsoncosta.png
+avatar:
+  github: https://github.com/venilsoncosta.png
+  githubUC: https://avatars.githubusercontent.com/u/38733697?v=4
 occupations:
   - id: 20222370044
     type: student

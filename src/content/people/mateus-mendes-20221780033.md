@@ -1,9 +1,10 @@
 ---
-id: 20221780033
 name:
   compact: Mateus Mendes
   full: Mateus Mendes dos Santos
-avatar: https://github.com/VOTRON157.png
+avatar:
+  github: https://github.com/VOTRON157.png
+  githubUC: https://avatars.githubusercontent.com/u/60234944?v=4
 occupations:
 - id: 20221780033
   type: student

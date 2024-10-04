@@ -1,9 +1,10 @@
 ---
-id: 20051370322
 name:
   compact: Diénert Vieira
   full: Diénert de Alencar Vieira
-avatar: https://github.com/Dienert.png
+avatar:
+  github: https://github.com/Dienert.png
+  githubUC: https://avatars.githubusercontent.com/u/193985?v=4
 occupations:
 - id: 20051370322
   type: student

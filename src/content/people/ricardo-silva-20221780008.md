@@ -1,9 +1,10 @@
 ---
-id: 20221780008
 name:
   compact: Ricardo Silva
   full: Ricardo da Silva Júnior
-avatar: https://github.com/RicardinhoGplays.png
+avatar:
+  github: https://github.com/RicardinhoGplays.png
+  githubUC: https://avatars.githubusercontent.com/u/141342983?v=4
 occupations:
 - id: 20221780008
   type: student

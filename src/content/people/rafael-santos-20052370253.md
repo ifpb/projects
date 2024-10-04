@@ -1,9 +1,10 @@
 ---
-id: 20052370253
 name:
   compact: Rafael Santos
   full: Rafael da Trindade S Chiappetta dos Santos
-avatar: https://github.com/rafaeltscs.png
+avatar:
+  github: https://github.com/rafaeltscs.png
+  githubUC: https://avatars.githubusercontent.com/u/5438334?v=4
 occupations:
 - id: 20052370253
   type: student

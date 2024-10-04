@@ -1,9 +1,10 @@
 ---
-id: 20151370120
 name:
   compact: Lucas Rodrigues
   full: Lucas Rafael de Oliveira Rodrigues
-avatar: https://github.com/LucasRafaelOR.png
+avatar:
+  github: https://github.com/LucasRafaelOR.png
+  githubUC: https://avatars.githubusercontent.com/u/13490777?v=4
 occupations:
 - id: 20151370120
   type: student

@@ -1,9 +1,10 @@
 ---
-id: 20101370401
 name:
   compact: Thais Peixoto
   full: Thais Noronha de Medeiros Correia
-avatar: https://github.com/thaispeixoto.png
+avatar:
+  github: https://github.com/thaispeixoto.png
+  githubUC: https://avatars.githubusercontent.com/u/5923305?v=4
 occupations:
 - id: 20101370401
   type: student

@@ -1,9 +1,10 @@
 ---
-id: 20032037045
 name:
   compact: Gregório Melo
   full: Gregório Enrico Linhares de Melo
-avatar: https://github.com/gregoriomelo.png
+avatar:
+  github: https://github.com/gregoriomelo.png
+  githubUC: https://avatars.githubusercontent.com/u/223146?v=4
 occupations:
 - id: 20032037045
   type: student
