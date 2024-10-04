@@ -2,9 +2,9 @@
 name: Cinder - warming the embers of your heart
 description: Aplicativo móvel de relacionamento que conecta pessoas com base em interesses e afinidades. 
 addresses:
-  preview:  
-  homepage: https://elisson18.github.io/ImobiliariaZero/
-  repository: https://github.com/HanielCostaDaSilva/Cinder/raw/main/demo/logo.png
+  preview:  https://github.com/HanielCostaDaSilva/Cinder/raw/main/demo/logo.png
+  homepage: https://github.com/HanielCostaDaSilva/Cinder
+  repository: https://github.com/HanielCostaDaSilva/Cinder
 category:
   type: subject
   subject: pdm
