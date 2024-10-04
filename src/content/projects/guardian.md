@@ -7,7 +7,7 @@ repository: https://github.com/adriandersonliradev/guardian-frontend
 category:
   type: subject
   subject: pdist
-  semester: 2024.2
+  semester: 2024.1
   course: cstsi
   campus: ifpb-jp
 tags:
