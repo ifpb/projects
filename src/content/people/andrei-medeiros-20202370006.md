@@ -12,7 +12,7 @@ occupations:
   course: cstsi
   isFinished: false
 addresses:
+  email: andrei8246@gmail.com
   github: https://github.com/andreimedeiros
   linkedin: https://www.linkedin.com/in/andreimedeirosl/
 ---
- q
