@@ -4,9 +4,11 @@ description: Bem-vindo ao Alhama Gallery, uma plataforma online dedicada a exibi
 addresses:
   preview: https://github.com/AllanSmithll/alhama-gallery/blob/v2.5.0/src/assets/alhama-gallery-preview.png?raw=true
   repository: https://github.com/AllanSmithll/alhama-gallery
+  homepage: https://alhama-gallery.vercel.app/
 category:
   type: subject
   subject: ls
+  period: 2
   semester: 2022.2
   course: cstsi
   campus: ifpb-jp

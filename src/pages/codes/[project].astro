@@ -3,7 +3,7 @@ import type { CollectionEntry } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Badge from '@/components/Badge.astro';
 import { getCourseByAbbreviation } from '@/helpers/courses';
-import { getPeopleByProject, getPersonId } from '@/helpers/people';
+import { getPeopleByProject, getFirstPersonId } from '@/helpers/people';
 import {
   getProjectId,
   getProjects,
@@ -119,7 +119,7 @@ const pageTitle = `Projeto | ${project.data.name}`;
               )
               .map((person) => (
                 <li>
-                  <a class="underline" href={`/projects/people/${getPersonId(person)}`}>
+                  <a class="underline" href={`/projects/people/${getFirstPersonId(person)}`}>
                     {person.data.name.full}
                   </a>
                 </li>

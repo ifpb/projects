@@ -5,7 +5,7 @@ import PersonCard from '@/components/PersonCard.astro';
 import ProjectCard from '@/components/ProjectCard.astro';
 import Badge from '@/components/Badge.astro';
 import { getProjectsByPerson, isSubjectProject } from '@/helpers/projects';
-import { getPeople, getPersonId } from '@/helpers/people';
+import { getPeople, getFirstPersonId } from '@/helpers/people';
 import { getSubjectByProject } from '@/helpers/courses';
 import PersonUtil from '@/components/PersonUtil.astro';
 
@@ -26,7 +26,7 @@ export async function getStaticPaths() {
 
     return {
       params: {
-        person: getPersonId(person),
+        person: getFirstPersonId(person),
       },
       props: {
         person,

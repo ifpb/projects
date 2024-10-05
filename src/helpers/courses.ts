@@ -4,7 +4,7 @@ import { getCollection } from 'astro:content';
 import { getOccupationId } from '@/helpers/people';
 import { isSubjectProject } from '@/helpers/projects';
 
-const courses = await getCollection('courses');
+export const courses = await getCollection('courses');
 
 export function getCourseByAbbreviation(abbreviation: string) {
   return courses.find(

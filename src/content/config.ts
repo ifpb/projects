@@ -54,6 +54,8 @@ const addresses = z.object({
   gitlab: z.string().url().optional(),
   linkedin: z.string().url().optional(),
   homepage: z.string().optional(),
+  medium: z.string().optional(),
+  devto: z.string().optional(),
   twitter: z.string().url().optional(),
   bluesky: z.string().url().optional(),
   threads: z.string().url().optional(),

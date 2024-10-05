@@ -3,16 +3,30 @@ import type { Student, Occupation } from '@/content/config';
 import { getCollection } from 'astro:content';
 import { getProjectsByPerson, isSubjectProject } from '@/helpers/projects';
 import {
+  courses,
   getCourseByAbbreviation,
   getFirstCourseByPeople,
   getSubjectByProject,
 } from '@/helpers/courses';
 
-export function getPersonId(person: CollectionEntry<'people'>) {
+export function getFirstPersonId(person: CollectionEntry<'people'>) {
   if (isStudent(person)) {
     return person.data.occupations
-      .filter((Occupation) => Occupation.type === 'student')
+      .filter((occupation) => occupation.type === 'student')
       .at(-1).id;
+  } else {
+    return person.data.occupations.at(-1).id;
+  }
+}
+
+export function getPersonIdByCourse(
+  person: CollectionEntry<'people'>,
+  course: string
+) {
+  if (isStudent(person)) {
+    return person.data.occupations.filter(
+      (occupation: Student) => occupation.course === course
+    )[0].id;
   } else {
     return person.data.occupations.at(-1).id;
   }
@@ -193,7 +207,7 @@ async function getPeopleTagsMap(people: CollectionEntry<'people'>[]) {
     people.map<Promise<[number, string[]]>>(async (person) => {
       const tags = await getPersonTags(person);
 
-      return [getPersonId(person), tags];
+      return [getFirstPersonId(person), tags];
     })
   );
 
@@ -251,7 +265,7 @@ export async function getAllPersonTags() {
   const peopleTags = await getPeopleTagsMap(people);
 
   const repeatedTags = people.reduce((acc: string[], person) => {
-    const tags = peopleTags.get(getPersonId(person));
+    const tags = peopleTags.get(getFirstPersonId(person));
 
     return [...acc, ...tags];
   }, []);
@@ -317,7 +331,7 @@ function personRank(person: CollectionEntry<'people'>) {
 const getSortId = (person: CollectionEntry<'people'>) =>
   isOnlyProfessor(person)
     ? 99999
-    : Number(String(getPersonId(person)).substring(0, 6));
+    : Number(String(getFirstPersonId(person)).substring(0, 6));
 
 function sortPeopleByTag(people: CollectionEntry<'people'>[], sortTag: string) {
   const sortPeopleByTag = (
@@ -329,6 +343,17 @@ function sortPeopleByTag(people: CollectionEntry<'people'>[], sortTag: string) {
       ['professor', 'researchgate'].includes(sortTag)
     ) {
       return a.data.name.compact.localeCompare(b.data.name.compact);
+    }
+
+    if (courses.some((course) => sortTag.includes(course.data.abbreviation))) {
+      const course = courses
+        .map((course) => course.data.abbreviation)
+        .filter((course) => sortTag.includes(course))[0];
+
+      return (
+        getPersonIdByCourse(a, course) - getPersonIdByCourse(b, course) ||
+        a.data.name.compact.localeCompare(b.data.name.compact)
+      );
     }
 
     return (
@@ -388,7 +413,7 @@ export async function getPeopleByTag(tag: string) {
   const peopleTags = await getPeopleTagsMap(people);
 
   const filteredPeople = people.filter((person) => {
-    const tags = peopleTags.get(getPersonId(person));
+    const tags = peopleTags.get(getFirstPersonId(person));
 
     return tags.includes(tag);
   });

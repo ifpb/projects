@@ -3,7 +3,7 @@ import type { CollectionEntry } from 'astro:content';
 import { Icon } from 'astro-icon';
 import Badge from '@/components/Badge.astro';
 import { getProjectId, getProjectTags } from '@/helpers/projects';
-import { getAvatarImageUrl, getPersonId } from '@/helpers/people';
+import { getAvatarImageUrl, getFirstPersonId } from '@/helpers/people';
 
 type ProjectsWithPeople = CollectionEntry<'projects'> & {
   people: CollectionEntry<'people'>[];
@@ -67,7 +67,7 @@ const projectId = getProjectId(project);
             ?.map((person) => (
               <li class="-mr-2 border-2 border-gray-100 rounded-full">
                 <a
-                  href={`/projects/people/${getPersonId(person)}/`}
+                  href={`/projects/people/${getFirstPersonId(person)}/`}
                   target="_blank"
                   class="animate-pulse"
                 >

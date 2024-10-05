@@ -3,6 +3,7 @@ name:
   compact: Carlos Derich
   full: José Carlos Derich Pacheco André Carneiro
 avatar:
+  selected: none
   github: https://github.com/drish.png
   githubUC: https://avatars.githubusercontent.com/u/1730156?v=4
 occupations:
@@ -14,4 +15,5 @@ occupations:
 addresses:
   github: https://github.com/drish
   linkedin: https://www.linkedin.com/in/derichpacheco/
+  homepage: https://drish.dev/
 ---
