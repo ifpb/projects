@@ -4,6 +4,7 @@ name:
   full: Caio Bernardelli Quirino
 avatar:
   github: https://github.com/CaioBernardelli.png
+  githubUC: https://avatars.githubusercontent.com/u/115126246?v=4
 occupations:
   - id: 20221370028
     type: student

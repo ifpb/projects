@@ -4,6 +4,7 @@ name:
   full: Ricardo França Soares 
 avatar:
   github: https://github.com/rickfsoares.png
+  githubUC: https://avatars.githubusercontent.com/u/56850984?v=4
 occupations:
 - id: 20212370047 
   type: student

@@ -4,6 +4,7 @@ name:
   full: Felipe Galdino de Sousa
 avatar:
   github: https://github.com/felipeGsousa.png
+  githubUC: https://avatars.githubusercontent.com/u/57554381?v=4
 occupations:
 - id: 20192370026
   type: student
