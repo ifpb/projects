@@ -14,4 +14,6 @@ occupations:
 addresses:
   github: https://github.com/Erickfonseca1
   linkedin: https://www.linkedin.com/in/erick-fonseca/
+  instagram: https://www.instagram.com/erickfonseca13/
+  email: erickfmpeixoto@gmail.com
 ---
