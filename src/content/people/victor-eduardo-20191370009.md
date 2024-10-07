@@ -14,4 +14,5 @@ occupations:
 addresses:
   github: https://github.com/Victor-17
   linkedin: https://www.linkedin.com/in/victor-eduardo-35a261195/
+  email: vejapyassu@gmail.com
 ---
