@@ -1,7 +1,7 @@
 ---
 name:
   compact: Juliana Ferreira
-  full: uliana Ferreira Cavalcante
+  full: Juliana Ferreira Cavalcante
 avatar:
   github: https://github.com/julianafer.png
   githubUC: https://avatars.githubusercontent.com/u/101995776?v=4
