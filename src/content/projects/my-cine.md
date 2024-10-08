@@ -2,6 +2,7 @@
 name: MyCine
 description: Aplicativo que permite aos usuários gerenciar listas personalizadas de filmes e séries, oferecendo integração com a API TMDb para obter detalhes completos sobre cada título.
 addresses:
+  preview: https://raw.githubusercontent.com/aliclic/PDM-Projeto/refs/heads/main/app/src/main/res/drawable/mycine_preview.png
   repository: https://github.com/aliclic/PDM-Projeto
 category:
   type: subject
