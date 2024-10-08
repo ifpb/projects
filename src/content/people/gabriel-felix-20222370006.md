@@ -3,7 +3,8 @@ name:
   compact: Gabriel Felix
   full: Gabriel Felix Emiliano da Costa Sousa
 avatar:
-  github: https://github.com/gfedacs
+  github: https://github.com/gfedacs.png
+  githubUC: https://avatars.githubusercontent.com/u/111694250?v=4
 occupations:
 - id: 20222370006
   type: student
