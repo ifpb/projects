@@ -4,6 +4,7 @@ name:
   full: Arthur Lyra Miranda
 avatar:
   github: https://github.com/arthur-lyra.png
+  githubUC: https://avatars.githubusercontent.com/u/82905393?v=4
 occupations:
 - id: 20202370016
   type: student

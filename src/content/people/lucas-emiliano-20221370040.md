@@ -4,6 +4,7 @@ name:
   full: Lucas Emiliano Lima da Silva
 avatar:
   github: https://github.com/lucas-elds.png
+  githubUC: https://avatars.githubusercontent.com/u/88401857?v=4
 occupations:
 - id: 20221370040
   type: student

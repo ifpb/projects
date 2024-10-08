@@ -4,6 +4,7 @@ name:
   full: Michel Lavanere Sampaio
 avatar:
   github: https://github.com/devlavanere.png
+  githubUC: https://avatars.githubusercontent.com/u/125924854?v=4
 occupations:
 - id: 20221370001
   type: student
