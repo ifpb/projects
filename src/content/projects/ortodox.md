@@ -7,7 +7,7 @@ addresses:
   repository: https://github.com/HanielCostaDaSilva/Ortodox-Human
 category:
   type: subject
-  subject: pw1
+  subject: sd
   period: 4
   semester: 2023.2
   course: cstsi
