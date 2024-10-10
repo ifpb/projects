@@ -2,6 +2,7 @@
 name: Clinica São Romeu
 description: O projeto consiste na modelagem e construção de um banco de dados, com base no problema de uma clinica médica.
 addresses:
+  preview: https://github.com/HanielCostaDaSilva/Clinica-Sao-Romeu-BD/blob/main/DER/ModeloLogico/ilustracao-logico.png?raw=true
   repository: https://github.com/HanielCostaDaSilva/Clinica-Sao-Romeu-BD
 category:
   type: subject
