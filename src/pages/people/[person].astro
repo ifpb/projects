@@ -40,9 +40,13 @@ export async function getStaticPaths() {
 
 const { person, projects } = Astro.props;
 
-const subjects = projects
-  .filter((projects) => isSubjectProject(projects))
-  .map((project) => getSubjectByProject(project));
+const subjects = [
+  ...new Set(
+    projects
+      .filter((project) => isSubjectProject(project))
+      .map((project) => getSubjectByProject(project))
+  ),
+];
 ---
 
 
