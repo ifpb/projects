@@ -24,6 +24,7 @@ addresses:
   linkedin: https://www.linkedin.com/in/luizcarloschaves/
   instagram: https://www.instagram.com/luizcrchaves/
   bluesky: https://bsky.app/profile/luizcarloschaves.bsky.social
+  homepage: https://luizchaves.github.io
   email: luiz.chaves@ifpb.edu.br
 ---
 ```
