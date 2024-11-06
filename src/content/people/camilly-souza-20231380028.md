@@ -5,7 +5,7 @@ name:
 avatar:
   github: https://github.com/CamillypSouza.png
 occupations:
-- id: 20051370420
+- id: 20231380028
   type: student
   campus: ifpb-jp
   course: cstrc
