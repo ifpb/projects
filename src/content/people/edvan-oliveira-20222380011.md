@@ -15,4 +15,4 @@ addresses:
   github: https://github.com/Edvan-dev
   linkedin: https://www.linkedin.com/in/edvan-da-silva-oliveira-739196161
   email: edvan.oliveira@academico.ifpb.edu.br
-  lattes: 
+  lattes: em processo
