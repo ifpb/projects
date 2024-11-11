@@ -2,11 +2,11 @@
 name: UpDetector
 description: Sistema de monitoramento de ativos de rede e serviços com painel de controle em tempo real.
 addresses:
-  preview:
+  preview: https://raw.githubusercontent.com/Edvan-dev/DevWeb/blob/main/Projeto_2024.2/Up_detector/U_detector.png
   repository: https://github.com/Edvan-dev/DevWeb/tree/main/Projeto_2024.2/Up_detector
 category:
   type: subject
-  subject: dw
+  subject: dw 
   period: 4
   semester: 2024.1
   course: cstrc
