@@ -4,6 +4,7 @@ name:
   full: José Rodrigo S. Padilha
 avatar:
   github: https://github.com/pad1ryoshi.png
+  githubUC: https://avatars.githubusercontent.com/u/151454973?v=4
 occupations:
 - id: 20231380017
   type: student

@@ -4,6 +4,7 @@ name:
   full: Camilly Pinto de Souza
 avatar:
   github: https://github.com/CamillypSouza.png
+  githubUC: https://avatars.githubusercontent.com/u/123746555?v=4
 occupations:
 - id: 20231380028
   type: student
