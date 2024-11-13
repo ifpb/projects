@@ -2,7 +2,7 @@
 name: SyncWave
 description: Aplicação web de gerenciador de arquivos que permita aos usuários armazenar e compartilhar arquivos de maneira segura, com pastas privadas e uma área de compartilhamento em grupo.
 addresses:
-  #preview: https://raw.githubusercontent.com/themattery/Stranger-Things-Website/main/preview.png
+  preview: https://raw.githubusercontent.com/vito-hnq/SyncWave/0d2429d02e2d9d6f56678aefbf29796d1f2d2792/src/models/preview.png
   #homepage: https://themattery.github.io/Stranger-Things-Website/
   repository: https://github.com/vito-hnq/SyncWave-Project
 category:
