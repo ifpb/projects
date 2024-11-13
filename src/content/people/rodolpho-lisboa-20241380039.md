@@ -9,7 +9,7 @@ occupations:
 - id: 20241380039
   type: student
   campus: ifpb-jp
-  course: cstsi
+  course: cstrc
   isFinished: false
 addresses:
   github: https://github.com/RodolphoFetz
