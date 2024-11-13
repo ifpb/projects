@@ -8,7 +8,7 @@ category:
   type: subject
   subject: dw 
   period: 4
-  semester: 2024.1
+  semester: 2024.2
   course: cstrc
   campus: ifpb-jp
 tags:
