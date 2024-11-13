@@ -4,6 +4,7 @@ description: Essa aplicação irá realizar um diagnóstico e análise detalhada
 addresses:
   preview: https://raw.githubusercontent.com/anthonyllz/HopInsight/refs/heads/main/img/preview.png
   repository: https://github.com/anthonyllz/HopInsight
+  homepage: https://anthonyllz.github.io/HopInsight/
 category:
   type: subject
   subject: dw
