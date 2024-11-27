@@ -4,6 +4,7 @@ description: Projeto de uma URL para logar com usuários pré-cadastrados com pe
 addresses:
   preview: https://raw.githubusercontent.com/lcscst/dw/refs/heads/main/preview.png
   repository: https://github.com/lcscst/dw.git
+  homepage: https://lcscst.github.io/dw/
 category:
   type: subject
   subject: dw
