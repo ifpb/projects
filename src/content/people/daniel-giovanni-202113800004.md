@@ -8,7 +8,7 @@ avatar:
 occupations:
 - id: 202113800004
   type: student
-  campus: ifpb-jp
+  campus: ifpb_jp
   course: cstrc
   isFinished: false
 addresses:
