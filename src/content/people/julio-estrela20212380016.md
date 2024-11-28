@@ -4,6 +4,7 @@ name:
   full: Júlio Araújo Marques Estrela
 avatar:
   github: https://github.com/julioestrela96.png
+  githubUC: https://avatars.githubusercontent.com/u/152106530?v=4
 occupations:
 - id: 20212380016
   type: student
