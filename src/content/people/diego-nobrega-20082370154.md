@@ -3,8 +3,7 @@ name:
   compact: Diego Nóbrega
   full: Diego Madson de Andrade Nóbrega
 avatar:
-  selected: linkedin
-  linkedin: https://media.licdn.com/dms/image/v2/D4D03AQHZbpUJYj1VDQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1675812699384?e=1732752000&v=beta&t=h045fl3z6fE3feUkULFWDFC93V9LX5zmQSihNTefXGE
+  selected: none
 occupations:
 - id: 20082370154
   type: student

@@ -3,8 +3,7 @@ name:
   compact: Alline Morais
   full: Alline Silva de Morais
 avatar:
-  selected: linkedin
-  linkedin: https://media.licdn.com/dms/image/v2/D5603AQHbtg-_vOzU9g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1726573408071?e=1732752000&v=beta&t=AY6WU1Bx1w-hrquZXP3rKYzhIJRM4TLaqD0YCZ0_GCc
+  selected: none
 occupations:
 - id: 20042037154
   type: student
