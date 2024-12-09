@@ -1,10 +1,9 @@
 ---
-import { CollectionEntry } from 'astro:content';
-import PersonCard from '../../../components/PersonCard.astro';
-import PaginationIndex from '../../../components/PaginationIndex.astro';
-import FilterLayout from '../../../layouts/FilterLayout.astro';
-import { PAGE_SIZE } from '../../../consts';
-import { getAllPeopleTagGroups, getPeople } from '../../../helpers/people';
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PersonGrid from '@/components/PersonGrid.astro';
+import { getAllPeopleTagGroups, getPeople } from '@/helpers/people';
+import { PAGE_SIZE } from '@/consts';
 
 export interface Props {
   page: {
@@ -17,6 +16,7 @@ export interface Props {
     };
   };
   tags: string[];
+  index: string;
 }
 
 export async function getStaticPaths({ paginate }) {
@@ -25,26 +25,14 @@ export async function getStaticPaths({ paginate }) {
   const tags = await getAllPeopleTagGroups();
 
   return paginate(people, {
+    props: { index: 'page', tags },
     pageSize: PAGE_SIZE,
-    props: { tags },
   });
 }
 
-const { page, tags } = Astro.props;
+const { page, index, tags } = Astro.props;
 ---
 
-<FilterLayout pageTitle="Pessoas" type="people" tags={tags}>
-  <main data-pagefind-ignore>
-    <div
-      class="grid justify-center justify-items-center gap-5 grid-cols-1 md:grid-cols-[repeat(2,_auto)] lg:grid-cols-[repeat(3,_auto)] xl:grid-cols-4 mx-auto"
-    >
-      {page.data.map((person) => <PersonCard person={person} />)}
-    </div>
-
-    {
-      page.lastPage > 1 && (
-        <PaginationIndex page={page} pagePath="/people/page" />
-      )
-    }
-  </main>
-</FilterLayout>
+<BaseLayout pageTitle="Pessoas" type="people" tags={tags}>
+  <PersonGrid page={page} type="people" index={index} />
+</BaseLayout>

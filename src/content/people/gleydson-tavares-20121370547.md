@@ -1,9 +1,10 @@
 ---
-id: 20121370547
 name:
   compact: Gleydson Tavares
   full: Gleydson da Silva Tavares
-avatar: https://github.com/g13ydson.png
+avatar:
+  github: https://github.com/g13ydson.png
+  githubUC: https://avatars.githubusercontent.com/u/1000342?v=4
 occupations:
 - id: 20121370547
   type: student
@@ -12,6 +13,6 @@ occupations:
   isFinished: true
 addresses:
   github: https://github.com/g13ydson
-  linkedin: https://www.linkedin.com/in/gleydsontavares/
+  linkedin: https://www.linkedin.com/in/gleydson-tavares/
   email: tavares.gleydson@gmail.com
 ---

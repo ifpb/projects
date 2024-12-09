@@ -1,7 +1,9 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { Icon } from 'astro-icon';
-import { getProjectId, getProjectTags } from '../helpers/projects';
+import Badge from '@/components/Badge.astro';
+import { getProjectId, getProjectTags } from '@/helpers/projects';
+import { getAvatarImageUrl, getFirstPersonId } from '@/helpers/people';
 
 type ProjectsWithPeople = CollectionEntry<'projects'> & {
   people: CollectionEntry<'people'>[];
@@ -13,66 +15,92 @@ export interface Props {
 
 const { project } = Astro.props;
 
+const {
+  data: { addresses, name },
+} = project;
+
 const tags: string[] = getProjectTags(project);
 
 const projectId = getProjectId(project);
 ---
 
 <div
-  class="project-card rounded-md overflow-hidden shadow-lg bg-white text-center"
+  class="project-card md:max-w-[320px] rounded-md overflow-hidden shadow-lg bg-white text-center"
 >
   <section class="relative z-0">
-    <figure class="overflow-hidden">
-      <a href={project.data.page} target="_blank">
+    <figure class="overflow-hidden shadow-md">
+      <a href={addresses.homepage || addresses.repository} target="_blank">
         <img
-          src={project.data.preview ?? '/projects/imgs/project-placeholder.png'}
+          src={addresses.preview ?? '/projects/imgs/project-placeholder.png'}
           class="animate-pulse bg-gray-300 object-cover w-full h-[200px] md:h-[150px] hover:scale-105 transition duration-500"
-          alt={project.data.name}
-          onload="
-          this.onload = null; this.classList.remove('animate-pulse');
-"
+          alt={name}
+          onload="this.onload = null; this.classList.remove('animate-pulse');"
           onerror="this.onerror=null;this.classList.remove('animate-pulse', 'bg-neutral-400');this.src='/projects/imgs/project-placeholder.png';"
         />
       </a>
     </figure>
     <div class="absolute top-2 right-2">
-      <a href={project.data.repository} target="_blank" class="font-bold">
-        <Icon name="uim:github" size={32} class="github-project-link" />
-      </a>
+      <ul class="flex">
+        {
+          addresses.template && (
+            <li class="-mr-2 bg-black border-2 border-gray-100 rounded-full overflow-hidden">
+              <a href={addresses.template} target="_blank" class="font-bold">
+                <Icon name="logos:figma" size={32} class="figma-project-link" />
+              </a>
+            </li>
+          )
+        }
+        <li
+          class="-mr-2 bg-black border-2 border-gray-100 rounded-full overflow-hidden"
+        >
+          <a href={addresses.repository} target="_blank" class="font-bold">
+            <Icon name="uim:github" size={32} class="github-project-link" />
+          </a>
+        </li>
+      </ul>
     </div>
     <ul class="absolute bottom-2 right-4 flex">
       {
         !!project.people?.length &&
-          project.people?.map((person) => (
-            <li class="-mr-2 border-2 border-gray-100 rounded-full">
-              <a href={person.data.addresses.github} target="_blank">
-                <img
-                  src={`${person.data.avatar}?size=32`}
-                  alt={person.data.name.full}
-                  title={person.data.name.full}
-                  class="rounded-full w-8"
-                />
-              </a>
-            </li>
-          ))
+          project.people
+            ?.sort((a, b) => a.data.name.full.localeCompare(b.data.name.full))
+            ?.map((person) => (
+              <li class="-mr-2 border-2 border-gray-100 rounded-full">
+                <a
+                  href={`/projects/people/${getFirstPersonId(person)}/`}
+                  target="_blank"
+                  class="animate-pulse"
+                >
+                  <img
+                    src="/projects/imgs/people-placeholder.png"
+                    alt={person.data.name.full}
+                    title={person.data.name.full}
+                    class="rounded-full bg-gray-300 object-cover w-8"
+                    data-src={getAvatarImageUrl(person)}
+                    onload="onLoadPersonImage(this, 32)"
+                    onerror="onErrorPersonImage(this)"
+                  />
+                </a>
+              </li>
+            ))
       }
     </ul>
   </section>
   <p class="my-3">
-    <a href={`/projects/codes/${projectId}`} target="_blank" class="font-bold">
-      {project.data.name}
+    <a
+      href={`/projects/codes/${projectId}`}
+      target="_blank"
+      class="font-bold underline"
+    >
+      {name}
     </a>
   </p>
-  <nav class="mb-3">
+  <nav class="m-3 px-2 space-x-1">
     {
-      tags.map((tag) => (
-        <a
-          href={`/projects/codes/${tag}/1/`}
-          class="inline-block text-xs font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 my-1 mx-1 py-1 px-2 rounded-full"
-        >
-          {tag}
-        </a>
-      ))
+      tags
+        .filter((tag, index, self) => self.indexOf(tag) === index)
+        .filter((tag) => tag !== 'subject')
+        .map((tag) => <Badge url={`/projects/codes/${tag}/1/`} text={tag} />)
     }
   </nav>
 </div>

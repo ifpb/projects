@@ -1,9 +1,10 @@
 ---
-id: 20231370002
 name:
   compact: Douglas Carneiro
   full: Douglas Emerson Ferreira Carneiro
-avatar: https://github.com/dougcarneiro.png
+avatar:
+  github: https://github.com/dougcarneiro.png
+  githubUC: https://avatars.githubusercontent.com/u/85263972?v=4
 occupations:
 - id: 20231370002
   type: student

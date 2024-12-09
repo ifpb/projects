@@ -1,14 +1,15 @@
 ---
-id: 20211380007
 name:
   compact: Adalberto Rosendo
   full: Adalberto Rosendo da Silva Júnior
-avatar: https://github.com/adalbertorosendoo.png
+avatar:
+  github: https://github.com/adalbertorosendoo.png
+  githubUC: https://avatars.githubusercontent.com/u/89200601?v=4
 occupations:
 - id: 20211380007
   type: student
   campus: ifpb-jp
-  course: CSTRC
+  course: cstrc
   isFinished: false
 addresses:
   github: https://github.com/adalbertorosendoo

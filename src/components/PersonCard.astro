@@ -1,76 +1,130 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import type { Student } from '@/content/config';
 import { Icon } from 'astro-icon';
-import { getProjectsByPerson } from '../helpers/projects';
-import { getPersonTags } from '../helpers/people';
+import Badge from '@/components/Badge.astro';
+import { getProjectsByPerson } from '@/helpers/projects';
+import {
+  getFirstPersonId,
+  getPersonTags,
+  getAvatarImageUrl,
+  isFinishedSomeCourse,
+  isProfessor,
+  isStudent,
+} from '@/helpers/people';
+import {
+  getCourseAbbreviationByOccupation,
+  getCourseAbbreviationCampusByOccupation,
+} from '@/helpers/courses';
 
 export interface Props {
   person: CollectionEntry<'people'>;
 }
 
-const { person } = Astro.props;
-
-const codeUrl = `/projects/people/${person.data.id}/`;
-
 let icons = [
   {
-    name: 'code',
+    name: 'projects',
     icon: 'ph:code',
+    size: 32,
   },
   {
     name: 'linkedin',
     icon: 'ph:linkedin-logo',
+    size: 32,
   },
   {
     name: 'github',
     icon: 'icon-park:github-one',
+    size: 32,
   },
   {
-    name: 'twitter',
-    icon: 'ph:twitter-logo',
+    name: 'figma',
+    icon: 'ph:figma-logo',
+    size: 32,
   },
   {
     name: 'instagram',
     icon: 'ph:instagram-logo',
+    size: 32,
+  },
+  {
+    name: 'homepage',
+    icon: 'ph:identification-badge',
+    size: 32,
+    // icon: 'ph:address-book',
+  },
+  {
+    name: 'researchgate',
+    icon: 'la:researchgate',
+    size: 36,
+    // icon: 'simple-icons:researchgate',
+    // icon: 'ph:graduation-cap',
+    // icon: 'ph:student',
+    // icon: 'ph:flask',
+  },
+  {
+    name: 'lattes',
+    // icon: 'academicons:lattes',
+    // icon: 'academicons:lattes-square',
+    image: '/projects/imgs/lattes.svg',
+    size: 24,
   },
 ];
+
+const { person } = Astro.props;
+
+const isDev = import.meta.env.DEV;
+
+const {
+  data: { name, addresses, avatar, occupations },
+} = person;
+
+const id = getFirstPersonId(person);
+
+const codeUrl = `/projects/people/${id}/`;
 
 const projects = await getProjectsByPerson(person);
 
 const hasProjects = projects.length > 0;
 
 if (hasProjects) {
-  person.data.addresses.code = codeUrl;
+  addresses.projects = codeUrl;
 }
 
 let links = icons
-  .filter((link) => person.data.addresses[link.name])
+  .filter((link) => addresses[link.name])
   .map((link) => ({
     ...link,
-    url: person.data.addresses[link.name],
+    url: addresses[link.name],
   }));
 
 const tags = await getPersonTags(person);
+
+export const fallbackImage = '/projects/imgs/clarity-avatar-solid.svg';
 ---
 
 <div
-  class="person-card rounded-md overflow-hidden shadow-lg bg-white text-center md:w-[233px]"
+  class="person-card rounded-md overflow-hidden shadow-lg bg-white text-center w-full relative"
   data-tags={tags.join('-')}
 >
-  <figure class="w-[233px] h-[233px] mx-auto overflow-hidden">
-    <a href={person.data.addresses.linkedin} target="_blank">
+  <figure class="mx-auto overflow-hidden">
+    <a href={addresses.linkedin} target="_blank" class="animate-pulse">
       <img
-        src={person.data.avatar}
-        alt={person.data.name.full}
-        class="animate-pulse bg-gray-300 object-cover w-[233px] h-[233px] hover:scale-105 transition duration-500 cursor-pointer"
-        onload="this.onload=null;this.classList.remove('animate-pulse');"
-        onerror="this.onerror=null;this.classList.remove('animate-pulse', 'bg-neutral-400');this.src='/projects/imgs/avatar.svg';"
+        src={isDev ? fallbackImage : getAvatarImageUrl(person)}
+        alt={name.full}
+        title={name.full}
+        class="bg-gray-300 object-cover w-full h-[233px] hover:scale-105 transition duration-500"
+        data-src={getAvatarImageUrl(person)}
+        onload="onLoadPersonImage(this)"
+        onerror="onErrorPersonImage(this)"
       />
     </a>
   </figure>
   <div>
     <div class="px-6 py-2">
-      <div class="font-bold text-xl">{person.data.name.compact}</div>
+      <div class="font-bold text-xl" data-pagefind-ignore>
+        {name.compact}
+      </div>
     </div>
     <div class="flex justify-center pb-2">
       {
@@ -78,16 +132,56 @@ const tags = await getPersonTags(person);
           <a
             href={link.url}
             target="_blank"
-            class="hover:scale-110 transition duration-500"
+            class="hover:scale-110 transition duration-500 flex items-center justify-center"
           >
-            <Icon
-              name={link.icon}
-              size={32}
-              class={`${link.name}-person-link`}
-            />
+            {link.icon && (
+              <Icon
+                name={link.icon}
+                size={link.size}
+                class={`${link.name}-person-link`}
+              />
+            )}
+            {link.image && avatar.selected === 'none' && (
+              <img
+                src={link.image}
+                alt={link.name}
+                title={link.name}
+                width={link.size}
+              />
+            )}
           </a>
         ))
       }
     </div>
+    <div class="tags pb-4 px-2 space-x-1">
+      {
+        isStudent(person) &&
+          occupations
+            .filter((occupation: Student) => occupation.course)
+            .map((occupation) => (
+              <Badge
+                url={`/projects/people/${getCourseAbbreviationByOccupation(occupation)}/1`}
+                text={getCourseAbbreviationCampusByOccupation(occupation)}
+              />
+            ))
+      }
+      {
+        isFinishedSomeCourse(person) && (
+          <Badge url="/projects/people/egresso/1" text="egresso" />
+        )
+      }
+      {
+        isProfessor(person) && (
+          <Badge url="/projects/people/professor/1" text="professor" />
+        )
+      }
+    </div>
+    <!-- <div>
+      {
+        tags.map((tag) => (
+          <Badge url={`/projects/people/${tag}/1`} text={tag} />
+        ))
+      }
+    </div> -->
   </div>
 </div>

@@ -1,10 +1,11 @@
 ---
-import { CollectionEntry } from 'astro:content';
-import PersonCard from '../../../components/PersonCard.astro';
-import PaginationIndex from '../../../components/PaginationIndex.astro';
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { getAllPersonTags, getPeopleByTag } from '../../../helpers/people';
-import { PAGE_SIZE } from '../../../consts';
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PersonGrid from '@/components/PersonGrid.astro';
+import { getAllPersonTags, getPeopleByTag } from '@/helpers/people';
+import { getCourseName } from '@/helpers/courses';
+import { PAGE_SIZE } from '@/consts';
+import { abbreviationCourses } from '@/content/config';
 
 export interface Props {
   page: {
@@ -21,32 +22,47 @@ export interface Props {
 export async function getStaticPaths({ paginate }) {
   const tags = await getAllPersonTags();
 
-  const page = tags.map(async (tag) => {
-    const people = await getPeopleByTag(tag);
+  const page = await Promise.all(
+    tags.map(async (tag) => {
+      const people = await getPeopleByTag(tag);
 
-    return paginate(people, {
-      params: { tag },
-      pageSize: PAGE_SIZE,
-    });
-  });
+      const pages = paginate(people, {
+        params: { tag },
+        pageSize: PAGE_SIZE,
+      });
 
-  return await Promise.all(page);
+      return pages;
+    })
+  );
+
+  return page.flat();
 }
+
+const formatPageTitle = (tag: string) => {
+  let title = '';
+
+  if (abbreviationCourses.some((course) => tag.includes(course))) {
+    if (tag.includes('egresso')) {
+      title = `Egresso | ${getCourseName(tag.split('-')[1])}`;
+    } else {
+      title = getCourseName(tag);
+    }
+  } else if (tag === 'professor') {
+    title = 'Professores';
+  } else if (tag === 'egresso') {
+    title = 'Egresos';
+  } else {
+    title = `Pessoas com ${tag[0].toUpperCase() + tag.slice(1)}`;
+  }
+
+  return title;
+};
 
 const { page } = Astro.props;
 const { tag } = Astro.params;
+const pageTitle = formatPageTitle(tag);
 ---
 
-<BaseLayout pageTitle={`Estudantes de ${tag}`}>
-  <div
-    class="grid justify-center justify-items-center gap-5 grid-cols-1 md:grid-cols-[repeat(2,_auto)] lg:grid-cols-[repeat(3,_auto)] xl:grid-cols-4 mx-auto"
-    data-pagefind-ignore
-  >
-    {page.data.map((person) => <PersonCard person={person} />)}
-  </div>
-  {
-    page.lastPage > 1 && (
-      <PaginationIndex page={page} pagePath={`/people/${tag}`} />
-    )
-  }
+<BaseLayout pageTitle={pageTitle}>
+  <PersonGrid page={page} type="people" index={tag} />
 </BaseLayout>
