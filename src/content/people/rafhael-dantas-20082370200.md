@@ -3,8 +3,7 @@ name:
   compact: Rafhael Dantas
   full: Rafhael Dantas da Silva
 avatar:
-  selected: linkedin
-  linkedin: https://media.licdn.com/dms/image/v2/C4D03AQEBbnNA9DWt3A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516588108261?e=1732752000&v=beta&t=LMnM7UGgJCfnfp5781V8mNGqxDN4hXStyU927jDvG5E
+  selected: none
 occupations:
 - id: 20082370200
   type: student

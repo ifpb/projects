@@ -3,8 +3,7 @@ name:
   compact: Rivania Silva
   full: Rivania de Sousa Barros da Silva
 avatar:
-  selected: linkedin
-  linkedin: https://media.licdn.com/dms/image/v2/C4D03AQGfGzrWu4LVeg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1658848434603?e=1732752000&v=beta&t=w3HvFUN0OTjyd8E9khZ6XbjdTmR9AnKOHMpux9oIP6c
+  selected: none
 occupations:
 - id: 20101370371
   type: student
