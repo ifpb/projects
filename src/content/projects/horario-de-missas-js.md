@@ -1,3 +1,4 @@
+---
 name: Horario de Missas-js
 description: Este projeto é uma aplicação web simples que consiste em agrupar horários de missa na cidade de João Pessoa, categorizadas por bairro.
 preview: https://raw.githubusercontent.com/oiclai/horariodemissas-js/main/preview.png
