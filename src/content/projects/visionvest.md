@@ -1,10 +1,10 @@
 ---
 name: VisionVest
-description: O VisionVest é uma plataforma que ajuda você a encontrar os melhores investimentos para o seu perfil. Oferece calculadoras de rentabilidade e ferramentas para conversões financeiras.
+description: O VisionVest é uma plataforma que te ajuda a explorar o mundo da educação financeira, indicando os investimentos mais rentáveis para o seu perfil. Responda ao nosso questionário e descubra qual tipo de investidor você é. Além disso, aproveite nossas calculadoras de rentabilidade para planejar melhor seus investimentos!
 addresses:
-  preview: https://raw.githubusercontent.com/franciscovmn/VisionVest/ab4a9457b983022d5127975ba74e42edbfad389d/preview.jpg
-  homepage: https://franciscovmn.github.io/VisionVest/
-  repository: https://github.com/franciscovmn/VisionVest
+  preview: https://raw.githubusercontent.com/franciscovmn/visionvest/refs/heads/main/public/preview.png
+  homepage: http://franciscovmn.github.io/visionvest/
+  repository: https://github.com/franciscovmn/visionvest
 category:
   type: subject
   subject: ls
