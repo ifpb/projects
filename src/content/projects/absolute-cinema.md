@@ -4,6 +4,7 @@ description: Site desenvolvido para descobertas e recomendações de filmes e s�
 addresses:
   preview: https://github.com/sebastiaobernardo/projeto-final-lm/blob/main/Absolute-cinema-preview.PNG 
   repository: https://github.com/sebastiaobernardo/projeto-final-lm.git 
+  homepage: https://sebastiaobernardo.github.io/projeto-final-lm/
 category:
   type: subject
   subject: lm
