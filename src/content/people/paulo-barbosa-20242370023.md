@@ -11,6 +11,7 @@ occupations:
   course: cstsi
   isFinished: false
 addresses:
-  github: https://github.com/paulolima6 
+  github: https://github.com/paulolima6
+  linkedin: https://www.linkedin.com/in/paulo-barbosa-83594234b/
   email: paulo.lima.6@ifpb.edu.br
 ---
