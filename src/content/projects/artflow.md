@@ -5,10 +5,9 @@ addresses:
   preview: https://github.com/2005-Erick/ArtFlow-Seu-Repositorio-Artistico/blob/main/img/preview-2.png
   homepage: https://2005-erick.github.io/ArtFlow-Seu-Repositorio-Artistico/
   repository: https://github.com/2005-Erick/ArtFlow-Seu-Repositorio-Artistico
-  template:
 category:
   type: subject
-  subject: ls
+  subject: lm
   period: 1
   semester: 2024.2
   course: cstsi
