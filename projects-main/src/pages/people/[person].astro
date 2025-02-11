@@ -1,0 +1,99 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PersonCard from '@/components/PersonCard.astro';
+import ProjectCard from '@/components/ProjectCard.astro';
+import Badge from '@/components/Badge.astro';
+import { getProjectsByPerson, isSubjectProject } from '@/helpers/projects';
+import { getPeople, getFirstPersonId } from '@/helpers/people';
+import { getSubjectByProject } from '@/helpers/courses';
+import PersonUtil from '@/components/PersonUtil.astro';
+
+type ProjectsWithPeople = CollectionEntry<'projects'> & {
+  people: CollectionEntry<'people'>[];
+};
+
+export interface Props {
+  projects: ProjectsWithPeople[];
+  person: CollectionEntry<'people'>;
+}
+
+export async function getStaticPaths() {
+  const people = await getPeople();
+
+  const page = people.map(async (person) => {
+    const projects = await getProjectsByPerson(person);
+
+    return {
+      params: {
+        person: getFirstPersonId(person),
+      },
+      props: {
+        person,
+        projects,
+      },
+    };
+  });
+
+  return await Promise.all(page);
+}
+
+const { person, projects } = Astro.props;
+
+const subjects = [
+  ...new Set(
+    projects
+      .filter((project) => isSubjectProject(project))
+      .map((project) => getSubjectByProject(project))
+  ),
+];
+---
+
+
+<PersonUtil />
+
+<BaseLayout pageTitle={person.data.name.full} pageFindFilter="tipo:Pessoas">
+  <div
+    class="flex gap-5 flex-col md:flex-row items-center md:justify-center md:items-start"
+  >
+    <div>
+      <PersonCard person={person} />
+    </div>
+
+    <div class="space-y-4">
+      <h1 class="text-3xl max-md:mt-8 font-semibold">Projetos</h1>
+
+      {
+        !!projects.length ? (
+          <p class="text-xl font-semibold">
+            {projects.length} projeto(s) disponível(is).
+          </p>
+          
+          <div class="grid justify-items-stretch gap-5 grid-cols-1 md:grid-cols-2">
+            {projects.map((project) => (
+              <ProjectCard project={project} />
+            ))}
+          </div>
+        ) : (
+          <div>
+            <p class="text-xl font-semibold">
+              Nenhum projeto cadastrado no momento.
+            </p>
+          </div>
+        )
+      }
+
+      {
+        !!subjects.length && (
+          <h1 class="text-3xl max-md:mt-8 mb-4 font-semibold">Turmas</h1>
+
+          <div class="tags">
+            {
+              subjects.map((subject) => <Badge url={`/projects/people/${subject}/1`} text={subject} />)
+            }
+          </div>
+        )
+      }
+    </div>
+  </div>
+</BaseLayout>

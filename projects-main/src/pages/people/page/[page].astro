@@ -1,0 +1,38 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PersonGrid from '@/components/PersonGrid.astro';
+import { getAllPeopleTagGroups, getPeople } from '@/helpers/people';
+import { PAGE_SIZE } from '@/consts';
+
+export interface Props {
+  page: {
+    data: CollectionEntry<'people'>[];
+    currentPage: number;
+    lastPage: number;
+    url: {
+      prev: string;
+      next: string;
+    };
+  };
+  tags: string[];
+  index: string;
+}
+
+export async function getStaticPaths({ paginate }) {
+  const people = await getPeople();
+
+  const tags = await getAllPeopleTagGroups();
+
+  return paginate(people, {
+    props: { index: 'page', tags },
+    pageSize: PAGE_SIZE,
+  });
+}
+
+const { page, index, tags } = Astro.props;
+---
+
+<BaseLayout pageTitle="Pessoas" type="people" tags={tags}>
+  <PersonGrid page={page} type="people" index={index} />
+</BaseLayout>

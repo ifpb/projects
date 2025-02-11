@@ -1,0 +1,17 @@
+{
+  "name": "projects-main",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "react-scripts build",
+    "preview": "npx serve -s build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "react-scripts": "^5.0.1"
+  }
+}

@@ -1,0 +1,50 @@
+<script is:inline>
+  async function getInfoImage(url) {
+    const response = await fetch(url, { method: 'HEAD' });
+
+    const contentType = response.headers.get('Content-Type');
+
+    const contentLength = Number(response.headers.get('Content-Length'));
+
+    return {
+      type: contentType,
+      length: contentLength,
+    };
+  }
+
+  async function getPersonImage(img, url) {
+    const fallbackImage = '/projects/imgs/clarity-avatar-solid.svg';
+
+    if (url === 'none') {
+      url = fallbackImage;
+    }
+
+    if (url.includes('avatars.githubusercontent.com')) {
+      const { type, length } = await getInfoImage(url);
+
+      if (length < 2000) {
+        url = fallbackImage;
+      }
+    }
+
+    img.src = url;
+
+    img.parentElement.classList.remove('animate-pulse');
+  }
+
+  function onLoadPersonImage(img) {
+    img.onload = null;
+
+    const avatar = img.getAttribute('data-src');
+
+    getPersonImage(img, avatar);
+  }
+
+  function onErrorPersonImage(img) {
+    img.onerror = null;
+
+    img.src = '/projects/imgs/clarity-avatar-solid.svg';
+
+    img.parentElement.classList.remove('animate-pulse');
+  }
+</script>

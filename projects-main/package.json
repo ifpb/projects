@@ -1,0 +1,35 @@
+{
+  "name": "projects-ifpb",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "postbuild": "pagefind --site dist/",
+    "preview": "astro preview",
+    "buildpreview": "astro build && astro preview",
+    "buildpreviewpf": "astro build && npm run postbuild && astro preview",
+    "astro": "astro",
+    "load:github:avatar": "tsx src/content/load-github-uc-avatar.ts"
+  },
+  "dependencies": {
+    "@astrojs/react": "^3.6.2",
+    "@astrojs/tailwind": "^5.1.0",
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.11",
+    "astro": "^4.15.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.3.1"
+  },
+  "devDependencies": {
+    "@iconify/react": "^4.1.0",
+    "astro-icon": "^0.8.0",
+    "pagefind": "^1.1.1",
+    "prettier": "^3.3.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.6",
+    "tsx": "^4.19.1"
+  }
+}

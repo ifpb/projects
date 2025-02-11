@@ -1,0 +1,63 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ProjectGrid from '@/components/ProjectGrid.astro';
+import { getAllProjectTags, getProjectsByTag } from '@/helpers/projects';
+import { PAGE_SIZE } from '@/consts';
+
+type ProjectsWithPeople = CollectionEntry<'projects'> & {
+  people: CollectionEntry<'people'>[];
+};
+
+export interface Props {
+  page: {
+    data: ProjectsWithPeople[];
+    currentPage: number;
+    lastPage: number;
+    url: {
+      prev: string;
+      next: string;
+    };
+  };
+}
+
+export async function getStaticPaths({ paginate }) {
+  const tags: string[] = await getAllProjectTags();
+
+  const page = await Promise.all(
+    tags.flatMap(async (tag) => {
+      const projects = await getProjectsByTag(tag);
+
+      const pages = paginate(projects, {
+        params: { tag },
+        pageSize: PAGE_SIZE,
+      });
+
+      return pages;
+    })
+  );
+
+  return page.flat();
+}
+
+const formatPageTitle = (tag: string) => {
+  const types = {
+    subject: 'Disciplina',
+    research: 'Pesquisa',
+    extension: 'Extensão',
+    'open source': 'Open Source',
+  };
+
+  const pageTitle = types[tag] || tag.toUpperCase();
+
+  return `Projetos | ${pageTitle}`;
+};
+
+const { page }: Props = Astro.props;
+const { tag } = Astro.params;
+const pageTitle = formatPageTitle(tag);
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <ProjectGrid page={page} type="codes" index={tag} />
+</BaseLayout>

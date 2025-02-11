@@ -1,0 +1,63 @@
+---
+import Filter from '@/components/Filter';
+import GoogleAnalytics from '@/components/GoogleAnalytics.astro';
+import NavBar from '@/components/NavBar.astro';
+import PageFindSearch from '@/components/PageFindSearch.astro';
+import { getAllPersonTags } from '@/helpers/people';
+
+import '@/styles/global.css';
+
+export interface Propos {
+  pageTitle?: string;
+  tags?: string[];
+  type?: string;
+  pageFindFilter?: string;
+}
+
+const { pageTitle, tags, type, pageFindFilter } = Astro.props;
+
+const allTags = tags ? await getAllPersonTags() : [];
+
+const headerTitle = pageTitle ? `IFPB | ${pageTitle}` : 'IFPB Code';
+---
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/projects/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link href="/projects/pagefind/pagefind-ui.css" rel="stylesheet" />
+    <script src="/projects/pagefind/pagefind-ui.js" type="text/javascript"
+    ></script>
+    <title>{headerTitle}</title>
+  </head>
+  <body class="relative bg-gray-100">
+    <NavBar />
+    <div class="container lg:max-w-screen-lg mx-auto px-4 py-16">
+      {
+        tags && (
+          <Filter type={type} tags={tags} allTags={allTags} client:visible />
+        )
+      }
+
+      {
+        pageTitle && pageFindFilter ? (
+          <h1
+            class="text-center pb-16 text-4xl font-bold"
+            data-pagefind-filter={pageFindFilter}
+          >
+            {pageTitle}
+          </h1>
+        ) : (
+          <h1 class="text-center pb-16 text-4xl font-bold">{pageTitle}</h1>
+        )
+      }
+
+      {tags && <PageFindSearch />}
+      <slot />
+    </div>
+
+    <GoogleAnalytics />
+  </body>
+</html>
