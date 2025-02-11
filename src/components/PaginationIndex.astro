@@ -1,0 +1,99 @@
+---
+import type { ProjectsWithPeople } from '@/pages/codes/page/[page].astro';
+import type { CollectionEntry } from 'astro:content';
+
+export interface Props {
+  type: string;
+  index: string;
+  page: {
+    data: (ProjectsWithPeople | CollectionEntry<'people'>)[];
+    currentPage: number;
+    lastPage: number;
+    url?: {
+      first?: string;
+      prev: string;
+      next: string;
+      last?: string;
+    };
+  };
+}
+
+const { page, type, index }: Props = Astro.props;
+
+const pagePath = `/${type}/${index}`;
+
+page.url.first = `${pagePath}/1`;
+page.url.last = `${pagePath}/${page.lastPage}`;
+
+function getPageNumbers(
+  size: number,
+  lastPage: number,
+  currentPage: number
+): number[] {
+  let pages = [];
+  let start = Math.max(1, currentPage - Math.floor(size / 2));
+  let end = Math.min(lastPage, start + size - 1);
+  start = Math.max(1, end - size + 1);
+  for (let i = start; i <= end; i++) {
+    pages.push(i);
+  }
+  return pages;
+}
+
+const pages = getPageNumbers(4, page.lastPage, page.currentPage);
+---
+
+<div class="mt-12 flex items-center flex-wrap justify-center">
+  <nav aria-label="Page navigation">
+    <ul class="flex flex-row">
+      <li>
+        <a
+          href={page.url.first ? `/projects${page.url.first}` : ''}
+          class="px-4 py-2 text-slate-600 transition-colors duration-150 bg-white border border-r-0 border-slate-600 rounded-l-lg focus:shadow-outline hover:bg-slate-100"
+        >
+          &laquo;
+        </a>
+      </li>
+      <li>
+        <a
+          href={page.url.prev ? `/projects${page.url.prev}` : ''}
+          class="px-4 py-2 text-slate-600 transition-colors duration-150 bg-white border border-r-0 border-slate-600 focus:shadow-outline hover:bg-slate-100"
+        >
+          &lsaquo;
+        </a>
+      </li>
+      {
+        pages.map((pageNumber) => (
+          <li>
+            <a
+              href={`/projects${pagePath}/${pageNumber}`}
+              class={`${
+                pageNumber === page.currentPage
+                  ? 'text-white bg-slate-600'
+                  : 'text-slate-600 bg-white'
+              } px-4 py-2 border border-r-0 border-slate-600 focus:shadow-outline transition-colors duration-150`}
+            >
+              {pageNumber}
+            </a>
+          </li>
+        ))
+      }
+      <li>
+        <a
+          href={page.url.next ? `/projects${page.url.next}` : ''}
+          class="px-4 py-2 text-slate-600 transition-colors duration-150 bg-white border border-r-0 border-slate-600 focus:shadow-outline hover:bg-slate-100"
+        >
+          &rsaquo;
+        </a>
+      </li>
+      <li>
+        <a
+          href={page.url.last ? `/projects${page.url.last}` : ''}
+          class="px-4 py-2 text-slate-600 transition-colors duration-150 bg-white border border-slate-600 rounded-r-lg focus:shadow-outline hover:bg-slate-100"
+        >
+          &raquo;
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>

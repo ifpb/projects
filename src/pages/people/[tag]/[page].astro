@@ -1,0 +1,68 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PersonGrid from '@/components/PersonGrid.astro';
+import { getAllPersonTags, getPeopleByTag } from '@/helpers/people';
+import { getCourseName } from '@/helpers/courses';
+import { PAGE_SIZE } from '@/consts';
+import { abbreviationCourses } from '@/content/config';
+
+export interface Props {
+  page: {
+    data: CollectionEntry<'people'>[];
+    currentPage: number;
+    lastPage: number;
+    url: {
+      prev: string;
+      next: string;
+    };
+  };
+}
+
+export async function getStaticPaths({ paginate }) {
+  const tags = await getAllPersonTags();
+
+  const page = await Promise.all(
+    tags.map(async (tag) => {
+      const people = await getPeopleByTag(tag);
+
+      const pages = paginate(people, {
+        params: { tag },
+        pageSize: PAGE_SIZE,
+      });
+
+      return pages;
+    })
+  );
+
+  return page.flat();
+}
+
+const formatPageTitle = (tag: string) => {
+  let title = '';
+
+  if (abbreviationCourses.some((course) => tag.includes(course))) {
+    if (tag.includes('egresso')) {
+      title = `Egresso | ${getCourseName(tag.split('-')[1])}`;
+    } else {
+      title = getCourseName(tag);
+    }
+  } else if (tag === 'professor') {
+    title = 'Professores';
+  } else if (tag === 'egresso') {
+    title = 'Egresos';
+  } else {
+    title = `Pessoas com ${tag[0].toUpperCase() + tag.slice(1)}`;
+  }
+
+  return title;
+};
+
+const { page } = Astro.props;
+const { tag } = Astro.params;
+const pageTitle = formatPageTitle(tag);
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <PersonGrid page={page} type="people" index={tag} />
+</BaseLayout>

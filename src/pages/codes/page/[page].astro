@@ -1,0 +1,37 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ProjectGrid from '@/components/ProjectGrid.astro';
+import { getAllProjectTagGroups, getProjects } from '@/helpers/projects';
+import { PAGE_SIZE } from '@/consts';
+
+export type ProjectsWithPeople = CollectionEntry<'projects'> & {
+  people: CollectionEntry<'people'>[];
+};
+
+export interface Props {
+  page: {
+    data: ProjectsWithPeople[];
+    currentPage: number;
+    lastPage: number;
+  };
+  tags: Record<string, Record<string, string[]>>;
+}
+
+export async function getStaticPaths({ paginate }) {
+  const projects = await getProjects();
+
+  const tags = await getAllProjectTagGroups();
+
+  return paginate(projects, {
+    pageSize: PAGE_SIZE,
+    props: { tags },
+  });
+}
+
+const { page, tags }: Props = Astro.props;
+---
+
+<BaseLayout pageTitle="Projetos" type="codes" tags={tags}>
+  <ProjectGrid page={page} type="codes" index="page" />
+</BaseLayout>

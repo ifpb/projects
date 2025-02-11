@@ -1,0 +1,143 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Badge from '@/components/Badge.astro';
+import { getCourseByAbbreviation } from '@/helpers/courses';
+import { getPeopleByProject, getFirstPersonId } from '@/helpers/people';
+import {
+  getProjectId,
+  getProjects,
+  isSubjectProject,
+} from '@/helpers/projects';
+import { campi } from '@/content/config';
+
+interface ProjectProps {
+  category: {
+    course: string;
+    campus: string;
+    semester: string;
+    subject: string;
+  };
+}
+
+export interface Props {
+  project: CollectionEntry<'projects'>;
+  people: CollectionEntry<'people'>[];
+}
+
+export async function getStaticPaths() {
+  const projects = await getProjects();
+
+  const page = projects.map(async (project) => {
+    const projectId = getProjectId(project);
+
+    const people = await getPeopleByProject(project);
+
+    return {
+      params: { project: projectId },
+      props: {
+        project,
+        people,
+      },
+    };
+  });
+
+  return await Promise.all(page);
+}
+
+const { project, people }: Props = Astro.props;
+
+const category = project.data.category as ProjectProps['category'];
+
+const pageTitle = `Projeto | ${project.data.name}`;
+---
+
+<BaseLayout pageTitle={pageTitle} pageFindFilter="tipo:Projeto">
+  <div class="flex flex-col md:flex-row gap-5">
+    { project.data.addresses.preview && (
+      <div class="image-preview w-full md:w-[50%]">
+        <a class="underline" href={project.data.addresses.homepage}>
+          <img
+            src={project.data.addresses.preview ?? '/projects/imgs/project-placeholder.png'}
+            alt={project.data.name}
+            class="border w-full"
+            onload="this.onload = null; this.classList.remove('animate-pulse');"
+            onerror="this.onerror = null; this.closest('.image-preview').classList.add('hidden');"
+          />
+        </a>
+      </div>
+    )}
+    <div class="w-full md:w-[50%]">
+      <div class="mb-2">
+        <div class="font-bold text-lg">Descrição:</div>
+        {project.data.description}
+      </div>
+      <div class="mb-2">
+        <div class="font-bold text-lg">Repositório:</div>
+        <a class="underline" href={project.data.addresses.repository}
+          >{project.data.addresses.repository}</a
+        >
+      </div>
+      { project.data.addresses.template && (
+        <div class="mb-2">
+          <div class="font-bold text-lg">Template:</div>
+          <a class="underline" href={project.data.addresses.template}>
+            {project.data.addresses.template}
+          </a>
+        </div>
+      )}
+      {
+        isSubjectProject(project) && (
+          <div class="mb-2">
+            <div class="font-bold text-lg">Curso:</div>
+            <a
+              href={`/projects/codes/${category.course}-${category.campus}/1/`}
+              class="underline"
+            >
+              {getCourseByAbbreviation(category.course).data.name}{' '}({campi[category.campus]})
+            </a>
+          </div>
+
+          <div class="mb-2">
+            <div class="font-bold text-lg">Disciplina:</div>
+            <a
+              href={`/projects/codes/${category.subject}-${category.semester}/1/`}
+              class="underline"
+            >
+              {category.subject}-{category.semester}
+            </a>
+          </div>
+        )
+      }
+      <div class="mb-2">
+        <div class="font-bold text-lg">Colaboradores:</div>
+        <ul class="list-disc list-inside">
+          {
+            people
+              .sort((a, b) =>
+                a.data.name.full.localeCompare(b.data.name.full)
+              )
+              .map((person) => (
+                <li>
+                  <a class="underline" href={`/projects/people/${getFirstPersonId(person)}`}>
+                    {person.data.name.full}
+                  </a>
+                </li>
+              ))
+          }
+        </ul>
+      </div>
+
+      <div class="mb-2">
+        <div class="font-bold text-lg">Tags:</div>
+        <nav class="mb-2">
+          {
+            project.data.tags
+              .filter((tag, index, self) => self.indexOf(tag) === index)
+              .map((tag) => <Badge url={`/projects/codes/${tag}/1/`} text={tag} />)
+          }
+        </nav>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
