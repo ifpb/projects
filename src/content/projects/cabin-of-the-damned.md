@@ -13,8 +13,8 @@ category:
   course: cstsi
   campus: ifpb-jp
 tags:
-  - html
-  - css
+  - HTML
+  - CSS
 owners:
   - 20242370018
 ---
