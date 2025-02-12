@@ -2,7 +2,7 @@
 name: Absolute Cinema
 description: Site desenvolvido para descobertas e recomendações de filmes e séries que estão em destaque no momento.
 addresses:
-  preview: https://github.com/sebastiaobernardo/projeto-final-lm/blob/main/Absolute-cinema-preview.PNG
+  preview: https://raw.githubusercontent.com/sebastiaobernardo/projeto-final-lm/refs/heads/main/Absolute-cinema-preview.PNG
   repository: https://github.com/sebastiaobernardo/projeto-final-lm.git
   homepage: https://sebastiaobernardo.github.io/projeto-final-lm/
 category:
