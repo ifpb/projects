@@ -1,6 +1,6 @@
 ---
-name: Home da UAI-IFPB
-description: Este portal tem como objetivo ser um landing page da UAI do IFPB.
+name: Lvl Forge
+description: Projeto de criação de repositório para jogos indies
 addresses:
   preview: https://jonasvinicios.github.io/Level-Forge/
   repository: https://github.com/JonasVinicios/Level-Forge
