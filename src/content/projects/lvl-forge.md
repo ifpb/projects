@@ -2,7 +2,7 @@
 name: Lvl Forge
 description: Projeto de criação de repositório para jogos indies
 addresses:
-  preview: https://jonasvinicios.github.io/Level-Forge/
+  homepage: https://jonasvinicios.github.io/Level-Forge/
   repository: https://github.com/JonasVinicios/Level-Forge
 category:
   type: subject
