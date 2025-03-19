@@ -2,6 +2,7 @@
 name: Olimpo Digital
 description: O Olimpo Digital é um projeto desenvolvido por um grupo de alunos do curso de Sistemas para Internet do IFPB. Nosso objetivo é trazer informações acessíveis e organizadas sobre a mitologia grega, abordando suas histórias, principais deuses, heróis e curiosidades.
 addresses:
+  preview: https://vinii225.github.io/Olimpo-Digital/img/preview500.png
   homepage: https://vinii225.github.io/Olimpo-Digital/
   repository: https://github.com/Vinii225/Olimpo-Digital
 category:
@@ -14,6 +15,7 @@ category:
 tags:
   - html
   - css
+  - js
 owners:
   - 20242370001
   - 20242370004
