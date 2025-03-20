@@ -13,7 +13,7 @@ occupations:
   isFinished: false
 addresses:
   github: https://github.com/niryb
-  linkedin: https://www.linkedin.com/in/nirielly-brito-141948237/
+  linkedin: https://www.linkedin.com/in/nirielly-brito
   instagram: https://www.instagram.com/nirybrito/
   email: nirielly.brito@academico.ifpb.edu.br
 ---
