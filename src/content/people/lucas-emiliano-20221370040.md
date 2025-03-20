@@ -13,6 +13,7 @@ occupations:
   isFinished: false
 addresses:
   github: https://github.com/lucas-elds
-  linkedin: https://www.linkedin.com/in/lucas-emiliano-96b56331a/
+  linkedin: https://www.linkedin.com/in/lucas-emiliano/
+  homepage: https://github.com/lucas-elds
   email: emiliano.lucas@academico.ifpb.edu.br
 ---
