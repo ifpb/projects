@@ -1,0 +1,17 @@
+---
+name:
+  compact: Sheila Lee
+  full: Sheila Lima Lee
+avatar:
+  github: https://github.com/sheilallee.png
+occupations:
+- id: 20221370004
+  type: student
+  campus: ifpb-jp
+  course: cstsi
+  isFinished: false
+addresses:
+  github: https://github.com/sheilallee
+  homepage: https://sheilallee.github.io
+  email: sheila.lee@academico.ifpb.edu.br
+---
