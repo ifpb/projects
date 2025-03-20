@@ -1,5 +1,5 @@
 ---
-name: Nirielly Brito
+name:
   compact: Nirielly Brito
   full: Nirielly Brito Marinho
 avatar: 
@@ -13,6 +13,6 @@ occupations:
 addresses:
   github: https://github.com/niryb
   instagram: https://www.instagram.com/nirybrito/
-  homepage: https://niryb.github.io
+  homepage: https://github.com/niryb
   email: nirielly.brito@academico.ifpb.edu.br
 ---
