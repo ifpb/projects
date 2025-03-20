@@ -1,5 +1,5 @@
 ---
-name: Smartcat App
+name: Smartcat Web
 description: Este projeto funciona como app que irá gerenciar as tarefas do estudante.
 addresses:
   preview: https://raw.githubusercontent.com/felipecartaxo/pweb1-todolist-fase2/main/preview.png

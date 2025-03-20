@@ -6,8 +6,8 @@ addresses:
   repository: https://github.com/felipecartaxo/pdm-smartcat_mobile-v2
 category:
   type: subject
-  subject: pweb1
-  period: 4
+  subject: pdm
+  period: 5
   semester: 2024.2
   course: cstsi
   campus: ifpb-jp
