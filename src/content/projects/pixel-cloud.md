@@ -3,6 +3,7 @@ name: Pixel Cloud
 description: Este projeto tem como temática os jogos eletrônicos, catalogando-os em páginas que contém suas informações
 addresses:
   repository: https://github.com/Felipejjjj/Pixel-Cloud
+  homepage: https://felipejjjj.github.io/Pixel-Cloud/
 category:
   type: subject
   subject: ls
