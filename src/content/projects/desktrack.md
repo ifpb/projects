@@ -7,7 +7,7 @@ addresses:
   repository: https://github.com/Pedro-WB/Projeto-DW
 category:
   type: subject
-  subject: ls
+  subject: dw
   period: 4
   semester: 2025.1
   course: cstrc
