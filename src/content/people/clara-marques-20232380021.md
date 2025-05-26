@@ -6,7 +6,7 @@ avatar:
   github: https://github.com/ClaraMarques-Hash.png
   githubUC: https://avatars.githubusercontent.com/u/208985310?v=4
 occupations:
-  id: 20232380021
+- id: 20232380021
   type: student
   campus: ifpb-jp
   course: cstrc
