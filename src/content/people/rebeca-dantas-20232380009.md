@@ -4,7 +4,7 @@ name:
   full: Rebeca Dantas Cabral
 avatar:
   github: https://github.com/rebecadc.png
-  githubUC: https://avatars.githubusercontent.com/u/205412?v=4
+  githubUC: 
 occupations:
 - id: 20232380009
   type: student
@@ -14,8 +14,8 @@ occupations:
 addresses:
   homepage: https://rebecadc.github.io
   github: https://github.com/rebecadc
-  linkedin:
-  lattes: 
-  orcid: 
+  linkedin: https://www.linkedin.com/in/rebeca-dantas-6b4777209/
+  lattes: https://lattes.cnpq.br/3654741232369317
+  orcid: https://orcid.org/0009-0002-4820-892X
   email: rebeca.cabral@academico.ifpb.edu.br
 ---
