@@ -9,7 +9,7 @@ occupations:
   type: student
   campus: ifpb-jp
   course: cstrc
-  isFinished: true
+  isFinished: false
 addresses:
   github: https://github.com/Pedro-Wb
   linkedin: https://www.linkedin.com/in/pedro-weverton-barbosa-0a4b2b213/
