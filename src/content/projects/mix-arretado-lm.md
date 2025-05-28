@@ -3,13 +3,13 @@ name: Mix Arretado
 description: proposta de site para o restaurante Mix Arretado
 addresses:
   preview: https://raw.githubusercontent.com/ian2z/projeto-html/refs/heads/main/imagens/print.png
-  homepage: https://devcomdavi.github.io/mix-arretado/
-  repository: https://github.com/devcomdavi/mix-arretado
+  homepage: https://ian2z.github.io/projeto-html/
+  repository: https://github.com/ian2z/projeto-html
 category:
   type: subject
-  subject: ls
-  period: 2
-  semester: 2025.1
+  subject: lm
+  period: 1
+  semester: 2024.2
   course: cstsi
   campus: ifpb-jp
 tags:
