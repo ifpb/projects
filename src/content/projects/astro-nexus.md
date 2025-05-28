@@ -1,5 +1,5 @@
 ---
-name: AtroNexus
+name: AstroNexus
 description: AstroNexus é um site dedicado à astronomia que oferece uma experiência imersiva sobre o universo. A plataforma disponibiliza fatos curiosos, artigos educativos, blogs especializados e conteúdo sobre descobertas espaciais, tornando o conhecimento astronômico acessível e envolvente para entusiastas de todas as idades.
 addresses:
   preview: https://github.com/Igor-AI-Coder/AstroNexus/blob/main/preview.png
