@@ -1,6 +1,6 @@
 ---
 name: NetAdmin RT
-description:  O netAdmin RT consiste em uma aplicação Web para de monitoramento e visualização em tempo real do tráfego e status de VLaN's em Ambiente Corporativos.
+description:  O netAdmin RT consiste em uma aplicação Web para de monitoramento e visualização em tempo real do tráfego e status de VLANs em Ambiente Corporativos.
 addresses:
   preview: https://raw.githubusercontent.com/SERGIO-20202/NetAdmin-RT/main/preview.png
   homepage: https://SERGIO-20202.github.io/NetAdmin-RT
