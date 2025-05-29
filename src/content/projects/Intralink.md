@@ -1,6 +1,6 @@
 ---
-name: Home da UAI-IFPB
-description: resuminjho do padlet
+name: Intralink
+description: Projeto para gerencia de uma Intranet, desenvolvido com Node.js, Express.js e Bootstrap.
 addresses:
   preview: https://raw.githubusercontent.com/maricleiada/intranet/refs/heads/main/Preview.png
   homepage: https://maricleiada.github.io/intranet/
