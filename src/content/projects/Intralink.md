@@ -1,6 +1,6 @@
 ---
 name: Intralink
-description: Projeto para gerencia de uma Intranet, desenvolvido com Node.js, Express.js e Bootstrap.
+description: Projeto para verificar portas ativas e fazer DNS reverso.
 addresses:
   preview: https://raw.githubusercontent.com/maricleiada/intranet/refs/heads/main/Preview.png
   homepage: https://maricleiada.github.io/intranet/
