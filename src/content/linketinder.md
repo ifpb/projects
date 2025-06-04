@@ -2,10 +2,8 @@
 name: LinkeTinder
 description: o sistema é uma mescla de funções entre Linkedin e Tinder.
 addresses:
-  preview: pendente
-  homepage: pendente
+  preview: https://github.com/Julielison/LinkeTinder
   repository: https://github.com/Julielison/LinkeTinder
-  template: pendente
 category:
   type: subject
   subject: pweb1
@@ -17,6 +15,7 @@ tags:
   - ts
   - angular
   - java
+  - css
 owners:
   - 20232370016
 ---
