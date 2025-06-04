@@ -1,12 +1,14 @@
 ---
 name: Dreams for Sale
 description: A Dreams for Sale é a única loja que vende o impossível. Vendemos o que ainda não existe.
-preview: https://raw.githubusercontent.com/davicesar-ifpb/dreams-for-sale/main/preview.png
-page: https://davicesar-ifpb.github.io/dreams-for-sale/
-repository: https://github.com/davicesar-ifpb/dreams-for-sale
+addresses:
+  preview: https://raw.githubusercontent.com/davicesarm/dreams-for-sale/main/preview.png
+  homepage: https://davicesarm.github.io/dreams-for-sale/
+  repository: https://github.com/davicesarm/dreams-for-sale
 category:
   type: subject
   subject: lm
+  period: 1
   semester: 2024.1
   course: cstsi
   campus: ifpb-jp

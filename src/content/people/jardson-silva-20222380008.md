@@ -1,14 +1,16 @@
 ---
-id: 20222380008	
 name:
   compact: Jardson Silva
   full: Jardson Lúcio Peres da Silva
-avatar: https://github.com/peresl.png
+avatar:
+  github: https://github.com/peresl.png
+  githubUC: https://avatars.githubusercontent.com/u/136630558?v=4
 occupations:
-- id: 20222380008	
+- id: 20222380008
   type: student
   campus: ifpb-jp
   course: cstrc
+  isFinished: false
 addresses:
   github: https://github.com/peresl
   linkedin: https://www.linkedin.com/in/jardson-l%C3%BAcio-peres-da-silva/

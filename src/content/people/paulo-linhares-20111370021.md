@@ -1,9 +1,10 @@
 ---
-id: 20111370021
 name:
   compact: Paulo Linhares
   full: Paulo Virgílio Gomes Linhares Neto
-avatar: https://github.com/paulitolinhares.png
+avatar:
+  github: https://github.com/paulitolinhares.png
+  githubUC: https://avatars.githubusercontent.com/u/4129383?v=4
 occupations:
 - id: 20111370021
   type: student

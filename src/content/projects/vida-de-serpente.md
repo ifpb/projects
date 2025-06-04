@@ -1,12 +1,14 @@
 ---
 name: Vida de Serpente
 description: Site informátivo e educacional sobre a importância de proteger as serpentes.
-preview: https://raw.githubusercontent.com/LucasAndrade912/vida-de-serpente/next/preview.png
-page: https://vida-de-serpente.vercel.app/
-repository: https://github.com/LucasAndrade912/vida-de-serpente
+addresses:
+  preview: https://raw.githubusercontent.com/LucasAndrade912/vida-de-serpente/next/preview.png
+  homepage: https://vida-de-serpente.vercel.app/
+  repository: https://github.com/LucasAndrade912/vida-de-serpente
 category:
   type: subject
   subject: ls
+  period: 2
   semester: 2023.1
   course: cstsi
   campus: ifpb-jp

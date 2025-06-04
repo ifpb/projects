@@ -1,19 +1,65 @@
-# Projetos do IFPB
+# Estudantes e Projetos do IFPB
 
-O objetivo deste repositório consiste em exibir projetos dos alunos no IFPB. Caso você ainda não possua projetos neste base, ou se você deseja atualizar alguma informação, basta fazer um Pull Request enviando os seus dados.
+O objetivo deste repositório consiste em exibir os alunos e os projetos do IFPB. Caso você ainda não possua projetos, não está na lista dos alunos, ou se você deseja atualizar alguma informação existente, basta fazer um Pull Request (PR) enviando os seus dados. A seguir, é apresentado como fazer o cadastro de alunos e projetos, e as orientações para o PR.
 
-O primeiro passo seria incluir o dados do projeto adicionando, no diretório [src/content/projects/](https://github.com/ifpb/projects/tree/main/src/content/projects), um arquivo seguindo este formato `src/content/projects/titulo-do-projeto.md`:
+## Cadastro de alunos
+
+O primeiro passo seria incluir o dados do aluno adicionando um arquivo seguindo este formato `name-compact-id.md`, no diretório no diretório `src/content/people/`, por exemplo, o arquivo `luiz-chaves-20051370420.md`:
 
 ```yaml
 ---
-name: IFPB Projects
-description: Este portal tem como objetivo listar projetos construídos pelos alunos do IFPB.
-preview: https://raw.githubusercontent.com/ifpb/projects/master/preview.png
-page: https://ifpb.github.io/projects/
-repository: https://github.com/ifpb/projects
+name:
+  compact: Luiz Chaves
+  full: Luiz Carlos Rodrigues Chaves
+avatar:
+  github: https://github.com/luizchaves.png
+occupations:
+- id: 20051370420
+  type: student
+  campus: ifpb-jp
+  course: cstsi
+  isFinished: true
+addresses:
+  github: https://github.com/luizchaves
+  linkedin: https://www.linkedin.com/in/luizcarloschaves/
+  instagram: https://www.instagram.com/luizcrchaves/
+  bluesky: https://bsky.app/profile/luizcarloschaves.bsky.social
+  homepage: https://luizchaves.github.io
+  email: luiz.chaves@ifpb.edu.br
+---
+```
+
+Vamos padronizar o `id` como sendo a sua matrícula do curso, ou a do IFPB no caso de servidor, e os seguintes campos serão obrigatórios para estudante segundo a [definição de coleção do Astro.js](https://docs.astro.build/en/guides/content-collections/#defining-a-collection-schema) no arquivo [src/content/config.ts](https://github.com/ifpb/projects/tree/main/src/content/config.ts) (Esquema feito com [Zod](https://zod.dev/)):
+
+- `name.compact`
+- `name.full`
+- `avatar.github`
+- `occupations.$.id`
+- `occupations.$.type`
+- `occupations.$.campus`
+- `occupations.$.course`
+- `addresses.gihtub`
+- `addresses.linkedin`
+
+A imagem de avatar deve ser a do seu perfil do github, por exemplo, o endereço do avatar do exemplo é https://github.com/luizchaves, logo a imagem avatar deve ser https://github.com/luizchaves.png.
+
+## Cadastro de projetos
+
+O próximo passo seria incluir os dados do projeto adicionando um arquivo seguindo este formato `titulo-do-projeto.md`, no diretório `src/content/projects/`, por exemplo, o arquivo `ifpb-projects.md`:
+
+```yaml
+---
+name: Home da UAI-IFPB
+description: Este portal tem como objetivo ser um landing page da UAI do IFPB.
+addresses:
+  preview: https://raw.githubusercontent.com/ifpb/ifpb.github.io/main/preview.png
+  homepage: https://ifpb.github.io/
+  repository: https://github.com/ifpb/ifpb.github.io
+  template: https://www.figma.com/design/tgIYBEusxWkzNX803dBgUs/ifpb.github.io?node-id=0-1&t=Y6u5fodNP8JCcDHw-1
 category:
   type: subject
   subject: ls
+  period: 2
   semester: 2023.1
   course: cstsi
   campus: ifpb-jp
@@ -25,34 +71,29 @@ owners:
 ---
 ```
 
-Além da descrição do projeto, cada integrante deve incluir suas informação, no diretório [src/content/people/](https://github.com/ifpb/projects/tree/main/src/content/people), um arquivo seguindo este `src/content/people/nome-compacto-e-numero-da-matricula.md`:
+Este exemplo é um projeto do tipo `projeto de disciplina`, no arquivo [src/content/config.ts](https://github.com/ifpb/projects/tree/main/src/content/config.ts) é possível ver outros tipos de projetos. Neste exemplo de projeto de disciplina existem estes endereços do projeto:
 
-```yaml
----
-id: 20051370420
-name:
-  compact: Luiz Chaves
-  full: Luiz Carlos Rodrigues Chaves
-avatar: https://github.com/luizchaves.png
-occupations:
-- id: 20051370420
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
-addresses:
-  github: https://github.com/luizchaves
-  linkedin: https://www.linkedin.com/in/luizcarloschaves/
-  twitter: http://twitter.com/luizchavesjp
-  lattes: http://lattes.cnpq.br/7165875430419020
-  researchgate: https://www.researchgate.net/profile/Luiz_Rodrigues_Chaves
-  email: lucachaves@gmail.com
----
+
+- `addresses.repository` - Endereço do repositório do projeto no Github (obrigatório);
+- `addresses.preview` - Endereço da imagem de preview do projeto (print screen), que deve ser colocada no próprio repositório do projeto com a extensão `.png` e tamanho sugerido de `500x262px` (obrigatório);
+- `addresses.homepage` - Site do projeto em execução, caso exista (opcional).
+- `addresses.template` - Site do template/protótipo do projeto, caso exista (opcional).
+
+No campo `owners` é possível adicionar uma lista alunos, caso o projeto tenha mais de um colaborador, informando a matrícula do aluno, depois é importante que cada aluno faça seu o cadastrado de suas informações.
+
+## Pull Request
+
+Para enviar seus dados é necessário fazer o Pull Request (PR). Inicialmente é preciso fazer uma cópia/fork deste repositório (`ifpb/projects` - upstream), clonar o repositório copiado (`seu-username/projects` - origin) e adicionar os arquivos de alunos e projetos conforme descrito anteriormente. Caso já tenha feito o fork, basta atualizar o seu repositório local antes de fazer o PR.
+
+Após inclusão dos arquivos é recomendado fazer um teste localmente para ver como ficou seus dados. Para isso, você precisa ter o [Node.js](https://nodejs.org/) instalado e executar os seguintes comandos:
+
+```bash
+$ npm install
+$ npm run build
+$ npm run preview
 ```
 
-Detalhe, vamos padronizar o `id` como sendo a sua matrícula do curso, e seria muito interessante que você declarasse os campos `name.compact`, `name.full`, `avatar`, `occupations` e principalmente o seu `addresses.linkedin` e `addresses.gihtub`.
-
-Já as imagens do preview do projeto e do avatar dos integrantes devem ser colocadas no próprio github. A imagem de avatar dever ser colocado no seu perfil do github, e a imagem de preview do projeto deve ser adicionada no próprio repositório com a extensão `.png` e tamanho de `500x262` px.
+Caso não tenha nenhum erro, abra o navegador e acesse o endereço sugerido no terminal. Se deu tudo certo, gere o commit dos arquivos e os envie em um PR, depois é só aguardar a aprovação para que as informações apareçam em [https://ifpb.github.io/projects/](https://ifpb.github.io/projects/), mas antes do PR lembre de atualizar o seu repositório local (origin) com o repositório original (upstream), e ao gerar a mensagem de commit informe o que foi feito, por exemplo, `content: Adicionando o aluno Luiz Chaves` ou `content: Adicionando o projeto IFPB Projects`.
 
 Gostou da ideia? Então avise aos seus colegas e compartilhe seus projetos do IFPB!
 

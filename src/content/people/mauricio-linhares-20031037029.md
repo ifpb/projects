@@ -1,9 +1,10 @@
 ---
-id: 20031037029
 name:
-  compact: Mauricio Linhares
-  full: Mauricio Linhares de Aragao Junior
-avatar: https://github.com/mauricio.png
+  compact: Maurício Linhares
+  full: Maurício Linhares de Aragão Junior
+avatar:
+  github: https://github.com/mauricio.png
+  githubUC: https://avatars.githubusercontent.com/u/5742?v=4
 occupations:
 - id: 20031037029
   type: student
@@ -14,4 +15,5 @@ addresses:
   github: https://github.com/mauricio
   linkedin: https://www.linkedin.com/in/mauriciolinhares/
   twitter: https://twitter.com/mauriciojr
+  homepage: https://mauricio.github.io/
 ---

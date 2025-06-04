@@ -1,0 +1,40 @@
+---
+import type { ProjectsWithPeople } from '@/pages/codes/page/[page].astro';
+import ProjectCard from '@/components/ProjectCard.astro';
+import PaginationIndex from '@/components/PaginationIndex.astro';
+import PersonUtil from '@/components/PersonUtil.astro';
+
+export interface Props {
+  page: {
+    data: ProjectsWithPeople[];
+    currentPage: number;
+    lastPage: number;
+    url?: {
+      first?: string;
+      prev: string;
+      next: string;
+      last?: string;
+    };
+  };
+  type: string;
+  index: string;
+}
+
+const { page, type, index }: Props = Astro.props;
+---
+
+<PersonUtil />
+
+<main data-pagefind-ignore>
+  <div
+    class="grid justify-items-stretch gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+  >
+    {page.data.map((project) => <ProjectCard project={project} />)}
+  </div>
+
+  {
+    page.lastPage > 1 && (
+      <PaginationIndex page={page} type={type} index={index} />
+    )
+  }
+</main>

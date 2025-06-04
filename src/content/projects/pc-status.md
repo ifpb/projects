@@ -1,11 +1,13 @@
 ---
 name: PcStatus
 description: A aplicação permite verificar a saúde do PC e visualizar um histórico de saúde. O design inclui uma barra de navegação, conteúdo central e rodapé com ícones sociais.
-repository: https://github.com/Avelangev/Projeto---FrontEnd-DW
-preview: https://github.com/Avelangev/Projeto---FrontEnd-DW/raw/main/PcStatus
+addresses:
+  repository: https://github.com/Avelangev/Projeto---FrontEnd-DW
+  preview: https://github.com/Avelangev/Projeto---FrontEnd-DW/raw/main/PcStatus
 category:
   type: subject
   subject: dw
+  period: 4
   semester: 2024.1
   course: cstrc
   campus: ifpb-jp
