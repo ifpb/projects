@@ -18,4 +18,5 @@ tags:
   - typescript
 owners:
   - 20231370042
+  - 20222370034
 ---
