@@ -5,7 +5,7 @@ addresses:
   repository: https:https://github.com/MaiconFelipedev/CentralCinemaApp-final
 category:
   type: subject
-  subject: pw1
+  subject: pweb1
   period: 5
   semester: 2024.1
   course: cstsi

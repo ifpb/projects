@@ -6,7 +6,7 @@ addresses:
   repository: https://github.com/filipe-rds/Projeto-Final-Angular-PWEB
 category:
   type: subject
-  subject: pw1
+  subject: pweb1
   period: 5
   semester: 2024.1
   course: cstsi

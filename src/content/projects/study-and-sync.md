@@ -6,7 +6,7 @@ addresses:
   repository: https://github.com/lukilme/final-pweb-study-and-sync
 category:
   type: subject
-  subject: pw1
+  subject: pweb1
   period: 4
   semester: 2024.1
   course: cstsi

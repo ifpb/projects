@@ -7,7 +7,7 @@ addresses:
   repository: https://github.com/Phenrique-sousa/FinanZen-pweb1-final
 category:
   type: subject
-  subject: pw1
+  subject: pweb1
   period: 4
   semester: 2024.2
   course: cstsi
