@@ -48,6 +48,7 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
         {type === 'codes' &&
           Object.values(tags)
             .sort((a, b) => a.name.localeCompare(b.name))
+            .filter((tag => ['curso', 'disciplina', 'semestre'].includes(tag.name)))
             .map((tag, index) => (
               <div key={index} className="mb-4">
                 <h3 className="font-semibold text-lg capitalize">{tag.name}</h3>
