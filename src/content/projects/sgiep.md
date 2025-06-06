@@ -6,7 +6,7 @@ addresses:
   repository: https://github.com/Erickfonseca1/sgiep-front
 category:
   type: subject
-  subject: pd
+  subject: pdist
   period: 6
   semester: 2024.1
   course: cstsi

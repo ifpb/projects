@@ -6,7 +6,7 @@ addresses:
   repository: https://github.com/AllanSmithll/incruise
 category:
   type: subject
-  subject: pw2
+  subject: pweb2
   period: 5
   semester: 2024.1
   course: cstsi

@@ -6,7 +6,7 @@ addresses:
   repository: https://github.com/AllanSmithll/amantus-finance-frontend
 category:
   type: subject
-  subject: pw1
+  subject: pweb1
   period: 4
   semester: 2023.2
   course: cstsi
