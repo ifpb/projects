@@ -2,9 +2,8 @@
 name: ArtFlow
 description: Plataforma para a criação de portfólio amplo focado em conteúdo artístico.
 addresses:
-  preview: https://raw.githubusercontent.com/2005-Erick/ArtFlow_VT/refs/heads/main/public/Preview.png
-  homepage: https://2005-erick.github.io/ArtFlow_VT/
-  repository: https://github.com/2005-Erick/ArtFlow_VT
+  homepage: https://2005-erick.github.io/ArtFlow/
+  repository: https://github.com/2005-Erick/ArtFlow
 category:
   type: subject
   subject: ls
