@@ -1,6 +1,6 @@
 ---
 name: Surf Lifestyle
-description: Este portal tem como objetivo ser um landing page da UAI do IFPB.
+description: Este projeto tem a proposta de ser um swell desenvolvido de surfistas para surfistas, com o objetivo de unificar conhecimentos advindos da arte e do estilo de vida que o Surf pode proporcionar.
 addresses:
   preview: https://raw.githubusercontent.com/devgabrielrosas/Surf-Lifestyle/refs/heads/main/app/static/imagens/preview.png
   homepage: https://surf-lifestyle.onrender.com/
