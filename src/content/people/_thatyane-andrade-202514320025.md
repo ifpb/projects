@@ -9,7 +9,7 @@ occupations:
   type: student
   campus: ifpb-jp
   course: csbes
-  isFinished: not
+  isFinished: false
 addresses:
   github: https://github.com/anethaty
   instagram: https://www.instagram.com/thaty.alvs/?next=%2F
