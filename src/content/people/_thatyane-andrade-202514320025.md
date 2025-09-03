@@ -12,6 +12,7 @@ occupations:
   isFinished: false
 addresses:
   github: https://github.com/anethaty
+  linkedin: https://www.linkedin.com/in/thatyaneiasmyn/
   instagram: https://www.instagram.com/thaty.alvs/?next=%2F
   homepage: https://anethaty.github
   email: thatyane.iasmyn@academico.ifpb.edu.br
