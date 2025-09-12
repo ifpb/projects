@@ -3,12 +3,10 @@ name: Decibell
 description: Projeto de estudo para criação de site de vendas online
 addresses:
   preview: https://github.com/DiogoBAguiar/projeto_Decibell/projeto_decibell.png
-  homepage: 
   repository: https://github.com/DiogoBAguiar/projeto_Decibell
-  template: 
 category:
   type: subject
-  subject: ls
+  subject: pw1
   period: 1
   semester: 2025.1
   course: csbes
