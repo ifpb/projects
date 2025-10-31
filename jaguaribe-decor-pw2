@@ -1,0 +1,22 @@
+---
+name: Jaguaribe Decor
+description: Loja de Produtos de Decoração.
+addresses:
+  preview: https://raw.githubusercontent.com/michelgft/Jaguaribe_Decor/main/preview.png
+  homepage: https://michelgft.github.io/Jaguaribe_Decor/
+  repository: https://github.com/michelgft/Jaguaribe_Decor
+  template: figma.com/design/8beUbNTgJeIn3xBforwMVF/Jaguaribe-Decor?node-id=0-1&p=f&t=VgQGE9P5PKvHXy8c-0
+category:
+  type: subject
+  subject: PW2
+  period: 2
+  semester: 2025.2
+  course: cstsi
+  campus: ifpb-jp
+tags:
+  - js
+owners:
+  - 20242370031
+  - 20242370023
+  - 20242370024
+---
