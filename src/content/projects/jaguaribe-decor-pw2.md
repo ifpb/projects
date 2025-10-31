@@ -15,7 +15,9 @@ category:
   campus: ifpb-jp
 tags:
   - js
- 
+  - html
+  - css
+  - tailwind
 owners:
   - 20242370031
   - 20242370023
