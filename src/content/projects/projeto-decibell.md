@@ -2,7 +2,7 @@
 name: Decibell
 description: Projeto de estudo para criação de site de vendas online
 addresses:
-  preview: https://github.com/DiogoBAguiar/projeto_Decibell/projeto_decibell.png
+  preview: https://github.com/DiogoBAguiar/projeto_Decibell/blob/main/projeto_decibell.png?raw=true
   repository: https://github.com/DiogoBAguiar/projeto_Decibell
 category:
   type: subject
