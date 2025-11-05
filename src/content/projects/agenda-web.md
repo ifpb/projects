@@ -12,6 +12,8 @@ addresses:
   course: cstsi
   campus: ifpb-jp
 tags:
+  - html
+  - css
   - js
 owners:
   - 20241370024
@@ -19,3 +21,4 @@ owners:
   - 20241370029
   - 20241370016
 ---
+
