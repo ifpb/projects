@@ -5,7 +5,7 @@ addresses:
   preview: https://github.com/ThalesLimaF/Web-Agenda/blob/main/preview.png
   homepage: https://thaleslimaf.github.io/Web-Agenda/
   repository: https://github.com/ThalesLimaF/Web-Agenda
- category:
+category:
   type: subject
   subject: pw2
   semester: 2025.2
@@ -21,5 +21,6 @@ owners:
   - 20241370029
   - 20241370016
 ---
+
 
 
