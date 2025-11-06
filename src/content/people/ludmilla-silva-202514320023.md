@@ -10,7 +10,7 @@ occupations:
   type: student
   campus: ifpb-jp
   course: csbes
-  isFinished: true
+  isFinished: false
 addresses:
   github: https://github.com/Ludmilla-Judaico
   linkedin: https://www.linkedin.com/in/ludmilla-judaico-924205355
