@@ -2,7 +2,7 @@
 name: CompetitivePOP
 description: Um site web para Programação Competitiva focado na organização do competidor através de estatísticas e classificação de problemas.
 addresses:
-  preview: https://raw.githubusercontent.com/kaeljane/CompetitivePOP/main/preview.png
+  preview: https://raw.githubusercontent.com/kaeljane/CompetitivePOP/main/preview.png?raw=true
   homepage: https://kaeljane.github.io/CompetitivePOP/
   repository: https://github.com/kaeljane/CompetitivePOP
 category:
