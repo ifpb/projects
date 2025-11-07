@@ -1,0 +1,12 @@
+---
+id: ctim-jp
+name: Mecânica
+abbreviation: ctim
+department: Unidade Acadêmica de Informação e Comunicação
+level:
+  compact: Técnico Integrado ao Médio
+  full: Curso Técnico Integrado ao Ensino Médio
+campus: ifpb-jp
+addresses:
+  homepage: https://estudante.ifpb.edu.br/cursos/163/
+---

@@ -41,6 +41,7 @@ export const abbreviationCourses = [
   'cstt',
   'ctie',
   'ctii',
+  'ctim',
 ] as const;
 
 const campusCode = Object.keys(campi) as [keyof typeof campi];
