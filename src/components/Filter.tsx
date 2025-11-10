@@ -115,76 +115,120 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
           </div>
         )}
         {type === 'people' &&
-          Object.entries(getSemesterCourses(tags.semester.values))
-            .sort(([a], [b]) =>
-              getCourseByAbbreviation(a).data.name.localeCompare(
-                getCourseByAbbreviation(b).data.name
-              )
+          Object.entries(
+            Object.entries(getSemesterCourses(tags.semester.values)).reduce(
+              (
+                acc: Record<string, Array<[string, string[]]>>,
+                [course, semesters]: [string, string[]]
+              ) => {
+                const courseData = getCourseByAbbreviation(course);
+                const level = courseData?.data.level.compact || 'Outros';
+                if (!acc[level]) {
+                  acc[level] = [];
+                }
+                acc[level].push([course, semesters]);
+                return acc;
+              },
+              {}
             )
-            .map(([course, semesters]: [string, string[]]) => (
-              <div key={course} className="mb-4">
-                <details className="group" open={false}>
-                  <summary className="flex cursor-pointer list-none items-center justify-between rounded bg-gray-200 px-3 py-2 transition group-open:rounded-b-none group-open:bg-gray-300">
-                    <h1 className="font-semibold text-sm m-0">
-                      {getCourseByAbbreviation(course).data.name}
-                    </h1>
-                    <Icon
-                      icon="mdi:chevron-down"
-                      className="text-xl transition-transform group-open:rotate-180"
-                    />
-                  </summary>
-                  <nav className="border border-t-0 border-gray-300 rounded-b px-3 py-2 bg-white">
-                    <Badge
-                      url={`/projects/people/${course}/1`}
-                      value={course}
-                    />
+          )
+            .sort(([levelA], [levelB]) => levelA.localeCompare(levelB))
+            .map(([level, coursesInLevel]) => (
+              <div key={level} className="mb-6">
+                <h3 className="font-bold text-base mb-3 text-gray-800">
+                  {level}
+                </h3>
+                {coursesInLevel
+                  .sort(([a], [b]) =>
+                    getCourseByAbbreviation(a).data.name.localeCompare(
+                      getCourseByAbbreviation(b).data.name
+                    )
+                  )
+                  .map(([course, semesters]: [string, string[]]) => (
+                    <div key={course} className="mb-4 ml-2">
+                      <details className="group" open={false}>
+                        <summary className="flex cursor-pointer list-none items-center justify-between rounded bg-gray-200 px-3 py-2 transition group-open:rounded-b-none group-open:bg-gray-300">
+                          <h1 className="font-semibold text-sm m-0">
+                            {getCourseByAbbreviation(course).data.name}
+                          </h1>
+                          <Icon
+                            icon="mdi:chevron-down"
+                            className="text-xl transition-transform group-open:rotate-180"
+                          />
+                        </summary>
+                        <nav className="border border-t-0 border-gray-300 rounded-b px-3 py-2 bg-white">
+                          <Badge
+                            url={`/projects/people/${course}/1`}
+                            value={course}
+                          />
 
-                    {allTags.includes(`egresso-${course}`) && (
-                      <Badge
-                        url={`/projects/people/egresso-${course}/1`}
-                        value={`${course}-egressos`}
-                      />
-                    )}
+                          {allTags.includes(`egresso-${course}`) && (
+                            <Badge
+                              url={`/projects/people/egresso-${course}/1`}
+                              value={`${course}-egressos`}
+                            />
+                          )}
 
-                    {semesters.map((semester) => (
-                      <Badge
-                        url={`/projects/people/${course}-${semester}/1`}
-                        value={semester}
-                      />
-                    ))}
-                  </nav>
-                </details>
+                          {semesters.map((semester) => (
+                            <Badge
+                              url={`/projects/people/${course}-${semester}/1`}
+                              value={semester}
+                            />
+                          ))}
+                        </nav>
+                      </details>
+                    </div>
+                  ))}
               </div>
             ))}
         {type === 'people' && (
-          <div className="mb-4">
-            <details className="group" open={false}>
-              <summary className="flex cursor-pointer list-none items-center justify-between rounded bg-gray-200 px-3 py-2 transition group-open:rounded-b-none group-open:bg-gray-300">
-                <h1 className="font-semibold text-sm m-0">Outros</h1>
-                <Icon
-                  icon="mdi:chevron-down"
-                  className="text-xl transition-transform group-open:rotate-180"
-                />
-              </summary>
-              <nav className="border border-t-0 border-gray-300 rounded-b px-3 py-2 bg-white">
-                <Badge
-                  url={`/projects/people/professor/1`}
-                  value="professores"
-                />
-                <Badge url={`/projects/people/student/1`} value="alunos" />
-                <Badge url={`/projects/people/técnico/1`} value="técnico" />
-                <Badge url={`/projects/people/graduação/1`} value="graduação" />
-                <Badge url={`/projects/people/mestrado/1`} value="mestrado" />
-                <Badge url={`/projects/people/egresso/1`} value="egressos" />
-                <Badge url={`/projects/people/projects/1`} value="projetos" />
-                <Badge url={`/projects/people/homepage/1`} value="homepage" />
-                <Badge url={`/projects/people/figma/1`} value="figma" />
-                <Badge
-                  url={`/projects/people/researchgate/1`}
-                  value="researchgate"
-                />
-              </nav>
-            </details>
+          <div className="mb-6">
+            <h3 className="font-bold text-base mb-3 text-gray-800">Outras</h3>
+            <div className="mb-4 ml-2">
+              <details className="group" open={false}>
+                <summary className="flex cursor-pointer list-none items-center justify-between rounded bg-gray-200 px-3 py-2 transition group-open:rounded-b-none group-open:bg-gray-300">
+                  <h1 className="font-semibold text-sm m-0">Tipos</h1>
+                  <Icon
+                    icon="mdi:chevron-down"
+                    className="text-xl transition-transform group-open:rotate-180"
+                  />
+                </summary>
+                <nav className="border border-t-0 border-gray-300 rounded-b px-3 py-2 bg-white">
+                  <Badge
+                    url={`/projects/people/professor/1`}
+                    value="professores"
+                  />
+                  <Badge url={`/projects/people/student/1`} value="alunos" />
+                  <Badge url={`/projects/people/técnico/1`} value="técnico" />
+                  <Badge
+                    url={`/projects/people/graduação/1`}
+                    value="graduação"
+                  />
+                  <Badge url={`/projects/people/mestrado/1`} value="mestrado" />
+                  <Badge url={`/projects/people/egresso/1`} value="egressos" />
+                </nav>
+              </details>
+            </div>
+            <div className="mb-4 ml-2">
+              <details className="group" open={false}>
+                <summary className="flex cursor-pointer list-none items-center justify-between rounded bg-gray-200 px-3 py-2 transition group-open:rounded-b-none group-open:bg-gray-300">
+                  <h1 className="font-semibold text-sm m-0">Recursos</h1>
+                  <Icon
+                    icon="mdi:chevron-down"
+                    className="text-xl transition-transform group-open:rotate-180"
+                  />
+                </summary>
+                <nav className="border border-t-0 border-gray-300 rounded-b px-3 py-2 bg-white">
+                  <Badge url={`/projects/people/projects/1`} value="projetos" />
+                  <Badge url={`/projects/people/homepage/1`} value="homepage" />
+                  <Badge url={`/projects/people/figma/1`} value="figma" />
+                  <Badge
+                    url={`/projects/people/researchgate/1`}
+                    value="researchgate"
+                  />
+                </nav>
+              </details>
+            </div>
           </div>
         )}
       </div>
