@@ -48,11 +48,15 @@ const formatPageTitle = (tag: string) => {
       title = getCourseName(tag);
     }
   } else if (/^ifpb-\w{2}$/.test(tag)) {
-    title = 'Campus ' + tag.toUpperCase();
+    title = `Campus ${tag.toUpperCase()}`;
   } else if (/^\d{4}\.?\d?$/.test(tag)) {
-    title = 'Alunos de ' + tag;
+    title = `Alunos de ${tag}`;
   } else if (/-\d{4}\.?\d?$/.test(tag)) {
-    title = 'Turma ' + tag.toUpperCase();
+    title = `Turma ${tag.toUpperCase()}`;
+  } else if (['técnico', 'mestrado'].includes(tag)) {
+    title = `Alunos do ${tag[0].toUpperCase() + tag.slice(1)}`;
+  } else if (['graduação'].includes(tag)) {
+    title = `Alunos da ${tag[0].toUpperCase() + tag.slice(1)}`;
   } else if (tag === 'student') {
     title = 'Alunos';
   } else if (tag === 'professor') {

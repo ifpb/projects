@@ -126,13 +126,11 @@ export async function getStudentTags(person: CollectionEntry<'people'>) {
       getOccupationId(occupation)
     );
 
-    const courseLevels = courseOccupations
-      .map((occupation) => {
-        const course = getCourseByAbbreviation(occupation.course);
+    const courseLevels = courseOccupations.map((occupation) => {
+      const course = getCourseByAbbreviation(occupation.course);
 
-        return course.data.level.compact.split(' ')[0].toLocaleLowerCase();
-      })
-      .filter((level, index, self) => self.indexOf(level));
+      return course.data.level.compact.split(' ')[0].toLocaleLowerCase();
+    });
 
     const coursesByEntry = courseEntries.map(
       (courseEntry, index) => `${courses[index]}-${courseEntry}`
