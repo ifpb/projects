@@ -172,7 +172,7 @@ export async function getPersonTags(person: CollectionEntry<'people'>) {
   const tags: string[] = [...campi];
 
   if (await hasProjects(person)) {
-    tags.push('projetos');
+    tags.push('projects');
   }
 
   if (hasHomepage(person)) {
@@ -422,5 +422,5 @@ export async function getPeopleByTag(tag: string) {
 }
 
 export async function getPeopleWithProjects() {
-  return await getPeopleByTag('projetos');
+  return await getPeopleByTag('projects');
 }

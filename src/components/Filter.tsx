@@ -48,7 +48,9 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
         {type === 'codes' &&
           Object.values(tags)
             .sort((a, b) => a.name.localeCompare(b.name))
-            .filter((tag => ['curso', 'disciplina', 'semestre'].includes(tag.name)))
+            .filter((tag) =>
+              ['curso', 'disciplina', 'semestre'].includes(tag.name)
+            )
             .map((tag, index) => (
               <div key={index} className="mb-4">
                 <h3 className="font-semibold text-lg capitalize">{tag.name}</h3>
@@ -117,9 +119,13 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
           <div className="mb-4">
             <h3 className="font-semibold text-lg">Outros</h3>
             <nav>
-              <Badge url={`/projects/people/professor/1`} value="professor" />
+              <Badge url={`/projects/people/professor/1`} value="professores" />
+              <Badge url={`/projects/people/student/1`} value="alunos" />
+              <Badge url={`/projects/people/técnico/1`} value="técnico" />
+              <Badge url={`/projects/people/graduação/1`} value="graduação" />
+              <Badge url={`/projects/people/mestrado/1`} value="mestrado" />
               <Badge url={`/projects/people/egresso/1`} value="egressos" />
-              <Badge url={`/projects/people/projetos/1`} value="projetos" />
+              <Badge url={`/projects/people/projects/1`} value="projetos" />
               <Badge url={`/projects/people/homepage/1`} value="homepage" />
               <Badge url={`/projects/people/figma/1`} value="figma" />
               <Badge
