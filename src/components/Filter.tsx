@@ -17,7 +17,9 @@ function Badge({ url, value }: { url: string; value: string }) {
   return (
     <a
       href={url}
-      className="text-xs font-semibold inline-block uppercase last:mr-0 mr-1 mb-1 py-1 px-2 rounded-full bg-white hover:bg-gray-700 hover:text-white transition duration-300"
+      className="text-xs font-semibold inline-block uppercase last:mr-0 mr-1 mb-1 py-1 px-2 rounded-full text-gray-800 bg-gray-200 hover:bg-gray-700 hover:text-white transition duration-300"
+      target="_blank"
+      rel="noopener noreferrer"
     >
       {value}
     </a>
@@ -102,7 +104,7 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
           <div className="mb-4">
             <details className="group" open={false}>
               <summary className="flex cursor-pointer list-none items-center justify-between rounded bg-gray-200 px-3 py-2 transition group-open:rounded-b-none group-open:bg-gray-300">
-                <h1 className="font-semibold text-sm m-0">Outros</h1>
+                <h1 className="font-semibold text-sm m-0">Extra</h1>
                 <Icon
                   icon="mdi:chevron-down"
                   className="text-xl transition-transform group-open:rotate-180"
@@ -183,7 +185,7 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
             ))}
         {type === 'people' && (
           <div className="mb-6">
-            <h3 className="font-bold text-base mb-3 text-gray-800">Outras</h3>
+            <h3 className="font-bold text-base mb-3 text-gray-800">Extra</h3>
             <div className="mb-4 ml-2">
               <details className="group" open={false}>
                 <summary className="flex cursor-pointer list-none items-center justify-between rounded bg-gray-200 px-3 py-2 transition group-open:rounded-b-none group-open:bg-gray-300">
