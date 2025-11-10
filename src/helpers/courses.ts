@@ -4,6 +4,8 @@ import { getCollection } from 'astro:content';
 import { getOccupationId } from '@/helpers/people';
 import { isSubjectProject } from '@/helpers/projects';
 
+export const courseLevels = ['técnico', 'graduação', 'mestrado', 'doutorado'];
+
 export const courses = await getCollection('courses');
 
 export function getCourseByAbbreviation(abbreviation: string) {
@@ -29,9 +31,48 @@ export function getFirstCourseByPeople(person: CollectionEntry<'people'>) {
   }
 }
 
-export function getSubjectByProject(project: CollectionEntry<'projects'>) {
-  const subjects: string[] = [];
+export function getLastLevelCourseByPeople(person: CollectionEntry<'people'>) {
+  const { occupations } = person.data;
 
+  const studentOccupations = occupations.filter(
+    (occupation) => occupation.type === 'student'
+  );
+
+  if (studentOccupations.length > 0) {
+    const sortedOccupations = studentOccupations.sort((a, b) => {
+      return (
+        courseLevels.indexOf(
+          getCourseByAbbreviation(b.course)
+            ?.data.level.compact.split(' ')[0]
+            .toLocaleLowerCase()
+        ) -
+        courseLevels.indexOf(
+          getCourseByAbbreviation(a.course)
+            ?.data.level.compact.split(' ')[0]
+            .toLocaleLowerCase()
+        )
+      );
+    });
+
+    const lastCourse = getCourseByAbbreviation(sortedOccupations[0].course)
+      ?.data.level.compact.split(' ')[0]
+      .toLocaleLowerCase();
+
+    return lastCourse;
+  }
+}
+
+export function getLastCourseLevelIndexByPeople(
+  person: CollectionEntry<'people'>
+) {
+  const lastCourse = getLastLevelCourseByPeople(person);
+
+  const index = courseLevels.indexOf(lastCourse);
+
+  return index !== -1 ? index : 0;
+}
+
+export function getSubjectByProject(project: CollectionEntry<'projects'>) {
   if (isSubjectProject(project)) {
     const {
       data: {

@@ -7,6 +7,7 @@ import {
   getCourseByAbbreviation,
   getFirstCourseByPeople,
   getSubjectByProject,
+  getLastCourseLevelIndexByPeople,
 } from '@/helpers/courses';
 
 export function getFirstPersonId(person: CollectionEntry<'people'>) {
@@ -336,6 +337,7 @@ function sortPeopleByTag(people: CollectionEntry<'people'>[], sortTag: string) {
     a: CollectionEntry<'people'>,
     b: CollectionEntry<'people'>
   ) => {
+    // professor, researchgate
     if (
       /\w+-\d{4}(\.\d)?/.test(sortTag) ||
       ['professor', 'researchgate'].includes(sortTag)
@@ -343,6 +345,7 @@ function sortPeopleByTag(people: CollectionEntry<'people'>[], sortTag: string) {
       return a.data.name.compact.localeCompare(b.data.name.compact);
     }
 
+    // course levels
     if (courses.some((course) => sortTag.includes(course.data.abbreviation))) {
       const course = courses
         .map((course) => course.data.abbreviation)
@@ -354,12 +357,17 @@ function sortPeopleByTag(people: CollectionEntry<'people'>[], sortTag: string) {
       );
     }
 
-    return (
-      Number(isOnlyProfessor(a)) - Number(isOnlyProfessor(b)) ||
-      getSortId(a) - getSortId(b) ||
-      getFirstCourseByPeople(a).localeCompare(getFirstCourseByPeople(b)) ||
-      a.data.name.compact.localeCompare(b.data.name.compact)
-    );
+    // projects
+    if (sortTag === 'projects') {
+      return (
+        Number(isProfessor(b)) - Number(isProfessor(a)) ||
+        // TODO by number of projects
+        sortPeople(a, b)
+      );
+    }
+
+    // other tags
+    return sortPeople(a, b);
   };
 
   people.sort(sortPeopleByTag);
@@ -371,9 +379,10 @@ function sortPeople(
 ) {
   return (
     // personRank(b) - personRank(a) ||
-    Number(isOnlyProfessor(a)) - Number(isOnlyProfessor(b)) ||
+    // Number(isOnlyProfessor(a)) - Number(isOnlyProfessor(b)) ||
+    // getFirstCourseByPeople(a).localeCompare(getFirstCourseByPeople(b)) ||
+    getLastCourseLevelIndexByPeople(b) - getLastCourseLevelIndexByPeople(a) ||
     getSortId(a) - getSortId(b) ||
-    getFirstCourseByPeople(a).localeCompare(getFirstCourseByPeople(b)) ||
     a.data.name.compact.localeCompare(b.data.name.compact)
   );
 }
