@@ -360,9 +360,7 @@ function sortPeopleByTag(people: CollectionEntry<'people'>[], sortTag: string) {
     // projects
     if (sortTag === 'projects') {
       return (
-        Number(isProfessor(b)) - Number(isProfessor(a)) ||
-        // TODO by number of projects
-        sortPeople(a, b)
+        Number(isProfessor(b)) - Number(isProfessor(a)) || sortPeople(a, b)
       );
     }
 
@@ -373,7 +371,7 @@ function sortPeopleByTag(people: CollectionEntry<'people'>[], sortTag: string) {
   people.sort(sortPeopleByTag);
 }
 
-function sortPeople(
+export function sortPeople(
   a: CollectionEntry<'people'>,
   b: CollectionEntry<'people'>
 ) {
