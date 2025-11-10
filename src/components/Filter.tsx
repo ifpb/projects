@@ -28,9 +28,14 @@ function Badge({ url, value }: { url: string; value: string }) {
 
 export default function Filter({ type, tags, allTags }: FilterProps) {
   const [isShow, setIsShow] = useState(false);
+  const [openAccordion, setOpenAccordion] = useState<string | null>(null);
 
   const toggleShow = () => {
     setIsShow(!isShow);
+  };
+
+  const toggleAccordion = (accordionId: string) => {
+    setOpenAccordion(openAccordion === accordionId ? null : accordionId);
   };
 
   return isShow ? (
@@ -53,69 +58,120 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
             .filter((tag) =>
               ['curso', 'disciplina', 'semestre'].includes(tag.name)
             )
-            .map((tag, index) => (
-              <div key={index} className="mb-4">
-                <details className="group" open={false}>
-                  <summary className="flex cursor-pointer list-none items-center justify-between rounded bg-gray-200 px-3 py-2 transition group-open:rounded-b-none group-open:bg-gray-300">
-                    <h1 className="font-semibold text-sm capitalize m-0">
-                      {tag.name}
-                    </h1>
+            .map((tag, index) => {
+              const accordionId = `codes-${tag.name}-${index}`;
+              const isOpen = openAccordion === accordionId;
+
+              return (
+                <div key={index} className="mb-4">
+                  <div className="group">
+                    <div
+                      onClick={() => toggleAccordion(accordionId)}
+                      className={`flex cursor-pointer list-none items-center justify-between rounded px-3 py-2 transition ${
+                        isOpen ? 'rounded-b-none bg-gray-300' : 'bg-gray-200'
+                      }`}
+                    >
+                      <h1 className="font-semibold text-sm capitalize m-0">
+                        {tag.name}
+                      </h1>
+                      <Icon
+                        icon="mdi:chevron-down"
+                        className={`text-xl transition-transform ${
+                          isOpen ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </div>
+                    {isOpen && (
+                      <nav className="border border-t-0 border-gray-300 rounded-b px-3 py-2 bg-white">
+                        {tag.values
+                          .sort((a, b) => a.localeCompare(b))
+                          .map((value) => (
+                            <Badge
+                              key={value}
+                              url={`/projects/${type}/${value}/1`}
+                              value={value}
+                            />
+                          ))}
+                      </nav>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+        {type === 'codes' &&
+          (() => {
+            const accordionId = 'codes-tipo';
+            const isOpen = openAccordion === accordionId;
+
+            return (
+              <div className="mb-4">
+                <div className="group">
+                  <div
+                    onClick={() => toggleAccordion(accordionId)}
+                    className={`flex cursor-pointer list-none items-center justify-between rounded px-3 py-2 transition ${
+                      isOpen ? 'rounded-b-none bg-gray-300' : 'bg-gray-200'
+                    }`}
+                  >
+                    <h1 className="font-semibold text-sm m-0">Tipo</h1>
                     <Icon
                       icon="mdi:chevron-down"
-                      className="text-xl transition-transform group-open:rotate-180"
+                      className={`text-xl transition-transform ${
+                        isOpen ? 'rotate-180' : ''
+                      }`}
                     />
-                  </summary>
-                  <nav className="border border-t-0 border-gray-300 rounded-b px-3 py-2 bg-white">
-                    {tag.values
-                      .sort((a, b) => a.localeCompare(b))
-                      .map((value) => (
-                        <Badge
-                          url={`/projects/${type}/${value}/1`}
-                          value={value}
-                        />
-                      ))}
-                  </nav>
-                </details>
+                  </div>
+                  {isOpen && (
+                    <nav className="border border-t-0 border-gray-300 rounded-b px-3 py-2 bg-white">
+                      <Badge
+                        url={`/projects/codes/subject/1`}
+                        value="Disciplina"
+                      />
+                      <Badge
+                        url={`/projects/codes/research/1`}
+                        value="Pesquisa"
+                      />
+                      {/* <Badge url={`/projects/codes/extension/1`} value="Extensão" /> */}
+                      <Badge
+                        url={`/projects/codes/open%20source/1`}
+                        value="Open Source"
+                      />
+                    </nav>
+                  )}
+                </div>
               </div>
-            ))}
-        {type === 'codes' && (
-          <div className="mb-4">
-            <details className="group" open={false}>
-              <summary className="flex cursor-pointer list-none items-center justify-between rounded bg-gray-200 px-3 py-2 transition group-open:rounded-b-none group-open:bg-gray-300">
-                <h1 className="font-semibold text-sm m-0">Tipo</h1>
-                <Icon
-                  icon="mdi:chevron-down"
-                  className="text-xl transition-transform group-open:rotate-180"
-                />
-              </summary>
-              <nav className="border border-t-0 border-gray-300 rounded-b px-3 py-2 bg-white">
-                <Badge url={`/projects/codes/subject/1`} value="Disciplina" />
-                <Badge url={`/projects/codes/research/1`} value="Pesquisa" />
-                {/* <Badge url={`/projects/codes/extension/1`} value="Extensão" /> */}
-                <Badge
-                  url={`/projects/codes/open%20source/1`}
-                  value="Open Source"
-                />
-              </nav>
-            </details>
-          </div>
-        )}
-        {type === 'codes' && (
-          <div className="mb-4">
-            <details className="group" open={false}>
-              <summary className="flex cursor-pointer list-none items-center justify-between rounded bg-gray-200 px-3 py-2 transition group-open:rounded-b-none group-open:bg-gray-300">
-                <h1 className="font-semibold text-sm m-0">Extra</h1>
-                <Icon
-                  icon="mdi:chevron-down"
-                  className="text-xl transition-transform group-open:rotate-180"
-                />
-              </summary>
-              <nav className="border border-t-0 border-gray-300 rounded-b px-3 py-2 bg-white">
-                <Badge url={`/projects/codes/figma/1`} value="figma" />
-              </nav>
-            </details>
-          </div>
-        )}
+            );
+          })()}
+        {type === 'codes' &&
+          (() => {
+            const accordionId = 'codes-extra';
+            const isOpen = openAccordion === accordionId;
+
+            return (
+              <div className="mb-4">
+                <div className="group">
+                  <div
+                    onClick={() => toggleAccordion(accordionId)}
+                    className={`flex cursor-pointer list-none items-center justify-between rounded px-3 py-2 transition ${
+                      isOpen ? 'rounded-b-none bg-gray-300' : 'bg-gray-200'
+                    }`}
+                  >
+                    <h1 className="font-semibold text-sm m-0">Extra</h1>
+                    <Icon
+                      icon="mdi:chevron-down"
+                      className={`text-xl transition-transform ${
+                        isOpen ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </div>
+                  {isOpen && (
+                    <nav className="border border-t-0 border-gray-300 rounded-b px-3 py-2 bg-white">
+                      <Badge url={`/projects/codes/figma/1`} value="figma" />
+                    </nav>
+                  )}
+                </div>
+              </div>
+            );
+          })()}
         {type === 'people' &&
           Object.entries(
             Object.entries(getSemesterCourses(tags.semester.values)).reduce(
@@ -146,90 +202,157 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
                       getCourseByAbbreviation(b).data.name
                     )
                   )
-                  .map(([course, semesters]: [string, string[]]) => (
-                    <div key={course} className="mb-4 ml-2">
-                      <details className="group" open={false}>
-                        <summary className="flex cursor-pointer list-none items-center justify-between rounded bg-gray-200 px-3 py-2 transition group-open:rounded-b-none group-open:bg-gray-300">
-                          <h1 className="font-semibold text-sm m-0">
-                            {getCourseByAbbreviation(course).data.name}
-                          </h1>
-                          <Icon
-                            icon="mdi:chevron-down"
-                            className="text-xl transition-transform group-open:rotate-180"
-                          />
-                        </summary>
-                        <nav className="border border-t-0 border-gray-300 rounded-b px-3 py-2 bg-white">
-                          <Badge
-                            url={`/projects/people/${course}/1`}
-                            value={course}
-                          />
+                  .map(([course, semesters]: [string, string[]]) => {
+                    const accordionId = `people-${course}`;
+                    const isOpen = openAccordion === accordionId;
 
-                          {allTags.includes(`egresso-${course}`) && (
-                            <Badge
-                              url={`/projects/people/egresso-${course}/1`}
-                              value={`${course}-egressos`}
+                    return (
+                      <div key={course} className="mb-4 ml-2">
+                        <div className="group">
+                          <div
+                            onClick={() => toggleAccordion(accordionId)}
+                            className={`flex cursor-pointer list-none items-center justify-between rounded px-3 py-2 transition ${
+                              isOpen
+                                ? 'rounded-b-none bg-gray-300'
+                                : 'bg-gray-200'
+                            }`}
+                          >
+                            <h1 className="font-semibold text-sm m-0">
+                              {getCourseByAbbreviation(course).data.name}
+                            </h1>
+                            <Icon
+                              icon="mdi:chevron-down"
+                              className={`text-xl transition-transform ${
+                                isOpen ? 'rotate-180' : ''
+                              }`}
                             />
+                          </div>
+                          {isOpen && (
+                            <nav className="border border-t-0 border-gray-300 rounded-b px-3 py-2 bg-white">
+                              <Badge
+                                url={`/projects/people/${course}/1`}
+                                value={course}
+                              />
+
+                              {allTags.includes(`egresso-${course}`) && (
+                                <Badge
+                                  url={`/projects/people/egresso-${course}/1`}
+                                  value={`${course}-egressos`}
+                                />
+                              )}
+
+                              {semesters.map((semester) => (
+                                <Badge
+                                  key={semester}
+                                  url={`/projects/people/${course}-${semester}/1`}
+                                  value={semester}
+                                />
+                              ))}
+                            </nav>
                           )}
-
-                          {semesters.map((semester) => (
-                            <Badge
-                              url={`/projects/people/${course}-${semester}/1`}
-                              value={semester}
-                            />
-                          ))}
-                        </nav>
-                      </details>
-                    </div>
-                  ))}
+                        </div>
+                      </div>
+                    );
+                  })}
               </div>
             ))}
         {type === 'people' && (
           <div className="mb-6">
             <h3 className="font-bold text-base mb-3 text-gray-800">Extra</h3>
             <div className="mb-4 ml-2">
-              <details className="group" open={false}>
-                <summary className="flex cursor-pointer list-none items-center justify-between rounded bg-gray-200 px-3 py-2 transition group-open:rounded-b-none group-open:bg-gray-300">
-                  <h1 className="font-semibold text-sm m-0">Tipos</h1>
-                  <Icon
-                    icon="mdi:chevron-down"
-                    className="text-xl transition-transform group-open:rotate-180"
-                  />
-                </summary>
-                <nav className="border border-t-0 border-gray-300 rounded-b px-3 py-2 bg-white">
-                  <Badge
-                    url={`/projects/people/professor/1`}
-                    value="professores"
-                  />
-                  <Badge url={`/projects/people/student/1`} value="alunos" />
-                  <Badge url={`/projects/people/técnico/1`} value="técnico" />
-                  <Badge
-                    url={`/projects/people/graduação/1`}
-                    value="graduação"
-                  />
-                  <Badge url={`/projects/people/mestrado/1`} value="mestrado" />
-                  <Badge url={`/projects/people/egresso/1`} value="egressos" />
-                </nav>
-              </details>
+              {(() => {
+                const accordionId = 'people-tipos';
+                const isOpen = openAccordion === accordionId;
+
+                return (
+                  <div className="group">
+                    <div
+                      onClick={() => toggleAccordion(accordionId)}
+                      className={`flex cursor-pointer list-none items-center justify-between rounded px-3 py-2 transition ${
+                        isOpen ? 'rounded-b-none bg-gray-300' : 'bg-gray-200'
+                      }`}
+                    >
+                      <h1 className="font-semibold text-sm m-0">Tipos</h1>
+                      <Icon
+                        icon="mdi:chevron-down"
+                        className={`text-xl transition-transform ${
+                          isOpen ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </div>
+                    {isOpen && (
+                      <nav className="border border-t-0 border-gray-300 rounded-b px-3 py-2 bg-white">
+                        <Badge
+                          url={`/projects/people/professor/1`}
+                          value="professores"
+                        />
+                        <Badge
+                          url={`/projects/people/student/1`}
+                          value="alunos"
+                        />
+                        <Badge
+                          url={`/projects/people/técnico/1`}
+                          value="técnico"
+                        />
+                        <Badge
+                          url={`/projects/people/graduação/1`}
+                          value="graduação"
+                        />
+                        <Badge
+                          url={`/projects/people/mestrado/1`}
+                          value="mestrado"
+                        />
+                        <Badge
+                          url={`/projects/people/egresso/1`}
+                          value="egressos"
+                        />
+                      </nav>
+                    )}
+                  </div>
+                );
+              })()}
             </div>
             <div className="mb-4 ml-2">
-              <details className="group" open={false}>
-                <summary className="flex cursor-pointer list-none items-center justify-between rounded bg-gray-200 px-3 py-2 transition group-open:rounded-b-none group-open:bg-gray-300">
-                  <h1 className="font-semibold text-sm m-0">Recursos</h1>
-                  <Icon
-                    icon="mdi:chevron-down"
-                    className="text-xl transition-transform group-open:rotate-180"
-                  />
-                </summary>
-                <nav className="border border-t-0 border-gray-300 rounded-b px-3 py-2 bg-white">
-                  <Badge url={`/projects/people/projects/1`} value="projetos" />
-                  <Badge url={`/projects/people/homepage/1`} value="homepage" />
-                  <Badge url={`/projects/people/figma/1`} value="figma" />
-                  <Badge
-                    url={`/projects/people/researchgate/1`}
-                    value="researchgate"
-                  />
-                </nav>
-              </details>
+              {(() => {
+                const accordionId = 'people-recursos';
+                const isOpen = openAccordion === accordionId;
+
+                return (
+                  <div className="group">
+                    <div
+                      onClick={() => toggleAccordion(accordionId)}
+                      className={`flex cursor-pointer list-none items-center justify-between rounded px-3 py-2 transition ${
+                        isOpen ? 'rounded-b-none bg-gray-300' : 'bg-gray-200'
+                      }`}
+                    >
+                      <h1 className="font-semibold text-sm m-0">Recursos</h1>
+                      <Icon
+                        icon="mdi:chevron-down"
+                        className={`text-xl transition-transform ${
+                          isOpen ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </div>
+                    {isOpen && (
+                      <nav className="border border-t-0 border-gray-300 rounded-b px-3 py-2 bg-white">
+                        <Badge
+                          url={`/projects/people/projects/1`}
+                          value="projetos"
+                        />
+                        <Badge
+                          url={`/projects/people/homepage/1`}
+                          value="homepage"
+                        />
+                        <Badge url={`/projects/people/figma/1`} value="figma" />
+                        <Badge
+                          url={`/projects/people/researchgate/1`}
+                          value="researchgate"
+                        />
+                      </nav>
+                    )}
+                  </div>
+                );
+              })()}
             </div>
           </div>
         )}
