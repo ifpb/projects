@@ -47,10 +47,20 @@ const formatPageTitle = (tag: string) => {
     } else {
       title = getCourseName(tag);
     }
+  } else if (/^ifpb-\w{2}$/.test(tag)) {
+    title = 'Campus ' + tag.toUpperCase();
+  } else if (/^\d{4}\.?\d?$/.test(tag)) {
+    title = 'Alunos de ' + tag;
+  } else if (/-\d{4}\.?\d?$/.test(tag)) {
+    title = 'Turma ' + tag.toUpperCase();
+  } else if (tag === 'student') {
+    title = 'Alunos';
   } else if (tag === 'professor') {
     title = 'Professores';
   } else if (tag === 'egresso') {
-    title = 'Egresos';
+    title = 'Egressos';
+  } else if (tag === 'reitoria') {
+    title = 'Reitoria';
   } else {
     title = `Pessoas com ${tag[0].toUpperCase() + tag.slice(1)}`;
   }
