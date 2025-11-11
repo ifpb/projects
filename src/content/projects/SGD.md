@@ -4,6 +4,7 @@ description: O Serviço de Gerenciamento de Defesa de TCC é um projeto de estud
 addresses:
   repository: https://github.com/DiogoBAguiar/SGD
   homepage: https://diogobaguiar.github.io/SGD/
+  preview: https://github.com/DiogoBAguiar/SGD/blob/main/preview.png?raw=true
 category:
   type: subject
   subject: pw2
