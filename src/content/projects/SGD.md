@@ -2,6 +2,7 @@ name: Serviço de Gerenciamento de Defesa de TCC
 description: Projeto de estudo para criação de um sistema para organizar o processo de tcc
   repository: https://github.com/DiogoBAguiar/SGD
   homepage: https://diogobaguiar.github.io/SGD/
+  preview: https://github.com/DiogoBAguiar/SGD/blob/main/preview.png
 category:
   type: subject
   subject: pw2
