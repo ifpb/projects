@@ -1,0 +1,15 @@
+name:
+  compact: Pedro Paulo
+  full: Pedro Paulo Cantalice Marinho Braga
+avatar:
+  github: https://github.com/PedroTsI.png
+  githubUC: https://avatars.githubusercontent.com/u/88915142?v=4
+occupations:
+- id: 20211370022
+  type: student
+  campus: ifpb-jp
+  course: cstsi
+  isFinished: false
+addresses:
+  github: https://github.com/PedroTsI
+  linkedin: https://www.linkedin.com/in/pedro-paulo-cantalice-7985b3223/

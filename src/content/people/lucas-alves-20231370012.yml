@@ -1,0 +1,16 @@
+name:
+  compact: Lucas Alves
+  full: Lucas Alves da Nóbrega
+avatar:
+  github: https://github.com/lucas0nobre.png
+  githubUC: https://avatars.githubusercontent.com/u/154289799?v=4
+occupations:
+- id: 20231370012
+  type: student
+  campus: ifpb-jp
+  course: cstsi
+  isFinished: false
+addresses:
+  github: https://github.com/lucas0nobre
+  linkedin: https://www.linkedin.com/in/lucas-alves-da-nobrega-156b77326
+  email: nobregalucas017@gmail.com

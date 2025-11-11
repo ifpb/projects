@@ -1,0 +1,13 @@
+name:
+  compact: Janio Gomes
+  full: Janio Gomes de Lima
+avatar:
+  selected: none
+occupations:
+- id: 20051370306
+  type: student
+  campus: ifpb-jp
+  course: cstsi
+  isFinished: true
+addresses:
+  linkedin: https://www.linkedin.com/in/janio-gomes-9024831a3/

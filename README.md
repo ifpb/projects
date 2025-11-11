@@ -4,10 +4,9 @@ O objetivo deste repositório consiste em exibir os alunos e os projetos do IFPB
 
 ## Cadastro de alunos
 
-O primeiro passo seria incluir o dados do aluno adicionando um arquivo seguindo este formato `name-compact-id.md`, no diretório no diretório `src/content/people/`, por exemplo, o arquivo `luiz-chaves-20051370420.md`:
+O primeiro passo seria incluir o dados do aluno adicionando um arquivo seguindo este formato `name-compact-id.yml`, no diretório no diretório `src/content/people/`, por exemplo, o arquivo `luiz-chaves-20051370420.yml`:
 
 ```yaml
----
 name:
   compact: Luiz Chaves
   full: Luiz Carlos Rodrigues Chaves
@@ -26,7 +25,6 @@ addresses:
   bluesky: https://bsky.app/profile/luizcarloschaves.bsky.social
   homepage: https://luizchaves.github.io
   email: luiz.chaves@ifpb.edu.br
----
 ```
 
 Vamos padronizar o `id` como sendo a sua matrícula do curso, ou a do IFPB no caso de servidor, e os seguintes campos serão obrigatórios para estudante segundo a [definição de coleção do Astro.js](https://docs.astro.build/en/guides/content-collections/#defining-a-collection-schema) no arquivo [src/content/config.ts](https://github.com/ifpb/projects/tree/main/src/content/config.ts) (Esquema feito com [Zod](https://zod.dev/)):
@@ -42,6 +40,8 @@ Vamos padronizar o `id` como sendo a sua matrícula do curso, ou a do IFPB no ca
 - `addresses.linkedin`
 
 A imagem de avatar deve ser a do seu perfil do github, por exemplo, o endereço do avatar do exemplo é https://github.com/luizchaves, logo a imagem avatar deve ser https://github.com/luizchaves.png.
+
+**Importante**: Os arquivos de pessoas agora usam formato YAML puro (extensão `.yml`) sem frontmatter, diferente do formato anterior que usava Markdown com frontmatter.
 
 ## Cadastro de projetos
 
@@ -78,6 +78,8 @@ Este exemplo é um projeto do tipo `projeto de disciplina`, no arquivo [src/cont
 - `addresses.template` - Site do template/protótipo do projeto, caso exista (opcional).
 
 No campo `owners` é possível adicionar uma lista alunos, caso o projeto tenha mais de um colaborador, informando a matrícula do aluno, depois é importante que cada aluno faça seu o cadastrado de suas informações.
+
+**Importante**: Todos os arquivos das coleções de conteúdo (pessoas, projetos, cursos e disciplinas) agora usam formato YAML puro (extensão `.yml`) sem frontmatter, proporcionando uma estrutura de dados mais limpa e consistente.
 
 ## Pull Request
 

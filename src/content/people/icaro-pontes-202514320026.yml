@@ -1,0 +1,17 @@
+name:
+  compact: Ícaro Pontes
+  full: Ícaro Henrique Pontes Costa
+avatar:
+  github: https://github.com/itechbr.png
+  githubUC: https://avatars.githubusercontent.com/u/191296900?v=4
+occupations:
+- id: 202514320026
+  type: student
+  campus: ifpb-jp
+  course: csbes
+  isFinished: false
+addresses:
+  github: https://github.com/itechbr
+  instagram: https://www.instagram.com/icaro_pontes07/
+  linkedin: https://www.linkedin.com/in/%C3%ADcaro-pontes-246248386/
+  email: icaropontesbr@gmail.com

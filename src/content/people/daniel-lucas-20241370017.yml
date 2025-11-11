@@ -1,0 +1,16 @@
+name:
+  compact: Daniel Lucas
+  full: Daniel Lucas Alves da Silva
+avatar:
+  github: https://github.com/2daniell.png
+  githubUC: https://avatars.githubusercontent.com/u/136286315?v=4
+occupations:
+- id: 20241370017
+  type: student
+  campus: ifpb-jp
+  course: cstsi
+  isFinished: false
+addresses:
+  github: https://github.com/2daniell
+  linkedin: https://www.linkedin.com/in/2daniell
+  email: alves.daniel4320@gmail.com

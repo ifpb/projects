@@ -1,0 +1,15 @@
+name:
+  compact: Thiago Lima
+  full: Thiago da Silva Lima
+avatar:
+  github: https://github.com/thiagolima08.png
+  githubUC: https://avatars.githubusercontent.com/u/44410746?v=4
+occupations:
+- id: 20182370020
+  type: student
+  campus: ifpb-jp
+  course: cstsi
+  isFinished: true
+addresses:
+  github: https://github.com/thiagolima08
+  linkedin: https://www.linkedin.com/in/thiagolima-dev/

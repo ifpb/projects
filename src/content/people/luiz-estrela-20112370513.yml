@@ -1,0 +1,15 @@
+name:
+  compact: Luiz Estrela
+  full: Luiz Henrique Estrela Lopes
+avatar:
+  github: https://github.com/luheeslo.png
+  githubUC: https://avatars.githubusercontent.com/u/1791410?v=4
+occupations:
+- id: 20112370513
+  type: student
+  campus: ifpb-jp
+  course: cstsi
+  isFinished: true
+addresses:
+  github: https://github.com/luheeslo
+  linkedin: https://www.linkedin.com/in/luiz-henrique-estrela-lopes-a13ba323/

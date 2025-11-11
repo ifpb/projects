@@ -153,6 +153,7 @@ const courseCollection = defineCollection({
 });
 
 const peopleCollection = defineCollection({
+  type: 'data',
   schema: z.object({
     id: id.optional(),
     name: z.object({

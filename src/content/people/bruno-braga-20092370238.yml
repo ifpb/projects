@@ -1,0 +1,15 @@
+name:
+  compact: Bruno Braga
+  full: Bruno Braga Bezerril
+avatar:
+  github: https://github.com/braga-bruno.png
+  githubUC: https://avatars.githubusercontent.com/u/1482895?v=4
+occupations:
+- id: 20092370238
+  type: student
+  campus: ifpb-jp
+  course: cstsi
+  isFinished: true
+addresses:
+  github: https://github.com/braga-bruno
+  linkedin: https://www.linkedin.com/in/bragabruno/

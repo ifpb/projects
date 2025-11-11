@@ -1,0 +1,15 @@
+name:
+  compact: Danilo Dutra
+  full: Danilo Lima Dutra
+avatar:
+  github: https://github.com/danilolimadutra.png
+  githubUC: https://avatars.githubusercontent.com/u/30134725?v=4
+occupations:
+- id: 20032037038
+  type: student
+  campus: ifpb-jp
+  course: cstsi
+  isFinished: true
+addresses:
+  github: https://github.com/danilolimadutra
+  linkedin: https://www.linkedin.com/in/danilolimadutra/

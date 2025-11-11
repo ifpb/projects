@@ -1,0 +1,15 @@
+name:
+  compact: Luan Pimenta
+  full: Luan Pimenta Fernandes
+avatar:
+  github: https://github.com/pimentaluan.png
+  githubUC: https://avatars.githubusercontent.com/u/130945489?v=4
+occupations:
+- id: 20231370042
+  type: student
+  campus: ifpb-jp
+  course: cstsi
+  isFinished: false
+addresses:
+  github: https://github.com/pimentaluan
+  linkedin: https://linkedin.com/in/luanpimenta

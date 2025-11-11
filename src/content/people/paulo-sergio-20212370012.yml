@@ -1,0 +1,15 @@
+name:
+  compact: Paulo Sérgio
+  full: Paulo Sérgio da Silva
+avatar:
+  github: https://github.com/paulosys.png
+  githubUC: https://avatars.githubusercontent.com/u/47726070?v=4
+occupations:
+- id: 20212370012
+  type: student
+  campus: ifpb-jp
+  course: cstsi
+  isFinished: false
+addresses:
+  github: https://github.com/paulosys
+  linkedin: https://www.linkedin.com/in/paulosergio1/

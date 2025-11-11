@@ -1,0 +1,15 @@
+name:
+  compact: Leonardo Melo
+  full: Leonardo Oliveira de Melo
+avatar:
+  github: https://github.com/leoomelo.png
+  githubUC: https://avatars.githubusercontent.com/u/933704?v=4
+occupations:
+- id: 20051370268
+  type: student
+  campus: ifpb-jp
+  course: cstsi
+  isFinished: true
+addresses:
+  github: https://github.com/leoomelo
+  linkedin: https://www.linkedin.com/in/leonardomelo/

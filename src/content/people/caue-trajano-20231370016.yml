@@ -1,0 +1,15 @@
+name:
+  compact: Caue Trajano
+  full: Caue Trajano Gomes
+avatar:
+  github: https://github.com/CaueTrajanoG.png
+  githubUC: https://avatars.githubusercontent.com/u/106395076?v=4
+occupations:
+- id: 20231370016
+  type: student
+  campus: ifpb-jp
+  course: cstsi
+  isFinished: false
+addresses:
+  github: https://github.com/CaueTrajanoG
+  linkedin: https://www.linkedin.com/in/caue-trajano-41420a240/

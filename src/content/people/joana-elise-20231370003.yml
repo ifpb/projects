@@ -1,0 +1,15 @@
+name:
+  compact: Joana Elise
+  full: Joana Elise Araújo Lopes
+avatar:
+  github: https://github.com/joanaeliseal.png
+  githubUC: https://avatars.githubusercontent.com/u/112410414?v=4
+occupations:
+- id: 20231370003
+  type: student
+  campus: ifpb-jp
+  course: cstsi
+  isFinished: false
+addresses:
+  github: https://github.com/joanaeliseal
+  linkedin: https://www.linkedin.com/in/joanaeliseal/

@@ -1,0 +1,15 @@
+name:
+  compact: David Velos
+  full: David Edson Ramos Veloso
+avatar:
+  github: https://github.com/DavidVeloso.png
+  githubUC: https://avatars.githubusercontent.com/u/2433234?v=4
+occupations:
+- id: 20112370394
+  type: student
+  campus: ifpb-jp
+  course: cstsi
+  isFinished: true
+addresses:
+  github: https://github.com/DavidVeloso
+  linkedin: https://www.linkedin.com/in/davidveloso/

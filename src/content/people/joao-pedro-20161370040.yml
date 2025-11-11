@@ -1,0 +1,15 @@
+name:
+  compact: João Pedro
+  full: João Pedro Albuquerque
+avatar:
+  github: https://github.com/joaopedroalbq.png
+  githubUC: https://avatars.githubusercontent.com/u/25757469?v=4
+occupations:
+- id: 20161370040
+  type: student
+  campus: ifpb-jp
+  course: cstsi
+  isFinished: false
+addresses:
+  github: https://github.com/joaopedroalbq
+  linkedin: https://www.linkedin.com/in/jo%C3%A3o-pedro-albuquerque-b457a2111/

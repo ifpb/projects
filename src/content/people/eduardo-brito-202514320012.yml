@@ -1,0 +1,17 @@
+name:
+  compact: Eduardo Brito
+  full: Eduardo Brito Oliveira
+avatar:
+  github: https://github.com/the-magao.png
+  githubUC: https://avatars.githubusercontent.com/u/215895352?v=4
+occupations:
+- id: 202514320012
+  type: student
+  campus: ifpb-jp
+  course: csbes
+  isFinished: false
+addresses:
+  github: https://github.com/the-magao
+  linkedin: https://www.linkedin.com/in/eduardo-brito-oliveira-9b4a5a397
+  instagram: https://www.instagram.com/13.eduardo.brito
+  email: oliveira.brito@academico.ifpb.edu.br
