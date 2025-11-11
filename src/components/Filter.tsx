@@ -231,13 +231,13 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
                             <nav className="border border-t-0 border-gray-300 rounded-b px-3 py-2 bg-white">
                               <Badge
                                 url={`/projects/people/${course}/1`}
-                                value={course}
+                                value="Alunos"
                               />
 
                               {allTags.includes(`egresso-${course}`) && (
                                 <Badge
                                   url={`/projects/people/egresso-${course}/1`}
-                                  value={`${course}-egressos`}
+                                  value="Egressos"
                                 />
                               )}
 
