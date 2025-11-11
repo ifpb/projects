@@ -136,6 +136,7 @@ const openSourceProjectCategory = projectCategory.extend({
 
 // collections
 const courseCollection = defineCollection({
+  type: 'data',
   schema: z.object({
     id: z.string(),
     name: z.string(),
