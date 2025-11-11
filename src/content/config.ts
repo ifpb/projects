@@ -23,6 +23,13 @@ const id = z.number().refine((num) => {
   return [12, 11, 7, 6].includes(length);
 });
 
+export const cities = {
+  jp: 'João Pessoa',
+  cg: 'Campina Grande',
+  gb: 'Guarabira',
+  cz: 'Cajazeiras',
+};
+
 export const campi = {
   'ifpb-jp': 'João Pessoa',
   'ifpb-cg': 'Campina Grande',
@@ -200,8 +207,26 @@ const projectCollection = defineCollection({
   }),
 });
 
+const courseWithCityEnum = abbreviationCourses.flatMap((course) =>
+  Object.keys(cities).map((city) => `${course}-${city}`)
+);
+
+const subjectCollection = defineCollection({
+  type: 'data',
+  schema: z.object({
+    id: z.string(),
+    name: z.object({
+      compact: z.string(),
+      full: z.string(),
+    }),
+    course: z.enum(courseWithCityEnum as [string, ...string[]]),
+    period: z.number(),
+  }),
+});
+
 export const collections = {
   people: peopleCollection,
   projects: projectCollection,
   courses: courseCollection,
+  subjects: subjectCollection,
 };
