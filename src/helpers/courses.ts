@@ -122,7 +122,7 @@ export function getCourseName(tag: string) {
   const courseName = `${course?.data?.level?.compact} em ${course?.data?.name}`;
 
   if (semester) {
-    return `${courseName} (${semester})`;
+    return `${courseName} | ${semester}`;
   } else if (course) {
     return courseName;
   } else {
