@@ -45,10 +45,9 @@ A imagem de avatar deve ser a do seu perfil do github, por exemplo, o endereço 
 
 ## Cadastro de projetos
 
-O próximo passo seria incluir os dados do projeto adicionando um arquivo seguindo este formato `titulo-do-projeto.md`, no diretório `src/content/projects/`, por exemplo, o arquivo `ifpb-projects.md`:
+O próximo passo seria incluir os dados do projeto adicionando um arquivo seguindo este formato `titulo-do-projeto.yml`, no diretório `src/content/projects/`, por exemplo, o arquivo `ifpb-projects.yml`:
 
 ```yaml
----
 name: Home da UAI-IFPB
 description: Este portal tem como objetivo ser um landing page da UAI do IFPB.
 addresses:
@@ -68,7 +67,6 @@ tags:
   - astro.js
 owners:
   - 20051370420
----
 ```
 
 Este exemplo é um projeto do tipo `projeto de disciplina`, no arquivo [src/content/config.ts](https://github.com/ifpb/projects/tree/main/src/content/config.ts) é possível ver outros tipos de projetos. Neste exemplo de projeto de disciplina existem estes endereços do projeto:

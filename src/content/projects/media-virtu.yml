@@ -1,0 +1,24 @@
+name: MediaVirtu
+description:
+  Rede social de entretenimentos. "Pequenos momentos são dramas, o escopo
+  de todos esses momentos é uma comédia"
+addresses:
+  repository: https://github.com/Souzzaturr/MeDiavirtu
+category:
+  type: subject
+  subject: pw2
+  period: 2
+  semester: 2025.2
+  course: csbes
+  campus: ifpb-jp
+tags:
+  - html
+  - css
+  - javascript
+  - react
+  - vite
+  - csv
+owners:
+  - 202514320010
+  - 202514320003
+  - 202514320001

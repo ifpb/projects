@@ -189,6 +189,7 @@ const peopleCollection = defineCollection({
 });
 
 const projectCollection = defineCollection({
+  type: 'data',
   schema: z.object({
     name: z.string(),
     description: z.string(),
