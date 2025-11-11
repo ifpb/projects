@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Icon } from '@iconify/react';
 import { getCourseByAbbreviation, getSemesterCourses } from '@/helpers/courses';
+import Accordion from './Accordion';
+import Badge from './Badge';
 
 interface TagGroup {
   name: string;
@@ -13,18 +15,54 @@ interface FilterProps {
   allTags: string[];
 }
 
-function Badge({ url, value }: { url: string; value: string }) {
-  return (
-    <a
-      href={url}
-      className="text-xs font-semibold inline-block uppercase last:mr-0 mr-1 mb-1 py-1 px-2 rounded-full text-gray-800 bg-gray-200 hover:bg-gray-700 hover:text-white transition duration-300"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      {value}
-    </a>
-  );
+interface AccordionConfig {
+  id: string;
+  title: string;
+  badges: { url: string; value: string }[];
 }
+
+const CODES_STATIC_ACCORDIONS: AccordionConfig[] = [
+  {
+    id: 'codes-tipo',
+    title: 'Tipo',
+    badges: [
+      { url: '/projects/codes/subject/1', value: 'Disciplina' },
+      { url: '/projects/codes/research/1', value: 'Pesquisa' },
+      // { url: '/projects/codes/extension/1', value: 'Extensão' },
+      { url: '/projects/codes/open%20source/1', value: 'Open Source' },
+    ],
+  },
+  {
+    id: 'codes-extra',
+    title: 'Extra',
+    badges: [{ url: '/projects/codes/figma/1', value: 'figma' }],
+  },
+];
+
+const PEOPLE_EXTRA_ACCORDIONS: AccordionConfig[] = [
+  {
+    id: 'people-tipos',
+    title: 'Tipos',
+    badges: [
+      { url: '/projects/people/professor/1', value: 'professores' },
+      { url: '/projects/people/student/1', value: 'alunos' },
+      { url: '/projects/people/técnico/1', value: 'técnico' },
+      { url: '/projects/people/graduação/1', value: 'graduação' },
+      { url: '/projects/people/mestrado/1', value: 'mestrado' },
+      { url: '/projects/people/egresso/1', value: 'egressos' },
+    ],
+  },
+  {
+    id: 'people-recursos',
+    title: 'Recursos',
+    badges: [
+      { url: '/projects/people/projects/1', value: 'projetos' },
+      { url: '/projects/people/homepage/1', value: 'homepage' },
+      { url: '/projects/people/figma/1', value: 'figma' },
+      { url: '/projects/people/researchgate/1', value: 'researchgate' },
+    ],
+  },
+];
 
 export default function Filter({ type, tags, allTags }: FilterProps) {
   const [isShow, setIsShow] = useState(false);
@@ -36,6 +74,36 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
 
   const toggleAccordion = (accordionId: string) => {
     setOpenAccordion(openAccordion === accordionId ? null : accordionId);
+  };
+
+  // Função auxiliar para criar accordions de cursos dinamicamente
+  const createCourseAccordion = (
+    course: string,
+    semesters: string[]
+  ): AccordionConfig => {
+    const badges = [{ url: `/projects/people/${course}/1`, value: 'Alunos' }];
+
+    // Adicionar badge de egressos se existir
+    if (allTags.includes(`egresso-${course}`)) {
+      badges.push({
+        url: `/projects/people/egresso-${course}/1`,
+        value: 'Egressos',
+      });
+    }
+
+    // Adicionar badges de semestres
+    semesters.forEach((semester) => {
+      badges.push({
+        url: `/projects/people/${course}-${semester}/1`,
+        value: semester,
+      });
+    });
+
+    return {
+      id: `people-${course}`,
+      title: getCourseByAbbreviation(course).data.name,
+      badges,
+    };
   };
 
   return isShow ? (
@@ -64,114 +132,48 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
 
               return (
                 <div key={index} className="mb-4">
-                  <div className="group">
-                    <div
-                      onClick={() => toggleAccordion(accordionId)}
-                      className={`flex cursor-pointer list-none items-center justify-between rounded px-3 py-2 transition ${
-                        isOpen ? 'rounded-b-none bg-gray-300' : 'bg-gray-200'
-                      }`}
-                    >
-                      <h1 className="font-semibold text-sm capitalize m-0">
-                        {tag.name}
-                      </h1>
-                      <Icon
-                        icon="mdi:chevron-down"
-                        className={`text-xl transition-transform ${
-                          isOpen ? 'rotate-180' : ''
-                        }`}
-                      />
-                    </div>
-                    {isOpen && (
-                      <nav className="border border-t-0 border-gray-300 rounded-b px-3 py-2 bg-white">
-                        {tag.values
-                          .sort((a, b) => a.localeCompare(b))
-                          .map((value) => (
-                            <Badge
-                              key={value}
-                              url={`/projects/${type}/${value}/1`}
-                              value={value}
-                            />
-                          ))}
-                      </nav>
-                    )}
-                  </div>
+                  <Accordion
+                    id={accordionId}
+                    title={tag.name}
+                    isOpen={isOpen}
+                    onToggle={toggleAccordion}
+                  >
+                    {tag.values
+                      .sort((a, b) => a.localeCompare(b))
+                      .map((value) => (
+                        <Badge
+                          key={value}
+                          url={`/projects/${type}/${value}/1`}
+                          value={value}
+                        />
+                      ))}
+                  </Accordion>
                 </div>
               );
             })}
         {type === 'codes' &&
-          (() => {
-            const accordionId = 'codes-tipo';
-            const isOpen = openAccordion === accordionId;
+          CODES_STATIC_ACCORDIONS.map((accordion) => {
+            const isOpen = openAccordion === accordion.id;
 
             return (
-              <div className="mb-4">
-                <div className="group">
-                  <div
-                    onClick={() => toggleAccordion(accordionId)}
-                    className={`flex cursor-pointer list-none items-center justify-between rounded px-3 py-2 transition ${
-                      isOpen ? 'rounded-b-none bg-gray-300' : 'bg-gray-200'
-                    }`}
-                  >
-                    <h1 className="font-semibold text-sm m-0">Tipo</h1>
-                    <Icon
-                      icon="mdi:chevron-down"
-                      className={`text-xl transition-transform ${
-                        isOpen ? 'rotate-180' : ''
-                      }`}
+              <div key={accordion.id} className="mb-4">
+                <Accordion
+                  id={accordion.id}
+                  title={accordion.title}
+                  isOpen={isOpen}
+                  onToggle={toggleAccordion}
+                >
+                  {accordion.badges.map((badge) => (
+                    <Badge
+                      key={badge.value}
+                      url={badge.url}
+                      value={badge.value}
                     />
-                  </div>
-                  {isOpen && (
-                    <nav className="border border-t-0 border-gray-300 rounded-b px-3 py-2 bg-white">
-                      <Badge
-                        url={`/projects/codes/subject/1`}
-                        value="Disciplina"
-                      />
-                      <Badge
-                        url={`/projects/codes/research/1`}
-                        value="Pesquisa"
-                      />
-                      {/* <Badge url={`/projects/codes/extension/1`} value="Extensão" /> */}
-                      <Badge
-                        url={`/projects/codes/open%20source/1`}
-                        value="Open Source"
-                      />
-                    </nav>
-                  )}
-                </div>
+                  ))}
+                </Accordion>
               </div>
             );
-          })()}
-        {type === 'codes' &&
-          (() => {
-            const accordionId = 'codes-extra';
-            const isOpen = openAccordion === accordionId;
-
-            return (
-              <div className="mb-4">
-                <div className="group">
-                  <div
-                    onClick={() => toggleAccordion(accordionId)}
-                    className={`flex cursor-pointer list-none items-center justify-between rounded px-3 py-2 transition ${
-                      isOpen ? 'rounded-b-none bg-gray-300' : 'bg-gray-200'
-                    }`}
-                  >
-                    <h1 className="font-semibold text-sm m-0">Extra</h1>
-                    <Icon
-                      icon="mdi:chevron-down"
-                      className={`text-xl transition-transform ${
-                        isOpen ? 'rotate-180' : ''
-                      }`}
-                    />
-                  </div>
-                  {isOpen && (
-                    <nav className="border border-t-0 border-gray-300 rounded-b px-3 py-2 bg-white">
-                      <Badge url={`/projects/codes/figma/1`} value="figma" />
-                    </nav>
-                  )}
-                </div>
-              </div>
-            );
-          })()}
+          })}
         {type === 'people' &&
           Object.entries(
             Object.entries(getSemesterCourses(tags.semester.values)).reduce(
@@ -203,54 +205,25 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
                     )
                   )
                   .map(([course, semesters]: [string, string[]]) => {
-                    const accordionId = `people-${course}`;
-                    const isOpen = openAccordion === accordionId;
+                    const accordion = createCourseAccordion(course, semesters);
+                    const isOpen = openAccordion === accordion.id;
 
                     return (
                       <div key={course} className="mb-4 ml-2">
-                        <div className="group">
-                          <div
-                            onClick={() => toggleAccordion(accordionId)}
-                            className={`flex cursor-pointer list-none items-center justify-between rounded px-3 py-2 transition ${
-                              isOpen
-                                ? 'rounded-b-none bg-gray-300'
-                                : 'bg-gray-200'
-                            }`}
-                          >
-                            <h1 className="font-semibold text-sm m-0">
-                              {getCourseByAbbreviation(course).data.name}
-                            </h1>
-                            <Icon
-                              icon="mdi:chevron-down"
-                              className={`text-xl transition-transform ${
-                                isOpen ? 'rotate-180' : ''
-                              }`}
+                        <Accordion
+                          id={accordion.id}
+                          title={accordion.title}
+                          isOpen={isOpen}
+                          onToggle={toggleAccordion}
+                        >
+                          {accordion.badges.map((badge) => (
+                            <Badge
+                              key={badge.value}
+                              url={badge.url}
+                              value={badge.value}
                             />
-                          </div>
-                          {isOpen && (
-                            <nav className="border border-t-0 border-gray-300 rounded-b px-3 py-2 bg-white">
-                              <Badge
-                                url={`/projects/people/${course}/1`}
-                                value="Alunos"
-                              />
-
-                              {allTags.includes(`egresso-${course}`) && (
-                                <Badge
-                                  url={`/projects/people/egresso-${course}/1`}
-                                  value="Egressos"
-                                />
-                              )}
-
-                              {semesters.map((semester) => (
-                                <Badge
-                                  key={semester}
-                                  url={`/projects/people/${course}-${semester}/1`}
-                                  value={semester}
-                                />
-                              ))}
-                            </nav>
-                          )}
-                        </div>
+                          ))}
+                        </Accordion>
                       </div>
                     );
                   })}
@@ -259,101 +232,28 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
         {type === 'people' && (
           <div className="mb-6">
             <h3 className="font-bold text-base mb-3 text-gray-800">Extra</h3>
-            <div className="mb-4 ml-2">
-              {(() => {
-                const accordionId = 'people-tipos';
-                const isOpen = openAccordion === accordionId;
+            {PEOPLE_EXTRA_ACCORDIONS.map((accordion) => {
+              const isOpen = openAccordion === accordion.id;
 
-                return (
-                  <div className="group">
-                    <div
-                      onClick={() => toggleAccordion(accordionId)}
-                      className={`flex cursor-pointer list-none items-center justify-between rounded px-3 py-2 transition ${
-                        isOpen ? 'rounded-b-none bg-gray-300' : 'bg-gray-200'
-                      }`}
-                    >
-                      <h1 className="font-semibold text-sm m-0">Tipos</h1>
-                      <Icon
-                        icon="mdi:chevron-down"
-                        className={`text-xl transition-transform ${
-                          isOpen ? 'rotate-180' : ''
-                        }`}
+              return (
+                <div key={accordion.id} className="mb-4 ml-2">
+                  <Accordion
+                    id={accordion.id}
+                    title={accordion.title}
+                    isOpen={isOpen}
+                    onToggle={toggleAccordion}
+                  >
+                    {accordion.badges.map((badge) => (
+                      <Badge
+                        key={badge.value}
+                        url={badge.url}
+                        value={badge.value}
                       />
-                    </div>
-                    {isOpen && (
-                      <nav className="border border-t-0 border-gray-300 rounded-b px-3 py-2 bg-white">
-                        <Badge
-                          url={`/projects/people/professor/1`}
-                          value="professores"
-                        />
-                        <Badge
-                          url={`/projects/people/student/1`}
-                          value="alunos"
-                        />
-                        <Badge
-                          url={`/projects/people/técnico/1`}
-                          value="técnico"
-                        />
-                        <Badge
-                          url={`/projects/people/graduação/1`}
-                          value="graduação"
-                        />
-                        <Badge
-                          url={`/projects/people/mestrado/1`}
-                          value="mestrado"
-                        />
-                        <Badge
-                          url={`/projects/people/egresso/1`}
-                          value="egressos"
-                        />
-                      </nav>
-                    )}
-                  </div>
-                );
-              })()}
-            </div>
-            <div className="mb-4 ml-2">
-              {(() => {
-                const accordionId = 'people-recursos';
-                const isOpen = openAccordion === accordionId;
-
-                return (
-                  <div className="group">
-                    <div
-                      onClick={() => toggleAccordion(accordionId)}
-                      className={`flex cursor-pointer list-none items-center justify-between rounded px-3 py-2 transition ${
-                        isOpen ? 'rounded-b-none bg-gray-300' : 'bg-gray-200'
-                      }`}
-                    >
-                      <h1 className="font-semibold text-sm m-0">Recursos</h1>
-                      <Icon
-                        icon="mdi:chevron-down"
-                        className={`text-xl transition-transform ${
-                          isOpen ? 'rotate-180' : ''
-                        }`}
-                      />
-                    </div>
-                    {isOpen && (
-                      <nav className="border border-t-0 border-gray-300 rounded-b px-3 py-2 bg-white">
-                        <Badge
-                          url={`/projects/people/projects/1`}
-                          value="projetos"
-                        />
-                        <Badge
-                          url={`/projects/people/homepage/1`}
-                          value="homepage"
-                        />
-                        <Badge url={`/projects/people/figma/1`} value="figma" />
-                        <Badge
-                          url={`/projects/people/researchgate/1`}
-                          value="researchgate"
-                        />
-                      </nav>
-                    )}
-                  </div>
-                );
-              })()}
-            </div>
+                    ))}
+                  </Accordion>
+                </div>
+              );
+            })}
           </div>
         )}
       </div>
