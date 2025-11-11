@@ -175,6 +175,14 @@ export const fallbackImage = '/projects/imgs/clarity-avatar-solid.svg';
           <Badge url="/projects/people/professor/1" text="professor" />
         )
       }
+      {
+        hasProjects && (
+          <Badge
+            url={codeUrl}
+            text={`${projects.length} projeto${projects.length !== 1 ? 's' : ''}`}
+          />
+        )
+      }
     </div>
     <!-- <div>
       {
