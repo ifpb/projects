@@ -10,4 +10,5 @@ campus: ifpb-jp
 addresses:
   instagram: https://www.instagram.com/eng.software.ifpb/
   email: eng.software.ifpb@gmail.com
+  homepage: https://estudante.ifpb.edu.br/cursos/362/
 ---

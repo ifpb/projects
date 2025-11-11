@@ -8,5 +8,5 @@ level:
   full: Curso Superior de Tecnologia
 campus: ifpb-jp
 addresses:
-  homepage: https://estudante.ifpb.edu.br/cursos/42/
+  homepage: https://estudante.ifpb.edu.br/cursos/39/
 ---
