@@ -8,11 +8,8 @@ addresses:
   homepage: https://sebastiaobernardo.github.io/projeto-final-lm/
 category:
   type: subject
-  subject: lm
-  period: 1
+  subject: lm-cstsi-jp
   semester: 2024.2
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - html
   - css

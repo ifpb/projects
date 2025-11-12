@@ -5,11 +5,8 @@ addresses:
   repository: https://github.com/ZenildoNeto/Aeroporto-Portal-dos-Andes
 category:
   type: subject
-  subject: ls
-  period: 2
+  subject: ls-cstsi-jp
   semester: 2025.1
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - js
 owners:

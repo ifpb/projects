@@ -6,11 +6,8 @@ addresses:
   repository: https://github.com/gabrielsndev/Celed-Prime
 category:
   type: subject
-  subject: lm
-  period: 1
+  subject: lm-cstsi-jp
   semester: 2024.1
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - html
   - css

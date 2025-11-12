@@ -4,11 +4,8 @@ addresses:
   repository: https://github.com/adriandersonliradev/guardian-frontend
 category:
   type: subject
-  subject: pdist
-  period: 6
+  subject: pd-cstsi-jp
   semester: 2024.1
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - react
   - python

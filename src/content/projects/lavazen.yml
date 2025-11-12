@@ -5,11 +5,8 @@ addresses:
   repository: https://github.com/LucasAndrade912/lavazen
 category:
   type: subject
-  subject: pweb1
-  period: 5
+  subject: pw1-cstsi-jp
   semester: 2024.1
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - angular
   - typescript

@@ -8,6 +8,12 @@ export const courseLevels = ['técnico', 'graduação', 'mestrado', 'doutorado']
 
 export const courses = await getCollection('courses');
 
+export function getCourse(id: string) {
+  return courses.find(
+    (course: CollectionEntry<'courses'>) => course?.data?.id === id
+  );
+}
+
 export function getCourseByAbbreviation(abbreviation: string) {
   return courses.find(
     (course: CollectionEntry<'courses'>) =>

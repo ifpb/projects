@@ -10,11 +10,8 @@ addresses:
   repository: https://github.com/Souzzaturr/Spaghetti_Notes
 category:
   type: subject
-  subject: pw1
-  period: 1
+  subject: pw1-csbes-jp
   semester: 2025.1
-  course: csbes
-  campus: ifpb-jp
 tags:
   - HTML
   - CSS

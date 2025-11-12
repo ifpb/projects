@@ -7,11 +7,8 @@ addresses:
   repository: https://github.com/LucasAndre23/Mercadinho_digital-final
 category:
   type: subject
-  subject: pweb1
-  period: 4
+  subject: pw1-cstsi-jp
   semester: 2024.2
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - angular
   - spring-boot

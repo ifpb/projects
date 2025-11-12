@@ -5,11 +5,8 @@ addresses:
   repository: https://github.com/andreimedeiros/Swiftchat-front
 category:
   type: subject
-  subject: pdist
-  period: 6
+  subject: pd-cstsi-jp
   semester: 2024.1
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - React
   - Javascript

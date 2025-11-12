@@ -7,11 +7,8 @@ addresses:
   repository: https://github.com/HanielCostaDaSilva/Clinica-Sao-Romeu-BD
 category:
   type: subject
-  subject: bd2
-  period: 3
+  subject: bd2-cstsi-jp
   semester: 2023.1
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - banco de dados
   - postgresql

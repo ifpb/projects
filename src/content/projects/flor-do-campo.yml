@@ -6,11 +6,8 @@ addresses:
   repository: https://github.com/Athenas22/Flor_Do_Campo
 category:
   type: subject
-  subject: ls
-  period: 2
+  subject: ls-cstsi-jp
   semester: 2025.1
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - html
   - css

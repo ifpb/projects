@@ -8,11 +8,8 @@ addresses:
   repository: https://github.com/Juliolimaal/Project_PW2
 category:
   type: subject
-  subject: pw2
-  period: 2
+  subject: pw2-csbes-jp
   semester: 2025.2
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - js
   - html

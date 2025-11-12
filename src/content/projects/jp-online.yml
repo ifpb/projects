@@ -6,11 +6,8 @@ addresses:
   repository: https://github.com/SilasLeao/Projeto-PWEB1-frontend-final
 category:
   type: subject
-  subject: pweb1
-  period: 4
+  subject: pw1-cstsi-jp
   semester: 2024.2
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - ts
   - angular

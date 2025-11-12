@@ -13,9 +13,7 @@ import { campi } from '@/content/config';
 
 interface ProjectProps {
   category: {
-    course: string;
-    campus: string;
-    semester: string;
+    semester: number;
     subject: string;
   };
 }
@@ -48,6 +46,17 @@ export async function getStaticPaths() {
 const { project, people }: Props = Astro.props;
 
 const category = project.data.category as ProjectProps['category'];
+
+let course = '';
+let campus = '';
+let city = '';
+
+if (isSubjectProject(project)) {
+  const [subjectName, courseId, cityName] = category.subject.split('-');
+  course = courseId;
+  campus = 'ifpb-' + cityName;
+  city = cityName;
+}
 
 const pageTitle = `Projeto | ${project.data.name}`;
 ---
@@ -91,10 +100,10 @@ const pageTitle = `Projeto | ${project.data.name}`;
           <div class="mb-2">
             <div class="font-bold text-lg">Curso:</div>
             <a
-              href={`/projects/codes/${category.course}-${category.campus}/1/`}
+              href={`/projects/codes/${course}-${city}/1/`}
               class="underline"
             >
-              {getCourseByAbbreviation(category.course).data.name}{' '}({campi[category.campus]})
+              {getCourseByAbbreviation(course)?.data?.name}{' '}({campi[campus]})
             </a>
           </div>
 

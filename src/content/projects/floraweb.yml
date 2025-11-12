@@ -7,11 +7,8 @@ addresses:
   template: https://www.figma.com/community/file/1440392697718119467
 category:
   type: subject
-  subject: lm
-  period: 1
+  subject: lm-cstsi-jp
   semester: 2024.2
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - html
   - css

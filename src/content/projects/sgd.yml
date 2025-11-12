@@ -8,11 +8,8 @@ addresses:
   preview: https://github.com/DiogoBAguiar/SGD/blob/main/preview.png?raw=true
 category:
   type: subject
-  subject: pw2
-  period: 2
+  subject: pw2-csbes-jp
   semester: 2025.2
-  course: csbes
-  campus: ifpb-jp
 tags:
   - HTML
   - CSS

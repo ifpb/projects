@@ -5,11 +5,8 @@ addresses:
   repository: https://github.com/JonasVinicios/Level-Forge
 category:
   type: subject
-  subject: lm
-  period: 1
+  subject: lm-cstsi-jp
   semester: 2024.2
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - html
   - css

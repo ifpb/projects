@@ -8,11 +8,8 @@ addresses:
   repository: https://github.com/pimentaluan/ifit-angular
 category:
   type: subject
-  subject: pweb1
-  period: 4
+  subject: pw1-cstsi-jp
   semester: 2025.1
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - angular
   - html

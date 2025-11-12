@@ -9,11 +9,8 @@ addresses:
   repository: https://github.com/vito-hnq/SyncWave-Project
 category:
   type: subject
-  subject: dw
-  period: 4
+  subject: dw-cstrc-jp
   semester: 2024.2
-  course: cstrc
-  campus: ifpb-jp
 tags:
   - html
   - bootstrap

@@ -7,11 +7,8 @@ addresses:
   repository: https://github.com/chicote444/WebMinds/
 category:
   type: subject
-  subject: lp2
-  period: 3
+  subject: lp2-ctii-jp
   semester: 2024
-  course: ctii
-  campus: ifpb-jp
 tags:
   - express.js
 owners:

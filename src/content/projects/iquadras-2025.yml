@@ -6,11 +6,8 @@ addresses:
   repository: https://github.com/mnlpdr/iquadras25
 category:
   type: subject
-  subject: pdist
-  period: 6
+  subject: pd-cstsi-jp
   semester: 2024.2
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - Esporte
   - Programação Distribuída

@@ -10,11 +10,8 @@ addresses:
   repository: https://github.com/AllanSmithll/incruise
 category:
   type: subject
-  subject: pweb2
-  period: 5
+  subject: pw2-cstsi-jp
   semester: 2024.1
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - maven
   - lombok

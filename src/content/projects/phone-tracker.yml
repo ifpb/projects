@@ -8,11 +8,8 @@ addresses:
   homepage: https://wiliamterroso2024.github.io/phone-tracker/phone-tracker.html
 category:
   type: subject
-  subject: dw
-  period: 4
+  subject: dw-cstrc-jp
   semester: 2024.2
-  course: cstrc
-  campus: ifpb-jp
 tags:
   - html
   - css

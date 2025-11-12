@@ -106,17 +106,13 @@ const projectCategory = z.object({
   campus,
 });
 
-const subjectProjectCategory = projectCategory.extend({
+const subjectProjectCategory = z.object({
   type: z.literal('subject'),
   subject: z.string(),
-  period: z.number(),
   semester: z.number().refine((value) => {
     const regex = /^\d{4}(\.[12])?$/;
-
     return regex.test(String(value));
   }),
-  course,
-  campus,
 });
 
 const researchProjectCategory = projectCategory.extend({

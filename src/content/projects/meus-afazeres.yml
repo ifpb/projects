@@ -5,11 +5,8 @@ addresses:
   repository: https://github.com/FernandoJMartins/To-do-Angular/
 category:
   type: subject
-  subject: pweb1
-  period: 4
+  subject: pw1-cstsi-jp
   semester: 2024.2
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - angular
   - ts

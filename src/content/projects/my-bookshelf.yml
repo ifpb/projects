@@ -7,11 +7,8 @@ addresses:
   repository: https://github.com/HanielPro/my-bookshelf
 category:
   type: subject
-  subject: rad
-  period: 6
+  subject: daw-cstsi-jp
   semester: 2024.2
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - Rails
   - Ruby

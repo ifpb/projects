@@ -7,11 +7,8 @@ addresses:
   repository: https://github.com/BielzinDaAgua/MoveX
 category:
   type: subject
-  subject: pdm
-  period: 5
+  subject: pdm-cstsi-jp
   semester: 2024.1
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - Kotlin
   - Dispositivos Móveis

@@ -57,11 +57,8 @@ addresses:
   template: https://www.figma.com/design/tgIYBEusxWkzNX803dBgUs/ifpb.github.io?node-id=0-1&t=Y6u5fodNP8JCcDHw-1
 category:
   type: subject
-  subject: ls
-  period: 2
+  subject: ls-cstsi-jp
   semester: 2023.1
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - js
   - astro.js

@@ -10,11 +10,8 @@ addresses:
   homepage: https://alhama-gallery.vercel.app/
 category:
   type: subject
-  subject: ls
-  period: 2
+  subject: ls-cstsi-jp
   semester: 2022.2
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - react
   - react-router-dom

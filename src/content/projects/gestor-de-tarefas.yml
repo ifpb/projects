@@ -4,11 +4,8 @@ addresses:
   repository: https://github.com/WeslleyIFPB/projeto_ls.git
 category:
   type: subject
-  subject: ls
-  period: 2
+  subject: ls-cstsi-jp
   semester: 2024.2
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - js
   - css

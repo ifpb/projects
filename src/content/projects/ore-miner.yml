@@ -1,5 +1,6 @@
 name: Ore Miner
-description: Jogo web em que você quebra minérios para conseguir a maior pontuação
+description:
+  Jogo web em que você quebra minérios para conseguir a maior pontuação
   em 3 minutos.
 addresses:
   preview: https://raw.githubusercontent.com/RamotepIFPB/LS-2025.1/refs/heads/main/Ore-Miner/Preview.jpg
@@ -7,14 +8,11 @@ addresses:
   repository: https://github.com/RamotepIFPB/LS-2025.1
 category:
   type: subject
-  subject: ls
-  period: 2
+  subject: ls-cstsi-jp
   semester: 2025.1
-  course: cstsi
-  campus: ifpb-jp
 tags:
-- js
-- html
-- css
+  - js
+  - html
+  - css
 owners:
-- 20242370018
+  - 20242370018

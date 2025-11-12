@@ -7,11 +7,8 @@ addresses:
   repository: https://github.com/GeorgeLimaDev/PBArtHub
 category:
   type: subject
-  subject: gps
-  period: 5
+  subject: gps-cstsi-jp
   semester: 2024.1
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - java
   - springboot

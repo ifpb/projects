@@ -6,11 +6,8 @@ addresses:
   repository: https://github.com/gfedacs/Projeto-PDM
 category:
   type: subject
-  subject: pdm
-  period: 5
+  subject: pdm-cstsi-jp
   semester: 2024.2
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - kotlin
   - java

@@ -5,11 +5,8 @@ addresses:
   repository: https://github.com/Clinix-Brazil/clinix-front
 category:
   type: subject
-  subject: pdist
-  period: 6
+  subject: pd-cstsi-jp
   semester: 2024.2
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - java
   - ts

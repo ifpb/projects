@@ -26,7 +26,7 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
   if (isSubjectProject(project)) {
     const {
       data: {
-        category: { type, subject, semester, course, campus },
+        category: { type, subject, semester },
         addresses: { template },
         tags,
       },
@@ -46,11 +46,13 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
       projectTags.unshift('figma');
     }
 
+    const [subjectName, course, campus] = subject.split('-');
+
     projectTags.unshift(
       type,
       subject,
       `${subject}-${semester}`,
-      `${course}-${campus.split('-')[1]}`
+      `${course}-${campus}`
     );
 
     return projectTags;
@@ -79,8 +81,9 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
 
 export function getProjectTagGroups(project: CollectionEntry<'projects'>) {
   if (isSubjectProject(project)) {
-    const { subject, semester, course, campus } = project.data
-      .category as SubjectProject;
+    const { subject, semester } = project.data.category as SubjectProject;
+
+    const [subjectName, course, campus] = subject.split('-');
 
     const projectTags = {
       tags: {
@@ -158,18 +161,18 @@ function sortProjects(
   const hasPreview = (project: CollectionEntry<'projects'>) =>
     !!project.data.addresses.preview;
 
-  const getPeriod = (project: CollectionEntry<'projects'>) =>
-    project.data.category.type === 'subject' && project.data.category.period;
-
-  const getSemester = (project: CollectionEntry<'projects'>) =>
-    project.data.category.type === 'subject' && project.data.category.semester;
+  const getSemester = (project: CollectionEntry<'projects'>) => {
+    if (project.data.category.type === 'subject') {
+      return project.data.category.semester;
+    }
+    return 0;
+  };
 
   return (
     Number(isResearchProject(b)) - Number(isResearchProject(a)) ||
     Number(isExtensionProject(b)) - Number(isExtensionProject(a)) ||
     Number(isSubjectProject(a)) - Number(isSubjectProject(b)) ||
     Number(hasPreview(b)) - Number(hasPreview(a)) ||
-    getPeriod(b) - getPeriod(a) ||
     getSemester(a) - getSemester(b) ||
     a.data.name.localeCompare(b.data.name)
   );

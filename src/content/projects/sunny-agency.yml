@@ -10,11 +10,8 @@ addresses:
   repository: https://github.com/buenorafa/sunnyside-agency-landing-page-main
 category:
   type: subject
-  subject: lm
-  period: 1
+  subject: lm-cstsi-jp
   semester: 2022.2
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - html
   - js

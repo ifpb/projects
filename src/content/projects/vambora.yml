@@ -5,11 +5,8 @@ addresses:
   repository: https://github.com/JessyeKessia/Vambora.git
 category:
   type: subject
-  subject: pweb1
-  period: 4
+  subject: pw1-cstsi-jp
   semester: 2024.2
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - angular
   - firebase

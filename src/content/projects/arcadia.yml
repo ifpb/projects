@@ -8,11 +8,8 @@ addresses:
   repository: https://github.com/themattery/Stranger-Things-Website
 category:
   type: subject
-  subject: ls
-  period: 2
+  subject: ls-cstsi-jp
   semester: 2024.1
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - js
   - astro.js

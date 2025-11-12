@@ -9,11 +9,8 @@ addresses:
   template: https://www.figma.com/design/s6mB69OHaQMJbiCJ7BtXY0/gerenciador-de-chamadas-SIP?node-id=0-1&t=UQ0zS4m3vnrI38rY-1
 category:
   type: subject
-  subject: dw
-  period: 4
+  subject: dw-cstrc-jp
   semester: 2024.2
-  course: cstrc
-  campus: ifpb-jp
 tags:
   - html
   - css

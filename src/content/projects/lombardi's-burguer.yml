@@ -6,11 +6,8 @@ addresses:
   template: https://www.figma.com/design/UpEqNeW4V4PI9BDV1FfkVu/Site-da-Hamburgueria
 category:
   type: subject
-  subject: lm
-  period: 1
+  subject: lm-cstsi-jp
   semester: 2024.2
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - html
   - css

@@ -6,11 +6,8 @@ addresses:
   repository: https://github.com/mikaelbrsl/projeto-ls-imobiliaria
 category:
   type: subject
-  subject: ls
-  period: 2
+  subject: ls-cstsi-jp
   semester: 2024.2
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - html
   - css

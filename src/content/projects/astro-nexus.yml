@@ -10,11 +10,8 @@ addresses:
   repository: https://github.com/Igor-AI-Coder/AstroNexus
 category:
   type: subject
-  subject: ls
-  period: 2
+  subject: ls-cstsi-jp
   semester: 2025.1
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - js
   - html

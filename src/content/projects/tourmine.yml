@@ -5,11 +5,8 @@ addresses:
   repository: https://github.com/TourMine/TourMine-Front
 category:
   type: subject
-  subject: pdist
-  period: 6
+  subject: pd-cstsi-jp
   semester: 2024.2
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - angular
   - c sharp

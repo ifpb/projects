@@ -11,11 +11,8 @@ addresses:
   repository: https://github.com/oneabrante/Network-Services-Structure
 category:
   type: subject
-  subject: asa
-  period: 4
+  subject: asa-cstrc-jp
   semester: 2023.1
-  course: cstrc
-  campus: ifpb-jp
 tags:
   - vagrant
   - ansible

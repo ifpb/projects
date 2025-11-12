@@ -6,11 +6,8 @@ addresses:
   repository: https://github.com/ArthurLacerda13/aglio-and-pasta
 category:
   type: subject
-  subject: ls
-  period: 2
+  subject: ls-cstsi-jp
   semester: 2025.1
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - html
   - vite

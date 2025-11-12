@@ -6,11 +6,8 @@ addresses:
   repository: https://github.com/felipecartaxo/pweb1-todolist-fase2
 category:
   type: subject
-  subject: pweb1
-  period: 4
+  subject: pw1-cstsi-jp
   semester: 2024.2
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - html
   - css

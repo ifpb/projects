@@ -8,11 +8,8 @@ addresses:
   template: https://www.figma.com/design/SZOMhbw6IiEG9TcpzFyOmI/Front-END--conecta-restaurante?node-id=0-1&p=f&t=ZPoPYgbWifOgnbd6-0
 category:
   type: subject
-  subject: pweb1
-  period: 4
+  subject: pw1-cstsi-jp
   semester: 2025.1
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - angular
   - typescript

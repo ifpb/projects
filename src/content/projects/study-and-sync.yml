@@ -5,11 +5,8 @@ addresses:
   repository: https://github.com/lukilme/final-pweb-study-and-sync
 category:
   type: subject
-  subject: pweb1
-  period: 4
+  subject: pw1-cstsi-jp
   semester: 2024.1
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - angular
   - spring-boot

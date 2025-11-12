@@ -4,11 +4,8 @@ addresses:
   repository: https://github.com/MariaLuizaSantana21/Site-de-Promo-es-Trabalho-de-JS.git
 category:
   type: subject
-  subject: ls
-  period: 2
+  subject: ls-cstsi-jp
   semester: 2024.2
-  course: cstsi
-  campus: ifpb-jp
 tags:
   - js
 owners:
