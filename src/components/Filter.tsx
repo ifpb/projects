@@ -4,7 +4,6 @@ import { getCourseByAbbreviation, getSemesterCourses } from '@/helpers/courses';
 import { getSubject } from '@/helpers/subjects';
 import Accordion from './Accordion';
 import Badge from './Badge';
-import { getAllProjectTags } from '@/helpers/tags';
 
 interface TagGroup {
   name: string;
@@ -15,6 +14,7 @@ interface FilterProps {
   type: string;
   tags: { course: TagGroup; semester: TagGroup; subject?: TagGroup };
   peopleTags: string[];
+  projectTags: string[];
 }
 
 interface AccordionConfig {
@@ -22,8 +22,6 @@ interface AccordionConfig {
   title: string;
   badges: { url: string; value: string }[];
 }
-
-const projectTags = await getAllProjectTags();
 
 const CODES_EXTRA_ACCORDIONS: AccordionConfig[] = [
   {
@@ -44,10 +42,7 @@ const CODES_EXTRA_ACCORDIONS: AccordionConfig[] = [
   {
     id: 'codes-tags',
     title: 'Tags',
-    badges: projectTags.map((tag) => ({
-      url: `/projects/codes/${encodeURIComponent(tag)}/1`,
-      value: tag,
-    })),
+    badges: [],
   },
 ];
 
@@ -76,10 +71,23 @@ const PEOPLE_EXTRA_ACCORDIONS: AccordionConfig[] = [
   },
 ];
 
-export default function Filter({ type, tags, peopleTags }: FilterProps) {
+export default function Filter({
+  type,
+  tags,
+  peopleTags,
+  projectTags,
+}: FilterProps) {
   const [isShow, setIsShow] = useState(false);
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
   const [openDetails, setOpenDetails] = useState<string | null>(null);
+
+  const projectTagsBadges = projectTags.map((tag) => ({
+    url: `/projects/codes/${encodeURIComponent(tag)}/1`,
+    value: tag,
+  }));
+
+  CODES_EXTRA_ACCORDIONS.find((acc) => acc.id === 'codes-tags')!.badges =
+    projectTagsBadges;
 
   const toggleShow = () => {
     setIsShow(!isShow);

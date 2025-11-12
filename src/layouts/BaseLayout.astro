@@ -4,6 +4,7 @@ import GoogleAnalytics from '@/components/GoogleAnalytics.astro';
 import NavBar from '@/components/NavBar.astro';
 import PageFindSearch from '@/components/PageFindSearch.astro';
 import { getAllPersonTags } from '@/helpers/people';
+import { getAllProjectTags } from '@/helpers/tags';
 
 import '@/styles/global.css';
 
@@ -17,6 +18,8 @@ export interface Propos {
 const { pageTitle, tags, type, pageFindFilter } = Astro.props;
 
 const peopleTags = tags ? await getAllPersonTags() : [];
+
+const projectTags: string[] = await getAllProjectTags();
 
 const headerTitle = pageTitle ? `IFPB | ${pageTitle}` : 'IFPB Code';
 ---
@@ -41,6 +44,7 @@ const headerTitle = pageTitle ? `IFPB | ${pageTitle}` : 'IFPB Code';
             type={type}
             tags={tags}
             peopleTags={peopleTags}
+            projectTags={projectTags}
             client:visible
           />
         )
