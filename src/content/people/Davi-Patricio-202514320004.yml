@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/DaviPatricio06.png
   githubUC: https://avatars.githubusercontent.com/u/222807941?v=4
 occupations:
-- id: 202514320004
-  type: student
-  campus: ifpb-jp
-  course: csbes
-  isFinished: false
+  - id: 202514320004
+    type: student
+    campus: ifpb-jp
+    course: csbes
+    isFinished: false
 addresses:
   github: https://github.com/DaviPatricio06
   linkedin: https://www.linkedin.com/in/davi-patricio-75877727a

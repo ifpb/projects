@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/diegosls.png
   githubUC: https://avatars.githubusercontent.com/u/162706801?v=4
 occupations:
-- id: 20221380034
-  type: student
-  campus: ifpb-jp
-  course: cstrc
-  isFinished: false
+  - id: 20221380034
+    type: student
+    campus: ifpb-jp
+    course: cstrc
+    isFinished: false
 addresses:
   github: https://github.com/diegosls
   linkedin: https://www.linkedin.com/in/diego-sales-316601269/

@@ -6,11 +6,11 @@ avatar:
   github: https://github.com/VambertoJunior.png
   githubUC: https://avatars.githubusercontent.com/u/40028930?v=4
 occupations:
-- id: 20192370041
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20192370041
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses:
   github: https://github.com/VambertoJunior
   linkedin: https://www.linkedin.com/in/vamberto-junior-55a231210/

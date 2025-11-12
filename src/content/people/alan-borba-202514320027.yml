@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/alan-borba.png
   githubUC: https://avatars.githubusercontent.com/u/206334269?v=4
 occupations:
-- id: 202514320027
-  type: student
-  campus: ifpb-jp
-  course: csbes
-  isFinished: false
+  - id: 202514320027
+    type: student
+    campus: ifpb-jp
+    course: csbes
+    isFinished: false
 addresses:
   github: https://github.com/alan-borba
   linkedin: https://www.linkedin.com/in/alan-borba

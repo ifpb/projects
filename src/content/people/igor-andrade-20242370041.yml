@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/Igor-AI-Coder.png
   githubUC: https://avatars.githubusercontent.com/u/185387835?v=4
 occupations:
-- id: 20242370041
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: false
+  - id: 20242370041
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: false
 addresses:
   github: https://github.com/Igor-AI-Coder
   linkedin: https://www.linkedin.com/in/igor-andrade-galvão-328973333/

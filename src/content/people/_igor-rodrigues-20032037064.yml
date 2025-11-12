@@ -3,9 +3,9 @@ name:
   full: Igor Magalhães Rodrigues
 avatar: null
 occupations:
-- id: 20032037064
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20032037064
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses: null

@@ -3,9 +3,9 @@ name:
   full: Leydson Barbosa Silva
 avatar: null
 occupations:
-- id: 20061370309
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20061370309
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses: null

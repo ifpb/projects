@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/maluqueiroz.png
   githubUC: https://avatars.githubusercontent.com/u/43550401?v=4
 occupations:
-- id: 20181370005
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: false
+  - id: 20181370005
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: false
 addresses:
   github: https://github.com/maluqueiroz
   linkedin: https://www.linkedin.com/in/luisa-queiroz-brito/

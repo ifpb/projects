@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/erikaheidi.png
   githubUC: https://avatars.githubusercontent.com/u/293241?v=4
 occupations:
-- id: 20031037083
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: false
+  - id: 20031037083
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: false
 addresses:
   github: https://github.com/erikaheidi
   linkedin: https://www.linkedin.com/in/erikaheidi/

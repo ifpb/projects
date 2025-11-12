@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/viczveras.png
   githubUC: https://avatars.githubusercontent.com/u/60857603?v=4
 occupations:
-- id: 20242370005
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: false
+  - id: 20242370005
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: false
 addresses:
   github: https://github.com/viczveras
   linkedin: https://www.linkedin.com/in/victorveras1/

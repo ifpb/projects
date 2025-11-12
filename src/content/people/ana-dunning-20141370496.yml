@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/anadunning.png
   githubUC: https://avatars.githubusercontent.com/u/19942816?v=4
 occupations:
-- id: 20141370496
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20141370496
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses:
   github: https://github.com/anadunning
   linkedin: https://www.linkedin.com/in/ana-dunning-309a2425/

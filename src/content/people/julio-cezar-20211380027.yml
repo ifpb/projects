@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/Julio-Cezar4.png
   githubUC: https://avatars.githubusercontent.com/u/130713358?v=4
 occupations:
-- id: 20211380027
-  type: student
-  campus: ifpb-jp
-  course: cstrc
-  isFinished: false
+  - id: 20211380027
+    type: student
+    campus: ifpb-jp
+    course: cstrc
+    isFinished: false
 addresses:
   linkedin: https://www.linkedin.com/in/j%C3%BAlio-c%C3%A9zar-97a992290/
   github: https://github.com/Julio-Cezar4

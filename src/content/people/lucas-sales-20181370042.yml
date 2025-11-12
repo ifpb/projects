@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/lucas-salles.png
   githubUC: https://avatars.githubusercontent.com/u/39397726?v=4
 occupations:
-- id: 20181370042
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20181370042
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses:
   github: https://github.com/lucas-salles
   linkedin: https://www.linkedin.com/in/lucas-sales-s/

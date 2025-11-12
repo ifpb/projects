@@ -5,9 +5,9 @@ avatar:
   github: https://github.com/gugawag.png
   githubUC: https://avatars.githubusercontent.com/u/868458?v=4
 occupations:
-- id: 2254024
-  type: professor
-  campus: ifpb-jp
+  - id: 2254024
+    type: professor
+    campus: ifpb-jp
 addresses:
   github: https://github.com/gugawag
   linkedin: https://www.linkedin.com/in/gugawag/

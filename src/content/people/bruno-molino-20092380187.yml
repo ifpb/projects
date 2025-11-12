@@ -4,11 +4,11 @@ name:
 avatar:
   selected: none
 occupations:
-- id: 20092380187
-  type: student
-  campus: ifpb-jp
-  course: cstrc
-  isFinished: true
+  - id: 20092380187
+    type: student
+    campus: ifpb-jp
+    course: cstrc
+    isFinished: true
 addresses:
   email: brunoesturba@yahoo.com.br
   linkedin: https://www.linkedin.com/in/bruno-esturba-molino-21845397/

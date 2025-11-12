@@ -4,11 +4,11 @@ name:
 avatar:
   selected: none
 occupations:
-- id: 20052370270
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20052370270
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses:
   email: rafaelbcdesouza@gmail.com
   linkedin: https://www.linkedin.com/in/rafael-bruno-b1215122/

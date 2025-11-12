@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/pveinberg.png
   githubUC: https://avatars.githubusercontent.com/u/879657?v=4
 occupations:
-- id: 20092370076
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20092370076
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses:
   email: pveinberg@gmail.com
   linkedin: https://www.linkedin.com/in/pablo-veinberg/

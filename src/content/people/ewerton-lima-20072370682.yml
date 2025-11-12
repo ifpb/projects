@@ -4,10 +4,10 @@ name:
 avatar:
   selected: none
 occupations:
-- id: 20072370682
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20072370682
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses:
   linkedin: https://www.linkedin.com/in/ewerton-lima-97bb4720/

@@ -5,14 +5,14 @@ avatar:
   github: https://github.com/leandrocalmeida.png
   githubUC: https://avatars.githubusercontent.com/u/10882149?v=4
 occupations:
-- id: 20051380328
-  type: student
-  campus: ifpb-jp
-  course: cstrc
-  isFinished: true
-- id: 1864985
-  type: professor
-  campus: ifpb-jp
+  - id: 20051380328
+    type: student
+    campus: ifpb-jp
+    course: cstrc
+    isFinished: true
+  - id: 1864985
+    type: professor
+    campus: ifpb-jp
 addresses:
   github: https://github.com/leandrocalmeida
   linkedin: https://www.linkedin.com/in/leandro-almeida-2601a611

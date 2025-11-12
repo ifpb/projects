@@ -5,16 +5,16 @@ avatar:
   github: https://github.com/eliabeleal.png
   githubUC: https://avatars.githubusercontent.com/u/23192463?v=4
 occupations:
-- id: 20162370035
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
-- id: 202019840037
-  type: student
-  course: cmpti
-  campus: ifpb-jp
-  isFinished: false
+  - id: 20162370035
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
+  - id: 202019840037
+    type: student
+    course: cmpti
+    campus: ifpb-jp
+    isFinished: false
 addresses:
   github: https://github.com/eliabeleal
   linkedin: https://www.linkedin.com/in/eliabe-leal-9499a5162/

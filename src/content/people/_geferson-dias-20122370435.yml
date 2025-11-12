@@ -3,9 +3,9 @@ name:
   full: Geferson Ribeiro Dias
 avatar: null
 occupations:
-- id: 20122370435
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20122370435
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses: null

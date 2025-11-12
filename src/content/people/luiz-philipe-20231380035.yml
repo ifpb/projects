@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/philipe7.png
   githubUC: https://avatars.githubusercontent.com/u/131879025?v=4
 occupations:
-- id: 20231380035
-  type: student
-  campus: ifpb-jp
-  course: cstrc
-  isFinished: false
+  - id: 20231380035
+    type: student
+    campus: ifpb-jp
+    course: cstrc
+    isFinished: false
 addresses:
   github: https://github.com/philipe7
   linkedin: https://www.linkedin.com/in/luiz-philipe-b35629303/

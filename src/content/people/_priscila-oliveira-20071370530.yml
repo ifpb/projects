@@ -3,9 +3,9 @@ name:
   full: Priscila Navarro Peixoto de Oliveira
 avatar: null
 occupations:
-- id: 20071370530
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20071370530
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses: null

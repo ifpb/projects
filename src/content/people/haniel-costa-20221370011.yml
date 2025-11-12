@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/HanielCostaDaSilva.png
   githubUC: https://avatars.githubusercontent.com/u/87027617?v=4
 occupations:
-- id: 20221370011
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: false
+  - id: 20221370011
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: false
 addresses:
   github: https://github.com/HanielCostaDaSilva
   linkedin: https://www.linkedin.com/in/haniel-costa-da-silva-63829a250/

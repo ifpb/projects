@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/DiogoBAguiar.png
   githubUC: https://avatars.githubusercontent.com/u/136986672?v=4
 occupations:
-- id: 202514320028
-  type: student
-  campus: ifpb-jp
-  course: csbes
-  isFinished: false
+  - id: 202514320028
+    type: student
+    campus: ifpb-jp
+    course: csbes
+    isFinished: false
 addresses:
   github: https://github.com/DiogoBAguiar
   linkedin: https://www.linkedin.com/in/diogo-aguiar-751334382/

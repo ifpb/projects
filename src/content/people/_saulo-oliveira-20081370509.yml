@@ -3,10 +3,10 @@ name:
   full: Saulo Ranieri de Oliveira
 avatar: null
 occupations:
-- id: 20081370509
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20081370509
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses:
   email: sauloroliveira@gmail.com

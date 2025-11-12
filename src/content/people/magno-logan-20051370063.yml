@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/magnologan.png
   githubUC: https://avatars.githubusercontent.com/u/1558043?v=4
 occupations:
-- id: 20051370063
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20051370063
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses:
   github: https://github.com/magnologan
   linkedin: https://www.linkedin.com/in/magnologan/

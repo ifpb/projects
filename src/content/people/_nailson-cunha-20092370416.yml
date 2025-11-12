@@ -3,10 +3,10 @@ name:
   full: Nailson dos Santos Cunha
 avatar: null
 occupations:
-- id: 20092370416
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20092370416
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses:
   email: nailsoncunha@gmail.com

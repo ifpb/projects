@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/JoshuaNeto-TheKnight.png
   githubUC: https://avatars.githubusercontent.com/u/215238939?v=4
 occupations:
-- id: 202514320003
-  type: student
-  campus: ifpb-jp
-  course: csbes
-  isFinished: false
+  - id: 202514320003
+    type: student
+    campus: ifpb-jp
+    course: csbes
+    isFinished: false
 addresses:
   github: https://github.com/JoshuaNeto-TheKnight
   linkedin: https://www.linkedin.com/in/josu%C3%A9-benedito-neto-505b34395

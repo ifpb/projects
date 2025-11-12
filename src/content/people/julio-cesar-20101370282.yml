@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/juliocesargba.png
   githubUC: https://avatars.githubusercontent.com/u/15372368?v=4
 occupations:
-- id: 20101370282
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20101370282
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses:
   github: https://github.com/juliocesargba
   linkedin: https://www.linkedin.com/in/julio-césar-da-silva-gomes-594a80107/

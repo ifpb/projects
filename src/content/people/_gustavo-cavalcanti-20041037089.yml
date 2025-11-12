@@ -3,9 +3,9 @@ name:
   full: Gustavo Cavalcanti
 avatar: null
 occupations:
-- id: 20041037089
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20041037089
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses: null

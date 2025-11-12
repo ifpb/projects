@@ -4,11 +4,11 @@ name:
 avatar:
   selected: none
 occupations:
-- id: 20091370080
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20091370080
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses:
   email: evsramos@gmail.com
   linkedin: https://www.linkedin.com/in/erico-ramos/

@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/mikaelbrsl.png
   githubUC: https://avatars.githubusercontent.com/u/174641264?v=4
 occupations:
-- id: 20241370032
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: false
+  - id: 20241370032
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: false
 addresses:
   github: https://github.com/mikaelbrsl
   linkedin: https://www.linkedin.com/in/mikael-brasil/

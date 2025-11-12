@@ -5,14 +5,14 @@ avatar:
   github: https://github.com/diogomoreira.png
   githubUC: https://avatars.githubusercontent.com/u/808759?v=4
 occupations:
-- id: 20082201026
-  type: student
-  campus: ifpb-cz
-  course: cstads
-  isFinished: true
-- id: 2169605
-  type: professor
-  campus: ifpb-cz
+  - id: 20082201026
+    type: student
+    campus: ifpb-cz
+    course: cstads
+    isFinished: true
+  - id: 2169605
+    type: professor
+    campus: ifpb-cz
 addresses:
   github: https://github.com/diogomoreira
   linkedin: https://www.linkedin.com/in/diogodmoreira/

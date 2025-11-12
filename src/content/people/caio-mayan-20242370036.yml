@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/caiomayan.png
   githubUC: https://avatars.githubusercontent.com/u/164285889?v=4
 occupations:
-- id: 20242370036
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: false
+  - id: 20242370036
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: false
 addresses:
   github: https://github.com/caiomayan
   linkedin: https://www.linkedin.com/in/caiomayan/

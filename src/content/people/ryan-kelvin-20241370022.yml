@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/kevinlzk12.png
   githubUC: https://avatars.githubusercontent.com/u/174637007?v=4
 occupations:
-- id: 20241370022
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: false
+  - id: 20241370022
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: false
 addresses:
   github: https://github.com/kevinlzk12
   linkedin: https://www.linkedin.com/in/ryan-kevin-de-souto-lopes-59a06a303/

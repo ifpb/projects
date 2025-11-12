@@ -5,21 +5,21 @@ avatar:
   github: https://github.com/kerven-albuquerque.png
   githubUC: https://avatars.githubusercontent.com/u/33072653?v=4
 occupations:
-- id: 20121750200
-  type: student
-  campus: ifpb-jp
-  course: ctie
-  isFinished: true
-- id: 20152610043
-  type: student
-  campus: ifpb-jp
-  course: csbee
-  isFinished: true
-- id: 202119840028
-  type: student
-  campus: ifpb-jp
-  course: cmpti
-  isFinished: false
+  - id: 20121750200
+    type: student
+    campus: ifpb-jp
+    course: ctie
+    isFinished: true
+  - id: 20152610043
+    type: student
+    campus: ifpb-jp
+    course: csbee
+    isFinished: true
+  - id: 202119840028
+    type: student
+    campus: ifpb-jp
+    course: cmpti
+    isFinished: false
 addresses:
   github: https://github.com/kerven-albuquerque
   linkedin: https://www.linkedin.com/in/kerven-albuquerque/

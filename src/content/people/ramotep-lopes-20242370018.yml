@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/RamotepIFPB.png
   githubUC: https://avatars.githubusercontent.com/u/186099874?v=4
 occupations:
-- id: 20242370018
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: false
+  - id: 20242370018
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: false
 addresses:
   github: https://github.com/RamotepIFPB
   instagram: https://www.instagram.com/ohhai_mono

@@ -5,11 +5,11 @@ avatar:
   selected: lattes
   lattes: https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K8703863T4
 occupations:
-- id: 20122370257
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20122370257
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses:
   email: targino.natacha@gmail.com
   linkedin: https://www.linkedin.com/in/natacha-targino-aa6429248/

@@ -5,16 +5,16 @@ avatar:
   github: https://github.com/aeciopires.png
   githubUC: https://avatars.githubusercontent.com/u/15235444?v=4
 occupations:
-- id: 20052380070
-  type: student
-  campus: ifpb-jp
-  course: cstrc
-  isFinished: true
-- id: 201919840015
-  type: student
-  campus: ifpb-jp
-  course: cmpti
-  isFinished: true
+  - id: 20052380070
+    type: student
+    campus: ifpb-jp
+    course: cstrc
+    isFinished: true
+  - id: 201919840015
+    type: student
+    campus: ifpb-jp
+    course: cmpti
+    isFinished: true
 addresses:
   github: https://github.com/aeciopires
   linkedin: https://www.linkedin.com/in/aeciopires/

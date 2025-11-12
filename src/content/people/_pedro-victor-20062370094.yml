@@ -3,10 +3,10 @@ name:
   full: Pedro Victor de Oliveira Lima
 avatar: null
 occupations:
-- id: 20062370094
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20062370094
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses:
   email: pedao86@hotmail.com

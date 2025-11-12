@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/itechbr.png
   githubUC: https://avatars.githubusercontent.com/u/191296900?v=4
 occupations:
-- id: 202514320026
-  type: student
-  campus: ifpb-jp
-  course: csbes
-  isFinished: false
+  - id: 202514320026
+    type: student
+    campus: ifpb-jp
+    course: csbes
+    isFinished: false
 addresses:
   github: https://github.com/itechbr
   instagram: https://www.instagram.com/icaro_pontes07/

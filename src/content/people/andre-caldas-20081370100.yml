@@ -4,11 +4,11 @@ name:
 avatar:
   selected: none
 occupations:
-- id: 20081370100
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20081370100
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses:
   email: andre.fcaldas@gmail.com
   linkedin: https://www.linkedin.com/in/andré-caldas-926ab220/

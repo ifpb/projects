@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/jimmywilson.png
   githubUC: https://avatars.githubusercontent.com/u/7663417?v=4
 occupations:
-- id: 20082370286
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20082370286
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses:
   github: https://github.com/jimmywilson
   linkedin: https://www.linkedin.com/in/jimmywilson1991/

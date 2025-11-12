@@ -5,11 +5,11 @@ avatar:
   github: https://www.github.com/italonerd.png
   githubUC: https://avatars.githubusercontent.com/u/7597707?v=4
 occupations:
-- id: 20082370103
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20082370103
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses:
   github: https://www.github.com/italonerd/
   linkedin: https://www.linkedin.com/in/italomendes/

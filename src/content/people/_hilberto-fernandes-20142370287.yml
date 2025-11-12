@@ -3,9 +3,9 @@ name:
   full: Hilberto Fernandes de Abreu
 avatar: null
 occupations:
-- id: 20142370287
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20142370287
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses: null

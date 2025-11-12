@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/joaopaulo11jp.png
   githubUC: https://avatars.githubusercontent.com/u/6707707?v=4
 occupations:
-- id: 20131370060
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20131370060
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses:
   github: https://github.com/joaopaulo11jp
   linkedin: https://www.linkedin.com/in/joaopaulo11jp/

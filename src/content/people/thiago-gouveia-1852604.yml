@@ -5,9 +5,9 @@ avatar:
   selected: researchgate
   researchgate: https://i1.rgstatic.net/ii/profile.image/575803421593600-1514293641203_Q128/Thiago-Gouveia.jpg
 occupations:
-- id: 1852604
-  type: professor
-  campus: ifpb-jp
+  - id: 1852604
+    type: professor
+    campus: ifpb-jp
 addresses:
   github: https://github.com/tgouveia
   linkedin: https://www.linkedin.com/in/thiago-gouveia-30821656/

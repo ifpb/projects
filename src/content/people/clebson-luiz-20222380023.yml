@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/C-Luiz.png
   githubUC: https://avatars.githubusercontent.com/u/161599636?v=4
 occupations:
-- id: 20222380023
-  type: student
-  campus: ifpb-jp
-  course: cstrc
-  isFinished: false
+  - id: 20222380023
+    type: student
+    campus: ifpb-jp
+    course: cstrc
+    isFinished: false
 addresses:
   github: https://github.com/C-Luiz
   linkedin: https://www.linkedin.com/in/clebson-luiz-748615267

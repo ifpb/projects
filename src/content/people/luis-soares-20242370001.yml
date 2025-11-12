@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/LuisEduardox.png
   githubUC: https://avatars.githubusercontent.com/u/186868579?v=4
 occupations:
-- id: 20242370001
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: false
+  - id: 20242370001
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: false
 addresses:
   github: https://github.com/LuisEduardox
   linkedin: https://www.linkedin.com/in/eduardo-gomes10

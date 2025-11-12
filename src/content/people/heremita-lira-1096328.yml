@@ -6,9 +6,9 @@ avatar:
   researchgate: https://i1.rgstatic.net/ii/profile.image/11431281079162768-1660570445490_Q128/Heremita-Lira.jpg
   lattes: http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4700519D1
 occupations:
-- id: 1096328
-  type: professor
-  campus: ifpb-jp
+  - id: 1096328
+    type: professor
+    campus: ifpb-jp
 addresses:
   linkedin: https://www.linkedin.com/in/heremita-lira/
   researchgate: https://www.researchgate.net/profile/Heremita-Lira

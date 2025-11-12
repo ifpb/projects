@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/andreimedeiros.png
   githubUC: https://avatars.githubusercontent.com/u/81647387?v=4
 occupations:
-- id: 20202370006
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: false
+  - id: 20202370006
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: false
 addresses:
   email: andrei8246@gmail.com
   github: https://github.com/andreimedeiros

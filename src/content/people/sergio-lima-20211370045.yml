@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/sergioclimajr.png
   githubUC: https://avatars.githubusercontent.com/u/87608071?v=4
 occupations:
-- id: 20211370045
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: false
+  - id: 20211370045
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: false
 addresses:
   github: https://github.com/sergioclimajr
   linkedin: https://www.linkedin.com/in/sergio-lima-jr-17598941/

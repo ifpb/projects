@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/OtacFerreiro.png
   githubUC: https://avatars.githubusercontent.com/u/3595626?v=4
 occupations:
-- id: 20091370129
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20091370129
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses:
   email: otacilioferreiro@gmail.com
   linkedin: https://www.linkedin.com/in/otacferreiro/

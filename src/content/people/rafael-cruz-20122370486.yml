@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/rafaelcruzpb.png
   githubUC: https://avatars.githubusercontent.com/u/5600060?v=4
 occupations:
-- id: 20122370486
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20122370486
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses:
   github: https://github.com/rafaelcruzpb
   linkedin: https://www.linkedin.com/in/rafael-cruz-29362110b/

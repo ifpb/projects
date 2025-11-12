@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/ederpbj.png
   githubUC: https://avatars.githubusercontent.com/u/8126730?v=4
 occupations:
-- id: 20112370238
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20112370238
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses:
   github: https://github.com/ederpbj
   linkedin: https://www.linkedin.com/in/eder-pires-batista-a46b867b/

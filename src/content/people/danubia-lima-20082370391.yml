@@ -4,11 +4,11 @@ name:
 avatar:
   selected: none
 occupations:
-- id: 20082370391
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20082370391
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses:
   email: biaeccentric@gmso.com
   linkedin: https://www.linkedin.com/in/dan%C3%BAbia-almeida-14b5732b/

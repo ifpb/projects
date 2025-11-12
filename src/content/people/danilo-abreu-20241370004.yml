@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/DaniloAbreu83.png
   githubUC: https://avatars.githubusercontent.com/u/174370003?v=4
 occupations:
-- id: 20241370004
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: false
+  - id: 20241370004
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: false
 addresses:
   github: https://github.com/DaniloAbreu83
   linkedin: https://www.linkedin.com/in/danilo-da-silva-abreu-133450300/

@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/imigoor.png
   githubUC: https://avatars.githubusercontent.com/u/98026214?v=4
 occupations:
-- id: 20232370033
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: false
+  - id: 20232370033
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: false
 addresses:
   github: https://github.com/imigoor
   linkedin: https://www.linkedin.com/in/imigor/

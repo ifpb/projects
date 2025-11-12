@@ -4,11 +4,11 @@ name:
 avatar:
   github: https://github.com/SERGIO-20202.png
 occupations:
-- id: 20202380045
-  type: student
-  campus: ifpb-jp
-  course: cstrc
-  isFinished: false
+  - id: 20202380045
+    type: student
+    campus: ifpb-jp
+    course: cstrc
+    isFinished: false
 addresses:
   github: https://github.com/SERGIO-20202
   linkedin: https://www.linkedin.com/in/sergio-IFPB/

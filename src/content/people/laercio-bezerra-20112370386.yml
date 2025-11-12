@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/laerciosb.png
   githubUC: https://avatars.githubusercontent.com/u/4484665?v=4
 occupations:
-- id: 20112370386
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20112370386
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses:
   github: https://github.com/laerciosb
   linkedin: https://www.linkedin.com/in/laércio-bezerra-1a555849/

@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/italocostta.png
   githubUC: https://avatars.githubusercontent.com/u/81313323?v=4
 occupations:
-- id: 20202370026
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: false
+  - id: 20202370026
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: false
 addresses:
   github: https://github.com/italocostta
   linkedin: https://www.linkedin.com/in/italocostta/

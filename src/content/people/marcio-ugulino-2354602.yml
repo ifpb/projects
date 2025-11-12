@@ -5,9 +5,9 @@ avatar:
   github: https://github.com/marciougulino.png
   githubUC: https://avatars.githubusercontent.com/u/124619138?v=4
 occupations:
-- id: 2354602
-  type: professor
-  campus: ifpb-jp
+  - id: 2354602
+    type: professor
+    campus: ifpb-jp
 addresses:
   github: https://github.com/marciougulino
   linkedin: https://www.linkedin.com/in/marciougulino/

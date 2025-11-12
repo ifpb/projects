@@ -3,9 +3,9 @@ name:
   full: Jose Rusemberg Tavares da Silva
 avatar: null
 occupations:
-- id: 20151370014
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20151370014
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses: null

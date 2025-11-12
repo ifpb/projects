@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/taysamendes.png
   githubUC: https://avatars.githubusercontent.com/u/28315178?v=4
 occupations:
-- id: 20161370020
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: false
+  - id: 20161370020
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: false
 addresses:
   github: https://github.com/taysamendes
   linkedin: https://www.linkedin.com/in/taysa-samara-mendes-pinheiro-55a195165/

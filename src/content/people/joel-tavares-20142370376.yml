@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/joel3tavares.png
   githubUC: https://avatars.githubusercontent.com/u/140769024?v=4
 occupations:
-- id: 20142370376
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20142370376
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses:
   linkedin: https://www.linkedin.com/in/joeltavares/
   github: https://github.com/joel3tavares

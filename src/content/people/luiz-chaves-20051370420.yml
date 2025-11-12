@@ -5,14 +5,14 @@ avatar:
   github: https://github.com/luizchaves.png
   githubUC: https://avatars.githubusercontent.com/u/205412?v=4
 occupations:
-- id: 20051370420
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
-- id: 2680962
-  type: professor
-  campus: ifpb-jp
+  - id: 20051370420
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
+  - id: 2680962
+    type: professor
+    campus: ifpb-jp
 addresses:
   homepage: https://luizchaves.github.io
   github: https://github.com/luizchaves

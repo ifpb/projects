@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/ramonlbb.png
   githubUC: https://avatars.githubusercontent.com/u/128474790?v=4
 occupations:
-- id: 20222380024
-  type: student
-  campus: ifpb-jp
-  course: cstrc
-  isFinished: false
+  - id: 20222380024
+    type: student
+    campus: ifpb-jp
+    course: cstrc
+    isFinished: false
 addresses:
   github: https://github.com/ramonlbb
   linkedin: https://www.linkedin.com/in/ramon-lucas-b7ba16268/

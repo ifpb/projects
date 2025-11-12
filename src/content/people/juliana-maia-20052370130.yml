@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/jumaialeite.png
   githubUC: https://avatars.githubusercontent.com/u/16169691?v=4
 occupations:
-- id: 20052370130
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20052370130
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses:
   github: https://github.com/jumaialeite
   linkedin: https://www.linkedin.com/in/jumaialeite/

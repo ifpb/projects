@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/RyannFB.png
   githubUC: https://avatars.githubusercontent.com/u/151681597?v=4
 occupations:
-- id: 20231380032
-  type: student
-  campus: ifpb-jp
-  course: cstrc
-  isFinished: false
+  - id: 20231380032
+    type: student
+    campus: ifpb-jp
+    course: cstrc
+    isFinished: false
 addresses:
   github: https://github.com/RyannFB
   linkedin: https://www.linkedin.com/in/jos%C3%A9-ryann/

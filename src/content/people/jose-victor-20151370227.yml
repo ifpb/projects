@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/victorx9999.png
   githubUC: https://avatars.githubusercontent.com/u/33491135?v=4
 occupations:
-- id: 20151370227
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20151370227
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses:
   github: https://github.com/victorx9999
   linkedin: https://www.linkedin.com/in/victor-dantas-897606182/

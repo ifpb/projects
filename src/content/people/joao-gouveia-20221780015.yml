@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/JoaoVictorDevMeta.png
   githubUC: https://avatars.githubusercontent.com/u/109441246?v=4
 occupations:
-- id: 20221780015
-  type: student
-  campus: ifpb-jp
-  course: ctii
-  isFinished: false
+  - id: 20221780015
+    type: student
+    campus: ifpb-jp
+    course: ctii
+    isFinished: false
 addresses:
   github: https://github.com/JoaoVictorDevMeta
   linkedin: https://www.linkedin.com/in/joaovictordevmeta/

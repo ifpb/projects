@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/kamilaalves.png
   githubUC: https://avatars.githubusercontent.com/u/94623699?v=4
 occupations:
-- id: 20212370010
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: false
+  - id: 20212370010
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: false
 addresses:
   github: https://github.com/kamilaalves
   linkedin: https://www.linkedin.com/in/kamila-alves-22193a227/

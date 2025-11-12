@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/dfmedeiros.png
   githubUC: https://avatars.githubusercontent.com/u/309763?v=4
 occupations:
-- id: 20081370371
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20081370371
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses:
   github: https://github.com/dfmedeiros
   linkedin: https://www.linkedin.com/in/dfmedeiros/

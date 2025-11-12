@@ -4,10 +4,10 @@ name:
 avatar:
   selected: none
 occupations:
-- id: 20192370020
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: false
+  - id: 20192370020
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: false
 addresses:
   linkedin: https://www.linkedin.com/in/glauco-gomes/

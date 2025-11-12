@@ -6,11 +6,11 @@ avatar:
   github: https://github.com/andreealencar.png
   githubUC: https://avatars.githubusercontent.com/u/11579014?v=4
 occupations:
-- id: 20132370284
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20132370284
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses:
   email: andrealencar@outlook.com.br
   linkedin: https://www.linkedin.com/in/andrealencr/

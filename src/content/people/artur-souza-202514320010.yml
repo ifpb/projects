@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/Souzzaturr.png
   githubUC: https://avatars.githubusercontent.com/u/207273864?v=4
 occupations:
-- id: 202514320010
-  type: student
-  campus: ifpb-jp
-  course: csbes
-  isFinished: false
+  - id: 202514320010
+    type: student
+    campus: ifpb-jp
+    course: csbes
+    isFinished: false
 addresses:
   github: https://github.com/Souzzaturr
   linkedin: https://www.linkedin.com/in/souzza-arturr/

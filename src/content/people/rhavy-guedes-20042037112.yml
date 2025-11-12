@@ -5,14 +5,14 @@ avatar:
   github: https://github.com/rhavymaia.png
   githubUC: https://avatars.githubusercontent.com/u/1872194?v=4
 occupations:
-- id: 20042037112
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
-- id: 1752152
-  type: professor
-  campus: ifpb-gb
+  - id: 20042037112
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
+  - id: 1752152
+    type: professor
+    campus: ifpb-gb
 addresses:
   github: https://github.com/rhavymaia
   linkedin: https://www.linkedin.com/in/rhavy-guedes-b7519b88/

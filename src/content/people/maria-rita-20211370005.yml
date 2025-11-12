@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/mariarita26.png
   githubUC: https://avatars.githubusercontent.com/u/89050107?v=4
 occupations:
-- id: 20211370005
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: false
+  - id: 20211370005
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: false
 addresses:
   github: https://github.com/mariarita26
   linkedin: https://www.linkedin.com/in/maria-rita-993a5420b/

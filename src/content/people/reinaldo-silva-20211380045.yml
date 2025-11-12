@@ -5,11 +5,11 @@ avatar:
   github: https://github.com/mr-reinaldo.png
   githubUC: https://avatars.githubusercontent.com/u/88012242?v=4
 occupations:
-- id: 20211380045
-  type: student
-  campus: ifpb-jp
-  course: cstrc
-  isFinished: true
+  - id: 20211380045
+    type: student
+    campus: ifpb-jp
+    course: cstrc
+    isFinished: true
 addresses:
   github: https://github.com/mr-reinaldo
   linkedin: https://www.linkedin.com/in/jreinaldosilva

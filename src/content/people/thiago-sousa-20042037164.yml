@@ -4,11 +4,11 @@ name:
 avatar:
   selected: none
 occupations:
-- id: 20042037164
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20042037164
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses:
   email: thiago.henrique.jacob@hotmail.com
   linkedin: https://www.linkedin.com/in/thiago-sousa-9bb6b416/

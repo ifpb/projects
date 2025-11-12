@@ -5,16 +5,16 @@ avatar:
   github: https://github.com/jovemcarlosti.png
   githubUC: https://avatars.githubusercontent.com/u/59931270?v=4
 occupations:
-- id: 20211780042
-  type: student
-  campus: ifpb-jp
-  course: ctii
-  isFinished: true
-- id: 20231370013
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: false
+  - id: 20211780042
+    type: student
+    campus: ifpb-jp
+    course: ctii
+    isFinished: true
+  - id: 20231370013
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: false
 addresses:
   github: https://github.com/JovemCarlosTI
   linkedin: https://www.linkedin.com/in/jovemcarlos/
