@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Icon } from '@iconify/react';
 import { getCourseByAbbreviation, getSemesterCourses } from '@/helpers/courses';
+import { getSubject } from '@/helpers/subjects';
 import Accordion from './Accordion';
 import Badge from './Badge';
 
@@ -11,7 +12,7 @@ interface TagGroup {
 
 interface FilterProps {
   type: string;
-  tags: { course: TagGroup; semester: TagGroup };
+  tags: { course: TagGroup; semester: TagGroup; subject?: TagGroup };
   allTags: string[];
 }
 
@@ -21,9 +22,9 @@ interface AccordionConfig {
   badges: { url: string; value: string }[];
 }
 
-const CODES_STATIC_ACCORDIONS: AccordionConfig[] = [
+const CODES_EXTRA_ACCORDIONS: AccordionConfig[] = [
   {
-    id: 'codes-tipo',
+    id: 'codes-type',
     title: 'Tipo',
     badges: [
       { url: '/projects/codes/subject/1', value: 'Disciplina' },
@@ -33,15 +34,15 @@ const CODES_STATIC_ACCORDIONS: AccordionConfig[] = [
     ],
   },
   {
-    id: 'codes-extra',
-    title: 'Extra',
+    id: 'codes-resource',
+    title: 'Recursos',
     badges: [{ url: '/projects/codes/figma/1', value: 'figma' }],
   },
 ];
 
 const PEOPLE_EXTRA_ACCORDIONS: AccordionConfig[] = [
   {
-    id: 'people-tipos',
+    id: 'people-types',
     title: 'Tipos',
     badges: [
       { url: '/projects/people/professor/1', value: 'professores' },
@@ -53,7 +54,7 @@ const PEOPLE_EXTRA_ACCORDIONS: AccordionConfig[] = [
     ],
   },
   {
-    id: 'people-recursos',
+    id: 'people-resources',
     title: 'Recursos',
     badges: [
       { url: '/projects/people/projects/1', value: 'projetos' },
@@ -76,14 +77,12 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
     setOpenAccordion(openAccordion === accordionId ? null : accordionId);
   };
 
-  // Função auxiliar para criar accordions de cursos dinamicamente
   const createCourseAccordion = (
     course: string,
     semesters: string[]
   ): AccordionConfig => {
     const badges = [{ url: `/projects/people/${course}/1`, value: 'Alunos' }];
 
-    // Adicionar badge de egressos se existir
     if (allTags.includes(`egresso-${course}`)) {
       badges.push({
         url: `/projects/people/egresso-${course}/1`,
@@ -91,7 +90,6 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
       });
     }
 
-    // Adicionar badges de semestres
     semesters.forEach((semester) => {
       badges.push({
         url: `/projects/people/${course}-${semester}/1`,
@@ -120,60 +118,180 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
           onClick={toggleShow}
         />
         <h1 className="font-bold text-xl capitalize text-center mb-8">Tags</h1>
-        {type === 'codes' &&
-          Object.values(tags)
-            .sort((a, b) => a.name.localeCompare(b.name))
-            .filter((tag) =>
-              ['curso', 'disciplina', 'semestre'].includes(tag.name)
-            )
-            .map((tag, index) => {
-              const accordionId = `codes-${tag.name}-${index}`;
-              const isOpen = openAccordion === accordionId;
+        {type === 'codes' && (
+          <>
+            <div className="mb-6">
+              <h3 className="font-bold text-base mb-3 text-gray-800">Cursos</h3>
+              {Object.entries(
+                tags.course?.values?.reduce(
+                  (acc: Record<string, string[]>, courseTag: string) => {
+                    const courseData = getCourseByAbbreviation(
+                      courseTag.split('-')[0]
+                    );
+                    if (courseData) {
+                      const level = courseData.data.level.compact;
+                      if (!acc[level]) {
+                        acc[level] = [];
+                      }
+                      acc[level].push(courseTag);
+                    }
+                    return acc;
+                  },
+                  {}
+                ) || {}
+              )
+                .sort(([levelA], [levelB]) => levelA.localeCompare(levelB))
+                .map(([level, coursesInLevel]) => {
+                  const levelAccordionId = `codes-level-${level}`;
+                  const isLevelOpen = openAccordion === levelAccordionId;
+
+                  return (
+                    <div key={level} className="mb-4 ml-2">
+                      <Accordion
+                        id={levelAccordionId}
+                        title={level}
+                        isOpen={isLevelOpen}
+                        onToggle={toggleAccordion}
+                      >
+                        {coursesInLevel
+                          .sort((a, b) => {
+                            const courseA = getCourseByAbbreviation(
+                              a.split('-')[0]
+                            );
+                            const courseB = getCourseByAbbreviation(
+                              b.split('-')[0]
+                            );
+                            return (
+                              courseA?.data.name.localeCompare(
+                                courseB?.data.name
+                              ) || 0
+                            );
+                          })
+                          .map((courseTag) => {
+                            const [courseAbbr, campus] = courseTag.split('-');
+                            const courseData =
+                              getCourseByAbbreviation(courseAbbr);
+                            const campusName = campus
+                              ? ` | ${campus.toUpperCase()}`
+                              : '';
+                            const displayName = `${courseData?.data.name}${campusName}`;
+
+                            return (
+                              <Badge
+                                key={courseTag}
+                                url={`/projects/${type}/${courseTag}/1`}
+                                value={displayName}
+                              />
+                            );
+                          })}
+                      </Accordion>
+                    </div>
+                  );
+                })}
+            </div>
+
+            {tags.course?.values?.map((courseTag: string) => {
+              const [courseAbbr, campus] = courseTag.split('-');
+              const courseData = getCourseByAbbreviation(courseAbbr);
+              const campusName = campus ? ` | ${campus.toUpperCase()}` : '';
+              const courseDisplayName = `${courseData?.data.name}${campusName}`;
+
+              const courseSubjects =
+                tags.subject?.values?.filter((subjectTag: string) =>
+                  subjectTag.includes(`-${courseAbbr}-${campus}`)
+                ) || [];
+
+              if (courseSubjects.length === 0) return null;
+
+              const courseAccordionId = `codes-course-${courseTag}`;
+              const isCourseOpen = openAccordion === courseAccordionId;
 
               return (
-                <div key={index} className="mb-4">
-                  <Accordion
-                    id={accordionId}
-                    title={tag.name}
-                    isOpen={isOpen}
-                    onToggle={toggleAccordion}
-                  >
-                    {tag.values
-                      .sort((a, b) => a.localeCompare(b))
-                      .map((value) => (
-                        <Badge
-                          key={value}
-                          url={`/projects/${type}/${value}/1`}
-                          value={value}
-                        />
-                      ))}
-                  </Accordion>
+                <div key={courseTag} className="mb-6">
+                  <h3 className="font-bold text-base mb-3 text-gray-800">
+                    {courseDisplayName}
+                  </h3>
+                  {courseSubjects.map((subjectTag: string) => {
+                    const subjectData = getSubject(subjectTag);
+                    const subjectName =
+                      subjectData?.data.name.full || subjectTag;
+
+                    const subjectSemesters =
+                      tags.semester?.values?.filter((semesterTag: string) =>
+                        semesterTag.startsWith(`${subjectTag}-`)
+                      ) || [];
+
+                    const subjectAccordionId = `codes-subject-${subjectTag}`;
+                    const isSubjectOpen = openAccordion === subjectAccordionId;
+
+                    return (
+                      <div key={subjectTag} className="mb-4 ml-2">
+                        <Accordion
+                          id={subjectAccordionId}
+                          title={subjectName}
+                          isOpen={isSubjectOpen}
+                          onToggle={toggleAccordion}
+                        >
+                          <Badge
+                            key={`${subjectTag}-all`}
+                            url={`/projects/${type}/${subjectTag}/1`}
+                            value="Todos"
+                          />
+                          {subjectSemesters
+                            .sort((a, b) => {
+                              const semesterA = a.split('-').pop() || '';
+                              const semesterB = b.split('-').pop() || '';
+                              return semesterB.localeCompare(semesterA);
+                            })
+                            .map((semesterTag) => {
+                              const semester = semesterTag.split('-').pop();
+                              return (
+                                <Badge
+                                  key={semesterTag}
+                                  url={`/projects/${type}/${semesterTag}/1`}
+                                  value={semester || ''}
+                                />
+                              );
+                            })}
+                        </Accordion>
+                      </div>
+                    );
+                  })}
                 </div>
               );
             })}
-        {type === 'codes' &&
-          CODES_STATIC_ACCORDIONS.map((accordion) => {
-            const isOpen = openAccordion === accordion.id;
 
-            return (
-              <div key={accordion.id} className="mb-4">
-                <Accordion
-                  id={accordion.id}
-                  title={accordion.title}
-                  isOpen={isOpen}
-                  onToggle={toggleAccordion}
-                >
-                  {accordion.badges.map((badge) => (
-                    <Badge
-                      key={badge.value}
-                      url={badge.url}
-                      value={badge.value}
-                    />
-                  ))}
-                </Accordion>
+            {/* Seção Extra */}
+            <div className="mb-6">
+              <h3 className="font-bold text-base mb-3 text-gray-800">Extra</h3>
+              <div className="ml-2">
+                {CODES_EXTRA_ACCORDIONS.map((accordion) => {
+                  const isOpen = openAccordion === accordion.id;
+
+                  return (
+                    <div key={accordion.id} className="mb-4">
+                      <Accordion
+                        id={accordion.id}
+                        title={accordion.title}
+                        isOpen={isOpen}
+                        onToggle={toggleAccordion}
+                      >
+                        {accordion.badges.map((badge) => (
+                          <Badge
+                            key={badge.value}
+                            url={badge.url}
+                            value={badge.value}
+                          />
+                        ))}
+                      </Accordion>
+                    </div>
+                  );
+                })}
               </div>
-            );
-          })}
+            </div>
+          </>
+        )}
+
         {type === 'people' &&
           Object.entries(
             Object.entries(getSemesterCourses(tags.semester.values)).reduce(
