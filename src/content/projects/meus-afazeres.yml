@@ -16,7 +16,7 @@ tags:
   - spring-boot
   - postgresql
   - firestore
-  - firebase Authenticate
+  - firebase authenticate
 owners:
   - 20231370025
   - 20231370002

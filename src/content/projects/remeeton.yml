@@ -12,15 +12,15 @@ category:
   subject: pdm-cstsi-jp
   semester: 2024.1
 tags:
-  - Android
-  - Firebase
-  - Firebase Firestore
-  - Gradle
-  - Jetpack Compose
-  - JSON
-  - Kotlin
-  - Room
-  - XML
+  - android
+  - firebase
+  - firebase firestore
+  - gradle
+  - jetpack compose
+  - json
+  - kotlin
+  - room
+  - xml
 owners:
   - 20221370030
   - 20221370023

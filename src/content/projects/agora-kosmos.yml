@@ -10,17 +10,17 @@ category:
   subject: pd-cstsi-jp
   semester: 2024.1
 tags:
-  - Angular
-  - Ruby On Rails
-  - Docker
-  - Docker Compose
-  - Redis
-  - Rabbitmq
-  - Postgres
-  - Python
-  - Makefile
-  - Gemini
-  - AlphaVantage
+  - angular
+  - ruby on rails
+  - docker
+  - docker compose
+  - redis
+  - rabbitmq
+  - postgres
+  - python
+  - makefile
+  - gemini
+  - alphavantage
 owners:
   - 20212370048
   - 20212370047

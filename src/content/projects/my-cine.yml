@@ -11,12 +11,12 @@ category:
   subject: pdm-cstsi-jp
   semester: 2024.1
 tags:
-  - Kotlin
-  - Android
-  - Mobile Development
-  - Firestore
-  - Firebase
-  - Tmdb API
+  - kotlin
+  - android
+  - mobile development
+  - firestore
+  - firebase
+  - tmdb api
 owners:
   - 20221370027
   - 20221370028

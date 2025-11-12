@@ -13,11 +13,11 @@ category:
   subject: pw1-csbes-jp
   semester: 2025.1
 tags:
-  - HTML
-  - CSS
-  - Flask
-  - Python
-  - CSV
+  - html
+  - css
+  - flask
+  - python
+  - csv
 owners:
   - 202514320010
   - 202514320003

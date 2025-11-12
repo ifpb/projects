@@ -13,11 +13,11 @@ category:
   subject: pdm-cstsi-jp
   semester: 2024.2
 tags:
-  - Kotlin
-  - Android Studio
-  - Jetpack Compose
-  - Firestore
-  - Json Server
+  - kotlin
+  - android studio
+  - jetpack compose
+  - firestore
+  - json server
 owners:
   - 20222370014
   - 20222370019

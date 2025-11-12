@@ -20,8 +20,8 @@ tags:
   - nginx
   - bind9
   - apache
-  - Trivy
-  - Github Actions
-  - Robot Framework
+  - trivy
+  - github actions
+  - robot framework
 owners:
   - 20211380044
