@@ -68,6 +68,7 @@ const PEOPLE_EXTRA_ACCORDIONS: AccordionConfig[] = [
 export default function Filter({ type, tags, allTags }: FilterProps) {
   const [isShow, setIsShow] = useState(false);
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
+  const [openDetails, setOpenDetails] = useState<string | null>(null);
 
   const toggleShow = () => {
     setIsShow(!isShow);
@@ -75,6 +76,10 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
 
   const toggleAccordion = (accordionId: string) => {
     setOpenAccordion(openAccordion === accordionId ? null : accordionId);
+  };
+
+  const handleDetailsToggle = (detailsId: string) => {
+    setOpenDetails(openDetails === detailsId ? null : detailsId);
   };
 
   const createCourseAccordion = (
@@ -111,17 +116,25 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
         onClick={toggleShow}
       ></div>
 
-      <div className="absolute w-2/3 md:w-1/3 lg:w-1/4 max-w-[400px] min-h-screen right-0 top-0 bottom-0 bg-gray-100 shadow-lg p-4 z-50">
+      <div className="absolute w-2/3 md:w-1/3 lg:w-1/4 max-w-[400px] min-h-screen right-0 top-0 bottom-0 bg-gray-100 shadow-lg p-4 z-50 overflow-y-auto">
         <Icon
           icon="material-symbols:close"
           className="float-right text-2xl cursor-pointer"
           onClick={toggleShow}
         />
-        <h1 className="font-bold text-xl capitalize text-center mb-8">Tags</h1>
+        <h1 className="font-bold text-xl capitalize text-center mb-8">
+          Filtros
+        </h1>
         {type === 'codes' && (
           <>
-            <details className="mb-6">
-              <summary className="font-bold text-sm mb-3 text-gray-800 cursor-pointer hover:text-gray-600">
+            <details open={openDetails === 'cursos'} className="mb-6">
+              <summary
+                className="font-bold text-sm mb-3 text-gray-800 cursor-pointer hover:text-gray-600"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleDetailsToggle('cursos');
+                }}
+              >
                 Cursos
               </summary>
               {Object.entries(
@@ -209,8 +222,18 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
               const isCourseOpen = openAccordion === courseAccordionId;
 
               return (
-                <details key={courseTag} className="mb-6">
-                  <summary className="font-bold text-sm mb-3 text-gray-800 cursor-pointer hover:text-gray-600">
+                <details
+                  key={courseTag}
+                  open={openDetails === `course-${courseTag}`}
+                  className="mb-6"
+                >
+                  <summary
+                    className="font-bold text-sm mb-3 text-gray-800 cursor-pointer hover:text-gray-600"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleDetailsToggle(`course-${courseTag}`);
+                    }}
+                  >
                     {courseDisplayName}
                   </summary>
                   <div className="ml-2">
@@ -266,8 +289,14 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
               );
             })}
 
-            <details className="mb-6">
-              <summary className="font-bold text-sm mb-3 text-gray-800 cursor-pointer hover:text-gray-600">
+            <details open={openDetails === 'extra-codes'} className="mb-6">
+              <summary
+                className="font-bold text-sm mb-3 text-gray-800 cursor-pointer hover:text-gray-600"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleDetailsToggle('extra-codes');
+                }}
+              >
                 Extra
               </summary>
               <div className="ml-2 mt-2">
@@ -318,8 +347,18 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
           )
             .sort(([levelA], [levelB]) => levelA.localeCompare(levelB))
             .map(([level, coursesInLevel]) => (
-              <details key={level} className="mb-6">
-                <summary className="font-bold text-sm mb-3 text-gray-800 cursor-pointer hover:text-gray-600">
+              <details
+                key={level}
+                open={openDetails === `people-${level}`}
+                className="mb-6"
+              >
+                <summary
+                  className="font-bold text-sm mb-3 text-gray-800 cursor-pointer hover:text-gray-600"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleDetailsToggle(`people-${level}`);
+                  }}
+                >
                   {level}
                 </summary>
                 <div className="ml-2 mt-2">
@@ -359,8 +398,14 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
               </details>
             ))}
         {type === 'people' && (
-          <details className="mb-6">
-            <summary className="font-bold text-sm mb-3 text-gray-800 cursor-pointer hover:text-gray-600">
+          <details open={openDetails === 'extra-people'} className="mb-6">
+            <summary
+              className="font-bold text-sm mb-3 text-gray-800 cursor-pointer hover:text-gray-600"
+              onClick={(e) => {
+                e.preventDefault();
+                handleDetailsToggle('extra-people');
+              }}
+            >
               Extra
             </summary>
             <div className="mt-2">
