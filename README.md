@@ -13,11 +13,11 @@ name:
 avatar:
   github: https://github.com/luizchaves.png
 occupations:
-- id: 20051370420
-  type: student
-  campus: ifpb-jp
-  course: cstsi
-  isFinished: true
+  - id: 20051370420
+    type: student
+    campus: ifpb-jp
+    course: cstsi
+    isFinished: true
 addresses:
   github: https://github.com/luizchaves
   linkedin: https://www.linkedin.com/in/luizcarloschaves/
@@ -60,7 +60,7 @@ category:
   subject: ls-cstsi-jp
   semester: 2023.1
 tags:
-  - js
+  - javascript
   - astro.js
 owners:
   - 20051370420
