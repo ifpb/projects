@@ -1,18 +1,23 @@
+---
 name: CompetitivePOP
-description:
-  Um site web para Programação Competitiva focado na organização do competidor
-  através de estatísticas e classificação de problemas.
+description: Um site web para Programação Competitiva focado na organização do competidor através de estatísticas e classificação de problemas.
 addresses:
-  preview: https://github.com/kaeljane/CompetitivePOP/blob/main/preview.png?raw=true?raw=true
-  homepage: https://kaeljane.github.io/CompetitivePOP/
-  repository: https://github.com/kaeljane/CompetitivePOP
+  preview: https://github.com/kaeljane/CompetitivePOP/blob/main/preview.png
+  homepage: https://kaeljane.github.io/CompetitivePOP/
+  repository: https://github.com/kaeljane/CompetitivePOP
 category:
-  type: subject
-  subject: pw2-csbes-jp
-  semester: 2025.2
+  type: subject
+  subject: pw2
+  period: 2
+  semester: 2025.2
+  course: csbes
+  campus: ifpb-jp
 tags:
-  - html
-  - css
-  - javascript
+  - html
+  - css
+  - js
 owners:
-  - 202514320008
+  - 202514320008
+---
+
+
