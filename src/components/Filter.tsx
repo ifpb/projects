@@ -120,8 +120,10 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
         <h1 className="font-bold text-xl capitalize text-center mb-8">Tags</h1>
         {type === 'codes' && (
           <>
-            <div className="mb-6">
-              <h3 className="font-bold text-base mb-3 text-gray-800">Cursos</h3>
+            <details className="mb-6">
+              <summary className="font-bold text-sm mb-3 text-gray-800 cursor-pointer hover:text-gray-600">
+                Cursos
+              </summary>
               {Object.entries(
                 tags.course?.values?.reduce(
                   (acc: Record<string, string[]>, courseTag: string) => {
@@ -188,7 +190,7 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
                     </div>
                   );
                 })}
-            </div>
+            </details>
 
             {tags.course?.values?.map((courseTag: string) => {
               const [courseAbbr, campus] = courseTag.split('-');
@@ -207,64 +209,68 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
               const isCourseOpen = openAccordion === courseAccordionId;
 
               return (
-                <div key={courseTag} className="mb-6">
-                  <h3 className="font-bold text-base mb-3 text-gray-800">
+                <details key={courseTag} className="mb-6">
+                  <summary className="font-bold text-sm mb-3 text-gray-800 cursor-pointer hover:text-gray-600">
                     {courseDisplayName}
-                  </h3>
-                  {courseSubjects.map((subjectTag: string) => {
-                    const subjectData = getSubject(subjectTag);
-                    const subjectName =
-                      subjectData?.data.name.full || subjectTag;
+                  </summary>
+                  <div className="ml-2">
+                    {courseSubjects.map((subjectTag: string) => {
+                      const subjectData = getSubject(subjectTag);
+                      const subjectName =
+                        subjectData?.data.name.full || subjectTag;
 
-                    const subjectSemesters =
-                      tags.semester?.values?.filter((semesterTag: string) =>
-                        semesterTag.startsWith(`${subjectTag}-`)
-                      ) || [];
+                      const subjectSemesters =
+                        tags.semester?.values?.filter((semesterTag: string) =>
+                          semesterTag.startsWith(`${subjectTag}-`)
+                        ) || [];
 
-                    const subjectAccordionId = `codes-subject-${subjectTag}`;
-                    const isSubjectOpen = openAccordion === subjectAccordionId;
+                      const subjectAccordionId = `codes-subject-${subjectTag}`;
+                      const isSubjectOpen =
+                        openAccordion === subjectAccordionId;
 
-                    return (
-                      <div key={subjectTag} className="mb-4 ml-2">
-                        <Accordion
-                          id={subjectAccordionId}
-                          title={subjectName}
-                          isOpen={isSubjectOpen}
-                          onToggle={toggleAccordion}
-                        >
-                          <Badge
-                            key={`${subjectTag}-all`}
-                            url={`/projects/${type}/${subjectTag}/1`}
-                            value="Todos"
-                          />
-                          {subjectSemesters
-                            .sort((a, b) => {
-                              const semesterA = a.split('-').pop() || '';
-                              const semesterB = b.split('-').pop() || '';
-                              return semesterB.localeCompare(semesterA);
-                            })
-                            .map((semesterTag) => {
-                              const semester = semesterTag.split('-').pop();
-                              return (
-                                <Badge
-                                  key={semesterTag}
-                                  url={`/projects/${type}/${semesterTag}/1`}
-                                  value={semester || ''}
-                                />
-                              );
-                            })}
-                        </Accordion>
-                      </div>
-                    );
-                  })}
-                </div>
+                      return (
+                        <div key={subjectTag} className="mb-4 ml-2">
+                          <Accordion
+                            id={subjectAccordionId}
+                            title={subjectName}
+                            isOpen={isSubjectOpen}
+                            onToggle={toggleAccordion}
+                          >
+                            <Badge
+                              key={`${subjectTag}-all`}
+                              url={`/projects/${type}/${subjectTag}/1`}
+                              value="Todos"
+                            />
+                            {subjectSemesters
+                              .sort((a, b) => {
+                                const semesterA = a.split('-').pop() || '';
+                                const semesterB = b.split('-').pop() || '';
+                                return semesterB.localeCompare(semesterA);
+                              })
+                              .map((semesterTag) => {
+                                const semester = semesterTag.split('-').pop();
+                                return (
+                                  <Badge
+                                    key={semesterTag}
+                                    url={`/projects/${type}/${semesterTag}/1`}
+                                    value={semester || ''}
+                                  />
+                                );
+                              })}
+                          </Accordion>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </details>
               );
             })}
 
-            {/* Seção Extra */}
-            <div className="mb-6">
-              <h3 className="font-bold text-base mb-3 text-gray-800">Extra</h3>
-              <div className="ml-2">
+            <details className="mb-6">
+              <summary className="font-bold text-sm mb-3 text-gray-800 cursor-pointer hover:text-gray-600">
+                Extra
+              </summary>
+              <div className="ml-2 mt-2">
                 {CODES_EXTRA_ACCORDIONS.map((accordion) => {
                   const isOpen = openAccordion === accordion.id;
 
@@ -288,7 +294,7 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
                   );
                 })}
               </div>
-            </div>
+            </details>
           </>
         )}
 
@@ -312,67 +318,76 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
           )
             .sort(([levelA], [levelB]) => levelA.localeCompare(levelB))
             .map(([level, coursesInLevel]) => (
-              <div key={level} className="mb-6">
-                <h3 className="font-bold text-base mb-3 text-gray-800">
+              <details key={level} className="mb-6">
+                <summary className="font-bold text-sm mb-3 text-gray-800 cursor-pointer hover:text-gray-600">
                   {level}
-                </h3>
-                {coursesInLevel
-                  .sort(([a], [b]) =>
-                    getCourseByAbbreviation(a).data.name.localeCompare(
-                      getCourseByAbbreviation(b).data.name
+                </summary>
+                <div className="ml-2 mt-2">
+                  {coursesInLevel
+                    .sort(([a], [b]) =>
+                      getCourseByAbbreviation(a).data.name.localeCompare(
+                        getCourseByAbbreviation(b).data.name
+                      )
                     )
-                  )
-                  .map(([course, semesters]: [string, string[]]) => {
-                    const accordion = createCourseAccordion(course, semesters);
-                    const isOpen = openAccordion === accordion.id;
+                    .map(([course, semesters]: [string, string[]]) => {
+                      const accordion = createCourseAccordion(
+                        course,
+                        semesters
+                      );
+                      const isOpen = openAccordion === accordion.id;
 
-                    return (
-                      <div key={course} className="mb-4 ml-2">
-                        <Accordion
-                          id={accordion.id}
-                          title={accordion.title}
-                          isOpen={isOpen}
-                          onToggle={toggleAccordion}
-                        >
-                          {accordion.badges.map((badge) => (
-                            <Badge
-                              key={badge.value}
-                              url={badge.url}
-                              value={badge.value}
-                            />
-                          ))}
-                        </Accordion>
-                      </div>
-                    );
-                  })}
-              </div>
+                      return (
+                        <div key={course} className="mb-4 ml-2">
+                          <Accordion
+                            id={accordion.id}
+                            title={accordion.title}
+                            isOpen={isOpen}
+                            onToggle={toggleAccordion}
+                          >
+                            {accordion.badges.map((badge) => (
+                              <Badge
+                                key={badge.value}
+                                url={badge.url}
+                                value={badge.value}
+                              />
+                            ))}
+                          </Accordion>
+                        </div>
+                      );
+                    })}
+                </div>
+              </details>
             ))}
         {type === 'people' && (
-          <div className="mb-6">
-            <h3 className="font-bold text-base mb-3 text-gray-800">Extra</h3>
-            {PEOPLE_EXTRA_ACCORDIONS.map((accordion) => {
-              const isOpen = openAccordion === accordion.id;
+          <details className="mb-6">
+            <summary className="font-bold text-sm mb-3 text-gray-800 cursor-pointer hover:text-gray-600">
+              Extra
+            </summary>
+            <div className="mt-2">
+              {PEOPLE_EXTRA_ACCORDIONS.map((accordion) => {
+                const isOpen = openAccordion === accordion.id;
 
-              return (
-                <div key={accordion.id} className="mb-4 ml-2">
-                  <Accordion
-                    id={accordion.id}
-                    title={accordion.title}
-                    isOpen={isOpen}
-                    onToggle={toggleAccordion}
-                  >
-                    {accordion.badges.map((badge) => (
-                      <Badge
-                        key={badge.value}
-                        url={badge.url}
-                        value={badge.value}
-                      />
-                    ))}
-                  </Accordion>
-                </div>
-              );
-            })}
-          </div>
+                return (
+                  <div key={accordion.id} className="mb-4 ml-2">
+                    <Accordion
+                      id={accordion.id}
+                      title={accordion.title}
+                      isOpen={isOpen}
+                      onToggle={toggleAccordion}
+                    >
+                      {accordion.badges.map((badge) => (
+                        <Badge
+                          key={badge.value}
+                          url={badge.url}
+                          value={badge.value}
+                        />
+                      ))}
+                    </Accordion>
+                  </div>
+                );
+              })}
+            </div>
+          </details>
         )}
       </div>
     </>
