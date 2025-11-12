@@ -4,6 +4,7 @@ import { getCourseByAbbreviation, getSemesterCourses } from '@/helpers/courses';
 import { getSubject } from '@/helpers/subjects';
 import Accordion from './Accordion';
 import Badge from './Badge';
+import { getAllProjectTags } from '@/helpers/tags';
 
 interface TagGroup {
   name: string;
@@ -13,7 +14,7 @@ interface TagGroup {
 interface FilterProps {
   type: string;
   tags: { course: TagGroup; semester: TagGroup; subject?: TagGroup };
-  allTags: string[];
+  peopleTags: string[];
 }
 
 interface AccordionConfig {
@@ -22,6 +23,8 @@ interface AccordionConfig {
   badges: { url: string; value: string }[];
 }
 
+const projectTags = await getAllProjectTags();
+
 const CODES_EXTRA_ACCORDIONS: AccordionConfig[] = [
   {
     id: 'codes-type',
@@ -29,7 +32,7 @@ const CODES_EXTRA_ACCORDIONS: AccordionConfig[] = [
     badges: [
       { url: '/projects/codes/subject/1', value: 'Disciplina' },
       { url: '/projects/codes/research/1', value: 'Pesquisa' },
-      // { url: '/projects/codes/extension/1', value: 'Extensão' },
+      { url: '/projects/codes/extension/1', value: 'Extensão' },
       { url: '/projects/codes/open%20source/1', value: 'Open Source' },
     ],
   },
@@ -37,6 +40,14 @@ const CODES_EXTRA_ACCORDIONS: AccordionConfig[] = [
     id: 'codes-resource',
     title: 'Recursos',
     badges: [{ url: '/projects/codes/figma/1', value: 'figma' }],
+  },
+  {
+    id: 'codes-tags',
+    title: 'Tags',
+    badges: projectTags.map((tag) => ({
+      url: `/projects/codes/${encodeURIComponent(tag)}/1`,
+      value: tag,
+    })),
   },
 ];
 
@@ -65,7 +76,7 @@ const PEOPLE_EXTRA_ACCORDIONS: AccordionConfig[] = [
   },
 ];
 
-export default function Filter({ type, tags, allTags }: FilterProps) {
+export default function Filter({ type, tags, peopleTags }: FilterProps) {
   const [isShow, setIsShow] = useState(false);
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
   const [openDetails, setOpenDetails] = useState<string | null>(null);
@@ -88,7 +99,7 @@ export default function Filter({ type, tags, allTags }: FilterProps) {
   ): AccordionConfig => {
     const badges = [{ url: `/projects/people/${course}/1`, value: 'Alunos' }];
 
-    if (allTags.includes(`egresso-${course}`)) {
+    if (peopleTags.includes(`egresso-${course}`)) {
       badges.push({
         url: `/projects/people/egresso-${course}/1`,
         value: 'Egressos',

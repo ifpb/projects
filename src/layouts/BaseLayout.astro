@@ -16,7 +16,7 @@ export interface Propos {
 
 const { pageTitle, tags, type, pageFindFilter } = Astro.props;
 
-const allTags = tags ? await getAllPersonTags() : [];
+const peopleTags = tags ? await getAllPersonTags() : [];
 
 const headerTitle = pageTitle ? `IFPB | ${pageTitle}` : 'IFPB Code';
 ---
@@ -37,7 +37,12 @@ const headerTitle = pageTitle ? `IFPB | ${pageTitle}` : 'IFPB Code';
     <div class="container lg:max-w-screen-lg mx-auto px-4 py-16">
       {
         tags && (
-          <Filter type={type} tags={tags} allTags={allTags} client:visible />
+          <Filter
+            type={type}
+            tags={tags}
+            peopleTags={peopleTags}
+            client:visible
+          />
         )
       }
 
