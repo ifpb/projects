@@ -15,9 +15,9 @@ category:
 tags:
   - maven
   - lombok
-  - spring-boot
-  - spring-session
-  - spring-security
+  - spring boot
+  - spring session
+  - spring security
   - jpa
   - postgresql
   - thymeleaf

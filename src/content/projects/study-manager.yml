@@ -11,13 +11,13 @@ category:
   subject: pw1-cstsi-jp
   semester: 2024.1
 tags:
-  - js
+  - javascript
   - html
   - scss
-  - ts
+  - typescript
   - angular
   - java
-  - spring-boot
+  - spring boot
   - postgresql
   - firestore
 owners:

@@ -7,12 +7,12 @@ category:
   subject: pd-cstsi-jp
   semester: 2024.2
 tags:
-  - js
+  - javascript
   - nestjs
   - flask
   - distributed systems
   - python
-  - vuejs
+  - vue.js
 owners:
   - 20221370007
   - 20221370019

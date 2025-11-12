@@ -12,9 +12,9 @@ category:
   semester: 2022.2
 tags:
   - bootstrap
-  - chartjs
+  - chart.js
   - leafletjs
-  - express
+  - express.js
   - prisma
   - jwt
   - bcrypt

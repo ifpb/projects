@@ -9,10 +9,10 @@ category:
   semester: 2024.2
 tags:
   - angular
-  - spring
+  - spring boot
   - firestore
-  - ts
-  - js
+  - typescript
+  - javascript
   - java
 owners:
   - 20231370018

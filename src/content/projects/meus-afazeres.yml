@@ -9,11 +9,11 @@ category:
   semester: 2024.2
 tags:
   - angular
-  - ts
+  - typescript
   - html
   - tailwind
   - java
-  - spring-boot
+  - spring boot
   - postgresql
   - firestore
   - firebase authenticate

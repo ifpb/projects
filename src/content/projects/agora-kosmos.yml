@@ -16,7 +16,7 @@ tags:
   - docker compose
   - redis
   - rabbitmq
-  - postgres
+  - postgresql
   - python
   - makefile
   - gemini

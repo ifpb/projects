@@ -14,7 +14,7 @@ category:
 tags:
   - android
   - firebase
-  - firebase firestore
+  - firestore
   - gradle
   - jetpack compose
   - json
