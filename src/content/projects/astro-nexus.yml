@@ -5,7 +5,7 @@ description:
   blogs especializados e conteúdo sobre descobertas espaciais, tornando o conhecimento
   astronômico acessível e envolvente para entusiastas de todas as idades.
 addresses:
-  preview: https://raw.githubusercontent.com/Igor-AI-Coder/AstroNexus/refs/heads/main/preview.png
+  preview: https://github.com/Igor-AI-Coder/AstroNexus/blob/main/preview.png?raw=true
   homepage: https://igor-ai-coder.github.io/AstroNexus/
   repository: https://github.com/Igor-AI-Coder/AstroNexus
 category:

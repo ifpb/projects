@@ -3,7 +3,7 @@ description:
   Projeto tem objetivo de criar um site de venda de carros exibindo informações
   de valores e ficha técnica.
 addresses:
-  preview: https://raw.githubusercontent.com/danielborb09/Loja-Automotiva/main/sitepreview.png
+  preview: https://github.com/danielborb09/Loja-Automotiva/blob/main/sitepreview.png?raw=true
   homepage: https://danielborb09.github.io/Loja-Automotiva/
   repository: https://github.com/danielborb09/Loja-Automotiva
 category:

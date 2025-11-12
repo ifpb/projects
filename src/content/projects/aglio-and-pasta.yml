@@ -1,7 +1,7 @@
 name: Aglio & Pasta
 description: Um restaurante com pratos italianos irresistíveis!
 addresses:
-  preview: https://raw.githubusercontent.com/ArthurLacerda13/aglio-and-pasta/refs/heads/main/home-print.png
+  preview: https://github.com/ArthurLacerda13/aglio-and-pasta/blob/main/home-print.png?raw=true
   homepage: https://aglio-and-pasta.vercel.app
   repository: https://github.com/ArthurLacerda13/aglio-and-pasta
 category:

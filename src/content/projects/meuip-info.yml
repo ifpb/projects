@@ -1,7 +1,7 @@
 name: Meu IP.Info
 description: Este portal tem como objetivo informar qual é seu ip publico.
 addresses:
-  preview: https://raw.githubusercontent.com/yWestSide/projeto-dw/main/site-main/site-main/img/1.png
+  preview: https://github.com/yWestSide/projeto-dw/blob/main/site-main/site-main/img/1.png?raw=true
   repository: https://github.com/yWestSide/projeto-dw
 category:
   type: subject

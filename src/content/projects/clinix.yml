@@ -1,7 +1,7 @@
 name: Clinix
 description: Sistema para gestão de saúde e clínicas médicas.
 addresses:
-  preview: https://raw.githubusercontent.com/Clinix-Brazil/clinix-front/refs/heads/main/preview.png
+  preview: https://github.com/Clinix-Brazil/clinix-front/blob/main/preview.png?raw=true
   repository: https://github.com/Clinix-Brazil/clinix-front
 category:
   type: subject

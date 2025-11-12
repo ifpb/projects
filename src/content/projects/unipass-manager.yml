@@ -3,7 +3,7 @@ description:
   Este projeto se trata da interface web do administrador de um sistema
   de transporte municipal.
 addresses:
-  preview: https://raw.githubusercontent.com/jandersn01/University-transportation-management-system/refs/heads/main/imagemunipassprototipo.png
+  preview: https://github.com/jandersn01/University-transportation-management-system/blob/main/imagemunipassprototipo.png?raw=true
   repository: https://github.com/jandersn01/University-transportation-management-system
 category:
   type: subject

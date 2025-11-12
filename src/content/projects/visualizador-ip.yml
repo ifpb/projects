@@ -1,7 +1,7 @@
 name: Visualizador de IP
 description: Um site de visualizador de IP
 addresses:
-  preview: https://raw.githubusercontent.com/arielelaiane2017/Projeto-DW/main/ip-checker/ab.png
+  preview: https://github.com/arielelaiane2017/Projeto-DW/blob/main/ip-checker/ab.png?raw=true
   repository: https://github.com/arielelaiane2017/Projeto-DW
 category:
   type: subject

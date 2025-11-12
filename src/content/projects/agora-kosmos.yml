@@ -3,7 +3,7 @@ description:
   Plataforma de investimentos utilizando abordagem de gameficação e com
   suporte a chatbot gemini para consultas.
 addresses:
-  preview: https://raw.githubusercontent.com/rickfsoares/Agora-Kosmos/refs/heads/main/agora-home.png
+  preview: https://github.com/rickfsoares/Agora-Kosmos/blob/main/agora-home.png?raw=true
   repository: https://github.com/rickfsoares/Agora-Kosmos
 category:
   type: subject

@@ -5,7 +5,7 @@ description:
   Será utilizado por alunos que buscam melhorar seus estudos e organizações e professores
   que buscam otimizar seu tempo na busca de materiais escolares.
 addresses:
-  preview: https://raw.githubusercontent.com/ebrunovs/piloto-app-final/refs/heads/main/public/preview.png
+  preview: https://github.com/ebrunovs/piloto-app-final/blob/main/public/preview.png?raw=true
   repository: https://github.com/ebrunovs/piloto-app-final
 category:
   type: subject

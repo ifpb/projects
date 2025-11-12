@@ -4,7 +4,7 @@ description:
   de uma interface web, utilizando como base o protocolo SIP.
 addresses:
   repository: https://github.com/Julio-Caio/SIPWave-IFPB-DW
-  preview: https://raw.githubusercontent.com/Julio-Caio/SIPWave-IFPB-DW/refs/heads/main/preview/image-project.png
+  preview: https://github.com/Julio-Caio/SIPWave-IFPB-DW/blob/main/preview/image-project.png?raw=true
   homepage: https://Julio-Caio.github.io/SIPWave-IFPB-DW/public/
   template: https://www.figma.com/design/s6mB69OHaQMJbiCJ7BtXY0/gerenciador-de-chamadas-SIP
 category:

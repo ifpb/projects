@@ -4,7 +4,7 @@ description:
   de rede, observando o caminho que os pacotes percorrem entre a origem e um host
   de destino.
 addresses:
-  preview: https://raw.githubusercontent.com/antonyllz/HopInsight/refs/heads/main/front/img/preview.png
+  preview: https://github.com/antonyllz/HopInsight/blob/main/front/img/preview.png?raw=true
   repository: https://github.com/antonyllz/HopInsight
   homepage: https://antonyllz.github.io/HopInsight/front/html/index.html
 category:

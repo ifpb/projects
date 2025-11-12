@@ -3,7 +3,7 @@ description:
   Projeto de aplicação web simples que consiste em um site de cafeteria
   com seu respectivo portifólio.
 addresses:
-  preview: https://raw.githubusercontent.com/caiomayan/sweet-coffee/refs/heads/main/img/preview.png
+  preview: https://github.com/caiomayan/sweet-coffee/blob/main/img/preview.png?raw=true
   homepage: https://caiomayan.github.io/sweet-coffee/
   repository: https://github.com/caiomayan/sweet-coffee
 category:

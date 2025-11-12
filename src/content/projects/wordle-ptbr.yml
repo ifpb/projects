@@ -3,7 +3,7 @@ description:
   Projeto baseado no Termo e Wordle. Um jogo rápido de adivinhar a palavra
   em 6 tentativas.
 addresses:
-  preview: https://raw.githubusercontent.com/JoaoPedro-MAAR/Termo/main/preview.png
+  preview: https://github.com/JoaoPedro-MAAR/Termo/blob/main/preview.png?raw=true
   repository: https://github.com/JoaoPedro-MAAR/Termo
 category:
   type: subject

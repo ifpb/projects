@@ -1,7 +1,7 @@
 name: Academia
 description: Projeto de exibição de informações sobre uma academia.
 addresses:
-  preview: https://raw.githubusercontent.com/viniciusantos2/academia/main/preview.png
+  preview: https://github.com/viniciusantos2/academia/blob/main/preview.png?raw=true
   homepage: https://viniciusantos2.github.io/academia/
   repository: https://github.com/viniciusantos2/academia
 category:

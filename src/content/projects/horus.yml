@@ -3,7 +3,7 @@ description:
   Projeto com foco em scaner de portas e análise de vulnerabilidades de
   redes.
 addresses:
-  preview: https://raw.githubusercontent.com/diegosls/horus/refs/heads/main/preview.png
+  preview: https://github.com/diegosls/horus/blob/main/preview.png?raw=true
   homepage: https://diegosls.github.io/horus
   repository: https://github.com/diegosls/horus
 category:

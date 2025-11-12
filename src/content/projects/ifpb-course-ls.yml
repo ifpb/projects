@@ -3,7 +3,7 @@ description:
   Este portal tem como objetivo compartilhar o conteúdo da disciplina de
   Linguagem de Script do curso de Sistemas para Internet no IFPB-JP.
 addresses:
-  preview: https://raw.githubusercontent.com/ifpb/ls/main/preview.png
+  preview: https://github.com/ifpb/ls/blob/main/preview.png?raw=true
   homepage: https://ifpb.github.io/ls
   repository: https://github.com/ifpb/ls
 category:

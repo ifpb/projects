@@ -4,7 +4,7 @@ description:
   acompanharem suas leituras, organizarem bibliotecas pessoais e descobrirem novos
   livros.
 addresses:
-  preview: https://raw.githubusercontent.com/vitor-igor/PWeb1_Paggio/refs/heads/main/preview.png
+  preview: https://github.com/vitor-igor/PWeb1_Paggio/blob/main/preview.png?raw=true
   repository: https://github.com/vitor-igor/PWeb1_Paggio
 category:
   type: subject

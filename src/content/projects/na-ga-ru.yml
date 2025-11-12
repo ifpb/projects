@@ -1,7 +1,7 @@
 name: Na Ga Ru
 description: Portal informativo sobre animes.
 addresses:
-  preview: https://raw.githubusercontent.com/LucasAndrade912/nan-ga-ru/main/preview.png
+  preview: https://github.com/LucasAndrade912/nan-ga-ru/blob/main/preview.png?raw=true
   repository: https://github.com/LucasAndrade912/nan-ga-ru
 category:
   type: subject

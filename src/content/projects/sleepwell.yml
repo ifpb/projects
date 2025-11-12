@@ -6,7 +6,7 @@ description:
   e dicas para melhorar o descanso. A interface é moderna, com tema escuro, e foi
   construída utilizando o Jetpack Compose.
 addresses:
-  preview: https://raw.githubusercontent.com/victoralves475/Sleepwellwell/refs/heads/main/preview_img.jpeg
+  preview: https://github.com/victoralves475/Sleepwellwell/blob/main/preview_img.jpeg?raw=true
   repository: https://github.com/victoralves475/Sleepwellwell
 category:
   type: subject

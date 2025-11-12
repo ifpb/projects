@@ -1,7 +1,7 @@
 name: Site de promoções
 description: Site para promoções
 addresses:
-  repository: https://github.com/MariaLuizaSantana21/Site-de-Promo-es-Trabalho-de-JS.git
+  repository: https://github.com/MariaLuizaSantana21/Site-de-Promo-es-Trabalho-de-JS
 category:
   type: subject
   subject: ls-cstsi-jp

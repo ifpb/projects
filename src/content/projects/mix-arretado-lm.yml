@@ -1,7 +1,7 @@
 name: Mix Arretado
 description: proposta de site para o restaurante Mix Arretado
 addresses:
-  preview: https://raw.githubusercontent.com/ian2z/projeto-html/refs/heads/main/imagens/print.png
+  preview: https://github.com/ian2z/projeto-html/blob/main/imagens/print.png?raw=true
   homepage: https://ian2z.github.io/projeto-html/
   repository: https://github.com/ian2z/projeto-html
 category:

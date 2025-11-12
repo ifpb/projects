@@ -5,7 +5,7 @@ description:
   organização financeira, onde os usuários podem cadastrar, editar, remover e visualizar
   as transações realizadas, com a funcionalidade de autenticação de usuários.
 addresses:
-  preview: https://raw.githubusercontent.com/Phenrique-sousa/FinanZen-pweb1-final/refs/heads/main/preview.png
+  preview: https://github.com/Phenrique-sousa/FinanZen-pweb1-final/blob/main/preview.png?raw=true
   homepage: https://github.com/Phenrique-sousa/FinanZen-pweb1-final
   repository: https://github.com/Phenrique-sousa/FinanZen-pweb1-final
 category:

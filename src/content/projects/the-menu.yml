@@ -1,7 +1,7 @@
 name: The Menu
 description: Este projeto tem como objetivo ser um agregador de receitas
 addresses:
-  preview: https://raw.githubusercontent.com/SamaraPriscilafarias/The_Menu/refs/heads/main/image.png
+  preview: https://github.com/SamaraPriscilafarias/The_Menu/blob/main/image.png?raw=true
   homepage: https://samarapriscilafarias.github.io/The_Menu/site/index.html
   repository: https://github.com/SamaraPriscilafarias/The_Menu
 category:

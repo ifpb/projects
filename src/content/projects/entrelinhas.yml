@@ -3,7 +3,7 @@ description:
   Projeto que visa uma aplicação web que forneça funcionalidades que torne
   possível o controle emocional através do registro de momentos.
 addresses:
-  preview: https://raw.githubusercontent.com/Entrelinhas-Web/Entrelinhas-web/refs/heads/main/preview.jpg
+  preview: https://github.com/Entrelinhas-Web/Entrelinhas-web/blob/main/preview.jpg?raw=true
   homepage: https://entrelinhas-web.github.io/Entrelinhas-web/
   repository: https://github.com/Entrelinhas-Web/Entrelinhas-web/
 category:

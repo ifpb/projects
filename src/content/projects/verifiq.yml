@@ -3,7 +3,7 @@ description:
   Sistema web desenvolvido com a proposta de auxiliar pessoas a identificarem
   conteúdos maliciosos da Web.
 addresses:
-  preview: https://raw.githubusercontent.com/sofialeals/projeto-verifiq/main/preview.png
+  preview: https://github.com/sofialeals/projeto-verifiq/blob/main/preview.png?raw=true
   homepage: https://stackblitz.com/github/sofialeals/projeto-verifiq
   repository: https://github.com/sofialeals/projeto-verifiq
 category:

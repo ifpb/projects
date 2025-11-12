@@ -1,7 +1,7 @@
 name: Tapiocaria da Rosa
 description: Esta página tem como objetivo ser uma loja virtual de tapioca.
 addresses:
-  preview: https://raw.githubusercontent.com/MessiasTeixeira/Tapiocaria.Projeto/main/messiasteixeira.github.io_Tapiocaria.Projeto_.png
+  preview: https://github.com/MessiasTeixeira/Tapiocaria.Projeto/blob/main/messiasteixeira.github.io_Tapiocaria.Projeto_.png?raw=true
   homepage: https://messiasteixeira.github.io/Tapiocaria.Projeto/
   repository: https://github.com/MessiasTeixeira/Tapiocaria.Projeto
 category:

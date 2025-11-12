@@ -3,7 +3,7 @@ description:
   Este site mostra o cardápio de um restaurante fictício, a localização
   e suas avaliações.
 addresses:
-  preview: https://raw.githubusercontent.com/teooodbs/restaurante-winx/refs/heads/main/PreviewRestaurante.png
+  preview: https://github.com/teooodbs/restaurante-winx/blob/main/PreviewRestaurante.png?raw=true
   homepage: https://teooodbs.github.io/restaurante-winx/
   repository: https://github.com/teooodbs/restaurante-winx
 category:

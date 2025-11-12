@@ -3,7 +3,7 @@ description:
   Lume é um aplicativo desenvolvido para facilitar o registro e acompanhamento
   de consumos culturais, como filmes, séries, livros e músicas.
 addresses:
-  preview: https://raw.githubusercontent.com/niryb/Lume/refs/heads/main/preview.png
+  preview: https://github.com/niryb/Lume/blob/main/preview.png?raw=true
   repository: https://github.com/niryb/Lume
 category:
   type: subject

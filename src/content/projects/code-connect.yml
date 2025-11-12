@@ -3,7 +3,7 @@ description:
   CodeConnect é uma plataforma de cursos online que oferece uma ampla gama
   de cursos, tanto gratuitos quanto pagos, cobrindo diversas áreas de conhecimento.
 addresses:
-  preview: https://raw.githubusercontent.com/CaioBernardelli/CodeConnect/refs/heads/master/CodeConnect.png
+  preview: https://github.com/CaioBernardelli/CodeConnect/blob/master/CodeConnect.png?raw=true
   repository: https://github.com/CaioBernardelli/CodeConnect
 category:
   type: subject

@@ -1,7 +1,7 @@
 name: IFCARS
 description: IFCARS é uma loja virtual de carros esportivos.
 addresses:
-  preview: https://raw.githubusercontent.com/2daniell/ifcars/refs/heads/tailwind/assets/preview.png
+  preview: https://github.com/2daniell/ifcars/blob/tailwind/assets/preview.png?raw=true
   homepage: https://2daniell.github.io/ifcars/
   repository: https://github.com/2daniell/ifcars
 category:

@@ -3,7 +3,7 @@ description:
   Controle financeiro pessoal completo - gerencie contas, transações, categorias,
   assinaturas e faturas em um só lugar.
 addresses:
-  preview: https://raw.githubusercontent.com/uGustavoB/FinSupp-Angular/refs/heads/main/preview.png
+  preview: https://github.com/uGustavoB/FinSupp-Angular/blob/main/preview.png?raw=true
   homepage: https://finsupp.vercel.app/
   repository: https://github.com/uGustavoB/FinSupp-Angular
 category:

@@ -3,7 +3,7 @@ description:
   O site tem como objetivo mostrar aos estudantes do curso de Sistemas
   para Internet as suas atividades.
 addresses:
-  preview: https://raw.githubusercontent.com/arthurfaraujo/si-activities/master/preview.png
+  preview: https://github.com/arthurfaraujo/si-activities/blob/master/preview.png?raw=true
   homepage: https://arthurfaraujo.github.io/si-activities
   repository: https://github.com/arthurfaraujo/si-activities
 category:

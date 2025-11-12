@@ -1,7 +1,7 @@
 name: Study and Sync
 description: Sistema academico, normal.
 addresses:
-  preview: https://raw.githubusercontent.com/lukilme/final-pweb-study-and-sync/refs/heads/main/docs/tumbnail.png
+  preview: https://github.com/lukilme/final-pweb-study-and-sync/blob/main/docs/tumbnail.png?raw=true
   repository: https://github.com/lukilme/final-pweb-study-and-sync
 category:
   type: subject

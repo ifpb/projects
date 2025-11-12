@@ -1,7 +1,7 @@
 name: DW Cursos
 description: Uma página de uma escola de programação fictícia
 addresses:
-  preview: https://raw.githubusercontent.com/Davilt4/projeto-avaliativo-lm/main/preview.png
+  preview: https://github.com/Davilt4/projeto-avaliativo-lm/blob/main/preview.png?raw=true
   homepage: https://davilt4.github.io/projeto-avaliativo-lm/
   repository: https://github.com/Davilt4/projeto-avaliativo-lm
 category:

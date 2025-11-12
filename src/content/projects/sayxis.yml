@@ -3,7 +3,7 @@ description:
   O SAYXIS é uma rede social para fotógrafos que desejam compartilhar fotos
   e se conectar com outros fotógrafos.
 addresses:
-  preview: https://raw.githubusercontent.com/joseguilherme-fs/SayXis/main/preview.png
+  preview: https://github.com/joseguilherme-fs/SayXis/blob/main/preview.png?raw=true
   repository: https://github.com/joseguilherme-fs/SayXis
 category:
   type: subject

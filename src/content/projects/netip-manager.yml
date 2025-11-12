@@ -4,7 +4,7 @@ description:
   de rede a controlar a alocação de endereços IP (estáticos e dinâmicos) em uma rede,
   evitando conflitos e simplificando a gestão de dispositivos conectados.
 addresses:
-  preview: https://raw.githubusercontent.com/jantonytony2023/netipmanager/refs/heads/main/preview.png
+  preview: https://github.com/jantonytony2023/netipmanager/blob/main/preview.png?raw=true
   homepage: https://jantonytony2023.github.io/netipmanager/
   repository: https://github.com/jantonytony2023/netipmanager/
 category:

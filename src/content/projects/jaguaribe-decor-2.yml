@@ -1,7 +1,7 @@
 name: Jaguaribe Decor
 description: Loja de Produtos de Decoração.
 addresses:
-  preview: https://raw.githubusercontent.com/michelgft/Jaguaribe_Decor/main/preview.png
+  preview: https://github.com/michelgft/Jaguaribe_Decor/blob/main/preview.png?raw=true
   homepage: https://michelgft.github.io/Jaguaribe_Decor/
   repository: https://github.com/michelgft/Jaguaribe_Decor
   template: https://figma.com/design/8beUbNTgJeIn3xBforwMVF/Jaguaribe-Decor

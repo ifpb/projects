@@ -3,7 +3,7 @@ description:
   Site de uma agência de turismo dedicado a incentivar as pessoas a explorarem
   a riqueza cultural de varios países.
 addresses:
-  preview: https://raw.githubusercontent.com/maneuu/Explora-Mais/refs/heads/main/preview.png
+  preview: https://github.com/maneuu/Explora-Mais/blob/main/preview.png?raw=true
   homepage: https://maneuu.github.io/Explora-Mais/
   repository: https://github.com/maneuu/Explora-Mais
 category:

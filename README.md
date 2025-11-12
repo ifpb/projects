@@ -51,7 +51,7 @@ O próximo passo seria incluir os dados do projeto adicionando um arquivo seguin
 name: Home da UAI-IFPB
 description: Este portal tem como objetivo ser um landing page da UAI do IFPB.
 addresses:
-  preview: https://raw.githubusercontent.com/ifpb/ifpb.github.io/main/preview.png
+  preview: https://github.com/ifpb/ifpb.github.io/blob/main/preview.png?raw=true
   homepage: https://ifpb.github.io/
   repository: https://github.com/ifpb/ifpb.github.io
   template: https://www.figma.com/design/tgIYBEusxWkzNX803dBgUs/ifpb.github.io?node-id=0-1&t=Y6u5fodNP8JCcDHw-1

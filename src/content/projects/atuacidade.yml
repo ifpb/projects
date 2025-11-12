@@ -3,7 +3,7 @@ description:
   Aplicação Android desenvolvida com a proposta de oferecer aos usuários
   um espaço para dar destaque aos problemas da cidade em que vivem.
 addresses:
-  preview: https://raw.githubusercontent.com/lucas-elds/atuacidade/main/preview.png
+  preview: https://github.com/lucas-elds/atuacidade/blob/main/preview.png?raw=true
   repository: https://github.com/lucas-elds/atuacidade
 category:
   type: subject

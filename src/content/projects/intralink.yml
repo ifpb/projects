@@ -1,7 +1,7 @@
 name: Intralink
 description: Projeto para verificar portas ativas e fazer DNS reverso.
 addresses:
-  preview: https://raw.githubusercontent.com/maricleiada/intranet/refs/heads/main/Preview.png
+  preview: https://github.com/maricleiada/intranet/blob/main/Preview.png?raw=true
   homepage: https://maricleiada.github.io/intranet/
   repository: https://github.com/maricleiada/intranet
 category:

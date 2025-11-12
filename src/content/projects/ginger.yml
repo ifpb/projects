@@ -3,8 +3,8 @@ description:
   Aplicação web feita com o propósito de execução do comando Traceroute
   e descobertas DNS para qualquer IP da internet.
 addresses:
-  preview: https://raw.githubusercontent.com/l1ckyndev/Project-DW/main/preview.png
-  repository: https://github.com/l1ckyndev/Project-DW.git
+  preview: https://github.com/l1ckyndev/Project-DW/blob/main/preview.png?raw=true
+  repository: https://github.com/l1ckyndev/Project-DW
 category:
   type: subject
   subject: dw-cstrc-jp

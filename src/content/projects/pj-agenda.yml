@@ -1,7 +1,7 @@
 name: PJ Agenda
 description: Agenda para serviços de Empresa
 addresses:
-  preview: https://raw.githubusercontent.com/itallume/AgendaPJ/refs/heads/firebase/src/app/shared/images/img.png
+  preview: https://github.com/itallume/AgendaPJ/blob/firebase/src/app/shared/images/img.png?raw=true
   repository: https://github.com/itallume/AgendaPJ
 category:
   type: subject

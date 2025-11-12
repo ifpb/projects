@@ -4,7 +4,7 @@ description:
   WEB e API's desenvolvido na disciplina de Desenvolvimento WEB do curso de Tecnologia
   de Redes de Computadores do IFPB - Campus JP
 addresses:
-  preview: https://raw.githubusercontent.com/oneabrante/Project_API_DW/master/public/assets/pattention1.png
+  preview: https://github.com/oneabrante/Project_API_DW/blob/master/public/assets/pattention1.png?raw=true
   repository: https://github.com/oneabrante/Project_API_DW
 category:
   type: subject

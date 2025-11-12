@@ -3,7 +3,7 @@ description:
   O NPLMW é uma aplicação web que tem como objetivo facilitar a configuração
   de equipamentos de rede, utilizando o NAPALM como ferramenta de automação.
 addresses:
-  preview: https://raw.githubusercontent.com/mr-reinaldo/NPLMW/main/printscreen/image.png
+  preview: https://github.com/mr-reinaldo/NPLMW/blob/main/printscreen/image.png?raw=true
   repository: https://github.com/mr-reinaldo/NPLMW
 category:
   type: research

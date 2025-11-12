@@ -5,7 +5,7 @@ description:
   visualizar suas músicas, adicionar novas, favoritar músicas, buscar músicas de outros
   artistas e gerenciar suas informações de perfil.
 addresses:
-  preview: https://raw.githubusercontent.com/marcelakramer/songhubmobile/refs/heads/develop/preview_songhub.png
+  preview: https://github.com/marcelakramer/songhubmobile/blob/develop/preview_songhub.png?raw=true
   repository: https://github.com/marcelakramer/songhubmobile
 category:
   type: subject

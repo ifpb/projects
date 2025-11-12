@@ -3,7 +3,7 @@ description:
   Este projeto é uma aplicação web para linktree de uma empresa de doces,
   a fim de direcionar seus clientes.
 addresses:
-  preview: https://raw.githubusercontent.com/leticiazlopes/projLs1/main/preview.png
+  preview: https://github.com/leticiazlopes/projLs1/blob/main/preview.png?raw=true
   repository: https://github.com/leticiazlopes/projLs1
 category:
   type: subject

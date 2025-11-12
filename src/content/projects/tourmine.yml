@@ -1,7 +1,7 @@
 name: TourMine
 description: Projeto para participar e gerenciar torneios de esports
 addresses:
-  preview: https://raw.githubusercontent.com/TourMine/TourMine-Front/refs/heads/develop/src/assets/images/tourmine-print.png
+  preview: https://github.com/TourMine/TourMine-Front/blob/develop/src/assets/images/tourmine-print.png?raw=true
   repository: https://github.com/TourMine/TourMine-Front
 category:
   type: subject

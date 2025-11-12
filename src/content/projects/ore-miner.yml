@@ -3,7 +3,7 @@ description:
   Jogo web em que você quebra minérios para conseguir a maior pontuação
   em 3 minutos.
 addresses:
-  preview: https://raw.githubusercontent.com/RamotepIFPB/LS-2025.1/refs/heads/main/Ore-Miner/Preview.jpg
+  preview: https://github.com/RamotepIFPB/LS-2025.1/blob/main/Ore-Miner/Preview.jpg?raw=true
   homepage: https://ramotepifpb.github.io/LS-2025.1/Ore-Miner/
   repository: https://github.com/RamotepIFPB/LS-2025.1
 category:

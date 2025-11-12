@@ -1,7 +1,7 @@
 name: FlorDoCampo
 description: Uma loja que vende produtos naturais!
 addresses:
-  preview: https://raw.githubusercontent.com/Athenas22/Flor_Do_Campo/refs/heads/main/image.png
+  preview: https://github.com/Athenas22/Flor_Do_Campo/blob/main/image.png?raw=true
   homepage: https://athenas22.github.io/Flor_Do_Campo/
   repository: https://github.com/Athenas22/Flor_Do_Campo
 category:

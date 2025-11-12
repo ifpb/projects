@@ -3,7 +3,7 @@ description:
   Site que exibe informações de clima em tempo real de cidades de todo
   o mundo.
 addresses:
-  preview: https://raw.githubusercontent.com/uGustavoB/Projeto-Weather-Infos/main/public/img/preview.PNG
+  preview: https://github.com/uGustavoB/Projeto-Weather-Infos/blob/main/public/img/preview.PNG?raw=true
   homepage: https://ugustavob.github.io/Projeto-Weather-Infos/
   repository: https://github.com/uGustavoB/Projeto-Weather-Infos
 category:

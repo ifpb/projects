@@ -1,7 +1,7 @@
 name: Machine Viewer
 description: Aplicação WEB para monitoramento do status de múltiplas máquinas em rede.
 addresses:
-  preview: https://raw.githubusercontent.com/joaoweslley1/machine-viewer/main/preview.png
+  preview: https://github.com/joaoweslley1/machine-viewer/blob/main/preview.png?raw=true
   homepage: https://github.com/joaoweslley1/machine-viewer
   repository: https://github.com/joaoweslley1/machine-viewer
 category:

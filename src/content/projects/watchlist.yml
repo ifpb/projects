@@ -3,7 +3,7 @@ description:
   Um web app voltado para fazer watchlists (listas de filmes/séries para
   assistir e avaliar) em conjunto com amigos.
 addresses:
-  preview: https://raw.githubusercontent.com/arthurfaraujo/watchlist/main/preview.png
+  preview: https://github.com/arthurfaraujo/watchlist/blob/main/preview.png?raw=true
   homepage: https://arthurfaraujo.github.io/watchlist
   repository: https://github.com/arthurfaraujo/watchlist
 category:

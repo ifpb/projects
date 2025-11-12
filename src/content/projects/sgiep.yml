@@ -1,7 +1,7 @@
 name: SGIEP
 description: Sistema de Gerenciamento de Instituições Esportivas Públicas (SGIEP)
 addresses:
-  preview: https://raw.githubusercontent.com/Erickfonseca1/sgiep-front/refs/heads/main/sgiep.png
+  preview: https://github.com/Erickfonseca1/sgiep-front/blob/main/sgiep.png?raw=true
   repository: https://github.com/Erickfonseca1/sgiep-front
 category:
   type: subject

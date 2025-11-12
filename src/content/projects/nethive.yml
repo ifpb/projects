@@ -1,7 +1,7 @@
 name: NetHive
 description: Projeto consiste em uma documentação de ativos de redes.
 addresses:
-  preview: https://raw.githubusercontent.com/Carollcunha/NetHive/main/preview.png
+  preview: https://github.com/Carollcunha/NetHive/blob/main/preview.png?raw=true
   homepage: https://Carollcunha.github.io/NetHive
   repository: https://github.com/Carollcunha/NetHive
 category:

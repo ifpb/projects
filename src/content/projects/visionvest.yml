@@ -5,7 +5,7 @@ description:
   ao nosso questionário e descubra qual tipo de investidor você é. Além disso, aproveite
   nossas calculadoras de rentabilidade para planejar melhor seus investimentos!
 addresses:
-  preview: https://raw.githubusercontent.com/franciscovmn/visionvest/refs/heads/main/public/preview.png
+  preview: https://github.com/franciscovmn/visionvest/blob/main/public/preview.png?raw=true
   homepage: http://franciscovmn.github.io/visionvest/
   repository: https://github.com/franciscovmn/visionvest
 category:

@@ -4,7 +4,7 @@ description:
   filmes e séries, oferecendo integração com a API TMDb para obter detalhes completos
   sobre cada título.
 addresses:
-  preview: https://raw.githubusercontent.com/aliclic/PDM-Projeto/refs/heads/main/app/src/main/res/drawable/mycine_preview.png
+  preview: https://github.com/aliclic/PDM-Projeto/blob/main/app/src/main/res/drawable/mycine_preview.png?raw=true
   repository: https://github.com/aliclic/PDM-Projeto
 category:
   type: subject

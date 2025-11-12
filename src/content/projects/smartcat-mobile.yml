@@ -3,7 +3,7 @@ description:
   Este projeto funciona como app que irá gerenciar as tarefas do estudante,
   agora na versão mobile
 addresses:
-  preview: https://raw.githubusercontent.com/Andersonlima13/Pdm-projeto/refs/heads/main/prototipos/Telas-prototipo.jpeg
+  preview: https://github.com/Andersonlima13/Pdm-projeto/blob/main/prototipos/Telas-prototipo.jpeg?raw=true
   repository: https://github.com/felipecartaxo/pdm-smartcat_mobile-v2
 category:
   type: subject

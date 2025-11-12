@@ -5,7 +5,7 @@ description:
   ou removerem regras do firewall.
 addresses:
   repository: https://github.com/peresl/projeto-dev-web
-  preview: https://raw.githubusercontent.com/peresl/projeto-dev-web/main/firewall.png
+  preview: https://github.com/peresl/projeto-dev-web/blob/main/firewall.png?raw=true
 category:
   type: subject
   subject: dw-cstrc-jp

@@ -3,7 +3,7 @@ description:
   Um catálogo sobre a série Stranger Things, incluindo informações sobre
   personagens, episódios e notícias.
 addresses:
-  preview: https://raw.githubusercontent.com/themattery/Stranger-Things-Website/main/preview.png
+  preview: https://github.com/themattery/Stranger-Things-Website/blob/main/preview.png?raw=true
   homepage: https://themattery.github.io/Stranger-Things-Website/
   repository: https://github.com/themattery/Stranger-Things-Website
 category:

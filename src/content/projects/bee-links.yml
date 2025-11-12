@@ -3,7 +3,7 @@ description:
   Um agregador de links inspirado no famoso LinkTree, que surgiu da ideia
   de ser custo-benefício, um concorrente em moeda local.
 addresses:
-  preview: https://raw.githubusercontent.com/mr-r0b3/beelinks_v2/refs/heads/master/preview.png
+  preview: https://github.com/mr-r0b3/beelinks_v2/blob/master/preview.png?raw=true
   homepage: https://mr-r0b3.github.io/beelinks_v2/
   repository: https://github.com/mr-r0b3/beelinks_v2
 category:
