@@ -169,10 +169,10 @@ function sortProjects(
   };
 
   return (
+    Number(hasPreview(b)) - Number(hasPreview(a)) ||
     Number(isResearchProject(b)) - Number(isResearchProject(a)) ||
     Number(isExtensionProject(b)) - Number(isExtensionProject(a)) ||
     Number(isSubjectProject(a)) - Number(isSubjectProject(b)) ||
-    Number(hasPreview(b)) - Number(hasPreview(a)) ||
     getSemester(a) - getSemester(b) ||
     a.data.name.localeCompare(b.data.name)
   );
