@@ -3,6 +3,7 @@ description:
   Rede social de entretenimentos. "Pequenos momentos são dramas, o escopo
   de todos esses momentos é uma comédia"
 addresses:
+  preview: https://github.com/Souzzaturr/MediaVirtu/blob/main/MediaVirtu/public/icones/MediaVirtu_icons/MediaVirtu_icon.png?raw=true
   repository: https://github.com/Souzzaturr/MeDiavirtu
 category:
   type: subject
