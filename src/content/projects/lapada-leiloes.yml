@@ -1,7 +1,7 @@
 name: Lapada Leilões
 description: Plataforma de Leilões desenvolvido para DEPS e PDIST
 addresses:
-  repository: 
+  repository:
     - https://github.com/Lapada-S-A/lapada-app
     - https://github.com/Lapada-S-A/lapada-api
 category:
