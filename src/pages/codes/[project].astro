@@ -87,10 +87,24 @@ const pageTitle = `Projeto | ${project.data.name}`;
         {project.data.description}
       </div>
       <div class="mb-2">
-        <div class="font-bold text-lg">Repositório:</div>
-        <a class="underline" href={project.data.addresses.repository}
-          >{project.data.addresses.repository}</a
-        >
+        <div class="font-bold text-lg">Repositório{Array.isArray(project.data.addresses.repository) ? 's' : ''}:</div>
+        {Array.isArray(project.data.addresses.repository) ? (
+          <ul class="list-disc list-inside">
+            {
+              project.data.addresses.repository.map((repo) => (
+                <li>
+                  <a class="underline" href={repo}>
+                    {repo}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        ) : (
+          <a class="underline" href={project.data.addresses.repository}>
+            {project.data.addresses.repository}
+          </a>
+        )}
       </div>
       { project.data.addresses.template && (
         <div class="mb-2">

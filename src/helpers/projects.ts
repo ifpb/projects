@@ -16,7 +16,11 @@ export function isExtensionProject(project: CollectionEntry<'projects'>) {
 }
 
 export function getProjectId(project: CollectionEntry<'projects'>) {
-  return project.data.addresses.repository
+  const repository = Array.isArray(project.data.addresses.repository) 
+    ? project.data.addresses.repository[0] 
+    : project.data.addresses.repository;
+  
+  return repository
     .split(/(github|gitlab).com\//)
     .at(-1)
     .replace('/', '-');

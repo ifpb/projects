@@ -191,7 +191,7 @@ const projectCollection = defineCollection({
     name: z.string(),
     description: z.string(),
     addresses: addresses.extend({
-      repository: z.string().url(),
+      repository: z.union([z.string().url(), z.array(z.string().url())]),
       preview: z.string().url().optional(),
       template: z.string().url().optional(),
       workflow: z.string().url().optional(),
