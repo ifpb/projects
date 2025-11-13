@@ -1,0 +1,15 @@
+name:
+  compact: Caio Luiz
+  full: Caio Luiz Lacerda Terto Silva
+avatar:
+  github: https://github.com/caio86.png
+occupations:
+  - id: 20241380022
+    type: student
+    campus: ifpb-jp
+    course: cstrc
+    isFinished: false
+addresses:
+  github: https://github.com/caio86
+  linkedin: https://www.linkedin.com/in/caio86/
+  email: caioluiz86@gmail.com
