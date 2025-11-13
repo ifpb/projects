@@ -27,14 +27,14 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
     const {
       data: {
         category: { type, subject, semester },
-        addresses: { template },
+        addresses: { template, workflow },
         tags,
       },
     } = project as {
       data: {
         category: SubjectProject;
         tags: string[];
-        addresses: { template?: string };
+        addresses: { template?: string; workflow?: string };
       };
     };
 
@@ -44,6 +44,10 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
 
     if (template) {
       projectTags.unshift('figma');
+    }
+
+    if (workflow) {
+      projectTags.unshift('workflow');
     }
 
     const [subjectName, course, campus] = subject.split('-');
@@ -61,7 +65,7 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
       data: {
         tags,
         category: { type, campus },
-        addresses: { template },
+        addresses: { template, workflow },
       },
     } = project;
 
@@ -71,6 +75,10 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
 
     if (template) {
       projectTags.unshift('figma');
+    }
+
+    if (workflow) {
+      projectTags.unshift('workflow');
     }
 
     projectTags.unshift(type, campus);

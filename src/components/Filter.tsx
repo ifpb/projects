@@ -37,7 +37,10 @@ const CODES_EXTRA_ACCORDIONS: AccordionConfig[] = [
   {
     id: 'codes-resource',
     title: 'Recursos',
-    badges: [{ url: '/projects/codes/figma/1', value: 'figma' }],
+    badges: [
+      { url: '/projects/codes/figma/1', value: 'figma' },
+      { url: '/projects/codes/workflow/1', value: 'workflow' },
+    ],
   },
   {
     id: 'codes-tags',
