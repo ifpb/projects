@@ -6,7 +6,7 @@ import { getAllPersonTags, getPeopleByTag } from '@/helpers/people';
 import { getCourseName } from '@/helpers/courses';
 import { getSubject } from '@/helpers/subjects';
 import { PAGE_SIZE } from '@/consts';
-import { abbreviationCourses } from '@/content/config';
+import { abbreviationCourses, cities } from '@/content/config';
 
 export interface Props {
   page: {
@@ -56,12 +56,12 @@ const formatPageTitle = (tag: string) => {
     } else {
       title = `Turma ${tag.toUpperCase()}`;
     }
-  } 
+  }
   // Check if it's a course-campus-period format (e.g., cstrc-jp-2024.1)
   else if (/^([a-z]+)-([a-z]+)-(\d{4}\.\d)$/.test(tag)) {
     const [courseCode, campus, period] = tag.split('-');
     const courseFull = `${courseCode}-${campus}`;
-    
+
     // Try to get course data using the helper
     try {
       const courseInfo = getCourseName(courseFull);
@@ -79,8 +79,7 @@ const formatPageTitle = (tag: string) => {
     } catch {
       title = `Turma ${tag.toUpperCase()}`;
     }
-  }
-  else if (abbreviationCourses.some((course) => tag.includes(course))) {
+  } else if (abbreviationCourses.some((course) => tag.includes(course))) {
     if (tag.includes('egresso')) {
       title = `Egresso | ${getCourseName(tag.split('-')[1])}`;
     } else {
@@ -106,6 +105,8 @@ const formatPageTitle = (tag: string) => {
     title = 'Reitoria';
   } else if (tag === 'projects') {
     title = 'Pessoas com Projetos';
+  } else if (cities[tag]) {
+    title = `Pessoas de ${cities[tag]}`;
   } else {
     title = `Pessoas com ${tag[0].toUpperCase() + tag.slice(1)}`;
   }
