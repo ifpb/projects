@@ -100,6 +100,14 @@ const pageTitle = `Projeto | ${project.data.name}`;
           </a>
         </div>
       )}
+      { project.data.addresses.workflow && (
+        <div class="mb-2">
+          <div class="font-bold text-lg">Gerenciamento de Tarefas:</div>
+          <a class="underline" href={project.data.addresses.workflow}>
+            {project.data.addresses.workflow}
+          </a>
+        </div>
+      )}
       {
         isSubjectProject(project) && (
           <div class="mb-2">
