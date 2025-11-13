@@ -1,0 +1,17 @@
+name: Techsync
+description: dashboard interativo integrado a api do zabbix para captura de informações de hosts, e criação de dashboards por meio do grafana
+addresses:
+  preview: https://raw.githubusercontent.com/luishenrike083/PROJETO-DW-2025.2/refs/heads/main/logo.png
+  repository: https://github.com/luishenrike083/PROJETO-DW-2025.2
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2025.2
+tags:
+  - html
+  - javascript
+  - express.js
+owners:
+  - 20241380040
+  - 20241380001
+  - 20241380013
