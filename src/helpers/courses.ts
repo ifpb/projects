@@ -104,7 +104,11 @@ export function getPeriodCourses(periods: string[]) {
   const result = {};
 
   periods.forEach((period) => {
-    const [course, periodValue] = period.split('-');
+    // Split by '-' and take all parts except the last one as course
+    // This handles course-campus-period format (e.g., cstads-cz-2008.2)
+    const parts = period.split('-');
+    const periodValue = parts.pop(); // Remove and get the last part (period)
+    const course = parts.join('-'); // Join remaining parts as course-campus
 
     if (!result[course]) {
       result[course] = [];
@@ -131,16 +135,53 @@ export function getPeriodCourses(periods: string[]) {
 }
 
 export function getCourseName(tag: string) {
-  const [abbreviation, period] = tag.split('-');
+  // Handle different tag formats:
+  // 1. course-campus (e.g., "cstsi-jp")
+  // 2. course-campus-period (e.g., "cstsi-jp-2024.1")
+  // 3. subject-course-campus-period (e.g., "dw-cstrc-jp-2022.2")
 
+  const parts = tag.split('-');
+
+  // Check if it's a subject-course-campus-period format
+  if (parts.length === 4) {
+    const [subject, courseAbbr, campus, period] = parts;
+    const courseFull = `${courseAbbr}-${campus}`;
+    const course = getCourseByAbbreviation(courseFull);
+    const courseName = `${course?.data?.level?.compact} em ${course?.data?.name}`;
+
+    if (course) {
+      return `${courseName} | ${campus.toUpperCase()} | ${period}`;
+    } else {
+      return tag;
+    }
+  }
+
+  // Check if it's a course-campus-period format
+  if (parts.length === 3) {
+    const [courseAbbr, campus, period] = parts;
+    const courseFull = `${courseAbbr}-${campus}`;
+    const course = getCourseByAbbreviation(courseFull);
+    const courseName = `${course?.data?.level?.compact} em ${course?.data?.name}`;
+
+    if (course) {
+      return `${courseName} | ${campus.toUpperCase()} | ${period}`;
+    } else {
+      return tag;
+    }
+  }
+
+  // Original logic for course-campus or simple course format
+  const [abbreviation, period] = parts;
   const course = getCourseByAbbreviation(abbreviation);
 
-  const courseName = `${course?.data?.level?.compact} em ${course?.data?.name}`;
+  if (course) {
+    const courseName = `${course?.data?.level?.compact} em ${course?.data?.name}`;
 
-  if (period) {
-    return `${courseName} | ${period}`;
-  } else if (course) {
-    return courseName;
+    if (period) {
+      return `${courseName} | ${period.toUpperCase()}`;
+    } else {
+      return courseName;
+    }
   } else {
     return abbreviation;
   }

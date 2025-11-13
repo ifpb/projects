@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { Icon } from '@iconify/react';
-import { getCourseByAbbreviation, getPeriodCourses } from '@/helpers/courses';
+import {
+  getCourse,
+  getCourseByAbbreviation,
+  getPeriodCourses,
+} from '@/helpers/courses';
 import { getSubject } from '@/helpers/subjects';
 import Accordion from './Accordion';
 import Badge from './Badge';
@@ -162,9 +166,7 @@ export default function Filter({
               {Object.entries(
                 tags.course?.values?.reduce(
                   (acc: Record<string, string[]>, courseTag: string) => {
-                    const courseData = getCourseByAbbreviation(
-                      courseTag.split('-')[0]
-                    );
+                    const courseData = getCourse(courseTag);
                     if (courseData) {
                       const level = courseData.data.level.compact;
                       if (!acc[level]) {
@@ -192,12 +194,8 @@ export default function Filter({
                       >
                         {coursesInLevel
                           .sort((a, b) => {
-                            const courseA = getCourseByAbbreviation(
-                              a.split('-')[0]
-                            );
-                            const courseB = getCourseByAbbreviation(
-                              b.split('-')[0]
-                            );
+                            const courseA = getCourse(a);
+                            const courseB = getCourse(b);
                             return (
                               courseA?.data.name.localeCompare(
                                 courseB?.data.name
@@ -205,9 +203,11 @@ export default function Filter({
                             );
                           })
                           .map((courseTag) => {
-                            const [courseAbbr, campus] = courseTag.split('-');
-                            const courseData =
-                              getCourseByAbbreviation(courseAbbr);
+                            const courseData = getCourse(courseTag);
+                            // Extrair campus do courseTag se existir
+                            const parts = courseTag.split('-');
+                            const campus =
+                              parts.length > 1 ? parts[parts.length - 1] : '';
                             const campusName = campus
                               ? ` | ${campus.toUpperCase()}`
                               : '';
@@ -217,7 +217,7 @@ export default function Filter({
                               <Badge
                                 key={courseTag}
                                 url={`/projects/${type}/${courseTag}/1`}
-                                value={displayName}
+                                value={courseTag}
                               />
                             );
                           })}
@@ -228,14 +228,16 @@ export default function Filter({
             </details>
 
             {tags.course?.values?.map((courseTag: string) => {
-              const [courseAbbr, campus] = courseTag.split('-');
-              const courseData = getCourseByAbbreviation(courseAbbr);
+              const courseData = getCourseByAbbreviation(courseTag);
+              // Extrair campus do courseTag se existir
+              const parts = courseTag.split('-');
+              const campus = parts.length > 1 ? parts[parts.length - 1] : '';
               const campusName = campus ? ` | ${campus.toUpperCase()}` : '';
               const courseDisplayName = `${courseData?.data.name}${campusName}`;
 
               const courseSubjects =
                 tags.subject?.values?.filter((subjectTag: string) =>
-                  subjectTag.includes(`-${courseAbbr}-${campus}`)
+                  subjectTag.includes(`-${courseTag}`)
                 ) || [];
 
               if (courseSubjects.length === 0) return null;
