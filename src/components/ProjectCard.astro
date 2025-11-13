@@ -43,15 +43,32 @@ const projectId = getProjectId(project);
       <ul class="flex">
         {
           addresses.template && (
-            <li class="-mr-2 bg-black border-2 border-gray-100 rounded-full overflow-hidden">
+            <li class="-mr-2 bg-black border-2 border-gray-100 rounded-full overflow-hidden w-9">
               <a href={addresses.template} target="_blank" class="font-bold">
                 <Icon name="logos:figma" size={32} class="figma-project-link" />
               </a>
             </li>
           )
         }
+        {
+          addresses.workflow && (
+            <li class="-mr-2 bg-black border-2 border-gray-100 rounded-full overflow-hidden w-9 flex items-center justify-center">
+              <a
+                href={addresses.workflow}
+                target="_blank"
+                class="font-bold flex items-center justify-center"
+              >
+                <Icon
+                  name="uil:schedule"
+                  size={22}
+                  class="workflow-project-link"
+                />
+              </a>
+            </li>
+          )
+        }
         <li
-          class="-mr-2 bg-black border-2 border-gray-100 rounded-full overflow-hidden"
+          class="-mr-2 bg-black border-2 border-gray-100 rounded-full overflow-hidden w-9"
         >
           <a href={addresses.repository} target="_blank" class="font-bold">
             <Icon name="uim:github" size={32} class="github-project-link" />

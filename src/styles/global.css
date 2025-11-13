@@ -7,6 +7,11 @@
   opacity: 1;
 }
 
+.project-card .workflow-project-link path {
+  fill: #fff;
+  opacity: 1;
+}
+
 header .github-project-link path {
   fill: #f4f4f5;
 }
