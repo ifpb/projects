@@ -10,7 +10,7 @@ addresses:
 category:
   type: subject
   subject: pw1-csbes-jp
-  semester: 2025.1
+  period: 2025.1
 tags:
   - html
   - css

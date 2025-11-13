@@ -12,7 +12,7 @@ addresses:
 category:
   type: subject
   subject: bd1-cstsi-jp
-  semester: 2022.2
+  period: 2022.2
 tags:
   - sql
   - mysql

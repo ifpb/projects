@@ -11,7 +11,7 @@ addresses:
 category:
   type: subject
   subject: pw1-cstsi-jp
-  semester: 2023.2
+  period: 2023.2
 tags:
   - angular
   - bootstrap

@@ -114,7 +114,7 @@ const projectCategory = z.object({
 const subjectProjectCategory = z.object({
   type: z.literal('subject'),
   subject: z.union([z.string(), z.array(z.string())]),
-  semester: z.number().refine((value) => {
+  period: z.number().refine((value) => {
     const regex = /^\d{4}(\.[12])?$/;
     return regex.test(String(value));
   }),

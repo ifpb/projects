@@ -8,7 +8,7 @@ addresses:
 category:
   type: subject
   subject: ape-cstsi-jp
-  semester: 2022.1
+  period: 2022.1
 tags:
   - python
   - poo

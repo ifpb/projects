@@ -9,7 +9,7 @@ addresses:
 category:
   type: subject
   subject: poo-cstsi-jp
-  semester: 2023.1
+  period: 2023.1
 tags:
   - java
   - swing

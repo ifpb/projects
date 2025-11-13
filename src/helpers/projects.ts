@@ -30,7 +30,7 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
   if (isSubjectProject(project)) {
     const {
       data: {
-        category: { type, subject, semester },
+        category: { type, subject, period },
         addresses: { design, workflow },
         tags,
       },
@@ -60,7 +60,7 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
     // Add tags for all subjects
     subjects.forEach((sub) => {
       const [subjectName, course, campus] = sub.split('-');
-      projectTags.unshift(sub, `${sub}-${semester}`, `${course}-${campus}`);
+      projectTags.unshift(sub, `${sub}-${period}`, `${course}-${campus}`);
     });
 
     // Add the type tag
@@ -100,7 +100,7 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
 
 export function getProjectTagGroups(project: CollectionEntry<'projects'>) {
   if (isSubjectProject(project)) {
-    const { subject, semester } = project.data.category as SubjectProject;
+    const { subject, period } = project.data.category as SubjectProject;
 
     // Handle both single subject (string) and multiple subjects (array)
     const subjects = Array.isArray(subject) ? subject : [subject];
@@ -112,8 +112,8 @@ export function getProjectTagGroups(project: CollectionEntry<'projects'>) {
     });
     const uniqueCourses = [...new Set(courses)];
 
-    // Get all subject-semester combinations
-    const subjectSemesters = subjects.map((sub) => `${sub}-${semester}`);
+    // Get all subject-period combinations
+    const subjectPeriods = subjects.map((sub) => `${sub}-${period}`);
 
     const projectTags = {
       tags: {
@@ -124,9 +124,9 @@ export function getProjectTagGroups(project: CollectionEntry<'projects'>) {
         name: 'disciplina',
         values: subjects,
       },
-      semester: {
-        name: 'semestre',
-        values: subjectSemesters,
+      period: {
+        label: 'Período',
+        values: subjectPeriods,
       },
       course: {
         name: 'curso',
@@ -191,9 +191,9 @@ function sortProjects(
   const hasPreview = (project: CollectionEntry<'projects'>) =>
     !!project.data.addresses.preview;
 
-  const getSemester = (project: CollectionEntry<'projects'>) => {
+  const getPeriod = (project: CollectionEntry<'projects'>) => {
     if (project.data.category.type === 'subject') {
-      return project.data.category.semester;
+      return project.data.category.period;
     }
     return 0;
   };
@@ -203,7 +203,7 @@ function sortProjects(
     Number(isResearchProject(b)) - Number(isResearchProject(a)) ||
     Number(isExtensionProject(b)) - Number(isExtensionProject(a)) ||
     Number(isSubjectProject(a)) - Number(isSubjectProject(b)) ||
-    getSemester(a) - getSemester(b) ||
+    getPeriod(a) - getPeriod(b) ||
     a.data.name.localeCompare(b.data.name)
   );
 }

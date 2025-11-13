@@ -108,8 +108,10 @@ addresses:
   design: https://www.figma.com/design/example # figma, canva, etc.
 category:
   type: subject  # ou 'subject', 'research', 'extension'
-  subject: pw2-csbes-jp  # necessário para projetos de disciplina
-  semester: 2025.1   # necessário para projetos de disciplina
+  subject:
+    - pw2-csbes-jp   # disciplina principal
+    - dw-csbes-jp    # disciplina adicional (opcional)
+  period: 2025.1   # necessário para projetos de disciplina
 tags:
   - javascript
   - astro.js
@@ -122,9 +124,9 @@ owners:
 ### 🗂️ Tipos de Projetos
 
 1. **Projeto de Disciplina** (`subject`)
-   - Requer: `category.subject`, `category.semester`
-   - Disciplina única: `category: { type: subject, subject: "dw-cstrc-jp", semester: "2024.1" }`
-   - Múltiplas disciplinas: `category: { type: subject, subject: ["dw-cstrc-jp", "pw2-cstrc-jp"], semester: "2024.1" }`
+   - Requer: `category.subject`, `category.period`
+   - Disciplina única: `category: { type: subject, subject: "dw-cstrc-jp", period: "2024.1" }`
+   - Múltiplas disciplinas: `category: { type: subject, subject: ["dw-cstrc-jp", "pw2-cstrc-jp"], period: "2024.1" }`
 
 2. **Projeto de Pesquisa** (`research`)
    - Requer: `category.campus`
@@ -159,7 +161,7 @@ Para projetos que envolvem múltiplas disciplinas:
 category:
   type: subject
   subject: pw2-csbes-jp
-  semester: 2025.1
+  period: 2025.1
 
 # Múltiplas disciplinas
 category:
@@ -167,7 +169,7 @@ category:
   subject:
     - pw2-csbes-jp   # Programação Web 2
     - dw-csbes-jp    # Desenvolvimento Web
-  semester: 2025.1
+  period: 2025.1
 ```
 
 #### `addresses.repository` (Repositórios)

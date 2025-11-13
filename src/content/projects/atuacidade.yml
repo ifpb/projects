@@ -8,7 +8,7 @@ addresses:
 category:
   type: subject
   subject: pdm-cstsi-jp
-  semester: 2024.2
+  period: 2024.2
 tags:
   - kotlin
   - android

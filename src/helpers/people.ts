@@ -49,9 +49,9 @@ export function getOccupationId(occupation: Occupation) {
     } else {
       const year = String(occupation.id).slice(0, 4);
 
-      const semester = String(occupation.id).slice(4, 5);
+      const period = String(occupation.id).slice(4, 5);
 
-      return `${year}.${semester}`;
+      return `${year}.${period}`;
     }
   } else {
     return String(occupation.id);
@@ -232,12 +232,12 @@ export function getPersonTagGroups(person: CollectionEntry<'people'>) {
     .filter((occupation): occupation is Student => occupation.type === 'student')
     .map((occupation) => occupation.course);
 
-  const semesters = person.data.occupations
+  const periods = person.data.occupations
     .filter((occupation): occupation is Student => occupation.type === 'student')
     .map((occupation) => getOccupationId(occupation));
 
-  const coursesBySemester = semesters.map(
-    (semester, index) => `${courses[index]}-${semester}`
+  const coursesByPeriod = periods.map(
+    (period, index) => `${courses[index]}-${period}`
   );
 
   const tags = {
@@ -245,9 +245,9 @@ export function getPersonTagGroups(person: CollectionEntry<'people'>) {
       name: 'curso',
       values: courses,
     },
-    semester: {
-      name: 'semestre',
-      values: coursesBySemester,
+    period: {
+      name: 'period',
+      values: coursesByPeriod,
     },
   };
 
@@ -313,7 +313,7 @@ export async function getAllPeopleTagGroups() {
   return tags;
 }
 
-// Sort people by graduation status, twitter presence, semester and name
+// Sort people by graduation status, twitter presence, period and name
 function personRank(person: CollectionEntry<'people'>) {
   const weights = {
     isProfessor: {

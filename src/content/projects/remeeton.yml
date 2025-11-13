@@ -10,7 +10,7 @@ addresses:
 category:
   type: subject
   subject: pdm-cstsi-jp
-  semester: 2024.1
+  period: 2024.1
 tags:
   - android
   - firebase

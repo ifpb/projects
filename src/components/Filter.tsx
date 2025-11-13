@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Icon } from '@iconify/react';
-import { getCourseByAbbreviation, getSemesterCourses } from '@/helpers/courses';
+import { getCourseByAbbreviation, getPeriodCourses } from '@/helpers/courses';
 import { getSubject } from '@/helpers/subjects';
 import Accordion from './Accordion';
 import Badge from './Badge';
@@ -12,7 +12,7 @@ interface TagGroup {
 
 interface FilterProps {
   type: string;
-  tags: { course: TagGroup; semester: TagGroup; subject?: TagGroup };
+  tags: { course: TagGroup; period: TagGroup; subject?: TagGroup };
   peopleTags: string[];
   projectTags: string[];
 }
@@ -106,7 +106,7 @@ export default function Filter({
 
   const createCourseAccordion = (
     course: string,
-    semesters: string[]
+    periods: string[]
   ): AccordionConfig => {
     const badges = [{ url: `/projects/people/${course}/1`, value: 'Alunos' }];
 
@@ -117,10 +117,10 @@ export default function Filter({
       });
     }
 
-    semesters.forEach((semester) => {
+    periods.forEach((period) => {
       badges.push({
-        url: `/projects/people/${course}-${semester}/1`,
-        value: semester,
+        url: `/projects/people/${course}-${period}/1`,
+        value: period,
       });
     });
 
@@ -264,9 +264,9 @@ export default function Filter({
                       const subjectName =
                         subjectData?.data.name.full || subjectTag;
 
-                      const subjectSemesters =
-                        tags.semester?.values?.filter((semesterTag: string) =>
-                          semesterTag.startsWith(`${subjectTag}-`)
+                      const subjectPeriods =
+                        tags.period?.values?.filter((periodTag: string) =>
+                          periodTag.startsWith(`${subjectTag}-`)
                         ) || [];
 
                       const subjectAccordionId = `codes-subject-${subjectTag}`;
@@ -286,19 +286,19 @@ export default function Filter({
                               url={`/projects/${type}/${subjectTag}/1`}
                               value="Todos"
                             />
-                            {subjectSemesters
+                            {subjectPeriods
                               .sort((a, b) => {
-                                const semesterA = a.split('-').pop() || '';
-                                const semesterB = b.split('-').pop() || '';
-                                return semesterB.localeCompare(semesterA);
+                                const periodA = a.split('-').pop() || '';
+                                const periodB = b.split('-').pop() || '';
+                                return periodB.localeCompare(periodA);
                               })
-                              .map((semesterTag) => {
-                                const semester = semesterTag.split('-').pop();
+                              .map((periodTag) => {
+                                const period = periodTag.split('-').pop();
                                 return (
                                   <Badge
-                                    key={semesterTag}
-                                    url={`/projects/${type}/${semesterTag}/1`}
-                                    value={semester || ''}
+                                    key={periodTag}
+                                    url={`/projects/${type}/${periodTag}/1`}
+                                    value={period || ''}
                                   />
                                 );
                               })}
@@ -351,17 +351,17 @@ export default function Filter({
 
         {type === 'people' &&
           Object.entries(
-            Object.entries(getSemesterCourses(tags.semester.values)).reduce(
+            Object.entries(getPeriodCourses(tags.period.values)).reduce(
               (
                 acc: Record<string, Array<[string, string[]]>>,
-                [course, semesters]: [string, string[]]
+                [course, periods]: [string, string[]]
               ) => {
                 const courseData = getCourseByAbbreviation(course);
                 const level = courseData?.data.level.compact || 'Outros';
                 if (!acc[level]) {
                   acc[level] = [];
                 }
-                acc[level].push([course, semesters]);
+                acc[level].push([course, periods]);
                 return acc;
               },
               {}
@@ -390,11 +390,8 @@ export default function Filter({
                         getCourseByAbbreviation(b).data.name
                       )
                     )
-                    .map(([course, semesters]: [string, string[]]) => {
-                      const accordion = createCourseAccordion(
-                        course,
-                        semesters
-                      );
+                    .map(([course, periods]: [string, string[]]) => {
+                      const accordion = createCourseAccordion(course, periods);
                       const isOpen = openAccordion === accordion.id;
 
                       return (

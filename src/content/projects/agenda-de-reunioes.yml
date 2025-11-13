@@ -8,7 +8,7 @@ addresses:
 category:
   type: subject
   subject: po-cstsi-jp
-  semester: 2023.2
+  period: 2023.2
 tags:
   - java
   - db4o

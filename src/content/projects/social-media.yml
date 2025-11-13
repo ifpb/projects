@@ -9,7 +9,7 @@ addresses:
 category:
   type: subject
   subject: te-cstsi-jp
-  semester: 2024.2
+  period: 2024.2
 tags:
   - python
   - scikit-learn

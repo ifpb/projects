@@ -14,7 +14,7 @@ import { getSubject } from '@/helpers/subjects';
 
 interface ProjectProps {
   category: {
-    semester: number;
+    period: number;
     subject: string;
   };
 }
@@ -142,10 +142,10 @@ const pageTitle = `Projeto | ${project.data.name}`;
                   subjects.map((subj) => (
                     <li>
                       <a
-                        href={`/projects/codes/${subj}-${category.semester}/1/`}
+                        href={`/projects/codes/${subj}-${category.period}/1/`}
                         class="underline"
                       >
-                        {getSubject(subj)?.data?.name?.full} ({category.semester})
+                        {getSubject(subj)?.data?.name?.full} ({category.period})
                       </a>
                     </li>
                   ))
@@ -155,10 +155,10 @@ const pageTitle = `Projeto | ${project.data.name}`;
               subjects.map((subj) => (
                 <div class="mb-1">
                   <a
-                    href={`/projects/codes/${subj}-${category.semester}/1/`}
+                    href={`/projects/codes/${subj}-${category.period}/1/`}
                     class="underline"
                   >
-                    {getSubject(subj)?.data?.name?.full} ({category.semester})
+                    {getSubject(subj)?.data?.name?.full} ({category.period})
                   </a>
                 </div>
               ))

@@ -9,7 +9,7 @@ addresses:
 category:
   type: subject
   subject: dw-cstrc-jp
-  semester: 2025.1
+  period: 2025.1
 tags:
   - javascript
   - css

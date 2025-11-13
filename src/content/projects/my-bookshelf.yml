@@ -8,7 +8,7 @@ addresses:
 category:
   type: subject
   subject: daw-cstsi-jp
-  semester: 2024.2
+  period: 2024.2
 tags:
   - rails
   - ruby

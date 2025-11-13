@@ -9,7 +9,7 @@ addresses:
 category:
   type: subject
   subject: lm-cstsi-jp
-  semester: 2023.2
+  period: 2023.2
 tags:
   - html
   - css

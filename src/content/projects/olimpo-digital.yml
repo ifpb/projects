@@ -11,7 +11,7 @@ addresses:
 category:
   type: subject
   subject: lm-cstsi-jp
-  semester: 2024.2
+  period: 2024.2
 tags:
   - html
   - css

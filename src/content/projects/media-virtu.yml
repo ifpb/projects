@@ -8,7 +8,7 @@ addresses:
 category:
   type: subject
   subject: pw2-csbes-jp
-  semester: 2025.2
+  period: 2025.2
 tags:
   - html
   - css

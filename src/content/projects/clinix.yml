@@ -6,7 +6,7 @@ addresses:
 category:
   type: subject
   subject: pd-cstsi-jp
-  semester: 2024.2
+  period: 2024.2
 tags:
   - java
   - typescript

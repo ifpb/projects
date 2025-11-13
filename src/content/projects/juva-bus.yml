@@ -9,7 +9,7 @@ addresses:
 category:
   type: subject
   subject: ed-cstsi-jp
-  semester: 2022.2
+  period: 2022.2
 tags:
   - python
   - poo

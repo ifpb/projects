@@ -16,10 +16,10 @@ export function getCourse(id: string) {
 
 export function getCourseByAbbreviation(abbreviation: string) {
   // Extract course part if it includes campus (e.g., "cstsi-jp" -> "cstsi")
-  const courseAbbreviation = abbreviation.includes('-') 
-    ? abbreviation.split('-')[0] 
+  const courseAbbreviation = abbreviation.includes('-')
+    ? abbreviation.split('-')[0]
     : abbreviation;
-    
+
   return courses.find(
     (course: CollectionEntry<'courses'>) =>
       course?.data?.abbreviation === courseAbbreviation
@@ -87,40 +87,40 @@ export function getSubjectByProject(project: CollectionEntry<'projects'>) {
   if (isSubjectProject(project)) {
     const {
       data: {
-        category: { subject, semester },
+        category: { subject, period },
       },
     } = project as { data: { category: SubjectProject } };
 
     // Handle both single subject (string) and multiple subjects (array)
     const subjects = Array.isArray(subject) ? subject : [subject];
-    
-    // Return array of subject-semester combinations
-    return subjects.map(subj => `${subj}-${semester}`);
+
+    // Return array of subject-period combinations
+    return subjects.map((subj) => `${subj}-${period}`);
   }
   return [];
 }
 
-export function getSemesterCourses(semesters: string[]) {
+export function getPeriodCourses(periods: string[]) {
   const result = {};
 
-  semesters.forEach((semester) => {
-    const [course, period] = semester.split('-');
+  periods.forEach((period) => {
+    const [course, periodValue] = period.split('-');
 
     if (!result[course]) {
       result[course] = [];
     }
 
-    result[course].push(period);
+    result[course].push(periodValue);
   });
 
-  // sort semesters
+  // sort periods
   Object.keys(result).forEach((course) => {
     result[course].sort((a, b) => {
-      const [aYear, aSemester] = a.split('.');
-      const [bYear, bSemester] = b.split('.');
+      const [aYear, aPeriod] = a.split('.');
+      const [bYear, bPeriod] = b.split('.');
 
       if (aYear === bYear) {
-        return bSemester - aSemester;
+        return bPeriod - aPeriod;
       }
 
       return bYear - aYear;
@@ -131,14 +131,14 @@ export function getSemesterCourses(semesters: string[]) {
 }
 
 export function getCourseName(tag: string) {
-  const [abbreviation, semester] = tag.split('-');
+  const [abbreviation, period] = tag.split('-');
 
   const course = getCourseByAbbreviation(abbreviation);
 
   const courseName = `${course?.data?.level?.compact} em ${course?.data?.name}`;
 
-  if (semester) {
-    return `${courseName} | ${semester}`;
+  if (period) {
+    return `${courseName} | ${period}`;
   } else if (course) {
     return courseName;
   } else {
@@ -162,6 +162,6 @@ export function getCourseAbbreviationCampusByOccupation(occupation) {
 
   // Extract campus from course string (e.g., "cstsi-jp" -> "jp")
   const [courseAbbr, campus] = course.split('-');
-  
+
   return `${courseAbbr}-${campus}-${getOccupationId(occupation)}`;
 }

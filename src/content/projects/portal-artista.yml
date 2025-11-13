@@ -12,7 +12,7 @@ addresses:
 category:
   type: subject
   subject: lp2-ctii-jp
-  semester: 2024
+  period: 2024
 tags:
   - ejs
   - express.js

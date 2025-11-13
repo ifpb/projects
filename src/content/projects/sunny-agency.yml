@@ -11,7 +11,7 @@ addresses:
 category:
   type: subject
   subject: lm-cstsi-jp
-  semester: 2022.2
+  period: 2022.2
 tags:
   - html
   - javascript
