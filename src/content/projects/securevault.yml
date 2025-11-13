@@ -1,0 +1,17 @@
+name: SecureVault
+description:
+  Site desenvolvido com o objetivo de fornecer uma zona de armazenamento online segura
+addresses:
+  preview: https://github.com/EmanuelSouza-ctrl/SecureVault/blob/main/seu_arquivo.png?raw=true
+  homepage: https://emanuelsouza-ctrl.github.io/SecureVault/
+  repository: https://github.com/EmanuelSouza-ctrl/SecureVault.git
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2025.2
+tags:
+  - html
+  - css
+  - javascript
+owners:
+  - 20232380029
