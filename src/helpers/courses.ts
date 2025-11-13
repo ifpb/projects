@@ -86,8 +86,13 @@ export function getSubjectByProject(project: CollectionEntry<'projects'>) {
       },
     } = project as { data: { category: SubjectProject } };
 
-    return `${subject}-${semester}`;
+    // Handle both single subject (string) and multiple subjects (array)
+    const subjects = Array.isArray(subject) ? subject : [subject];
+    
+    // Return array of subject-semester combinations
+    return subjects.map(subj => `${subj}-${semester}`);
   }
+  return [];
 }
 
 export function getSemesterCourses(semesters: string[]) {

@@ -9,7 +9,9 @@ addresses:
   workflow: https://github.com/users/DiogoBAguiar/projects/2/views/1
 category:
   type: subject
-  subject: pw2-csbes-jp
+  subject: 
+    - er-csbes-jp
+    - pw2-csbes-jp
   semester: 2025.2
 tags:
   - html

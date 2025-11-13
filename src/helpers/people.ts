@@ -139,7 +139,8 @@ export async function getStudentTags(person: CollectionEntry<'people'>) {
 
     const subjects = (await getProjectsByPerson(person))
       .filter((project) => isSubjectProject(project))
-      .map((project) => getSubjectByProject(project));
+      .map((project) => getSubjectByProject(project))
+      .flat(); // Flatten the array since getSubjectByProject now returns an array
 
     tags.push(
       'student',

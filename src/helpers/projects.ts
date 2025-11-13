@@ -50,26 +50,33 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
       projectTags.unshift('workflow');
     }
 
-    const [subjectName, course, campus] = subject.split('-');
+    // Handle both single subject (string) and multiple subjects (array)
+    const subjects = Array.isArray(subject) ? subject : [subject];
+    
+    // Add tags for all subjects
+    subjects.forEach(sub => {
+      const [subjectName, course, campus] = sub.split('-');
+      projectTags.unshift(
+        sub,
+        `${sub}-${semester}`,
+        `${course}-${campus}`
+      );
+    });
 
-    projectTags.unshift(
-      type,
-      subject,
-      `${subject}-${semester}`,
-      `${course}-${campus}`
-    );
+    // Add the type tag
+    projectTags.unshift(type);
 
     return projectTags;
   } else {
     const {
       data: {
         tags,
-        category: { type, campus },
+        category,
         addresses: { template, workflow },
       },
     } = project;
 
-    const projectTags = tags;
+    const projectTags = [...tags];
 
     projectTags.sort();
 
@@ -81,7 +88,11 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
       projectTags.unshift('workflow');
     }
 
-    projectTags.unshift(type, campus);
+    // Add type and campus for non-subject projects
+    projectTags.unshift(category.type);
+    if ('campus' in category && category.campus) {
+      projectTags.unshift(category.campus);
+    }
 
     return projectTags;
   }
@@ -91,7 +102,18 @@ export function getProjectTagGroups(project: CollectionEntry<'projects'>) {
   if (isSubjectProject(project)) {
     const { subject, semester } = project.data.category as SubjectProject;
 
-    const [subjectName, course, campus] = subject.split('-');
+    // Handle both single subject (string) and multiple subjects (array)
+    const subjects = Array.isArray(subject) ? subject : [subject];
+    
+    // Get all unique courses from subjects
+    const courses = subjects.map(sub => {
+      const [subjectName, course, campus] = sub.split('-');
+      return `${course}-${campus}`;
+    });
+    const uniqueCourses = [...new Set(courses)];
+    
+    // Get all subject-semester combinations
+    const subjectSemesters = subjects.map(sub => `${sub}-${semester}`);
 
     const projectTags = {
       tags: {
@@ -100,15 +122,15 @@ export function getProjectTagGroups(project: CollectionEntry<'projects'>) {
       },
       subject: {
         name: 'disciplina',
-        values: [subject],
+        values: subjects,
       },
       semester: {
         name: 'semestre',
-        values: [`${subject}-${semester}`],
+        values: subjectSemesters,
       },
       course: {
         name: 'curso',
-        values: [`${course}-${campus}`],
+        values: uniqueCourses,
       },
     };
 

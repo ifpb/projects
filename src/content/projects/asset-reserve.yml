@@ -10,7 +10,9 @@ addresses:
   repository: https://github.com/odilon007/Projeto-PW2
 category:
   type: subject
-  subject: pw2-csbes-jp
+  subject:
+    - pw2-csbes-jp
+    - er-csbes-jp
   semester: 2025.2
 tags:
   - javascript

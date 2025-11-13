@@ -51,9 +51,13 @@ const category = project.data.category as ProjectProps['category'];
 let course = '';
 let campus = '';
 let city = '';
+let subjects: string[] = [];
 
 if (isSubjectProject(project)) {
-  const [subjectName, courseId, cityName] = category.subject.split('-');
+  // Handle both single subject (string) and multiple subjects (array)
+  subjects = Array.isArray(category.subject) ? category.subject : [category.subject];
+  // Use the first subject to determine course, campus, and city
+  const [subjectName, courseId, cityName] = subjects[0].split('-');
   course = courseId;
   campus = 'ifpb-' + cityName;
   city = cityName;
@@ -109,13 +113,34 @@ const pageTitle = `Projeto | ${project.data.name}`;
           </div>
 
           <div class="mb-2">
-            <div class="font-bold text-lg">Disciplina:</div>
-            <a
-              href={`/projects/codes/${category.subject}-${category.semester}/1/`}
-              class="underline"
-            >
-              {getSubject(category.subject)?.data?.name?.full} ({category.semester})
-            </a>
+            <div class="font-bold text-lg">Disciplina{subjects.length > 1 ? 's' : ''}:</div>
+            {subjects.length > 1 ? (
+              <ul class="list-disc list-inside">
+                {
+                  subjects.map((subj) => (
+                    <li>
+                      <a
+                        href={`/projects/codes/${subj}-${category.semester}/1/`}
+                        class="underline"
+                      >
+                        {getSubject(subj)?.data?.name?.full} ({category.semester})
+                      </a>
+                    </li>
+                  ))
+                }
+              </ul>
+            ) : (
+              subjects.map((subj) => (
+                <div class="mb-1">
+                  <a
+                    href={`/projects/codes/${subj}-${category.semester}/1/`}
+                    class="underline"
+                  >
+                    {getSubject(subj)?.data?.name?.full} ({category.semester})
+                  </a>
+                </div>
+              ))
+            )}
           </div>
         )
       }
