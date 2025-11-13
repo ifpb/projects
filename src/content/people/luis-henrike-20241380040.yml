@@ -1,0 +1,15 @@
+name:
+  compact: Luis Henrike
+  full: Luis Henrike Marinho da Costa
+avatar:
+  github: https://github.com/luishenrike083.png
+  githubUC: https://avatars.githubusercontent.com/u/170119268?v=4
+occupations:
+  - id: 20241380040
+    type: student
+    course: cstrc-jp  # curso-campus (formato unificado)
+    isFinished: false
+addresses:
+  github: https://github.com/luishenrike083
+  linkedin: www.linkedin.com/in/luis-henrike
+  email: luishenrike001@gmail.com
