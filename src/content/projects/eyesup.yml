@@ -13,7 +13,7 @@ category:
 tags:
   - bootstrap
   - chart.js
-  - leafletjs
+  - leaflet.js
   - express.js
   - prisma
   - jwt

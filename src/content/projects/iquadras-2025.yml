@@ -6,12 +6,12 @@ addresses:
   repository: https://github.com/mnlpdr/iquadras25
 category:
   type: subject
-  subject: pd-cstsi-jp
+  subject:
+    - pd-cstsi-jp
+    - daw-cstsi-jp
   semester: 2024.2
 tags:
   - esporte
-  - programação distribuída
-  - desenvolvimento ágil
   - ruby on rails
 owners:
   - 20201370001
