@@ -12,6 +12,16 @@
   opacity: 1;
 }
 
+.project-card .canva-project-link path {
+  fill: #fff;
+  opacity: 1;
+}
+
+.project-card .design-project-link path {
+  fill: #fff;
+  opacity: 1;
+}
+
 header .github-project-link path {
   fill: #f4f4f5;
 }

@@ -29,7 +29,13 @@ const projectId = getProjectId(project);
 >
   <section class="relative z-0">
     <figure class="overflow-hidden shadow-md">
-      <a href={addresses.homepage || (Array.isArray(addresses.repository) ? addresses.repository[0] : addresses.repository)} target="_blank">
+      <a
+        href={addresses.homepage ||
+          (Array.isArray(addresses.repository)
+            ? addresses.repository[0]
+            : addresses.repository)}
+        target="_blank"
+      >
         <img
           src={addresses.preview ?? '/projects/imgs/project-placeholder.png'}
           class="animate-pulse bg-gray-300 object-cover w-full h-[200px] md:h-[150px] hover:scale-105 transition duration-500"
@@ -43,9 +49,31 @@ const projectId = getProjectId(project);
       <ul class="flex">
         {
           addresses.design && (
-            <li class="-mr-2 bg-black border-2 border-gray-100 rounded-full overflow-hidden w-9">
-              <a href={addresses.design} target="_blank" class="font-bold">
-                <Icon name="logos:figma" size={32} class="figma-project-link" />
+            <li class="-mr-2 bg-black border-2 border-gray-100 rounded-full overflow-hidden w-9 flex items-center justify-center">
+              <a
+                href={addresses.design}
+                target="_blank"
+                class="font-bold flex items-center justify-center"
+              >
+                {addresses.design.includes('figma.com') ? (
+                  <Icon
+                    name="logos:figma"
+                    size={32}
+                    class="figma-project-link"
+                  />
+                ) : addresses.design.includes('canva.com') ? (
+                  <Icon
+                    name="simple-icons:canva"
+                    size={32}
+                    class="canva-project-link"
+                  />
+                ) : (
+                  <Icon
+                    name="clarity:design-line"
+                    size={20}
+                    class="design-project-link"
+                  />
+                )}
               </a>
             </li>
           )
@@ -67,34 +95,32 @@ const projectId = getProjectId(project);
             </li>
           )
         }
-        {Array.isArray(addresses.repository) ? (
-          addresses.repository.map((repo, index) => (
-            <li
-              class="-mr-2 bg-black border-2 border-gray-100 rounded-full overflow-hidden w-9"
-            >
-              <a 
-                href={repo} 
-                target="_blank" 
-                class="font-bold"
-                title={`Repositório ${index + 1}`}
-              >
+        {
+          Array.isArray(addresses.repository) ? (
+            addresses.repository.map((repo, index) => (
+              <li class="-mr-2 bg-black border-2 border-gray-100 rounded-full overflow-hidden w-9">
+                <a
+                  href={repo}
+                  target="_blank"
+                  class="font-bold"
+                  title={`Repositório ${index + 1}`}
+                >
+                  <Icon
+                    name="uim:github"
+                    size={32}
+                    class="github-project-link"
+                  />
+                </a>
+              </li>
+            ))
+          ) : (
+            <li class="-mr-2 bg-black border-2 border-gray-100 rounded-full overflow-hidden w-9">
+              <a href={addresses.repository} target="_blank" class="font-bold">
                 <Icon name="uim:github" size={32} class="github-project-link" />
               </a>
             </li>
-          ))
-        ) : (
-          <li
-            class="-mr-2 bg-black border-2 border-gray-100 rounded-full overflow-hidden w-9"
-          >
-            <a 
-              href={addresses.repository} 
-              target="_blank" 
-              class="font-bold"
-            >
-              <Icon name="uim:github" size={32} class="github-project-link" />
-            </a>
-          </li>
-        )}
+          )
+        }
       </ul>
     </div>
     <ul class="absolute bottom-2 right-4 flex">
