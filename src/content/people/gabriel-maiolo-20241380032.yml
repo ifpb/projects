@@ -7,7 +7,7 @@ avatar:
 occupations:
   - id: 20241380032
     type: student
-    course: cstrc
+    course: cstrc-jp
     isFinished: false
 addresses:
   github: https://github.com/gbrl-gms
