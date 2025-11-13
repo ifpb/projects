@@ -4,7 +4,7 @@ addresses:
   preview: https://github.com/12Gustavo21/floraweb/blob/main/assets/img/home-print.png?raw=true
   homepage: https://floraweb.vercel.app
   repository: https://github.com/12Gustavo21/floraweb
-  template: https://www.figma.com/community/file/1440392697718119467
+  design: https://www.figma.com/community/file/1440392697718119467
 category:
   type: subject
   subject: lm-cstsi-jp

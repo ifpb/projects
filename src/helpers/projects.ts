@@ -16,10 +16,10 @@ export function isExtensionProject(project: CollectionEntry<'projects'>) {
 }
 
 export function getProjectId(project: CollectionEntry<'projects'>) {
-  const repository = Array.isArray(project.data.addresses.repository) 
-    ? project.data.addresses.repository[0] 
+  const repository = Array.isArray(project.data.addresses.repository)
+    ? project.data.addresses.repository[0]
     : project.data.addresses.repository;
-  
+
   return repository
     .split(/(github|gitlab).com\//)
     .at(-1)
@@ -31,14 +31,14 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
     const {
       data: {
         category: { type, subject, semester },
-        addresses: { template, workflow },
+        addresses: { design, workflow },
         tags,
       },
     } = project as {
       data: {
         category: SubjectProject;
         tags: string[];
-        addresses: { template?: string; workflow?: string };
+        addresses: { design?: string; workflow?: string };
       };
     };
 
@@ -46,8 +46,8 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
 
     projectTags.sort();
 
-    if (template) {
-      projectTags.unshift('figma');
+    if (design) {
+      projectTags.unshift('design');
     }
 
     if (workflow) {
@@ -56,15 +56,11 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
 
     // Handle both single subject (string) and multiple subjects (array)
     const subjects = Array.isArray(subject) ? subject : [subject];
-    
+
     // Add tags for all subjects
-    subjects.forEach(sub => {
+    subjects.forEach((sub) => {
       const [subjectName, course, campus] = sub.split('-');
-      projectTags.unshift(
-        sub,
-        `${sub}-${semester}`,
-        `${course}-${campus}`
-      );
+      projectTags.unshift(sub, `${sub}-${semester}`, `${course}-${campus}`);
     });
 
     // Add the type tag
@@ -76,7 +72,7 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
       data: {
         tags,
         category,
-        addresses: { template, workflow },
+        addresses: { design, workflow },
       },
     } = project;
 
@@ -84,8 +80,8 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
 
     projectTags.sort();
 
-    if (template) {
-      projectTags.unshift('figma');
+    if (design) {
+      projectTags.unshift('design');
     }
 
     if (workflow) {
@@ -108,16 +104,16 @@ export function getProjectTagGroups(project: CollectionEntry<'projects'>) {
 
     // Handle both single subject (string) and multiple subjects (array)
     const subjects = Array.isArray(subject) ? subject : [subject];
-    
+
     // Get all unique courses from subjects
-    const courses = subjects.map(sub => {
+    const courses = subjects.map((sub) => {
       const [subjectName, course, campus] = sub.split('-');
       return `${course}-${campus}`;
     });
     const uniqueCourses = [...new Set(courses)];
-    
+
     // Get all subject-semester combinations
-    const subjectSemesters = subjects.map(sub => `${sub}-${semester}`);
+    const subjectSemesters = subjects.map((sub) => `${sub}-${semester}`);
 
     const projectTags = {
       tags: {

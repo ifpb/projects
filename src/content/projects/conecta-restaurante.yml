@@ -5,7 +5,7 @@ description:
 addresses:
   homepage: https://joaopedro-maar.github.io/ConectaRestaurantes/
   repository: https://github.com/JoaoPedro-MAAR/ConectaRestaurantes
-  template: https://www.figma.com/design/SZOMhbw6IiEG9TcpzFyOmI/Front-END--conecta-restaurante
+  design: https://www.figma.com/design/SZOMhbw6IiEG9TcpzFyOmI/Front-END--conecta-restaurante
 category:
   type: subject
   subject: pw1-cstsi-jp

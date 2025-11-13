@@ -4,7 +4,7 @@ addresses:
   preview: https://github.com/ifpb/ifpb.github.io/blob/main/preview.png?raw=true
   homepage: https://ifpb.github.io/
   repository: https://github.com/ifpb/ifpb.github.io
-  template: https://www.figma.com/design/tgIYBEusxWkzNX803dBgUs/ifpb.github.io
+  design: https://www.figma.com/design/tgIYBEusxWkzNX803dBgUs/ifpb.github.io
 category:
   type: open source
   campus: ifpb-jp

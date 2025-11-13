@@ -54,7 +54,7 @@ addresses:
   preview: https://github.com/ifpb/ifpb.github.io/blob/main/preview.png?raw=true
   homepage: https://ifpb.github.io/
   repository: https://github.com/ifpb/ifpb.github.io
-  template: https://www.figma.com/design/tgIYBEusxWkzNX803dBgUs/ifpb.github.io?node-id=0-1&t=Y6u5fodNP8JCcDHw-1
+  design: https://www.figma.com/design/tgIYBEusxWkzNX803dBgUs/ifpb.github.io
 category:
   type: subject
   subject: ls-cstsi-jp
@@ -72,7 +72,7 @@ Este exemplo é um projeto do tipo `projeto de disciplina`, no arquivo [src/cont
 - `addresses.repository` - Endereço do repositório do projeto no Github (obrigatório);
 - `addresses.preview` - Endereço da imagem de preview do projeto (print screen), que deve ser colocada no próprio repositório do projeto com a extensão `.png` e tamanho sugerido de `500x262px` (obrigatório);
 - `addresses.homepage` - Site do projeto em execução, caso exista (opcional).
-- `addresses.template` - Site do template/protótipo do projeto, caso exista (opcional).
+- `addresses.design` - Site do design/protótipo do projeto, caso exista (opcional).
 
 No campo `owners` é possível adicionar uma lista alunos, caso o projeto tenha mais de um colaborador, informando a matrícula do aluno, depois é importante que cada aluno faça seu o cadastrado de suas informações.
 
