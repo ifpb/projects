@@ -34,10 +34,7 @@ occupations:
   - id: 20051370420
     type: student
     course: cstsi-jp  # curso-campus (formato unificado)
-    isFinished: true
-  - id: 2680962
-    type: professor
-    campus: ifpb-jp
+    isFinished: true  # true se já concluiu, false se ainda está cursando
 addresses:
   github: https://github.com/luizchaves
   linkedin: https://www.linkedin.com/in/luizcarloschaves/
@@ -90,6 +87,39 @@ Você pode adicionar outros endereços sociais e profissionais:
 - `addresses.twitter`
 - `addresses.email`
 
+### 👔 Múltiplas Ocupações
+
+Pessoas podem ter múltiplas ocupações (ex: estudante e professor, múltiplos cursos):
+
+```yaml
+# Estudante de múltiplos cursos
+occupations:
+  - id: 20051370420
+    type: student
+    course: cstsi-jp
+    isFinished: true
+  - id: 20221370025
+    type: student
+    course: csbes-jp
+    isFinished: false
+
+# Estudante que virou professor
+occupations:
+  - id: 20051370420
+    type: student
+    course: cstsi-jp
+    isFinished: true
+  - id: 2680962
+    type: professor
+    campus: ifpb-jp
+
+# Apenas professor
+occupations:
+  - id: 2680962
+    type: professor
+    campus: ifpb-jp
+```
+
 ## 📦 Cadastro de Projetos
 
 Para cadastrar um projeto, adicione um arquivo seguindo o formato `titulo-do-projeto.yml` no diretório `src/content/projects/`.
@@ -98,7 +128,7 @@ Para cadastrar um projeto, adicione um arquivo seguindo o formato `titulo-do-pro
 
 ```yaml
 name: IFPB Projects
-description: >
+description:
   Este portal tem como objetivo listar projetos construídos pelos
   estudantes, professores e colaboradores do IFPB.
 addresses:
@@ -107,10 +137,8 @@ addresses:
   repository: https://github.com/ifpb/projects
   design: https://www.figma.com/design/example # figma, canva, etc.
 category:
-  type: subject  # ou 'subject', 'research', 'extension'
-  subject:
-    - pw2-csbes-jp   # disciplina principal
-    - dw-csbes-jp    # disciplina adicional (opcional)
+  type: subject  # ou 'subject', 'research', 'extension', 'open source'
+  subject: pw2-csbes-jp
   period: 2025.1   # necessário para projetos de disciplina
 tags:
   - javascript
