@@ -3,11 +3,11 @@ name:
   full: Caio Luiz Lacerda Terto Silva
 avatar:
   github: https://github.com/caio86.png
+  githubUC: https://avatars.githubusercontent.com/u/80562020?v=4
 occupations:
   - id: 20241380022
     type: student
-    campus: ifpb-jp
-    course: cstrc
+    course: cstrc-jp
     isFinished: false
 addresses:
   github: https://github.com/caio86
