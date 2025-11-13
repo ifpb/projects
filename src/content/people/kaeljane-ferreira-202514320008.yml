@@ -7,13 +7,11 @@ avatar:
 occupations:
   - id: 20211730011
     type: student
-    campus: ifpb-jp
-    course: ctim
+    course: ctim-jp
     isFinished: true
   - id: 202514320008
     type: student
-    campus: ifpb-jp
-    course: csbes
+    course: csbes-jp
     isFinished: false
 addresses:
   github: https://github.com/kaeljane

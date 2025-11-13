@@ -7,8 +7,7 @@ avatar:
 occupations:
   - id: 20191370003
     type: student
-    campus: ifpb-jp
-    course: cstsi
+    course: cstsi-jp
     isFinished: true
 addresses:
   github: https://github.com/8b1tz

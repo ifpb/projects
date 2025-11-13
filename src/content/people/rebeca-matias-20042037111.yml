@@ -6,8 +6,7 @@ avatar:
 occupations:
   - id: 20042037111
     type: student
-    campus: ifpb-jp
-    course: cstsi
+    course: cstsi-jp
     isFinished: true
 addresses:
   linkedin: https://www.linkedin.com/in/rebeca-dantas-5a98b12a/

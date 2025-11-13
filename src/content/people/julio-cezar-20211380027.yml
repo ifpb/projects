@@ -7,8 +7,7 @@ avatar:
 occupations:
   - id: 20211380027
     type: student
-    campus: ifpb-jp
-    course: cstrc
+    course: cstrc-jp
     isFinished: false
 addresses:
   linkedin: https://www.linkedin.com/in/j%C3%BAlio-c%C3%A9zar-97a992290/

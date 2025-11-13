@@ -7,13 +7,11 @@ avatar:
 occupations:
   - id: 20191780034
     type: student
-    campus: ifpb-jp
-    course: ctii
+    course: ctii-jp
     isFinished: true
   - id: 20222370031
     type: student
-    campus: ifpb-jp
-    course: cstsi
+    course: cstsi-jp
     isFinished: false
 addresses:
   github: https://github.com/LucasAndrade912

@@ -7,8 +7,7 @@ avatar:
 occupations:
   - id: 20092380489
     type: student
-    campus: ifpb-jp
-    course: cstrc
+    course: cstrc-jp
     isFinished: true
 addresses:
   email: helder.hnm@gmail.com

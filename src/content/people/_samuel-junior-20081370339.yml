@@ -5,8 +5,7 @@ avatar: null
 occupations:
   - id: 20081370339
     type: student
-    campus: ifpb-jp
-    course: cstsi
+    course: cstsi-jp
     isFinished: true
 addresses:
   email: sams862@yahoo.com.br

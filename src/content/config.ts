@@ -51,11 +51,17 @@ export const abbreviationCourses = [
   'ctim',
 ] as const;
 
+const courseWithCityEnum = abbreviationCourses.flatMap((course) =>
+  Object.keys(cities).map((city) => `${course}-${city}`)
+);
+
 const campusCode = Object.keys(campi) as [keyof typeof campi];
 
 const campus = z.enum(campusCode);
 
 const course = z.enum([...abbreviationCourses]);
+
+const courseWithCity = z.enum(courseWithCityEnum as [string, ...string[]]);
 
 const addresses = z.object({
   github: z.string().url().optional(),
@@ -96,8 +102,7 @@ const employeeOccupation = z.object({
 const studentOccupation = z.object({
   id,
   type: z.literal('student'),
-  campus,
-  course,
+  course: courseWithCity,
   isFinished: z.boolean(),
 });
 
@@ -206,10 +211,6 @@ const projectCollection = defineCollection({
     owners: z.array(id),
   }),
 });
-
-const courseWithCityEnum = abbreviationCourses.flatMap((course) =>
-  Object.keys(cities).map((city) => `${course}-${city}`)
-);
 
 const subjectCollection = defineCollection({
   type: 'data',

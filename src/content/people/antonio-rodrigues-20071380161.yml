@@ -7,8 +7,7 @@ avatar:
 occupations:
   - id: 20071380161
     type: student
-    campus: ifpb-jp
-    course: cstrc
+    course: cstrc-jp
     isFinished: true
 addresses:
   github: https://github.com/antonioflaviofr

@@ -7,8 +7,7 @@ avatar:
 occupations:
   - id: 20212370012
     type: student
-    campus: ifpb-jp
-    course: cstsi
+    course: cstsi-jp
     isFinished: false
 addresses:
   github: https://github.com/paulosys

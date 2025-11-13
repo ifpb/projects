@@ -7,8 +7,7 @@ avatar:
 occupations:
   - id: 20092380063
     type: student
-    campus: ifpb-jp
-    course: cstrc
+    course: cstrc-jp
     isFinished: true
 addresses:
   github: https://github.com/thamayron

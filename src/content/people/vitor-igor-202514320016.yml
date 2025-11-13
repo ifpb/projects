@@ -7,13 +7,11 @@ avatar:
 occupations:
   - id: 20221780025
     type: student
-    campus: ifpb-jp
-    course: ctii
+    course: ctii-jp
     isFinished: true
   - id: 202514320016
     type: student
-    campus: ifpb-jp
-    course: csbes
+    course: csbes-jp
     isFinished: false
 addresses:
   github: https://github.com/vitor-igor

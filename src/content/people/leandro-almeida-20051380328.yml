@@ -7,8 +7,7 @@ avatar:
 occupations:
   - id: 20051380328
     type: student
-    campus: ifpb-jp
-    course: cstrc
+    course: cstrc-jp
     isFinished: true
   - id: 1864985
     type: professor

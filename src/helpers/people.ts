@@ -25,11 +25,12 @@ export function getPersonIdByCourse(
   course: string
 ) {
   if (isStudent(person)) {
-    return person.data.occupations.filter(
+    const matchingOccupation = person.data.occupations.filter(
       (occupation: Student) => occupation.course === course
-    )[0].id;
+    )[0];
+    return matchingOccupation?.id ?? 0;
   } else {
-    return person.data.occupations.at(-1).id;
+    return person.data.occupations.at(-1)?.id ?? 0;
   }
 }
 
@@ -118,7 +119,7 @@ export async function getStudentTags(person: CollectionEntry<'people'>) {
 
   if (isStudent(person)) {
     const courseOccupations = person.data.occupations.filter(
-      (occupation) => occupation.type === 'student'
+      (occupation): occupation is Student => occupation.type === 'student'
     );
 
     const courses = courseOccupations.map((occupation) => occupation.course);
@@ -156,11 +157,16 @@ export async function getStudentTags(person: CollectionEntry<'people'>) {
     tags.push('egresso');
 
     const courses = person.data.occupations
-      .filter((occupation: Student) => occupation.isFinished)
-      .map((occupation: Student) => [
-        `egresso-${occupation.course}-${occupation.campus.split('-')[1]}`,
-        `egresso-${occupation.course}`,
-      ]);
+      .filter((occupation): occupation is Student => 
+        occupation.type === 'student' && occupation.isFinished)
+      .map((occupation: Student) => {
+        const courseAbbreviation = occupation.course.split('-')[0];
+        const campus = occupation.course.split('-')[1];
+        return [
+          `egresso-${courseAbbreviation}-${campus}`,
+          `egresso-${courseAbbreviation}`,
+        ];
+      });
 
     tags.push(...courses.flat());
   }
@@ -169,7 +175,14 @@ export async function getStudentTags(person: CollectionEntry<'people'>) {
 }
 
 export async function getPersonTags(person: CollectionEntry<'people'>) {
-  const campi = person.data.occupations.map((occupation) => occupation.campus);
+  const campi = person.data.occupations.map((occupation) => {
+    if (occupation.type === 'student') {
+      return (occupation as Student).course.split('-')[1];
+    } else {
+      // For professors, use campus
+      return occupation.campus?.replace('ifpb-', '') || 'jp';
+    }
+  });
 
   const tags: string[] = [...campi];
 
@@ -216,12 +229,12 @@ async function getPeopleTagsMap(people: CollectionEntry<'people'>[]) {
 
 export function getPersonTagGroups(person: CollectionEntry<'people'>) {
   const courses = person.data.occupations
-    .filter((occupation) => occupation.type === 'student')
+    .filter((occupation): occupation is Student => occupation.type === 'student')
     .map((occupation) => occupation.course);
 
   const semesters = person.data.occupations
-    .filter((occupation) => occupation.type === 'student')
-    .map((course) => getOccupationId(course));
+    .filter((occupation): occupation is Student => occupation.type === 'student')
+    .map((occupation) => getOccupationId(occupation));
 
   const coursesBySemester = semesters.map(
     (semester, index) => `${courses[index]}-${semester}`

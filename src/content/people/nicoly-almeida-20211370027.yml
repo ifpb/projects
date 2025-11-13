@@ -7,13 +7,11 @@ avatar:
 occupations:
   - id: 20181780005
     type: student
-    campus: ifpb-jp
-    course: ctii
+    course: ctii-jp
     isFinished: true
   - id: 20211370027
     type: student
-    campus: ifpb-jp
-    course: cstsi
+    course: cstsi-jp
     isFinished: true
 addresses:
   github: https://github.com/Nicoly-Almeida

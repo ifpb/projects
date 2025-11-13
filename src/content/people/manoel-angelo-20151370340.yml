@@ -7,8 +7,7 @@ avatar:
 occupations:
   - id: 20151370340
     type: student
-    campus: ifpb-jp
-    course: cstsi
+    course: cstsi-jp
     isFinished: true
 addresses:
   email: angelo.manoel.neto@gmail.com

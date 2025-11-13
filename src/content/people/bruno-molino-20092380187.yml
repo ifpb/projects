@@ -6,8 +6,7 @@ avatar:
 occupations:
   - id: 20092380187
     type: student
-    campus: ifpb-jp
-    course: cstrc
+    course: cstrc-jp
     isFinished: true
 addresses:
   email: brunoesturba@yahoo.com.br

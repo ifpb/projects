@@ -15,9 +15,14 @@ export function getCourse(id: string) {
 }
 
 export function getCourseByAbbreviation(abbreviation: string) {
+  // Extract course part if it includes campus (e.g., "cstsi-jp" -> "cstsi")
+  const courseAbbreviation = abbreviation.includes('-') 
+    ? abbreviation.split('-')[0] 
+    : abbreviation;
+    
   return courses.find(
     (course: CollectionEntry<'courses'>) =>
-      course?.data?.abbreviation === abbreviation
+      course?.data?.abbreviation === courseAbbreviation
   );
 }
 
@@ -148,9 +153,15 @@ export function getCourseAbbreviationByOccupation(occupation) {
 }
 
 export function getCourseAbbreviationCampusByOccupation(occupation) {
-  const { course, id, campus } = occupation;
+  const { course, id } = occupation;
 
-  const [, city] = campus.split('-');
+  if (!course) {
+    // For non-student occupations that might not have course
+    return `${getOccupationId(occupation)}`;
+  }
 
-  return `${course}-${city}-${getOccupationId(occupation)}`;
+  // Extract campus from course string (e.g., "cstsi-jp" -> "jp")
+  const [courseAbbr, campus] = course.split('-');
+  
+  return `${courseAbbr}-${campus}-${getOccupationId(occupation)}`;
 }

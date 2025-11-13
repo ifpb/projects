@@ -6,8 +6,7 @@ avatar:
 occupations:
   - id: 20081370495
     type: student
-    campus: ifpb-jp
-    course: cstsi
+    course: cstsi-jp
     isFinished: true
 addresses:
   linkedin: https://www.linkedin.com/in/anderson-ribeiro-carvalho/

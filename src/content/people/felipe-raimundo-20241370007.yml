@@ -7,13 +7,11 @@ avatar:
 occupations:
   - id: 20211780035
     type: student
-    campus: ifpb-jp
-    course: ctii
+    course: ctii-jp
     isFinished: true
   - id: 20241370007
     type: student
-    campus: ifpb-jp
-    course: cstsi
+    course: cstsi-jp
     isFinished: false
 addresses:
   github: https://github.com/Felipejjjj

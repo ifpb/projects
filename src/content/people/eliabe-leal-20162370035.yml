@@ -7,13 +7,12 @@ avatar:
 occupations:
   - id: 20162370035
     type: student
-    campus: ifpb-jp
-    course: cstsi
+    course: cstsi-jp
     isFinished: true
   - id: 202019840037
     type: student
-    course: cmpti
-    campus: ifpb-jp
+    course: cmpti-jp
+
     isFinished: false
 addresses:
   github: https://github.com/eliabeleal

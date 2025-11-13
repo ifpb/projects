@@ -7,8 +7,7 @@ avatar:
 occupations:
   - id: 20222380023
     type: student
-    campus: ifpb-jp
-    course: cstrc
+    course: cstrc-jp
     isFinished: false
 addresses:
   github: https://github.com/C-Luiz

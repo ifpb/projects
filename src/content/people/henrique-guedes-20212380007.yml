@@ -7,8 +7,7 @@ avatar:
 occupations:
   - id: 20212380007
     type: student
-    campus: ifpb-jp
-    course: cstrc
+    course: cstrc-jp
     isFinished: false
 addresses:
   github: https://github.com/Henrique229

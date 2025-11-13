@@ -6,8 +6,7 @@ avatar:
 occupations:
   - id: 20192370020
     type: student
-    campus: ifpb-jp
-    course: cstsi
+    course: cstsi-jp
     isFinished: false
 addresses:
   linkedin: https://www.linkedin.com/in/glauco-gomes/

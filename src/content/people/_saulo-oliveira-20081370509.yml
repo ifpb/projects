@@ -5,8 +5,7 @@ avatar: null
 occupations:
   - id: 20081370509
     type: student
-    campus: ifpb-jp
-    course: cstsi
+    course: cstsi-jp
     isFinished: true
 addresses:
   email: sauloroliveira@gmail.com

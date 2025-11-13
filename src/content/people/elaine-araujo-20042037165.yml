@@ -7,8 +7,7 @@ avatar:
 occupations:
   - id: 20042037165
     type: student
-    campus: ifpb-cg
-    course: cstsi
+    course: cstsi-jp
     isFinished: true
   - id: 2638536
     type: professor

@@ -7,8 +7,7 @@ avatar:
 occupations:
   - id: 202514320019
     type: student
-    campus: ifpb-jp
-    course: csbes
+    course: csbes-jp
     isFinished: false
 addresses:
   github: https://github.com/LuMi-Yo

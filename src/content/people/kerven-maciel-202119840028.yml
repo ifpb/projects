@@ -7,18 +7,15 @@ avatar:
 occupations:
   - id: 20121750200
     type: student
-    campus: ifpb-jp
-    course: ctie
+    course: ctie-jp
     isFinished: true
   - id: 20152610043
     type: student
-    campus: ifpb-jp
-    course: csbee
+    course: csbee-jp
     isFinished: true
   - id: 202119840028
     type: student
-    campus: ifpb-jp
-    course: cmpti
+    course: cmpti-jp
     isFinished: false
 addresses:
   github: https://github.com/kerven-albuquerque

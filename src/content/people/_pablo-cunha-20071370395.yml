@@ -5,7 +5,6 @@ avatar: null
 occupations:
   - id: 20071370395
     type: student
-    campus: ifpb-jp
-    course: cstsi
+    course: cstsi-jp
     isFinished: true
 addresses: null

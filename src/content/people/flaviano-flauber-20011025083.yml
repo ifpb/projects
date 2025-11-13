@@ -7,8 +7,7 @@ avatar:
 occupations:
   - id: 20011025083
     type: student
-    campus: ifpb-jp
-    course: cstt
+    course: cstt-jp
     isFinished: true
 addresses:
   github: https://github.com/flauberjp

@@ -6,8 +6,7 @@ avatar:
 occupations:
   - id: 20032037084
     type: student
-    campus: ifpb-jp
-    course: cstsi
+    course: cstsi-jp
     isFinished: true
 addresses:
   linkedin: https://www.linkedin.com/in/edno-galderisy-ferreira-de-fran%C3%A7a-05183026b/

@@ -7,8 +7,7 @@ avatar:
 occupations:
   - id: 20072370640
     type: student
-    campus: ifpb-jp
-    course: cstsi
+    course: cstsi-jp
     isFinished: true
 addresses:
   github: https://github.com/WyllCavalcante

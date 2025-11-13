@@ -7,8 +7,7 @@ avatar:
 occupations:
   - id: 20212380016
     type: student
-    campus: ifpb-jp
-    course: cstrc
+    course: cstrc-jp
     isFinished: false
 addresses:
   github: https://github.com/julioestrela96

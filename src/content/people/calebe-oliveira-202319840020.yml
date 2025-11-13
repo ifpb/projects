@@ -7,18 +7,18 @@ avatar:
 occupations:
   - id: 20141720047
     type: student
-    course: ctie
-    campus: ifpb-jp
+    course: ctie-jp
+
     isFinished: true
   - id: 20181610021
     type: student
-    course: csbee
-    campus: ifpb-jp
+    course: csbee-jp
+
     isFinished: true
   - id: 202229840005
     type: student
-    course: cmpti
-    campus: ifpb-jp
+    course: cmpti-jp
+
     isFinished: false
 addresses:
   github: https://github.com/calebeof

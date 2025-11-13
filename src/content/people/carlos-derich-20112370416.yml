@@ -8,8 +8,7 @@ avatar:
 occupations:
   - id: 20112370416
     type: student
-    campus: ifpb-jp
-    course: cstsi
+    course: cstsi-jp
     isFinished: true
 addresses:
   github: https://github.com/drish

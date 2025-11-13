@@ -7,8 +7,7 @@ avatar:
 occupations:
   - id: 20071610175
     type: student
-    campus: ifpb-jp
-    course: csbee
+    course: csbee-jp
     isFinished: true
 addresses:
   github: https://github.com/flavioribeiro

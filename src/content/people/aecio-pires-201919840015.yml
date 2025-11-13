@@ -7,13 +7,11 @@ avatar:
 occupations:
   - id: 20052380070
     type: student
-    campus: ifpb-jp
-    course: cstrc
+    course: cstrc-jp
     isFinished: true
   - id: 201919840015
     type: student
-    campus: ifpb-jp
-    course: cmpti
+    course: cmpti-jp
     isFinished: true
 addresses:
   github: https://github.com/aeciopires
