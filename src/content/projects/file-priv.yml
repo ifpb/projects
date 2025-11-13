@@ -1,0 +1,15 @@
+name: FilePriv
+description: Projeto de armazenamento distribuído de arquivos com criptografia
+addresses:
+  repository: https://github.com/ryan-morais-rm/FilePriv
+  homepage: https://ryan-morais-rm.github.io/FilePriv/src/frontend/index.html
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2025.2
+tags:
+  - html
+  - css
+  - javascript
+owners:
+  - 20231380030
