@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Icon } from '@iconify/react';
 import { getCourseByAbbreviation, getSemesterCourses } from '@/helpers/courses';
-import { getSubject } from '@/helpers/subjects';
 import Accordion from './Accordion';
 import Badge from './Badge';
 

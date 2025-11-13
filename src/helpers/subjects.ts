@@ -1,9 +1,14 @@
-import { getCollection, type CollectionEntry } from 'astro:content';
 
-export const subjects = await getCollection('subjects');
+const subjects = [
+  { id: 1, name: 'Redes de Computadores I', course: 'RC' },
+  { id: 2, name: 'Segurança da Informação', course: 'RC' },
+  { id: 3, name: 'Administração de Sistemas', course: 'RC' },
+];
 
-export function getSubject(id: string) {
-  return subjects.find(
-    (subject: CollectionEntry<'subjects'>) => subject?.data?.id === id
-  );
+export function getSubject(id: number) {
+  return subjects.find(subject => subject.id === id);
+}
+
+export function getAllSubjects() {
+  return subjects;
 }
