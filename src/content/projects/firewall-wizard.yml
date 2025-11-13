@@ -1,0 +1,24 @@
+name: Firewall Wizard
+description: Este projeto tem como objetivo oferecer uma interface web para acesso e configuração remota de instâncias do nftables.
+addresses:
+  preview: https://github.com/icaruuuuuu/firewall-wizard/blob/main/imgs/preview.png?raw=true
+  homepage: https://icaruuuuuu.github.io/firewall-wizard
+  repository: https://github.com/icaruuuuuu/firewall-wizard
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2025.2
+tags:
+  - javascript
+  - html
+  - css
+  - express.js
+  - bash
+  - nftables
+  - linux
+  - firewall
+  - dashboard
+owners:
+  - 20241380010
+  - 20241380028
+  - 20241380026
