@@ -1,0 +1,22 @@
+name: Streamwave
+description:
+   StreamWave é uma plataforma de streaming VOD, desenvolvida com uma arquitetura escalável para entregar vídeo de forma eficiente e confiável. Ela combina a performance do streaming adaptativo com a experiência social de assistir em grupo, tudo em um único serviço. 
+addresses:
+  #preview: https://github.com/caio86/streamwave
+  repository: https://github.com/caio86/streamwave
+  homepage: https://caio86.github.io/streamwave/
+  design: https://www.figma.com/design/pTLkzR8IZwDGSX2G9Q5m04/streamwave # figma, canva, etc.
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2025.2
+tags:
+  - html
+  - css
+  - js
+  - nodejs
+  - figma
+owners:
+  - 20241380022
+  - 20241380032
+  - 20241380003
