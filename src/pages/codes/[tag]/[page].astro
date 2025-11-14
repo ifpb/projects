@@ -74,7 +74,15 @@ const formatPageTitle = (tag: string) => {
     return `Projetos | ${courseEntry.data.level.compact} em ${courseEntry.data.name}`;
   }
 
-  return `Projetos | ${tag.charAt(0).toUpperCase() + tag.slice(1)}`;
+  // Capitalize first letter of each word for compound words
+  const capitalizeWords = (str: string) => {
+    return str
+      .split(/\s/)
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+      .join(' ');
+  };
+
+  return `Projetos | ${capitalizeWords(tag)}`;
 };
 
 const { page }: Props = Astro.props;
