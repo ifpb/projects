@@ -8,6 +8,7 @@ import {
 import { getSubject } from '@/helpers/subjects';
 import Accordion from './Accordion';
 import Badge from './Badge';
+import { campi } from '@/content/config';
 
 interface TagGroup {
   name: string;
@@ -352,109 +353,205 @@ export default function Filter({
           </>
         )}
 
-        {type === 'people' &&
-          Object.entries(
-            Object.entries(getPeriodCourses(tags.period.values)).reduce(
-              (
-                acc: Record<string, Array<[string, string[]]>>,
-                [course, periods]: [string, string[]]
-              ) => {
-                const courseData = getCourseByAbbreviation(course);
-                const level = courseData?.data.level.compact || 'Outros';
-                if (!acc[level]) {
-                  acc[level] = [];
-                }
-                acc[level].push([course, periods]);
-                return acc;
-              },
-              {}
+        {type === 'people' && (
+          <>
+            <h1 className="font-bold text-base capitalize mb-4">IFPB</h1>
+            {Object.entries(
+              Object.entries(getPeriodCourses(tags.period.values)).reduce(
+                (
+                  acc: Record<string, Array<[string, string[]]>>,
+                  [course, periods]: [string, string[]]
+                ) => {
+                  const courseData = getCourseByAbbreviation(course);
+                  const level =
+                    courseData?.data.level.compact.split(' ')[0] || 'Outros';
+                  if (!acc[level]) {
+                    acc[level] = [];
+                  }
+                  acc[level].push([course, periods]);
+                  return acc;
+                },
+                {}
+              )
             )
-          )
-            .sort(([levelA], [levelB]) => levelA.localeCompare(levelB))
-            .map(([level, coursesInLevel]) => (
-              <details
-                key={level}
-                open={openDetails === `people-${level}`}
-                className="mb-6"
-              >
-                <summary
-                  className="font-bold text-sm mb-3 text-gray-800 cursor-pointer hover:text-gray-600"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleDetailsToggle(`people-${level}`);
-                  }}
+              .sort(([levelA], [levelB]) => levelA.localeCompare(levelB))
+              .map(([level, coursesInLevel]) => (
+                <details
+                  key={level}
+                  open={openDetails === `people-${level}`}
+                  className="mb-2"
                 >
-                  {level}
-                </summary>
-                <div className="ml-2 mt-2">
-                  {coursesInLevel
-                    .sort(([a], [b]) =>
-                      getCourseByAbbreviation(a).data.name.localeCompare(
-                        getCourseByAbbreviation(b).data.name
+                  <summary
+                    className="font-bold text-sm mb-3 text-gray-800 cursor-pointer hover:text-gray-600"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleDetailsToggle(`people-${level}`);
+                    }}
+                  >
+                    {`Curso | ${level}`}
+                  </summary>
+                  <div className="ml-2 mt-2">
+                    {coursesInLevel
+                      .sort(([a], [b]) =>
+                        getCourseByAbbreviation(a).data.name.localeCompare(
+                          getCourseByAbbreviation(b).data.name
+                        )
                       )
-                    )
-                    .map(([course, periods]: [string, string[]]) => {
-                      const accordion = createCourseAccordion(course, periods);
-                      const isOpen = openAccordion === accordion.id;
+                      .map(([course, periods]: [string, string[]]) => {
+                        const accordion = createCourseAccordion(
+                          course,
+                          periods
+                        );
+                        const isOpen = openAccordion === accordion.id;
 
+                        return (
+                          <div key={course} className="mb-4 ml-2">
+                            <Accordion
+                              id={accordion.id}
+                              title={accordion.title}
+                              isOpen={isOpen}
+                              onToggle={toggleAccordion}
+                            >
+                              {accordion.badges.map((badge) => (
+                                <Badge
+                                  key={badge.value}
+                                  url={badge.url}
+                                  value={badge.value}
+                                />
+                              ))}
+                            </Accordion>
+                          </div>
+                        );
+                      })}
+                  </div>
+                </details>
+              ))}
+          </>
+        )}
+        {type === 'people' && (
+          <>
+            <details open={openDetails === 'campus'} className="mb-2">
+              <summary
+                className="font-bold text-sm mb-3 text-gray-800 cursor-pointer hover:text-gray-600"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleDetailsToggle('campus');
+                }}
+              >
+                Campus
+              </summary>
+              <div className="mb-4 ml-2">
+                <Accordion
+                  id="people-campus"
+                  title="Cidades"
+                  isOpen={openAccordion === 'people-campus'}
+                  onToggle={toggleAccordion}
+                >
+                  {Object.keys(campi)
+                    .filter((campusKey) => {
+                      const campusCode = campusKey.replace('ifpb-', '');
+                      return peopleTags.some((tag) => tag.includes(campusCode));
+                    })
+                    .sort()
+                    .map((campusKey) => {
+                      const campusCode = campusKey.replace('ifpb-', '');
                       return (
-                        <div key={course} className="mb-4 ml-2">
-                          <Accordion
-                            id={accordion.id}
-                            title={accordion.title}
-                            isOpen={isOpen}
-                            onToggle={toggleAccordion}
-                          >
-                            {accordion.badges.map((badge) => (
-                              <Badge
-                                key={badge.value}
-                                url={badge.url}
-                                value={badge.value}
-                              />
-                            ))}
-                          </Accordion>
-                        </div>
+                        <Badge
+                          key={campusKey}
+                          url={`/projects/people/${campusCode}/1`}
+                          value={campi[campusKey]}
+                        />
                       );
                     })}
-                </div>
-              </details>
-            ))}
+                </Accordion>
+              </div>
+            </details>
+          </>
+        )}
         {type === 'people' && (
-          <details open={openDetails === 'extra-people'} className="mb-6">
-            <summary
-              className="font-bold text-sm mb-3 text-gray-800 cursor-pointer hover:text-gray-600"
-              onClick={(e) => {
-                e.preventDefault();
-                handleDetailsToggle('extra-people');
-              }}
-            >
-              Extra
-            </summary>
-            <div className="mt-2">
-              {PEOPLE_EXTRA_ACCORDIONS.map((accordion) => {
-                const isOpen = openAccordion === accordion.id;
+          <>
+            <details open={openDetails === 'tipos'} className="mb-6">
+              <summary
+                className="font-bold text-sm mb-3 text-gray-800 cursor-pointer hover:text-gray-600"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleDetailsToggle('tipos');
+                }}
+              >
+                Perfis
+              </summary>
+              <div className="ml-2 mt-2">
+                {(() => {
+                  const tiposAccordion = PEOPLE_EXTRA_ACCORDIONS.find(
+                    (accordion) => accordion.id === 'people-types'
+                  );
+                  if (!tiposAccordion) return null;
+                  const isOpen = openAccordion === tiposAccordion.id;
 
-                return (
-                  <div key={accordion.id} className="mb-4 ml-2">
-                    <Accordion
-                      id={accordion.id}
-                      title={accordion.title}
-                      isOpen={isOpen}
-                      onToggle={toggleAccordion}
-                    >
-                      {accordion.badges.map((badge) => (
-                        <Badge
-                          key={badge.value}
-                          url={badge.url}
-                          value={badge.value}
-                        />
-                      ))}
-                    </Accordion>
-                  </div>
-                );
-              })}
-            </div>
-          </details>
+                  return (
+                    <div className="mb-4">
+                      <Accordion
+                        id={tiposAccordion.id}
+                        title={tiposAccordion.title}
+                        isOpen={isOpen}
+                        onToggle={toggleAccordion}
+                      >
+                        {tiposAccordion.badges.map((badge) => (
+                          <Badge
+                            key={badge.value}
+                            url={badge.url}
+                            value={badge.value}
+                          />
+                        ))}
+                      </Accordion>
+                    </div>
+                  );
+                })()}
+              </div>
+            </details>
+          </>
+        )}
+        {type === 'people' && (
+          <>
+            <h1 className="font-bold text-base capitalize mb-4">Outros</h1>
+            <details open={openDetails === 'extra-people'} className="mb-6">
+              <summary
+                className="font-bold text-sm mb-3 text-gray-800 cursor-pointer hover:text-gray-600"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleDetailsToggle('extra-people');
+                }}
+              >
+                Extra
+              </summary>
+              <div className="mt-2">
+                {PEOPLE_EXTRA_ACCORDIONS.filter(
+                  (accordion) => accordion.id !== 'people-types'
+                ).map((accordion) => {
+                  const isOpen = openAccordion === accordion.id;
+
+                  return (
+                    <div key={accordion.id} className="mb-4 ml-2">
+                      <Accordion
+                        id={accordion.id}
+                        title={accordion.title}
+                        isOpen={isOpen}
+                        onToggle={toggleAccordion}
+                      >
+                        {accordion.badges.map((badge) => (
+                          <Badge
+                            key={badge.value}
+                            url={badge.url}
+                            value={badge.value}
+                          />
+                        ))}
+                      </Accordion>
+                    </div>
+                  );
+                })}
+              </div>
+            </details>
+          </>
         )}
       </div>
     </>
