@@ -302,10 +302,42 @@ git push origin main
 ### 📝 Convenções de Commit
 
 Use prefixos descritivos nas mensagens de commit:
+
+**Conteúdo:**
 - `content: Adicionando pessoa [Nome]`
 - `content: Adicionando projeto [Nome do Projeto]`
 - `content: Atualizando informações de [Nome]`
+- `content: Removendo pessoa/projeto [Nome]`
+
+**Correções:**
 - `fix: Corrigindo erro em [arquivo]`
+- `fix: Corrigindo links quebrados`
+- `fix: Ajustando validação de esquema`
+
+**Funcionalidades:**
+- `feat: Adicionando novo componente [nome]`
+- `feat: Implementando busca avançada`
+- `feat: Adicionando filtro por [critério]`
+
+**Melhorias:**
+- `refactor: Otimizando performance da página`
+- `refactor: Melhorando acessibilidade`
+- `refactor: Aprimorando UX do componente`
+
+**Configuração:**
+- `config: Atualizando dependências`
+- `config: Configurando novo build script`
+- `config: Ajustando configurações do Astro`
+
+**Documentação:**
+- `docs: Atualizando README com [informação]`
+- `docs: Adicionando guia de [tópico]`
+- `docs: Corrigindo documentação de [seção]`
+
+**Estilos:**
+- `style: Ajustando layout da página`
+- `style: Melhorando responsividade`
+- `style: Padronizando componentes`
 
 ## 🛠️ Desenvolvimento
 
