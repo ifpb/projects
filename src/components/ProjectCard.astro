@@ -48,12 +48,31 @@ const projectId = getProjectId(project);
     <div class="absolute top-2 right-2">
       <ul class="flex">
         {
+          addresses.homepage && (
+            <li class="-mr-2 bg-black border-2 border-gray-100 rounded-full overflow-hidden w-9 flex items-center justify-center">
+              <a
+                href={addresses.homepage}
+                target="_blank"
+                class="font-bold flex items-center justify-center text-white"
+                title="Homepage"
+              >
+                <Icon
+                  name="ph:identification-badge"
+                  size={25}
+                  class="homepage-project-link"
+                />
+              </a>
+            </li>
+          )
+        }
+        {
           addresses.design && (
             <li class="-mr-2 bg-black border-2 border-gray-100 rounded-full overflow-hidden w-9 flex items-center justify-center">
               <a
                 href={addresses.design}
                 target="_blank"
-                class="font-bold flex items-center justify-center"
+                class="font-bold flex items-center justify-center text-white"
+                title="Design"
               >
                 {addresses.design.includes('figma.com') ? (
                   <Icon
@@ -84,7 +103,8 @@ const projectId = getProjectId(project);
               <a
                 href={addresses.workflow}
                 target="_blank"
-                class="font-bold flex items-center justify-center"
+                class="font-bold flex items-center justify-center text-white"
+                title="Workflow"
               >
                 <Icon
                   name="uil:schedule"
@@ -102,7 +122,7 @@ const projectId = getProjectId(project);
                 <a
                   href={repo}
                   target="_blank"
-                  class="font-bold"
+                  class="font-bold flex items-center justify-center"
                   title={`Repositório ${index + 1}`}
                 >
                   <Icon
@@ -115,7 +135,11 @@ const projectId = getProjectId(project);
             ))
           ) : (
             <li class="-mr-2 bg-black border-2 border-gray-100 rounded-full overflow-hidden w-9">
-              <a href={addresses.repository} target="_blank" class="font-bold">
+              <a
+                href={addresses.repository}
+                target="_blank"
+                class="font-bold flex items-center justify-center"
+              >
                 <Icon name="uim:github" size={32} class="github-project-link" />
               </a>
             </li>
