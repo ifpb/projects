@@ -91,18 +91,45 @@ const pageTitle = `Projeto | ${project.data.name}`;
         {Array.isArray(project.data.addresses.repository) ? (
           <ul class="list-disc list-inside">
             {
-              project.data.addresses.repository.map((repo) => (
-                <li>
-                  <a class="underline" href={repo}>
-                    {repo}
-                  </a>
-                </li>
-              ))
+              project.data.addresses.repository.map((repo) => {
+                const getRepoName = (url) => {
+                  if (url.includes('github.com')) return 'GitHub';
+                  if (url.includes('gitlab.com')) return 'GitLab';
+                  if (url.includes('bitbucket.org')) return 'Bitbucket';
+                  return 'Repositório';
+                };
+                const getOwnerRepo = (url) => {
+                  const match = url.match(/(?:github\.com|gitlab\.com|bitbucket\.org)\/([^\/]+\/[^\/]+)/);
+                  return match ? match[1] : '';
+                };
+                const ownerRepo = getOwnerRepo(repo);
+                return (
+                  <li>
+                    <a class="underline" href={repo}>
+                      {getRepoName(repo)} {ownerRepo && `(${ownerRepo})`}
+                    </a>
+                  </li>
+                );
+              })
             }
           </ul>
         ) : (
           <a class="underline" href={project.data.addresses.repository}>
-            {project.data.addresses.repository}
+            {(() => {
+              const url = project.data.addresses.repository;
+              const getRepoName = (url) => {
+                if (url.includes('github.com')) return 'GitHub';
+                if (url.includes('gitlab.com')) return 'GitLab';
+                if (url.includes('bitbucket.org')) return 'Bitbucket';
+                return 'Repositório';
+              };
+              const getOwnerRepo = (url) => {
+                const match = url.match(/(?:github\.com|gitlab\.com|bitbucket\.org)\/([^\/]+\/[^\/]+)/);
+                return match ? match[1] : '';
+              };
+              const ownerRepo = getOwnerRepo(url);
+              return `${getRepoName(url)} ${ownerRepo ? `(${ownerRepo})` : ''}`;
+            })()}
           </a>
         )}
       </div>
