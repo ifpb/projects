@@ -1,9 +1,8 @@
 name: MediaVirtu
-description:
-  Rede social de entretenimentos. "Pequenos momentos são dramas, o escopo
-  de todos esses momentos é uma comédia"
+description: Rede social de entretenimentos. "Pequenos momentos são dramas, o escopo de todos esses momentos é uma comédia"
 addresses:
-  preview: https://github.com/Souzzaturr/MediaVirtu/blob/main/MediaVirtu/public/icones/MediaVirtu_icons/MediaVirtu_icon.png?raw=true
+  preview: https://github.com/Souzzaturr/MediaVirtu/blob/main/MediaVirtu/public/pictures/preview.png?raw=true
+  homepage: https://souzzaturr.github.io/MediaVirtu/
   repository: https://github.com/Souzzaturr/MeDiavirtu
 category:
   type: subject
@@ -13,9 +12,7 @@ tags:
   - html
   - css
   - javascript
-  - react
   - vite
-  - csv
 owners:
   - 202514320010
   - 202514320003
