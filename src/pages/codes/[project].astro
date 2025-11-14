@@ -133,6 +133,14 @@ const pageTitle = `Projeto | ${project.data.name}`;
           </a>
         )}
       </div>
+      { project.data.addresses.homepage && (
+        <div class="mb-2">
+          <div class="font-bold text-lg">Homepage:</div>
+          <a class="underline" href={project.data.addresses.homepage}>
+            {project.data.addresses.homepage}
+          </a>
+        </div>
+      )}
       { project.data.addresses.design && (
         <div class="mb-2">
           <div class="font-bold text-lg">Design:</div>
