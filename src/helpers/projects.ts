@@ -31,14 +31,14 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
     const {
       data: {
         category: { type, subject, period },
-        addresses: { design, workflow },
+        addresses: { design, workflow, homepage },
         tags,
       },
     } = project as {
       data: {
         category: SubjectProject;
         tags: string[];
-        addresses: { design?: string; workflow?: string };
+        addresses: { design?: string; workflow?: string; homepage?: string };
       };
     };
 
@@ -52,6 +52,10 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
 
     if (workflow) {
       projectTags.unshift('workflow');
+    }
+
+    if (homepage) {
+      projectTags.unshift('homepage');
     }
 
     // Handle both single subject (string) and multiple subjects (array)
@@ -72,7 +76,7 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
       data: {
         tags,
         category,
-        addresses: { design, workflow },
+        addresses: { design, workflow, homepage },
       },
     } = project;
 
@@ -86,6 +90,10 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
 
     if (workflow) {
       projectTags.unshift('workflow');
+    }
+
+    if (homepage) {
+      projectTags.unshift('homepage');
     }
 
     // Add type and campus for non-subject projects
