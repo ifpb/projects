@@ -217,7 +217,7 @@ export default function Filter({
                               <Badge
                                 key={courseTag}
                                 url={`/projects/${type}/${courseTag}/1`}
-                                value={courseTag}
+                                value={displayName}
                               />
                             );
                           })}
