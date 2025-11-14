@@ -74,7 +74,7 @@ const formatPageTitle = (tag: string) => {
     return `Projetos | ${courseEntry.data.level.compact} em ${courseEntry.data.name}`;
   }
 
-  return `Projetos | ${tag.toUpperCase()}`;
+  return `Projetos | ${tag.charAt(0).toUpperCase() + tag.slice(1)}`;
 };
 
 const { page }: Props = Astro.props;
