@@ -5,6 +5,8 @@ import NavBar from '@/components/NavBar.astro';
 import PageFindSearch from '@/components/PageFindSearch.astro';
 import { getAllPersonTags } from '@/helpers/people';
 import { getAllProjectTags } from '@/helpers/tags';
+import { getCourse } from '@/helpers/courses';
+import { getSubject } from '@/helpers/subjects';
 
 import '@/styles/global.css';
 
@@ -19,7 +21,23 @@ const { pageTitle, tags, type, pageFindFilter } = Astro.props;
 
 const peopleTags = tags ? await getAllPersonTags() : [];
 
-const projectTags: string[] = await getAllProjectTags();
+// Filter out course and subject tags from project tags
+const allProjectTags: string[] = await getAllProjectTags();
+const projectTags = allProjectTags.filter(tag => {
+  // Exclude if it's a course tag (format: course-campus)
+  const courseEntry = getCourse(tag);
+  if (courseEntry) return false;
+  
+  // Exclude if it's a subject tag 
+  const subjectEntry = getSubject(tag);
+  if (subjectEntry) return false;
+  
+  // Exclude if it matches subject-period pattern (e.g., "pw2-cstsi-jp-2024.1")
+  const subjectPeriodPattern = /^[a-zA-Z0-9]+-[a-zA-Z]+-[a-zA-Z]+-\d{4}\.\d+$/;
+  if (subjectPeriodPattern.test(tag)) return false;
+  
+  return true;
+});
 
 const headerTitle = pageTitle ? `IFPB | ${pageTitle}` : 'IFPB Code';
 ---
