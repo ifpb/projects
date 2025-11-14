@@ -176,6 +176,12 @@ owners:
 - **`addresses.preview`** *(obrigatório)* - Imagem de preview (500x262px recomendado)
 - **`addresses.homepage`** *(opcional)* - Site/demo do projeto
 - **`addresses.design`** *(opcional)* - Link do design/protótipo (Figma, etc.)
+- **`addresses.workflow`** *(opcional)* - Link público para documentação do processo de desenvolvimento, metodologia ou fluxo de trabalho (ex: documentos sobre metodologia ágil, processo de desenvolvimento, pipeline CI/CD, etc.)
+
+Exemplos de projetos com design e workflow:
+
+- [Projetos com design](https://ifpb.github.io/projects/codes/design/1/) - Veja exemplos de projetos que incluem links para protótipos e designs
+- [Projetos com workflow](https://ifpb.github.io/projects/codes/workflow/1/) - Veja exemplos de projetos que documentam seus processos de desenvolvimento
 
 ### 📝 Campos com Múltiplos Valores
 
