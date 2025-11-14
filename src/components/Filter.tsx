@@ -114,7 +114,7 @@ export default function Filter({
     course: string,
     periods: string[]
   ): AccordionConfig => {
-    const badges = [{ url: `/projects/people/${course}/1`, value: 'Alunos' }];
+    const badges = [{ url: `/projects/people/${course}/1`, value: 'Todos' }];
 
     if (peopleTags.includes(`egresso-${course}`)) {
       badges.push({
@@ -388,7 +388,7 @@ export default function Filter({
                       handleDetailsToggle(`people-${level}`);
                     }}
                   >
-                    {`Curso | ${level}`}
+                    {`Cursos | ${level}`}
                   </summary>
                   <div className="ml-2 mt-2">
                     {coursesInLevel
