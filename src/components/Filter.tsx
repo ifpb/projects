@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import { Icon } from '@iconify/react';
 import {
   getCourse,
@@ -80,7 +80,7 @@ const PEOPLE_EXTRA_ACCORDIONS: AccordionConfig[] = [
   },
 ];
 
-export default function Filter({
+const Filter = React.memo(function Filter({
   type,
   tags,
   peopleTags,
@@ -90,77 +90,187 @@ export default function Filter({
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
   const [openDetails, setOpenDetails] = useState<string | null>(null);
 
-  const projectTagsBadges = projectTags.map((tag) => ({
-    url: `/projects/codes/${encodeURIComponent(tag)}/1`,
-    value: tag,
-  }));
+  // Memoizar badges de tags de projetos
+  const projectTagsBadges = useMemo(
+    () =>
+      projectTags.map((tag) => ({
+        url: `/projects/codes/${encodeURIComponent(tag)}/1`,
+        value: tag,
+      })),
+    [projectTags]
+  );
 
-  CODES_EXTRA_ACCORDIONS.find((acc) => acc.id === 'codes-tags')!.badges =
-    projectTagsBadges;
-
-  const toggleShow = () => {
-    setIsShow(!isShow);
-  };
-
-  const toggleAccordion = (accordionId: string) => {
-    setOpenAccordion(openAccordion === accordionId ? null : accordionId);
-  };
-
-  const handleDetailsToggle = (detailsId: string) => {
-    setOpenDetails(openDetails === detailsId ? null : detailsId);
-  };
-
-  const createCourseAccordion = (
-    course: string,
-    periods: string[]
-  ): AccordionConfig => {
-    const badges = [{ url: `/projects/people/${course}/1`, value: 'Todos' }];
-
-    if (peopleTags.includes(`egresso-${course}`)) {
-      badges.push({
-        url: `/projects/people/egresso-${course}/1`,
-        value: 'Egressos',
-      });
+  // Atualizar CODES_EXTRA_ACCORDIONS apenas quando necessário
+  useMemo(() => {
+    const codesTagsAccordion = CODES_EXTRA_ACCORDIONS.find(
+      (acc) => acc.id === 'codes-tags'
+    );
+    if (codesTagsAccordion) {
+      codesTagsAccordion.badges = projectTagsBadges;
     }
+  }, [projectTagsBadges]);
 
-    periods.forEach((period) => {
-      badges.push({
-        url: `/projects/people/${course}-${period}/1`,
-        value: period,
-      });
-    });
+  const toggleShow = useCallback(() => {
+    setIsShow(!isShow);
+  }, [isShow]);
 
-    const subjectTags = peopleTags.filter((tag) => {
-      const parts = tag.split('-');
-      if (parts.length === 4) {
-        const [subjectCode, courseCode, campusCode, period] = parts;
-        return (
-          `${courseCode}-${campusCode}` === course &&
-          Object.keys(cities).includes(campusCode) &&
-          abbreviationCourses.some((abbreviation) =>
-            abbreviation.includes(courseCode)
-          )
-        );
+  const toggleAccordion = useCallback((accordionId: string) => {
+    setOpenAccordion((prev) => (prev === accordionId ? null : accordionId));
+  }, []);
+
+  const handleDetailsToggle = useCallback((detailsId: string) => {
+    setOpenDetails((prev) => (prev === detailsId ? null : detailsId));
+  }, []);
+
+  const createCourseAccordion = useCallback(
+    (course: string, periods: string[]): AccordionConfig => {
+      const badges = [{ url: `/projects/people/${course}/1`, value: 'Todos' }];
+
+      if (peopleTags.includes(`egresso-${course}`)) {
+        badges.push({
+          url: `/projects/people/egresso-${course}/1`,
+          value: 'Egressos',
+        });
       }
-      return false;
-    });
 
-    subjectTags.forEach((tag) => {
-      const parts = tag.split('-');
-      const subject = parts[0];
-      const period = parts.at(-1);
-      badges.push({
-        url: `/projects/people/${tag}/1`,
-        value: `${subject.toUpperCase()} ${period}`,
+      periods.forEach((period) => {
+        badges.push({
+          url: `/projects/people/${course}-${period}/1`,
+          value: period,
+        });
       });
-    });
 
-    return {
-      id: `people-${course}`,
-      title: getCourseByAbbreviation(course).data.name,
-      badges,
-    };
-  };
+      const subjectTags = peopleTags.filter((tag) => {
+        const parts = tag.split('-');
+        if (parts.length === 4) {
+          const [subjectCode, courseCode, campusCode, period] = parts;
+          return (
+            `${courseCode}-${campusCode}` === course &&
+            Object.keys(cities).includes(campusCode) &&
+            abbreviationCourses.some((abbreviation) =>
+              abbreviation.includes(courseCode)
+            )
+          );
+        }
+        return false;
+      });
+
+      subjectTags.forEach((tag) => {
+        const parts = tag.split('-');
+        const subject = parts[0];
+        const period = parts.at(-1);
+        badges.push({
+          url: `/projects/people/${tag}/1`,
+          value: `${subject.toUpperCase()} ${period}`,
+        });
+      });
+
+      return {
+        id: `people-${course}`,
+        title: getCourseByAbbreviation(course).data.name,
+        badges,
+      };
+    },
+    [peopleTags]
+  );
+
+  // Memoizar dados para códigos
+  const codesGroupedByLevel = useMemo(
+    () =>
+      type === 'codes'
+        ? Object.entries(
+            tags.course?.values?.reduce(
+              (acc: Record<string, string[]>, courseTag: string) => {
+                const courseData = getCourse(courseTag);
+                if (courseData) {
+                  const level = courseData.data.level.compact.split(' ')[0];
+                  if (!acc[level]) {
+                    acc[level] = [];
+                  }
+                  acc[level].push(courseTag);
+                }
+                return acc;
+              },
+              {}
+            ) || {}
+          )
+        : [],
+    [type, tags.course?.values]
+  );
+
+  const codesSubjectsByCourse = useMemo(
+    () =>
+      type === 'codes'
+        ? tags.course?.values?.map((courseTag: string) => {
+            const courseData = getCourseByAbbreviation(courseTag);
+            const parts = courseTag.split('-');
+            const campus = parts.length > 1 ? parts[parts.length - 1] : '';
+            const campusName = campus ? ` | ${campus.toUpperCase()}` : '';
+            const courseDisplayName = `${courseData?.data.name}${campusName}`;
+
+            const courseSubjects =
+              tags.subject?.values?.filter((subjectTag: string) =>
+                subjectTag.includes(`-${courseTag}`)
+              ) || [];
+
+            return courseSubjects.length > 0
+              ? {
+                  courseTag,
+                  courseDisplayName,
+                  courseSubjects,
+                }
+              : null;
+          })
+        : [],
+    [type, tags.course?.values, tags.subject?.values]
+  );
+
+  // Memoizar dados para pessoas
+  const peopleGroupedByLevel = useMemo(
+    () =>
+      type === 'people'
+        ? Object.entries(
+            Object.entries(getPeriodCourses(tags.period.values)).reduce(
+              (
+                acc: Record<string, Array<[string, string[]]>>,
+                [course, periods]: [string, string[]]
+              ) => {
+                const courseData = getCourseByAbbreviation(course);
+                const level =
+                  courseData?.data.level.compact.split(' ')[0] || 'Outros';
+                if (!acc[level]) {
+                  acc[level] = [];
+                }
+                acc[level].push([course, periods]);
+                return acc;
+              },
+              {}
+            )
+          )
+        : [],
+    [type, tags.period.values]
+  );
+
+  const availableCampuses = useMemo(
+    () =>
+      type === 'people'
+        ? Object.keys(campi)
+            .filter((campusKey) => {
+              const campusCode = campusKey.replace('ifpb-', '');
+              return peopleTags.some((tag) => tag.includes(campusCode));
+            })
+            .sort()
+            .map((campusKey) => {
+              const campusCode = campusKey.replace('ifpb-', '');
+              return {
+                key: campusKey,
+                code: campusCode,
+                name: campi[campusKey],
+              };
+            })
+        : [],
+    [type, peopleTags]
+  );
 
   return isShow ? (
     <>
@@ -194,22 +304,7 @@ export default function Filter({
               >
                 Cursos
               </summary>
-              {Object.entries(
-                tags.course?.values?.reduce(
-                  (acc: Record<string, string[]>, courseTag: string) => {
-                    const courseData = getCourse(courseTag);
-                    if (courseData) {
-                      const level = courseData.data.level.compact.split(' ')[0];
-                      if (!acc[level]) {
-                        acc[level] = [];
-                      }
-                      acc[level].push(courseTag);
-                    }
-                    return acc;
-                  },
-                  {}
-                ) || {}
-              )
+              {codesGroupedByLevel
                 .sort(([levelA], [levelB]) => levelA.localeCompare(levelB))
                 .map(([level, coursesInLevel]) => {
                   const levelAccordionId = `codes-level-${level}`;
@@ -257,94 +352,83 @@ export default function Filter({
                   );
                 })}
             </details>
+            {codesSubjectsByCourse
+              .filter((courseData) => courseData !== null)
+              .map((courseData) => {
+                const { courseTag, courseDisplayName, courseSubjects } =
+                  courseData!;
 
-            {tags.course?.values?.map((courseTag: string) => {
-              const courseData = getCourseByAbbreviation(courseTag);
-              // Extrair campus do courseTag se existir
-              const parts = courseTag.split('-');
-              const campus = parts.length > 1 ? parts[parts.length - 1] : '';
-              const campusName = campus ? ` | ${campus.toUpperCase()}` : '';
-              const courseDisplayName = `${courseData?.data.name}${campusName}`;
+                const courseAccordionId = `codes-course-${courseTag}`;
+                const isCourseOpen = openAccordion === courseAccordionId;
 
-              const courseSubjects =
-                tags.subject?.values?.filter((subjectTag: string) =>
-                  subjectTag.includes(`-${courseTag}`)
-                ) || [];
-
-              if (courseSubjects.length === 0) return null;
-
-              const courseAccordionId = `codes-course-${courseTag}`;
-              const isCourseOpen = openAccordion === courseAccordionId;
-
-              return (
-                <details
-                  key={courseTag}
-                  open={openDetails === `course-${courseTag}`}
-                  className="mb-2"
-                >
-                  <summary
-                    className="font-bold text-sm mb-3 text-gray-800 cursor-pointer hover:text-gray-600"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleDetailsToggle(`course-${courseTag}`);
-                      setOpenAccordion(null);
-                    }}
+                return (
+                  <details
+                    key={courseTag}
+                    open={openDetails === `course-${courseTag}`}
+                    className="mb-2"
                   >
-                    {courseDisplayName}
-                  </summary>
-                  <div className="ml-2">
-                    {courseSubjects.map((subjectTag: string) => {
-                      const subjectData = getSubject(subjectTag);
-                      const subjectName =
-                        subjectData?.data.name.full || subjectTag;
+                    <summary
+                      className="font-bold text-sm mb-3 text-gray-800 cursor-pointer hover:text-gray-600"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleDetailsToggle(`course-${courseTag}`);
+                        setOpenAccordion(null);
+                      }}
+                    >
+                      {courseDisplayName}
+                    </summary>
+                    <div className="ml-2">
+                      {courseSubjects.map((subjectTag: string) => {
+                        const subjectData = getSubject(subjectTag);
+                        const subjectName =
+                          subjectData?.data.name.full || subjectTag;
 
-                      const subjectPeriods =
-                        tags.period?.values?.filter((periodTag: string) =>
-                          periodTag.startsWith(`${subjectTag}-`)
-                        ) || [];
+                        const subjectPeriods =
+                          tags.period?.values?.filter((periodTag: string) =>
+                            periodTag.startsWith(`${subjectTag}-`)
+                          ) || [];
 
-                      const subjectAccordionId = `codes-subject-${subjectTag}`;
-                      const isSubjectOpen =
-                        openAccordion === subjectAccordionId;
+                        const subjectAccordionId = `codes-subject-${subjectTag}`;
+                        const isSubjectOpen =
+                          openAccordion === subjectAccordionId;
 
-                      return (
-                        <div key={subjectTag} className="mb-4 ml-2">
-                          <Accordion
-                            id={subjectAccordionId}
-                            title={subjectName}
-                            isOpen={isSubjectOpen}
-                            onToggle={toggleAccordion}
-                          >
-                            <Badge
-                              key={`${subjectTag}-all`}
-                              url={`/projects/${type}/${subjectTag}/1`}
-                              value="Todos"
-                            />
-                            {subjectPeriods
-                              .sort((a, b) => {
-                                const periodA = a.split('-').pop() || '';
-                                const periodB = b.split('-').pop() || '';
-                                return periodB.localeCompare(periodA);
-                              })
-                              .map((periodTag) => {
-                                const period = periodTag.split('-').pop();
-                                return (
-                                  <Badge
-                                    key={periodTag}
-                                    url={`/projects/${type}/${periodTag}/1`}
-                                    value={period || ''}
-                                  />
-                                );
-                              })}
-                          </Accordion>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </details>
-              );
-            })}
-
+                        return (
+                          <div key={subjectTag} className="mb-4 ml-2">
+                            <Accordion
+                              id={subjectAccordionId}
+                              title={subjectName}
+                              isOpen={isSubjectOpen}
+                              onToggle={toggleAccordion}
+                            >
+                              <Badge
+                                key={`${subjectTag}-all`}
+                                url={`/projects/${type}/${subjectTag}/1`}
+                                value="Todos"
+                              />
+                              {subjectPeriods
+                                .sort((a, b) => {
+                                  const periodA = a.split('-').pop() || '';
+                                  const periodB = b.split('-').pop() || '';
+                                  return periodB.localeCompare(periodA);
+                                })
+                                .map((periodTag) => {
+                                  const period = periodTag.split('-').pop();
+                                  return (
+                                    <Badge
+                                      key={periodTag}
+                                      url={`/projects/${type}/${periodTag}/1`}
+                                      value={period || ''}
+                                    />
+                                  );
+                                })}
+                            </Accordion>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </details>
+                );
+              })}{' '}
             <h1 className="font-bold text-base capitalize mb-4">Outros</h1>
             <details open={openDetails === 'extra-codes'} className="mb-2">
               <summary
@@ -388,24 +472,7 @@ export default function Filter({
         {type === 'people' && (
           <>
             <h1 className="font-bold text-base capitalize mb-4">Acadêmico</h1>
-            {Object.entries(
-              Object.entries(getPeriodCourses(tags.period.values)).reduce(
-                (
-                  acc: Record<string, Array<[string, string[]]>>,
-                  [course, periods]: [string, string[]]
-                ) => {
-                  const courseData = getCourseByAbbreviation(course);
-                  const level =
-                    courseData?.data.level.compact.split(' ')[0] || 'Outros';
-                  if (!acc[level]) {
-                    acc[level] = [];
-                  }
-                  acc[level].push([course, periods]);
-                  return acc;
-                },
-                {}
-              )
-            )
+            {peopleGroupedByLevel
               .sort(([levelA], [levelB]) => levelA.localeCompare(levelB))
               .map(([level, coursesInLevel]) => (
                 <details
@@ -482,22 +549,13 @@ export default function Filter({
                   isOpen={openAccordion === 'people-campus'}
                   onToggle={toggleAccordion}
                 >
-                  {Object.keys(campi)
-                    .filter((campusKey) => {
-                      const campusCode = campusKey.replace('ifpb-', '');
-                      return peopleTags.some((tag) => tag.includes(campusCode));
-                    })
-                    .sort()
-                    .map((campusKey) => {
-                      const campusCode = campusKey.replace('ifpb-', '');
-                      return (
-                        <Badge
-                          key={campusKey}
-                          url={`/projects/people/${campusCode}/1`}
-                          value={campi[campusKey]}
-                        />
-                      );
-                    })}
+                  {availableCampuses.map((campus) => (
+                    <Badge
+                      key={campus.key}
+                      url={`/projects/people/${campus.code}/1`}
+                      value={campus.name}
+                    />
+                  ))}
                 </Accordion>
               </div>
             </details>
@@ -601,4 +659,6 @@ export default function Filter({
       />
     </div>
   );
-}
+});
+
+export default Filter;
