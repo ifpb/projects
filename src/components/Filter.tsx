@@ -8,7 +8,7 @@ import {
 import { getSubject } from '@/helpers/subjects';
 import Accordion from './Accordion';
 import Badge from './Badge';
-import { campi } from '@/content/config';
+import { abbreviationCourses, campi, cities } from '@/content/config';
 
 interface TagGroup {
   name: string;
@@ -127,6 +127,31 @@ export default function Filter({
       badges.push({
         url: `/projects/people/${course}-${period}/1`,
         value: period,
+      });
+    });
+
+    const subjectTags = peopleTags.filter((tag) => {
+      const parts = tag.split('-');
+      if (parts.length === 4) {
+        const [subjectCode, courseCode, campusCode, period] = parts;
+        return (
+          `${courseCode}-${campusCode}` === course &&
+          Object.keys(cities).includes(campusCode) &&
+          abbreviationCourses.some((abbreviation) =>
+            abbreviation.includes(courseCode)
+          )
+        );
+      }
+      return false;
+    });
+
+    subjectTags.forEach((tag) => {
+      const parts = tag.split('-');
+      const subject = parts[0];
+      const period = parts.at(-1);
+      badges.push({
+        url: `/projects/people/${tag}/1`,
+        value: `${subject.toUpperCase()} ${period}`,
       });
     });
 
