@@ -175,17 +175,21 @@ export default function Filter({
           className="float-right text-2xl cursor-pointer"
           onClick={toggleShow}
         />
+
         <h1 className="font-bold text-xl capitalize text-center mb-8">
           Filtros
         </h1>
+
         {type === 'codes' && (
           <>
-            <details open={openDetails === 'cursos'} className="mb-6">
+            <h1 className="font-bold text-base capitalize mb-4">Acadêmico</h1>
+            <details open={openDetails === 'cursos'} className="mb-2">
               <summary
                 className="font-bold text-sm mb-3 text-gray-800 cursor-pointer hover:text-gray-600"
                 onClick={(e) => {
                   e.preventDefault();
                   handleDetailsToggle('cursos');
+                  setOpenAccordion(null);
                 }}
               >
                 Cursos
@@ -195,7 +199,7 @@ export default function Filter({
                   (acc: Record<string, string[]>, courseTag: string) => {
                     const courseData = getCourse(courseTag);
                     if (courseData) {
-                      const level = courseData.data.level.compact;
+                      const level = courseData.data.level.compact.split(' ')[0];
                       if (!acc[level]) {
                         acc[level] = [];
                       }
@@ -276,13 +280,14 @@ export default function Filter({
                 <details
                   key={courseTag}
                   open={openDetails === `course-${courseTag}`}
-                  className="mb-6"
+                  className="mb-2"
                 >
                   <summary
                     className="font-bold text-sm mb-3 text-gray-800 cursor-pointer hover:text-gray-600"
                     onClick={(e) => {
                       e.preventDefault();
                       handleDetailsToggle(`course-${courseTag}`);
+                      setOpenAccordion(null);
                     }}
                   >
                     {courseDisplayName}
@@ -340,12 +345,14 @@ export default function Filter({
               );
             })}
 
-            <details open={openDetails === 'extra-codes'} className="mb-6">
+            <h1 className="font-bold text-base capitalize mb-4">Outros</h1>
+            <details open={openDetails === 'extra-codes'} className="mb-2">
               <summary
                 className="font-bold text-sm mb-3 text-gray-800 cursor-pointer hover:text-gray-600"
                 onClick={(e) => {
                   e.preventDefault();
                   handleDetailsToggle('extra-codes');
+                  setOpenAccordion(null);
                 }}
               >
                 Extra
@@ -411,6 +418,7 @@ export default function Filter({
                     onClick={(e) => {
                       e.preventDefault();
                       handleDetailsToggle(`people-${level}`);
+                      setOpenAccordion(null);
                     }}
                   >
                     {`Cursos | ${level}`}
@@ -453,6 +461,7 @@ export default function Filter({
               ))}
           </>
         )}
+
         {type === 'people' && (
           <>
             <details open={openDetails === 'campus'} className="mb-2">
@@ -461,11 +470,12 @@ export default function Filter({
                 onClick={(e) => {
                   e.preventDefault();
                   handleDetailsToggle('campus');
+                  setOpenAccordion(null);
                 }}
               >
                 Campus
               </summary>
-              <div className="mb-4 ml-2">
+              <div className="mb- ml-2">
                 <Accordion
                   id="people-campus"
                   title="Cidades"
@@ -501,6 +511,7 @@ export default function Filter({
                 onClick={(e) => {
                   e.preventDefault();
                   handleDetailsToggle('tipos');
+                  setOpenAccordion(null);
                 }}
               >
                 Perfis
@@ -545,6 +556,7 @@ export default function Filter({
                 onClick={(e) => {
                   e.preventDefault();
                   handleDetailsToggle('extra-people');
+                  setOpenAccordion(null);
                 }}
               >
                 Extra
