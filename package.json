@@ -6,13 +6,13 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "build:log": "mkdir -p logs && npm run build &> logs/build-output-$(date +%Y%m%d-%H%M).log",
     "postbuild": "pagefind --site dist/",
     "preview": "astro preview",
     "buildpreview": "astro build && astro preview",
     "buildpreviewpf": "astro build && npm run postbuild && astro preview",
     "astro": "astro",
-    "load:github:avatar": "tsx src/content/load-github-uc-avatar.ts",
-    "log:build": "npm run build &> build-output-$(date +%Y%m%d-%H%M).log"
+    "load:github:avatar": "tsx src/content/load-github-uc-avatar.ts"
   },
   "dependencies": {
     "@astrojs/react": "^3.6.2",
