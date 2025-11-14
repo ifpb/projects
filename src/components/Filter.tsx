@@ -380,7 +380,7 @@ export default function Filter({
 
         {type === 'people' && (
           <>
-            <h1 className="font-bold text-base capitalize mb-4">IFPB</h1>
+            <h1 className="font-bold text-base capitalize mb-4">Acadêmico</h1>
             {Object.entries(
               Object.entries(getPeriodCourses(tags.period.values)).reduce(
                 (
