@@ -166,9 +166,23 @@ export const fallbackImage = '/projects/imgs/clarity-avatar-solid.svg';
             ))
       }
       {
-        isFinishedSomeCourse(person) && (
-          <Badge url="/projects/people/egresso/1" text="egresso" />
-        )
+        isFinishedSomeCourse(person) &&
+          occupations
+            .filter(
+              (occupation: Student) =>
+                occupation.type === 'student' && occupation.isFinished
+            )
+            .map((occupation) => {
+              // Remove period suffix from course abbreviation for egresso badge
+              const studentOccupation = occupation as Student;
+              const courseCampus = studentOccupation.course; // This is already "cstsi-jp" format
+              return (
+                <Badge
+                  url={`/projects/people/egresso-${courseCampus}/1`}
+                  text={`egresso-${courseCampus}`}
+                />
+              );
+            })
       }
       {
         isProfessor(person) && (
