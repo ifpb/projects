@@ -44,7 +44,7 @@ const CODES_EXTRA_ACCORDIONS: AccordionConfig[] = [
     title: 'Recursos',
     badges: [
       { url: '/projects/codes/design/1', value: 'design' },
-      { url: '/projects/codes/workflow/1', value: 'workflow' },
+      { url: '/projects/codes/workflow/1', value: 'projeto' },
       { url: '/projects/codes/homepage/1', value: 'homepage' },
     ],
   },
@@ -74,7 +74,7 @@ const PEOPLE_EXTRA_ACCORDIONS: AccordionConfig[] = [
     badges: [
       { url: '/projects/people/projects/1', value: 'projetos' },
       { url: '/projects/people/homepage/1', value: 'homepage' },
-      { url: '/projects/people/figma/1', value: 'figma' },
+      { url: '/projects/people/design/1', value: 'design' },
       { url: '/projects/people/researchgate/1', value: 'researchgate' },
     ],
   },
