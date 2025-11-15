@@ -1,7 +1,6 @@
 name: Meus Afazeres
 description: Projeto para criação e manipulação de Tasks em Angular.
 addresses:
-  preview: https://github.com/FernandoJMartins/uploads/blob/main/meusAfazeres.jpg
   repository: https://github.com/FernandoJMartins/To-do-Angular/
 category:
   type: subject

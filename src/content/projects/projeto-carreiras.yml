@@ -1,0 +1,20 @@
+name: Projeto Carreiras
+description: Projeto para gerenciar carreira profissional e acadêmica dos estudantes.
+addresses:
+  repository:
+    - https://github.com/ifpb/ifpb-carreiras-front
+    - https://github.com/ifpb/ifpb-carreiras-backend
+category:
+  type: extension
+  campus: ifpb-jp
+tags:
+  - java
+  - sprint boot
+  - typescript
+  - next.js
+  - docker
+owners:
+  - 2680962
+  - 20221370030
+  - 20221370011
+  - 20202370006
