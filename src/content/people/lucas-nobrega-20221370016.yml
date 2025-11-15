@@ -8,7 +8,7 @@ occupations:
   - id: 20221370016
     type: student
     course: cstsi-jp
-    isFinished: false
+    isFinished: true
 addresses:
   github: https://github.com/lucas-pdnobrega
   linkedin: https://www.linkedin.com/in/lucas-nobrega-775660242/

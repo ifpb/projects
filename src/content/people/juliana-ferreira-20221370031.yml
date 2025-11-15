@@ -8,7 +8,7 @@ occupations:
   - id: 20221370031
     type: student
     course: cstsi-jp
-    isFinished: false
+    isFinished: true
 addresses:
   github: https://github.com/julianafer
   linkedin: https://www.linkedin.com/in/julianaferreirac/

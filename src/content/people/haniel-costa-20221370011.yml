@@ -8,7 +8,7 @@ occupations:
   - id: 20221370011
     type: student
     course: cstsi-jp
-    isFinished: false
+    isFinished: true
 addresses:
   github: https://github.com/HanielCostaDaSilva
   linkedin: https://www.linkedin.com/in/haniel-costa-da-silva-63829a250/

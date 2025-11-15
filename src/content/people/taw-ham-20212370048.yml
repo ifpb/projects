@@ -12,7 +12,7 @@ occupations:
   - id: 20212370048
     type: student
     course: cstsi-jp
-    isFinished: false
+    isFinished: true
 addresses:
   github: https://github.com/tawhamjavascript
   linkedin: https://www.linkedin.com/in/taw-ham-almeida-balbino-de-paula-117691218/

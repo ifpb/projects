@@ -8,7 +8,7 @@ occupations:
   - id: 20162370039
     type: student
     course: cstsi-jp
-    isFinished: false
+    isFinished: true
 addresses:
   github: https://github.com/adrianonna
   linkedin: https://www.linkedin.com/in/adrianonna/

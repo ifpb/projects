@@ -8,7 +8,7 @@ occupations:
   - id: 20221370018
     type: student
     course: cstsi-jp
-    isFinished: false
+    isFinished: true
 addresses:
   github: https://github.com/yagocdj
   linkedin: https://www.linkedin.com/in/yago-césar/

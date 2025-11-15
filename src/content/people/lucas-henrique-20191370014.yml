@@ -8,7 +8,7 @@ occupations:
   - id: 20191370014
     type: student
     course: cstsi-jp
-    isFinished: false
+    isFinished: true
 addresses:
   github: https://github.com/lucashss88
   linkedin: https://www.linkedin.com/in/lucas-henrique-serrano-soares-382339248/

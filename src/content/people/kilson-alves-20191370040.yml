@@ -8,7 +8,7 @@ occupations:
   - id: 20191370040
     type: student
     course: cstsi-jp
-    isFinished: false
+    isFinished: true
 addresses:
   github: https://github.com/kilsonalvess
   linkedin: https://www.linkedin.com/in/kilson-alves-dos-santos-leit%C3%A3o-36119a185/

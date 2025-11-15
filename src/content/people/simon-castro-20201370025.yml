@@ -7,8 +7,8 @@ occupations:
   - id: 20201370025
     type: student
     course: cstsi-jp
-    isFinished: false
+    isFinished: true
 addresses:
   github: https://github.com/SimonLucena
-  linkedin: https://br.linkedin.com/in/simon-lucena-de-castro-8833221bb
+  linkedin: https://www.linkedin.com/in/simon-lucena-de-castro-8833221bb
   email: simonlucena8@gmail.com

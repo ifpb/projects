@@ -8,7 +8,7 @@ occupations:
   - id: 20221370026
     type: student
     course: cstsi-jp
-    isFinished: false
+    isFinished: true
 addresses:
   github: https://github.com/Amandacdev
   linkedin: https://www.linkedin.com/in/amandacrz/
