@@ -69,19 +69,19 @@ const pageTitle = `Projeto | ${project.data.name}`;
 <BaseLayout pageTitle={pageTitle} pageFindFilter="tipo:Projeto">
   <div class="flex flex-col md:flex-row gap-5">
     { project.data.addresses.preview && (
-      <div class="image-preview w-full md:w-[50%] max-w-md">
+      <div class="project-preview image-preview w-full md:w-[50%] max-w-md">
         <a class="underline" href={project.data.addresses.homepage}>
           <img
             src={project.data.addresses.preview ?? '/projects/imgs/project-placeholder.png'}
             alt={project.data.name}
             class="border w-full"
             onload="this.onload = null; this.classList.remove('animate-pulse');"
-            onerror="this.onerror = null; this.closest('.image-preview').classList.add('hidden');"
+            onerror="this.onerror = null; this.closest('.image-preview').classList.add('hidden'); document.querySelector('.project-content').classList.remove('md:w-[50%]'); document.querySelector('.project-content').classList.add('md:w-full');"
           />
         </a>
       </div>
     )}
-    <div class="w-full md:w-[50%]">
+    <div class={`project-content w-full ${project.data.addresses.preview ? 'md:w-[50%]' : 'md:w-full'}`}>
       <div class="mb-2">
         <div class="font-bold text-lg">Descrição:</div>
         {project.data.description}
@@ -214,8 +214,9 @@ const pageTitle = `Projeto | ${project.data.name}`;
                   href={`/projects/people/${getFirstPersonId(person)}`}
                   class="flex items-center gap-2 p-2 rounded hover:bg-gray-50 transition-colors"
                 >
+                  {/* TODO a mesma lógica de carga do personCard */}
                   <img
-                    src={person.data.avatar.github}
+                    src={person.data.avatar.githubUC || '/projects/imgs/people-placeholder.png'}
                     alt={person.data.name.full}
                     class="w-8 h-8 rounded-full object-cover"
                   />
