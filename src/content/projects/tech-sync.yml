@@ -3,6 +3,7 @@ description: dashboard interativo integrado a api do zabbix para captura de info
 addresses:
   preview: https://raw.githubusercontent.com/luishenrike083/PROJETO-DW-2025.2/refs/heads/main/logo.png
   repository: https://github.com/luishenrike083/PROJETO-DW-2025.2
+  workflow: https://github.com/users/luishenrike083/projects/4
 category:
   type: subject
   subject: dw-cstrc-jp

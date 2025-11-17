@@ -4,7 +4,8 @@ addresses:
   preview: https://github.com/caio86/streamwave/blob/main/preview.png?raw=true
   repository: https://github.com/caio86/streamwave
   homepage: https://caio86.github.io/streamwave/
-  design: https://www.figma.com/design/pTLkzR8IZwDGSX2G9Q5m04/streamwave # figma, canva, etc.
+  design: https://www.figma.com/design/pTLkzR8IZwDGSX2G9Q5m04/streamwave
+  workflow: https://github.com/users/caio86/projects/5
 category:
   type: subject
   subject: dw-cstrc-jp
