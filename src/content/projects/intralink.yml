@@ -1,0 +1,16 @@
+name: Intralink
+description: Projeto para verificar portas ativas e fazer DNS reverso.
+addresses:
+  preview: https://github.com/maricleiada/intranet/blob/main/Preview.png?raw=true
+  homepage: https://maricleiada.github.io/intranet/
+  repository: https://github.com/maricleiada/intranet
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2025.1
+tags:
+  - javascript
+  - bootstrap
+  - express.js
+owners:
+  - 20232380032

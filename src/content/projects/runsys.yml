@@ -1,0 +1,20 @@
+name: RunSys
+description:
+  RunSys é um sistema de gerenciamento de dispositivos de rede, desenvolvido
+  para a disciplina de Desenvolvimento Web do curso de Redes de Computadores do IFPB
+  - Campus João Pessoa.
+addresses:
+  preview: https://github.com/mr-reinaldo/runsys/blob/main/screenshots/dashboard-page.png?raw=true
+  repository: https://github.com/mr-reinaldo/runsys
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2022.2
+tags:
+  - bootstrap
+  - node.js
+  - prisma
+  - mysql
+  - docker
+owners:
+  - 20211380045

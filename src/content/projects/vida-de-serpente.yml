@@ -1,0 +1,21 @@
+name: Vida de Serpente
+description: Site informátivo e educacional sobre a importância de proteger as serpentes.
+addresses:
+  preview: https://github.com/LucasAndrade912/vida-de-serpente/blob/next/preview.png?raw=true
+  homepage: https://vida-de-serpente.vercel.app/
+  repository: https://github.com/LucasAndrade912/vida-de-serpente
+category:
+  type: subject
+  subject: ls-cstsi-jp
+  period: 2023.1
+tags:
+  - html
+  - css
+  - javascript
+  - react
+  - next.js
+owners:
+  - 20222370031
+  - 20222370024
+  - 20222370023
+  - 20222370044

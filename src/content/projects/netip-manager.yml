@@ -1,0 +1,19 @@
+name: Netip Manager
+description:
+  Gerenciador de IPs e DHCP é uma ferramenta web que ajuda administradores
+  de rede a controlar a alocação de endereços IP (estáticos e dinâmicos) em uma rede,
+  evitando conflitos e simplificando a gestão de dispositivos conectados.
+addresses:
+  preview: https://github.com/jantonytony2023/netipmanager/blob/main/preview.png?raw=true
+  homepage: https://jantonytony2023.github.io/netipmanager/
+  repository: https://github.com/jantonytony2023/netipmanager/
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2025.1
+tags:
+  - javascript
+  - bootstrap
+  - express.js
+owners:
+  - 20232380024

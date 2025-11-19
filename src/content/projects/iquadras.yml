@@ -1,0 +1,20 @@
+name: iQuadras
+description:
+  Este aplicativo tem como objetivo facilitar o processo de reservar quadras
+  de esporte.
+addresses:
+  preview: https://github.com/petersvc/iquadras/blob/main/app/src/main/res/drawable/preview.png?raw=true
+  repository: https://github.com/petersvc/iquadras
+category:
+  type: subject
+  subject: pdm-cstsi-jp
+  period: 2024.1
+tags:
+  - kt
+  - android
+  - jetpack compose
+owners:
+  - 20221370036
+  - 20211370023
+  - 20201370001
+  - 20212370020

@@ -1,0 +1,15 @@
+name:
+  compact: Thays Alves
+  full: Thays Alves de Lima
+avatar:
+  github: https://github.com/thaysluna.png
+  githubUC: https://avatars.githubusercontent.com/u/188456452?v=4
+occupations:
+  - id: 20231780040
+    type: student
+    course: ctii-jp
+    isFinished: false
+addresses:
+  github: https://github.com/thaysluna
+  linkedin: https://www.linkedin.com/in/thays-alves-de-lima/
+  email: thayslima164@gmail.com

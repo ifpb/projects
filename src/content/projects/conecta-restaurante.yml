@@ -1,0 +1,24 @@
+name: Conecta Restaurante
+description:
+  O Conecta Restaurante organiza e facilita o recebimento de pedidos de
+  refeições para obras, garantindo mais agilidade, controle e segurança para os restaurantes.
+addresses:
+  homepage: https://joaopedro-maar.github.io/ConectaRestaurantes/
+  repository: https://github.com/JoaoPedro-MAAR/ConectaRestaurantes
+  design: https://www.figma.com/design/SZOMhbw6IiEG9TcpzFyOmI/Front-END--conecta-restaurante
+category:
+  type: subject
+  subject: pw1-cstsi-jp
+  period: 2025.1
+tags:
+  - angular
+  - typescript
+  - javascript
+  - css
+  - tailwind
+  - java
+  - spring boot
+owners:
+  - 20232370006
+  - 20232370013
+  - 20232370009

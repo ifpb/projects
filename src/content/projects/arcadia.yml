@@ -1,0 +1,17 @@
+name: Arcadia
+description:
+  Um catálogo sobre a série Stranger Things, incluindo informações sobre
+  personagens, episódios e notícias.
+addresses:
+  preview: https://github.com/themattery/Stranger-Things-Website/blob/main/preview.png?raw=true
+  homepage: https://themattery.github.io/Stranger-Things-Website/
+  repository: https://github.com/themattery/Stranger-Things-Website
+category:
+  type: subject
+  subject: ls-cstsi-jp
+  period: 2024.1
+tags:
+  - javascript
+  - astro.js
+owners:
+  - 20222370007

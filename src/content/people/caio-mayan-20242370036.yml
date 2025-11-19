@@ -1,0 +1,15 @@
+name:
+  compact: Caio Mayan
+  full: Caio Mayan Costa Arruda de Sousa
+avatar:
+  github: https://github.com/caiomayan.png
+  githubUC: https://avatars.githubusercontent.com/u/164285889?v=4
+occupations:
+  - id: 20242370036
+    type: student
+    course: cstsi-jp
+    isFinished: false
+addresses:
+  github: https://github.com/caiomayan
+  linkedin: https://www.linkedin.com/in/caiomayan/
+  email: caiomayan@icloud.com

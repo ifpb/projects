@@ -1,0 +1,14 @@
+name: IFPB Exercises
+description: Este portal tem como objetivo listar alguns exercícios.
+addresses:
+  preview: https://github.com/ifpb/exercises/blob/main/preview.png?raw=true
+  homepage: https://ifpb.github.io/exercises/
+  repository: https://github.com/ifpb/exercises
+category:
+  type: open source
+  campus: ifpb-jp
+tags:
+  - javascript
+  - astro.js
+owners:
+  - 2680962

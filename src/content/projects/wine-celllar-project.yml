@@ -1,0 +1,18 @@
+name: World Wines Web
+description:
+  World Wines Web, apesar do nome grandioso, é só mais uma adega. O objetivo
+  é criar uma página sobre vinhos.
+addresses:
+  preview: https://github.com/jonkire/wine_cellar_project/blob/main/addresses-preview/image.png?raw=true
+  homepage: https://jonkire.github.io/wine_cellar_project/
+  repository: https://github.com/jonkire/wine_cellar_project
+category:
+  type: subject
+  subject: lm-cstsi-jp
+  period: 2024.2
+tags:
+  - html
+  - css
+owners:
+  - 20242370022
+  - 20242370008

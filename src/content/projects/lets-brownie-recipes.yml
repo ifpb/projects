@@ -1,0 +1,18 @@
+name: Let's Brownie Recipes
+description: Este projeto é uma aplicação web para exibir receitas usadas em uma confeitaria.
+addresses:
+  preview: https://github.com/leticiazlopes/letsbrownie-recipes/blob/main/public/imgs/logoBanner.png?raw=true
+  repository: https://github.com/leticiazlopes/letsbrownie-recipes
+category:
+  type: subject
+  subject: pw1-cstsi-jp
+  period: 2025.1
+tags:
+  - angular
+  - typescript
+  - html
+  - css
+owners:
+  - 20232370037
+  - 20232370017
+  - 20232370022

@@ -1,0 +1,17 @@
+name: Fragmento
+description:
+  Este portal tem como objetivo ser um site comercial de uma perfumaria
+  fictícia chamada fragmento
+addresses:
+  homepage: https://messiasteixeira.github.io/Fragmento/
+  repository: https://github.com/MessiasTeixeira/Fragmento
+category:
+  type: subject
+  subject: ls-cstsi-jp
+  period: 2025.1
+tags:
+  - javascript
+  - html
+  - css
+owners:
+  - 20242370035

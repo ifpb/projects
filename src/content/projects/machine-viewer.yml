@@ -1,0 +1,19 @@
+name: Machine Viewer
+description: Aplicação WEB para monitoramento do status de múltiplas máquinas em rede.
+addresses:
+  preview: https://github.com/joaoweslley1/machine-viewer/blob/main/preview.png?raw=true
+  homepage: https://github.com/joaoweslley1/machine-viewer
+  repository: https://github.com/joaoweslley1/machine-viewer
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2024.1
+tags:
+  - html
+  - css
+  - javascript
+  - flask
+  - python
+owners:
+  - 20221380016
+  - 20202380028

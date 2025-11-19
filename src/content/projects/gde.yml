@@ -1,0 +1,26 @@
+name: GDE
+description:
+  Sistema voltado para gerenciar e auxiliar o controle das defesas de estágios
+  no IFPB.
+addresses:
+  preview: https://github.com/LucaMarques/GDE-Gerenciamento-de-Defesa-de-Estagio/blob/main/preview/preview.png?raw=true
+  homepage: https://lucamarques.github.io/GDE-Gerenciamento-de-Defesa-de-Estagio/
+  repository: https://github.com/LucaMarques/GDE-Gerenciamento-de-Defesa-de-Estagio
+category:
+  type: subject
+  subject:
+    - pw2-csbes-jp
+    - er-csbes-jp
+  period: 2025.2
+tags:
+  - javascript
+  - html
+  - css
+  - vite
+  - tailwind
+owners:
+  - 202514320011
+  - 202514320021
+  - 202514320033
+  - 202514320006
+  - 202514320025

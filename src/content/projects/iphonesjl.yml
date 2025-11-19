@@ -1,0 +1,14 @@
+name: IphonesJL
+description: Página de catálogo para os produtos da IphonesJL.
+addresses:
+  repository: https://github.com/pedrolucasi/iphonesjl
+category:
+  type: subject
+  subject: ls-cstsi-jp
+  period: 2024.2
+tags:
+  - javascript
+  - astro.js
+owners:
+  - 20232370038
+  - 20232370030

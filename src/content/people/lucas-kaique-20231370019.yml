@@ -1,0 +1,15 @@
+name:
+  compact: Lucas Kaique
+  full: Lucas Kaique Valério Soares
+avatar:
+  github: https://github.com/lucaskaiquee.png
+  githubUC: https://avatars.githubusercontent.com/u/85175643?v=4
+occupations:
+  - id: 20231370019
+    type: student
+    course: cstsi-jp
+    isFinished: false
+addresses:
+  github: https://github.com/LucasKaiquee
+  linkedin: https://www.linkedin.com/in/lucaskaique/
+  homepage: https://lucaskaique.netlify.app/

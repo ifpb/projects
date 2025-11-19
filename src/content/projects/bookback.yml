@@ -1,0 +1,18 @@
+name: BookBack
+description:
+  Aplicativo  que incentiva a devolução de livros no prazo correto. O aplicativo
+  oferecerá "moedas virtuais" para os leitores que devolverem os livros pontualmente
+  e em boas condições. Essas moedas poderão ser acumuladas e trocadas por brindes.
+addresses:
+  repository: https://github.com/Yelcde/BookBack
+category:
+  type: subject
+  subject: pdm-cstsi-jp
+  period: 2024.2
+tags:
+  - kotlin
+  - java
+owners:
+  - 20202370006
+  - 20222370031
+  - 20222370015

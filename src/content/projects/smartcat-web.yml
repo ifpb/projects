@@ -1,0 +1,23 @@
+name: Smartcat Web
+description: Este projeto funciona como app que irá gerenciar as tarefas do estudante.
+addresses:
+  preview: https://github.com/felipecartaxo/pweb1-todolist-fase2/blob/main/preview.png?raw=true
+  homepage: https://stackblitz.com/github/felipecartaxo/pweb1-todolist-fase2
+  repository: https://github.com/felipecartaxo/pweb1-todolist-fase2
+category:
+  type: subject
+  subject: pw1-cstsi-jp
+  period: 2024.2
+tags:
+  - html
+  - css
+  - typescript
+  - angular
+  - spring boot
+  - firestore
+  - java
+  - postgresql
+owners:
+  - 20221370005
+  - 20221370043
+  - 20221370004

@@ -1,0 +1,13 @@
+name:
+  compact: Juan Carlos
+  full: Juan Carlos Almeida Santos
+avatar:
+  selected: none
+occupations:
+  - id: 20082370049
+    type: student
+    course: cstsi-jp
+    isFinished: true
+addresses:
+  email: juancarllos.a@gmail.com
+  linkedin: https://www.linkedin.com/in/juan-carlos-b08a7739/

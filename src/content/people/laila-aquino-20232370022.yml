@@ -1,0 +1,14 @@
+name:
+  compact: Laila de Aquino
+  full: Laila de Aquino
+avatar:
+  github: https://github.com/lailaaquino.png
+  githubUC: https://avatars.githubusercontent.com/u/140646861?v=4
+occupations:
+  - id: 20232370022
+    type: student
+    course: cstsi-jp
+    isFinished: false
+addresses:
+  github: https://github.com/lailaaquino
+  linkedin: https://www.linkedin.com/in/laila-aquino-847597270/

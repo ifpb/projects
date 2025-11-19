@@ -1,0 +1,17 @@
+name: Jaguaribe Decor
+description: Loja de Produtos de Decoração.
+addresses:
+  preview: https://github.com/michelgft/Jaguaribe_Decor/blob/main/preview.png?raw=true
+  homepage: https://michelgft.github.io/Jaguaribe_Decor/
+  repository: https://github.com/michelgft/Jaguaribe_Decor
+  design: https://figma.com/design/8beUbNTgJeIn3xBforwMVF/Jaguaribe-Decor
+category:
+  type: subject
+  subject: pw2-csbes-jp
+  period: 2025.2
+tags:
+  - javascript
+owners:
+  - 20242370031
+  - 20242370023
+  - 20242370024

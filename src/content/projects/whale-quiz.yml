@@ -1,0 +1,20 @@
+name: WhaleQuiz
+description:
+  Este projeto tem como objetivo insentivar o conehcimento atravez da criação
+  e resolução de quizzes.
+addresses:
+  homepage: https://pauloant.github.io/ls-projeto-whalequiz/
+  repository: https://github.com/PauloAnt/ls-projeto-whalequiz
+category:
+  type: subject
+  subject: ls-cstsi-jp
+  period: 2024.2
+tags:
+  - javascript
+  - vite
+  - html
+  - tailwind
+owners:
+  - 20241370009
+  - 20241370040
+  - 20241370030

@@ -1,0 +1,19 @@
+name: Sweet Coffee
+description:
+  Projeto de aplicação web simples que consiste em um site de cafeteria
+  com seu respectivo portifólio.
+addresses:
+  preview: https://github.com/caiomayan/sweet-coffee/blob/main/img/preview.png?raw=true
+  homepage: https://caiomayan.github.io/sweet-coffee/
+  repository: https://github.com/caiomayan/sweet-coffee
+category:
+  type: subject
+  subject: lm-cstsi-jp
+  period: 2024.2
+tags:
+  - html
+  - css
+owners:
+  - 20242370036
+  - 20242370032
+  - 20242370015

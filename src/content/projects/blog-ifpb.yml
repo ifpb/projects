@@ -1,0 +1,16 @@
+name: BlogIFPB
+description:
+  Este projeto tem como objetivo engajar e divulgar pesquisas e projetos
+  realizados por estudantes
+addresses:
+  preview: https://github.com/JoaoVictorDevMeta/Blog-IFPB-ProjetoLP2-CLient/blob/main/preview.png?raw=true
+  repository: https://github.com/JoaoVictorDevMeta/Blog-IFPB-ProjetoLP2-CLient
+category:
+  type: subject
+  subject: lp2-ctii-jp
+  period: 2024
+tags:
+  - react
+  - express.js
+owners:
+  - 20221780015

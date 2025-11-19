@@ -1,0 +1,23 @@
+name: Agenda de Reuniões
+description:
+  Tema da disciplina de Persistência a Objetos, a Agenda de Reunião visa
+  o gerenciamento das reuniões de uma empresa.
+addresses:
+  preview: https://github.com/AllanSmithll/agenda-de-reunioes/blob/main/image.png?raw=true
+  repository: https://github.com/AllanSmithll/agenda-de-reunioes
+category:
+  type: subject
+  subject: po-cstsi-jp
+  period: 2023.2
+tags:
+  - java
+  - db4o
+  - postgresql
+  - jpa
+  - maven
+  - swing
+  - hibernate
+  - log4j
+owners:
+  - 20221370030
+  - 20221370023

@@ -1,0 +1,14 @@
+name:
+  compact: Simon Castro
+  full: Simon Lucena de Castro
+avatar:
+  selected: none
+occupations:
+  - id: 20201370025
+    type: student
+    course: cstsi-jp
+    isFinished: true
+addresses:
+  github: https://github.com/SimonLucena
+  linkedin: https://www.linkedin.com/in/simon-lucena-de-castro-8833221bb
+  email: simonlucena8@gmail.com

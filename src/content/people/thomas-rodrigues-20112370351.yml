@@ -1,0 +1,12 @@
+name:
+  compact: Thomas Rodrigues
+  full: Thomas Ribeiro Rodrigues
+avatar:
+  selected: none
+occupations:
+  - id: 20112370351
+    type: student
+    course: cstsi-jp
+    isFinished: true
+addresses:
+  linkedin: https://www.linkedin.com/in/thomasribeirorodrigues/

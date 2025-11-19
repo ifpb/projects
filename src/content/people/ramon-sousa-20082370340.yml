@@ -1,0 +1,14 @@
+name:
+  compact: Ramon Pereira
+  full: Ramon Pereira Fernandes de Sousa
+avatar:
+  github: https://github.com/ramonpfsousa.png
+  githubUC: https://avatars.githubusercontent.com/u/4145931?v=4
+occupations:
+  - id: 20082370340
+    type: student
+    course: cstsi-jp
+    isFinished: true
+addresses:
+  github: https://github.com/ramonpfsousa
+  linkedin: https://www.linkedin.com/in/ramonpfsousa/

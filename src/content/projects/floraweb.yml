@@ -1,0 +1,21 @@
+name: FloraWeb
+description: Este site tem como objetivo ser uma plataforma online para uma floricultura.
+addresses:
+  preview: https://github.com/12Gustavo21/floraweb/blob/main/assets/img/home-print.png?raw=true
+  homepage: https://floraweb.vercel.app
+  repository: https://github.com/12Gustavo21/floraweb
+  design: https://www.figma.com/community/file/1440392697718119467
+category:
+  type: subject
+  subject: lm-cstsi-jp
+  period: 2024.2
+tags:
+  - html
+  - css
+  - scss
+  - javascript
+  - aos
+owners:
+  - 20242370003
+  - 20242370010
+  - 20242370026

@@ -1,0 +1,11 @@
+name:
+  compact: João Rolim
+  full: João Guilherme Rolim
+avatar: null
+occupations:
+  - id: 20071370158
+    type: student
+    course: cstsi-jp
+    isFinished: true
+addresses:
+  email: joaogrolim@gmail.com

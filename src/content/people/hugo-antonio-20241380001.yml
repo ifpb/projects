@@ -1,0 +1,15 @@
+name:
+  compact: Hugo Antônio
+  full: Hugo Antônio Fernandes dos Santos
+avatar:
+  github: https://github.com/0hugoantonio83.png
+  githubUC: https://avatars.githubusercontent.com/u/242429214?v=4
+occupations:
+  - id: 20241380001
+    type: student
+    course: cstrc-jp
+    isFinished: false
+addresses:
+  github: https://github.com/0hugoantonio83
+  linkedin: https://www.linkedin.com/in/hugo-antônio/
+  email: contatohugoantonio@gmail.com

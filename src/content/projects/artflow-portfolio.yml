@@ -1,0 +1,15 @@
+name: ArtFlow
+description: Plataforma para a criação de portfólio amplo focado em conteúdo artístico.
+addresses:
+  homepage: https://2005-erick.github.io/ArtFlow/
+  repository: https://github.com/2005-Erick/ArtFlow
+category:
+  type: subject
+  subject: ls-cstsi-jp
+  period: 2025.1
+tags:
+  - javascript
+  - html
+  - css
+owners:
+  - 20242370042

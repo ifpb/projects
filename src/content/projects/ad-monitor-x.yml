@@ -1,0 +1,20 @@
+name: AD MonitorX
+description:
+  Interface WEB que permite que os administradores da rede monitorem os
+  usuários de um controlador de domínio.
+addresses:
+  preview: https://github.com/marcelolucaslls/Projeto-DW/blob/main/preview.png?raw=true
+  homepage: https://marcelolucaslls.github.io/Projeto-DW/
+  repository: https://github.com/marcelolucaslls/Projeto-DW
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2024.2
+tags:
+  - html
+  - css
+  - bootstrap
+  - javascript
+owners:
+  - 20211380024
+  - 20211380004

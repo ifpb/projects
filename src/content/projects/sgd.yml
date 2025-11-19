@@ -1,0 +1,25 @@
+name: SGD
+description:
+  O Serviço de Gerenciamento de Defesa de TCC é um projeto de estudo para
+  criação de um sistema para organizar o processo de tcc.
+addresses:
+  repository: https://github.com/DiogoBAguiar/SGD
+  homepage: https://diogobaguiar.github.io/SGD/
+  preview: https://github.com/DiogoBAguiar/SGD/blob/main/preview.png?raw=true
+  workflow: https://github.com/users/DiogoBAguiar/projects/2/views/1
+category:
+  type: subject
+  subject: 
+    - er-csbes-jp
+    - pw2-csbes-jp
+  period: 2025.2
+tags:
+  - html
+  - css
+  - javascript
+owners:
+  - 202514320028
+  - 202514320024
+  - 202514320026
+  - 202514320009
+  - 202514320027

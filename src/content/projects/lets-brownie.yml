@@ -1,0 +1,21 @@
+name: Let's Brownie
+description:
+  Este projeto é uma aplicação web para linktree de uma empresa de doces,
+  a fim de direcionar seus clientes.
+addresses:
+  preview: https://github.com/leticiazlopes/projLs1/blob/main/preview.png?raw=true
+  repository: https://github.com/leticiazlopes/projLs1
+category:
+  type: subject
+  subject: ls-cstsi-jp
+  period: 2024.1
+tags:
+  - javascript
+  - css
+  - html
+  - vite
+  - tailwind
+owners:
+  - 20232370037
+  - 20232370017
+  - 20232370022

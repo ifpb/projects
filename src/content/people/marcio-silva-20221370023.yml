@@ -1,0 +1,14 @@
+name:
+  compact: Márcio Silva
+  full: Marcio Jose da Silva
+avatar:
+  github: https://github.com/ImMarcio.png
+  githubUC: https://avatars.githubusercontent.com/u/105254896?v=4
+occupations:
+  - id: 20221370023
+    type: student
+    course: cstsi-jp
+    isFinished: false
+addresses:
+  github: https://github.com/ImMarcio
+  linkedin: https://www.linkedin.com/in/immarcio/

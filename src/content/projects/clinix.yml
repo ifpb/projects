@@ -1,0 +1,19 @@
+name: Clinix
+description: Sistema para gestão de saúde e clínicas médicas.
+addresses:
+  preview: https://github.com/Clinix-Brazil/clinix-front/blob/main/preview.png?raw=true
+  repository: https://github.com/Clinix-Brazil/clinix-front
+category:
+  type: subject
+  subject: pd-cstsi-jp
+  period: 2024.2
+tags:
+  - java
+  - typescript
+  - spring boot
+  - next.js
+owners:
+  - 20221370030
+  - 20221370026
+  - 20221370010
+  - 20221370011

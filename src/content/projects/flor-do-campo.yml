@@ -1,0 +1,18 @@
+name: FlorDoCampo
+description: Uma loja que vende produtos naturais!
+addresses:
+  preview: https://github.com/Athenas22/Flor_Do_Campo/blob/main/src/assets/img/preview.png?raw=true
+  homepage: https://athenas22.github.io/Flor_Do_Campo/
+  repository: https://github.com/Athenas22/Flor_Do_Campo
+category:
+  type: subject
+  subject: ls-cstsi-jp
+  period: 2025.1
+tags:
+  - html
+  - css
+  - javascript
+owners:
+  - 20242370007
+  - 20242370020
+  - 20242370015

@@ -1,0 +1,16 @@
+name: Na Ga Ru
+description: Portal informativo sobre animes.
+addresses:
+  preview: https://github.com/LucasAndrade912/nan-ga-ru/blob/main/preview.png?raw=true
+  repository: https://github.com/LucasAndrade912/nan-ga-ru
+category:
+  type: subject
+  subject: lm-cstsi-jp
+  period: 2022.2
+tags:
+  - html
+  - css
+  - bootstrap
+owners:
+  - 20222370031
+  - 20222370024

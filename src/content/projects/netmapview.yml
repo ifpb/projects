@@ -1,0 +1,20 @@
+name: NetMapView
+description:
+  Tenha controle total da sua rede com nossa plataforma interativa de monitoramento.
+  Visualize o status dos seus equipamentos, teste a conectividade em tempo real e
+  identifique falhas com rapidez.
+addresses:
+  homepage: https://pedrohenrique2204.github.io/NetMapView/
+  repository: https://github.com/PedroHenrique2204/NetMapView
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2025.1
+tags:
+  - javascript
+  - bootstrap
+  - express.js
+owners:
+  - 20232380007
+  - 20232380009
+  - 20232380021

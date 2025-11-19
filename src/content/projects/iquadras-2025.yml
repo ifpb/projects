@@ -1,0 +1,20 @@
+name: Iquadras
+description:
+  O IQuadras é uma plataforma desenvolvida para facilitar o agendamento
+  de quadras esportivas.
+addresses:
+  repository: https://github.com/mnlpdr/iquadras25
+category:
+  type: subject
+  subject:
+    - pd-cstsi-jp
+    - daw-cstsi-jp
+  period: 2024.2
+tags:
+  - esporte
+  - ruby on rails
+owners:
+  - 20201370001
+  - 20211370002
+  - 20211370008
+  - 20211370023

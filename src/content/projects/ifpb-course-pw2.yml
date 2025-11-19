@@ -1,0 +1,16 @@
+name: Disciplina de PW2
+description:
+  Este portal tem como objetivo compartilhar o conteúdo da disciplina de
+  Programação para Web 2 do curso de Engenharia de Software no IFPB-JP.
+addresses:
+  preview: https://github.com/ifpb/pw2/blob/main/preview.png?raw=true
+  homepage: https://ifpb.github.io/pw2
+  repository: https://github.com/ifpb/pw2
+category:
+  type: open source
+  campus: ifpb-jp
+tags:
+  - javascript
+  - astro.js
+owners:
+  - 2680962

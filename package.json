@@ -6,6 +6,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "build:log": "mkdir -p logs && npm run build &> logs/build-output-$(date +%Y%m%d-%H%M).log",
     "postbuild": "pagefind --site dist/",
     "preview": "astro preview",
     "buildpreview": "astro build && astro preview",
