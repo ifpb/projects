@@ -1,11 +1,10 @@
 name: Miau-tech
-description:
-  O projeto possui como principal funcionalidade a conexão de tutores de pets a ONGs e veterinários de forma fácil e segura.
+description: O projeto possui como principal funcionalidade a conexão de tutores de pets a ONGs e veterinários de forma fácil e segura.
 addresses:
   preview: https://github.com/BiLuMiRa/Miau-dota/blob/main/preview.png?raw=true
-  homepage: https://bilumira.github.io/Miau-dota
+  homepage: https://bilumira.github.io/MiauTech/
   repository: https://github.com/BiLuMiRa/Miau-dota
-  design: https://www.canva.com/design/DAG3Z_mXKVg/0gdWqgur1DgQziEx_0k7yw/edit?utm_content=DAG3Z_mXKVg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+  design: https://www.canva.com/design/DAG3Z_mXKVg/0gdWqgur1DgQziEx_0k7yw/edit
 category:
   type: subject
   subject: pw2-csbes-jp
