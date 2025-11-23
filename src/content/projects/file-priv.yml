@@ -1,6 +1,7 @@
 name: FilePriv
 description: Projeto de armazenamento distribuído de arquivos com criptografia
 addresses:
+  preview: https://github.com/ryan-morais-rm/FilePriv/blob/main/assets/FilePriv%20Logo.jpg?raw=true
   repository: https://github.com/ryan-morais-rm/FilePriv
   homepage: https://ryan-morais-rm.github.io/FilePriv/src/frontend/index.html
   workflow: https://github.com/users/ryan-morais-rm/projects/3
