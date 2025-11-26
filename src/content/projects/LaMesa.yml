@@ -1,0 +1,17 @@
+name: LaMesa
+description: Projeto de admnistração de comandas de restaurantes, onde o garçom pode adicionar itens em comandas e puxar ficha de pagamento do cliente.
+addresses:
+  preview: https://github.com/CaueTrajanoG/La-Mesa/blob/main/src/logo.jpg
+  repository: https://github.com/CaueTrajanoG/La-Mesa
+category:
+  type: subject
+  subject: pd-cstsi-jp
+  period: 2025.2
+tags:
+  - Angular
+  - TypeScript
+  - Tailwind
+  - RestApi
+owners:
+  - 20231370016
+  - 20231370041
