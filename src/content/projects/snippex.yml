@@ -1,0 +1,24 @@
+name: Snippex
+description:
+  Snippex é uma plataforma web que oferece uma coleção organizada de trechos de código
+  (code snippets) para desenvolvedores, facilitando o compartilhamento e a reutilização de
+  soluções de programação em diversos idiomas e frameworks.
+addresses:
+  preview: https://github.com/franciscovmn/snippex/blob/main/preview.png?raw=true
+  homepage: https://franciscovmn.github.io/snippex/
+  repository: https://github.com/franciscovmn/snippex
+category:
+  type: subject
+  subject: pw1-cstsi-jp
+  period: 2025.2
+tags:
+  - javascript
+  - typescript
+  - angular
+  - supabase
+  - spring boot
+owners:
+  - 20241370018
+  - 20241370012
+  - 20241370007
+  - 20232370011
