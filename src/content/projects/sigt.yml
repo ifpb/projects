@@ -1,0 +1,22 @@
+name: SIGT - Sistema Gerenciador de TCC
+description:
+  Este portal tem como objetivo gerenciar os trabalhos de conclusão de curso do IFPB-JP.
+addresses:
+  preview: https://github.com/pedrolucasi/SIGT/main/logo.png
+  homepage:  https://pedrolucasi.github.io/SIGT/
+  repository: https://github.com/pedrolucasi/SIGT.git
+  design: https://www.figma.com/design/example # figma, canva, etc.
+category:
+  type: subject  # ou 'subject', 'research', 'extension', 'open source'
+  subject: pw1-cstsi-jp
+  period: 2025.2  # necessário para projetos de disciplina
+tags:
+  - html
+  - css
+  - typescript
+  - angular
+  
+owners:
+  - 20232370030  # matrícula/ID dos colaboradores
+  - 20202370047
+  - 20202370052
