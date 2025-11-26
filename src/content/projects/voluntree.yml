@@ -1,0 +1,21 @@
+name: Voluntree
+description:
+Esse site tem como objetivo conectar ongs e voluntários.
+addresses:
+  preview: https://raw.githubusercontent.com/MMC-Organization/voluntree-angular/refs/heads/main/public/Captura%20de%20tela%20de%202025-11-26%2015-06-37.png
+  homepage: 
+  repository: https://github.com/MMC-Organization/voluntree-angular
+  design: # figma, canva, etc.
+category:
+  type: subject  # ou 'subject', 'research', 'extension', 'open source'
+  subject: pw1-cstsi-jp
+  period: 2025.2   # necessário para projetos de disciplina
+tags:
+  - angular
+  - typescript
+  - supabase
+owners:
+  - 20241370011 # matrícula/ID dos colaboradores
+  - 20241370025
+  - 20241370038
+  - 20241370031
