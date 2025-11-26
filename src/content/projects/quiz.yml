@@ -1,0 +1,19 @@
+name: Quiz
+description:
+  Um quiz com questôes de multiplas escolhas e recebe uma pontuação no final.
+addresses:
+  preview: https://github.com/ifpb/projects/blob/main/preview.png?raw=true
+  homepage: https://github.com/JulioCBMO/projeto-pweb1
+  repository: https://github.com/JulioCBMO/projeto-pweb1
+  design: # figma, canva, etc.
+category:
+  type: subject  # ou 'subject', 'research', 'extension', 'open source'
+  subject: pw1-cstsi-jp
+  period: 2025.2   # necessário para projetos de disciplina
+tags:
+  - angular
+  - supabase
+  - typescript
+owners:
+  - 232370027 # matrícula/ID dos colaboradores
+  - 
