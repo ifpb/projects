@@ -2,7 +2,7 @@ name: Quiz
 description:
   Um quiz com questôes de multiplas escolhas e recebe uma pontuação no final.
 addresses:
-  preview: https://github.com/ifpb/projects/blob/main/preview.png?raw=true
+  preview: https://github.com/JulioCBMO/projeto-pweb1/blob/master/public/preview.png
   homepage: https://github.com/JulioCBMO/projeto-pweb1
   repository: https://github.com/JulioCBMO/projeto-pweb1
   design: # figma, canva, etc.
