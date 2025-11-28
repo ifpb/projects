@@ -1,0 +1,19 @@
+name: Apoia Aqui
+description:
+  Platforma de campanhas de doações.
+addresses:
+  preview: https://github.com/2daniell/apoia.aqui/blob/master/preview/preview.PNG?raw=true
+  repository: https://github.com/2daniell/apoia.aqui
+  homepage: https://2daniell.github.io/apoia.aqui/
+category:
+  type: subject
+  subject: pw1-cstsi-jp
+  period: 2025.2
+tags:
+  - typescript
+  - angular.js
+  - springboot
+  - java
+owners:
+  - 20241370017
+  - 20222370026
