@@ -5,7 +5,8 @@ addresses:
   preview: https://github.com/JulioCBMO/projeto-pweb1/blob/master/public/preview.png
   homepage: https://github.com/JulioCBMO/projeto-pweb1
   repository: https://github.com/JulioCBMO/projeto-pweb1
-  design: # figma, canva, etc.
+ backend:https://github.com/JulioCBMO/projeto-pweb1-backend
+  design: # 
 category:
   type: subject  # ou 'subject', 'research', 'extension', 'open source'
   subject: pw1-cstsi-jp
@@ -14,6 +15,7 @@ tags:
   - angular
   - supabase
   - typescript
+  - spring boot
 owners:
   - 232370027 # matrícula/ID dos colaboradores
-  - 
+  - 20232370035
