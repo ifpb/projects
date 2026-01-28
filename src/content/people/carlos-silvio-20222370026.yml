@@ -1,0 +1,15 @@
+name:
+  compact: Carlos Silvio
+  full: Carlos Silvio Romano da Silva
+avatar:
+  github: https://github.com/carlincodes.png
+  githubUC: https://avatars.githubusercontent.com/u/165218343?v=4
+occupations:
+  - id: 20222370026
+    type: student
+    course: cstsi-jp
+    isFinished: false
+addresses:
+  github: https://github.com/carlincodes
+  linkedin: https://www.linkedin.com/in/carlos-silvio-834305258
+  email: carlos.silvio@academico.ifpb.edu.br
