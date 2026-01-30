@@ -1,0 +1,17 @@
+name: Quiz
+description: Um quiz com questões de múltiplas escolhas e recebe uma pontuação no final.
+addresses:
+  preview: https://github.com/JulioCBMO/projeto-pweb1/blob/master/public/preview.png?raw=true
+  repository: https://github.com/JulioCBMO/projeto-pweb1
+category:
+  type: subject
+  subject: pw1-cstsi-jp
+  period: 2025.2
+tags:
+  - angular
+  - supabase
+  - typescript
+  - spring boot
+owners:
+  - 20232370027
+  - 20232370035
