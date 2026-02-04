@@ -1,0 +1,21 @@
+name: Web Agenda
+description:
+  A Web Agenda é um site que permite organizar e gerenciar suas tarefas
+  diárias de forma simples e eficiente.
+addresses:
+  preview: https://github.com/ThalesLimaF/Web-Agenda/blob/main/preview.png?raw=true
+  homepage: https://thaleslimaf.github.io/Web-Agenda-Part-II/
+  repository: https://github.com/ThalesLimaF/Web-Agenda-Part-II
+category:
+  type: subject
+  subject: pw2-csbes-jp
+  period: 2025.2
+tags:
+  - html
+  - css
+  - javascript
+  - react
+owners:
+  - 20241370024
+  - 20241370022
+  - 20241370016
