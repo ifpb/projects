@@ -1,0 +1,30 @@
+name: Jaguaribe Online
+description:
+  Este projeto consiste em uma aplicação web desenvolvida para representar
+  a Feira Pública de Jaguaribe, em João Pessoa. O sistema tem como objetivo
+  divulgar a feira e permitir que vendedores tenham acesso a uma área para
+  cadastrar e exibir seus produtos.
+addresses:
+  preview: https://github.com/Projeto-IFPB/Jaguaribe-Online/blob/main/app/static/images/preview-sistema.png?raw=true
+  homepage: https://github.com/Projeto-IFPB/Jaguaribe-Online
+  repository: https://github.com/Projeto-IFPB/Jaguaribe-Online
+category:
+  type: subject  # ou 'subject', 'research', 'extension', 'open source'
+  subject: 
+    - pw1-csbes-jp 
+    - ip-csbes-jp
+    - ies-csbes-jp
+  period: 2025.2   # necessário para projetos de disciplina
+tags:
+  - python
+  - javascript
+  - flask
+  - git
+  - mobile
+  - web
+  - e-commerce
+owners:
+  - 202524320003  # matrícula/ID dos colaboradores
+  - 202524320012
+  - 202524320004
+  - 202524320023

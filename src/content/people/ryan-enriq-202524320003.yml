@@ -1,0 +1,17 @@
+name:
+  compact: Ryan Enriq
+  full: Ryan Enriq Paz Barbosa do Egito
+avatar:
+  github: https://github.com/ryanenriqdev.png
+occupations:
+  - id: 202524320003
+    type: student
+    course: csbes-jp  # curso-campus (formato unificado)
+    isFinished: false  # true se já concluiu, false se ainda está cursando
+addresses:
+  github: https://github.com/ryanenriqdev
+  linkedin: https://www.linkedin.com/in/ryan-enriq/
+  instagram: https://www.instagram.com/ryan_enriq/
+  bluesky: https://bsky.app/profile/ryanenriq.bsky.social
+  # homepage:
+  email: ryanenriq.dev@gmail.com
