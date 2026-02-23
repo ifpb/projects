@@ -1,0 +1,28 @@
+name: GreenPlace
+description:
+  O GreenPlace proporciona um formulário simples, em que o usuário 
+  responde perguntas sobre seus hábitos do dia a dia e, ao final, recebe 
+  uma pontuação que representa o nível de carbono que emite.
+  Além disso, a plataforma também oferece um ambiente voltado para empresas e
+  instituições interessadas em dados ambientais. Esses perfis podem acessar 
+  informações consolidadas dos usuários.
+addresses:
+  preview: https://raw.githubusercontent.com/GuilhermeMeloRoxo/GreenPlace-P1-Engenharia-de-Software/refs/heads/main/docs/preview.png?raw=true
+  repository: https://github.com/GuilhermeMeloRoxo/GreenPlace-P1-Engenharia-de-Software
+category:
+  type: subject 
+  subject:
+    - pw1-csbes-jp
+    - ies-csbes-jp
+    - eas-csbes-jp
+  period: 2025.2
+tags:
+  - html
+  - python
+  - css
+  - javascript
+owners:
+  - 20251380023
+  - 20251380025
+  - 20251380035
+  - 20251380036
