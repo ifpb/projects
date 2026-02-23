@@ -10,7 +10,7 @@ export const courses = await getCollection('courses');
 
 export function getCourse(id: string) {
   return courses.find(
-    (course: CollectionEntry<'courses'>) => course?.data?.id === id
+    (course: CollectionEntry<'courses'>) => course?.data?.id === id,
   );
 }
 
@@ -22,7 +22,7 @@ export function getCourseByAbbreviation(abbreviation: string) {
 
   return courses.find(
     (course: CollectionEntry<'courses'>) =>
-      course?.data?.abbreviation === courseAbbreviation
+      course?.data?.abbreviation === courseAbbreviation,
   );
 }
 
@@ -30,7 +30,7 @@ export function getFirstCourseByPeople(person: CollectionEntry<'people'>) {
   const { occupations } = person.data;
 
   const studentOccupation = occupations.find(
-    (occupation) => occupation.type === 'student'
+    (occupation) => occupation.type === 'student',
   );
 
   if (studentOccupation) {
@@ -46,7 +46,7 @@ export function getLastLevelCourseByPeople(person: CollectionEntry<'people'>) {
   const { occupations } = person.data;
 
   const studentOccupations = occupations.filter(
-    (occupation) => occupation.type === 'student'
+    (occupation) => occupation.type === 'student',
   );
 
   if (studentOccupations.length > 0) {
@@ -55,12 +55,12 @@ export function getLastLevelCourseByPeople(person: CollectionEntry<'people'>) {
         courseLevels.indexOf(
           getCourseByAbbreviation(b.course)
             ?.data.level.compact.split(' ')[0]
-            .toLocaleLowerCase()
+            .toLocaleLowerCase(),
         ) -
         courseLevels.indexOf(
           getCourseByAbbreviation(a.course)
             ?.data.level.compact.split(' ')[0]
-            .toLocaleLowerCase()
+            .toLocaleLowerCase(),
         )
       );
     });
@@ -74,7 +74,7 @@ export function getLastLevelCourseByPeople(person: CollectionEntry<'people'>) {
 }
 
 export function getLastCourseLevelIndexByPeople(
-  person: CollectionEntry<'people'>
+  person: CollectionEntry<'people'>,
 ) {
   const lastCourse = getLastLevelCourseByPeople(person);
 
