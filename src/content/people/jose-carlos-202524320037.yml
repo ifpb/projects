@@ -1,0 +1,16 @@
+name:
+  compact: José Carlos
+  full: José Carlos Abreu Júnior
+avatar:
+  github: https://github.com/Jose-Carlos-Abreu.png
+  githubUC: https://avatars.githubusercontent.com/u/211568872?v=4
+occupations:
+  - id: 202524320037
+    type: student
+    course: csbes-jp
+    isFinished: false
+addresses:
+  github: https://github.com/Jose-Carlos-Abreu
+  linkedin: https://www.linkedin.com/in/jose-carlos-abreu/
+  instagram: https://www.instagram.com/jc.abreu.jr/
+  email: abreu.carlos@academico.ifpb.edu.br
