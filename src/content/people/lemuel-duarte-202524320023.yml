@@ -1,0 +1,14 @@
+name:
+  compact: Lemuel Duarte
+  full: Lemuel Duarte Pinheiro
+avatar:
+  github: https://github.com/lduarte-dev.png
+occupations:
+  - id: 202524320023
+    type: student
+    course: csbes-jp 
+    isFinished: false 
+addresses:
+  github: https://github.com/lduarte-dev
+  instagram: https://www.instagram.com/leuzinduarte
+  email: lemuel.duarte@academico.ifpb.edu.br
