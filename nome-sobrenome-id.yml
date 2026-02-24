@@ -1,0 +1,15 @@
+name:
+  compact: Renan Gurgel
+  full: Renan Lucena Gurgel
+avatar:
+  github: https://github.com/renanlgurgel.png
+occupations:
+  - id: 202524320001
+    type: student
+    course: csbes-jp  # curso-campus (formato unificado)
+    isFinished: false  # true se já concluiu, false se ainda está cursando
+addresses:
+  github: https://github.com/renanlgurgel
+  linkedin: https://www.linkedin.com/in/renanlgurgel/
+  instagram: https://www.instagram.com/renanlgurgel/
+  email: mycontact.renan@gmail.com
