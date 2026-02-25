@@ -1,0 +1,26 @@
+name: SOS-JAMPA
+description:
+  Este projeto nasceu de uma iniciativa interdisciplinar no IFPB com um objetivo claro usar a tecnologia para cuidar da nossa cidade.
+  A ideia aqui não é ser apenas "mais um site", mas uma ferramenta real para conectar os cidadãos de João Pessoa com a sustentabilidade. Queremos facilitar denúncias de descarte irregular de lixo, ensinar sobre reciclagem de um jeito leve e ajudar as pessoas a encontrarem o ponto de coleta mais próximo.
+addresses:
+  preview: https://github.com/jhenriquecs/PROJETO-SOS-JAMPA/blob/main/app/static/img/preview.png?raw=true
+  repository: https://github.com/jhenriquecs/PROJETO-SOS-JAMPA
+  workflow: https://github.com/users/jhenriquecs/projects/1
+category:
+  type: subject
+  subject:
+    - pw1-csbes-jp
+    - ies-csbes-jp
+    - ip-csbes-jp
+  period: 2025.2
+tags:
+  - html
+  - css
+  - python
+  - flask
+  - javascript
+owners:
+  - 202524320018
+  - 202524320002
+  - 202524320025
+  - 202524320030
