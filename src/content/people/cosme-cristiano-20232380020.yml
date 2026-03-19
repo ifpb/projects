@@ -1,0 +1,16 @@
+name:
+  compact: Cosme Cristiano
+  full: Cosme Cristiano Ferreira de Jesus
+avatar:
+  github: https://github.com/CosmeCristiano11.png
+  githubUC: https://avatars.githubusercontent.com/u/187310543?v=4
+occupations:
+  - id: 20232380020
+    type: student
+    course: cstrc-jp  
+    isFinished: false
+addresses:
+  github: https://github.com/CosmeCristiano11
+  linkedin: https://www.linkedin.com/in/cosme-cristiano/
+  instagram: https://www.instagram.com/cosmecf/
+  email: cosme11cristiano@gmail.com
