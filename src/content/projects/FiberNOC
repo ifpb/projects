@@ -1,0 +1,22 @@
+name: FiberNOC
+description:
+  O projeto tem como objetivo desenvolver um software de monitoramento de ONUs (Optical Network Units)
+  em redes de fibra óptica, permitindo a coleta e visualização em tempo real de informações como nível de
+  sinal, status de conexão e desempenho dos dispositivos. A solução visa oferecer uma plataforma
+  centralizada para provedores de internet,
+  facilitando o diagnóstico de falhas, a geração de alertas e a análise histórica dos dados, contribuindo para maior eficiência operacional e melhoria na qualidade do serviço prestado aos clientes.
+addresses:
+  preview: https://raw.githubusercontent.com/pedrohenry091-hub/Projeto_FiberNOC/refs/heads/main/preview.png
+  repository: https://https://github.com/pedrohenry091-hub/Projeto_FiberNOC
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2026.1
+tags:
+  - javascript
+  - HTML
+  - css
+owners:
+  - 20242380020  
+  - 20241380009
+  - 20242380028
