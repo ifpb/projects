@@ -1,0 +1,18 @@
+name: Geo Router
+description:
+  O projeto visa construir uma plataforma de rastreamento e visualização de roteamento de Sistemas Autônomos (AS) na Internet.
+addresses:
+  repository: https://github.com/CosmeCristiano11/PROJETO-DW
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2026.1
+tags:
+  - html
+  - css
+  - javascript
+  - express.js
+owners:
+  - 20232380015
+  - 20232380020
+  - 20232380036
