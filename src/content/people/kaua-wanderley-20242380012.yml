@@ -5,12 +5,10 @@ avatar:
   github: https://github.com/kauawanderleyy.png
   githubUC: https://avatars.githubusercontent.com/u/267773714?v=4
 occupations:
-  - id: 20051370420
+  - id: 20242380012
     type: student
-    course: cstrc-jp  
-    isFinished: false  
+    course: cstrc-jp
+    isFinished: false
 addresses:
   github: https://github.com/kauawanderleyy
   linkedin: https://www.linkedin.com/in/kauã-wanderley
-
-  
