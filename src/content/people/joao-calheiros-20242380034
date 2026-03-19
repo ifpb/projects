@@ -1,0 +1,15 @@
+name:
+  compact: João Calheiros
+  full: João Calheiros Cavalcanti Neto
+avatar:
+  github: https://github.com/jncavalcanti.png
+  githubUC: https://avatars.githubusercontent.com/u/267760930?v=4
+occupations:
+  - id: 20242380034
+    type: student
+    course: cstrc-jp
+    isFinished: false
+addresses:
+  github: https://github.com/jncavalcanti
+  linkedin: https://www.linkedin.com/in/joão-calheiros
+  email: jn.ccavalcanti@gmail.com
