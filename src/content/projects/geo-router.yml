@@ -1,8 +1,10 @@
 name: Geo Router
 description:
-  O projeto visa construir uma plataforma de rastreamento e visualização de roteamento de Sistemas Autônomos (AS) na Internet.
+  Plataforma de rastreamento e visualização de roteamento entre Sistemas Autônomos (AS) na Internet.
 addresses:
-  repository: https://github.com/CosmeCristiano11/GEOROUTER
+  preview: https://github.com/JaazielSlv/Geo-Router/blob/main/img/preview.png
+  homepage: https://jaazielslv.github.io/Geo-Router/
+  repository: https://github.com/JaazielSlv/Geo-Router
 category:
   type: subject
   subject: dw-cstrc-jp
