@@ -1,0 +1,15 @@
+name:
+  compact: Sarah Ferreira
+  full: Sarah Ferreira Fernandes
+avatar:
+  github: https://github.com/sarahvx.png
+  githubUC: https://avatars.githubusercontent.com/u/196643801?v=4&size=64
+occupations:
+  - id: 20242380031
+    type: student
+    course: cstrc-jp  
+    isFinished: false
+addresses:
+  github: https://github.com/sarahvx
+  linkedin: https://www.linkedin.com/in/sarah-ferreiraf/
+  email: ferreira.sarah@academico.ifpb.edu.br
