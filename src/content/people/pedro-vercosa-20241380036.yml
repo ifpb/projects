@@ -1,0 +1,14 @@
+name:
+  compact: Pedro Verçosa
+  full: Pedro Henrique de Araújo Verçosa
+avatar:
+  github: https://github.com/pedrovercosa.png
+occupations:
+  - id: 20241380036
+    type: student
+    course: cstrc-jp
+    isFinished: false
+addresses:
+  github: https://github.com/pedrovercosa
+  linkedin: www.linkedin.com/in/pedro-henrique-de-araújo-verçosa-872979388
+  email: pedro.vercosa@academico.ifpb.edu.br
