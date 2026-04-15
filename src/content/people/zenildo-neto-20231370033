@@ -1,0 +1,14 @@
+name:
+  compact: Zenildo Neto
+  full: Zenildo de Melo Cézar Neto
+avatar:
+  github: https://github.com/zenildoneto.png
+occupations:
+  - id: 20231370033
+    type: student
+    course: csbes-jp 
+    isFinished: false
+addresses:
+  github: https://github.com/zenildoneto
+  linkedin: https://www.linkedin.com/in/zenildo-neto/
+  email: zenildo.neto@academico.pfbp.edu.br
