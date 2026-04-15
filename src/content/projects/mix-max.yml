@@ -1,0 +1,12 @@
+name: MIX MAX
+description: Serviço de streaming para filmes e séries.
+addresses:
+  repository: https://github.com/JonasVinicios/MIX-MAX-
+category:
+  type: subject
+  subject: pw2-csbes-jp
+  period: 2026.1
+tags:
+  - javascript
+owners:
+  - 20242370039
