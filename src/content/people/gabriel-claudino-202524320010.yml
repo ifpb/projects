@@ -1,0 +1,17 @@
+name:
+  compact: Gabriel Claudino
+  full: Gabriel Claudino Pimentel
+avatar:
+  github: https://github.com/gabrielclaudinop.png
+  githubUC: https://avatars.githubusercontent.com/u/123124530?v=4
+occupations:
+  - id: 202524320010
+    type: student
+    course: csbes-jp
+    isFinished: false
+addresses:
+  github: https://github.com/gabrielclaudinop
+  linkedin: https://www.linkedin.com/in/gabrielclaudinop/
+  instagram: https://www.instagram.com/gabrielclaudinop/
+  homepage: https://gabrielclaudinop.github.io
+  email: claudinopimentelgabriel@gmail.com
