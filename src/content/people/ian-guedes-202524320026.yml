@@ -1,0 +1,16 @@
+name:
+  compact: Ian Guedes
+  full: Ian Lucas Guedes Rodrigues
+avatar:
+  github: https://github.com/IanGds.png
+  githubUC: https://avatars.githubusercontent.com/u/168737999?v=4
+occupations:
+  - id: 202524320026
+    type: student
+    course: csbes-jp
+    isFinished: false
+addresses:
+  github: https://github.com/IanGds
+  linkedin: https://www.linkedin.com/in/ianlucasguedes
+  instagram: https://www.instagram.com/ian_lucs_/
+  email: guedes.ian@academico.ifpb.edu.br
