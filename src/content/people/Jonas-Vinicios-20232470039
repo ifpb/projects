@@ -1,0 +1,16 @@
+---
+name:
+  compact: Jonas Vinicios
+  full: Jonas Vinicios De Barros Silva
+avatar:
+  github: https://github.com/account
+occupations:
+- id: 20242370039 -
+  type: student
+  campus: ifpb-jp
+  course: cstsi
+  isFinished: false
+addresses:
+  github: https://github.com/JonasVinicios
+  email: jonasvbsilva@gmail.com
+---
