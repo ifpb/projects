@@ -1,0 +1,17 @@
+name:
+  compact: Igor Monte
+  full: Igor André Gimenez de Oliveira Monte
+avatar:
+  github: https://github.com/igorgmnzmonte.png
+occupations:
+  - id: 202524320024
+    type: student
+    course: csbes-jp  # curso-campus (formato unificado)
+    isFinished: false  # true se já concluiu, false se ainda está cursando
+addresses:
+  github: https://github.com/igorgmnzmonte
+  linkedin: www.linkedin.com/in/igorgmnzmonte
+  instagram: https://www.instagram.com/igorgmnz/
+  bluesky:
+  homepage:
+  email: igor.monte@academico.ifpb.edu.br
