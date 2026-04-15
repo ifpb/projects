@@ -9,8 +9,8 @@ addresses:
   workflow: https://github.com/users/DiogoBAguiar/projects/2/views/1
 category:
   type: subject
-  subject: 
-    - er-csbes-jp
+  subject:
+    - ers-csbes-jp
     - pw2-csbes-jp
   period: 2025.2
 tags:
