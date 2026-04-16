@@ -1,0 +1,14 @@
+name:
+  compact: Maria Clara
+  full: Maria Clara Fernandes Silva
+avatar:
+  github: https://github.com/mariaclara-fs.png
+occupations:
+  - id: 20251380036
+    type: student
+    course: cstrc-jp
+    isFinished: false
+addresses:
+  github: https://github.com/mariaclara-fs
+  linkedin: https://www.linkedin.com/in/mariaclarafernandes-ti/
+  email: maria.silva.154@academico.ifpb.edu.br
