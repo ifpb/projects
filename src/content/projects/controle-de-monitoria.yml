@@ -1,0 +1,21 @@
+name: Controle de monitoria
+description:
+  Projeto de PWEB2 sobre o controle de monitorias.
+addresses:
+  preview: https://raw.githubusercontent.com/PedroLuisLima/Controle-de-monitoria/refs/heads/main/preview.jpeg
+  homepage: https://ifpb.github.io/projects/
+  repository: https://github.com/PedroLuisLima/Controle-de-monitoria
+  design: https://raw.githubusercontent.com/PedroLuisLima/Controle-de-monitoria/refs/heads/main/design_inicial.png
+category:
+  type: subject
+  subject: ["pw2-csbes-jp", "er-csbes-jp"]
+  period: 2026.1
+tags:
+  - javascript
+  - html
+  - css
+owners:
+  - 202524320006
+  - 202524320034
+  - 202524320016
+  - 20251380036
