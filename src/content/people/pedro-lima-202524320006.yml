@@ -1,0 +1,16 @@
+name:
+  compact: Pedro Luís
+  full: Pedro Luís Lima Vieira
+avatar:
+  github: https://github.com/PedroLuisLima.png
+  githubUC: https://avatars.githubusercontent.com/u/151783693?v=4
+occupations:
+  - id: 202524320006
+    type: student
+    course: csbes-jp
+    isFinished: false
+addresses:
+  github: https://github.com/PedroLuisLima
+  linkedin: https://www.linkedin.com/in/pedro-lima-5a352b360/
+  instagram: https://www.instagram.com/pedroluis.lv/
+  email: vieira.lima@academico.ifpb.edu.br
