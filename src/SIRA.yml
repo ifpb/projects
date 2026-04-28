@@ -1,10 +1,10 @@
-name: GuardaSala
+name: SIRA
 description: Este projeto tem como objetivo apresentar um site para reserva
   de salas e equipamentos, utilizando como ferramentas HTML, CSS
   e JavaScript. Desse modo, permitindo o usuário interagir de forma
   dinâmica com o conteúdo e ver detalhes para simular uma reserva.
 addresses:
-  repository: https://github.com/GabeMarques-Intetsu/GuardaSala
+  repository: https://github.com/GabeMarques-Intetsu/SIRA-Sistema-de-Reserva-Salas-e-Equipamentos
   workflow: https://github.com/users/GabeMarques-Intetsu/projects/1/views/1
 category:
   type: subject
@@ -16,6 +16,8 @@ tags:
   - javascript
   - html
   - css
+  - react
+  - supabase
 owners:
   - 202524320002
   - 202524320026
