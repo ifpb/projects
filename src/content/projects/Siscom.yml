@@ -1,0 +1,21 @@
+name: Sistema de Comunicação (SisCom)
+description: 
+    Sistema que tem como objetivo formalizar a comunicação dentro da Companhia Estadual Habitação Popular da Paraíba (CEHAP). 
+    Será utilizado por todos os trabalhadores que necessitam registrar eventos, solicitar serviços e comunicar-se diretamente com pessoas de outros setores.
+addresses:
+  preview: https://github.com/MelquisedequeVital/SisCom/blob/main/SisCom%20-%20Preview.png
+  homepage: https://melquisedequevital.github.io/SisCom/
+  repository: https://github.com/MelquisedequeVital/SisCom
+  design: 
+category:
+  type: subject  
+  subject: pw1-cstsi-jp
+  period: 2026.1  
+tags:
+  - angularjs
+  - tailwindcss
+  - typescript
+owners:
+  - 20241370035
+  - 20241370026
+  - 20241370030
