@@ -1,0 +1,21 @@
+name: Mix Arretado
+description:
+  Site para restaurante regional paraibano.
+addresses:
+  preview: https://github.com/devcomdavi/RestauranteMixArretado/blob/main/images/preview.png?raw=true
+  homepage: https://devcomdavi.github.io/RestauranteMixArretado/
+  repository: https://github.com/devcomdavi/RestauranteMixArretado.git
+category:
+  type: subject  # ou 'subject', 'research', 'extension', 'open source'
+  subject: pw1-csbes-jp
+  period: 2026.1   # necessário para projetos de disciplina
+tags:
+  - angular
+  - typescript
+  - java
+  - springboot
+  - postgresql
+owners:
+  - 20242370011
+  - 20242370040
+  - 20242370033
