@@ -1,0 +1,21 @@
+name: PrimeLar
+description: Este site tem como objetivo ser uma plataforma online para uma imobiliaria.
+addresses:
+  preview: https://raw.githubusercontent.com/LuanaMacedoa/PrimeLar-pweb1/refs/heads/main/src/assets/img/preview.png
+  homepage: https://primelar.vercel.app
+  repository: https://github.com/LuanaMacedoa/PrimeLar-pweb1
+  template: https://www.figma.com/design/jB9M2549SCrtXgmaGxuF64/Stayli---Design-File?node-id=0-1&t=8J3WsBT7OEGk9NBv-1
+category:
+  type: subject
+  subject: pw1-cstsi-jp
+  period: 2026.1
+tags:
+  - angular
+  - typescript
+  - figma
+  - aos
+owners:
+  - 20242370003
+  - 20242370026
+  - 20242370007
+  - 20242370015
