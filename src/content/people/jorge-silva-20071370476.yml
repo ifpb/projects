@@ -1,0 +1,13 @@
+name:
+  compact: Jorge Silva
+  full: Jorge Luiz Barreto da Silva
+avatar:
+  selected: none
+occupations:
+  - id: 20071370476
+    type: student
+    course: cstsi-jp
+    isFinished: true
+addresses:
+  email: jorgebarreto.pe@gmail.com
+  linkedin: https://www.linkedin.com/in/jorgebarreto/

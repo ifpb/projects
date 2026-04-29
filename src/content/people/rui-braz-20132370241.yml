@@ -1,0 +1,14 @@
+name:
+  compact: Rui Braz
+  full: Rui Braz Correia Júnior
+avatar:
+  github: https://github.com/rui-correia.png
+  githubUC: https://avatars.githubusercontent.com/u/47540822?v=4
+occupations:
+  - id: 20132370241
+    type: student
+    course: cstsi-jp
+    isFinished: true
+addresses:
+  github: https://github.com/rui-correia
+  linkedin: https://www.linkedin.com/in/rui-braz-a9a8ab144/

@@ -1,0 +1,17 @@
+name:
+  compact: Cauã Pablo
+  full: Cauã Pablo Miguel Vicente da Silva
+avatar:
+  github: https://github.com/caua-p.png
+  githubUC: https://avatars.githubusercontent.com/u/187351912?v=4
+occupations:
+  - id: 20232380036
+    type: student
+    course: cstrc-jp
+    isFinished: false
+addresses:
+  github: https://github.com/caua-p
+  linkedin: https://www.linkedin.com/in/caua-p/
+  instagram: https://www.instagram.com/cauamiguel._/
+  homepage: https://caua-p.github.io
+  email: caua.vicente@academico.ifpb.edu.br

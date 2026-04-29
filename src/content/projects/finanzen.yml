@@ -1,0 +1,23 @@
+name: FinanZen
+description:
+  FinanZen é uma aplicação desenvolvida para a disciplina de Programação
+  Web 1 do Instituto Federal da Paraíba (IFPB). O projeto simula uma plataforma de
+  organização financeira, onde os usuários podem cadastrar, editar, remover e visualizar
+  as transações realizadas, com a funcionalidade de autenticação de usuários.
+addresses:
+  preview: https://github.com/Phenrique-sousa/FinanZen-pweb1-final/blob/main/preview.png?raw=true
+  homepage: https://github.com/Phenrique-sousa/FinanZen-pweb1-final
+  repository: https://github.com/Phenrique-sousa/FinanZen-pweb1-final
+category:
+  type: subject
+  subject: pw1-cstsi-jp
+  period: 2024.2
+tags:
+  - angular
+  - typescript
+  - java
+  - spring boot
+owners:
+  - 20222370010
+  - 20222370003
+  - 20222370013

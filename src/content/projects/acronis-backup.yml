@@ -1,0 +1,19 @@
+name: Acronis Backup
+description:
+  Este projeto é uma aplicação web simples que permite aos usuários cadastrar
+  hosts com suas informações básicas e, posteriormente, realizar backups desses hosts.
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2024.1
+tags:
+  - bootstrap
+  - express.js
+  - ssh2
+  - ssh2-sftp-client
+  - vagrant
+addresses:
+  preview: https://github.com/adalbertorosendoo/Projeto-DW/blob/main/preview.png?raw=true
+  repository: https://github.com/adalbertorosendoo/Projeto-DW
+owners:
+  - 20211380007

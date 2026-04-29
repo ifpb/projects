@@ -1,0 +1,15 @@
+name: Tapiocaria da Rosa
+description: Esta página tem como objetivo ser uma loja virtual de tapioca.
+addresses:
+  preview: https://github.com/MessiasTeixeira/Tapiocaria.Projeto/blob/main/messiasteixeira.github.io_Tapiocaria.Projeto_.png?raw=true
+  homepage: https://messiasteixeira.github.io/Tapiocaria.Projeto/
+  repository: https://github.com/MessiasTeixeira/Tapiocaria.Projeto
+category:
+  type: subject
+  subject: lm-cstsi-jp
+  period: 2024.2
+tags:
+  - html
+  - css
+owners:
+  - 20242370035

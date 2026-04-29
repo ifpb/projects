@@ -1,0 +1,20 @@
+name: PJ Agenda
+description: Agenda para serviços de Empresa
+addresses:
+  preview: https://github.com/itallume/AgendaPJ/blob/firebase/src/app/shared/images/img.png?raw=true
+  repository: https://github.com/itallume/AgendaPJ
+category:
+  type: subject
+  subject: pw1-cstsi-jp
+  period: 2024.2
+tags:
+  - angular
+  - spring boot
+  - firestore
+  - typescript
+  - javascript
+  - java
+owners:
+  - 20231370018
+  - 20231370014
+  - 20231370026

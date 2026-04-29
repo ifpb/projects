@@ -1,0 +1,15 @@
+name:
+  compact: Igor Portela
+  full: Igor Amorim Costa Portela
+avatar:
+  github: https://github.com/igorportela.png
+  githubUC: https://avatars.githubusercontent.com/u/320619?v=4
+occupations:
+  - id: 20081370223
+    type: student
+    course: cstsi-jp
+    isFinished: true
+addresses:
+  email: igorcostaportela@hotmail.com
+  linkedin: https://www.linkedin.com/in/igorportela/
+  github: https://github.com/igorportela

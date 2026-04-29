@@ -1,0 +1,20 @@
+name: LavaZen
+description: Projeto da disciplina de PWeb para agendar lavagens de carro.
+addresses:
+  preview: https://github.com/LucasAndrade912/lavazen/blob/main/preview/layout.png?raw=true
+  repository: https://github.com/LucasAndrade912/lavazen
+category:
+  type: subject
+  subject: pw1-cstsi-jp
+  period: 2024.1
+tags:
+  - angular
+  - typescript
+  - javascript
+  - java
+  - spring boot
+  - firebase
+  - postgresql
+owners:
+  - 20222370031
+  - 20222370015

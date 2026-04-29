@@ -4,7 +4,8 @@ const { url, text } = Astro.props;
 
 <a
   href={url}
-  class="text-xs md:text-[10px] uppercase inline-block py-0.5 px-2 rounded-full font-semibold text-gray-800 bg-gray-200 hover:bg-gray-700 hover:text-white transition duration-300"
+  class="text-xs font-semibold inline-block uppercase md:text-[10px] py-0.5 px-2 rounded-full text-gray-800 bg-gray-200 hover:bg-gray-700 hover:text-white transition duration-300"
+  target="_blank"
 >
   {text}
 </a>

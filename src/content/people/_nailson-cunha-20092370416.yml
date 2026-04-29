@@ -1,0 +1,11 @@
+name:
+  compact: Nailson Cunha
+  full: Nailson dos Santos Cunha
+avatar: null
+occupations:
+  - id: 20092370416
+    type: student
+    course: cstsi-jp
+    isFinished: true
+addresses:
+  email: nailsoncunha@gmail.com

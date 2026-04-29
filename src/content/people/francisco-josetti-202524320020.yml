@@ -1,0 +1,16 @@
+name:
+  compact: Francisco Josetti
+  full: Francisco Josetti Vieira de Sousa
+avatar:
+  github: https://github.com/francisco-josetti.png
+  githubUC: https://avatars.githubusercontent.com/u/235409912?v=4
+occupations:
+  - id: 202524320020
+    type: student
+    course: csbes-jp
+    isFinished: false
+addresses:
+  github: https://github.com/francisco-josetti
+  linkedin: https://www.linkedin.com/in/fjosetti/
+  instagram: https://www.instagram.com/francisco.josetti/
+  email: francisco.josetti@academico.ifpb.edu.br

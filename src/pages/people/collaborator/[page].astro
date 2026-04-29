@@ -1,0 +1,69 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import PersonGrid from '@/components/PersonGrid.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getPeopleByTag, isProfessor, sortPeople } from '@/helpers/people';
+import { PAGE_SIZE } from '@/consts';
+import { getProjectsByPerson } from '@/helpers/projects';
+
+// Extend the existing people entry so that projects are nested under data.projects
+export type PersonWithProjects = CollectionEntry<'people'> & {
+  data: CollectionEntry<'people'>['data'] & {
+    projects?: CollectionEntry<'projects'>[];
+  };
+};
+
+export interface Props {
+  page: {
+    data: CollectionEntry<'people'>[];
+    currentPage: number;
+    lastPage: number;
+    url: {
+      prev: string;
+      next: string;
+    };
+  };
+}
+
+export async function getStaticPaths({ paginate }) {
+  const peopleWithProjects = await getPeopleByTag('projects');
+
+  const people = await Promise.all(
+    peopleWithProjects.map(async (person) => {
+      const projects = await getProjectsByPerson(person);
+
+      const personWithProjects: PersonWithProjects = {
+        ...(person as CollectionEntry<'people'>),
+        data: {
+          ...person.data,
+          projects,
+        },
+      };
+
+      return personWithProjects;
+    })
+  );
+
+  people.sort((a, b) => {
+    return (
+      // Number(isProfessor(b)) - Number(isProfessor(a)) ||
+      // b.data.projects.length - a.data.projects.length ||
+      // Number(isProfessor(b)) - Number(isProfessor(a)) ||
+      b.data.projects.length * (isProfessor(b) ? 3 : 1) -
+        a.data.projects.length * (isProfessor(a) ? 3 : 1) || sortPeople(a, b)
+    );
+  });
+
+  const pages = paginate(people, {
+    pageSize: PAGE_SIZE,
+  });
+
+  return pages;
+}
+
+const { page } = Astro.props;
+---
+
+<BaseLayout pageTitle="Pessoas com Projetos">
+  <PersonGrid page={page} type="people" index="collaborator" />
+</BaseLayout>

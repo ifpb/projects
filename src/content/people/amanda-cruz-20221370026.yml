@@ -1,0 +1,16 @@
+name:
+  compact: Amanda Cruz
+  full: Amanda Cruz de Araújo
+avatar:
+  github: https://github.com/Amandacdev.png
+  githubUC: https://avatars.githubusercontent.com/u/91712449?v=4
+occupations:
+  - id: 20221370026
+    type: student
+    course: cstsi-jp
+    isFinished: true
+addresses:
+  github: https://github.com/Amandacdev
+  linkedin: https://www.linkedin.com/in/amandacrz/
+  lattes: http://lattes.cnpq.br/6883655890906405
+  email: cruz.amanda@academico.ifpb.edu.br

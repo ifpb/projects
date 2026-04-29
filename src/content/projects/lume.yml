@@ -1,0 +1,19 @@
+name: Lume
+description:
+  Lume é um aplicativo desenvolvido para facilitar o registro e acompanhamento
+  de consumos culturais, como filmes, séries, livros e músicas.
+addresses:
+  preview: https://github.com/niryb/Lume/blob/main/preview.png?raw=true
+  repository: https://github.com/niryb/Lume
+category:
+  type: subject
+  subject: pdm-cstsi-jp
+  period: 2024.2
+tags:
+  - kotlin
+  - jetpack compose
+  - firestore
+  - android
+owners:
+  - 20212370001
+  - 20221370043

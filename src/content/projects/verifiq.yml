@@ -1,0 +1,23 @@
+name: VerifiQ
+description:
+  Sistema web desenvolvido com a proposta de auxiliar pessoas a identificarem
+  conteúdos maliciosos da Web.
+addresses:
+  preview: https://github.com/sofialeals/projeto-verifiq/blob/main/preview.png?raw=true
+  homepage: https://stackblitz.com/github/sofialeals/projeto-verifiq
+  repository: https://github.com/sofialeals/projeto-verifiq
+category:
+  type: subject
+  subject: pw1-cstsi-jp
+  period: 2024.1
+tags:
+  - html
+  - scss
+  - typescript
+  - angular
+  - spring boot
+  - firestore
+owners:
+  - 20222370016
+  - 20221370012
+  - 20221370040

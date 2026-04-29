@@ -4,6 +4,9 @@ import GoogleAnalytics from '@/components/GoogleAnalytics.astro';
 import NavBar from '@/components/NavBar.astro';
 import PageFindSearch from '@/components/PageFindSearch.astro';
 import { getAllPersonTags } from '@/helpers/people';
+import { getAllProjectTags } from '@/helpers/tags';
+import { getCourse } from '@/helpers/courses';
+import { getSubject } from '@/helpers/subjects';
 
 import '@/styles/global.css';
 
@@ -16,7 +19,25 @@ export interface Propos {
 
 const { pageTitle, tags, type, pageFindFilter } = Astro.props;
 
-const allTags = tags ? await getAllPersonTags() : [];
+const peopleTags = tags ? await getAllPersonTags() : [];
+
+// Filter out course and subject tags from project tags
+const allProjectTags: string[] = await getAllProjectTags();
+const projectTags = allProjectTags.filter(tag => {
+  // Exclude if it's a course tag (format: course-campus)
+  const courseEntry = getCourse(tag);
+  if (courseEntry) return false;
+  
+  // Exclude if it's a subject tag 
+  const subjectEntry = getSubject(tag);
+  if (subjectEntry) return false;
+  
+  // Exclude if it matches subject-period pattern (e.g., "pw2-cstsi-jp-2024.1")
+  const subjectPeriodPattern = /^[a-zA-Z0-9]+-[a-zA-Z]+-[a-zA-Z]+-\d{4}\.\d+$/;
+  if (subjectPeriodPattern.test(tag)) return false;
+  
+  return true;
+});
 
 const headerTitle = pageTitle ? `IFPB | ${pageTitle}` : 'IFPB Code';
 ---
@@ -37,7 +58,13 @@ const headerTitle = pageTitle ? `IFPB | ${pageTitle}` : 'IFPB Code';
     <div class="container lg:max-w-screen-lg mx-auto px-4 py-16">
       {
         tags && (
-          <Filter type={type} tags={tags} allTags={allTags} client:visible />
+          <Filter
+            type={type}
+            tags={tags}
+            peopleTags={peopleTags}
+            projectTags={projectTags}
+            client:visible
+          />
         )
       }
 

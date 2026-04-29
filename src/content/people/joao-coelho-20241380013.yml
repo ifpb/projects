@@ -1,0 +1,15 @@
+name:
+  compact: João Victor
+  full: João Victor Coelho Trigueiro
+avatar:
+  github: https://github.com/joao-victor-ct.png
+  githubUC: https://avatars.githubusercontent.com/u/200117554?s=400&v=4
+occupations:
+  - id: 20241380013
+    type: student
+    course: cstrc-jp
+    isFinished: false
+addresses:
+  github: https://github.com/joao-victor-ct
+  linkedin: https://www.linkedin.com/in/jo%C3%A3o-victor-coelho-trigueiro-b082412b5/
+  email: augustinho27.coelho@gmail.com

@@ -1,0 +1,15 @@
+name:
+  compact: Lucas Vinícius
+  full: Lucas Vinícius Cavalcanti Costa
+avatar:
+  github: https://github.com/Lucas-Vinicius-dev.png
+  githubUC: https://avatars.githubusercontent.com/u/237371705?v=4
+occupations:
+  - id: 202524320008
+    type: student
+    course: csbes-jp
+    isFinished: false
+addresses:
+  github: https://github.com/Lucas-Vinicius-dev
+  linkedin: https://www.linkedin.com/in/lucas-vinicius-cavalcanti-costa-cpp
+  email: cavalcanti.costa@academico.ifpb.edu.br

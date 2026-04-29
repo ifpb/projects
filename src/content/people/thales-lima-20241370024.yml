@@ -1,0 +1,15 @@
+name:
+  compact: Thales Lima
+  full: Thales Lima Ferreira
+avatar:
+  github: https://github.com/ThalesLimaF.png
+  githubUC: https://avatars.githubusercontent.com/u/164221673?v=4
+occupations:
+  - id: 20241370024
+    type: student
+    course: cstsi-jp
+    isFinished: false
+addresses:
+  github: https://github.com/ThalesLimaF
+  linkedin: https://www.linkedin.com/in/thales-lima-a605322b3/
+  email: lima.thales@academico.ifpb.edu.br

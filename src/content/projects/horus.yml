@@ -1,0 +1,17 @@
+name: Horus
+description:
+  Projeto com foco em scaner de portas e análise de vulnerabilidades de
+  redes.
+addresses:
+  preview: https://github.com/diegosls/horus/blob/main/preview.png?raw=true
+  homepage: https://diegosls.github.io/horus
+  repository: https://github.com/diegosls/horus
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2025.1
+tags:
+  - javascript
+  - bootstrap
+owners:
+  - 20221380034

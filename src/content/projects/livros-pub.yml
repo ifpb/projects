@@ -1,0 +1,16 @@
+name: LivrosPUB
+description: acervo de livros com domínio público
+addresses:
+  preview: https://github.com/JulioCBMO/projeto-ls-2024-1/blob/main/preview.png?raw=true
+  repository: https://github.com/JulioCBMO/projeto-ls-2024-1
+category:
+  type: subject
+  subject: ls-cstsi-jp
+  period: 2024.1
+tags:
+  - ls
+  - acervo
+  - javascript
+  - astro.js
+owners:
+  - 20232370027

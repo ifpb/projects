@@ -23,6 +23,13 @@ const id = z.number().refine((num) => {
   return [12, 11, 7, 6].includes(length);
 });
 
+export const cities = {
+  jp: 'João Pessoa',
+  cg: 'Campina Grande',
+  gb: 'Guarabira',
+  cz: 'Cajazeiras',
+};
+
 export const campi = {
   'ifpb-jp': 'João Pessoa',
   'ifpb-cg': 'Campina Grande',
@@ -41,13 +48,20 @@ export const abbreviationCourses = [
   'cstt',
   'ctie',
   'ctii',
+  'ctim',
 ] as const;
+
+const courseWithCityEnum = abbreviationCourses.flatMap((course) =>
+  Object.keys(cities).map((city) => `${course}-${city}`)
+);
 
 const campusCode = Object.keys(campi) as [keyof typeof campi];
 
 const campus = z.enum(campusCode);
 
 const course = z.enum([...abbreviationCourses]);
+
+const courseWithCity = z.enum(courseWithCityEnum as [string, ...string[]]);
 
 const addresses = z.object({
   github: z.string().url().optional(),
@@ -88,8 +102,7 @@ const employeeOccupation = z.object({
 const studentOccupation = z.object({
   id,
   type: z.literal('student'),
-  campus,
-  course,
+  course: courseWithCity,
   isFinished: z.boolean(),
 });
 
@@ -98,17 +111,13 @@ const projectCategory = z.object({
   campus,
 });
 
-const subjectProjectCategory = projectCategory.extend({
+const subjectProjectCategory = z.object({
   type: z.literal('subject'),
-  subject: z.string(),
-  period: z.number(),
-  semester: z.number().refine((value) => {
+  subject: z.union([z.string(), z.array(z.string())]),
+  period: z.number().refine((value) => {
     const regex = /^\d{4}(\.[12])?$/;
-
     return regex.test(String(value));
   }),
-  course,
-  campus,
 });
 
 const researchProjectCategory = projectCategory.extend({
@@ -128,6 +137,7 @@ const openSourceProjectCategory = projectCategory.extend({
 
 // collections
 const courseCollection = defineCollection({
+  type: 'data',
   schema: z.object({
     id: z.string(),
     name: z.string(),
@@ -144,6 +154,7 @@ const courseCollection = defineCollection({
 });
 
 const peopleCollection = defineCollection({
+  type: 'data',
   schema: z.object({
     id: id.optional(),
     name: z.object({
@@ -180,13 +191,15 @@ const peopleCollection = defineCollection({
 });
 
 const projectCollection = defineCollection({
+  type: 'data',
   schema: z.object({
     name: z.string(),
     description: z.string(),
     addresses: addresses.extend({
-      repository: z.string().url(),
+      repository: z.union([z.string().url(), z.array(z.string().url())]),
       preview: z.string().url().optional(),
-      template: z.string().url().optional(),
+      design: z.string().url().optional(),
+      workflow: z.string().url().optional(),
     }),
     category: z.union([
       subjectProjectCategory,
@@ -199,8 +212,22 @@ const projectCollection = defineCollection({
   }),
 });
 
+const subjectCollection = defineCollection({
+  type: 'data',
+  schema: z.object({
+    id: z.string(),
+    name: z.object({
+      compact: z.string(),
+      full: z.string(),
+    }),
+    course: z.enum(courseWithCityEnum as [string, ...string[]]),
+    period: z.number(),
+  }),
+});
+
 export const collections = {
   people: peopleCollection,
   projects: projectCollection,
   courses: courseCollection,
+  subjects: subjectCollection,
 };

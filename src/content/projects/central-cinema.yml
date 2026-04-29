@@ -1,0 +1,17 @@
+name: Central Cinema
+description:
+  Central Cinema é uma aplicação feita em angular usando spring boot e
+  firebase para a disciplina PWEB 1.
+addresses:
+  repository: https:https://github.com/MaiconFelipedev/CentralCinemaApp-final
+category:
+  type: subject
+  subject: pw1-cstsi-jp
+  period: 2024.1
+tags:
+  - angular
+  - spring boot
+  - firebase
+owners:
+  - 20212370001
+  - 20212370020

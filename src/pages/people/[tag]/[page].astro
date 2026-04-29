@@ -4,8 +4,9 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import PersonGrid from '@/components/PersonGrid.astro';
 import { getAllPersonTags, getPeopleByTag } from '@/helpers/people';
 import { getCourseName } from '@/helpers/courses';
+import { getSubject } from '@/helpers/subjects';
 import { PAGE_SIZE } from '@/consts';
-import { abbreviationCourses } from '@/content/config';
+import { abbreviationCourses, cities } from '@/content/config';
 
 export interface Props {
   page: {
@@ -41,16 +42,71 @@ export async function getStaticPaths({ paginate }) {
 const formatPageTitle = (tag: string) => {
   let title = '';
 
-  if (abbreviationCourses.some((course) => tag.includes(course))) {
+  // Check if it's a subject-course-campus-period format (e.g., dw-cstrc-jp-2025.2)
+  const subjectMatch = tag.match(
+    /^([a-zA-Z0-9]+)-([a-z]+)-([a-z]+)-(\d{4}\.\d)$/
+  );
+  if (subjectMatch) {
+    const [, subjectCode, courseCode, campus, period] = subjectMatch;
+    const subjectId = `${subjectCode}-${courseCode}-${campus}`;
+    const subject = getSubject(subjectId);
+
+    if (subject) {
+      title = `Turma | ${subject.data.name.full} (${period})`;
+    } else {
+      title = `Turma ${tag.toUpperCase()}`;
+    }
+  }
+  // Check if it's a course-campus-period format (e.g., cstrc-jp-2024.1)
+  else if (/^([a-z]+)-([a-z]+)-(\d{4}\.\d)$/.test(tag)) {
+    const [courseCode, campus, period] = tag.split('-');
+    const courseFull = `${courseCode}-${campus}`;
+
+    // Try to get course data using the helper
+    try {
+      const courseInfo = getCourseName(courseFull);
+      if (courseInfo && !courseInfo.includes('undefined')) {
+        // Extract just the course name from the full format
+        const courseName = courseInfo.split(' em ')[1]?.split(' |')[0];
+        if (courseName) {
+          title = `${courseName} | ${campus.toUpperCase()} (${period})`;
+        } else {
+          title = `Turma ${tag.toUpperCase()}`;
+        }
+      } else {
+        title = `Turma ${tag.toUpperCase()}`;
+      }
+    } catch {
+      title = `Turma ${tag.toUpperCase()}`;
+    }
+  } else if (abbreviationCourses.some((course) => tag.includes(course))) {
     if (tag.includes('egresso')) {
       title = `Egresso | ${getCourseName(tag.split('-')[1])}`;
     } else {
       title = getCourseName(tag);
     }
+  } else if (/^ifpb-\w{2}$/.test(tag)) {
+    title = `Campus ${tag.toUpperCase()}`;
+  } else if (/^\d{4}\.?\d?$/.test(tag)) {
+    title = `Alunos de ${tag}`;
+  } else if (/-\d{4}\.?\d?$/.test(tag)) {
+    title = `Turma ${tag.toUpperCase()}`;
+  } else if (['técnico', 'mestrado'].includes(tag)) {
+    title = `Alunos do ${tag[0].toUpperCase() + tag.slice(1)}`;
+  } else if (['graduação'].includes(tag)) {
+    title = `Alunos da ${tag[0].toUpperCase() + tag.slice(1)}`;
+  } else if (tag === 'student') {
+    title = 'Alunos';
   } else if (tag === 'professor') {
     title = 'Professores';
   } else if (tag === 'egresso') {
-    title = 'Egresos';
+    title = 'Egressos';
+  } else if (tag === 'reitoria') {
+    title = 'Reitoria';
+  } else if (tag === 'projects') {
+    title = 'Pessoas com Projetos';
+  } else if (cities[tag]) {
+    title = `Pessoas de ${cities[tag]}`;
   } else {
     title = `Pessoas com ${tag[0].toUpperCase() + tag.slice(1)}`;
   }

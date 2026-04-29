@@ -1,0 +1,15 @@
+name:
+  compact: Thiago Lima
+  full: Thiago Pinto de Lima
+avatar:
+  github: https://github.com/thiagotigaz.png
+  githubUC: https://avatars.githubusercontent.com/u/4993320?v=4
+occupations:
+  - id: 20082370227
+    type: student
+    course: cstsi-jp
+    isFinished: true
+addresses:
+  github: https://github.com/thiagotigaz
+  linkedin: https://www.linkedin.com/in/thiagotigaz/
+  homepage: https://supercloud.com.br/

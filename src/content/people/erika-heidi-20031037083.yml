@@ -1,0 +1,15 @@
+name:
+  compact: Erika Heidi
+  full: Erika Christina Heidi Focke
+avatar:
+  github: https://github.com/erikaheidi.png
+  githubUC: https://avatars.githubusercontent.com/u/293241?v=4
+occupations:
+  - id: 20031037083
+    type: student
+    course: cstsi-jp
+    isFinished: false
+addresses:
+  github: https://github.com/erikaheidi
+  linkedin: https://www.linkedin.com/in/erikaheidi/
+  homepage: https://eheidi.dev/

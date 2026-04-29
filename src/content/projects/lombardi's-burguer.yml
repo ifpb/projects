@@ -1,0 +1,15 @@
+name: Lombardi's Burguer
+description: Um site para uma hamburgueria fictícia
+addresses:
+  homepage: https://alvaromll.github.io/Lombard-is-Burguer/
+  repository: https://github.com/AlvaroMLL/Lombard-is-Burguer
+  design: https://www.figma.com/design/UpEqNeW4V4PI9BDV1FfkVu/Site-da-Hamburgueria
+category:
+  type: subject
+  subject: lm-cstsi-jp
+  period: 2024.2
+tags:
+  - html
+  - css
+owners:
+  - 20242370037

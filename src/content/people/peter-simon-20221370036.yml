@@ -1,0 +1,14 @@
+name:
+  compact: Peter Simon
+  full: Peter Simon Verissimo da Costa
+avatar:
+  github: https://github.com/petersvc.png
+  githubUC: https://avatars.githubusercontent.com/u/30843347?v=4
+occupations:
+  - id: 20221370036
+    type: student
+    course: cstsi-jp
+    isFinished: false
+addresses:
+  github: https://github.com/petersvc
+  linkedin: https://www.linkedin.com/in/peter-costa-965630209/

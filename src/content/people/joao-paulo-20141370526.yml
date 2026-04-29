@@ -1,0 +1,14 @@
+name:
+  compact: João Paulo
+  full: João Paulo Marques de Almeida
+avatar:
+  github: https://github.com/paulinhojpma.png
+  githubUC: https://avatars.githubusercontent.com/u/16427008?v=4
+occupations:
+  - id: 20141370526
+    type: student
+    course: cstsi-jp
+    isFinished: true
+addresses:
+  github: https://github.com/paulinhojpma
+  linkedin: https://www.linkedin.com/in/joão-paulo-marques-a0154ab3/

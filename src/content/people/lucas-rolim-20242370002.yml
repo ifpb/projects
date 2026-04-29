@@ -1,0 +1,15 @@
+name:
+  compact: Lucas Rolim
+  full: Lucas Dantas Ribeiro Rolim
+avatar:
+  github: https://github.com/lucaasdrr.png
+  githubUC: https://avatars.githubusercontent.com/u/189936176?v=4
+occupations:
+  - id: 20242370002
+    type: student
+    course: cstsi-jp
+    isFinished: false
+addresses:
+  github: https://github.com/lucaasdrr
+  linkedin: https://www.linkedin.com/in/lucas-drr-a636a623a
+  email: lucasdantas.rolim@hotmail.com

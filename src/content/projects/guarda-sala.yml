@@ -1,0 +1,24 @@
+name: GuardaSala
+description: Este projeto tem como objetivo apresentar um site para reserva
+  de salas e equipamentos, utilizando como ferramentas HTML, CSS
+  e JavaScript. Desse modo, permitindo o usuário interagir de forma
+  dinâmica com o conteúdo e ver detalhes para simular uma reserva.
+addresses:
+  repository: https://github.com/GabeMarques-Intetsu/GuardaSala
+  workflow: https://github.com/users/GabeMarques-Intetsu/projects/1/views/1
+category:
+  type: subject
+  subject:
+    - pw2-csbes-jp
+    - ers-csbes-jp
+  period: 2026.1
+tags:
+  - javascript
+  - html
+  - css
+owners:
+  - 202524320002
+  - 202524320026
+  - 202524320024
+  - 202524320018
+  - 202524320005

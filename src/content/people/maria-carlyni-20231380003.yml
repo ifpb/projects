@@ -1,0 +1,15 @@
+name:
+  compact: Maria Carlyni
+  full: Maria Carlyni Pereira de Oliveira
+avatar:
+  github: https://github.com/mariacarlyni-pereira.png
+  githubUC: https://avatars.githubusercontent.com/u/266065086?v=4
+occupations:
+  - id: 20231380003
+    type: student
+    course: cstrc-jp  
+    isFinished: false
+addresses:
+  github: https://github.com/mariacarlyni-pereira
+  linkedin: https://www.linkedin.com/in/maria-carlyni/
+  email: maria.carlyni@academico.ifpb.edu.br

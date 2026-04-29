@@ -1,0 +1,29 @@
+name: Ágora Kosmos
+description:
+  Plataforma de investimentos utilizando abordagem de gameficação e com
+  suporte a chatbot gemini para consultas.
+addresses:
+  preview: https://github.com/rickfsoares/Agora-Kosmos/blob/main/agora-home.png?raw=true
+  repository: https://github.com/rickfsoares/Agora-Kosmos
+category:
+  type: subject
+  subject: pd-cstsi-jp
+  period: 2024.1
+tags:
+  - angular
+  - ruby on rails
+  - docker
+  - docker compose
+  - redis
+  - rabbitmq
+  - postgresql
+  - python
+  - makefile
+  - gemini
+  - alphavantage
+owners:
+  - 20212370048
+  - 20212370047
+  - 20202370008
+  - 20211370045
+  - 20211370047

@@ -1,0 +1,13 @@
+name:
+  compact: Ayrton Nádgel
+  full: Ayrton Nádgel de Souza Silva
+avatar:
+  selected: none
+occupations:
+  - id: 20101370037
+    type: student
+    course: cstsi-jp
+    isFinished: true
+addresses:
+  email: ayrton.nadgel@gmail.com
+  linkedin: https://www.linkedin.com/in/ayrton-nadgel-6b420487/

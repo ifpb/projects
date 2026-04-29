@@ -1,0 +1,14 @@
+name:
+  compact: José Leandro
+  full: José Leandro Fernandes de Medeiros Brasileiro
+avatar:
+  github: https://github.com/Jleandrobr.png
+  githubUC: https://avatars.githubusercontent.com/u/88900122?v=4
+occupations:
+  - id: 20211370003
+    type: student
+    course: cstsi-jp
+    isFinished: true
+addresses:
+  github: https://github.com/Jleandrobr
+  linkedin: https://www.linkedin.com/in/joseleandrofmb/

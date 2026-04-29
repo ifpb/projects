@@ -1,0 +1,20 @@
+name: MoveX
+description:
+  MoveX é um aplicativo de acompanhamento de atividades físicas, metas
+  e gráficos para ajudar usuários a adotarem e manterem uma rotina saudável.
+addresses:
+  preview: https://github.com/BielzinDaAgua/MoveX/blob/master/app/src/main/res/drawable/movex_png.png?raw=true
+  repository: https://github.com/BielzinDaAgua/MoveX
+category:
+  type: subject
+  subject: pdm-cstsi-jp
+  period: 2024.1
+tags:
+  - kotlin
+  - firebase
+  - api-google
+owners:
+  - 20221370013
+  - 20221370022
+  - 20191370043
+  - 20192370041

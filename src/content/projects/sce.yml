@@ -1,0 +1,26 @@
+name: SCE - Sistema de Controle de Egressos
+description:
+   É um sistema desenvolvido para fortalecer o vínculo entre a instituição e seus ex-alunos, 
+   focado em uma rede de comunicação constante. O site oferece um espaço de networking onde 
+   egressos trocam experiências, oportunidades de emprego e mentorias com alunos que cursam 
+   atualmente no Instituto.
+   A ferramenta permite que o IFPB monitore a vida profissional de seus formandos, através de 
+   coleta de dados por meio do LinkedIn e GitHub. Gerando os indicadores necessários para a CPA, 
+   garantindo conformidade total com as exigências de avaliação do MEC.
+addresses:
+  repository: https://github.com/GuilhermeMeloRoxo/SCE
+  workflow: https://github.com/users/GuilhermeMeloRoxo/projects/6
+category:
+  type: subject
+  subject: 
+    - pw2-csbes-jp
+    - ers-csbes-jp
+  period: 2026.1
+tags:
+  - javascript
+  - react
+  - html
+  - css
+owners:
+  - 20251380023
+  - 20251380025

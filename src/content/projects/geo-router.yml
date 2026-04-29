@@ -1,0 +1,19 @@
+name: Geo Router
+description: Plataforma de rastreamento e visualização de roteamento entre Sistemas Autônomos (AS) na Internet.
+addresses:
+  preview: https://github.com/JaazielSlv/Geo-Router/blob/main/img/preview.png?raw=true
+  homepage: https://jaazielslv.github.io/Geo-Router/
+  repository: https://github.com/JaazielSlv/Geo-Router
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2026.1
+tags:
+  - html
+  - css
+  - javascript
+  - express.js
+owners:
+  - 20232380015
+  - 20232380020
+  - 20232380036

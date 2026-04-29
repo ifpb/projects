@@ -1,0 +1,31 @@
+name: Arquivo Nostalgia
+description:
+  O Arquivo Nostalgia é um sistema web que permite aos usuários registrar e
+  organizar filmes, séries, desenhos e jogos que marcaram suas vidas.
+  Uma plataforma nostálgica para catalogar suas memórias culturais.
+  Este projeto visa resolver o problema das memórias afetivas fragmentadas na era digital,
+  permitindo que cada usuário monte seu próprio "arquivo nostálgico" personalizado,
+  reunindo em um só lugar todo o entretenimento que fez parte de sua história.
+addresses:
+  preview: https://github.com/lucascarvalho1808/arquivo-nostalgia/blob/main/static/img/pag_inicial.jpeg?raw=true
+  homepage: https://arquivo-nostalgia.onrender.com/
+  repository: https://github.com/lucascarvalho1808/arquivo-nostalgia
+category:
+  type: subject
+  subject:
+    - pw1-csbes-jp
+    - ip-csbes-jp
+    - ies-csbes-jp
+  period: 2025.2
+tags:
+  - css
+  - flask
+  - html
+  - python
+  - supabase
+  - gemini
+  - javascript
+owners:
+  - 202524320028
+  - 202524320027
+  - 202524320001

@@ -1,0 +1,18 @@
+name: App Ticket
+description:
+  Um site de suporte via ticket, onde usuarios podem criar tickets para
+  ter suporte com determinado problema e saber o status da ocorrência.
+addresses:
+  preview: https://github.com/MatheusCMaia/Projeto/blob/main/preview.png?raw=true
+  repository: https://github.com/MatheusCMaia/Projeto
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2024.1
+tags:
+  - html
+  - css
+  - tailwind
+owners:
+  - 20201380042
+  - 20221380041

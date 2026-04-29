@@ -1,0 +1,19 @@
+name: ContratAe
+description:
+  O Sistema de Recrutamento e Seleção - ContratAe é um sistema que tem
+  como objetivo conectar candidatos da área de tecnologia as melhores vagas do mercado.
+  Será usada por candidatos que buscar uma nova oportunidades e por recrutadores em
+  busca de talentos.
+addresses:
+  repository: https://github.com/Luiz-Gomess/Projeto_PWEB_I
+category:
+  type: subject
+  subject: pw1-cstsi-jp
+  period: 2024.2
+tags:
+  - angular
+  - firebase
+  - typescript
+owners:
+  - 20231370019
+  - 20231370027

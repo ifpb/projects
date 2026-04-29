@@ -1,0 +1,17 @@
+name: UniPass-manager
+description:
+  Este projeto se trata da interface web do administrador de um sistema
+  de transporte municipal.
+addresses:
+  preview: https://github.com/jandersn01/University-transportation-management-system/blob/main/imagemunipassprototipo.png?raw=true
+  repository: https://github.com/jandersn01/University-transportation-management-system
+category:
+  type: subject
+  subject: pw1-cstsi-jp
+  period: 2025.1
+tags:
+  - angular
+  - typescript
+owners:
+  - 20222370002
+  - 20212370022

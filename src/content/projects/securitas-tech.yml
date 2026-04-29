@@ -1,0 +1,21 @@
+name: Securitas Tech
+description:
+  Portal para uma empresa de tecnologia e segurança digital apaixonada
+  por conectar pessoas e garantir que todos possam explorar as oportunidades do mundo
+  digital com confiança.
+addresses:
+  preview: https://github.com/lucaskaiquee/Projeto_LM/blob/main/Securitas-tech_resized.png?raw=true
+  homepage: https://lucaskaiquee.github.io/Projeto_LM/
+  repository: https://github.com/LucasKaiquee/Projeto_LM
+category:
+  type: subject
+  subject: lm-cstsi-jp
+  period: 2023.1
+tags:
+  - html
+  - css
+  - tailwind
+owners:
+  - 20231370019
+  - 20231370027
+  - 20231370006

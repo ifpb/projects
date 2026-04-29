@@ -1,0 +1,19 @@
+name: ATUACIDADE
+description:
+  Aplicação Android desenvolvida com a proposta de oferecer aos usuários
+  um espaço para dar destaque aos problemas da cidade em que vivem.
+addresses:
+  preview: https://github.com/lucas-elds/atuacidade/blob/main/preview.png?raw=true
+  repository: https://github.com/lucas-elds/atuacidade
+category:
+  type: subject
+  subject: pdm-cstsi-jp
+  period: 2024.2
+tags:
+  - kotlin
+  - android
+  - firestore
+owners:
+  - 20221370012
+  - 20221370040
+  - 20222370016

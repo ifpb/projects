@@ -1,0 +1,16 @@
+name: OpServer
+description:
+  Plataforma web para gestão e aluguel de servidores personalizados, com
+  foco em organização de partidas, campeonatos e recursos avançados para usuários.
+addresses:
+  homepage: https://caiomayan.github.io/OpServer/
+  repository: https://github.com/caiomayan/OpServer
+category:
+  type: subject
+  subject: ls-cstsi-jp
+  period: 2025.1
+tags:
+  - javascript
+  - vite
+owners:
+  - 20242370036

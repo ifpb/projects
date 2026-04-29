@@ -1,0 +1,20 @@
+name: Swiftchat
+description: Projeto de mensageria para requisição de processos ambientais.
+addresses:
+  preview: https://github.com/andreimedeiros/Swiftchat-front/blob/61c3d2587cdf4f2785945bfc5308f37ab4b0b16a/public/swiftchatpage.png?raw=true
+  repository: https://github.com/andreimedeiros/Swiftchat-front
+category:
+  type: subject
+  subject: pd-cstsi-jp
+  period: 2024.1
+tags:
+  - react
+  - javascript
+  - java
+  - spring boot
+  - redis
+owners:
+  - 20202370006
+  - 20202370026
+  - 20191370040
+  - 20191370009

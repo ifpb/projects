@@ -1,0 +1,16 @@
+name: Visualizador de IP
+description: Um site de visualizador de IP
+addresses:
+  preview: https://github.com/arielelaiane2017/Projeto-DW/blob/main/ip-checker/ab.png?raw=true
+  repository: https://github.com/arielelaiane2017/Projeto-DW
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2024.1
+tags:
+  - html
+  - css
+  - tailwind
+owners:
+  - 20211380011
+  - 20211380035

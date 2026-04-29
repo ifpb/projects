@@ -1,0 +1,15 @@
+name:
+  compact: Ryan Nóbrega
+  full: Ryan Nóbrega Brandão
+avatar:
+  github: https://github.com/Ryan-18-system.png
+  githubUC: https://avatars.githubusercontent.com/u/61997448?v=4
+occupations:
+  - id: 20201370029
+    type: student
+    course: cstsi-jp
+    isFinished: true
+addresses:
+  github: https://github.com/Ryan-18-system
+  linkedin: https://www.linkedin.com/in/ryan-nobrega/
+  email: ryanbrandao18@gmail.com

@@ -1,0 +1,15 @@
+name: Jaguaribe Decor
+description: Jaguaribe Decor.
+addresses:
+  preview: https://i.imgur.com/nDRFYCQ.png
+  homepage: https://michelgft.github.io/Jaguaribe-Decor/
+  repository: https://github.com/michelgft/Jaguaribe-Decor
+category:
+  type: subject
+  subject: lm-cstsi-jp
+  period: 2024.2
+tags:
+  - html
+  - css
+owners:
+  - 20242370031

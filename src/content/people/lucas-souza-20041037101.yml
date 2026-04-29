@@ -1,0 +1,12 @@
+name:
+  compact: Lucas Souza
+  full: Lucas Vieira de Souza
+avatar:
+  selected: none
+occupations:
+  - id: 20041037101
+    type: student
+    course: cstsi-jp
+    isFinished: true
+addresses:
+  linkedin: https://www.linkedin.com/in/lucassouza-dev/

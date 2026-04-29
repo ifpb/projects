@@ -1,0 +1,15 @@
+name: LinkeTinder
+description: o sistema é uma mescla de funções entre Linkedin e Tinder.
+addresses:
+  repository: https://github.com/Julielison/LinkeTinder
+category:
+  type: subject
+  subject: pw1-cstsi-jp
+  period: 2025.1
+tags:
+  - typescript
+  - angular
+  - java
+  - css
+owners:
+  - 20232370016

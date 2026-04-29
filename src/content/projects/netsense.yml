@@ -1,0 +1,25 @@
+name: NetSense
+description:
+  NetSense é um projeto colaborativo para monitorar redes locais, focado
+  na análise de tráfego. Ele fornece estatísticas detalhadas e emite alertas sobre
+  conexões HTTP inseguras, ajudando a reforçar a proteção contra possíveis conexões
+  indesejadas.
+addresses:
+  preview: https://github.com/Jacksoan-Eufrosino/NetSense/blob/main/front/public/images/readme1.png?raw=true
+  repository: https://github.com/Jacksoan-Eufrosino/NetSense
+  homepage: https://jacksoan-eufrosino.github.io/NetSense/
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2024.2
+tags:
+  - node.js
+  - express.js
+  - html
+  - css
+  - javascript
+  - bootstrap
+owners:
+  - 20231380018
+  - 20231380017
+  - 20231380032

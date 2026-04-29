@@ -1,0 +1,15 @@
+name: Academia
+description: Projeto de exibição de informações sobre uma academia.
+addresses:
+  preview: https://github.com/viniciusantos2/academia/blob/main/preview.png?raw=true
+  homepage: https://viniciusantos2.github.io/academia/
+  repository: https://github.com/viniciusantos2/academia
+category:
+  type: subject
+  subject: lm-cstsi-jp
+  period: 2024.1
+tags:
+  - html
+  - css
+owners:
+  - 20232370002

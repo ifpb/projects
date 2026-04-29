@@ -1,0 +1,19 @@
+name: App Loja
+description:
+  o App-Loja implementa conceitos do NEXT.JS e performa configuracoes presentes
+  em sites semelhantes
+addresses:
+  preview: https://github.com/jandersn01/Loja-app/blob/main/public/icons/Captura%20de%20Tela%202025-03-19%20a%CC%80s%2015.27.33.png?raw=true
+  repository: https://github.com/jandersn01/Loja-app
+category:
+  type: subject
+  subject: ls-cstsi-jp
+  period: 2024.2
+tags:
+  - next.js
+  - react
+  - javascript
+  - supabase
+owners:
+  - 20232370011
+  - 20222370002

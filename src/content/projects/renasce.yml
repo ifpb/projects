@@ -1,0 +1,15 @@
+name: Renasce
+description: Sistema para auxiliar repartições que realizam transplante de órgãos.
+addresses:
+  repository: https://github.com/themattery/Renasce
+category:
+  type: subject
+  subject: pw1-cstsi-jp
+  period: 2025.1
+tags:
+  - angular
+  - typescript
+  - css
+owners:
+  - 20222370007
+  - 20231370037

@@ -1,0 +1,24 @@
+name: CodeConnect
+description:
+  CodeConnect é uma plataforma de cursos online que oferece uma ampla gama
+  de cursos, tanto gratuitos quanto pagos, cobrindo diversas áreas de conhecimento.
+addresses:
+  preview: https://github.com/CaioBernardelli/CodeConnect/blob/master/CodeConnect.png?raw=true
+  repository: https://github.com/CaioBernardelli/CodeConnect
+category:
+  type: subject
+  subject: pw1-cstsi-jp
+  period: 2023.2
+tags:
+  - html
+  - scss
+  - typescript
+  - angular
+  - hibernate
+  - json-server
+  - spring boot
+  - postgresql
+  - firestore
+owners:
+  - 20221370013
+  - 20221370028

@@ -1,0 +1,12 @@
+name:
+  compact: João Victor
+  full: João Victor de Oliveira Junior
+avatar:
+  selected: none
+occupations:
+  - id: 20132370080
+    type: student
+    course: cstsi-jp
+    isFinished: true
+addresses:
+  linkedin: https://www.linkedin.com/in/joao-victor-oliveira/

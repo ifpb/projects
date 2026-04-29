@@ -1,0 +1,13 @@
+name:
+  compact: Pedro Lucas
+  full: Pedro Lucas Silva Batista
+avatar:
+  github: https://github.com/pedrolucasi.png
+occupations:
+  - id: 20232370030
+    type: student
+    course: cstsi-jp
+    isFinished: false
+addresses:
+  github: https://github.com/pedrolucasi
+  linkedin: https://www.linkedin.com/in/pedro-lucas-b7a2b0208/
