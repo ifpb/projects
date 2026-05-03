@@ -415,7 +415,7 @@ Organize o desenvolvimento com um quadro Kanban:
    - Labels apropriadas (bug, feature, enhancement)
    - Assignees responsáveis
    - Milestones para organizar releases
-   - Templates para padronizar reports
+   - Templates para padronizar relatórios
 
 ### 🎯 Outras Boas Práticas
 
