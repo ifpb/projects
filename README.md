@@ -319,7 +319,7 @@ Descreva claramente o que o projeto faz, seus objetivos e contexto acadêmico.
 - [📊 Apresentação](https://slides.com/...)
 
 ## 🧪 Testes
-Instrua como executar os testes:
+Instrua sobre como executar os testes:
 npm test
 npm run test:e2e
 
