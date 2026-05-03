@@ -56,7 +56,7 @@ Você pode contribuir adicionando seus dados pessoais, projetos ou atualizando i
 
 ## 👤 Cadastro de Pessoas
 
-Para se cadastrar, adicione um arquivo seguindo o formato `nome-sobrenome-id.yml` no diretório `src/content/people/`. O nome do arquivo deve usar apenas letras minúsculas, hífens e sua matrícula/ID.
+Para se cadastrar, adicione um arquivo seguindo o formato `nome-sobrenome-id.yml` no diretório `src/content/people/`. O nome do arquivo deve usar apenas letras minúsculas, hifens e sua matrícula/ID.
 
 ### Exemplo: `luiz-chaves-20051370420.yml`
 
