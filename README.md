@@ -52,7 +52,7 @@ Este repositório é um portal que exibe estudantes, professores e colaboradores
 
 ## 📝 Como Contribuir
 
-Você pode contribuir adicionando seus dados pessoais, projetos ou atualizando informações existentes através de Pull Requests (PRs). Este documento orienta como fazer o cadastro de pessoas e projetos.
+Você pode contribuir adicionando seus dados pessoais, projetos ou atualizando informações existentes através de Pull Requests (PRs). Este documento orienta sobre como fazer o cadastro de pessoas e projetos.
 
 ## 👤 Cadastro de Pessoas
 
