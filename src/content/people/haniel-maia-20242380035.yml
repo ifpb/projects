@@ -1,0 +1,15 @@
+name:
+  compact: Haniel Maia
+  full: Haniel Rosado Maia Alves
+avatar:
+  github: https://github.com/hanielmaia.png
+  githubUC: https://avatars.githubusercontent.com/u/199696858?v=4
+occupations:
+  - id: 20242380035
+    type: student
+    course: cstrc-jp
+    isFinished: false
+addresses:
+  github: https://github.com/hanielmaia
+  linkedin: https://www.linkedin.com/in/hanielmaia
+  email: hanielrosadomaia@gmail.com

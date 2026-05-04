@@ -1,0 +1,33 @@
+name: PDE - Portal de Defesa de Estágios
+description:
+  O Portal de Agendamento de Defesas de Estágio é o canal oficial dedicado
+  a organizar o encerramento do seu ciclo de aprendizado prático. De forma
+  ágil e centralizada, a plataforma permite que estudantes reservem horários
+  para suas bancas, submetam relatórios e alinhem a comunicação com
+  orientadores e coordenadores. Nosso objetivo é eliminar a burocracia
+  desse processo final, garantindo que a transição entre a vivência
+  acadêmica e a profissional ocorra com total transparência e eficiência.
+addresses:
+  preview: https://github.com/Projeto-IFPB/PDE-Portal-de-Defesas-Estagios/blob/main/preview-pde.png?raw=true
+  repository: https://github.com/Projeto-IFPB/PDE-Portal-de-Defesas-Estagios
+  design: https://www.figma.com/design/ZWPUo9hYAPO9XFlH6FIE6p/Prot%C3%B3tipo-PDE?node-id=0-1&t=iU4ZggJshwCsuwLq-0
+category:
+  type: subject
+  subject:
+    - pw2-csbes-jp
+    - ers-csbes-jp
+  period: 2026.1
+tags:
+  - javascript
+  - html
+  - css
+  - figma
+  - web
+  - workflow
+owners:
+  - 202524320003
+  - 202524320012
+  - 202524320004
+  - 202524320010
+  - 202524320025
+  - 202524320023

@@ -1,0 +1,20 @@
+name: Netcenter
+description:
+  Este portal tem como objetivo listar projetos construídos pelos
+  estudantes, professores e colaboradores do IFPB.
+addresses:
+  preview: https://github.com/mariacarlyni-pereira/netcenter/blob/main/preview.png?raw=true
+  homepage: https://mariacarlyni-pereira.github.io/netcenter/
+  repository: https://github.com/mariacarlyni-pereira/netcenter
+  workflow: https://github.com/users/mariacarlyni-pereira/projects/1
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2026.1
+tags:
+  - javascript
+  - html
+  - TailwindCSS
+  - express.js
+owners:
+  - 20231380003

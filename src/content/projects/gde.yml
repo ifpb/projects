@@ -4,13 +4,13 @@ description:
   no IFPB.
 addresses:
   preview: https://github.com/LucaMarques/GDE-Gerenciamento-de-Defesa-de-Estagio/blob/main/preview/preview.png?raw=true
-  homepage: https://lucamarques.github.io/GDE-Gerenciamento-de-Defesa-de-Estagio/
+  homepage: https://gde-gerenciamento-de-defesa-de-esta.vercel.app
   repository: https://github.com/LucaMarques/GDE-Gerenciamento-de-Defesa-de-Estagio
 category:
   type: subject
   subject:
     - pw2-csbes-jp
-    - er-csbes-jp
+    - ers-csbes-jp
   period: 2025.2
 tags:
   - javascript

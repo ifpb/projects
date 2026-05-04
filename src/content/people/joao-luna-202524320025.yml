@@ -1,0 +1,15 @@
+name:
+  compact: João Luna
+  full: João Guilherme Soares Luna
+avatar:
+  github: https://github.com/llunajoao.png
+  githubUC: https://avatars.githubusercontent.com/u/208075741?v=4
+occupations:
+  - id: 202524320025
+    type: student
+    course: csbes-jp
+    isFinished: false
+addresses:
+  github: https://github.com/llunajoao
+  linkedin: https://www.linkedin.com/in/joao-luna/
+  email: joaos.luna2007@gmail.com

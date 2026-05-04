@@ -44,7 +44,7 @@ const subjects = [
   ...new Set(
     projects
       .filter((project) => isSubjectProject(project))
-      .map((project) => getSubjectByProject(project))
+      .flatMap((project) => getSubjectByProject(project))
   ),
 ];
 ---

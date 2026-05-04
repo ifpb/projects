@@ -4,8 +4,10 @@ description:
   diárias de forma simples e eficiente.
 addresses:
   preview: https://github.com/ThalesLimaF/Web-Agenda/blob/main/preview.png?raw=true
-  homepage: https://thaleslimaf.github.io/Web-Agenda/
-  repository: https://github.com/ThalesLimaF/Web-Agenda
+  homepage: https://thaleslimaf.github.io/Web-Agenda-Part-II/
+  repository:
+    - https://github.com/ThalesLimaF/Web-Agenda
+    - https://github.com/ThalesLimaF/Web-Agenda-Part-II
 category:
   type: subject
   subject: pw2-csbes-jp
@@ -14,8 +16,8 @@ tags:
   - html
   - css
   - javascript
+  - react
 owners:
   - 20241370024
   - 20241370022
-  - 20241370029
   - 20241370016
