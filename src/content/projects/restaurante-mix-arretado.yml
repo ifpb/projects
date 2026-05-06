@@ -7,7 +7,7 @@ addresses:
   repository: https://github.com/devcomdavi/RestauranteMixArretado.git
 category:
   type: subject  # ou 'subject', 'research', 'extension', 'open source'
-  subject: pw1-csbes-jp
+  subject: pw1-cstsi-jp
   period: 2026.1   # necessário para projetos de disciplina
 tags:
   - angular
