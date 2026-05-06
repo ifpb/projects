@@ -1,0 +1,19 @@
+name: AgendaPet
+description:
+  Sistema de gestão de clínica veterinária ou Petshop.
+addresses:
+  preview: https://raw.githubusercontent.com/2005-Erick/AgendaPet/refs/heads/main/images/preview.png
+  repository: https://github.com/2005-Erick/AgendaPet
+category:
+  type: subject 
+  subject: pw1-cstsi-jp
+  period: 2026.1
+tags:
+  - angular
+  - supabase
+  - typescript
+owners:
+  - 20242370042  
+  - 20242370035
+  - 20242370032
+  - 20242370036

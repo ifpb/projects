@@ -1,0 +1,17 @@
+name: CineLog
+description:
+  O CineLog é uma aplicação web feita para organizar todos os filmes que você quer assistir ou que já assistiu.
+  Com ele, você pode adicionar novos títulos, editar informações, marcar como assistido e até remover filmes da sua lista.
+  Tudo fica organizado e fácil de visualizar, ajudando você a não perder nenhum filme e a acompanhar o seu próprio histórico de cinema.
+addresses:
+  homepage: https://github.com/AlvaroMLL/CineLog/index.html
+  repository: https://github.com/AlvaroMLL/CineLog
+category:
+  type: subject
+  subject: pw2-csbes-jp
+  period: 2026.1
+tags:
+  - javascript
+  - git
+owners:
+  - 20242370037

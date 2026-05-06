@@ -1,0 +1,20 @@
+name: GameView
+description: Plataforma para visualização e acompanhamento de dados e informações relacionadas a um jogo.
+addresses:
+  preview: https://github.com/maneuu/gameview-pweb1/blob/master/preview.png?raw=true
+  homepage: https://gameview-pweb1.vercel.app/
+  repository: https://github.com/maneuu/gameview-pweb1
+category:
+  type: subject
+  subject: pw1-cstsi-jp
+  period: 2026.1
+tags:
+  - angular
+  - typescript
+  - java
+  - springboot
+  - tailwind
+owners:
+  - 20242370034
+  - 20242370018
+  - 20242370041

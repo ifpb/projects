@@ -3,6 +3,9 @@ description:
   O NetSheriff é um sistema simplificado de detecção de intrusão que monitora o tráfego de uma rede para identificar possíveis atividades suspeitas ou anormais. Ele analisa os dados que circulam na rede com base em regras configuráveis e, quando identifica um comportamento que pode indicar uma tentativa de ataque ou acesso indevido, gera alertas para o administrador.
 addresses:
   repository: https://github.com/DesoleSxcks/NetSheriff
+  homepage: https://desolesxcks.github.io/NetSheriff/
+  preview: https://github.com/DesoleSxcks/NetSheriff/blob/main/preview.png?raw=true
+  workflow: https://github.com/users/DesoleSxcks/projects/3
 category:
   type: subject
   subject: dw-cstrc-jp
@@ -15,3 +18,4 @@ owners:
   - 20242380021
   - 20242380031
   - 20242380029
+  - 20241380036

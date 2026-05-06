@@ -52,11 +52,11 @@ Este repositório é um portal que exibe estudantes, professores e colaboradores
 
 ## 📝 Como Contribuir
 
-Você pode contribuir adicionando seus dados pessoais, projetos ou atualizando informações existentes através de Pull Requests (PRs). Este documento orienta como fazer o cadastro de pessoas e projetos.
+Você pode contribuir adicionando seus dados pessoais, projetos ou atualizando informações existentes através de Pull Requests (PRs). Este documento orienta sobre como fazer o cadastro de pessoas e projetos.
 
 ## 👤 Cadastro de Pessoas
 
-Para se cadastrar, adicione um arquivo seguindo o formato `nome-sobrenome-id.yml` no diretório `src/content/people/`. O nome do arquivo deve usar apenas letras minúsculas, hífens e sua matrícula/ID.
+Para se cadastrar, adicione um arquivo seguindo o formato `nome-sobrenome-id.yml` no diretório `src/content/people/`. O nome do arquivo deve usar apenas letras minúsculas, hifens e sua matrícula/ID.
 
 ### Exemplo: `luiz-chaves-20051370420.yml`
 
@@ -319,7 +319,7 @@ Descreva claramente o que o projeto faz, seus objetivos e contexto acadêmico.
 - [📊 Apresentação](https://slides.com/...)
 
 ## 🧪 Testes
-Instrua como executar os testes:
+Instrua sobre como executar os testes:
 npm test
 npm run test:e2e
 
@@ -415,7 +415,7 @@ Organize o desenvolvimento com um quadro Kanban:
    - Labels apropriadas (bug, feature, enhancement)
    - Assignees responsáveis
    - Milestones para organizar releases
-   - Templates para padronizar reports
+   - Templates para padronizar relatórios
 
 ### 🎯 Outras Boas Práticas
 
