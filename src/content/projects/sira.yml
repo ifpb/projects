@@ -4,7 +4,9 @@ description: Este projeto tem como objetivo apresentar um site para reserva
   e JavaScript. Desse modo, permitindo o usuário interagir de forma
   dinâmica com o conteúdo e ver detalhes para simular uma reserva.
 addresses:
-  repository: https://github.com/GabeMarques-Intetsu/SIRA-Sistema-de-Reserva-Salas-e-Equipamentos
+  preview: https://github.com/GabeMarques-Intetsu/SIRA/blob/main/public/screenshots/Preview-temp.png?raw=true
+  homepage: https://gabemarques-intetsu.github.io/SIRA-Sistema-de-Reserva-Salas-e-Equipamentos/ #Temporário, pois agora o deploy é por release
+  repository: https://github.com/GabeMarques-Intetsu/SIRA
   workflow: https://github.com/users/GabeMarques-Intetsu/projects/1/views/1
 category:
   type: subject
