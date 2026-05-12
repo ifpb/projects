@@ -3,7 +3,7 @@ description:
   Este portal tem como objetivo listar projetos construídos pelos
   estudantes, professores e colaboradores do IFPB.
 addresses:
-  preview: https://github.com/mariacarlyni-pereira/netcenter/blob/main/preview.png?raw=true
+  preview: https://raw.githubusercontent.com/mariacarlyni-pereira/netcenter/main/assets/homepage.png
   homepage: https://mariacarlyni-pereira.github.io/netcenter/
   repository: https://github.com/mariacarlyni-pereira/netcenter
   workflow: https://github.com/users/mariacarlyni-pereira/projects/1
