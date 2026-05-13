@@ -8,8 +8,10 @@ description:
    coleta de dados por meio do LinkedIn e GitHub. Gerando os indicadores necessários para a CPA, 
    garantindo conformidade total com as exigências de avaliação do MEC.
 addresses:
+  preview: https://github.com/GuilhermeMeloRoxo/SCE/blob/develop/preview.png?raw=true
+  homepage: https://sce-wordle-coders.vercel.app
   repository: https://github.com/GuilhermeMeloRoxo/SCE
-  workflow: https://github.com/users/GuilhermeMeloRoxo/projects/4
+  workflow: https://github.com/users/GuilhermeMeloRoxo/projects/6
 category:
   type: subject
   subject: 
@@ -18,7 +20,12 @@ category:
   period: 2026.1
 tags:
   - javascript
-  - react
+  - html
+  - css
+  - vite
+  - tailwind
+  - supabase
+  - web
 owners:
   - 20251380023
   - 20251380025

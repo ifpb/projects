@@ -1,11 +1,11 @@
 name:
-  compact: Guilherme Amaral
+  compact: Guilherme Melo
   full: Guilherme Melo do Amaral Floriano
 avatar:
   github: https://github.com/GuilhermeMeloRoxo.png
   githubUC: https://avatars.githubusercontent.com/u/246749590?v=4
 occupations:
-  - id: 202521380023
+  - id: 20251380023
     type: student
     course: cstrc-jp
     isFinished: false
