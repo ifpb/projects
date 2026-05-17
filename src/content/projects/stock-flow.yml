@@ -1,0 +1,18 @@
+name: StockFlow
+description:
+  Desenvolver um sistema de gerenciamento de estoque simples, intuitivo e responsivo utilizando Angular.
+addresses:
+  preview: https://github.com/LuisEduardox/stock-flow/blob/main/public/preview.png
+  repository: https://github.com/LuisEduardox/stock-flow.git
+category:
+  type: subject 
+  subject: pw1-cstsi-jp
+  period: 2026.1
+tags:
+  - angular
+  - typescript
+  - supabase
+  - html
+  - tailwind
+owners:
+  - 20242370001 
