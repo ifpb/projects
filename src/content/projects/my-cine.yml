@@ -1,0 +1,24 @@
+name: MyCine
+description:
+  Aplicativo que permite aos usuários gerenciar listas personalizadas de
+  filmes e séries, oferecendo integração com a API TMDb para obter detalhes completos
+  sobre cada título.
+addresses:
+  preview: https://github.com/aliclic/PDM-Projeto/blob/main/app/src/main/res/drawable/mycine_preview.png?raw=true
+  repository: https://github.com/aliclic/PDM-Projeto
+category:
+  type: subject
+  subject: pdm-cstsi-jp
+  period: 2024.1
+tags:
+  - kotlin
+  - android
+  - mobile
+  - firestore
+  - firebase
+  - tmdb api
+owners:
+  - 20221370027
+  - 20221370028
+  - 20221370044
+  - 20221370031

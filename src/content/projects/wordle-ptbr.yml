@@ -1,0 +1,23 @@
+name: Wordle PT-BR
+description:
+  Projeto baseado no Termo e Wordle. Um jogo rápido de adivinhar a palavra
+  em 6 tentativas.
+addresses:
+  preview: https://github.com/JoaoPedro-MAAR/Termo/blob/main/preview.png?raw=true
+  repository: https://github.com/JoaoPedro-MAAR/Termo
+category:
+  type: subject
+  subject: ls-cstsi-jp
+  period: 2024.1
+tags:
+  - javascript
+  - react
+  - css
+  - supabase
+  - vite
+  - termo
+  - wordle
+owners:
+  - 20232370009
+  - 20232370006
+  - 20232370013

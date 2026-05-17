@@ -7,6 +7,7 @@ import {
   getCourseByAbbreviation,
   getFirstCourseByPeople,
   getSubjectByProject,
+  getLastCourseLevelIndexByPeople,
 } from '@/helpers/courses';
 
 export function getFirstPersonId(person: CollectionEntry<'people'>) {
@@ -24,11 +25,12 @@ export function getPersonIdByCourse(
   course: string
 ) {
   if (isStudent(person)) {
-    return person.data.occupations.filter(
+    const matchingOccupation = person.data.occupations.filter(
       (occupation: Student) => occupation.course === course
-    )[0].id;
+    )[0];
+    return matchingOccupation?.id ?? 0;
   } else {
-    return person.data.occupations.at(-1).id;
+    return person.data.occupations.at(-1)?.id ?? 0;
   }
 }
 
@@ -47,9 +49,9 @@ export function getOccupationId(occupation: Occupation) {
     } else {
       const year = String(occupation.id).slice(0, 4);
 
-      const semester = String(occupation.id).slice(4, 5);
+      const period = String(occupation.id).slice(4, 5);
 
-      return `${year}.${semester}`;
+      return `${year}.${period}`;
     }
   } else {
     return String(occupation.id);
@@ -117,7 +119,7 @@ export async function getStudentTags(person: CollectionEntry<'people'>) {
 
   if (isStudent(person)) {
     const courseOccupations = person.data.occupations.filter(
-      (occupation) => occupation.type === 'student'
+      (occupation): occupation is Student => occupation.type === 'student'
     );
 
     const courses = courseOccupations.map((occupation) => occupation.course);
@@ -126,13 +128,11 @@ export async function getStudentTags(person: CollectionEntry<'people'>) {
       getOccupationId(occupation)
     );
 
-    const courseLevels = courseOccupations
-      .map((occupation) => {
-        const course = getCourseByAbbreviation(occupation.course);
+    const courseLevels = courseOccupations.map((occupation) => {
+      const course = getCourseByAbbreviation(occupation.course);
 
-        return course.data.level.compact.split(' ')[0].toLocaleLowerCase();
-      })
-      .filter((level, index, self) => self.indexOf(level));
+      return course.data.level.compact.split(' ')[0].toLocaleLowerCase();
+    });
 
     const coursesByEntry = courseEntries.map(
       (courseEntry, index) => `${courses[index]}-${courseEntry}`
@@ -140,7 +140,8 @@ export async function getStudentTags(person: CollectionEntry<'people'>) {
 
     const subjects = (await getProjectsByPerson(person))
       .filter((project) => isSubjectProject(project))
-      .map((project) => getSubjectByProject(project));
+      .map((project) => getSubjectByProject(project))
+      .flat(); // Flatten the array since getSubjectByProject now returns an array
 
     tags.push(
       'student',
@@ -156,11 +157,16 @@ export async function getStudentTags(person: CollectionEntry<'people'>) {
     tags.push('egresso');
 
     const courses = person.data.occupations
-      .filter((occupation: Student) => occupation.isFinished)
-      .map((occupation: Student) => [
-        `egresso-${occupation.course}-${occupation.campus.split('-')[1]}`,
-        `egresso-${occupation.course}`,
-      ]);
+      .filter((occupation): occupation is Student => 
+        occupation.type === 'student' && occupation.isFinished)
+      .map((occupation: Student) => {
+        const courseAbbreviation = occupation.course.split('-')[0];
+        const campus = occupation.course.split('-')[1];
+        return [
+          `egresso-${courseAbbreviation}-${campus}`,
+          `egresso-${courseAbbreviation}`,
+        ];
+      });
 
     tags.push(...courses.flat());
   }
@@ -169,12 +175,19 @@ export async function getStudentTags(person: CollectionEntry<'people'>) {
 }
 
 export async function getPersonTags(person: CollectionEntry<'people'>) {
-  const campi = person.data.occupations.map((occupation) => occupation.campus);
+  const campi = person.data.occupations.map((occupation) => {
+    if (occupation.type === 'student') {
+      return (occupation as Student).course.split('-')[1];
+    } else {
+      // For professors, use campus
+      return occupation.campus?.replace('ifpb-', '') || 'jp';
+    }
+  });
 
   const tags: string[] = [...campi];
 
   if (await hasProjects(person)) {
-    tags.push('projetos');
+    tags.push('projects');
   }
 
   if (hasHomepage(person)) {
@@ -216,15 +229,15 @@ async function getPeopleTagsMap(people: CollectionEntry<'people'>[]) {
 
 export function getPersonTagGroups(person: CollectionEntry<'people'>) {
   const courses = person.data.occupations
-    .filter((occupation) => occupation.type === 'student')
+    .filter((occupation): occupation is Student => occupation.type === 'student')
     .map((occupation) => occupation.course);
 
-  const semesters = person.data.occupations
-    .filter((occupation) => occupation.type === 'student')
-    .map((course) => getOccupationId(course));
+  const periods = person.data.occupations
+    .filter((occupation): occupation is Student => occupation.type === 'student')
+    .map((occupation) => getOccupationId(occupation));
 
-  const coursesBySemester = semesters.map(
-    (semester, index) => `${courses[index]}-${semester}`
+  const coursesByPeriod = periods.map(
+    (period, index) => `${courses[index]}-${period}`
   );
 
   const tags = {
@@ -232,9 +245,9 @@ export function getPersonTagGroups(person: CollectionEntry<'people'>) {
       name: 'curso',
       values: courses,
     },
-    semester: {
-      name: 'semestre',
-      values: coursesBySemester,
+    period: {
+      name: 'period',
+      values: coursesByPeriod,
     },
   };
 
@@ -300,7 +313,7 @@ export async function getAllPeopleTagGroups() {
   return tags;
 }
 
-// Sort people by graduation status, twitter presence, semester and name
+// Sort people by graduation status, twitter presence, period and name
 function personRank(person: CollectionEntry<'people'>) {
   const weights = {
     isProfessor: {
@@ -338,6 +351,7 @@ function sortPeopleByTag(people: CollectionEntry<'people'>[], sortTag: string) {
     a: CollectionEntry<'people'>,
     b: CollectionEntry<'people'>
   ) => {
+    // professor, researchgate
     if (
       /\w+-\d{4}(\.\d)?/.test(sortTag) ||
       ['professor', 'researchgate'].includes(sortTag)
@@ -345,6 +359,7 @@ function sortPeopleByTag(people: CollectionEntry<'people'>[], sortTag: string) {
       return a.data.name.compact.localeCompare(b.data.name.compact);
     }
 
+    // course levels
     if (courses.some((course) => sortTag.includes(course.data.abbreviation))) {
       const course = courses
         .map((course) => course.data.abbreviation)
@@ -356,26 +371,30 @@ function sortPeopleByTag(people: CollectionEntry<'people'>[], sortTag: string) {
       );
     }
 
-    return (
-      Number(isOnlyProfessor(a)) - Number(isOnlyProfessor(b)) ||
-      getSortId(a) - getSortId(b) ||
-      getFirstCourseByPeople(a).localeCompare(getFirstCourseByPeople(b)) ||
-      a.data.name.compact.localeCompare(b.data.name.compact)
-    );
+    // projects
+    if (sortTag === 'projects') {
+      return (
+        Number(isProfessor(b)) - Number(isProfessor(a)) || sortPeople(a, b)
+      );
+    }
+
+    // other tags
+    return sortPeople(a, b);
   };
 
   people.sort(sortPeopleByTag);
 }
 
-function sortPeople(
+export function sortPeople(
   a: CollectionEntry<'people'>,
   b: CollectionEntry<'people'>
 ) {
   return (
     // personRank(b) - personRank(a) ||
-    Number(isOnlyProfessor(a)) - Number(isOnlyProfessor(b)) ||
+    // Number(isOnlyProfessor(a)) - Number(isOnlyProfessor(b)) ||
+    // getFirstCourseByPeople(a).localeCompare(getFirstCourseByPeople(b)) ||
+    getLastCourseLevelIndexByPeople(b) - getLastCourseLevelIndexByPeople(a) ||
     getSortId(a) - getSortId(b) ||
-    getFirstCourseByPeople(a).localeCompare(getFirstCourseByPeople(b)) ||
     a.data.name.compact.localeCompare(b.data.name.compact)
   );
 }
@@ -424,5 +443,5 @@ export async function getPeopleByTag(tag: string) {
 }
 
 export async function getPeopleWithProjects() {
-  return await getPeopleByTag('projetos');
+  return await getPeopleByTag('projects');
 }

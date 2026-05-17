@@ -1,0 +1,22 @@
+name:
+  compact: Aécio Pires
+  full: Aécio dos Santos Pires
+avatar:
+  github: https://github.com/aeciopires.png
+  githubUC: https://avatars.githubusercontent.com/u/15235444?v=4
+occupations:
+  - id: 20052380070
+    type: student
+    course: cstrc-jp
+    isFinished: true
+  - id: 201919840015
+    type: student
+    course: cmpti-jp
+    isFinished: true
+addresses:
+  github: https://github.com/aeciopires
+  linkedin: https://www.linkedin.com/in/aeciopires/
+  homepage: http://aeciopires.com
+  lattes: http://lattes.cnpq.br/5154345089398804
+  orcid: https://orcid.org/0000-0003-1980-7448
+  researchgate: https://www.researchgate.net/scientific-contributions/Aecio-dos-Santos-Pires-2200051369

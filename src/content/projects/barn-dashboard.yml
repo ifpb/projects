@@ -1,0 +1,19 @@
+name: Barn Dashboard
+description:
+  The Barn Dashboard is a Bioeconomy Project developed at Hamk Smart -
+  Hame University.
+addresses:
+  preview: https://github.com/luizchaves/barn-dashboard/blob/master/assets/dashboard-2.png?raw=true
+  repository: https://github.com/luizchaves/barn-dashboard
+category:
+  type: open source
+  campus: ifpb-jp
+tags:
+  - python
+  - tensorflow
+  - keras
+  - opencv
+  - flask
+  - sql alchemy
+owners:
+  - 2680962

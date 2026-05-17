@@ -1,0 +1,14 @@
+name:
+  compact: José Victor
+  full: José Victor Dantas
+avatar:
+  github: https://github.com/victorx9999.png
+  githubUC: https://avatars.githubusercontent.com/u/33491135?v=4
+occupations:
+  - id: 20151370227
+    type: student
+    course: cstsi-jp
+    isFinished: true
+addresses:
+  github: https://github.com/victorx9999
+  linkedin: https://www.linkedin.com/in/victor-dantas-897606182/

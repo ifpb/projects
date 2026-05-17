@@ -1,0 +1,15 @@
+name:
+  compact: Eduardo Fox
+  full: Eduardo Farias Brinds-Ley Fox
+avatar:
+  selected: lattes
+  lattes: http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4498829U4
+occupations:
+  - id: 20101380121
+    type: student
+    course: cstrc-jp
+    isFinished: true
+addresses:
+  email: eduardobfox@gmail.com
+  linkedin: https://www.linkedin.com/in/eduardofox/
+  lattes: http://lattes.cnpq.br/1754631372530799

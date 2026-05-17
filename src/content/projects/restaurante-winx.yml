@@ -1,0 +1,19 @@
+name: Restaurante WINX
+description:
+  Este site mostra o cardápio de um restaurante fictício, a localização
+  e suas avaliações.
+addresses:
+  preview: https://github.com/teooodbs/restaurante-winx/blob/main/PreviewRestaurante.png?raw=true
+  homepage: https://teooodbs.github.io/restaurante-winx/
+  repository: https://github.com/teooodbs/restaurante-winx
+category:
+  type: subject
+  subject: lm-cstsi-jp
+  period: 2024.1
+tags:
+  - html
+  - bootstrap
+  - css
+owners:
+  - 20241370015
+  - 20241370013

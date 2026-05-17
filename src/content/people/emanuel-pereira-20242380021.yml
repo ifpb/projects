@@ -1,0 +1,15 @@
+name:
+  compact: Emanuel Pereira
+  full: Augusto Emanuel Silva Pereira
+avatar:
+  github: https://github.com/DesoleSxcks.png
+  githubUC: https://avatars.githubusercontent.com/u/166434101?v=4
+occupations:
+  - id: 20242380021
+    type: student
+    course: cstrc-jp
+    isFinished: false
+addresses:
+  github: https://github.com/DesoleSxcks
+  linkedin: https://www.linkedin.com/in/aemanuelspereira
+  email: augusto.emanuel@academico.ifpb.edu.br

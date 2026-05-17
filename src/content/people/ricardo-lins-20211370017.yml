@@ -1,0 +1,14 @@
+name:
+  compact: Ricardo Pereira
+  full: Ricardo Pereira Lins
+avatar:
+  github: https://github.com/RicardoPLins.png
+  githubUC: https://avatars.githubusercontent.com/u/79940823?v=4
+occupations:
+  - id: 20211370017
+    type: student
+    course: cstsi-jp
+    isFinished: true
+addresses:
+  github: https://github.com/RicardoPLins
+  linkedin: https://www.linkedin.com/in/ricardo-lins7/

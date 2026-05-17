@@ -1,0 +1,22 @@
+name: HopInsight
+description:
+  Essa aplicação irá realizar um diagnóstico e análise detalhada de rotas
+  de rede, observando o caminho que os pacotes percorrem entre a origem e um host
+  de destino.
+addresses:
+  preview: https://github.com/antonyllz/HopInsight/blob/main/front/img/preview.png?raw=true
+  repository: https://github.com/antonyllz/HopInsight
+  homepage: https://antonyllz.github.io/HopInsight/front/html/index.html
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2024.2
+tags:
+  - html
+  - css
+  - bootstrap
+  - javascript
+owners:
+  - 20231380013
+  - 20231380037
+  - 20231380021

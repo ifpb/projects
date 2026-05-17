@@ -1,0 +1,18 @@
+name: ecotech
+description:
+  O EcoTech é um projeto que visa apresentar uma empresa fictícia especializada
+  em soluções tecnológicas sustentáveis
+addresses:
+  preview: https://github.com/lucasmour4/ecotech/blob/main/img/Captura%20de%20tela%202025-03-19%20170705.png?raw=true
+  repository: https://github.com/lucasmour4/ecotech/
+category:
+  type: subject
+  subject: lm-cstsi-jp
+  period: 2024.2
+tags:
+  - javascript
+  - html
+  - css
+  - bootstrap
+owners:
+  - 20242370020

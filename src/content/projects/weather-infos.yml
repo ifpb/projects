@@ -1,0 +1,22 @@
+name: Weather Infos
+description:
+  Site que exibe informações de clima em tempo real de cidades de todo
+  o mundo.
+addresses:
+  preview: https://github.com/uGustavoB/Projeto-Weather-Infos/blob/main/preview.PNG?raw=true
+  homepage: https://ugustavob.github.io/Projeto-Weather-Infos/
+  repository: https://github.com/uGustavoB/Projeto-Weather-Infos
+category:
+  type: subject
+  subject: ls-cstsi-jp
+  period: 2024.1
+tags:
+  - html
+  - css
+  - javascript
+  - vite
+owners:
+  - 20232370034
+  - 20232370033
+  - 20231370012
+  - 20232370035

@@ -1,0 +1,16 @@
+name: Marketcheck
+description: Projeto de comparação de preços dos produtos entre supermercados.
+addresses:
+  repository: https://github.com/Tinhow/marcket-check-front
+category:
+  type: subject
+  subject: pd-cstsi-jp
+  period: 2024.1
+tags:
+  - vue.js
+  - ruby on rails
+  - python
+owners:
+  - 20211370017
+  - 20211370003
+  - 20211370037

@@ -1,0 +1,23 @@
+name: EyesUP
+description:
+  O Projeto EyesUP consiste em um sistema de monitoramento de aplicações
+  WEB e API's desenvolvido na disciplina de Desenvolvimento WEB do curso de Tecnologia
+  de Redes de Computadores do IFPB - Campus JP
+addresses:
+  preview: https://github.com/oneabrante/Project_API_DW/blob/master/public/assets/pattention1.png?raw=true
+  repository: https://github.com/oneabrante/Project_API_DW
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2022.2
+tags:
+  - bootstrap
+  - chart.js
+  - leaflet.js
+  - express.js
+  - prisma
+  - jwt
+  - bcrypt
+  - sqlite3
+owners:
+  - 20211380044

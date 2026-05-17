@@ -1,0 +1,19 @@
+name: Firewall
+description:
+  Permite que os usuários após realizarem o login, sejam redirecionados
+  para uma página de simulação de firewall, onde eles possuem permissões de adionarem
+  ou removerem regras do firewall.
+addresses:
+  repository: https://github.com/peresl/projeto-dev-web
+  preview: https://github.com/peresl/projeto-dev-web/blob/main/firewall.png?raw=true
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2024.1
+tags:
+  - html
+  - css
+  - javascript
+owners:
+  - 20222380008
+  - 20222380023

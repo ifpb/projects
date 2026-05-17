@@ -1,0 +1,21 @@
+name: Sunnyside Agency
+description:
+  Esta é uma landing page de uma agência de Design Criativa, este projeto
+  foi retirado do Frontend Mentor, uma plataforma com diversos exercícios frontend.
+  Este também foi o projeto final da disciplina de Linguagem de Marcação, utilizamos
+  html, um pouquinho de js e sass (provavelmente de um jeito não muito correto 🤣).
+addresses:
+  preview: https://github.com/buenorafa/sunnyside-agency-landing-page-main/blob/main/preview.png?raw=true
+  homepage: https://buenorafa.github.io/sunnyside-agency-landing-page-main/
+  repository: https://github.com/buenorafa/sunnyside-agency-landing-page-main
+category:
+  type: subject
+  subject: lm-cstsi-jp
+  period: 2022.2
+tags:
+  - html
+  - javascript
+  - sass
+owners:
+  - 20222370020
+  - 20222370018

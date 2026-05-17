@@ -4,6 +4,8 @@ dist/
 # generated types
 .astro/
 
+# not config vscode
+.vscode
 # dependencies
 node_modules/
 
@@ -19,3 +21,7 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# Logs
+logs
+*.log

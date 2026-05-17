@@ -1,0 +1,19 @@
+name: FinSupp
+description:
+  Controle financeiro pessoal completo - gerencie contas, transações, categorias,
+  assinaturas e faturas em um só lugar.
+addresses:
+  preview: https://github.com/uGustavoB/FinSupp-Angular/blob/main/preview.png?raw=true
+  homepage: https://finsupp.vercel.app/
+  repository: https://github.com/uGustavoB/FinSupp-Angular
+category:
+  type: subject
+  subject: pw1-cstsi-jp
+  period: 2025.1
+tags:
+  - typescript
+  - angular
+owners:
+  - 20232370033
+  - 20232370024
+  - 20232370034

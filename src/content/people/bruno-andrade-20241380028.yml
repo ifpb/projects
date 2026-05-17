@@ -1,0 +1,15 @@
+name:
+  compact: Bruno Andrade
+  full: Bruno de Farias Andrade
+avatar:
+  github: https://github.com/bruno-dfrs.png
+  githubUC: https://avatars.githubusercontent.com/u/234986226?v=4
+occupations:
+  - id: 20241380028
+    type: student
+    course: cstrc-jp
+    isFinished: false
+addresses:
+  github: https://github.com/bruno-dfrs
+  linkedin: https://www.linkedin.com/in/bruno-farias-andrade/
+  email: brunoandrade.contato@protonmail.com

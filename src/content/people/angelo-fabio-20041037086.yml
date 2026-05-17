@@ -1,0 +1,12 @@
+name:
+  compact: Angelo Fabio
+  full: Angelo Fabio Bezerra Duarte
+avatar:
+  selected: none
+occupations:
+  - id: 20041037086
+    type: student
+    course: cstsi-jp
+    isFinished: true
+addresses:
+  linkedin: https://www.linkedin.com/in/angelo-duarte/

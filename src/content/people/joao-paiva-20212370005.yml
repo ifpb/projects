@@ -1,0 +1,15 @@
+name:
+  compact: João Victor
+  full: João Victor Alves de Paiva
+avatar:
+  github: https://github.com/jvalvesdepaiva76.png
+  githubUC: https://avatars.githubusercontent.com/u/72369171?v=4
+occupations:
+  - id: 20212370005
+    type: student
+    course: cstsi-jp
+    isFinished: false
+addresses:
+  github: https://github.com/jvalvesdepaiva76
+  linkedin: https://www.linkedin.com/in/jv-alvesdepaiva/
+  email: paiva.joao@academico.ifpb.edu.br

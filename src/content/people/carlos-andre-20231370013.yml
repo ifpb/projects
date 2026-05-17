@@ -1,0 +1,20 @@
+name:
+  compact: Carlos André
+  full: Carlos André Martins da Silva
+avatar:
+  github: https://github.com/jovemcarlosti.png
+  githubUC: https://avatars.githubusercontent.com/u/59931270?v=4
+occupations:
+  - id: 20211780042
+    type: student
+    course: ctii-jp
+    isFinished: true
+  - id: 20231370013
+    type: student
+    course: cstsi-jp
+    isFinished: false
+addresses:
+  github: https://github.com/JovemCarlosTI
+  linkedin: https://www.linkedin.com/in/jovemcarlos/
+  lattes: http://lattes.cnpq.br/5686265153766916
+  email: carlosandre116@outlook.com

@@ -44,11 +44,10 @@ const subjects = [
   ...new Set(
     projects
       .filter((project) => isSubjectProject(project))
-      .map((project) => getSubjectByProject(project))
+      .flatMap((project) => getSubjectByProject(project))
   ),
 ];
 ---
-
 
 <PersonUtil />
 
@@ -56,6 +55,9 @@ const subjects = [
   <div
     class="flex gap-5 flex-col md:flex-row items-center md:justify-center md:items-start"
   >
+    <div data-pagefind-filter="tipo:Pessoas" class="hidden">
+      {person.data.occupations.map((occupation) => occupation.id).join(', ')}
+    </div>
     <div>
       <PersonCard person={person} />
     </div>
@@ -68,7 +70,7 @@ const subjects = [
           <p class="text-xl font-semibold">
             {projects.length} projeto(s) disponível(is).
           </p>
-          
+
           <div class="grid justify-items-stretch gap-5 grid-cols-1 md:grid-cols-2">
             {projects.map((project) => (
               <ProjectCard project={project} />

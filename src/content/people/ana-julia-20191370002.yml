@@ -1,0 +1,14 @@
+name:
+  compact: Ana Julia
+  full: Ana Julia Oliveira Lins
+avatar:
+  github: https://github.com/AnaLinsDev.png
+  githubUC: https://avatars.githubusercontent.com/u/60307596?v=4
+occupations:
+  - id: 20191370002
+    type: student
+    course: cstsi-jp
+    isFinished: true
+addresses:
+  github: https://github.com/AnaLinsDev
+  linkedin: https://www.linkedin.com/in/ana-julia-lins-devbrasil/

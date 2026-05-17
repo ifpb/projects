@@ -1,0 +1,14 @@
+name:
+  compact: Juan Farias
+  full: Juan Leite Farias
+avatar:
+  github: https://github.com/juanfariastk.png
+  githubUC: https://avatars.githubusercontent.com/u/56724623?v=4
+occupations:
+  - id: 20221370021
+    type: student
+    course: cstsi-jp
+    isFinished: true
+addresses:
+  github: https://github.com/juanfariastk
+  linkedin: https://www.linkedin.com/in/juanfariastk/

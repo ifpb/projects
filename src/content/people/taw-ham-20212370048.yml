@@ -1,0 +1,18 @@
+name:
+  compact: Taw Ham
+  full: Taw Ham Almeida Balbino de Paula
+avatar:
+  github: https://github.com/tawhamjavascript.png
+  githubUC: https://avatars.githubusercontent.com/u/89089192?v=4
+occupations:
+  - id: 20181780014
+    type: student
+    course: ctii-jp
+    isFinished: true
+  - id: 20212370048
+    type: student
+    course: cstsi-jp
+    isFinished: true
+addresses:
+  github: https://github.com/tawhamjavascript
+  linkedin: https://www.linkedin.com/in/taw-ham-almeida-balbino-de-paula-117691218/

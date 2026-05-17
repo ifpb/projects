@@ -1,0 +1,20 @@
+name: SGIEP
+description: Sistema de Gerenciamento de Instituições Esportivas Públicas (SGIEP)
+addresses:
+  preview: https://github.com/Erickfonseca1/sgiep-front/blob/main/sgiep.png?raw=true
+  repository: https://github.com/Erickfonseca1/sgiep-front
+category:
+  type: subject
+  subject: pd-cstsi-jp
+  period: 2024.1
+tags:
+  - react
+  - java
+  - typescript
+  - spring boot
+  - redis
+  - rabbitmq
+owners:
+  - 20211370030
+  - 20202370005
+  - 20172370030

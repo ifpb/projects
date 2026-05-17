@@ -1,0 +1,14 @@
+name:
+  compact: João Marcos
+  full: João Marcos Chaves
+avatar:
+  github: https://github.com/Joaomarcos7.png
+  githubUC: https://avatars.githubusercontent.com/u/102380570?v=4
+occupations:
+  - id: 20221370025
+    type: student
+    course: cstsi-jp
+    isFinished: false
+addresses:
+  github: https://github.com/Joaomarcos7
+  linkedin: https://www.linkedin.com/in/jo%C3%A3o-marcos-chaves-47332b238/

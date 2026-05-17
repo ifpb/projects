@@ -1,0 +1,21 @@
+name: YourNews
+description:
+  Simulador de um sistema de divulgação de notícias, desenvolvido com a
+  Java Persistence API (JPA).
+addresses:
+  preview: https://github.com/HanielCostaDaSilva/YourNews-JPA/blob/main/assets/img/principal.png?raw=true
+  repository: https://github.com/HanielCostaDaSilva/YourNews-JPA
+category:
+  type: subject
+  subject: po-cstsi-jp
+  period: 2023.2
+tags:
+  - java
+  - jpa
+  - swing
+  - hibernate
+  - postgresql
+  - persistência
+owners:
+  - 20221370010
+  - 20221370011

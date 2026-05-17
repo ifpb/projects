@@ -1,0 +1,17 @@
+name: MACtrace
+description: Descubra a identidade dos fabricantes com o MacTrace.
+addresses:
+  preview: https://github.com/MateusEDSS/Projeto-Dw/blob/main/public/front/images/image.png?raw=true
+  repository: https://github.com/l3l0ch/Projeto-Dw
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2024.1
+tags:
+  - html
+  - css
+  - javascript
+owners:
+  - 20222380017
+  - 20222380024
+  - 20211380027

@@ -1,0 +1,15 @@
+name:
+  compact: Lucas André
+  full: Lucas André
+avatar:
+  github: https://github.com/LucasAndre23.png
+  githubUC: https://avatars.githubusercontent.com/u/146771952?v=4
+occupations:
+  - id: 20222370029
+    type: student
+    course: cstsi-jp
+    isFinished: true
+addresses:
+  github: https://github.com/LucasAndre23
+  linkedin: https://www.linkedin.com/in/lucas-adr
+  email: lucasandre152015@gmail.com

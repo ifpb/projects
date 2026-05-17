@@ -1,0 +1,20 @@
+name: IFIT-Angular
+description:
+  O IFIT é um app Angular onde o usuário preenche um formulário com dados
+  como objetivo, frequência e local de treino, e recebe um plano de exercícios personalizado
+  com base nessas informações.
+addresses:
+  preview: https://github.com/pimentaluan/ifit-angular/blob/main/ifit-app/src/logo.png?raw=true
+  repository: https://github.com/pimentaluan/ifit-angular
+category:
+  type: subject
+  subject: pw1-cstsi-jp
+  period: 2025.1
+tags:
+  - angular
+  - html
+  - tailwind
+  - typescript
+owners:
+  - 20231370042
+  - 20222370034

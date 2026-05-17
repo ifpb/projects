@@ -1,0 +1,13 @@
+name: Aeroporto Portal dos Andes
+description: É um Aeroporto localizado na America Latina
+addresses:
+  homepage: https://ZenildoNeto.github.io/Aeroporto-Portal-dos-Andes
+  repository: https://github.com/ZenildoNeto/Aeroporto-Portal-dos-Andes
+category:
+  type: subject
+  subject: ls-cstsi-jp
+  period: 2025.1
+tags:
+  - javascript
+owners:
+  - 20231370033

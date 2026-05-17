@@ -1,0 +1,19 @@
+name: Smart Access
+description: Sistema para controle de acesso de ambientes
+addresses:
+  repository: https://github.com/ifpb/smart-access
+category:
+  type: research
+  campus: ifpb-jp
+tags:
+  - python
+  - typescript
+  - next.js
+  - flask
+  - docker
+owners:
+  - 2680962
+  - 2175551
+  - 1863442
+  - 20231370010
+  - 20201370001

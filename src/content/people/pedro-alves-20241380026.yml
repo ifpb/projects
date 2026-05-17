@@ -1,0 +1,16 @@
+name:
+  compact: Pedro Alves
+  full: Pedro Henrique Rodrigues Alves
+avatar:
+  github: https://github.com/pedro-rodriguesalves.png
+  githubUC: https://avatars.githubusercontent.com/u/233792845?v=4
+occupations:
+  - id: 20241380026
+    type: student
+    course: cstrc-jp
+    isFinished: false
+addresses:
+  github: https://github.com/pedro-rodriguesalves
+  linkedin: https://www.linkedin.com/in/pedro-rodrigues-alves
+  instagram: https://www.instagram.com/ph_rodriguesalves
+  email: pedro-alves.pa@academico.ifpb.edu.br

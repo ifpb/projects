@@ -10,12 +10,11 @@ import {
   isSubjectProject,
 } from '@/helpers/projects';
 import { campi } from '@/content/config';
+import { getSubject } from '@/helpers/subjects';
 
 interface ProjectProps {
   category: {
-    course: string;
-    campus: string;
-    semester: string;
+    period: number;
     subject: string;
   };
 }
@@ -49,40 +48,112 @@ const { project, people }: Props = Astro.props;
 
 const category = project.data.category as ProjectProps['category'];
 
+let course = '';
+let campus = '';
+let city = '';
+let subjects: string[] = [];
+
+if (isSubjectProject(project)) {
+  // Handle both single subject (string) and multiple subjects (array)
+  subjects = Array.isArray(category.subject) ? category.subject : [category.subject];
+  // Use the first subject to determine course, campus, and city
+  const [subjectName, courseId, cityName] = subjects[0].split('-');
+  course = courseId;
+  campus = 'ifpb-' + cityName;
+  city = cityName;
+}
+
 const pageTitle = `Projeto | ${project.data.name}`;
 ---
 
 <BaseLayout pageTitle={pageTitle} pageFindFilter="tipo:Projeto">
   <div class="flex flex-col md:flex-row gap-5">
     { project.data.addresses.preview && (
-      <div class="image-preview w-full md:w-[50%]">
+      <div class="project-preview image-preview w-full md:w-[50%] max-w-md">
         <a class="underline" href={project.data.addresses.homepage}>
           <img
             src={project.data.addresses.preview ?? '/projects/imgs/project-placeholder.png'}
             alt={project.data.name}
             class="border w-full"
             onload="this.onload = null; this.classList.remove('animate-pulse');"
-            onerror="this.onerror = null; this.closest('.image-preview').classList.add('hidden');"
+            onerror="this.onerror = null; this.closest('.image-preview').classList.add('hidden'); document.querySelector('.project-content').classList.remove('md:w-[50%]'); document.querySelector('.project-content').classList.add('md:w-full');"
           />
         </a>
       </div>
     )}
-    <div class="w-full md:w-[50%]">
+    <div class={`project-content w-full ${project.data.addresses.preview ? 'md:w-[50%]' : 'md:w-full'}`}>
       <div class="mb-2">
         <div class="font-bold text-lg">Descrição:</div>
         {project.data.description}
       </div>
       <div class="mb-2">
-        <div class="font-bold text-lg">Repositório:</div>
-        <a class="underline" href={project.data.addresses.repository}
-          >{project.data.addresses.repository}</a
-        >
+        <div class="font-bold text-lg">Repositório{Array.isArray(project.data.addresses.repository) ? 's' : ''}:</div>
+        {Array.isArray(project.data.addresses.repository) ? (
+          <ul class="list-disc list-inside">
+            {
+              project.data.addresses.repository.map((repo) => {
+                const getRepoName = (url) => {
+                  if (url.includes('github.com')) return 'GitHub';
+                  if (url.includes('gitlab.com')) return 'GitLab';
+                  if (url.includes('bitbucket.org')) return 'Bitbucket';
+                  return 'Repositório';
+                };
+                const getOwnerRepo = (url) => {
+                  const match = url.match(/(?:github\.com|gitlab\.com|bitbucket\.org)\/([^\/]+\/[^\/]+)/);
+                  return match ? match[1] : '';
+                };
+                const ownerRepo = getOwnerRepo(repo);
+                return (
+                  <li>
+                    <a class="underline" href={repo}>
+                      {getRepoName(repo)} {ownerRepo && `(${ownerRepo})`}
+                    </a>
+                  </li>
+                );
+              })
+            }
+          </ul>
+        ) : (
+          <a class="underline" href={project.data.addresses.repository}>
+            {(() => {
+              const url = project.data.addresses.repository;
+              const getRepoName = (url) => {
+                if (url.includes('github.com')) return 'GitHub';
+                if (url.includes('gitlab.com')) return 'GitLab';
+                if (url.includes('bitbucket.org')) return 'Bitbucket';
+                return 'Repositório';
+              };
+              const getOwnerRepo = (url) => {
+                const match = url.match(/(?:github\.com|gitlab\.com|bitbucket\.org)\/([^\/]+\/[^\/]+)/);
+                return match ? match[1] : '';
+              };
+              const ownerRepo = getOwnerRepo(url);
+              return `${getRepoName(url)} ${ownerRepo ? `(${ownerRepo})` : ''}`;
+            })()}
+          </a>
+        )}
       </div>
-      { project.data.addresses.template && (
+      { project.data.addresses.homepage && (
         <div class="mb-2">
-          <div class="font-bold text-lg">Template:</div>
-          <a class="underline" href={project.data.addresses.template}>
-            {project.data.addresses.template}
+          <div class="font-bold text-lg">Homepage:</div>
+          <a class="underline" href={project.data.addresses.homepage}>
+            {project.data.addresses.homepage}
+          </a>
+        </div>
+      )}
+      { project.data.addresses.design && (
+        <div class="mb-2">
+          <div class="font-bold text-lg">Design:</div>
+          <a class="underline" href={project.data.addresses.design}>
+            {project.data.addresses.design}
+          </a>
+        </div>
+      )}
+      { project.data.addresses.workflow && (
+        <div class="mb-2">
+          <div class="font-bold text-lg">Gerenciamento de Tarefas:</div>
+          <a class="underline" href={project.data.addresses.workflow}>
+            {project.data.addresses.workflow}
           </a>
         </div>
       )}
@@ -91,46 +162,74 @@ const pageTitle = `Projeto | ${project.data.name}`;
           <div class="mb-2">
             <div class="font-bold text-lg">Curso:</div>
             <a
-              href={`/projects/codes/${category.course}-${category.campus}/1/`}
+              href={`/projects/codes/${course}-${city}/1/`}
               class="underline"
             >
-              {getCourseByAbbreviation(category.course).data.name}{' '}({campi[category.campus]})
+              {getCourseByAbbreviation(course)?.data?.name}{' '}({campi[campus]})
             </a>
           </div>
 
           <div class="mb-2">
-            <div class="font-bold text-lg">Disciplina:</div>
-            <a
-              href={`/projects/codes/${category.subject}-${category.semester}/1/`}
-              class="underline"
-            >
-              {category.subject}-{category.semester}
-            </a>
+            <div class="font-bold text-lg">Disciplina{subjects.length > 1 ? 's' : ''}:</div>
+            {subjects.length > 1 ? (
+              <ul class="list-disc list-inside">
+                {
+                  subjects.map((subj) => (
+                    <li>
+                      <a
+                        href={`/projects/codes/${subj}-${category.period}/1/`}
+                        class="underline"
+                      >
+                        {getSubject(subj)?.data?.name?.full} ({category.period})
+                      </a>
+                    </li>
+                  ))
+                }
+              </ul>
+            ) : (
+              subjects.map((subj) => (
+                <div class="mb-1">
+                  <a
+                    href={`/projects/codes/${subj}-${category.period}/1/`}
+                    class="underline"
+                  >
+                    {getSubject(subj)?.data?.name?.full} ({category.period})
+                  </a>
+                </div>
+              ))
+            )}
           </div>
         )
       }
       <div class="mb-2">
         <div class="font-bold text-lg">Colaboradores:</div>
-        <ul class="list-disc list-inside">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
           {
             people
               .sort((a, b) =>
                 a.data.name.full.localeCompare(b.data.name.full)
               )
               .map((person) => (
-                <li>
-                  <a class="underline" href={`/projects/people/${getFirstPersonId(person)}`}>
-                    {person.data.name.full}
-                  </a>
-                </li>
+                <a
+                  href={`/projects/people/${getFirstPersonId(person)}`}
+                  class="flex items-center gap-2 p-2 rounded hover:bg-gray-50 transition-colors"
+                >
+                  {/* TODO a mesma lógica de carga do personCard */}
+                  <img
+                    src={person.data.avatar.githubUC || '/projects/imgs/people-placeholder.png'}
+                    alt={person.data.name.full}
+                    class="w-8 h-8 rounded-full object-cover"
+                  />
+                  <span class="text-sm">{person.data.name.full}</span>
+                </a>
               ))
           }
-        </ul>
+        </div>
       </div>
 
       <div class="mb-2">
         <div class="font-bold text-lg">Tags:</div>
-        <nav class="mb-2">
+        <nav class="mb-2 space-x-1">
           {
             project.data.tags
               .filter((tag, index, self) => self.indexOf(tag) === index)

@@ -1,0 +1,21 @@
+name: SIPWave
+description:
+  A aplicação permite efetuar ligações e gerenciar filas de chamadas, através
+  de uma interface web, utilizando como base o protocolo SIP.
+addresses:
+  repository: https://github.com/Julio-Caio/SIPWave-IFPB-DW
+  preview: https://github.com/Julio-Caio/SIPWave-IFPB-DW/blob/main/preview/image-project.png?raw=true
+  homepage: https://Julio-Caio.github.io/SIPWave-IFPB-DW/public/
+  design: https://www.figma.com/design/s6mB69OHaQMJbiCJ7BtXY0/gerenciador-de-chamadas-SIP
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2024.2
+tags:
+  - html
+  - css
+  - bootstrap
+  - javascript
+owners:
+  - 20231380028
+  - 20231380016

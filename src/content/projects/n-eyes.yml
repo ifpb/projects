@@ -1,0 +1,23 @@
+name: Saas N Eyes
+description: Projeto SaaS de monitoramento de tráfego web que permite acompanhar tráfegos maliciosos, tráfegos saudáveis e origem do tráfego em tempo real. Oferece dashboards intuitivos e métricas essenciais para ajudar a sua empresa a ter uma visão geral da rede.
+addresses:
+  preview: https://github.com/hanielmaia/Saas---Monitoramento-de-Tr-fego/blob/main/src/public/preview.png?raw=true
+  homepage: https://hanielmaia.github.io/Saas---Monitoramento-de-Tr-fego/
+  repository: https://github.com/hanielmaia/Saas---Monitoramento-de-Tr-fego
+  workflow: https://github.com/users/hanielmaia/projects/2
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2026.1
+tags:
+  - javascript
+  - html
+  - css
+  - express.js
+  - astro.js
+  - typescript
+owners:
+  - 20242380009
+  - 20242380035
+  - 20242380034
+  - 20242380012

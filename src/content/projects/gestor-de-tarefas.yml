@@ -1,0 +1,17 @@
+name: Gestor de Tarefas
+description: Este portal tem como objetivo criar lista de tarefas do dia a dia.
+addresses:
+  repository: https://github.com/WeslleyIFPB/projeto_ls
+category:
+  type: subject
+  subject: ls-cstsi-jp
+  period: 2024.2
+tags:
+  - javascript
+  - css
+  - html
+  - vite
+owners:
+  - 20241370010
+  - 20241370028
+  - 20241370034

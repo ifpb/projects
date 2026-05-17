@@ -1,0 +1,11 @@
+name:
+  compact: Arthur Melo
+  full: Arthur Santos Araujo de Melo
+avatar: null
+occupations:
+  - id: 20042037146
+    type: student
+    course: cstsi-jp
+    isFinished: true
+addresses:
+  email: arthur_santoss@yahoo.com.br

@@ -1,0 +1,17 @@
+name:
+  compact: Diogo Aguiar
+  full: Diogo Bruno Ferreira Martins de Aguiar
+avatar:
+  github: https://github.com/DiogoBAguiar.png
+  githubUC: https://avatars.githubusercontent.com/u/136986672?v=4
+occupations:
+  - id: 202514320028
+    type: student
+    course: csbes-jp
+    isFinished: false
+addresses:
+  github: https://github.com/DiogoBAguiar
+  linkedin: https://www.linkedin.com/in/diogo-aguiar-751334382/
+  instagram: https://www.instagram.com/diogoaguiardev/
+  homepage: https://diogoaguiardev.onrender.com/
+  email: diogoaguiardev@gmail.com

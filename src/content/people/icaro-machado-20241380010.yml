@@ -1,0 +1,19 @@
+name:
+  compact: Ícaro Machado
+  full: Ícaro Machado da Silva
+avatar:
+  github: https://github.com/icaruuuuuu.png
+  githubUC: https://avatars.githubusercontent.com/u/185983755?v=4
+occupations:
+  - id: 20241380010
+    type: student
+    course: cstrc-jp
+    isFinished: false
+  - id: 20201750013
+    type: student
+    course: ctie-jp
+    isFinished: true
+addresses:
+  github: https://github.com/icaruuuuuu
+  linkedin: https://www.linkedin.com/in/%C3%ADcaro-machado-da-silva-1378742b5/
+  email: icaromachadosilva@gmail.com

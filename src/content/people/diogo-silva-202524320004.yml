@@ -1,0 +1,16 @@
+name:
+  compact: Diogo Silva
+  full: Diogo de Souza Silva
+avatar:
+  github: https://github.com/diogossdev.png
+  githubUC: https://avatars.githubusercontent.com/u/245583349?v=4
+occupations:
+  - id: 202524320004
+    type: student
+    course: csbes-jp
+    isFinished: false
+addresses:
+  github: https://github.com/diogossdev
+  linkedin: https://www.linkedin.com/in/diogossdev
+  homepage: https://diogossdev.github.io
+  email: diogoss.dev@gmail.com

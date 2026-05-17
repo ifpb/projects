@@ -1,0 +1,24 @@
+name: Piloto
+description:
+  O Sistema Piloto é um sistema que tem como objetivo de unir funcionalidades
+  de organização de estudos com um espaço colaborativo para compartilhamento de materiais.
+  Será utilizado por alunos que buscam melhorar seus estudos e organizações e professores
+  que buscam otimizar seu tempo na busca de materiais escolares.
+addresses:
+  preview: https://github.com/ebrunovs/piloto-app-final/blob/main/public/preview.png?raw=true
+  repository: https://github.com/ebrunovs/piloto-app-final
+category:
+  type: subject
+  subject: pw1-cstsi-jp
+  period: 2024.2
+tags:
+  - spring boot
+  - typescript
+  - javascript
+  - angular
+  - java
+  - firebase
+owners:
+  - 20231370009
+  - 20231370010
+  - 20231370015

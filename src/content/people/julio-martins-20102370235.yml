@@ -1,0 +1,12 @@
+name:
+  compact: Julio Martins
+  full: Julio Martins Filho
+avatar:
+  selected: none
+occupations:
+  - id: 20102370235
+    type: student
+    course: cstsi-jp
+    isFinished: true
+addresses:
+  linkedin: https://www.linkedin.com/in/wmjulio/

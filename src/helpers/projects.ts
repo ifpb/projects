@@ -16,7 +16,11 @@ export function isExtensionProject(project: CollectionEntry<'projects'>) {
 }
 
 export function getProjectId(project: CollectionEntry<'projects'>) {
-  return project.data.addresses.repository
+  const repository = Array.isArray(project.data.addresses.repository)
+    ? project.data.addresses.repository[0]
+    : project.data.addresses.repository;
+
+  return repository
     .split(/(github|gitlab).com\//)
     .at(-1)
     .replace('/', '-');
@@ -26,15 +30,15 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
   if (isSubjectProject(project)) {
     const {
       data: {
-        category: { type, subject, semester, course, campus },
-        addresses: { template },
+        category: { type, subject, period },
+        addresses: { design, workflow, homepage },
         tags,
       },
     } = project as {
       data: {
         category: SubjectProject;
         tags: string[];
-        addresses: { template?: string };
+        addresses: { design?: string; workflow?: string; homepage?: string };
       };
     };
 
@@ -42,36 +46,61 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
 
     projectTags.sort();
 
-    if (template) {
-      projectTags.unshift('figma');
+    if (design) {
+      projectTags.unshift('design');
     }
 
-    projectTags.unshift(
-      type,
-      subject,
-      `${subject}-${semester}`,
-      `${course}-${campus.split('-')[1]}`
-    );
+    if (workflow) {
+      projectTags.unshift('workflow');
+    }
+
+    if (homepage) {
+      projectTags.unshift('homepage');
+    }
+
+    // Handle both single subject (string) and multiple subjects (array)
+    const subjects = Array.isArray(subject) ? subject : [subject];
+
+    // Add tags for all subjects
+    subjects.forEach((sub) => {
+      const [subjectName, course, campus] = sub.split('-');
+      projectTags.unshift(sub, `${sub}-${period}`, `${course}-${campus}`);
+    });
+
+    // Add the type tag
+    projectTags.unshift(type);
 
     return projectTags;
   } else {
     const {
       data: {
         tags,
-        category: { type, campus },
-        addresses: { template },
+        category,
+        addresses: { design, workflow, homepage },
       },
     } = project;
 
-    const projectTags = tags;
+    const projectTags = [...tags];
 
     projectTags.sort();
 
-    if (template) {
-      projectTags.unshift('figma');
+    if (design) {
+      projectTags.unshift('design');
     }
 
-    projectTags.unshift(type, campus);
+    if (workflow) {
+      projectTags.unshift('workflow');
+    }
+
+    if (homepage) {
+      projectTags.unshift('homepage');
+    }
+
+    // Add type and campus for non-subject projects
+    projectTags.unshift(category.type);
+    if ('campus' in category && category.campus) {
+      projectTags.unshift(category.campus);
+    }
 
     return projectTags;
   }
@@ -79,8 +108,20 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
 
 export function getProjectTagGroups(project: CollectionEntry<'projects'>) {
   if (isSubjectProject(project)) {
-    const { subject, semester, course, campus } = project.data
-      .category as SubjectProject;
+    const { subject, period } = project.data.category as SubjectProject;
+
+    // Handle both single subject (string) and multiple subjects (array)
+    const subjects = Array.isArray(subject) ? subject : [subject];
+
+    // Get all unique courses from subjects
+    const courses = subjects.map((sub) => {
+      const [subjectName, course, campus] = sub.split('-');
+      return `${course}-${campus}`;
+    });
+    const uniqueCourses = [...new Set(courses)];
+
+    // Get all subject-period combinations
+    const subjectPeriods = subjects.map((sub) => `${sub}-${period}`);
 
     const projectTags = {
       tags: {
@@ -89,15 +130,15 @@ export function getProjectTagGroups(project: CollectionEntry<'projects'>) {
       },
       subject: {
         name: 'disciplina',
-        values: [subject],
+        values: subjects,
       },
-      semester: {
-        name: 'semestre',
-        values: [`${subject}-${semester}`],
+      period: {
+        label: 'Período',
+        values: subjectPeriods,
       },
       course: {
         name: 'curso',
-        values: [`${course}-${campus}`],
+        values: uniqueCourses,
       },
     };
 
@@ -158,19 +199,19 @@ function sortProjects(
   const hasPreview = (project: CollectionEntry<'projects'>) =>
     !!project.data.addresses.preview;
 
-  const getPeriod = (project: CollectionEntry<'projects'>) =>
-    project.data.category.type === 'subject' && project.data.category.period;
-
-  const getSemester = (project: CollectionEntry<'projects'>) =>
-    project.data.category.type === 'subject' && project.data.category.semester;
+  const getPeriod = (project: CollectionEntry<'projects'>) => {
+    if (project.data.category.type === 'subject') {
+      return project.data.category.period;
+    }
+    return 0;
+  };
 
   return (
+    Number(hasPreview(b)) - Number(hasPreview(a)) ||
     Number(isResearchProject(b)) - Number(isResearchProject(a)) ||
     Number(isExtensionProject(b)) - Number(isExtensionProject(a)) ||
     Number(isSubjectProject(a)) - Number(isSubjectProject(b)) ||
-    Number(hasPreview(b)) - Number(hasPreview(a)) ||
-    getPeriod(b) - getPeriod(a) ||
-    getSemester(a) - getSemester(b) ||
+    getPeriod(a) - getPeriod(b) ||
     a.data.name.localeCompare(b.data.name)
   );
 }

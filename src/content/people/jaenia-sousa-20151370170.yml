@@ -1,0 +1,15 @@
+name:
+  compact: Jaênia Sousa
+  full: Jaênia Pereira de Sousa
+avatar:
+  github: https://github.com/jaenia.png
+  githubUC: https://avatars.githubusercontent.com/u/17907292?v=4
+occupations:
+  - id: 20151370170
+    type: student
+    course: cstsi-jp
+    isFinished: true
+addresses:
+  github: https://github.com/jaenia
+  linkedin: https://www.linkedin.com/in/jaenia/
+  email: jaeniaps@gmail.com

@@ -1,0 +1,17 @@
+name: The Menu
+description: Este projeto tem como objetivo ser um agregador de receitas
+addresses:
+  preview: https://github.com/SamaraPriscilafarias/The_Menu/blob/main/image.png?raw=true
+  homepage: https://samarapriscilafarias.github.io/The_Menu/site/index.html
+  repository: https://github.com/SamaraPriscilafarias/The_Menu
+category:
+  type: subject
+  subject: lm-cstsi-jp
+  period: 2024.2
+tags:
+  - html
+  - css
+owners:
+  - 20242370021
+  - 20242370023
+  - 20242370014

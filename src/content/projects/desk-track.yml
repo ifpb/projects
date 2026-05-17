@@ -1,0 +1,21 @@
+name: DeskTrack
+description:
+  Está página web tem como objetivo documentar e constatar o estado dos
+  dispositivos cadastrados.
+addresses:
+  preview: https://github.com/Pedro-WB/Projeto-DW/blob/main/Logo%20do%20DeskTrack%20em%20azul.png?raw=true
+  homepage: https://Pedro-WB.github.com/Projeto-DW
+  repository: https://github.com/Pedro-WB/Projeto-DW
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2025.1
+tags:
+  - javascript
+  - css
+  - bootstrap
+  - express.js
+owners:
+  - 20222380020
+  - 20222380007
+  - 20201380013

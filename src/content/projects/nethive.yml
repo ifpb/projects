@@ -1,0 +1,17 @@
+name: NetHive
+description: Projeto consiste em uma documentação de ativos de redes.
+addresses:
+  preview: https://github.com/Carollcunha/NetHive/blob/main/preview.png?raw=true
+  homepage: https://Carollcunha.github.io/NetHive
+  repository: https://github.com/Carollcunha/NetHive
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2025.1
+tags:
+  - javascript
+  - bootstrap
+  - express.js
+owners:
+  - 20221380012
+  - 20221380033

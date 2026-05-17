@@ -1,0 +1,24 @@
+name: SAYXIS
+description:
+  O SAYXIS é uma rede social para fotógrafos que desejam compartilhar fotos
+  e se conectar com outros fotógrafos.
+addresses:
+  preview: https://github.com/joseguilherme-fs/SayXis/blob/main/preview.png?raw=true
+  repository: https://github.com/joseguilherme-fs/SayXis
+category:
+  type: subject
+  subject: pw2-cstsi-jp
+  period: 2024.2
+tags:
+  - html
+  - javascript
+  - java
+  - spring boot
+  - thymeleaf
+  - postgresql
+  - tailwind
+owners:
+  - 20221370012
+  - 20221370040
+  - 20212370001
+  - 20222370016

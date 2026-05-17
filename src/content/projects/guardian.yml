@@ -1,0 +1,20 @@
+name: Guardião de Documentos
+description: Guardião de Documentos
+addresses:
+  repository: https://github.com/adriandersonliradev/guardian-frontend
+category:
+  type: subject
+  subject: pd-cstsi-jp
+  period: 2024.1
+tags:
+  - react
+  - python
+  - ia
+  - spring boot
+  - rpc
+  - redis
+  - rabbitmq
+owners:
+  - 20182370015
+  - 20212370024
+  - 20212370040

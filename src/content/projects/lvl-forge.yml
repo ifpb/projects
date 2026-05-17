@@ -1,0 +1,14 @@
+name: Lvl Forge
+description: Projeto de criação de repositório para jogos indies
+addresses:
+  homepage: https://jonasvinicios.github.io/Level-Forge/
+  repository: https://github.com/JonasVinicios/Level-Forge
+category:
+  type: subject
+  subject: lm-cstsi-jp
+  period: 2024.2
+tags:
+  - html
+  - css
+owners:
+  - 20242370039

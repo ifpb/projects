@@ -1,0 +1,19 @@
+name: Dreams for Sale
+description:
+  A Dreams for Sale é a única loja que vende o impossível. Vendemos o que
+  ainda não existe.
+addresses:
+  preview: https://github.com/davicesarm/dreams-for-sale/blob/main/preview.png?raw=true
+  homepage: https://davicesarm.github.io/dreams-for-sale/
+  repository: https://github.com/davicesarm/dreams-for-sale
+category:
+  type: subject
+  subject: lm-cstsi-jp
+  period: 2024.1
+tags:
+  - html
+  - css
+owners:
+  - 20241370037
+  - 20241370039
+  - 20241370034

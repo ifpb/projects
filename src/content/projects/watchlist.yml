@@ -1,0 +1,21 @@
+name: WatchList
+description:
+  Um web app voltado para fazer watchlists (listas de filmes/séries para
+  assistir e avaliar) em conjunto com amigos.
+addresses:
+  preview: https://github.com/arthurfaraujo/watchlist/blob/main/preview.png?raw=true
+  homepage: https://arthurfaraujo.github.io/watchlist
+  repository: https://github.com/arthurfaraujo/watchlist
+category:
+  type: subject
+  subject: ls-cstsi-jp
+  period: 2024.2
+tags:
+  - typescript
+  - vite.js
+  - tailwind
+  - html
+owners:
+  - 20241370031
+  - 20241370037
+  - 20241370038
