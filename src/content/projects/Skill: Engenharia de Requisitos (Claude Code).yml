@@ -1,0 +1,31 @@
+name: 'Skill: Engenharia de Requisitos (Claude Code)'
+description: >-
+  Skill para o Claude Code (CLI da Anthropic) que carrega conhecimento
+  canônico de Engenharia de Requisitos, Análise de Negócios e Ética
+  Profissional em qualquer sessão. Construída a partir do material didático
+  completo do curso ERS da Profa. Dra. Juliana Dantas Ribeiro Viana de
+  Medeiros (IFPB Campus João Pessoa) e da bibliografia canônica da área
+  (Sommerville 10e, Pressman 9e, Wiegers 3e, Cohn, Robertson, Hull, Falbo,
+  BABOK v3, SBC 002/2024). Conteúdo bilíngue — en-CA por padrão + snapshot
+  pt-BR completo preservado em translations/pt-BR/. Distribuído sob CC
+  BY-SA 4.0.
+addresses:
+  preview: https://github.com/seekdevcore/sk-requirements-engineering-skill/blob/main/assets/banner.png?raw=true
+  homepage: https://github.com/seekdevcore/sk-requirements-engineering-skill
+  repository: https://github.com/seekdevcore/sk-requirements-engineering-skill
+category:
+  type: open source
+  campus: ifpb-jp
+tags:
+  - claude-code
+  - claude-skill
+  - requirements-engineering
+  - engenharia-de-requisitos
+  - business-analysis
+  - bdd
+  - agile
+  - documentation
+  - markdown
+  - ifpb
+owners:
+  - 202524320002
