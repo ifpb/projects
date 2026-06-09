@@ -16,9 +16,9 @@ description: >-
   bilíngue — en-CA por padrão + snapshot pt-BR completo preservado em
   translations/pt-BR/. Distribuído sob CC BY-SA 4.0.
 addresses:
-  preview: https://github.com/seekdevcore/sk-requirements-engineering-skill/blob/main/assets/banner.png?raw=true
-  homepage: https://github.com/seekdevcore/sk-requirements-engineering-skill
-  repository: https://github.com/seekdevcore/sk-requirements-engineering-skill
+  preview: https://github.com/seekdevcore/sk-requirements-engineering-theskill/blob/main/assets/banner.png?raw=true
+  homepage: https://github.com/seekdevcore/sk-requirements-engineering-theskill
+  repository: https://github.com/seekdevcore/sk-requirements-engineering-theskill
 category:
   type: open source
   campus: ifpb-jp
