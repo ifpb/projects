@@ -1,0 +1,19 @@
+name: SIG-GCM
+description:
+  O SIG-GCM é um sistema desenvolvido para apoiar o gerenciamento operacional da Guarda Civil Municipal, permitindo a administração de efetivos, postos de serviço, lotações, escalas de trabalho e consultas pelos próprios guardas.
+addresses:
+  preview: https://github.com/Esdras-Romero/SIG-GCM/blob/main/preview.png?raw=true
+  homepage: https://Esdras-Romero.github.io/SIG-GCM/
+  repository: https://github.com/Esdras-Romero/SIG-GCM
+category:
+  type: subject  # ou 'subject', 'research', 'extension', 'open source'
+  subject: pw1-cstsi-jp
+  period: 2026.1   
+tags:
+  - Angular
+  - TypeScript
+  - Java
+  - Spring Boot
+owners:
+  - 20232370038
+  - 20241370032
