@@ -4,8 +4,8 @@ description: Este projeto tem como objetivo apresentar um site para reserva
   e JavaScript. Desse modo, permitindo o usuário interagir de forma
   dinâmica com o conteúdo e ver detalhes para simular uma reserva.
 addresses:
-  preview: https://github.com/GabeMarques-Intetsu/SIRA/blob/main/public/screenshots/Preview-temp2.png?raw=true
-  homepage: https://gabemarques-intetsu.github.io/SIRA/
+  preview: https://github.com/GabeMarques-Intetsu/SIRA/blob/main/public/screenshots/login.png?raw=true
+  homepage: https://sira-jet.vercel.app
   repository: https://github.com/GabeMarques-Intetsu/SIRA
   workflow: https://github.com/users/GabeMarques-Intetsu/projects/1/views/1
 category:
