@@ -1,0 +1,42 @@
+name: Engenharia de Requisitos — corpus para IA
+description: >
+  Conhecimento canônico de Engenharia de Requisitos, Análise de Negócios e
+  Ética Profissional empacotado em três frentes de distribuição: (1) skill
+  nativa do Claude Code via git clone em ~/.claude/skills/; (2) plugin
+  marketplace do Claude Code via /plugin install; (3) servidor MCP (Model
+  Context Protocol) que expõe a metodologia a Claude Desktop, Cursor, Cline,
+  Continue, Zed, OpenAI Responses API e agentes customizados — com 5
+  ferramentas executáveis (list_references, list_examples, list_hard_rules,
+  validate_user_story, validate_acceptance_criterion) e 4 recursos
+  (requirements://skill, /reference/{name}, /example/{name}, /catalog).
+  Construído a partir do material didático completo do curso ERS da Profa.
+  Dra. Juliana Dantas Ribeiro Viana de Medeiros (IFPB Campus João Pessoa) e
+  da bibliografia canônica da área (Sommerville 10e, Pressman 9e, Wiegers
+  3e, Cohn, Robertson, Hull, Falbo, BABOK v3, SBC 002/2024). Conteúdo
+  bilíngue — en-CA por padrão + snapshot pt-BR completo preservado em
+  translations/pt-BR/. Distribuído sob CC BY-SA 4.0.
+addresses:
+  preview: https://github.com/seekdevcore/sk-requirements-engineering-theskill/blob/main/assets/banner.png?raw=true
+  repository: https://github.com/seekdevcore/sk-requirements-engineering-theskill
+category:
+  type: open source
+  campus: ifpb-jp
+tags:
+  - claude-code
+  - claude-skill
+  - mcp
+  - model-context-protocol
+  - fastmcp
+  - cross-platform-ai
+  - requirements-engineering
+  - engenharia-de-requisitos
+  - business-analysis
+  - bdd
+  - agile
+  - scrum
+  - documentation
+  - markdown
+  - python
+  - ifpb
+owners:
+  - 202524320002
