@@ -5,6 +5,8 @@ description:
   Tudo fica organizado e fácil de visualizar, ajudando você a não perder nenhum filme e a acompanhar o seu próprio histórico de cinema.
 addresses:
   repository: https://github.com/AlvaroMLL/CineLog
+  homepage: https://alvaromll.github.io/CineLog/
+  preview: https://github.com/AlvaroMLL/CineLog/blob/main/preview.svg?raw=true
 category:
   type: subject
   subject: pw2-csbes-jp
@@ -12,5 +14,7 @@ category:
 tags:
   - javascript
   - git
+  - CSS
+  - HMTL
 owners:
   - 20242370037

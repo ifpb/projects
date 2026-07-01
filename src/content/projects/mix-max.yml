@@ -2,6 +2,8 @@ name: MIX MAX
 description: Serviço de streaming para filmes e séries.
 addresses:
   repository: https://github.com/JonasVinicios/MIX-MAX-
+  preview: https://github.com/JonasVinicios/MIX-MAX-/blob/main/preview.png?raw=true
+  homepage: https://mix-max-tau.vercel.app/
 category:
   type: subject
   subject: pw2-csbes-jp

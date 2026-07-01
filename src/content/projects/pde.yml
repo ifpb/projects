@@ -9,8 +9,9 @@ description:
   acadêmica e a profissional ocorra com total transparência e eficiência.
 addresses:
   preview: https://github.com/Projeto-IFPB/PDE-Portal-de-Defesas-Estagios/blob/main/preview-pde.png?raw=true
+  homepage: https://projeto-ifpb.github.io/PDE-Portal-de-Defesas-Estagios/
   repository: https://github.com/Projeto-IFPB/PDE-Portal-de-Defesas-Estagios
-  design: https://www.figma.com/design/ZWPUo9hYAPO9XFlH6FIE6p/Prot%C3%B3tipo-PDE?node-id=0-1&t=iU4ZggJshwCsuwLq-0
+  design: https://www.figma.com/design/WfPFBLYlfd9QC99Kn2l0jx/Portal-De-Defesas-de-Est%C3%A1gio?node-id=0-1&p=f&t=AUuNgY1GNv8prU64-0
 category:
   type: subject
   subject:
@@ -22,6 +23,7 @@ tags:
   - html
   - css
   - figma
+  - git
   - web
   - workflow
 owners:
