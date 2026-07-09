@@ -16,10 +16,15 @@ category:
   period: 2026.1
 tags:
   - javascript
+  - typescript
   - html
   - css
   - react
   - supabase
+  - next.js
+  - tailwind
+  - tests
+  - documentation
 owners:
   - 202524320002
   - 202524320026
