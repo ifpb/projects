@@ -12,7 +12,8 @@
     "buildpreview": "astro build && astro preview",
     "buildpreviewpf": "astro build && npm run postbuild && astro preview",
     "astro": "astro",
-    "load:github:avatar": "tsx src/content/load-github-uc-avatar.ts"
+    "load:github:avatar": "tsx src/content/load-github-uc-avatar.ts",
+    "extract:linkedin": "node scripts/extract-people-data.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^3.6.2",
