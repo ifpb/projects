@@ -13,7 +13,11 @@ occupations:
     type: student
     course: cstsi-jp
     isFinished: false
+  - id: 202524320031
+    type: student
+    course: csbes-jp
+    isFinished: false
 addresses:
   github: https://github.com/Jonasgabs
-  linkedin: https://www.linkedin.com/in/jonas-sarmento
+  linkedin: https://www.linkedin.com/in/jonassarmento/
   email: jonas.sarmento@academico.ifpb.edu.br

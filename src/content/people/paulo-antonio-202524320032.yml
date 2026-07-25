@@ -13,6 +13,10 @@ occupations:
     type: student
     course: cstsi-jp
     isFinished: false
+  - id: 202524320032
+    type: student
+    course: csbes-jp
+    isFinished: false
 addresses:
   github: https://github.com/PauloAnt
   linkedin: https://www.linkedin.com/in/paulo-antbf

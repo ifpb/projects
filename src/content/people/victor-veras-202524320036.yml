@@ -9,6 +9,10 @@ occupations:
     type: student
     course: cstsi-jp
     isFinished: false
+  - id: 202524320036
+    type: student
+    course: csbes-jp
+    isFinished: false
 addresses:
   github: https://github.com/viczveras
   linkedin: https://www.linkedin.com/in/victorveras1/

@@ -9,6 +9,10 @@ occupations:
     type: student
     course: cstsi-jp
     isFinished: false
+  - id: 202524320033
+    type: student
+    course: csbes-jp
+    isFinished: false
 addresses:
   github: https://github.com/davicesarm
   linkedin: https://www.linkedin.com/in/davicesar/

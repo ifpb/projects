@@ -9,6 +9,10 @@ occupations:
     type: student
     course: cstsi-jp
     isFinished: false
+  - id: 202524320035
+    type: student
+    course: csbes-jp
+    isFinished: false
 addresses:
   github: https://github.com/oiclai
   linkedin: https://www.linkedin.com/in/clara-nunes-de-alcantara/
