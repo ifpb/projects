@@ -1,0 +1,23 @@
+name: MediaVirtu
+description: MediaVirtu é uma rede social de postagens de humor recheadas de comédia, onde usuários podem postar e reagir a posts engraçados.
+addresses:
+  preview: https://raw.githubusercontent.com/Souzzaturr/MediaVirtu/refs/heads/develop/public/pictures/preview.jpg
+  homepage: https://mediavirtu.vercel.app/
+  repository: https://github.com/Souzzaturr/MediaVirtu
+category:
+  type: subject
+  subject: pw2-csbes-jp
+  period: 2025.2
+tags:
+  - html
+  - css
+  - javascript
+  - typescript
+  - vite
+  - next.js
+  - react
+  - tailwind
+owners:
+  - 202514320010
+  - 202514320003
+  - 202514320001
