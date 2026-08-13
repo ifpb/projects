@@ -1,0 +1,15 @@
+name:
+  compact: Miguel Araújo
+  full: Miguel Araújo de Oliveira
+avatar:
+  github: https://github.com/miguelaraujo3.png
+  githubUC: https://avatars.githubusercontent.com/u/125158469?v=4
+occupations:
+  - id: 202614320024
+    type: student
+    course: csbes-jp
+    isFinished: false
+addresses:
+  github: https://github.com/miguelaraujo3
+  linkedin: https://www.linkedin.com/in/miguel-araujo-/
+  email: oliveira.miguel@academico.ifpb.edu.br
