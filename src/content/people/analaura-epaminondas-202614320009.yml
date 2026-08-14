@@ -1,0 +1,15 @@
+name:
+  compact: Laura Oliveira
+  full: Ana Laura Epaminondas Oliveira
+avatar:
+  github: https://github.com/analauraepa.png
+occupations:
+  - id: 202614320009
+    type: student
+    course: csbes-jp  # curso-campus (formato unificado)
+    isFinished: false  # true se já concluiu, false se ainda está cursando
+addresses:
+  github: https://github.com/analauraepa
+  linkedin: https://www.linkedin.com/in/analaura-epa
+  instagram: https://www.instagram.com/laur4_.oliver/
+  email: ana.epaminondas@academico.ifpb.edu.br 
