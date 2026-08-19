@@ -5,8 +5,9 @@ import NavBar from '@/components/NavBar.astro';
 import PageFindSearch from '@/components/PageFindSearch.astro';
 import { getAllPersonTags } from '@/helpers/people';
 import { getAllProjectTags } from '@/helpers/tags';
-import { getCourse } from '@/helpers/courses';
-import { getSubject } from '@/helpers/subjects';
+import { courses, getCourse } from '@/helpers/courses';
+import { getSubject, subjects } from '@/helpers/subjects';
+import type { CourseInfo, SubjectInfo } from '@/lib/taxonomy';
 
 import '@/styles/global.css';
 
@@ -39,6 +40,20 @@ const projectTags = allProjectTags.filter(tag => {
   return true;
 });
 
+// O Filter é uma ilha React: `astro:content` não pode atravessar para o cliente,
+// então as coleções vão achatadas por props.
+const courseInfos: CourseInfo[] = courses.map(({ data }) => ({
+  id: data.id,
+  name: data.name,
+  abbreviation: data.abbreviation,
+  level: data.level.compact,
+}));
+
+const subjectInfos: SubjectInfo[] = subjects.map(({ data }) => ({
+  id: data.id,
+  name: data.name.full,
+}));
+
 const headerTitle = pageTitle ? `IFPB | ${pageTitle}` : 'IFPB Code';
 ---
 
@@ -63,21 +78,23 @@ const headerTitle = pageTitle ? `IFPB | ${pageTitle}` : 'IFPB Code';
             tags={tags}
             peopleTags={peopleTags}
             projectTags={projectTags}
+            courses={courseInfos}
+            subjects={subjectInfos}
             client:visible
           />
         )
       }
 
       {
-        pageTitle && pageFindFilter ? (
+        /* Sem pageTitle não se renderiza <h1>: um heading vazio reprova no audit
+           de a11y e a home já tem o próprio <h1>. */
+        pageTitle && (
           <h1
             class="text-center pb-16 text-4xl font-bold"
             data-pagefind-filter={pageFindFilter}
           >
             {pageTitle}
           </h1>
-        ) : (
-          <h1 class="text-center pb-16 text-4xl font-bold">{pageTitle}</h1>
         )
       }
 

@@ -1,10 +1,14 @@
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
 import react from '@astrojs/react';
+import icon from 'astro-icon';
+import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), react()],
+  integrations: [icon(), react()],
+  vite: {
+    plugins: [tailwindcss()],
+  },
   site: 'https://ifpb.github.io',
   base: '/projects',
 });

@@ -1,4 +1,12 @@
-import { z, defineCollection } from 'astro:content';
+import { defineCollection } from 'astro:content';
+import { z } from 'astro/zod';
+import { glob } from 'astro/loaders';
+import {
+  abbreviationCourses,
+  campi,
+  cities,
+  courseWithCityEnum,
+} from '@/lib/taxonomy';
 
 export type SubjectProject = z.infer<typeof subjectProjectCategory>;
 export type ResearchProject = z.infer<typeof subjectProjectCategory>;
@@ -22,38 +30,6 @@ const id = z.number().refine((num) => {
 
   return [12, 11, 7, 6].includes(length);
 });
-
-export const cities = {
-  jp: 'João Pessoa',
-  cg: 'Campina Grande',
-  gb: 'Guarabira',
-  cz: 'Cajazeiras',
-};
-
-export const campi = {
-  'ifpb-jp': 'João Pessoa',
-  'ifpb-cg': 'Campina Grande',
-  'ifpb-gb': 'Guarabira',
-  'ifpb-cz': 'Cajazeiras',
-  reitoria: 'Reitoria',
-};
-
-export const abbreviationCourses = [
-  'cmpti',
-  'csbee',
-  'csbes',
-  'cstads',
-  'cstrc',
-  'cstsi',
-  'cstt',
-  'ctie',
-  'ctii',
-  'ctim',
-] as const;
-
-const courseWithCityEnum = abbreviationCourses.flatMap((course) =>
-  Object.keys(cities).map((city) => `${course}-${city}`)
-);
 
 const campusCode = Object.keys(campi) as [keyof typeof campi];
 
@@ -137,7 +113,7 @@ const openSourceProjectCategory = projectCategory.extend({
 
 // collections
 const courseCollection = defineCollection({
-  type: 'data',
+  loader: glob({ base: './src/content/courses', pattern: '**/[^_]*.yml' }),
   schema: z.object({
     id: z.string(),
     name: z.string(),
@@ -154,7 +130,7 @@ const courseCollection = defineCollection({
 });
 
 const peopleCollection = defineCollection({
-  type: 'data',
+  loader: glob({ base: './src/content/people', pattern: '**/[^_]*.yml' }),
   schema: z.object({
     id: id.optional(),
     name: z.object({
@@ -191,7 +167,7 @@ const peopleCollection = defineCollection({
 });
 
 const projectCollection = defineCollection({
-  type: 'data',
+  loader: glob({ base: './src/content/projects', pattern: '**/[^_]*.yml' }),
   schema: z.object({
     name: z.string(),
     description: z.string(),
@@ -213,7 +189,7 @@ const projectCollection = defineCollection({
 });
 
 const subjectCollection = defineCollection({
-  type: 'data',
+  loader: glob({ base: './src/content/subjects', pattern: '**/[^_]*.yml' }),
   schema: z.object({
     id: z.string(),
     name: z.object({

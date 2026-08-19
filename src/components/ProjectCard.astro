@@ -1,6 +1,8 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { Icon } from 'astro-icon';
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+import { getPreviewImage } from '@/lib/previews';
 import Badge from '@/components/Badge.astro';
 import { getProjectId, getProjectTags } from '@/helpers/projects';
 import { getAvatarImageUrl, getFirstPersonId } from '@/helpers/people';
@@ -11,9 +13,11 @@ type ProjectsWithPeople = CollectionEntry<'projects'> & {
 
 export interface Props {
   project: ProjectsWithPeople;
+  /** Cards da primeira fileira ficam acima da dobra e não devem ser lazy. */
+  eager?: boolean;
 }
 
-const { project } = Astro.props;
+const { project, eager = false } = Astro.props;
 
 const {
   data: { addresses, name },
@@ -22,6 +26,10 @@ const {
 const tags: string[] = getProjectTags(project);
 
 const projectId = getProjectId(project);
+
+// Preview local otimizado; ausente quando a URL do YAML está morta (ver
+// scripts/fetch-previews.mjs), caso em que o card usa o placeholder.
+const previewImage = getPreviewImage(project.id);
 ---
 
 <div
@@ -36,13 +44,26 @@ const projectId = getProjectId(project);
             : addresses.repository)}
         target="_blank"
       >
-        <img
-          src={addresses.preview ?? '/projects/imgs/project-placeholder.png'}
-          class="animate-pulse bg-gray-300 object-cover w-full h-[200px] md:h-[150px] hover:scale-105 transition duration-500"
-          alt={name}
-          onload="this.onload = null; this.classList.remove('animate-pulse');"
-          onerror="this.onerror=null;this.classList.remove('animate-pulse', 'bg-neutral-400');this.src='/projects/imgs/project-placeholder.png';"
-        />
+        {
+          previewImage ? (
+            <Image
+              src={previewImage}
+              width={640}
+              class="bg-gray-300 object-cover w-full h-[200px] md:h-[150px] hover:scale-105 transition duration-500"
+              alt={name}
+              loading={eager ? 'eager' : 'lazy'}
+              decoding="async"
+            />
+          ) : (
+            <img
+              src="/projects/imgs/project-placeholder.png"
+              class="bg-gray-300 object-cover w-full h-[200px] md:h-[150px] hover:scale-105 transition duration-500"
+              alt={name}
+              loading={eager ? 'eager' : 'lazy'}
+              decoding="async"
+            />
+          )
+        }
       </a>
     </figure>
     <div class="absolute top-2 right-2">
@@ -55,6 +76,7 @@ const projectId = getProjectId(project);
                 target="_blank"
                 class="font-bold flex items-center justify-center text-white"
                 title="Homepage"
+                aria-label="Homepage do projeto"
               >
                 <Icon
                   name="ph:monitor-duotone"
@@ -73,6 +95,7 @@ const projectId = getProjectId(project);
                 target="_blank"
                 class="font-bold flex items-center justify-center text-white"
                 title="Design"
+                aria-label="Design do projeto"
               >
                 {addresses.design.includes('figma.com') ? (
                   <Icon
@@ -105,6 +128,7 @@ const projectId = getProjectId(project);
                 target="_blank"
                 class="font-bold flex items-center justify-center text-white"
                 title="Workflow"
+                aria-label="Workflow do projeto"
               >
                 <Icon
                   name="uil:schedule"
@@ -124,11 +148,13 @@ const projectId = getProjectId(project);
                   target="_blank"
                   class="font-bold flex items-center justify-center"
                   title={`Repositório ${index + 1}`}
+                  aria-label={`Repositório ${index + 1}`}
                 >
                   <Icon
                     name="uim:github"
                     size={32}
                     class="github-project-link"
+                    is:inline
                   />
                 </a>
               </li>
@@ -138,9 +164,16 @@ const projectId = getProjectId(project);
               <a
                 href={addresses.repository}
                 target="_blank"
+                title="Repositório"
+                aria-label="Repositório"
                 class="font-bold flex items-center justify-center"
               >
-                <Icon name="uim:github" size={32} class="github-project-link" />
+                <Icon
+                  name="uim:github"
+                  size={32}
+                  class="github-project-link"
+                  is:inline
+                />
               </a>
             </li>
           )
@@ -164,7 +197,8 @@ const projectId = getProjectId(project);
                     alt={person.data.name.full}
                     title={person.data.name.full}
                     class="rounded-full bg-gray-300 object-cover w-8"
-                    data-src={getAvatarImageUrl(person)}
+                    loading={eager ? 'eager' : 'lazy'}
+                    data-src={getAvatarImageUrl(person, 128)}
                     onload="onLoadPersonImage(this, 32)"
                     onerror="onErrorPersonImage(this)"
                   />
