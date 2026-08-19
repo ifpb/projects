@@ -1,7 +1,15 @@
 import type { CollectionEntry } from 'astro:content';
-import type { SubjectProject } from '@/content/config';
+import type { SubjectProject } from '@/content.config';
 import { getCollection } from 'astro:content';
 import { getPeopleByProject } from '@/helpers/people';
+
+// Ver a nota em `helpers/people.ts`: memoizar é o que mantém o build dentro da memória.
+let projectsCache: Promise<CollectionEntry<'projects'>[]> | undefined;
+
+function allProjects() {
+  projectsCache ??= getCollection('projects');
+  return projectsCache;
+}
 
 export function isSubjectProject(project: CollectionEntry<'projects'>) {
   return project.data.category.type === 'subject';
@@ -42,7 +50,10 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
       };
     };
 
-    const projectTags = tags;
+    // Precisa ser cópia: `tags` aponta para `project.data.tags`, e a coleção agora é
+    // memoizada — sem copiar, cada chamada acumula tags no dado compartilhado e o
+    // conjunto de rotas geradas muda de build para build.
+    const projectTags = [...tags];
 
     projectTags.sort();
 
@@ -156,7 +167,7 @@ export function getProjectTagGroups(project: CollectionEntry<'projects'>) {
 }
 
 export async function getAllProjectTags() {
-  const projects = await getCollection('projects');
+  const projects = await allProjects();
 
   const repeatedTags = projects.reduce((acc: string[], project) => {
     return [...acc, ...getProjectTags(project)];
@@ -170,7 +181,7 @@ export async function getAllProjectTags() {
 }
 
 export async function getAllProjectTagGroups() {
-  const projects = await getCollection('projects');
+  const projects = await allProjects();
 
   const tags = projects.reduce((acc, project) => {
     const tagGroups = getProjectTagGroups(project);
@@ -217,7 +228,7 @@ function sortProjects(
 }
 
 export async function getProjects() {
-  const projects = await getCollection('projects');
+  const projects = [...(await allProjects())];
 
   projects.sort(sortProjects);
 
@@ -230,7 +241,7 @@ export async function getProjects() {
 }
 
 export async function getProjectsByTag(tag: string) {
-  const projects = await getCollection('projects');
+  const projects = await allProjects();
 
   const filteredProjects = projects.filter((project) =>
     getProjectTags(project).includes(tag)
@@ -247,7 +258,7 @@ export async function getProjectsByTag(tag: string) {
 }
 
 export async function getProjectsByPerson(person: CollectionEntry<'people'>) {
-  const projects = await getCollection('projects');
+  const projects = await allProjects();
 
   const ids = person.data.occupations.map((occupation) => occupation.id);
 

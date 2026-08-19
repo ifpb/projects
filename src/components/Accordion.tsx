@@ -22,7 +22,7 @@ export default function Accordion({
     <div className={`group ${className}`}>
       <div
         onClick={() => onToggle(id)}
-        className={`flex cursor-pointer list-none items-center justify-between rounded px-3 py-2 transition ${
+        className={`flex cursor-pointer list-none items-center justify-between rounded-sm px-3 py-2 transition ${
           isOpen ? 'rounded-b-none bg-gray-300' : 'bg-gray-200'
         }`}
       >
@@ -35,7 +35,7 @@ export default function Accordion({
         />
       </div>
       {isOpen && (
-        <nav className="border border-t-0 border-gray-300 rounded-b px-3 py-2 bg-white">
+        <nav className="border border-t-0 border-gray-300 rounded-b-sm px-3 py-2 bg-white">
           {children}
         </nav>
       )}

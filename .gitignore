@@ -25,3 +25,6 @@ pnpm-debug.log*
 # Logs
 logs
 *.log
+
+# cache de previews baixados no prebuild
+src/assets/previews/

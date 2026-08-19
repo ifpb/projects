@@ -2,9 +2,13 @@
   "name": "projects-ifpb",
   "type": "module",
   "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
+    "prebuild": "node scripts/fetch-previews.mjs",
     "build": "astro build",
     "build:log": "mkdir -p logs && npm run build &> logs/build-output-$(date +%Y%m%d-%H%M).log",
     "postbuild": "pagefind --site dist/",
@@ -16,22 +20,32 @@
     "extract:linkedin": "node scripts/extract-people-data.mjs"
   },
   "dependencies": {
-    "@astrojs/react": "^3.6.2",
-    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/react": "^6.0.3",
+    "@tailwindcss/vite": "^4.3.3",
     "@types/react": "^18.0.33",
     "@types/react-dom": "^18.0.11",
-    "astro": "^4.15.4",
+    "astro": "^7.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "tailwindcss": "^3.3.1"
+    "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
+    "@iconify-json/clarity": "^1.2.4",
+    "@iconify-json/icon-park": "^1.2.4",
+    "@iconify-json/la": "^1.2.1",
+    "@iconify-json/logos": "^1.2.13",
+    "@iconify-json/mdi": "^1.2.3",
+    "@iconify-json/ph": "^1.2.2",
+    "@iconify-json/simple-icons": "^1.2.93",
+    "@iconify-json/uil": "^1.2.3",
+    "@iconify-json/uim": "^1.2.3",
     "@iconify/react": "^4.1.0",
-    "astro-icon": "^0.8.0",
-    "pagefind": "^1.1.1",
+    "astro-icon": "^1.2.0",
+    "pagefind": "^1.5.2",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.6",
-    "tsx": "^4.19.1"
+    "tsx": "^4.19.1",
+    "yaml": "^2.9.0"
   }
 }

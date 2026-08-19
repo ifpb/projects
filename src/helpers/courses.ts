@@ -1,10 +1,11 @@
 import type { CollectionEntry } from 'astro:content';
-import type { SubjectProject } from '@/content/config';
+import type { SubjectProject } from '@/content.config';
 import { getCollection } from 'astro:content';
 import { getOccupationId } from '@/helpers/people';
 import { isSubjectProject } from '@/helpers/projects';
+import { courseLevels, getPeriodCourses } from '@/lib/taxonomy';
 
-export const courseLevels = ['técnico', 'graduação', 'mestrado', 'doutorado'];
+export { courseLevels, getPeriodCourses };
 
 export const courses = await getCollection('courses');
 
@@ -98,40 +99,6 @@ export function getSubjectByProject(project: CollectionEntry<'projects'>) {
     return subjects.map((subj) => `${subj}-${period}`);
   }
   return [];
-}
-
-export function getPeriodCourses(periods: string[]) {
-  const result = {};
-
-  periods.forEach((period) => {
-    // Split by '-' and take all parts except the last one as course
-    // This handles course-campus-period format (e.g., cstads-cz-2008.2)
-    const parts = period.split('-');
-    const periodValue = parts.pop(); // Remove and get the last part (period)
-    const course = parts.join('-'); // Join remaining parts as course-campus
-
-    if (!result[course]) {
-      result[course] = [];
-    }
-
-    result[course].push(periodValue);
-  });
-
-  // sort periods
-  Object.keys(result).forEach((course) => {
-    result[course].sort((a, b) => {
-      const [aYear, aPeriod] = a.split('.');
-      const [bYear, bPeriod] = b.split('.');
-
-      if (aYear === bYear) {
-        return bPeriod - aPeriod;
-      }
-
-      return bYear - aYear;
-    });
-  });
-
-  return result;
 }
 
 export function getCourseName(tag: string) {

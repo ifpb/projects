@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import type { Student } from '@/content/config';
-import { Icon } from 'astro-icon';
+import type { Student } from '@/content.config';
+import { Icon } from 'astro-icon/components';
 import Badge from '@/components/Badge.astro';
 import { getProjectsByPerson } from '@/helpers/projects';
 import {
@@ -19,42 +19,53 @@ import {
 
 export interface Props {
   person: CollectionEntry<'people'>;
+  /** Cards da primeira fileira ficam acima da dobra e não devem ser lazy. */
+  eager?: boolean;
 }
 
+// `label` é o nome acessível do link: como o conteúdo é só um ícone, sem ele o
+// leitor de tela anuncia apenas "link".
 let icons = [
   {
     name: 'projects',
+    label: 'Projetos',
     icon: 'ph:code',
     size: 32,
   },
   {
     name: 'linkedin',
+    label: 'LinkedIn',
     icon: 'ph:linkedin-logo',
     size: 32,
   },
   {
     name: 'github',
+    label: 'GitHub',
     icon: 'icon-park:github-one',
     size: 32,
   },
   {
     name: 'figma',
+    label: 'Figma',
     icon: 'ph:figma-logo',
     size: 32,
   },
   {
     name: 'instagram',
+    label: 'Instagram',
     icon: 'ph:instagram-logo',
     size: 32,
   },
   {
     name: 'homepage',
+    label: 'Site pessoal',
     icon: 'ph:identification-badge',
     size: 32,
     // icon: 'ph:address-book',
   },
   {
     name: 'researchgate',
+    label: 'ResearchGate',
     icon: 'la:researchgate',
     size: 36,
     // icon: 'simple-icons:researchgate',
@@ -64,6 +75,7 @@ let icons = [
   },
   {
     name: 'lattes',
+    label: 'Currículo Lattes',
     // icon: 'academicons:lattes',
     // icon: 'academicons:lattes-square',
     image: '/projects/imgs/lattes.svg',
@@ -71,7 +83,7 @@ let icons = [
   },
 ];
 
-const { person } = Astro.props;
+const { person, eager = false } = Astro.props;
 
 const isDev = import.meta.env.DEV;
 
@@ -114,6 +126,8 @@ export const fallbackImage = '/projects/imgs/clarity-avatar-solid.svg';
         alt={name.full}
         title={name.full}
         class="bg-gray-300 object-cover w-full h-[233px] hover:scale-105 transition duration-500"
+        loading={eager ? 'eager' : 'lazy'}
+        decoding="async"
         data-src={getAvatarImageUrl(person)}
         onload="onLoadPersonImage(this)"
         onerror="onErrorPersonImage(this)"
@@ -132,6 +146,8 @@ export const fallbackImage = '/projects/imgs/clarity-avatar-solid.svg';
           <a
             href={link.url}
             target="_blank"
+            title={link.label}
+            aria-label={link.label}
             class="hover:scale-110 transition duration-500 flex items-center justify-center"
           >
             {link.icon && (
@@ -139,13 +155,13 @@ export const fallbackImage = '/projects/imgs/clarity-avatar-solid.svg';
                 name={link.icon}
                 size={link.size}
                 class={`${link.name}-person-link`}
+                is:inline
               />
             )}
             {link.image && avatar.selected === 'none' && (
               <img
                 src={link.image}
-                alt={link.name}
-                title={link.name}
+                alt={link.label}
                 width={link.size}
               />
             )}
