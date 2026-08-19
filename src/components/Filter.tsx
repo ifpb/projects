@@ -302,7 +302,7 @@ const Filter = React.memo(function Filter({
         onClick={toggleShow}
       ></div>
 
-      <div className="absolute w-2/3 md:w-1/3 lg:w-1/4 max-w-[400px] min-h-screen right-0 top-0 bottom-0 bg-gray-100 shadow-lg p-4 z-50 overflow-y-auto">
+      <div className="absolute w-2/3 md:w-1/3 lg:w-1/4 max-w-100 min-h-screen right-0 top-0 bottom-0 bg-gray-100 shadow-lg p-4 z-50 overflow-y-auto">
         <Icon
           icon="material-symbols:close"
           className="float-right text-2xl cursor-pointer"

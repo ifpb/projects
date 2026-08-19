@@ -200,6 +200,10 @@ referências.
 - React só onde há interatividade (`Filter.tsx`, `Accordion.tsx`, `Badge.tsx`), com
   `client:visible`. Todo o resto é `.astro`.
 - Tailwind com classes utilitárias inline; sem CSS-in-JS. `src/styles/global.css` é mínimo.
+- **Prefira a escala a valor arbitrário.** No Tailwind 4 a escala de espaçamento é dinâmica
+  (`--spacing: .25rem`), então `h-[200px]` se escreve `h-50` e `max-w-[400px]` vira
+  `max-w-100` — basta o valor em px ser múltiplo de 4. Fração não funciona: `h-[150px]`
+  precisaria de `h-37.5`, que o Tailwind não gera, então esses permanecem arbitrários.
 - Textos de interface em português; nomes de código em inglês.
 
 ## Commits e PRs

@@ -80,7 +80,7 @@ const previewImage = getPreviewImage(project.id);
   <PersonUtil />
   <div class="flex flex-col md:flex-row gap-5">
     { previewImage && (
-      <div class="project-preview image-preview w-full md:w-[50%] max-w-md">
+      <div class="project-preview image-preview w-full md:w-1/2 max-w-md">
         <PreviewWrapper class="underline" href={previewHomepage}>
           <Image
             src={previewImage}
@@ -93,7 +93,7 @@ const previewImage = getPreviewImage(project.id);
         </PreviewWrapper>
       </div>
     )}
-    <div class={`project-content w-full ${previewImage ? 'md:w-[50%]' : 'md:w-full'}`}>
+    <div class={`project-content w-full ${previewImage ? 'md:w-1/2' : 'md:w-full'}`}>
       <div class="mb-2">
         <div class="font-bold text-lg">Descrição:</div>
         {project.data.description}

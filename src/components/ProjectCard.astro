@@ -33,7 +33,7 @@ const previewImage = getPreviewImage(project.id);
 ---
 
 <div
-  class="project-card md:max-w-[320px] rounded-md overflow-hidden shadow-lg bg-white text-center"
+  class="project-card md:max-w-80 rounded-md overflow-hidden shadow-lg bg-white text-center"
 >
   <section class="relative z-0">
     <figure class="overflow-hidden shadow-md">
@@ -49,7 +49,7 @@ const previewImage = getPreviewImage(project.id);
             <Image
               src={previewImage}
               width={640}
-              class="bg-gray-300 object-cover w-full h-[200px] md:h-[150px] hover:scale-105 transition duration-500"
+              class="bg-gray-300 object-cover w-full h-50 md:h-[150px] hover:scale-105 transition duration-500"
               alt={name}
               loading={eager ? 'eager' : 'lazy'}
               decoding="async"
@@ -57,7 +57,7 @@ const previewImage = getPreviewImage(project.id);
           ) : (
             <img
               src="/projects/imgs/project-placeholder.png"
-              class="bg-gray-300 object-cover w-full h-[200px] md:h-[150px] hover:scale-105 transition duration-500"
+              class="bg-gray-300 object-cover w-full h-50 md:h-[150px] hover:scale-105 transition duration-500"
               alt={name}
               loading={eager ? 'eager' : 'lazy'}
               decoding="async"
