@@ -343,11 +343,9 @@ const Filter = React.memo(function Filter({
                       >
                         {coursesInLevel
                           .sort((a, b) => {
-                            const courseA = getCourse(a);
-                            const courseB = getCourse(b);
-                            return (
-                              courseA?.name.localeCompare(courseB?.name) || 0
-                            );
+                            const courseA = getCourse(a)?.name ?? a;
+                            const courseB = getCourse(b)?.name ?? b;
+                            return courseA.localeCompare(courseB);
                           })
                           .map((courseTag) => {
                             const courseData = getCourse(courseTag);

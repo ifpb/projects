@@ -78,7 +78,7 @@ export function findSubject(subjects: SubjectInfo[], id: string) {
 }
 
 export function getPeriodCourses(periods: string[]) {
-  const result = {};
+  const result: Record<string, string[]> = {};
 
   periods.forEach((period) => {
     // Split by '-' and take all parts except the last one as course
@@ -86,6 +86,8 @@ export function getPeriodCourses(periods: string[]) {
     const parts = period.split('-');
     const periodValue = parts.pop(); // Remove and get the last part (period)
     const course = parts.join('-'); // Join remaining parts as course-campus
+
+    if (!periodValue) return;
 
     if (!result[course]) {
       result[course] = [];
@@ -96,15 +98,15 @@ export function getPeriodCourses(periods: string[]) {
 
   // sort periods
   Object.keys(result).forEach((course) => {
-    result[course].sort((a, b) => {
+    result[course].sort((a: string, b: string) => {
       const [aYear, aPeriod] = a.split('.');
       const [bYear, bPeriod] = b.split('.');
 
       if (aYear === bYear) {
-        return bPeriod - aPeriod;
+        return Number(bPeriod) - Number(aPeriod);
       }
 
-      return bYear - aYear;
+      return Number(bYear) - Number(aYear);
     });
   });
 
