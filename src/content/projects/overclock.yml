@@ -1,7 +1,7 @@
 name: OverClock
 description:
   Projeto do Curso de Engenharia de Software do IFPB 2026.1, com Front, Back-end e persistência de dados.
-  Página de Agedamento de uma Barbearia, com cadastro, login e persistência de dados
+  Página de Agendamento de uma Barbearia, com cadastro, login e persistência de dados.
 addresses:
   preview: https://raw.githubusercontent.com/miguelaraujo3/OverClock/refs/heads/master/preview.png
   homepage: https://overclock-lg3b.onrender.com/
