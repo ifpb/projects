@@ -20,11 +20,20 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
+      # O prebuild baixa ~85 MB de previews de repositórios de terceiros. O cache evita
+      # refazer isso a cada deploy; o manifesto dentro dele garante que só o que mudou
+      # de URL é rebaixado.
+      - name: Cache dos previews de projeto
+        uses: actions/cache@v4
+        with:
+          path: src/assets/previews
+          key: previews-${{ hashFiles('src/content/projects/**/*.yml') }}
+          restore-keys: previews-
       - name: Install, build, and upload your site
-        uses: withastro/action@v3
-        # with:
+        uses: withastro/action@v6
+        with:
+          node-version: 22 # o Astro 6+ exige Node >= 22.12.0
           # path: . # The root location of your Astro project inside the repository. (optional)
-          # node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
           # package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
 
   deploy:

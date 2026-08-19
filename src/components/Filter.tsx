@@ -1,14 +1,17 @@
 import React, { useState, useMemo, useCallback } from 'react';
 import { Icon } from '@iconify/react';
-import {
-  getCourse,
-  getCourseByAbbreviation,
-  getPeriodCourses,
-} from '@/helpers/courses';
-import { getSubject } from '@/helpers/subjects';
 import Accordion from './Accordion';
 import Badge from './Badge';
-import { abbreviationCourses, campi, cities } from '@/content/config';
+import type { CourseInfo, SubjectInfo } from '@/lib/taxonomy';
+import {
+  abbreviationCourses,
+  campi,
+  cities,
+  findCourse,
+  findCourseByAbbreviation,
+  findSubject,
+  getPeriodCourses,
+} from '@/lib/taxonomy';
 
 interface TagGroup {
   name: string;
@@ -20,6 +23,9 @@ interface FilterProps {
   tags: { course: TagGroup; period: TagGroup; subject?: TagGroup };
   peopleTags: string[];
   projectTags: string[];
+  /** Coleções `courses` e `subjects` achatadas pelo BaseLayout — ver `@/lib/taxonomy`. */
+  courses: CourseInfo[];
+  subjects: SubjectInfo[];
 }
 
 interface AccordionConfig {
@@ -85,7 +91,24 @@ const Filter = React.memo(function Filter({
   tags,
   peopleTags,
   projectTags,
+  courses,
+  subjects,
 }: FilterProps) {
+  const getCourse = useCallback(
+    (id: string) => findCourse(courses, id),
+    [courses]
+  );
+
+  const getCourseByAbbreviation = useCallback(
+    (abbreviation: string) => findCourseByAbbreviation(courses, abbreviation),
+    [courses]
+  );
+
+  const getSubject = useCallback(
+    (id: string) => findSubject(subjects, id),
+    [subjects]
+  );
+
   const [isShow, setIsShow] = useState(false);
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
   const [openDetails, setOpenDetails] = useState<string | null>(null);
@@ -167,7 +190,7 @@ const Filter = React.memo(function Filter({
 
       return {
         id: `people-${course}`,
-        title: getCourseByAbbreviation(course).data.name,
+        title: getCourseByAbbreviation(course)?.name ?? course,
         badges,
       };
     },
@@ -183,7 +206,7 @@ const Filter = React.memo(function Filter({
               (acc: Record<string, string[]>, courseTag: string) => {
                 const courseData = getCourse(courseTag);
                 if (courseData) {
-                  const level = courseData.data.level.compact.split(' ')[0];
+                  const level = courseData.level.split(' ')[0];
                   if (!acc[level]) {
                     acc[level] = [];
                   }
@@ -206,7 +229,7 @@ const Filter = React.memo(function Filter({
             const parts = courseTag.split('-');
             const campus = parts.length > 1 ? parts[parts.length - 1] : '';
             const campusName = campus ? ` | ${campus.toUpperCase()}` : '';
-            const courseDisplayName = `${courseData?.data.name}${campusName}`;
+            const courseDisplayName = `${courseData?.name}${campusName}`;
 
             const courseSubjects =
               tags.subject?.values?.filter((subjectTag: string) =>
@@ -237,7 +260,7 @@ const Filter = React.memo(function Filter({
               ) => {
                 const courseData = getCourseByAbbreviation(course);
                 const level =
-                  courseData?.data.level.compact.split(' ')[0] || 'Outros';
+                  courseData?.level.split(' ')[0] || 'Outros';
                 if (!acc[level]) {
                   acc[level] = [];
                 }
@@ -275,7 +298,7 @@ const Filter = React.memo(function Filter({
   return isShow ? (
     <>
       <div
-        className="fixed h-full w-full right-0 top-0 bg-black bg-opacity-50 z-10"
+        className="fixed h-full w-full right-0 top-0 bg-black/50 z-10"
         onClick={toggleShow}
       ></div>
 
@@ -323,9 +346,7 @@ const Filter = React.memo(function Filter({
                             const courseA = getCourse(a);
                             const courseB = getCourse(b);
                             return (
-                              courseA?.data.name.localeCompare(
-                                courseB?.data.name
-                              ) || 0
+                              courseA?.name.localeCompare(courseB?.name) || 0
                             );
                           })
                           .map((courseTag) => {
@@ -337,7 +358,7 @@ const Filter = React.memo(function Filter({
                             const campusName = campus
                               ? ` | ${campus.toUpperCase()}`
                               : '';
-                            const displayName = `${courseData?.data.name}${campusName}`;
+                            const displayName = `${courseData?.name}${campusName}`;
 
                             return (
                               <Badge
@@ -381,7 +402,7 @@ const Filter = React.memo(function Filter({
                       {courseSubjects.map((subjectTag: string) => {
                         const subjectData = getSubject(subjectTag);
                         const subjectName =
-                          subjectData?.data.name.full || subjectTag;
+                          subjectData?.name || subjectTag;
 
                         const subjectPeriods =
                           tags.period?.values?.filter((periodTag: string) =>
@@ -493,8 +514,8 @@ const Filter = React.memo(function Filter({
                   <div className="ml-2 mt-2">
                     {coursesInLevel
                       .sort(([a], [b]) =>
-                        getCourseByAbbreviation(a).data.name.localeCompare(
-                          getCourseByAbbreviation(b).data.name
+                        (getCourseByAbbreviation(a)?.name ?? a).localeCompare(
+                          getCourseByAbbreviation(b)?.name ?? b
                         )
                       )
                       .map(([course, periods]: [string, string[]]) => {

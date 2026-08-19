@@ -1,5 +1,5 @@
 ---
-import { Icon } from 'astro-icon';
+import { Icon } from 'astro-icon/components';
 ---
 
 <header class="bg-gray-900 text-white">
@@ -14,10 +14,12 @@ import { Icon } from 'astro-icon';
           <a
             class="hover:text-gray-300 text-gray-100"
             href="https://github.com/ifpb/projects"
+            title="Repositório no GitHub"
+            aria-label="Repositório no GitHub"
           >
             <Icon name="mdi:github" size={24} class="github-project-link" />
           </a>
-          <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+          <button id="menu-btn" class="md:hidden text-white focus:outline-hidden">
             <svg
               class="w-6 h-6"
               fill="none"

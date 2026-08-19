@@ -1,5 +1,5 @@
 import type { CollectionEntry } from 'astro:content';
-import type { Student, Occupation } from '@/content/config';
+import type { Student, Occupation } from '@/content.config';
 import { getCollection } from 'astro:content';
 import { getProjectsByPerson, isSubjectProject } from '@/helpers/projects';
 import {
@@ -9,6 +9,15 @@ import {
   getSubjectByProject,
   getLastCourseLevelIndexByPeople,
 } from '@/helpers/courses';
+
+// O content layer da v5 desserializa a coleção a cada `getCollection()`, e estes
+// helpers são chamados dentro de laços — sem memoizar, o build estoura a memória.
+let peopleCache: Promise<CollectionEntry<'people'>[]> | undefined;
+
+function allPeople() {
+  peopleCache ??= getCollection('people');
+  return peopleCache;
+}
 
 export function getFirstPersonId(person: CollectionEntry<'people'>) {
   if (isStudent(person)) {
@@ -58,16 +67,36 @@ export function getOccupationId(occupation: Occupation) {
   }
 }
 
-export function getAvatarImageUrl(person: CollectionEntry<'people'>) {
+/**
+ * URL do avatar. `size` pede ao GitHub uma versão redimensionada (`?s=`), o que só
+ * faz sentido para `avatars.githubusercontent.com` — `avatar.selected` pode apontar
+ * para ResearchGate, Lattes ou LinkedIn.
+ *
+ * Cuidado ao escolher `size`: o `PersonUtil.astro` troca por placeholder qualquer
+ * avatar com menos de 2000 bytes, por ser assim que ele reconhece o ícone padrão do
+ * GitHub. Abaixo de ~128px uma foto real cai nessa faixa e seria descartada.
+ */
+export function getAvatarImageUrl(
+  person: CollectionEntry<'people'>,
+  size?: number
+) {
   const { avatar } = person.data;
 
   if (avatar.selected === 'none') {
     return 'none';
   }
 
-  return avatar.selected
+  const url = avatar.selected
     ? avatar[avatar.selected]
     : avatar.githubUC || avatar.github;
+
+  if (!size || !url?.includes('avatars.githubusercontent.com')) {
+    return url;
+  }
+
+  const sized = new URL(url);
+  sized.searchParams.set('s', String(size));
+  return sized.toString();
 }
 
 export function isStudent(person: CollectionEntry<'people'>) {
@@ -255,7 +284,7 @@ export function getPersonTagGroups(person: CollectionEntry<'people'>) {
 }
 
 export async function getAllStudentTags() {
-  const people = await getCollection('people');
+  const people = await allPeople();
 
   const studentTags = await Promise.all(
     people.map(async (person) => {
@@ -273,7 +302,7 @@ export async function getAllStudentTags() {
 }
 
 export async function getAllPersonTags() {
-  const people = await getCollection('people');
+  const people = await allPeople();
 
   const peopleTags = await getPeopleTagsMap(people);
 
@@ -291,7 +320,7 @@ export async function getAllPersonTags() {
 }
 
 export async function getAllPeopleTagGroups() {
-  const people = await getCollection('people');
+  const people = await allPeople();
 
   const tags = people.reduce((acc, person) => {
     const tagGroups = getPersonTagGroups(person);
@@ -400,7 +429,7 @@ export function sortPeople(
 }
 
 export async function getPeople() {
-  const people = await getCollection('people');
+  const people = [...(await allPeople())];
 
   people.sort(sortPeople);
 
@@ -408,7 +437,7 @@ export async function getPeople() {
 }
 
 export async function getPeopleByProject(project: CollectionEntry<'projects'>) {
-  const people = await getCollection('people');
+  const people = await allPeople();
 
   const filteredPeople = people.reduce(
     (acc: CollectionEntry<'people'>[], person) => {
@@ -427,7 +456,7 @@ export async function getPeopleByProject(project: CollectionEntry<'projects'>) {
 }
 
 export async function getPeopleByTag(tag: string) {
-  const people = await getCollection('people');
+  const people = await allPeople();
 
   const peopleTags = await getPeopleTagsMap(people);
 

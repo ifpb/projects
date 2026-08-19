@@ -1,6 +1,7 @@
 ---
 import type { ProjectsWithPeople } from '@/pages/codes/page/[page].astro';
 import type { CollectionEntry } from 'astro:content';
+import { url } from '@/lib/url';
 
 export interface Props {
   type: string;
@@ -20,10 +21,20 @@ export interface Props {
 
 const { page, type, index }: Props = Astro.props;
 
-const pagePath = `/${type}/${index}`;
+const pagePath = `${type}/${index}`;
 
-page.url.first = `${pagePath}/1`;
-page.url.last = `${pagePath}/${page.lastPage}`;
+// As URLs são montadas aqui, e não a partir de `page.url.*`, porque o formato
+// daquele objeto mudou entre majors do Astro (a v5 passou a incluir o `base`).
+const pageUrl = (pageNumber: number) => url(`${pagePath}/${pageNumber}`);
+
+const firstUrl = pageUrl(1);
+const lastUrl = pageUrl(page.lastPage);
+// `undefined` faz o Astro omitir o atributo: um `<a>` sem `href` não é link, enquanto
+// `href=""` apontaria para a própria página.
+const prevUrl =
+  page.currentPage > 1 ? pageUrl(page.currentPage - 1) : undefined;
+const nextUrl =
+  page.currentPage < page.lastPage ? pageUrl(page.currentPage + 1) : undefined;
 
 function getPageNumbers(
   size: number,
@@ -41,6 +52,9 @@ function getPageNumbers(
 }
 
 const pages = getPageNumbers(4, page.lastPage, page.currentPage);
+
+const stepClass =
+  'px-4 py-2 text-slate-600 transition-colors duration-150 bg-white border border-r-0 border-slate-600 focus:shadow-outline hover:bg-slate-100';
 ---
 
 <div class="mt-12 flex items-center flex-wrap justify-center">
@@ -48,25 +62,33 @@ const pages = getPageNumbers(4, page.lastPage, page.currentPage);
     <ul class="flex flex-row">
       <li>
         <a
-          href={page.url.first ? `/projects${page.url.first}` : ''}
-          class="px-4 py-2 text-slate-600 transition-colors duration-150 bg-white border border-r-0 border-slate-600 rounded-l-lg focus:shadow-outline hover:bg-slate-100"
+          href={firstUrl}
+          aria-label="Primeira página"
+          class={`${stepClass} rounded-l-lg`}
         >
           &laquo;
         </a>
       </li>
       <li>
-        <a
-          href={page.url.prev ? `/projects${page.url.prev}` : ''}
-          class="px-4 py-2 text-slate-600 transition-colors duration-150 bg-white border border-r-0 border-slate-600 focus:shadow-outline hover:bg-slate-100"
-        >
-          &lsaquo;
-        </a>
+        {
+          prevUrl ? (
+            <a href={prevUrl} aria-label="Página anterior" class={stepClass}>
+              &lsaquo;
+            </a>
+          ) : (
+            <span aria-hidden="true" class={`${stepClass} opacity-50`}>
+              &lsaquo;
+            </span>
+          )
+        }
       </li>
       {
         pages.map((pageNumber) => (
           <li>
             <a
-              href={`/projects${pagePath}/${pageNumber}`}
+              href={pageUrl(pageNumber)}
+              aria-label={`Página ${pageNumber}`}
+              aria-current={pageNumber === page.currentPage ? 'page' : undefined}
               class={`${
                 pageNumber === page.currentPage
                   ? 'text-white bg-slate-600'
@@ -79,17 +101,23 @@ const pages = getPageNumbers(4, page.lastPage, page.currentPage);
         ))
       }
       <li>
-        <a
-          href={page.url.next ? `/projects${page.url.next}` : ''}
-          class="px-4 py-2 text-slate-600 transition-colors duration-150 bg-white border border-r-0 border-slate-600 focus:shadow-outline hover:bg-slate-100"
-        >
-          &rsaquo;
-        </a>
+        {
+          nextUrl ? (
+            <a href={nextUrl} aria-label="Próxima página" class={stepClass}>
+              &rsaquo;
+            </a>
+          ) : (
+            <span aria-hidden="true" class={`${stepClass} opacity-50`}>
+              &rsaquo;
+            </span>
+          )
+        }
       </li>
       <li>
         <a
-          href={page.url.last ? `/projects${page.url.last}` : ''}
-          class="px-4 py-2 text-slate-600 transition-colors duration-150 bg-white border border-slate-600 rounded-r-lg focus:shadow-outline hover:bg-slate-100"
+          href={lastUrl}
+          aria-label="Última página"
+          class={`${stepClass} rounded-r-lg border-r`}
         >
           &raquo;
         </a>
