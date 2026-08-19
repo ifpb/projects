@@ -1,0 +1,26 @@
+name: OverClock
+description:
+  Projeto do Curso de Engenharia de Software do IFPB 2026.1, com Front, Back-end e persistência de dados.
+  Página de Agedamento de uma Barbearia, com cadastro, login e persistência de dados
+addresses:
+  preview: https://raw.githubusercontent.com/miguelaraujo3/OverClock/refs/heads/master/preview.png
+  homepage: https://overclock-lg3b.onrender.com/
+  repository: https://github.com/MiguelAraujo3/OverClock
+
+category:
+  type: subject
+  subject: 
+    - pw2-csbes-jp
+    - ip-csbes-jp
+    - ies-csbes-jp
+  period: 2026.1 
+tags:
+  - HTML
+  - CSS
+  - PYTHON
+  - FLASK
+  - GIT
+owners:
+  - 202614320014
+  - 202614320030
+  - 202614320015
