@@ -1,0 +1,15 @@
+name: Mininet-WEB
+description: O Mininet-WEB é uma aplicação Web para criação e gerenciamento interativo de topologias de redes no Mininet.
+addresses:
+  preview: https://github.com/1valcl3b/mininet-WEB/blob/main/images/mininet-web-logo.png?raw=true
+  repository: https://github.com/1valcl3b/mininet-WEB/
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2026.2
+tags:
+  - html
+  - css
+  - javascript
+owners:
+  - 20232380013
