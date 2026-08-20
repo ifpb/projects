@@ -1,0 +1,15 @@
+name: Nome do Seu Projeto
+description: Uma breve descrição de duas linhas sobre o que o seu projeto faz.
+addresses:
+  preview: https://github.com
+  repository: https://github.com # Link do código do seu projeto
+category:
+  type: subject
+  subject: dw-cstrc-jp # Código da disciplina fornecido pelo professor
+  period: 2026.1
+tags:
+  - html
+  - css
+  - javascript
+owners:
+  - SUAMATRICULA # A mesma matrícula que você usou no arquivo de pessoa
