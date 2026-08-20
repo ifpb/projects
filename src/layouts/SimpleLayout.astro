@@ -1,18 +1,23 @@
 ---
 import GoogleAnalytics from '@/components/GoogleAnalytics.astro';
+import NavBar from '@/components/NavBar.astro';
+
+import '@/styles/global.css';
 ---
 
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/projects/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>IFPB Code</title>
   </head>
-  <body>
+  <body class="relative bg-gray-100">
+    <NavBar />
     <slot />
 
     <GoogleAnalytics />
   </body>
 </html>
+

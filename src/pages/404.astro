@@ -1,32 +1,21 @@
 ---
-import SimpleLayout from '@/layouts/SimpleLayout.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
 ---
 
-<SimpleLayout>
-  <main
-    class="h-screen w-full flex flex-col justify-center items-center bg-gray-900"
-  >
-    <h1 class="text-9xl font-extrabold text-white tracking-widest">404</h1>
-    <!-- <div class="bg-[#FF6A3D] px-2 text-sm rounded-sm rotate-12 absolute"> -->
-    <!-- Página não encontrada -->
-    <div class="bg-[#FF6A3D] px-2 text-sm rounded-sm">
+<BaseLayout pageTitle="Página não encontrada">
+  <div class="flex flex-col justify-center items-center py-12" data-pagefind-ignore>
+    <h2 class="text-8xl sm:text-9xl font-extrabold text-gray-900 tracking-widest">404</h2>
+    <div class="bg-[#FF6A3D] text-white px-3 py-1.5 text-sm font-medium rounded-md mt-4">
       Oxente! Num achei essa página, não!
     </div>
-    <button class="mt-5">
+    <div class="mt-8">
       <a
-        class="relative inline-block text-sm font-medium text-[#FF6A3D] group active:text-orange-500 focus:outline-hidden focus:ring-3"
+        class="inline-block rounded-sm border border-gray-900 bg-gray-900 px-8 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-gray-900 focus:outline-hidden active:text-white/75"
         href="/projects/"
       >
-        <span
-          class="absolute inset-0 transition-transform translate-x-0.5 translate-y-0.5 bg-[#FF6A3D] group-hover:translate-y-0 group-hover:translate-x-0"
-        ></span>
-
-        <span
-          class="relative block px-8 py-3 bg-gray-900 border border-current"
-        >
-          Tela Inicial
-        </span>
+        Tela Inicial
       </a>
-    </button>
-  </main>
-</SimpleLayout>
+    </div>
+  </div>
+</BaseLayout>
+
