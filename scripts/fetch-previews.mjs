@@ -48,7 +48,7 @@ function collectTargets() {
       const data = parse(readFileSync(join(projectsDir, file), 'utf-8'));
       const url = data?.addresses?.preview;
       if (!url) return [];
-      return [{ id: file.replace(/\.yml$/, ''), url }];
+      return [{ id: file.replace(/\.yml$/, '').toLowerCase(), url }];
     });
 }
 

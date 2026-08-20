@@ -15,11 +15,11 @@ const files = import.meta.glob<{ default: ImageMetadata }>(
 
 const previewsById = new Map<string, ImageMetadata>(
   Object.entries(files).map(([path, module]) => [
-    path.split('/').pop()!.replace(/\.[^.]+$/, ''),
+    path.split('/').pop()!.replace(/\.[^.]+$/, '').toLowerCase(),
     module.default,
   ])
 );
 
 export function getPreviewImage(projectId: string) {
-  return previewsById.get(projectId);
+  return previewsById.get(projectId.toLowerCase());
 }
