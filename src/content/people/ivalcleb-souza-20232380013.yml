@@ -1,0 +1,14 @@
+name:
+  compact: Ivalcleb Souza
+  full: Ivalcleb Leôncio Benigno de Souza
+avatar:
+  github: https://github.com/1valcl3b.png
+occupations:
+  - id: 20232380013
+    type: student
+    course: cstrc-jp  # curso-campus (formato unificado)
+    isFinished: false  # true se já concluiu, false se ainda está cursando
+addresses:
+  github: https://github.com/1valcl3b
+  linkedin: https://www.linkedin.com/in/ivalcleb-souza
+  email: ivalcleb.leoncio@acadelmico.ifpb.edu.br
