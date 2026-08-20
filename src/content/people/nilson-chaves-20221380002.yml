@@ -1,0 +1,12 @@
+name:
+  compact: Nilson Chaves
+  full: Nilson Chaves da Silva # Seu nome completo
+avatar:
+  github: https://github.com
+occupations:
+  - id: SUAMATRICULA # Substitua pela sua matrícula real
+    type: student
+    course: cstsi-jp # Mantenha ou altere para a sigla do seu curso
+    isFinished: false
+addresses:
+  github: https://github.com
