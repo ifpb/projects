@@ -1,0 +1,16 @@
+name: PulseNOC
+description: Painel web para Monitoramento de Centro de Operações de Rede (NOC). Oferece uma interface limpa e direta para administradores visualizarem a saúde da infraestrutura, status dos links e alertas em tempo real.
+addresses:
+  repository: https://github.com/PedroHenryqueO/pulsenoc
+  preview: https://github.com/PedroHenryqueO/pulsenoc/blob/main/preview.png?raw=true
+  homepage: https://pedrohenryqueo.github.io/pulsenoc/
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2026.2
+tags:
+  - html
+  - css
+  - tailwindcss
+owners:
+  - 20251380020
