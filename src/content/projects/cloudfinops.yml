@@ -1,0 +1,22 @@
+name: CloudFinOps
+description: Plataforma Web de observabilidade financeira de infraestrutura em nuvem, com análise de custos, detecção de anomalias e governança de tags.
+addresses:
+  preview: https://github.com/juliasantss/cloudfinops/blob/main/assets/preview.png?raw=true
+  homepage: https://juliasantss.github.io/cloudfinops/
+  repository: https://github.com/juliasantss/cloudfinops
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2026.2
+tags:
+  - html
+  - css
+  - javascript
+  - cloud-computing
+  - aws
+  - finops
+  - redes-de-computadores
+owners:
+  - 20231380011
+  - 20251380038
+  - 20251380004
