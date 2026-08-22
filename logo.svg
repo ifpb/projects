@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="NetStock">
+  <rect width="96" height="96" rx="20" fill="#d9f1e9"/>
+  <path d="M22 31 48 18l26 13-26 13-26-13Z" fill="#1e9db3"/>
+  <path d="M22 31v31l26 14V44L22 31Z" fill="#2d8a68"/>
+  <path d="m74 31-26 13v32l26-14V31Z" fill="#12354a"/>
+  <circle cx="48" cy="44" r="7" fill="#fff"/>
+  <path d="M48 44 30 55m18-11 18 11" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="30" cy="55" r="4" fill="#fff"/><circle cx="66" cy="55" r="4" fill="#fff"/>
+</svg>
