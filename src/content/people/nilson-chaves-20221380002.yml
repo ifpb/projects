@@ -1,12 +1,13 @@
 name:
   compact: Nilson Chaves
-  full: Nilson Chaves da Silva # Seu nome completo
+  full: Nilson Vinícius Aurelio Chaves
 avatar:
-  github: https://github.com
+  github: https://github.com/Nilson-Chaves.png
 occupations:
-  - id: SUAMATRICULA # Substitua pela sua matrícula real
+  - id: 20221380002
     type: student
-    course: cstsi-jp # Mantenha ou altere para a sigla do seu curso
+    course: cstrc-jp
     isFinished: false
 addresses:
-  github: https://github.com
+  github: https://github.com/Nilson-Chaves
+  homepage: https://nilson-chaves.github.io/NetStock/
