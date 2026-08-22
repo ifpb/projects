@@ -1,0 +1,15 @@
+name:
+  compact: Júlia Beatriz
+  full: Júlia Beatriz da Silva Santos
+avatar:
+  github: https://github.com/juliasantss.png
+  githubUC: https://avatars.githubusercontent.com/u/140010179?v=4
+occupations:
+  - id: 20231380011
+    type: student
+    course: cstrc-jp
+    isFinished: false
+addresses:
+  github: https://github.com/juliasantss
+  linkedin: https://www.linkedin.com/in/julia-beatriz-santss/
+  email: julia-santos.js@academico.ifpb.edu.br
