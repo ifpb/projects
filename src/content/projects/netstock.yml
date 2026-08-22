@@ -1,0 +1,20 @@
+name: NetStock
+description:
+  Prototipo estatico para inventario de ativos de redes de computadores,
+  com dashboard, equipamentos e controle de manutencao.
+addresses:
+  preview: https://github.com/Nilson-Chaves/NetStock/blob/main/logo.svg?raw=true
+  homepage: https://nilson-chaves.github.io/NetStock/
+  repository: https://github.com/Nilson-Chaves/NetStock
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2026.2
+tags:
+  - html
+  - css
+  - redes de computadores
+  - inventario
+owners:
+  - 20221380002
+  - 20221380031
