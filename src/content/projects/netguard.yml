@@ -1,0 +1,17 @@
+name: NetGuard
+description: Painel central para acompanhar a saúde e o desempenho de dispositivos reais (roteadores, servidores, switches) conectados a uma rede.
+addresses:
+  preview: https://github.com/andreelias-rc/NetGuard/blob/main/preview_netguard.png?raw=true
+  homepage: https://NetGuard.github.io/andreelias-rc/
+  repository: https://github.com/andreelias-rc/NetGuard
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2026.2
+tags:
+  - javascript
+  - css
+  - html
+owners:
+  - 20251380024
+  - 20242380002
