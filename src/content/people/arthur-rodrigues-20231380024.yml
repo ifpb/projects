@@ -1,0 +1,17 @@
+name:
+  compact: Arthur Rodrigues
+  full: Arthur Rodrigues Falcão
+avatar:
+  github: https://avatars.githubusercontent.com/u/320046816?v=4&size=64
+occupations:
+  - id: 20231380024
+    type: student
+    course: cstrc-jp  # curso-campus (formato unificado)
+    isFinished: false  # true se já concluiu, false se ainda está cursando
+addresses:
+  github: https://github.com/rodriguesarthur-dotcom
+  linkedin: https://www.linkedin.com/in/luizcarloschaves/
+  instagram: https://www.instagram.com/luizcrchaves/
+  bluesky: https://bsky.app/profile/luizcarloschaves.bsky.social
+  homepage: https://luizchaves.github.io
+  email: luiz.chaves@ifpb.edu.br
