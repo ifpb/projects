@@ -1,0 +1,16 @@
+name:
+  compact: Vinicius Maia
+  full: Vinicius Ribeiro Maia
+avatar:
+  github: https://github.com/vinyrm.png
+  githubUC: https://avatars.githubusercontent.com/u/243560579?v=4&size=64
+occupations:
+  - id: 20251380032
+    type: student
+    course: cstrc-jp
+    isFinished: false
+addresses:
+  github: https://github.com/vinyrm
+  linkedin: https://www.linkedin.com/in/viniifpb/
+  instagram: https://www.instagram.com/viny.rm/
+  email: maia.vinicius@academico.ifpb.edu.br
