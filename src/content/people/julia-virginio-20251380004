@@ -1,0 +1,14 @@
+name:
+  compact: Júlia Virgino
+  full: Júlia Evelim Virginio da Silva
+avatar:
+  github: https://github.com/evelimjulia.png
+occupations:
+  - id: 20251380004
+    type: student
+    course: ctrc-jp  # curso-campus (formato unificado)
+    isFinished: false  # true se já concluiu, false se ainda está cursando
+addresses:
+  github: https://github.com/evelimjulia
+  linkedin: https://www.linkedin.com/in/júlia-evelim/
+ 
