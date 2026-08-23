@@ -1,0 +1,14 @@
+name:
+  compact: Arthur Rodrigues
+  full: Arthur Rodrigues Falcão
+avatar:
+  github: https://github.com/rodriguesarthur-dotcom.png
+  githubUC: https://avatars.githubusercontent.com/u/320046816?v=4&size=64
+occupations:
+  - id: 20231380024
+    type: student
+    course: cstrc-jp
+    isFinished: false
+addresses:
+  github: https://github.com/rodriguesarthur-dotcom
+  linkedin: https://www.linkedin.com/in/arthur-rodrigues-101452284/

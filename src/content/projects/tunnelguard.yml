@@ -1,7 +1,7 @@
 name: TunnelGuard
 description: Sistema Web de monitoramento VPN de uma rede matriz e suas filiais.
 addresses:
-  preview: https://github.com/brunoanderson/tunnelguard/blob/main/tunnelguard.png
+  preview: https://github.com/brunoanderson/tunnelguard/blob/main/tunnelguard.png?raw=true
   homepage: https://brunoanderson.github.io/tunnelguard/
   repository: https://github.com/brunoanderson/tunnelguard
 category:
