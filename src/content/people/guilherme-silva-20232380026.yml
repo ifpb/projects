@@ -1,0 +1,14 @@
+name:
+  compact: Guilherme Silva
+  full: Guilherme Manoel da Silva
+avatar:
+  github: https://github.com/Gui-IFPB.png
+occupations:
+  - id: 20232380026
+    type: student
+    course: cstrc-jp
+    isFinished: false
+addresses:
+  github: https://github.com/Gui-IFPB
+  linkedin: https://www.linkedin.com/in/guilherme-manoel-b70609425/
+  email: guilherme.manoel@academico.ifpb.edu.br
