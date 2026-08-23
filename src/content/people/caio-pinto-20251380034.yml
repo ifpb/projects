@@ -1,0 +1,13 @@
+name:
+  compact: Caio Pinto
+  full: Caio Lucas de Carvalho Pinto
+avatar:
+  github: https://github.com/caiolucas12.png
+occupations:
+  - id: 20251380034
+    type: student
+    course: cstrc-jp
+    isFinished: false
+addresses:
+  github: https://github.com/caiolucas12
+  linkedin: https://www.linkedin.com/in/caio-pinto/
