@@ -1,0 +1,14 @@
+name:
+  compact: Kalel Aleksander
+  full: Kalel Aleksander Nery Bezerra
+avatar:
+  github: https://github.com/kalel-ifpb.png
+occupations:
+  - id: 20251380030
+    type: student
+    course: cstsi-jp
+    isFinished: true
+addresses:
+  github: https://github.com/kalel-ifpb
+  linkedin: https://www.linkedin.com/in/kalel-aleksander-b43b753ba
+  email: kalel.nery@academico.ifpb.edu.br
