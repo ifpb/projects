@@ -3,7 +3,6 @@ description:
   Sistema voltado para gerenciar e auxiliar o controle das defesas de estágios
   no IFPB.
 addresses:
-  preview: https://github.com/LucaMarques/GDE-Gerenciamento-de-Defesa-de-Estagio/blob/main/preview/preview.png?raw=true
   homepage: https://gde-gerenciamento-de-defesa-de-esta.vercel.app
   repository: https://github.com/LucaMarques/GDE-Gerenciamento-de-Defesa-de-Estagio
 category:

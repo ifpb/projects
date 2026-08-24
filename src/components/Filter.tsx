@@ -50,7 +50,7 @@ const CODES_EXTRA_ACCORDIONS: AccordionConfig[] = [
     title: 'Recursos',
     badges: [
       { url: '/projects/codes/design/1', value: 'design' },
-      { url: '/projects/codes/workflow/1', value: 'projeto' },
+      { url: '/projects/codes/workflow/1', value: 'workflow' },
       { url: '/projects/codes/homepage/1', value: 'homepage' },
     ],
   },

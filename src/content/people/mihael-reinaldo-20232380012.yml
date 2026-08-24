@@ -1,0 +1,15 @@
+name:
+  compact: Mihael Escobar
+  full: Mihael Reinaldo Araújo de Albuquerque Escobar
+avatar:
+  github: https://github.com/Mihael-IFPB.png
+  githubUC: https://avatars.githubusercontent.com/u/187328186?v=4
+occupations:
+  - id: 20232380012
+    type: student
+    course: cstrc-jp
+    isFinished: false
+addresses:
+  github: https://github.com/Mihael-IFPB
+  linkedin: https://www.linkedin.com/in/mihael-reinaldo-38664a430/
+  email: mihael.escobar@academico.ifpb.edu.br

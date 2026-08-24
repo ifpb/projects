@@ -1,19 +1,18 @@
-name: IFPB Projects
-description: Projeto da matéria de desenvolvimento web, um site que mede a latência de ping entre o cliente e o servidor. 
+name: ProjetoPING
+description: Projeto da matéria de desenvolvimento web, um site que mede a latência de ping entre o cliente e o servidor.
 addresses:
-  preview: https://github.com/wfillipe/projetoPING.COM/blob/main/preview.png
+  preview: https://github.com/wfillipe/projetoPING.COM/blob/main/preview.png?raw=true
   homepage: https://wfillipe.github.io/projetoPING.COM/
   repository: https://github.com/wfillipe/projetoPING.COM
-  design: https://www.canva.com/design/example 
 category:
-  type: subject  
+  type: subject
   subject: dw-cstrc-jp
-  period: 2026.2   
+  period: 2026.2
 tags:
   - javascript
-  - astro.js
-  - typescript
+  - html
+  - css
 owners:
-  - 20251380002  # matrícula/ID dos colaboradores
+  - 20251380002
   - 20251380021
   - 20251380030
