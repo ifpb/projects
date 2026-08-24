@@ -1,0 +1,14 @@
+name:
+  compact: Gabriel Neres
+  full: Gabriel Neres de Araujo
+avatar:
+  github: https://github.com/GabrielNeres44.png
+occupations:
+  - id: 20251380035
+    type: student
+    course: cstrc-jp
+    isFinished: false
+addresses:
+  github: https://github.com/GabrielNeres44
+  linkedin: https://www.linkedin.com/in/gabriel-ner
+  email: neres.gabriel@academico.ifpb.edu.br
