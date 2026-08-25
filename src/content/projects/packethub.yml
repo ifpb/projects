@@ -1,0 +1,19 @@
+name: PacketHub
+description: Projeto de Aplicação Web para captura, análise visual e inspeção por camadas de pacotes de rede em tempo real.
+addresses:
+  preview: https://raw.githubusercontent.com/andreilaureanoc-cpu/packethub/refs/heads/main/images/logo-camadas.svg
+  homepage: https://andreilaureanoc-cpu.github.io/packethub/
+  repository: https://github.com/andreilaureanoc-cpu/packethub
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2026.2
+tags:
+  - html
+  - css
+  - javascript
+  - service-monitoring
+owners:
+  - 20251380016
+  - 20251380019
+  - 20251380031
