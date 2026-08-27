@@ -1,5 +1,4 @@
 import React, { useState, useMemo, useCallback } from 'react';
-import { Icon } from '@iconify/react';
 import Accordion from './Accordion';
 import Badge from './Badge';
 import type { CourseInfo, SubjectInfo } from '@/lib/taxonomy';
@@ -21,8 +20,8 @@ interface TagGroup {
 interface FilterProps {
   type: string;
   tags: { course: TagGroup; period: TagGroup; subject?: TagGroup };
-  peopleTags: string[];
-  projectTags: string[];
+  peopleTags?: string[];
+  projectTags?: string[];
   /** Coleções `courses` e `subjects` achatadas pelo BaseLayout — ver `@/lib/taxonomy`. */
   courses: CourseInfo[];
   subjects: SubjectInfo[];
@@ -89,8 +88,8 @@ const PEOPLE_EXTRA_ACCORDIONS: AccordionConfig[] = [
 const Filter = React.memo(function Filter({
   type,
   tags,
-  peopleTags,
-  projectTags,
+  peopleTags = [],
+  projectTags = [],
   courses,
   subjects,
 }: FilterProps) {
@@ -113,25 +112,28 @@ const Filter = React.memo(function Filter({
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
   const [openDetails, setOpenDetails] = useState<string | null>(null);
 
-  // Memoizar badges de tags de projetos
+  // Memoizar badges de tags de projetos (somente quando a gaveta de filtros estiver aberta)
   const projectTagsBadges = useMemo(
     () =>
-      projectTags.map((tag) => ({
-        url: `/projects/codes/${encodeURIComponent(tag)}/1`,
-        value: tag,
-      })),
-    [projectTags]
+      isShow && type === 'codes'
+        ? projectTags.map((tag) => ({
+            url: `/projects/codes/${encodeURIComponent(tag)}/1`,
+            value: tag,
+          }))
+        : [],
+    [isShow, type, projectTags]
   );
 
   // Atualizar CODES_EXTRA_ACCORDIONS apenas quando necessário
   useMemo(() => {
+    if (!isShow || type !== 'codes') return;
     const codesTagsAccordion = CODES_EXTRA_ACCORDIONS.find(
       (acc) => acc.id === 'codes-tags'
     );
     if (codesTagsAccordion) {
       codesTagsAccordion.badges = projectTagsBadges;
     }
-  }, [projectTagsBadges]);
+  }, [isShow, type, projectTagsBadges]);
 
   const toggleShow = useCallback(() => {
     setIsShow(!isShow);
@@ -194,13 +196,13 @@ const Filter = React.memo(function Filter({
         badges,
       };
     },
-    [peopleTags]
+    [peopleTags, getCourseByAbbreviation]
   );
 
-  // Memoizar dados para códigos
+  // Memoizar dados para códigos (executa somente quando isShow === true)
   const codesGroupedByLevel = useMemo(
     () =>
-      type === 'codes'
+      isShow && type === 'codes'
         ? Object.entries(
             tags.course?.values?.reduce(
               (acc: Record<string, string[]>, courseTag: string) => {
@@ -218,12 +220,12 @@ const Filter = React.memo(function Filter({
             ) || {}
           )
         : [],
-    [type, tags.course?.values]
+    [isShow, type, tags.course?.values, getCourse]
   );
 
   const codesSubjectsByCourse = useMemo(
     () =>
-      type === 'codes'
+      isShow && type === 'codes'
         ? tags.course?.values?.map((courseTag: string) => {
             const courseData = getCourseByAbbreviation(courseTag);
             const parts = courseTag.split('-');
@@ -245,13 +247,13 @@ const Filter = React.memo(function Filter({
               : null;
           })
         : [],
-    [type, tags.course?.values, tags.subject?.values]
+    [isShow, type, tags.course?.values, tags.subject?.values, getCourseByAbbreviation]
   );
 
-  // Memoizar dados para pessoas
+  // Memoizar dados para pessoas (executa somente quando isShow === true)
   const peopleGroupedByLevel = useMemo(
     () =>
-      type === 'people'
+      isShow && type === 'people'
         ? Object.entries(
             Object.entries(getPeriodCourses(tags.period.values)).reduce(
               (
@@ -271,12 +273,12 @@ const Filter = React.memo(function Filter({
             )
           )
         : [],
-    [type, tags.period.values]
+    [isShow, type, tags.period.values, getCourseByAbbreviation]
   );
 
   const availableCampuses = useMemo(
     () =>
-      type === 'people'
+      isShow && type === 'people'
         ? Object.keys(campi)
             .filter((campusKey) => {
               const campusCode = campusKey.replace('ifpb-', '');
@@ -292,7 +294,7 @@ const Filter = React.memo(function Filter({
               };
             })
         : [],
-    [type, peopleTags]
+    [isShow, type, peopleTags]
   );
 
   return isShow ? (
@@ -303,11 +305,17 @@ const Filter = React.memo(function Filter({
       ></div>
 
       <div className="absolute w-2/3 md:w-1/3 lg:w-1/4 max-w-100 min-h-screen right-0 top-0 bottom-0 bg-gray-100 shadow-lg p-4 z-50 overflow-y-auto">
-        <Icon
-          icon="material-symbols:close"
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          viewBox="0 0 24 24"
+          fill="currentColor"
           className="float-right text-2xl cursor-pointer"
           onClick={toggleShow}
-        />
+        >
+          <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12z" />
+        </svg>
 
         <h1 className="font-bold text-xl capitalize text-center mb-8">
           Filtros
@@ -671,11 +679,17 @@ const Filter = React.memo(function Filter({
     </>
   ) : (
     <div className="relative">
-      <Icon
-        icon="material-symbols:filter-alt"
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        viewBox="0 0 24 24"
+        fill="currentColor"
         className="absolute right-0 mr-[10%] md:mr-32 lg:mr-32 xl:mr-0 text-4xl cursor-pointer mt-0.5"
         onClick={toggleShow}
-      />
+      >
+        <path d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z" />
+      </svg>
     </div>
   );
 });

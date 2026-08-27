@@ -20,25 +20,28 @@ export interface Propos {
 
 const { pageTitle, tags, type, pageFindFilter } = Astro.props;
 
-const peopleTags = tags ? await getAllPersonTags() : [];
+const peopleTags = tags && type === 'people' ? await getAllPersonTags() : [];
 
 // Filter out course and subject tags from project tags
-const allProjectTags: string[] = await getAllProjectTags();
-const projectTags = allProjectTags.filter(tag => {
-  // Exclude if it's a course tag (format: course-campus)
-  const courseEntry = getCourse(tag);
-  if (courseEntry) return false;
-  
-  // Exclude if it's a subject tag 
-  const subjectEntry = getSubject(tag);
-  if (subjectEntry) return false;
-  
-  // Exclude if it matches subject-period pattern (e.g., "pw2-cstsi-jp-2024.1")
-  const subjectPeriodPattern = /^[a-zA-Z0-9]+-[a-zA-Z]+-[a-zA-Z]+-\d{4}\.\d+$/;
-  if (subjectPeriodPattern.test(tag)) return false;
-  
-  return true;
-});
+const projectTags: string[] =
+  tags && type === 'codes'
+    ? (await getAllProjectTags()).filter((tag) => {
+        // Exclude if it's a course tag (format: course-campus)
+        const courseEntry = getCourse(tag);
+        if (courseEntry) return false;
+
+        // Exclude if it's a subject tag
+        const subjectEntry = getSubject(tag);
+        if (subjectEntry) return false;
+
+        // Exclude if it matches subject-period pattern (e.g., "pw2-cstsi-jp-2024.1")
+        const subjectPeriodPattern =
+          /^[a-zA-Z0-9]+-[a-zA-Z]+-[a-zA-Z]+-\d{4}\.\d+$/;
+        if (subjectPeriodPattern.test(tag)) return false;
+
+        return true;
+      })
+    : [];
 
 // O Filter é uma ilha React: `astro:content` não pode atravessar para o cliente,
 // então as coleções vão achatadas por props.
@@ -80,7 +83,7 @@ const headerTitle = pageTitle ? `IFPB | ${pageTitle}` : 'IFPB Code';
             projectTags={projectTags}
             courses={courseInfos}
             subjects={subjectInfos}
-            client:visible
+            client:idle
           />
         )
       }

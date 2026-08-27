@@ -1,5 +1,4 @@
 import React from 'react';
-import { Icon } from '@iconify/react';
 
 interface AccordionProps {
   id: string;
@@ -27,12 +26,18 @@ export default function Accordion({
         }`}
       >
         <h1 className="font-semibold text-sm m-0">{title}</h1>
-        <Icon
-          icon="mdi:chevron-down"
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          viewBox="0 0 24 24"
+          fill="currentColor"
           className={`text-xl transition-transform ${
             isOpen ? 'rotate-180' : ''
           }`}
-        />
+        >
+          <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6l-6-6z" />
+        </svg>
       </div>
       {isOpen && (
         <nav className="border border-t-0 border-gray-300 rounded-b-sm px-3 py-2 bg-white">
