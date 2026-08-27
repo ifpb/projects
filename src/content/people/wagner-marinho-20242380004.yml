@@ -1,0 +1,15 @@
+name:
+  compact: wagner andrade
+  full: wagner marinho de andrade filho
+avatar:
+  github: https://github.com/wagnerandrade-cdr.png
+  githubUC: https://github.com/wagnerandrade-cdr/Auditor-de-Seguran.git
+occupations:
+  - id: 20242380004
+    type: student
+    course: cstrc-jp
+    isFinished: false
+addresses:
+  github: https://github.com/wagnerandrade-cdr
+  linkedin: https://www.linkedin.com/in/wagner-marinho-de-andrade-filho-52097142b/
+  email: wagner.andrade@academico.ifpb.edu.br
