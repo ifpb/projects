@@ -1,0 +1,17 @@
+name: NetStock
+description: O NetStock organiza equipamentos como roteadores, switches, servidores e pontos de acesso em uma interface única
+addresses:
+  preview: https://github.com/Nilson-Chaves/NetStock/blob/main/logo.svg?raw=true
+  homepage: https://nilson-chaves.github.io/NetStock/
+  repository: https://github.com/Nilson-Chaves/NetStock
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2026.2
+tags:
+  - javascript
+  - astro.js
+  - typescript
+owners:
+  - 20221380002
+  - 20221380031

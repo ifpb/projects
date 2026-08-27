@@ -1,0 +1,15 @@
+name:
+  compact: Everton Lopes
+  full: Everton de Lima Lopes
+avatar:
+  github: https://github.com/evertonlopesifpb.png
+  githubUC: https://avatars.githubusercontent.com/u/319943144?v=4
+occupations:
+  - id: 20242380007
+    type: student
+    course: cstsi-jp
+    isFinished: false
+addresses:
+  github: https://github.com/evertonlopesifpb
+  linkedin: https://www.linkedin.com/in/everton-lopes-742425363/
+  email: everton.lopes@academico.ifpb.edu.br

@@ -1,0 +1,15 @@
+name:
+  compact: Wilson Fillipe
+  full: Wilson Fillipe do Nascimento Lima
+avatar:
+  github: https://github.com/wfillipe.png
+  githubUC: https://avatars.githubusercontent.com/u/90816114?v=4
+occupations:
+  - id: 20251380021
+    type: student
+    course: cstrc-jp
+    isFinished: false
+addresses:
+  github: https://github.com/wfillipe
+  linkedin: https://www.linkedin.com/in/fillipe-lima/
+  email: wilson.fillipe@academico.ifpb.edu.br

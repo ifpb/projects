@@ -1,0 +1,15 @@
+name: Auditor x
+description: auditor de segurança onde a base da varredura é utilizado lynis.
+addresses:
+  preview: https://github.com/wagnerandrade-cdr/Auditor-de-Seguran/blob/main/preview.png?raw=true
+  repository: https://github.com/wagnerandrade-cdr/Auditor-de-Seguran
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2026.2
+tags:
+  - javascript
+  - html
+  - css
+owners:
+  - 20242380004

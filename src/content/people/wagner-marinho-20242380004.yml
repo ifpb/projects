@@ -1,0 +1,15 @@
+name:
+  compact: Wagner Andrade
+  full: Wagner Marinho de Andrade Filho
+avatar:
+  github: https://github.com/wagnerandrade-cdr.png
+  githubUC: https://avatars.githubusercontent.com/u/293063759?v=4
+occupations:
+  - id: 20242380004
+    type: student
+    course: cstrc-jp
+    isFinished: false
+addresses:
+  github: https://github.com/wagnerandrade-cdr
+  linkedin: https://www.linkedin.com/in/wagner-marinho-de-andrade-filho-52097142b/
+  email: wagner.andrade@academico.ifpb.edu.br
