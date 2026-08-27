@@ -1,0 +1,17 @@
+name: Auditor x
+description: 
+  auditor de segurança onde a base da verredura é utilizado lynis.
+addresses:
+  preview: https://github.com/wagnerandrade-cdr/Auditor-de-Seguran/blob/main/preview.png
+  repository: https://github.com/wagnerandrade-cdr/Auditor-de-Seguran
+
+category:
+  type: project
+  subject: pw2-csbes-jp
+  period: 2026.2   
+tags:
+  - javascript
+  - astro.js
+  - typescript
+owners:
+  - 20242380004
