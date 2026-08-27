@@ -75,29 +75,42 @@ const headerTitle = pageTitle ? `IFPB | ${pageTitle}` : 'IFPB Code';
     <NavBar />
     <div class="container lg:max-w-screen-lg mx-auto px-4 py-16">
       {
-        tags && (
-          <Filter
-            type={type}
-            tags={tags}
-            peopleTags={peopleTags}
-            projectTags={projectTags}
-            courses={courseInfos}
-            subjects={subjectInfos}
-            client:idle
-          />
-        )
-      }
-
-      {
-        /* Sem pageTitle não se renderiza <h1>: um heading vazio reprova no audit
-           de a11y e a home já tem o próprio <h1>. */
-        pageTitle && (
-          <h1
-            class="text-center pb-16 text-4xl font-bold"
-            data-pagefind-filter={pageFindFilter}
-          >
-            {pageTitle}
-          </h1>
+        pageTitle ? (
+          <div class="relative flex items-center justify-center pb-12">
+            <h1
+              class="text-center text-4xl font-bold"
+              data-pagefind-filter={pageFindFilter}
+            >
+              {pageTitle}
+            </h1>
+            {tags && (
+              <div class="absolute right-0">
+                <Filter
+                  type={type}
+                  tags={tags}
+                  peopleTags={peopleTags}
+                  projectTags={projectTags}
+                  courses={courseInfos}
+                  subjects={subjectInfos}
+                  client:idle
+                />
+              </div>
+            )}
+          </div>
+        ) : (
+          tags && (
+            <div class="flex justify-end pb-8">
+              <Filter
+                type={type}
+                tags={tags}
+                peopleTags={peopleTags}
+                projectTags={projectTags}
+                courses={courseInfos}
+                subjects={subjectInfos}
+                client:idle
+              />
+            </div>
+          )
         )
       }
 
