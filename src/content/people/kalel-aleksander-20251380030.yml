@@ -1,0 +1,15 @@
+name:
+  compact: Kalel Aleksander
+  full: Kalel Aleksander Nery Bezerra
+avatar:
+  github: https://github.com/kalel-ifpb.png
+  githubUC: https://avatars.githubusercontent.com/u/319042708?v=4
+occupations:
+  - id: 20251380030
+    type: student
+    course: cstrc-jp
+    isFinished: true
+addresses:
+  github: https://github.com/kalel-ifpb
+  linkedin: https://www.linkedin.com/in/kalel-aleksander-b43b753ba
+  email: kalel.nery@academico.ifpb.edu.br
