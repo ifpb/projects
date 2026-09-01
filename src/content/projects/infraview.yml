@@ -1,0 +1,18 @@
+name: InfraView
+description: Serviços de monitoramento de infraestrutura de rede
+addresses:
+  preview: https://github.com/brunoanderson/InfraView/blob/main/InfraView.png?raw=true
+  homepage: https://brunoanderson.github.io/InfraView/
+  repository: https://github.com/brunoanderson/InfraView
+category:
+  type: subject
+  subject: dw-cstrc-jp
+  period: 2026.2
+tags:
+  - html
+  - css
+  - redes-de-computadores
+owners:
+  - 20251380014
+  - 20251380032
+  - 20231380024
