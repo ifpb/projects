@@ -5,9 +5,9 @@ description:
   de ativos disponíveis, permite ao usuário ver detalhes sobre os itens e interagir
   com o conteúdo de forma dinâmica para simular uma reserva.
 addresses:
-  homepage: https://odilon007.github.io/Projeto-PW2/
-  repository: https://github.com/odilon007/Projeto-PW2
-  workflow: https://github.com/users/odilon007/projects/1
+  homepage: https://asset-reserve.vercel.app
+  repository: https://github.com/odilon-pontes/AssetReserve
+  workflow: https://github.com/users/odilon-pontes/projects/1
 category:
   type: subject
   subject:
