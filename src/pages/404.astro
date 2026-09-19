@@ -1,29 +1,133 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Icon } from "astro-icon/components";
 ---
 
-<BaseLayout pageTitle="Página não encontrada">
-  <div class="py-12 text-center sm:py-20" data-pagefind-ignore>
-    <p class="text-8xl font-black text-green-700 sm:text-9xl">404</p>
-    <h2 class="mt-5 text-2xl font-extrabold text-gray-950">
-      Oxente! Essa página não apareceu por aqui.
-    </h2>
-    <p class="mx-auto mt-3 max-w-md text-gray-600">
-      O endereço pode ter mudado ou o conteúdo ainda não faz parte do acervo.
-    </p>
-    <div class="mt-8 flex flex-wrap justify-center gap-3">
-      <a
-        class="rounded-md bg-green-700 px-5 py-3 text-sm font-bold text-white hover:bg-green-800"
-        href="/projects/"
-      >
-        Voltar ao início
-      </a>
-      <a
-        class="rounded-md border border-gray-300 bg-white px-5 py-3 text-sm font-bold text-gray-800 hover:border-green-700 hover:text-green-800"
-        href="/projects/codes/page/1"
-      >
-        Explorar projetos
-      </a>
+<BaseLayout pageTitle="Página não encontrada" pageDescription="A página solicitada não foi encontrada no acervo de projetos e comunidade do IFPB.">
+  <div class="mx-auto max-w-3xl py-6 sm:py-12" data-pagefind-ignore>
+    <!-- Hero Status Section -->
+    <div class="text-center">
+      <div class="inline-flex items-center gap-2 rounded-full border border-green-200 bg-green-50 px-3.5 py-1 text-xs font-bold text-green-800">
+        <span class="inline-block h-2 w-2 rounded-full bg-green-600 animate-pulse"></span>
+        Status 404 &bull; Rota não encontrada
+      </div>
+
+      <div class="mt-6 flex justify-center">
+        <div class="relative grid h-24 w-24 place-items-center rounded-2xl border border-green-200 bg-white shadow-sm sm:h-28 sm:w-28">
+          <Icon name="ph:compass-bold" size={48} class="text-green-700" />
+          <span class="absolute -bottom-2 -right-2 rounded-md bg-green-700 px-2 py-0.5 text-xs font-black text-white shadow">
+            404
+          </span>
+        </div>
+      </div>
+
+      <h2 class="mt-6 text-2xl font-black text-gray-950 sm:text-3xl">
+        Oxente! Essa página não apareceu por aqui.
+      </h2>
+      <p class="mx-auto mt-3 max-w-lg text-sm text-gray-600 sm:text-base">
+        O link que você seguiu pode estar quebrado, ter sido movido ou o projeto ainda não foi catalogado no acervo.
+      </p>
+
+      <!-- Primary Action Buttons -->
+      <div class="mt-7 flex flex-wrap items-center justify-center gap-3">
+        <a
+          href="/projects/"
+          class="inline-flex items-center gap-2 rounded-md bg-green-700 px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-green-800"
+        >
+          <Icon name="ph:house-bold" size={18} />
+          Ir para o Início
+        </a>
+        <button
+          type="button"
+          onclick="document.querySelector('#search-command')?.click()"
+          class="inline-flex cursor-pointer items-center gap-2 rounded-md border border-gray-300 bg-white px-5 py-2.5 text-sm font-bold text-gray-800 transition-colors hover:border-green-700 hover:bg-green-50 hover:text-green-800"
+        >
+          <Icon name="ph:magnifying-glass-bold" size={18} />
+          Buscar no Acervo
+        </button>
+      </div>
+    </div>
+
+    <!-- Quick Navigation Cards -->
+    <div class="mt-12">
+      <h3 class="mb-4 text-xs font-extrabold uppercase tracking-wider text-gray-500">
+        O que você gostaria de explorar?
+      </h3>
+      <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+        <a
+          href="/projects/codes/page/1"
+          class="group flex items-start gap-3.5 rounded-lg border border-gray-200 bg-white p-4 transition-all hover:border-green-600 hover:shadow-sm"
+        >
+          <div class="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-green-50 text-green-700 transition-colors group-hover:bg-green-700 group-hover:text-white">
+            <Icon name="ph:code-bold" size={20} />
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5 text-sm font-bold text-gray-900 group-hover:text-green-800">
+              <span>Projetos Acadêmicos</span>
+              <Icon name="ph:arrow-right-bold" size={14} class="opacity-0 transition-opacity group-hover:opacity-100" />
+            </div>
+            <p class="mt-1 text-xs text-gray-500">
+              Explore projetos desenvolvidos em disciplinas, extensão e pesquisas.
+            </p>
+          </div>
+        </a>
+
+        <a
+          href="/projects/people/page/1"
+          class="group flex items-start gap-3.5 rounded-lg border border-gray-200 bg-white p-4 transition-all hover:border-green-600 hover:shadow-sm"
+        >
+          <div class="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-green-50 text-green-700 transition-colors group-hover:bg-green-700 group-hover:text-white">
+            <Icon name="ph:users-three-bold" size={20} />
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5 text-sm font-bold text-gray-900 group-hover:text-green-800">
+              <span>Comunidade IFPB</span>
+              <Icon name="ph:arrow-right-bold" size={14} class="opacity-0 transition-opacity group-hover:opacity-100" />
+            </div>
+            <p class="mt-1 text-xs text-gray-500">
+              Encontre perfis de estudantes, professores e colaboradores.
+            </p>
+          </div>
+        </a>
+
+        <a
+          href="/projects/people/collaborator/1"
+          class="group flex items-start gap-3.5 rounded-lg border border-gray-200 bg-white p-4 transition-all hover:border-green-600 hover:shadow-sm"
+        >
+          <div class="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-green-50 text-green-700 transition-colors group-hover:bg-green-700 group-hover:text-white">
+            <Icon name="ph:user-switch-bold" size={20} />
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5 text-sm font-bold text-gray-900 group-hover:text-green-800">
+              <span>Colaboradores com Projetos</span>
+              <Icon name="ph:arrow-right-bold" size={14} class="opacity-0 transition-opacity group-hover:opacity-100" />
+            </div>
+            <p class="mt-1 text-xs text-gray-500">
+              Veja autores que já cadastraram projetos acadêmicos e repositórios.
+            </p>
+          </div>
+        </a>
+
+        <a
+          href="https://github.com/ifpb/projects"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group flex items-start gap-3.5 rounded-lg border border-gray-200 bg-white p-4 transition-all hover:border-green-600 hover:shadow-sm"
+        >
+          <div class="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-green-50 text-green-700 transition-colors group-hover:bg-green-700 group-hover:text-white">
+            <Icon name="mdi:github" size={20} />
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5 text-sm font-bold text-gray-900 group-hover:text-green-800">
+              <span>Cadastrar no Repositório</span>
+              <Icon name="ph:arrow-square-out-bold" size={14} />
+            </div>
+            <p class="mt-1 text-xs text-gray-500">
+              Seu perfil ou projeto ainda não está listado? Envie um Pull Request.
+            </p>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 </BaseLayout>
