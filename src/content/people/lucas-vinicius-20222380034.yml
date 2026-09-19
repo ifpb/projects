@@ -8,7 +8,7 @@ occupations:
   - id: 20222380034
     type: student
     course: cstrc-jp
-    isFinished: false
+    isFinished: true
 addresses:
   github: https://github.com/l1ckyndev
   linkedin: https://www.linkedin.com/in/l1ckyn

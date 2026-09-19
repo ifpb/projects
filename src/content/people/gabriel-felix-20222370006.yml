@@ -8,7 +8,7 @@ occupations:
   - id: 20222370006
     type: student
     course: cstsi-jp
-    isFinished: false
+    isFinished: true
 addresses:
   github: https://github.com/gfedacs
   linkedin: https://www.linkedin.com/in/gabriel-f%C3%A9lix-780964269/

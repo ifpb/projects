@@ -8,7 +8,7 @@ occupations:
   - id: 20222370003
     type: student
     course: cstsi-jp
-    isFinished: false
+    isFinished: true
 addresses:
   github: https://github.com/cassiaagomes
   linkedin: https://www.linkedin.com/in/c%C3%A1ssia-gomes-2a56a4122/

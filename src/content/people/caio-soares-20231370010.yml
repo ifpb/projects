@@ -12,7 +12,7 @@ occupations:
   - id: 20231370010
     type: student
     course: cstsi-jp
-    isFinished: false
+    isFinished: true
 addresses:
   github: https://github.com/caiosoares1
   linkedin: https://www.linkedin.com/in/caio-soares-8b8a81251/

@@ -8,7 +8,7 @@ occupations:
   - id: 20212380035
     type: student
     course: cstrc-jp
-    isFinished: false
+    isFinished: true
 addresses:
   github: https://github.com/Avelangev
   linkedin: https://www.linkedin.com/in/avelange-viana-b41272250/

@@ -12,7 +12,7 @@ occupations:
   - id: 202119840013
     type: student
     course: cmpti-jp
-    isFinished: false
+    isFinished: true
 addresses:
   github: https://github.com/ayrtondouglas
   linkedin: https://www.linkedin.com/in/ayrtondouglas/

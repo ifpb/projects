@@ -8,7 +8,7 @@ occupations:
   - id: 20212380016
     type: student
     course: cstrc-jp
-    isFinished: false
+    isFinished: true
 addresses:
   github: https://github.com/julioestrela96
   linkedin: https://www.linkedin.com/in/júlio-estrela-7772b1313/

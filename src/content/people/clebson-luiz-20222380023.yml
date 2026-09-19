@@ -8,7 +8,7 @@ occupations:
   - id: 20222380023
     type: student
     course: cstrc-jp
-    isFinished: false
+    isFinished: true
 addresses:
   github: https://github.com/C-Luiz
   linkedin: https://www.linkedin.com/in/clebson-luiz-748615267

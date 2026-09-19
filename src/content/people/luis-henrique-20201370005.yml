@@ -8,7 +8,7 @@ occupations:
   - id: 20201370005
     type: student
     course: cstsi-jp
-    isFinished: false
+    isFinished: true
 addresses:
   github: https://github.com/henrqueDev
   linkedin: https://www.linkedin.com/in/lu%C3%ADs-henrique-433b76210/

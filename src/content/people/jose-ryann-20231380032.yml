@@ -8,7 +8,7 @@ occupations:
   - id: 20231380032
     type: student
     course: cstrc-jp
-    isFinished: false
+    isFinished: true
 addresses:
   github: https://github.com/RyannFB
   linkedin: https://www.linkedin.com/in/jos%C3%A9-ryann/

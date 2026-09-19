@@ -8,7 +8,7 @@ occupations:
   - id: 20182370030
     type: student
     course: cstsi-jp
-    isFinished: false
+    isFinished: true
 addresses:
   github: https://github.com/andreia23
   linkedin: https://www.linkedin.com/in/andr%C3%A9ia-berto-73b423195/

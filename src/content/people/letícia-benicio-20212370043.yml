@@ -8,7 +8,7 @@ occupations:
   - id: 20212370043
     type: student
     course: cstsi-jp
-    isFinished: false
+    isFinished: true
 addresses:
   github: https://github.com/leticiabenicio
   linkedin: https://www.linkedin.com/in/let%C3%ADcia-ben%C3%ADcio-638153224/

@@ -8,7 +8,7 @@ occupations:
   - id: 20201380042
     type: student
     course: cstrc-jp
-    isFinished: false
+    isFinished: true
 addresses:
   github: https://github.com/judavalente
   linkedin: https://www.linkedin.com/in/jud%C3%A1-valente-b046642b5/

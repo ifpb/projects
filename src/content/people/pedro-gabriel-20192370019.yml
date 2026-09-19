@@ -8,7 +8,7 @@ occupations:
   - id: 20192370019
     type: student
     course: cstsi-jp
-    isFinished: false
+    isFinished: true
 addresses:
   github: https://github.com/pedrold10
   linkedin: https://www.linkedin.com/in/pedrogabrield/

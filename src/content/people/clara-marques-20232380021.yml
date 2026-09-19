@@ -8,7 +8,7 @@ occupations:
   - id: 20232380021
     type: student
     course: cstrc-jp
-    isFinished: false
+    isFinished: true
 addresses:
   github: https://github.com/ClaraMarques-Hash
   linkedin: https://www.linkedin.com/in/ana-clara-marques-83b817355

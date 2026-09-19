@@ -8,7 +8,7 @@ occupations:
   - id: 20222380011
     type: student
     course: cstrc-jp
-    isFinished: false
+    isFinished: true
 addresses:
   github: https://github.com/Edvan-dev
   linkedin: https://www.linkedin.com/in/edvan-da-silva-oliveira-739196161
