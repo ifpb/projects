@@ -1,0 +1,43 @@
+---
+export interface Props {
+  baseTag: string;
+  sortBy: "entry" | "name";
+  currentPage?: number;
+}
+
+const { baseTag, sortBy = "entry", currentPage = 1 } = Astro.props;
+
+const options = [
+  {
+    id: "entry",
+    label: "Turma de entrada",
+    href: `/projects/people/${baseTag}/${currentPage}`,
+  },
+  {
+    id: "name",
+    label: "Nome",
+    href: `/projects/people/${baseTag}-name/${currentPage}`,
+  },
+] as const;
+---
+
+<nav aria-label="Visualização e ordenação de egressos">
+  <div class="inline-flex rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 p-1">
+    {
+      options.map((option) => (
+        <a
+          href={option.href}
+          aria-current={sortBy === option.id ? "page" : undefined}
+          class:list={[
+            "rounded px-3 py-1.5 text-xs font-bold transition-colors sm:px-4 sm:py-2 sm:text-sm",
+            sortBy === option.id
+              ? "bg-green-700 text-white"
+              : "text-gray-600 dark:text-gray-300 hover:bg-green-50 dark:hover:bg-gray-700 hover:text-green-800 dark:hover:text-green-400",
+          ]}
+        >
+          {option.label}
+        </a>
+      ))
+    }
+  </div>
+</nav>

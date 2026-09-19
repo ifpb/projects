@@ -27,13 +27,13 @@ const { page, type, index }: Props = Astro.props;
 
 <main>
   <div
-    class="grid gap-3.5 sm:gap-5 grid-cols-2 md:grid-cols-3 xl:grid-cols-4"
+    class="grid gap-3.5 sm:gap-4 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6"
     data-pagefind-ignore
   >
     {
-      /* As primeiras duas fileiras (8 cards no desktop) ficam acima da dobra. */
+      /* Cards da primeira fileira ficam eager */
       page.data.map((person, index) => (
-        <PersonCard person={person} eager={index < 8} />
+        <PersonCard person={person} eager={index < 6} />
       ))
     }
   </div>

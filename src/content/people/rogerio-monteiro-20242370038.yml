@@ -8,7 +8,7 @@ occupations:
   - id: 20242370038
     type: student
     course: cstsi-jp
-    isFinished: true
+    isFinished: false
 addresses:
   github: https://github.com/tkroger15
   linkedin: https://www.linkedin.com/in/rogerio-monteiro15/

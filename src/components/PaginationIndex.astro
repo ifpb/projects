@@ -37,17 +37,46 @@ const controlClass =
 ---
 
 <nav
-  class="mt-12 flex flex-col items-center gap-4 border-t border-gray-200 pt-8"
+  class="pagination-nav mt-12 flex flex-col items-center gap-4 border-t border-gray-200 pt-8"
   aria-label="Paginação"
+  data-prev-url={prevUrl}
+  data-next-url={nextUrl}
 >
-  <p class="text-sm text-gray-500">
-    Página <strong class="text-gray-800">{page.currentPage}</strong> de{" "}
-    {page.lastPage}
-  </p>
+  <div class="flex flex-wrap items-center justify-center gap-3 text-sm text-gray-500">
+    <p>
+      Página <strong class="text-gray-900">{page.currentPage}</strong> de{" "}
+      <strong class="text-gray-900">{page.lastPage}</strong>
+    </p>
+
+    {page.lastPage > 5 && (
+      <div class="flex items-center gap-1.5 text-xs text-gray-500">
+        <label for="pagination-jump" class="hidden sm:inline font-medium">Ir para:</label>
+        <select
+          id="pagination-jump"
+          class="rounded-md border border-gray-300 bg-white px-2 py-1 text-xs font-bold text-gray-800 shadow-2xs transition-colors focus:border-green-700 focus:outline-none"
+          onchange="if (this.value) window.location.href = this.value;"
+          aria-label="Ir diretamente para a página"
+        >
+          {Array.from({ length: page.lastPage }, (_, i) => i + 1).map((p) => (
+            <option value={pageUrl(p)} selected={p === page.currentPage}>
+              Pág. {p}
+            </option>
+          ))}
+        </select>
+      </div>
+    )}
+
+    <div class="hidden items-center gap-1 text-[11px] text-gray-400 lg:flex">
+      <span>Atalhos:</span>
+      <kbd class="rounded border border-gray-200 bg-gray-100 px-1.5 py-0.5 font-mono font-bold text-gray-600" title="Página anterior">←</kbd>
+      <kbd class="rounded border border-gray-200 bg-gray-100 px-1.5 py-0.5 font-mono font-bold text-gray-600" title="Próxima página">→</kbd>
+    </div>
+  </div>
+
   <ul class="flex flex-wrap items-center justify-center gap-1.5">
     <li>
       {firstUrl ? (
-        <a href={firstUrl} aria-label="Primeira página" class={controlClass}>
+        <a href={firstUrl} title="Primeira página" aria-label="Primeira página" class={controlClass}>
           <Icon name="ph:caret-double-left-bold" size={16} />
         </a>
       ) : (
@@ -61,7 +90,12 @@ const controlClass =
     </li>
     <li>
       {prevUrl ? (
-        <a href={prevUrl} aria-label="Página anterior" class={controlClass}>
+        <a
+          href={prevUrl}
+          title="Página anterior (atalho: ←)"
+          aria-label="Página anterior (atalho: tecla seta esquerda)"
+          class={controlClass}
+        >
           <Icon name="ph:caret-left-bold" size={16} />
         </a>
       ) : (
@@ -95,7 +129,12 @@ const controlClass =
     ))}
     <li>
       {nextUrl ? (
-        <a href={nextUrl} aria-label="Próxima página" class={controlClass}>
+        <a
+          href={nextUrl}
+          title="Próxima página (atalho: →)"
+          aria-label="Próxima página (atalho: tecla seta direita)"
+          class={controlClass}
+        >
           <Icon name="ph:caret-right-bold" size={16} />
         </a>
       ) : (
@@ -109,7 +148,7 @@ const controlClass =
     </li>
     <li>
       {lastUrl ? (
-        <a href={lastUrl} aria-label="Última página" class={controlClass}>
+        <a href={lastUrl} title="Última página" aria-label="Última página" class={controlClass}>
           <Icon name="ph:caret-double-right-bold" size={16} />
         </a>
       ) : (
@@ -123,3 +162,33 @@ const controlClass =
     </li>
   </ul>
 </nav>
+
+<script is:inline>
+  document.addEventListener("keydown", (e) => {
+    const target = e.target;
+    if (
+      target instanceof HTMLInputElement ||
+      target instanceof HTMLTextAreaElement ||
+      target instanceof HTMLSelectElement ||
+      target?.isContentEditable ||
+      document.querySelector("dialog[open]")
+    ) {
+      return;
+    }
+
+    const nav = document.querySelector(".pagination-nav");
+    if (!nav) return;
+
+    if (e.key === "ArrowLeft") {
+      const prevUrl = nav.getAttribute("data-prev-url");
+      if (prevUrl) {
+        window.location.href = prevUrl;
+      }
+    } else if (e.key === "ArrowRight") {
+      const nextUrl = nav.getAttribute("data-next-url");
+      if (nextUrl) {
+        window.location.href = nextUrl;
+      }
+    }
+  });
+</script>

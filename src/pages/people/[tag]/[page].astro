@@ -2,6 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import PersonGrid from "@/components/PersonGrid.astro";
+import EgressosViewSwitch from "@/components/EgressosViewSwitch.astro";
 import { getAllPersonTags, getPeopleByTag } from "@/helpers/people";
 import { getCourseName } from "@/helpers/courses";
 import { getSubject } from "@/helpers/subjects";
@@ -18,32 +19,50 @@ export interface Props {
       next: string;
     };
   };
+  sortBy?: "entry" | "name";
+  baseTag?: string;
 }
 
 export async function getStaticPaths({ paginate }) {
   const tags = await getAllPersonTags();
 
-  const page = await Promise.all(
+  const pages = await Promise.all(
     tags.map(async (tag) => {
       const people = await getPeopleByTag(tag);
 
-      const pages = paginate(people, {
+      const defaultPages = paginate(people, {
         params: { tag },
+        props: { sortBy: "entry", baseTag: tag },
         pageSize: PAGE_SIZE,
       });
 
-      return pages;
+      if (tag.startsWith("egresso")) {
+        const peopleByName = [...people].sort((a, b) =>
+          a.data.name.compact.localeCompare(b.data.name.compact),
+        );
+
+        const namePages = paginate(peopleByName, {
+          params: { tag: `${tag}-name` },
+          props: { sortBy: "name", baseTag: tag },
+          pageSize: PAGE_SIZE,
+        });
+
+        return [...defaultPages, ...namePages];
+      }
+
+      return defaultPages;
     }),
   );
 
-  return page.flat();
+  return pages.flat();
 }
 
 const formatPageTitle = (tag: string) => {
+  const cleanTag = tag.replace(/-name$/, "");
   let title = "";
 
   // Check if it's a subject-course-campus-period format (e.g., dw-cstrc-jp-2025.2)
-  const subjectMatch = tag.match(
+  const subjectMatch = cleanTag.match(
     /^([a-zA-Z0-9]+)-([a-z]+)-([a-z]+)-(\d{4}\.\d)$/,
   );
   if (subjectMatch) {
@@ -54,12 +73,12 @@ const formatPageTitle = (tag: string) => {
     if (subject) {
       title = `Turma | ${subject.data.name.full} (${period})`;
     } else {
-      title = `Turma ${tag.toUpperCase()}`;
+      title = `Turma ${cleanTag.toUpperCase()}`;
     }
   }
   // Check if it's a course-campus-period format (e.g., cstrc-jp-2024.1)
-  else if (/^([a-z]+)-([a-z]+)-(\d{4}\.\d)$/.test(tag)) {
-    const [courseCode, campus, period] = tag.split("-");
+  else if (/^([a-z]+)-([a-z]+)-(\d{4}\.\d)$/.test(cleanTag)) {
+    const [courseCode, campus, period] = cleanTag.split("-");
     const courseFull = `${courseCode}-${campus}`;
 
     // Try to get course data using the helper
@@ -71,55 +90,67 @@ const formatPageTitle = (tag: string) => {
         if (courseName) {
           title = `${courseName} | ${campus.toUpperCase()} (${period})`;
         } else {
-          title = `Turma ${tag.toUpperCase()}`;
+          title = `Turma ${cleanTag.toUpperCase()}`;
         }
       } else {
-        title = `Turma ${tag.toUpperCase()}`;
+        title = `Turma ${cleanTag.toUpperCase()}`;
       }
     } catch {
-      title = `Turma ${tag.toUpperCase()}`;
+      title = `Turma ${cleanTag.toUpperCase()}`;
     }
-  } else if (abbreviationCourses.some((course) => tag.includes(course))) {
-    if (tag.includes("egresso")) {
-      title = `Egresso | ${getCourseName(tag.split("-")[1])}`;
+  } else if (abbreviationCourses.some((course) => cleanTag.includes(course))) {
+    if (cleanTag.includes("egresso")) {
+      title = `Egresso | ${getCourseName(cleanTag.split("-")[1])}`;
     } else {
-      title = getCourseName(tag);
+      title = getCourseName(cleanTag);
     }
-  } else if (/^ifpb-\w{2}$/.test(tag)) {
-    title = `Campus ${tag.toUpperCase()}`;
-  } else if (/^\d{4}\.?\d?$/.test(tag)) {
-    title = `Alunos de ${tag}`;
-  } else if (/-\d{4}\.?\d?$/.test(tag)) {
-    title = `Turma ${tag.toUpperCase()}`;
-  } else if (["técnico", "mestrado"].includes(tag)) {
-    title = `Alunos do ${tag[0].toUpperCase() + tag.slice(1)}`;
-  } else if (["graduação"].includes(tag)) {
-    title = `Alunos da ${tag[0].toUpperCase() + tag.slice(1)}`;
-  } else if (tag === "student") {
+  } else if (/^ifpb-\w{2}$/.test(cleanTag)) {
+    title = `Campus ${cleanTag.toUpperCase()}`;
+  } else if (/^\d{4}\.?\d?$/.test(cleanTag)) {
+    title = `Alunos de ${cleanTag}`;
+  } else if (/-\d{4}\.?\d?$/.test(cleanTag)) {
+    title = `Turma ${cleanTag.toUpperCase()}`;
+  } else if (["técnico", "mestrado"].includes(cleanTag)) {
+    title = `Alunos do ${cleanTag[0].toUpperCase() + cleanTag.slice(1)}`;
+  } else if (["graduação"].includes(cleanTag)) {
+    title = `Alunos da ${cleanTag[0].toUpperCase() + cleanTag.slice(1)}`;
+  } else if (cleanTag === "student") {
     title = "Alunos";
-  } else if (tag === "professor") {
+  } else if (cleanTag === "professor") {
     title = "Professores";
-  } else if (tag === "egresso") {
+  } else if (cleanTag === "egresso") {
     title = "Egressos";
-  } else if (tag === "reitoria") {
+  } else if (cleanTag === "reitoria") {
     title = "Reitoria";
-  } else if (tag === "projects") {
+  } else if (cleanTag === "projects") {
     title = "Colaboradores";
-  } else if (cities[tag]) {
-    title = `Comunidade de ${cities[tag]}`;
+  } else if (cities[cleanTag]) {
+    title = `Comunidade de ${cities[cleanTag]}`;
   } else {
-    title = `Comunidade com ${tag[0].toUpperCase() + tag.slice(1)}`;
+    title = `Comunidade com ${cleanTag[0].toUpperCase() + cleanTag.slice(1)}`;
   }
 
   return title;
 };
 
-const { page } = Astro.props;
+const { page, sortBy = "entry", baseTag = "" } = Astro.props;
 const { tag } = Astro.params;
+const isEgressoPage = tag.startsWith("egresso");
+const effectiveBaseTag = baseTag || tag.replace(/-name$/, "");
 const pageTitle = formatPageTitle(tag);
-const pageDescription = `Conheça os estudantes, docentes e colaboradores da comunidade de ${pageTitle} no IFPB.`;
+const pageDescription = `Conheça os estudantes, egressos e colaboradores da comunidade de ${pageTitle} no IFPB.`;
 ---
 
 <BaseLayout pageTitle={pageTitle} pageDescription={pageDescription} type="people">
+  {
+    isEgressoPage && (
+      <EgressosViewSwitch
+        slot="header-actions"
+        baseTag={effectiveBaseTag}
+        sortBy={sortBy}
+        currentPage={page.currentPage}
+      />
+    )
+  }
   <PersonGrid page={page} type="people" index={tag} />
 </BaseLayout>

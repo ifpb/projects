@@ -13,7 +13,7 @@ const [projects, people, collaborators] = await Promise.all([
   getPeopleWithProjects(),
 ]);
 const featuredProjects = projects.slice(0, 6);
-const featuredPeople = collaborators.slice(0, 4);
+const featuredPeople = collaborators.slice(0, 6);
 ---
 
 <BaseLayout pageDescription="Conheça a produção acadêmica e as pessoas que constroem tecnologia, pesquisa e extensão no Instituto Federal da Paraíba.">
@@ -113,9 +113,9 @@ const featuredPeople = collaborators.slice(0, 4);
         Ver todos <Icon name="ph:arrow-right" size={18} />
       </a>
     </div>
-    <div class="grid gap-3.5 sm:gap-5 grid-cols-2 lg:grid-cols-4">
-      {featuredPeople.map((person) => (
-        <PersonCard person={person} eager={true} />
+    <div class="grid gap-3.5 sm:gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6">
+      {featuredPeople.map((person, index) => (
+        <PersonCard person={person} eager={index < 6} />
       ))}
     </div>
   </section>

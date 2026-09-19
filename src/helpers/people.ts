@@ -34,9 +34,22 @@ export function getPersonIdByCourse(
   course: string
 ) {
   if (isStudent(person)) {
-    const matchingOccupation = person.data.occupations.filter(
-      (occupation: Student) => occupation.course === course
-    )[0];
+    const studentOccupations = person.data.occupations.filter(
+      (occupation): occupation is Student => occupation.type === 'student'
+    );
+    const courseAbbr = course.includes('-') ? course.split('-')[0] : course;
+    const matchingOccupation =
+      studentOccupations.find(
+        (occupation) =>
+          occupation.isFinished &&
+          (occupation.course === course ||
+            occupation.course.split('-')[0] === courseAbbr)
+      ) ??
+      studentOccupations.find(
+        (occupation) =>
+          occupation.course === course ||
+          occupation.course.split('-')[0] === courseAbbr
+      );
     return matchingOccupation?.id ?? 0;
   } else {
     return person.data.occupations.at(-1)?.id ?? 0;
@@ -47,9 +60,10 @@ export function getOccupationId(occupation: Occupation) {
   if (occupation.type === 'student') {
     const { course: abbreviation } = occupation;
 
-    const course = getCourseByAbbreviation(abbreviation);
+    const course = abbreviation ? getCourseByAbbreviation(abbreviation) : undefined;
 
     if (
+      course &&
       ['Técnico Integrado ao Médio', 'Mestrado'].includes(
         course.data.level.compact
       )
@@ -65,6 +79,41 @@ export function getOccupationId(occupation: Occupation) {
   } else {
     return String(occupation.id);
   }
+}
+
+export function getStudentEntryPeriod(
+  person: CollectionEntry<'people'>,
+  course?: string
+): string {
+  if (!isStudent(person)) return '9999.9';
+
+  const studentOccupations = person.data.occupations.filter(
+    (occupation): occupation is Student => occupation.type === 'student'
+  );
+
+  let targetOccupation: Student | undefined;
+
+  if (course) {
+    const courseAbbr = course.includes('-') ? course.split('-')[0] : course;
+    targetOccupation =
+      studentOccupations.find(
+        (o) =>
+          o.isFinished &&
+          (o.course === course || o.course.split('-')[0] === courseAbbr)
+      ) ??
+      studentOccupations.find(
+        (o) => o.course === course || o.course.split('-')[0] === courseAbbr
+      );
+  } else {
+    targetOccupation =
+      studentOccupations.find((o) => o.isFinished) ?? studentOccupations[0];
+  }
+
+  if (targetOccupation) {
+    return getOccupationId(targetOccupation);
+  }
+
+  return '9999.9';
 }
 
 /**
@@ -388,14 +437,23 @@ function sortPeopleByTag(people: CollectionEntry<'people'>[], sortTag: string) {
       return a.data.name.compact.localeCompare(b.data.name.compact);
     }
 
-    // course levels
+    // course tags (e.g. cstsi-jp, egresso-cstsi-jp)
     if (courses.some((course) => sortTag.includes(course.data.abbreviation))) {
       const course = courses
         .map((course) => course.data.abbreviation)
         .filter((course) => sortTag.includes(course))[0];
 
       return (
-        getPersonIdByCourse(a, course) - getPersonIdByCourse(b, course) ||
+        getStudentEntryPeriod(a, course).localeCompare(
+          getStudentEntryPeriod(b, course)
+        ) || a.data.name.compact.localeCompare(b.data.name.compact)
+      );
+    }
+
+    // egresso (all courses)
+    if (sortTag === 'egresso') {
+      return (
+        getStudentEntryPeriod(a).localeCompare(getStudentEntryPeriod(b)) ||
         a.data.name.compact.localeCompare(b.data.name.compact)
       );
     }

@@ -75,6 +75,12 @@ summary {
     padding-inline: 2rem;
   }
 }
+
+@media (min-width: 1536px) {
+  .page-shell {
+    max-width: 90rem;
+  }
+}
 .surface-card {
   background: var(--surface);
   border: 1px solid var(--line);
