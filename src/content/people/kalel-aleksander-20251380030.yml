@@ -8,7 +8,7 @@ occupations:
   - id: 20251380030
     type: student
     course: cstrc-jp
-    isFinished: true
+    isFinished: false
 addresses:
   github: https://github.com/kalel-ifpb
   linkedin: https://www.linkedin.com/in/kalel-aleksander-b43b753ba

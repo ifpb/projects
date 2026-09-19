@@ -47,6 +47,15 @@ const availableLinks = links
   .map((link) => ({ ...link, url: addresses[link.name] }));
 const tags = await getPersonTags(person);
 const personBadges = [
+  ...occupations
+    .filter(
+      (occupation): occupation is Student =>
+        occupation.type === "student" && occupation.isFinished,
+    )
+    .map((occupation) => ({
+      url: `/projects/people/egresso-${occupation.course}/1`,
+      text: `egresso-${occupation.course}`,
+    })),
   ...(isStudent(person)
     ? occupations
         .filter(
@@ -58,15 +67,6 @@ const personBadges = [
           text: getCourseAbbreviationCampusByOccupation(occupation),
         }))
     : []),
-  ...occupations
-    .filter(
-      (occupation): occupation is Student =>
-        occupation.type === "student" && occupation.isFinished,
-    )
-    .map((occupation) => ({
-      url: `/projects/people/egresso-${occupation.course}/1`,
-      text: "egresso",
-    })),
   ...(isProfessor(person)
     ? [{ url: "/projects/people/professor/1", text: "professor" }]
     : []),
