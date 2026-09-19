@@ -125,7 +125,7 @@ const avatarUrl = getAvatarImageUrl(person, 400);
       onerror="onErrorPersonImage(this)"
     />
     {projects.length > 0 && (
-      <span class="absolute bottom-3 left-3 rounded bg-gray-950/85 px-2 py-1 text-[10px] font-extrabold uppercase text-white backdrop-blur">
+      <span class="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 rounded bg-gray-950/85 px-1.5 py-0.5 sm:px-2 sm:py-1 text-[9px] sm:text-[10px] font-extrabold uppercase text-white backdrop-blur">
         {projects.length} projeto{projects.length !== 1 ? "s" : ""}
       </span>
     )}
@@ -133,7 +133,7 @@ const avatarUrl = getAvatarImageUrl(person, 400);
 
   <div class="flex flex-1 flex-col p-3 sm:p-4">
     <h2
-      class="text-base font-extrabold leading-snug text-gray-950 sm:text-lg"
+      class="text-sm font-extrabold leading-snug text-gray-950 sm:text-base md:text-lg line-clamp-2"
       data-pagefind-ignore
     >
       <a href={profileUrl} class="hover:text-green-800">
