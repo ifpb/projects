@@ -9,10 +9,11 @@
  *
  * O cache é ignorado pelo Git (são ~90 MB). Roda automaticamente via `prebuild`.
  */
-import { readFileSync, readdirSync, mkdirSync, existsSync, writeFileSync } from 'node:fs';
+import { readFileSync, readdirSync, mkdirSync, existsSync, writeFileSync, unlinkSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse } from 'yaml';
+import sharp from 'sharp';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const projectsDir = join(__dirname, '../src/content/projects');
@@ -29,6 +30,17 @@ const EXT_BY_TYPE = {
   'image/avif': 'avif',
   'image/svg+xml': 'svg',
 };
+
+function clearOtherExtensions(id, keepExt) {
+  for (const ext of Object.values(EXT_BY_TYPE)) {
+    if (ext !== keepExt) {
+      const p = join(outDir, `${id}.${ext}`);
+      if (existsSync(p)) {
+        try { unlinkSync(p); } catch {}
+      }
+    }
+  }
+}
 
 function sniffExtension(buffer) {
   if (buffer.length < 12) return null;
@@ -67,9 +79,31 @@ function readManifest() {
  * senão trocar a URL de um preview num PR não teria efeito.
  */
 function hasLocalFile(id) {
-  return Object.values(EXT_BY_TYPE).some((ext) =>
-    existsSync(join(outDir, `${id}.${ext}`))
-  );
+  return existsSync(join(outDir, `${id}.webp`)) || existsSync(join(outDir, `${id}.svg`));
+}
+
+function findExistingLocalFile(id) {
+  for (const ext of Object.values(EXT_BY_TYPE)) {
+    const p = join(outDir, `${id}.${ext}`);
+    if (existsSync(p)) return { path: p, ext };
+  }
+  return null;
+}
+
+async function optimizeExistingLocalFile(id, existing) {
+  if (existing.ext === 'svg') return true;
+  try {
+    const buffer = readFileSync(existing.path);
+    const optimizedBuffer = await sharp(buffer)
+      .resize({ width: 800, withoutEnlargement: true })
+      .webp({ quality: 80 })
+      .toBuffer();
+    clearOtherExtensions(id, 'webp');
+    writeFileSync(join(outDir, `${id}.webp`), optimizedBuffer);
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 function alreadyCached(manifest, { id, url }) {
@@ -97,8 +131,21 @@ async function download({ id, url }) {
     const ext = EXT_BY_TYPE[type] ?? sniffExtension(buffer);
     if (!ext) return { id, ok: false, reason: `formato não reconhecido (${type || 'sem tipo'})` };
 
-    writeFileSync(join(outDir, `${id}.${ext}`), buffer);
-    return { id, ok: true, bytes: buffer.length };
+    if (ext === 'svg') {
+      clearOtherExtensions(id, 'svg');
+      writeFileSync(join(outDir, `${id}.svg`), buffer);
+      return { id, ok: true, bytes: buffer.length };
+    }
+
+    // Redimensiona e converte imagens raster para WebP otimizado (largura máx 800px)
+    const optimizedBuffer = await sharp(buffer)
+      .resize({ width: 800, withoutEnlargement: true })
+      .webp({ quality: 80 })
+      .toBuffer();
+
+    clearOtherExtensions(id, 'webp');
+    writeFileSync(join(outDir, `${id}.webp`), optimizedBuffer);
+    return { id, ok: true, bytes: optimizedBuffer.length };
   } catch (error) {
     return { id, ok: false, reason: error.name === 'AbortError' ? 'timeout' : error.message };
   } finally {
@@ -111,6 +158,17 @@ async function run() {
 
   const targets = collectTargets();
   const manifest = readManifest();
+
+  // Otimiza arquivos locais existentes que ainda estejam em png/jpg
+  for (const t of targets) {
+    if (manifest[t.id] === t.url && !hasLocalFile(t.id)) {
+      const existing = findExistingLocalFile(t.id);
+      if (existing) {
+        await optimizeExistingLocalFile(t.id, existing);
+      }
+    }
+  }
+
   const pending = targets.filter((t) => !alreadyCached(manifest, t));
   const cached = targets.length - pending.length;
 

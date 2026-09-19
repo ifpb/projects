@@ -1,7 +1,9 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import type { Student } from "@/content.config";
+import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
+import peoplePlaceholder from "@/assets/people-placeholder.png";
 import Badge from "@/components/Badge.astro";
 import { getProjectsByPerson } from "@/helpers/projects";
 import {
@@ -36,7 +38,6 @@ const links = [
 ];
 
 const { person, eager = false } = Astro.props;
-const isDev = import.meta.env.DEV;
 const { name, addresses, occupations } = person.data;
 const id = getFirstPersonId(person);
 const profileUrl = `/projects/people/${id}/`;
@@ -75,7 +76,7 @@ const personBadges = [
 );
 const visibleBadges = personBadges.slice(0, 3);
 const hiddenBadges = personBadges.slice(visibleBadges.length);
-const fallbackImage = "/projects/imgs/clarity-avatar-solid.svg";
+const avatarUrl = getAvatarImageUrl(person, 400);
 ---
 
 <article
@@ -87,13 +88,15 @@ const fallbackImage = "/projects/imgs/clarity-avatar-solid.svg";
     class="relative block overflow-hidden bg-gray-200"
     aria-label={`Ver perfil de ${name.full}`}
   >
-    <img
-      src={isDev ? fallbackImage : getAvatarImageUrl(person)}
+    <Image
+      src={peoplePlaceholder}
       alt={name.full}
+      width={400}
+      height={400}
       class="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]"
       loading={eager ? "eager" : "lazy"}
       decoding="async"
-      data-src={getAvatarImageUrl(person)}
+      data-src={avatarUrl}
       onload="onLoadPersonImage(this)"
       onerror="onErrorPersonImage(this)"
     />

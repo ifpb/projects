@@ -3,6 +3,8 @@ import type { CollectionEntry } from "astro:content";
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import { getPreviewImage } from "@/lib/previews";
+import projectPlaceholder from "@/assets/project-placeholder.png";
+import peoplePlaceholder from "@/assets/people-placeholder.png";
 import Badge from "@/components/Badge.astro";
 import { getProjectId, getProjectTags } from "@/helpers/projects";
 import { getAvatarImageUrl, getFirstPersonId } from "@/helpers/people";
@@ -55,24 +57,15 @@ const categoryLabels = {
 <article class="project-card surface-card group flex h-full min-w-0 flex-col overflow-hidden">
   <div class="relative overflow-hidden bg-gray-200">
     <a href={detailUrl} aria-label={`Ver projeto ${name}`}>
-      {previewImage ? (
-        <Image
-          src={previewImage}
-          width={640}
-          class="aspect-[16/9] w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]"
-          alt={name}
-          loading={eager ? "eager" : "lazy"}
-          decoding="async"
-        />
-      ) : (
-        <img
-          src="/projects/imgs/project-placeholder.png"
-          class="aspect-[16/9] w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]"
-          alt={name}
-          loading={eager ? "eager" : "lazy"}
-          decoding="async"
-        />
-      )}
+      <Image
+        src={previewImage ?? projectPlaceholder}
+        width={640}
+        height={360}
+        class="aspect-[16/9] w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]"
+        alt={name}
+        loading={eager ? "eager" : "lazy"}
+        decoding="async"
+      />
     </a>
     <div class="absolute left-3 top-3 rounded bg-gray-950/85 px-2 py-1 text-[10px] font-extrabold uppercase text-white backdrop-blur">
       {categoryLabels[category.type] ?? category.type}
@@ -172,9 +165,11 @@ const categoryLabels = {
               title={person.data.name.full}
               class="rounded-full ring-2 ring-white"
             >
-              <img
-                src="/projects/imgs/people-placeholder.png"
+              <Image
+                src={peoplePlaceholder}
                 alt={person.data.name.full}
+                width={32}
+                height={32}
                 class="h-8 w-8 rounded-full bg-gray-200 object-cover"
                 loading={eager ? "eager" : "lazy"}
                 data-src={getAvatarImageUrl(person, 128)}

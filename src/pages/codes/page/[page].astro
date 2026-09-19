@@ -50,7 +50,7 @@ export async function getStaticPaths({ paginate }) {
   const popularTags = [...tagCounts.entries()]
     .map(([name, count]) => ({ name, count }))
     .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name))
-    .slice(0, 14);
+    .slice(0, 20);
 
   return paginate(projects, {
     pageSize: PAGE_SIZE,

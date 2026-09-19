@@ -31,9 +31,9 @@ const { page, type, index }: Props = Astro.props;
     data-pagefind-ignore
   >
     {
-      /* Ver a nota em ProjectGrid.astro: primeira fileira acima da dobra. */
+      /* As primeiras duas fileiras (8 cards no desktop) ficam acima da dobra. */
       page.data.map((person, index) => (
-        <PersonCard person={person} eager={index < 4} />
+        <PersonCard person={person} eager={index < 8} />
       ))
     }
   </div>

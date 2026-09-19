@@ -92,8 +92,8 @@ const featuredPeople = collaborators.slice(0, 4);
       </a>
     </div>
     <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      {featuredProjects.map((project, index) => (
-        <ProjectCard project={project} eager={index < 3} />
+      {featuredProjects.map((project) => (
+        <ProjectCard project={project} eager={true} />
       ))}
     </div>
   </section>
@@ -114,8 +114,8 @@ const featuredPeople = collaborators.slice(0, 4);
       </a>
     </div>
     <div class="grid gap-5 grid-cols-1 min-[420px]:grid-cols-2 lg:grid-cols-4">
-      {featuredPeople.map((person, index) => (
-        <PersonCard person={person} eager={index < 4} />
+      {featuredPeople.map((person) => (
+        <PersonCard person={person} eager={true} />
       ))}
     </div>
   </section>
