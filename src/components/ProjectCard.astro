@@ -1,228 +1,195 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import { Image } from 'astro:assets';
-import { Icon } from 'astro-icon/components';
-import { getPreviewImage } from '@/lib/previews';
-import Badge from '@/components/Badge.astro';
-import { getProjectId, getProjectTags } from '@/helpers/projects';
-import { getAvatarImageUrl, getFirstPersonId } from '@/helpers/people';
+import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import { getPreviewImage } from "@/lib/previews";
+import Badge from "@/components/Badge.astro";
+import { getProjectId, getProjectTags } from "@/helpers/projects";
+import { getAvatarImageUrl, getFirstPersonId } from "@/helpers/people";
 
-type ProjectsWithPeople = CollectionEntry<'projects'> & {
-  people: CollectionEntry<'people'>[];
+type ProjectsWithPeople = CollectionEntry<"projects"> & {
+  people: CollectionEntry<"people">[];
 };
-
 export interface Props {
   project: ProjectsWithPeople;
-  /** Cards da primeira fileira ficam acima da dobra e não devem ser lazy. */
   eager?: boolean;
 }
 
 const { project, eager = false } = Astro.props;
+const { addresses, name, description, category } = project.data;
+const allTags = getProjectTags(project)
+  .filter((tag, index, self) => self.indexOf(tag) === index)
+  .filter((tag) => tag !== "subject");
 
-const {
-  data: { addresses, name },
-} = project;
-
-const tags: string[] = getProjectTags(project);
-
+// Mantém a faixa em uma linha: tags longas cedem lugar às próximas tags curtas.
+const visibleTags: string[] = [];
+let visibleCharacters = 0;
+for (const tag of allTags) {
+  const tagWidth = tag.length + 2;
+  if (
+    visibleTags.length < 3 &&
+    tag.length <= 14 &&
+    visibleCharacters + tagWidth <= 28
+  ) {
+    visibleTags.push(tag);
+    visibleCharacters += tagWidth;
+  }
+}
+const hiddenTags = allTags.filter((tag) => !visibleTags.includes(tag));
 const projectId = getProjectId(project);
-
-// Preview local otimizado; ausente quando a URL do YAML está morta (ver
-// scripts/fetch-previews.mjs), caso em que o card usa o placeholder.
+const detailUrl = `/projects/codes/${projectId}`;
 const previewImage = getPreviewImage(project.id);
+const repositories = Array.isArray(addresses.repository)
+  ? addresses.repository
+  : [addresses.repository];
+const designUrl = addresses.template ?? addresses.design;
+const designLabel = addresses.template ? "Abrir template" : "Abrir design";
+const categoryLabels = {
+  subject: "Disciplina",
+  research: "Pesquisa",
+  extension: "Extensão",
+  "open source": "Open source",
+};
 ---
 
-<div
-  class="project-card md:max-w-80 rounded-md overflow-hidden shadow-lg bg-white text-center"
->
-  <section class="relative z-0">
-    <figure class="overflow-hidden shadow-md">
-      <a
-        href={addresses.homepage ||
-          (Array.isArray(addresses.repository)
-            ? addresses.repository[0]
-            : addresses.repository)}
-        target="_blank"
-      >
-        {
-          previewImage ? (
-            <Image
-              src={previewImage}
-              width={640}
-              class="bg-gray-300 object-cover w-full h-50 md:h-[150px] hover:scale-105 transition duration-500"
-              alt={name}
-              loading={eager ? 'eager' : 'lazy'}
-              decoding="async"
-            />
-          ) : (
-            <img
-              src="/projects/imgs/project-placeholder.png"
-              class="bg-gray-300 object-cover w-full h-50 md:h-[150px] hover:scale-105 transition duration-500"
-              alt={name}
-              loading={eager ? 'eager' : 'lazy'}
-              decoding="async"
-            />
-          )
-        }
-      </a>
-    </figure>
-    <div class="absolute top-2 right-2">
-      <ul class="flex">
-        {
-          addresses.homepage && (
-            <li class="-mr-2 bg-black border-2 border-gray-100 rounded-full overflow-hidden w-9 flex items-center justify-center">
-              <a
-                href={addresses.homepage}
-                target="_blank"
-                class="font-bold flex items-center justify-center text-white"
-                title="Homepage"
-                aria-label="Homepage do projeto"
-              >
-                <Icon
-                  name="ph:monitor-duotone"
-                  size={25}
-                  class="homepage-project-link"
-                />
-              </a>
-            </li>
-          )
-        }
-        {
-          addresses.design && (
-            <li class="-mr-2 bg-black border-2 border-gray-100 rounded-full overflow-hidden w-9 flex items-center justify-center">
-              <a
-                href={addresses.design}
-                target="_blank"
-                class="font-bold flex items-center justify-center text-white"
-                title="Design"
-                aria-label="Design do projeto"
-              >
-                {addresses.design.includes('figma.com') ? (
-                  <Icon
-                    name="logos:figma"
-                    size={32}
-                    class="figma-project-link"
-                  />
-                ) : addresses.design.includes('canva.com') ? (
-                  <Icon
-                    name="simple-icons:canva"
-                    size={32}
-                    class="canva-project-link"
-                  />
-                ) : (
-                  <Icon
-                    name="clarity:design-line"
-                    size={20}
-                    class="design-project-link"
-                  />
-                )}
-              </a>
-            </li>
-          )
-        }
-        {
-          addresses.workflow && (
-            <li class="-mr-2 bg-black border-2 border-gray-100 rounded-full overflow-hidden w-9 flex items-center justify-center">
-              <a
-                href={addresses.workflow}
-                target="_blank"
-                class="font-bold flex items-center justify-center text-white"
-                title="Workflow"
-                aria-label="Workflow do projeto"
-              >
-                <Icon
-                  name="uil:schedule"
-                  size={22}
-                  class="workflow-project-link"
-                />
-              </a>
-            </li>
-          )
-        }
-        {
-          Array.isArray(addresses.repository) ? (
-            addresses.repository.map((repo, index) => (
-              <li class="-mr-2 bg-black border-2 border-gray-100 rounded-full overflow-hidden w-9">
-                <a
-                  href={repo}
-                  target="_blank"
-                  class="font-bold flex items-center justify-center"
-                  title={`Repositório ${index + 1}`}
-                  aria-label={`Repositório ${index + 1}`}
-                >
-                  <Icon
-                    name="uim:github"
-                    size={32}
-                    class="github-project-link"
-                    is:inline
-                  />
-                </a>
-              </li>
-            ))
-          ) : (
-            <li class="-mr-2 bg-black border-2 border-gray-100 rounded-full overflow-hidden w-9">
-              <a
-                href={addresses.repository}
-                target="_blank"
-                title="Repositório"
-                aria-label="Repositório"
-                class="font-bold flex items-center justify-center"
-              >
-                <Icon
-                  name="uim:github"
-                  size={32}
-                  class="github-project-link"
-                  is:inline
-                />
-              </a>
-            </li>
-          )
-        }
-      </ul>
-    </div>
-    <ul class="absolute bottom-2 right-4 flex">
-      {
-        !!project.people?.length &&
-          project.people
-            ?.sort((a, b) => a.data.name.full.localeCompare(b.data.name.full))
-            ?.map((person) => (
-              <li class="-mr-2 border-2 border-gray-100 rounded-full">
-                <a
-                  href={`/projects/people/${getFirstPersonId(person)}/`}
-                  target="_blank"
-                  class="animate-pulse"
-                >
-                  <img
-                    src="/projects/imgs/people-placeholder.png"
-                    alt={person.data.name.full}
-                    title={person.data.name.full}
-                    class="rounded-full bg-gray-300 object-cover w-8"
-                    loading={eager ? 'eager' : 'lazy'}
-                    data-src={getAvatarImageUrl(person, 128)}
-                    onload="onLoadPersonImage(this, 32)"
-                    onerror="onErrorPersonImage(this)"
-                  />
-                </a>
-              </li>
-            ))
-      }
-    </ul>
-  </section>
-  <p class="my-3">
-    <a
-      href={`/projects/codes/${projectId}`}
-      target="_blank"
-      class="font-bold underline"
-    >
-      {name}
+<article class="project-card surface-card group flex h-full min-w-0 flex-col overflow-hidden">
+  <div class="relative overflow-hidden bg-gray-200">
+    <a href={detailUrl} aria-label={`Ver projeto ${name}`}>
+      {previewImage ? (
+        <Image
+          src={previewImage}
+          width={640}
+          class="aspect-[16/9] w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]"
+          alt={name}
+          loading={eager ? "eager" : "lazy"}
+          decoding="async"
+        />
+      ) : (
+        <img
+          src="/projects/imgs/project-placeholder.png"
+          class="aspect-[16/9] w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]"
+          alt={name}
+          loading={eager ? "eager" : "lazy"}
+          decoding="async"
+        />
+      )}
     </a>
-  </p>
-  <nav class="m-3 px-2 space-x-1">
-    {
-      tags
-        .filter((tag, index, self) => self.indexOf(tag) === index)
-        .filter((tag) => tag !== 'subject')
-        .map((tag) => <Badge url={`/projects/codes/${tag}/1/`} text={tag} />)
-    }
-  </nav>
-</div>
+    <div class="absolute left-3 top-3 rounded bg-gray-950/85 px-2 py-1 text-[10px] font-extrabold uppercase text-white backdrop-blur">
+      {categoryLabels[category.type] ?? category.type}
+    </div>
+    <div class="absolute right-3 top-3 flex gap-1.5">
+      {repositories.slice(0, 2).map((repository, index) => (
+        <a
+          href={repository}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="grid h-8 w-8 place-items-center rounded bg-gray-950 text-white shadow-sm transition-colors hover:bg-green-700"
+          title={`Repositório ${index + 1}`}
+          aria-label={`Repositório ${index + 1}`}
+        >
+          <Icon
+            name="mdi:github"
+            size={18}
+            class="github-project-link"
+            is:inline
+          />
+        </a>
+      ))}
+      {designUrl && (
+        <a
+          href={designUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="grid h-8 w-8 place-items-center rounded bg-white text-gray-800 shadow-sm transition-colors hover:bg-green-700 hover:text-white"
+          title={designLabel}
+          aria-label={designLabel}
+        >
+          <Icon name="ph:paint-brush-bold" size={17} />
+        </a>
+      )}
+      {addresses.workflow && (
+        <a
+          href={addresses.workflow}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="grid h-8 w-8 place-items-center rounded bg-white text-gray-800 shadow-sm transition-colors hover:bg-green-700 hover:text-white"
+          title="Abrir workflow"
+          aria-label="Abrir workflow"
+        >
+          <Icon name="ph:kanban-bold" size={18} />
+        </a>
+      )}
+      {addresses.homepage && (
+        <a
+          href={addresses.homepage}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="grid h-8 w-8 place-items-center rounded bg-white text-gray-800 shadow-sm transition-colors hover:bg-green-700 hover:text-white"
+          title="Abrir homepage"
+          aria-label="Abrir homepage"
+        >
+          <Icon name="ph:arrow-square-out-bold" size={17} />
+        </a>
+      )}
+    </div>
+  </div>
+
+  <div class="flex flex-1 flex-col p-4">
+    <h2 class="line-clamp-2 h-12 text-lg font-extrabold leading-snug text-gray-950">
+      <a href={detailUrl} class="hover:text-green-800">
+        {name}
+      </a>
+    </h2>
+    <p class="mt-2 line-clamp-2 h-12 text-sm leading-6 text-gray-600">
+      {description}
+    </p>
+    <nav
+      class="mt-4 mb-4 flex min-h-7 flex-nowrap items-center gap-1.5 overflow-hidden"
+      aria-label={`Tags de ${name}`}
+    >
+      {visibleTags.map((tag) => (
+        <Badge url={`/projects/codes/${tag}/1/`} text={tag} />
+      ))}
+      {hiddenTags.length > 0 && (
+        <span
+          class="ml-auto inline-flex shrink-0 items-center rounded-full border border-gray-200 bg-gray-100 px-2.5 py-1 text-[11px] font-bold text-gray-600"
+          title={hiddenTags.join(", ")}
+          aria-label={`Mais ${hiddenTags.length} tags: ${hiddenTags.join(", ")}`}
+        >
+          +{hiddenTags.length}
+        </span>
+      )}
+    </nav>
+
+    <div class="mt-auto flex items-center justify-between border-t border-gray-100 pt-4">
+      <div class="flex min-h-8 -space-x-2">
+        {project.people
+          ?.slice(0, 4)
+          .sort((a, b) => a.data.name.full.localeCompare(b.data.name.full))
+          .map((person) => (
+            <a
+              href={`/projects/people/${getFirstPersonId(person)}/`}
+              title={person.data.name.full}
+              class="rounded-full ring-2 ring-white"
+            >
+              <img
+                src="/projects/imgs/people-placeholder.png"
+                alt={person.data.name.full}
+                class="h-8 w-8 rounded-full bg-gray-200 object-cover"
+                loading={eager ? "eager" : "lazy"}
+                data-src={getAvatarImageUrl(person, 128)}
+                onload="onLoadPersonImage(this, 32)"
+                onerror="onErrorPersonImage(this)"
+              />
+            </a>
+          ))}
+      </div>
+      <a
+        href={detailUrl}
+        class="inline-flex items-center gap-1 text-xs font-extrabold text-green-800 hover:text-green-950"
+      >
+        Ver projeto <Icon name="ph:arrow-right-bold" size={15} />
+      </a>
+    </div>
+  </div>
+</article>

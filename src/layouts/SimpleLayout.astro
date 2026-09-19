@@ -1,8 +1,8 @@
 ---
-import GoogleAnalytics from '@/components/GoogleAnalytics.astro';
-import NavBar from '@/components/NavBar.astro';
+import GoogleAnalytics from "@/components/GoogleAnalytics.astro";
+import NavBar from "@/components/NavBar.astro";
 
-import '@/styles/global.css';
+import "@/styles/global.css";
 ---
 
 <html lang="pt-BR">
@@ -11,13 +11,23 @@ import '@/styles/global.css';
     <link rel="icon" type="image/svg+xml" href="/projects/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <script is:inline>
+      (() => {
+        const savedTheme = localStorage.getItem("ifpb-theme");
+        const systemTheme = matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+        document.documentElement.dataset.theme = savedTheme || systemTheme;
+      })();
+    </script>
     <title>IFPB Code</title>
   </head>
-  <body class="relative bg-gray-100">
+  <body class="relative flex min-h-screen flex-col bg-gray-100">
     <NavBar />
-    <slot />
+    <main class="flex-1">
+      <slot />
+    </main>
 
     <GoogleAnalytics />
   </body>
 </html>
-

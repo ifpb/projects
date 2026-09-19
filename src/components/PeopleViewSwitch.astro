@@ -1,0 +1,34 @@
+---
+export interface Props {
+  active: "all" | "projects";
+}
+
+const { active } = Astro.props;
+const options = [
+  { id: "all", label: "Todos", href: "/projects/people/page/1" },
+  {
+    id: "projects",
+    label: "Colaboradores",
+    href: "/projects/people/collaborator/1",
+  },
+] as const;
+---
+
+<nav aria-label="Visualização da comunidade">
+  <div class="inline-flex rounded-md border border-gray-300 bg-white p-1">
+    {options.map((option) => (
+      <a
+        href={option.href}
+        aria-current={active === option.id ? "page" : undefined}
+        class:list={[
+          "rounded px-4 py-2.5 text-sm font-bold transition-colors",
+          active === option.id
+            ? "bg-green-700 text-white"
+            : "text-gray-600 hover:bg-green-50 hover:text-green-800",
+        ]}
+      >
+        {option.label}
+      </a>
+    ))}
+  </div>
+</nav>

@@ -1,0 +1,21 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<footer class="border-t border-gray-200 bg-white">
+  <div class="page-shell flex flex-col gap-4 py-8 text-sm text-gray-600 sm:flex-row sm:items-center sm:justify-between">
+    <div class="flex items-center gap-3">
+      <img src="/projects/favicon.svg" alt="" class="h-8 w-8" />
+      <p>
+        <strong class="block text-gray-900">IFPB Projetos</strong>Conhecimento
+        aberto, feito por nossa comunidade.
+      </p>
+    </div>
+    <a
+      href="https://github.com/ifpb/projects"
+      class="inline-flex items-center gap-2 font-semibold text-gray-700 hover:text-green-800"
+    >
+      <Icon name="mdi:github" size={18} /> Contribua no GitHub
+    </a>
+  </div>
+</footer>

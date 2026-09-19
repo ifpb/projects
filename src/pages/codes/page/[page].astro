@@ -1,12 +1,13 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import BaseLayout from '@/layouts/BaseLayout.astro';
-import ProjectGrid from '@/components/ProjectGrid.astro';
-import { getAllProjectTagGroups, getProjects } from '@/helpers/projects';
-import { PAGE_SIZE } from '@/consts';
+import type { CollectionEntry } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import ProjectGrid from "@/components/ProjectGrid.astro";
+import PopularTagCloud from "@/components/PopularTagCloud.astro";
+import { getAllProjectTagGroups, getProjects } from "@/helpers/projects";
+import { PAGE_SIZE } from "@/consts";
 
-export type ProjectsWithPeople = CollectionEntry<'projects'> & {
-  people: CollectionEntry<'people'>[];
+export type ProjectsWithPeople = CollectionEntry<"projects"> & {
+  people: CollectionEntry<"people">[];
 };
 
 export interface Props {
@@ -16,22 +17,62 @@ export interface Props {
     lastPage: number;
   };
   tags: Record<string, Record<string, string[]>>;
+  popularTags: { name: string; count: number }[];
 }
 
 export async function getStaticPaths({ paginate }) {
   const projects = await getProjects();
 
   const tags = await getAllProjectTagGroups();
+  const excludedTags = new Set([
+    "design",
+    "workflow",
+    "homepage",
+    "template",
+    "subject",
+    "research",
+    "extension",
+    "open source",
+  ]);
+  const tagCounts = new Map<string, number>();
+
+  projects.forEach((project) => {
+    const projectTags = new Set(
+      project.data.tags
+        .map((tag) => tag.trim().toLowerCase())
+        .filter((tag) => tag && !excludedTags.has(tag)),
+    );
+    projectTags.forEach((tag) =>
+      tagCounts.set(tag, (tagCounts.get(tag) ?? 0) + 1),
+    );
+  });
+
+  const popularTags = [...tagCounts.entries()]
+    .map(([name, count]) => ({ name, count }))
+    .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name))
+    .slice(0, 14);
 
   return paginate(projects, {
     pageSize: PAGE_SIZE,
-    props: { tags },
+    props: { tags, popularTags },
   });
 }
 
-const { page, tags }: Props = Astro.props;
+const { page, tags, popularTags }: Props = Astro.props;
 ---
 
-<BaseLayout pageTitle="Projetos" type="codes" tags={tags}>
+<BaseLayout
+  pageTitle="Projetos"
+  pageDescription="Explore software, pesquisas e iniciativas de extensão desenvolvidos pela comunidade do IFPB."
+  type="codes"
+  tags={tags}
+>
+  {page.currentPage === 1 && (
+    <PopularTagCloud
+      tags={popularTags}
+      hrefBase="/projects/codes"
+      ariaLabel="Tags populares de projetos"
+    />
+  )}
   <ProjectGrid page={page} type="codes" index="page" />
 </BaseLayout>

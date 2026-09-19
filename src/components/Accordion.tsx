@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface AccordionProps {
   id: string;
@@ -15,17 +15,22 @@ export default function Accordion({
   isOpen,
   onToggle,
   children,
-  className = '',
+  className = "",
 }: AccordionProps) {
   return (
     <div className={`group ${className}`}>
-      <div
+      <button
+        type="button"
         onClick={() => onToggle(id)}
-        className={`flex cursor-pointer list-none items-center justify-between rounded-sm px-3 py-2 transition ${
-          isOpen ? 'rounded-b-none bg-gray-300' : 'bg-gray-200'
+        aria-expanded={isOpen}
+        aria-controls={`${id}-content`}
+        className={`flex w-full cursor-pointer items-center justify-between rounded-md border px-3 py-2.5 text-left transition-colors ${
+          isOpen
+            ? "rounded-b-none border-gray-300 bg-gray-100"
+            : "border-gray-200 bg-white hover:border-green-600"
         }`}
       >
-        <h1 className="font-semibold text-sm m-0">{title}</h1>
+        <span className="m-0 text-sm font-bold text-gray-800">{title}</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="1em"
@@ -33,14 +38,17 @@ export default function Accordion({
           viewBox="0 0 24 24"
           fill="currentColor"
           className={`text-xl transition-transform ${
-            isOpen ? 'rotate-180' : ''
+            isOpen ? "rotate-180" : ""
           }`}
         >
           <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6l-6-6z" />
         </svg>
-      </div>
+      </button>
       {isOpen && (
-        <nav className="border border-t-0 border-gray-300 rounded-b-sm px-3 py-2 bg-white">
+        <nav
+          id={`${id}-content`}
+          className="rounded-b-md border border-t-0 border-gray-300 bg-white px-3 py-3"
+        >
           {children}
         </nav>
       )}

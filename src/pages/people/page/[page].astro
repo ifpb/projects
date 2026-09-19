@@ -1,13 +1,20 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import BaseLayout from '@/layouts/BaseLayout.astro';
-import PersonGrid from '@/components/PersonGrid.astro';
-import { getAllPeopleTagGroups, getPeople } from '@/helpers/people';
-import { PAGE_SIZE } from '@/consts';
+import type { CollectionEntry } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PersonGrid from "@/components/PersonGrid.astro";
+import PeopleViewSwitch from "@/components/PeopleViewSwitch.astro";
+import PopularTagCloud from "@/components/PopularTagCloud.astro";
+import {
+  getAllPeopleTagGroups,
+  getPeople,
+  getPersonTags,
+} from "@/helpers/people";
+import { PAGE_SIZE } from "@/consts";
+import { abbreviationCourses, cities, courseLevels } from "@/lib/taxonomy";
 
 export interface Props {
   page: {
-    data: CollectionEntry<'people'>[];
+    data: CollectionEntry<"people">[];
     currentPage: number;
     lastPage: number;
     url: {
@@ -17,22 +24,84 @@ export interface Props {
   };
   tags: string[];
   index: string;
+  popularTags: { name: string; label: string; count: number }[];
 }
 
 export async function getStaticPaths({ paginate }) {
   const people = await getPeople();
 
   const tags = await getAllPeopleTagGroups();
+  const allowedSimpleTags = new Set([
+    "student",
+    "professor",
+    "egresso",
+    ...courseLevels,
+  ]);
+  const coursePattern = new RegExp(
+    `^(?:egresso-)?(?:${abbreviationCourses.join("|")})-(?:${Object.keys(cities).join("|")})$`,
+  );
+  const currentCoursePattern = new RegExp(
+    `^(?:${abbreviationCourses.join("|")})-(?:${Object.keys(cities).join("|")})$`,
+  );
+  const tagCounts = new Map<string, number>();
+
+  const peopleTags = await Promise.all(
+    people.map((person) => getPersonTags(person)),
+  );
+  peopleTags.forEach((tagsForPerson) => {
+    const relevantTags = new Set(
+      tagsForPerson.filter(
+        (tag) => allowedSimpleTags.has(tag) || coursePattern.test(tag),
+      ),
+    );
+    relevantTags.forEach((tag) =>
+      tagCounts.set(tag, (tagCounts.get(tag) ?? 0) + 1),
+    );
+  });
+
+  const rankedTags = [...tagCounts.entries()]
+    .map(([name, count]) => {
+      let label = name;
+      if (name === "student") label = "Estudantes";
+      else if (name === "professor") label = "Docentes";
+      else if (name === "egresso") label = "Egressos";
+      else if (name in cities) label = cities[name as keyof typeof cities];
+      else if (courseLevels.includes(name)) {
+        label = name[0].toUpperCase() + name.slice(1);
+      } else if (name.startsWith("egresso-")) {
+        label = `Egressos · ${name.split("-")[1].toUpperCase()}`;
+      } else if (coursePattern.test(name)) {
+        label = name.split("-")[0].toUpperCase();
+      }
+      return { name, label, count };
+    })
+    .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+  const popularTags = rankedTags.filter(
+    (tag, index) => index < 14 || currentCoursePattern.test(tag.name),
+  );
 
   return paginate(people, {
-    props: { index: 'page', tags },
+    props: { index: "page", tags, popularTags },
     pageSize: PAGE_SIZE,
   });
 }
 
-const { page, index, tags } = Astro.props;
+const { page, index, tags, popularTags } = Astro.props;
 ---
 
-<BaseLayout pageTitle="Membros da Academia" type="people" tags={tags}>
+<BaseLayout
+  pageTitle="Comunidade"
+  pageDescription="Encontre estudantes, docentes, servidores e egressos que fazem parte da história do IFPB."
+  type="people"
+  tags={tags}
+>
+  <PeopleViewSwitch slot="header-actions" active="all" />
+  {page.currentPage === 1 && (
+    <PopularTagCloud
+      tags={popularTags}
+      hrefBase="/projects/people"
+      ariaLabel="Tags populares da comunidade"
+    />
+  )}
   <PersonGrid page={page} type="people" index={index} />
 </BaseLayout>

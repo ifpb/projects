@@ -1,127 +1,125 @@
 ---
-import type { ProjectsWithPeople } from '@/pages/codes/page/[page].astro';
-import type { CollectionEntry } from 'astro:content';
-import { url } from '@/lib/url';
+import type { ProjectsWithPeople } from "@/pages/codes/page/[page].astro";
+import type { CollectionEntry } from "astro:content";
+import { Icon } from "astro-icon/components";
+import { url } from "@/lib/url";
 
 export interface Props {
   type: string;
   index: string;
   page: {
-    data: (ProjectsWithPeople | CollectionEntry<'people'>)[];
+    data: (ProjectsWithPeople | CollectionEntry<"people">)[];
     currentPage: number;
     lastPage: number;
-    url?: {
-      first?: string;
-      prev: string;
-      next: string;
-      last?: string;
-    };
   };
 }
 
 const { page, type, index }: Props = Astro.props;
-
-const pagePath = `${type}/${index}`;
-
-// As URLs são montadas aqui, e não a partir de `page.url.*`, porque o formato
-// daquele objeto mudou entre majors do Astro (a v5 passou a incluir o `base`).
-const pageUrl = (pageNumber: number) => url(`${pagePath}/${pageNumber}`);
-
-const firstUrl = pageUrl(1);
-const lastUrl = pageUrl(page.lastPage);
-// `undefined` faz o Astro omitir o atributo: um `<a>` sem `href` não é link, enquanto
-// `href=""` apontaria para a própria página.
+const pageUrl = (pageNumber: number) => url(`${type}/${index}/${pageNumber}`);
 const prevUrl =
   page.currentPage > 1 ? pageUrl(page.currentPage - 1) : undefined;
 const nextUrl =
   page.currentPage < page.lastPage ? pageUrl(page.currentPage + 1) : undefined;
+const firstUrl = page.currentPage > 1 ? pageUrl(1) : undefined;
+const lastUrl =
+  page.currentPage < page.lastPage ? pageUrl(page.lastPage) : undefined;
 
-function getPageNumbers(
-  size: number,
-  lastPage: number,
-  currentPage: number
-): number[] {
-  let pages = [];
+function getPageNumbers(size: number, lastPage: number, currentPage: number) {
   let start = Math.max(1, currentPage - Math.floor(size / 2));
-  let end = Math.min(lastPage, start + size - 1);
+  const end = Math.min(lastPage, start + size - 1);
   start = Math.max(1, end - size + 1);
-  for (let i = start; i <= end; i++) {
-    pages.push(i);
-  }
-  return pages;
+  return Array.from({ length: end - start + 1 }, (_, i) => start + i);
 }
 
-const pages = getPageNumbers(4, page.lastPage, page.currentPage);
-
-const stepClass =
-  'px-4 py-2 text-slate-600 transition-colors duration-150 bg-white border border-r-0 border-slate-600 focus:shadow-outline hover:bg-slate-100';
+const pages = getPageNumbers(5, page.lastPage, page.currentPage);
+const controlClass =
+  "grid h-10 min-w-10 place-items-center rounded-md border border-gray-300 bg-white px-3 text-sm font-bold text-gray-700 transition-colors hover:border-green-700 hover:text-green-800";
 ---
 
-<div class="mt-12 flex items-center flex-wrap justify-center">
-  <nav aria-label="Page navigation">
-    <ul class="flex flex-row">
-      <li>
-        <a
-          href={firstUrl}
-          aria-label="Primeira página"
-          class={`${stepClass} rounded-l-lg`}
+<nav
+  class="mt-12 flex flex-col items-center gap-4 border-t border-gray-200 pt-8"
+  aria-label="Paginação"
+>
+  <p class="text-sm text-gray-500">
+    Página <strong class="text-gray-800">{page.currentPage}</strong> de{" "}
+    {page.lastPage}
+  </p>
+  <ul class="flex flex-wrap items-center justify-center gap-1.5">
+    <li>
+      {firstUrl ? (
+        <a href={firstUrl} aria-label="Primeira página" class={controlClass}>
+          <Icon name="ph:caret-double-left-bold" size={16} />
+        </a>
+      ) : (
+        <span
+          aria-hidden="true"
+          class={`${controlClass} cursor-not-allowed opacity-40`}
         >
-          &laquo;
+          <Icon name="ph:caret-double-left-bold" size={16} />
+        </span>
+      )}
+    </li>
+    <li>
+      {prevUrl ? (
+        <a href={prevUrl} aria-label="Página anterior" class={controlClass}>
+          <Icon name="ph:caret-left-bold" size={16} />
+        </a>
+      ) : (
+        <span
+          aria-hidden="true"
+          class={`${controlClass} cursor-not-allowed opacity-40`}
+        >
+          <Icon name="ph:caret-left-bold" size={16} />
+        </span>
+      )}
+    </li>
+    {pages.map((pageNumber) => (
+      <li
+        class:list={[
+          Math.abs(pageNumber - page.currentPage) > 1 && "hidden sm:block",
+        ]}
+      >
+        <a
+          href={pageUrl(pageNumber)}
+          aria-label={`Página ${pageNumber}`}
+          aria-current={pageNumber === page.currentPage ? "page" : undefined}
+          class:list={[
+            controlClass,
+            pageNumber === page.currentPage &&
+              "!border-green-700 !bg-green-700 !text-white",
+          ]}
+        >
+          {pageNumber}
         </a>
       </li>
-      <li>
-        {
-          prevUrl ? (
-            <a href={prevUrl} aria-label="Página anterior" class={stepClass}>
-              &lsaquo;
-            </a>
-          ) : (
-            <span aria-hidden="true" class={`${stepClass} opacity-50`}>
-              &lsaquo;
-            </span>
-          )
-        }
-      </li>
-      {
-        pages.map((pageNumber) => (
-          <li>
-            <a
-              href={pageUrl(pageNumber)}
-              aria-label={`Página ${pageNumber}`}
-              aria-current={pageNumber === page.currentPage ? 'page' : undefined}
-              class={`${
-                pageNumber === page.currentPage
-                  ? 'text-white bg-slate-600'
-                  : 'text-slate-600 bg-white'
-              } px-4 py-2 border border-r-0 border-slate-600 focus:shadow-outline transition-colors duration-150`}
-            >
-              {pageNumber}
-            </a>
-          </li>
-        ))
-      }
-      <li>
-        {
-          nextUrl ? (
-            <a href={nextUrl} aria-label="Próxima página" class={stepClass}>
-              &rsaquo;
-            </a>
-          ) : (
-            <span aria-hidden="true" class={`${stepClass} opacity-50`}>
-              &rsaquo;
-            </span>
-          )
-        }
-      </li>
-      <li>
-        <a
-          href={lastUrl}
-          aria-label="Última página"
-          class={`${stepClass} rounded-r-lg border-r`}
-        >
-          &raquo;
+    ))}
+    <li>
+      {nextUrl ? (
+        <a href={nextUrl} aria-label="Próxima página" class={controlClass}>
+          <Icon name="ph:caret-right-bold" size={16} />
         </a>
-      </li>
-    </ul>
-  </nav>
-</div>
+      ) : (
+        <span
+          aria-hidden="true"
+          class={`${controlClass} cursor-not-allowed opacity-40`}
+        >
+          <Icon name="ph:caret-right-bold" size={16} />
+        </span>
+      )}
+    </li>
+    <li>
+      {lastUrl ? (
+        <a href={lastUrl} aria-label="Última página" class={controlClass}>
+          <Icon name="ph:caret-double-right-bold" size={16} />
+        </a>
+      ) : (
+        <span
+          aria-hidden="true"
+          class={`${controlClass} cursor-not-allowed opacity-40`}
+        >
+          <Icon name="ph:caret-double-right-bold" size={16} />
+        </span>
+      )}
+    </li>
+  </ul>
+</nav>

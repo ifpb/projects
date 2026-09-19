@@ -1,21 +1,21 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import BaseLayout from '@/layouts/BaseLayout.astro';
-import PersonCard from '@/components/PersonCard.astro';
-import ProjectCard from '@/components/ProjectCard.astro';
-import Badge from '@/components/Badge.astro';
-import { getProjectsByPerson, isSubjectProject } from '@/helpers/projects';
-import { getPeople, getFirstPersonId } from '@/helpers/people';
-import { getSubjectByProject } from '@/helpers/courses';
-import PersonUtil from '@/components/PersonUtil.astro';
+import type { CollectionEntry } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PersonCard from "@/components/PersonCard.astro";
+import ProjectCard from "@/components/ProjectCard.astro";
+import Badge from "@/components/Badge.astro";
+import { getProjectsByPerson, isSubjectProject } from "@/helpers/projects";
+import { getPeople, getFirstPersonId } from "@/helpers/people";
+import { getSubjectByProject } from "@/helpers/courses";
+import PersonUtil from "@/components/PersonUtil.astro";
 
-type ProjectsWithPeople = CollectionEntry<'projects'> & {
-  people: CollectionEntry<'people'>[];
+type ProjectsWithPeople = CollectionEntry<"projects"> & {
+  people: CollectionEntry<"people">[];
 };
 
 export interface Props {
   projects: ProjectsWithPeople[];
-  person: CollectionEntry<'people'>;
+  person: CollectionEntry<"people">;
 }
 
 export async function getStaticPaths() {
@@ -44,7 +44,7 @@ const subjects = [
   ...new Set(
     projects
       .filter((project) => isSubjectProject(project))
-      .flatMap((project) => getSubjectByProject(project))
+      .flatMap((project) => getSubjectByProject(project)),
   ),
 ];
 ---
@@ -52,50 +52,51 @@ const subjects = [
 <PersonUtil />
 
 <BaseLayout pageTitle={person.data.name.full} pageFindFilter="tipo:Pessoas">
-  <div
-    class="flex gap-5 flex-col md:flex-row items-center md:justify-center md:items-start"
-  >
+  <div class="grid items-start gap-8 lg:grid-cols-[17rem_minmax(0,1fr)]">
     <div data-pagefind-filter="tipo:Pessoas" class="hidden">
-      {person.data.occupations.map((occupation) => occupation.id).join(', ')}
+      {person.data.occupations.map((occupation) => occupation.id).join(", ")}
     </div>
-    <div>
+    <div class="lg:sticky lg:top-24">
       <PersonCard person={person} />
     </div>
 
-    <div class="space-y-4">
-      <h1 class="text-3xl max-md:mt-8 font-semibold">Projetos</h1>
+    <div>
+      <p class="section-label mb-2">Portfólio</p>
+      <h2 class="text-2xl font-extrabold text-gray-950">Projetos</h2>
 
-      {
-        !!projects.length ? (
-          <p class="text-xl font-semibold">
+      {!!projects.length ? (
+        <>
+          <p class="mb-5 mt-2 text-sm text-gray-600">
             {projects.length} projeto(s) disponível(is).
           </p>
 
-          <div class="grid justify-items-stretch gap-5 grid-cols-1 md:grid-cols-2">
+          <div class="grid items-stretch gap-5 grid-cols-1 xl:grid-cols-2">
             {projects.map((project) => (
               <ProjectCard project={project} />
             ))}
           </div>
-        ) : (
-          <div>
-            <p class="text-xl font-semibold">
-              Nenhum projeto cadastrado no momento.
-            </p>
-          </div>
-        )
-      }
+        </>
+      ) : (
+        <div>
+          <p class="text-xl font-semibold">
+            Nenhum projeto cadastrado no momento.
+          </p>
+        </div>
+      )}
 
-      {
-        !!subjects.length && (
-          <h1 class="text-3xl max-md:mt-8 mb-4 font-semibold">Turmas</h1>
+      {!!subjects.length && (
+        <>
+          <h2 class="mb-4 mt-10 border-t border-gray-200 pt-8 text-2xl font-extrabold">
+            Turmas
+          </h2>
 
           <div class="tags">
-            {
-              subjects.map((subject) => <Badge url={`/projects/people/${subject}/1`} text={subject} />)
-            }
+            {subjects.map((subject) => (
+              <Badge url={`/projects/people/${subject}/1`} text={subject} />
+            ))}
           </div>
-        )
-      }
+        </>
+      )}
     </div>
   </div>
 </BaseLayout>

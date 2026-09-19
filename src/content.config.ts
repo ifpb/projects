@@ -1,22 +1,19 @@
-import { defineCollection } from 'astro:content';
-import { z } from 'astro/zod';
-import { glob } from 'astro/loaders';
+import { defineCollection } from "astro:content";
+import { z } from "astro/zod";
+import { glob } from "astro/loaders";
 import {
   abbreviationCourses,
   campi,
   cities,
   courseWithCityEnum,
-} from '@/lib/taxonomy';
+} from "@/lib/taxonomy";
 
 export type SubjectProject = z.infer<typeof subjectProjectCategory>;
 export type ResearchProject = z.infer<typeof subjectProjectCategory>;
 export type ExtensionProject = z.infer<typeof subjectProjectCategory>;
 export type OpenSourceProject = z.infer<typeof subjectProjectCategory>;
 export type ProjectCategory =
-  | SubjectProject
-  | ResearchProject
-  | ExtensionProject
-  | OpenSourceProject;
+  SubjectProject | ResearchProject | ExtensionProject | OpenSourceProject;
 
 export type Professor = z.infer<typeof professorOccupation>;
 export type Employee = z.infer<typeof employeeOccupation>;
@@ -65,19 +62,19 @@ const addresses = z.object({
 // occupation
 const professorOccupation = z.object({
   id,
-  type: z.literal('professor'),
+  type: z.literal("professor"),
   campus,
 });
 
 const employeeOccupation = z.object({
   id,
-  type: z.literal('employee'),
+  type: z.literal("employee"),
   campus,
 });
 
 const studentOccupation = z.object({
   id,
-  type: z.literal('student'),
+  type: z.literal("student"),
   course: courseWithCity,
   isFinished: z.boolean(),
 });
@@ -88,7 +85,7 @@ const projectCategory = z.object({
 });
 
 const subjectProjectCategory = z.object({
-  type: z.literal('subject'),
+  type: z.literal("subject"),
   subject: z.union([z.string(), z.array(z.string())]),
   period: z.number().refine((value) => {
     const regex = /^\d{4}(\.[12])?$/;
@@ -97,29 +94,29 @@ const subjectProjectCategory = z.object({
 });
 
 const researchProjectCategory = projectCategory.extend({
-  type: z.literal('research'),
+  type: z.literal("research"),
   campus,
 });
 
 const extensionProjectCategory = projectCategory.extend({
-  type: z.literal('extension'),
+  type: z.literal("extension"),
   campus,
 });
 
 const openSourceProjectCategory = projectCategory.extend({
-  type: z.literal('open source'),
+  type: z.literal("open source"),
   campus,
 });
 
 // collections
 const courseCollection = defineCollection({
-  loader: glob({ base: './src/content/courses', pattern: '**/[^_]*.yml' }),
+  loader: glob({ base: "./src/content/courses", pattern: "**/[^_]*.yml" }),
   schema: z.object({
     id: z.string(),
     name: z.string(),
     abbreviation: z.string(),
     department: z.string(),
-    status: z.enum(['active', 'inactive']).optional(),
+    status: z.enum(["active", "inactive"]).optional(),
     level: z.object({
       compact: z.string(),
       full: z.string(),
@@ -130,7 +127,7 @@ const courseCollection = defineCollection({
 });
 
 const peopleCollection = defineCollection({
-  loader: glob({ base: './src/content/people', pattern: '**/[^_]*.yml' }),
+  loader: glob({ base: "./src/content/people", pattern: "**/[^_]*.yml" }),
   schema: z.object({
     id: id.optional(),
     name: z.object({
@@ -140,12 +137,12 @@ const peopleCollection = defineCollection({
     avatar: z.object({
       selected: z
         .enum([
-          'github',
-          'githubUC',
-          'researchgate',
-          'lattes',
-          'linkedin',
-          'none',
+          "github",
+          "githubUC",
+          "researchgate",
+          "lattes",
+          "linkedin",
+          "none",
         ])
         .optional(),
       github: z.string().url().optional(),
@@ -155,7 +152,7 @@ const peopleCollection = defineCollection({
       linkedin: z.string().url().optional(),
     }),
     occupations: z.array(
-      z.union([professorOccupation, employeeOccupation, studentOccupation])
+      z.union([professorOccupation, employeeOccupation, studentOccupation]),
     ),
     addresses: addresses.extend({
       linkedin: z.string().url().optional(),
@@ -167,7 +164,7 @@ const peopleCollection = defineCollection({
 });
 
 const projectCollection = defineCollection({
-  loader: glob({ base: './src/content/projects', pattern: '**/[^_]*.yml' }),
+  loader: glob({ base: "./src/content/projects", pattern: "**/[^_]*.yml" }),
   schema: z.object({
     name: z.string(),
     description: z.string(),
@@ -175,6 +172,7 @@ const projectCollection = defineCollection({
       repository: z.union([z.string().url(), z.array(z.string().url())]),
       preview: z.string().url().optional(),
       design: z.string().url().optional(),
+      template: z.string().url().optional(),
       workflow: z.string().url().optional(),
     }),
     category: z.union([
@@ -189,7 +187,7 @@ const projectCollection = defineCollection({
 });
 
 const subjectCollection = defineCollection({
-  loader: glob({ base: './src/content/subjects', pattern: '**/[^_]*.yml' }),
+  loader: glob({ base: "./src/content/subjects", pattern: "**/[^_]*.yml" }),
   schema: z.object({
     id: z.string(),
     name: z.object({

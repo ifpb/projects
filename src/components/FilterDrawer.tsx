@@ -1,13 +1,14 @@
-import React, { useState, useMemo, useCallback } from 'react';
-import Accordion from './Accordion';
-import Badge from './Badge';
-import type { CourseInfo, SubjectInfo } from '@/lib/taxonomy';
+import React, { useState, useMemo, useCallback, useEffect } from "react";
+import { Icon } from "@iconify/react";
+import Accordion from "./Accordion";
+import Badge from "./Badge";
+import type { CourseInfo, SubjectInfo } from "@/lib/taxonomy";
 import {
   abbreviationCourses,
   campi,
   cities,
   getPeriodCourses,
-} from '@/lib/taxonomy';
+} from "@/lib/taxonomy";
 
 interface TagGroup {
   name: string;
@@ -32,52 +33,52 @@ interface AccordionConfig {
 
 const CODES_EXTRA_ACCORDIONS: AccordionConfig[] = [
   {
-    id: 'codes-type',
-    title: 'Tipo',
+    id: "codes-type",
+    title: "Tipo",
     badges: [
-      { url: '/projects/codes/subject/1', value: 'Disciplina' },
-      { url: '/projects/codes/research/1', value: 'Pesquisa' },
-      { url: '/projects/codes/extension/1', value: 'Extensão' },
-      { url: '/projects/codes/open%20source/1', value: 'Open Source' },
+      { url: "/projects/codes/subject/1", value: "Disciplina" },
+      { url: "/projects/codes/research/1", value: "Pesquisa" },
+      { url: "/projects/codes/extension/1", value: "Extensão" },
+      { url: "/projects/codes/open%20source/1", value: "Open Source" },
     ],
   },
   {
-    id: 'codes-resource',
-    title: 'Recursos',
+    id: "codes-resource",
+    title: "Recursos",
     badges: [
-      { url: '/projects/codes/design/1', value: 'design' },
-      { url: '/projects/codes/workflow/1', value: 'workflow' },
-      { url: '/projects/codes/homepage/1', value: 'homepage' },
+      { url: "/projects/codes/design/1", value: "design" },
+      { url: "/projects/codes/workflow/1", value: "workflow" },
+      { url: "/projects/codes/homepage/1", value: "homepage" },
     ],
   },
   {
-    id: 'codes-tags',
-    title: 'Tags',
+    id: "codes-tags",
+    title: "Tags",
     badges: [],
   },
 ];
 
 const PEOPLE_EXTRA_ACCORDIONS: AccordionConfig[] = [
   {
-    id: 'people-types',
-    title: 'Tipos',
+    id: "people-types",
+    title: "Tipos",
     badges: [
-      { url: '/projects/people/professor/1', value: 'professores' },
-      { url: '/projects/people/student/1', value: 'alunos' },
-      { url: '/projects/people/técnico/1', value: 'técnico' },
-      { url: '/projects/people/graduação/1', value: 'graduação' },
-      { url: '/projects/people/mestrado/1', value: 'mestrado' },
-      { url: '/projects/people/egresso/1', value: 'egressos' },
+      { url: "/projects/people/professor/1", value: "professores" },
+      { url: "/projects/people/student/1", value: "alunos" },
+      { url: "/projects/people/técnico/1", value: "técnico" },
+      { url: "/projects/people/graduação/1", value: "graduação" },
+      { url: "/projects/people/mestrado/1", value: "mestrado" },
+      { url: "/projects/people/egresso/1", value: "egressos" },
     ],
   },
   {
-    id: 'people-resources',
-    title: 'Recursos',
+    id: "people-resources",
+    title: "Recursos",
     badges: [
-      { url: '/projects/people/projects/1', value: 'projetos' },
-      { url: '/projects/people/homepage/1', value: 'homepage' },
-      { url: '/projects/people/design/1', value: 'design' },
-      { url: '/projects/people/researchgate/1', value: 'researchgate' },
+      { url: "/projects/people/projects/1", value: "projetos" },
+      { url: "/projects/people/homepage/1", value: "homepage" },
+      { url: "/projects/people/design/1", value: "design" },
+      { url: "/projects/people/researchgate/1", value: "researchgate" },
     ],
   },
 ];
@@ -91,6 +92,21 @@ export default function FilterDrawer({
   subjects,
   onClose,
 }: FilterDrawerProps) {
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+    };
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [onClose]);
+
   // Indexação O(1) para Cursos e Disciplinas
   const courseMap = useMemo(() => {
     const map = new Map<string, CourseInfo>();
@@ -110,24 +126,21 @@ export default function FilterDrawer({
     return map;
   }, [subjects]);
 
-  const getCourse = useCallback(
-    (id: string) => courseMap.get(id),
-    [courseMap]
-  );
+  const getCourse = useCallback((id: string) => courseMap.get(id), [courseMap]);
 
   const getCourseByAbbreviation = useCallback(
     (abbreviation: string) => {
-      const courseAbbr = abbreviation.includes('-')
-        ? abbreviation.split('-')[0]
+      const courseAbbr = abbreviation.includes("-")
+        ? abbreviation.split("-")[0]
         : abbreviation;
       return courseAbbrMap.get(courseAbbr);
     },
-    [courseAbbrMap]
+    [courseAbbrMap],
   );
 
   const getSubject = useCallback(
     (id: string) => subjectMap.get(id),
-    [subjectMap]
+    [subjectMap],
   );
 
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
@@ -136,19 +149,19 @@ export default function FilterDrawer({
   // Badges de tags de projetos
   const projectTagsBadges = useMemo(
     () =>
-      type === 'codes'
+      type === "codes"
         ? projectTags.map((tag) => ({
             url: `/projects/codes/${encodeURIComponent(tag)}/1`,
             value: tag,
           }))
         : [],
-    [type, projectTags]
+    [type, projectTags],
   );
 
   useMemo(() => {
-    if (type !== 'codes') return;
+    if (type !== "codes") return;
     const codesTagsAccordion = CODES_EXTRA_ACCORDIONS.find(
-      (acc) => acc.id === 'codes-tags'
+      (acc) => acc.id === "codes-tags",
     );
     if (codesTagsAccordion) {
       codesTagsAccordion.badges = projectTagsBadges;
@@ -165,12 +178,12 @@ export default function FilterDrawer({
 
   const createCourseAccordion = useCallback(
     (course: string, periods: string[]): AccordionConfig => {
-      const badges = [{ url: `/projects/people/${course}/1`, value: 'Todos' }];
+      const badges = [{ url: `/projects/people/${course}/1`, value: "Todos" }];
 
       if (peopleTags.includes(`egresso-${course}`)) {
         badges.push({
           url: `/projects/people/egresso-${course}/1`,
-          value: 'Egressos',
+          value: "Egressos",
         });
       }
 
@@ -182,14 +195,14 @@ export default function FilterDrawer({
       });
 
       const subjectTags = peopleTags.filter((tag) => {
-        const parts = tag.split('-');
+        const parts = tag.split("-");
         if (parts.length === 4) {
           const [subjectCode, courseCode, campusCode] = parts;
           return (
             `${courseCode}-${campusCode}` === course &&
             Object.keys(cities).includes(campusCode) &&
             abbreviationCourses.some((abbreviation) =>
-              abbreviation.includes(courseCode)
+              abbreviation.includes(courseCode),
             )
           );
         }
@@ -197,7 +210,7 @@ export default function FilterDrawer({
       });
 
       subjectTags.forEach((tag) => {
-        const parts = tag.split('-');
+        const parts = tag.split("-");
         const subject = parts[0];
         const period = parts.at(-1);
         badges.push({
@@ -212,17 +225,17 @@ export default function FilterDrawer({
         badges,
       };
     },
-    [peopleTags, getCourseByAbbreviation]
+    [peopleTags, getCourseByAbbreviation],
   );
 
   // Memoizar dados pre-ordenados para códigos
   const codesGroupedByLevel = useMemo(() => {
-    if (type !== 'codes' || !tags.course?.values) return [];
+    if (type !== "codes" || !tags.course?.values) return [];
     const grouped = tags.course.values.reduce(
       (acc: Record<string, string[]>, courseTag: string) => {
         const courseData = getCourse(courseTag);
         if (courseData) {
-          const level = courseData.level.split(' ')[0];
+          const level = courseData.level.split(" ")[0];
           if (!acc[level]) {
             acc[level] = [];
           }
@@ -230,7 +243,7 @@ export default function FilterDrawer({
         }
         return acc;
       },
-      {}
+      {},
     );
 
     return Object.entries(grouped)
@@ -246,18 +259,18 @@ export default function FilterDrawer({
   }, [type, tags.course?.values, getCourse]);
 
   const codesSubjectsByCourse = useMemo(() => {
-    if (type !== 'codes' || !tags.course?.values) return [];
+    if (type !== "codes" || !tags.course?.values) return [];
     return tags.course.values
       .map((courseTag: string) => {
         const courseData = getCourseByAbbreviation(courseTag);
-        const parts = courseTag.split('-');
-        const campus = parts.length > 1 ? parts[parts.length - 1] : '';
-        const campusName = campus ? ` | ${campus.toUpperCase()}` : '';
+        const parts = courseTag.split("-");
+        const campus = parts.length > 1 ? parts[parts.length - 1] : "";
+        const campusName = campus ? ` | ${campus.toUpperCase()}` : "";
         const courseDisplayName = `${courseData?.name ?? courseTag}${campusName}`;
 
         const courseSubjects =
           tags.subject?.values?.filter((subjectTag: string) =>
-            subjectTag.includes(`-${courseTag}`)
+            subjectTag.includes(`-${courseTag}`),
           ) || [];
 
         if (courseSubjects.length === 0) return null;
@@ -266,11 +279,11 @@ export default function FilterDrawer({
           const subjectPeriods =
             tags.period?.values
               ?.filter((periodTag: string) =>
-                periodTag.startsWith(`${subjectTag}-`)
+                periodTag.startsWith(`${subjectTag}-`),
               )
               .sort((a, b) => {
-                const periodA = a.split('-').pop() || '';
-                const periodB = b.split('-').pop() || '';
+                const periodA = a.split("-").pop() || "";
+                const periodB = b.split("-").pop() || "";
                 return periodB.localeCompare(periodA);
               }) || [];
 
@@ -299,21 +312,21 @@ export default function FilterDrawer({
 
   // Memoizar dados pre-ordenados para pessoas
   const peopleGroupedByLevel = useMemo(() => {
-    if (type !== 'people' || !tags.period?.values) return [];
+    if (type !== "people" || !tags.period?.values) return [];
     const grouped = Object.entries(getPeriodCourses(tags.period.values)).reduce(
       (
         acc: Record<string, Array<[string, string[]]>>,
-        [course, periods]: [string, string[]]
+        [course, periods]: [string, string[]],
       ) => {
         const courseData = getCourseByAbbreviation(course);
-        const level = courseData?.level.split(' ')[0] || 'Outros';
+        const level = courseData?.level.split(" ")[0] || "Outros";
         if (!acc[level]) {
           acc[level] = [];
         }
         acc[level].push([course, periods]);
         return acc;
       },
-      {}
+      {},
     );
 
     return Object.entries(grouped)
@@ -321,8 +334,8 @@ export default function FilterDrawer({
       .map(([level, coursesInLevel]) => {
         const sortedCourses = [...coursesInLevel].sort(([a], [b]) =>
           (getCourseByAbbreviation(a)?.name ?? a).localeCompare(
-            getCourseByAbbreviation(b)?.name ?? b
-          )
+            getCourseByAbbreviation(b)?.name ?? b,
+          ),
         );
         return [level, sortedCourses] as [string, Array<[string, string[]]>];
       });
@@ -330,15 +343,15 @@ export default function FilterDrawer({
 
   const availableCampuses = useMemo(
     () =>
-      type === 'people'
+      type === "people"
         ? Object.keys(campi)
             .filter((campusKey) => {
-              const campusCode = campusKey.replace('ifpb-', '');
+              const campusCode = campusKey.replace("ifpb-", "");
               return peopleTags.some((tag) => tag.includes(campusCode));
             })
             .sort()
             .map((campusKey) => {
-              const campusCode = campusKey.replace('ifpb-', '');
+              const campusCode = campusKey.replace("ifpb-", "");
               return {
                 key: campusKey,
                 code: campusCode,
@@ -346,42 +359,55 @@ export default function FilterDrawer({
               };
             })
         : [],
-    [type, peopleTags]
+    [type, peopleTags],
   );
 
   return (
     <>
       <div
-        className="fixed inset-0 bg-black/50 z-40 transition-opacity"
+        className="fixed inset-0 z-40 bg-gray-950/45 backdrop-blur-[2px] transition-opacity"
         onClick={onClose}
       ></div>
 
-      <div className="fixed inset-y-0 right-0 w-2/3 md:w-1/3 lg:w-1/4 max-w-100 h-full bg-gray-100 shadow-lg p-4 z-50 overflow-y-auto">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          className="float-right text-2xl cursor-pointer"
-          onClick={onClose}
-        >
-          <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12z" />
-        </svg>
+      <div
+        className="fixed inset-y-0 right-0 z-50 h-full w-[min(92vw,28rem)] overflow-y-auto border-l border-gray-200 bg-white p-5 shadow-2xl"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="filter-title"
+      >
+        <div className="mb-8 flex items-start justify-between border-b border-gray-200 pb-4">
+          <div>
+            <p className="text-[10px] font-extrabold tracking-widest text-green-700 uppercase">
+              Refine sua busca
+            </p>
+            <h2
+              id="filter-title"
+              className="mt-1 text-xl font-extrabold text-gray-950"
+            >
+              Filtros
+            </h2>
+          </div>
+          <button
+            type="button"
+            onClick={onClose}
+            className="grid h-10 w-10 cursor-pointer place-items-center rounded-md text-gray-600 hover:bg-gray-100 hover:text-gray-950"
+            aria-label="Fechar filtros"
+          >
+            <Icon icon="ph:x-bold" width="20" />
+          </button>
+        </div>
 
-        <h1 className="font-bold text-xl capitalize text-center mb-8">
-          Filtros
-        </h1>
-
-        {type === 'codes' && (
+        {type === "codes" && (
           <>
-            <h1 className="font-bold text-base capitalize mb-4">Acadêmico</h1>
-            <details open={openDetails === 'cursos'} className="mb-2">
+            <h3 className="mb-4 text-xs font-extrabold tracking-wider text-green-800 uppercase">
+              Acadêmico
+            </h3>
+            <details open={openDetails === "cursos"} className="mb-2">
               <summary
-                className="font-bold text-sm mb-3 text-gray-800 cursor-pointer hover:text-gray-600"
+                className="mb-3 cursor-pointer text-sm font-bold text-gray-800 hover:text-gray-600"
                 onClick={(e) => {
                   e.preventDefault();
-                  handleDetailsToggle('cursos');
+                  handleDetailsToggle("cursos");
                   setOpenAccordion(null);
                 }}
               >
@@ -401,12 +427,12 @@ export default function FilterDrawer({
                     >
                       {coursesInLevel.map((courseTag) => {
                         const courseData = getCourse(courseTag);
-                        const parts = courseTag.split('-');
+                        const parts = courseTag.split("-");
                         const campus =
-                          parts.length > 1 ? parts[parts.length - 1] : '';
+                          parts.length > 1 ? parts[parts.length - 1] : "";
                         const campusName = campus
                           ? ` | ${campus.toUpperCase()}`
-                          : '';
+                          : "";
                         const displayName = `${courseData?.name ?? courseTag}${campusName}`;
 
                         return (
@@ -433,7 +459,7 @@ export default function FilterDrawer({
                   className="mb-2"
                 >
                   <summary
-                    className="font-bold text-sm mb-3 text-gray-800 cursor-pointer hover:text-gray-600"
+                    className="mb-3 cursor-pointer text-sm font-bold text-gray-800 hover:text-gray-600"
                     onClick={(e) => {
                       e.preventDefault();
                       handleDetailsToggle(`course-${courseTag}`);
@@ -463,37 +489,39 @@ export default function FilterDrawer({
                                 value="Todos"
                               />
                               {subjectPeriods.map((periodTag) => {
-                                const period = periodTag.split('-').pop();
+                                const period = periodTag.split("-").pop();
                                 return (
                                   <Badge
                                     key={periodTag}
                                     url={`/projects/${type}/${periodTag}/1`}
-                                    value={period || ''}
+                                    value={period || ""}
                                   />
                                 );
                               })}
                             </Accordion>
                           </div>
                         );
-                      }
+                      },
                     )}
                   </div>
                 </details>
               );
             })}
-            <h1 className="font-bold text-base capitalize mb-4">Outros</h1>
-            <details open={openDetails === 'extra-codes'} className="mb-2">
+            <h3 className="mt-8 mb-4 text-xs font-extrabold tracking-wider text-green-800 uppercase">
+              Outros
+            </h3>
+            <details open={openDetails === "extra-codes"} className="mb-2">
               <summary
-                className="font-bold text-sm mb-3 text-gray-800 cursor-pointer hover:text-gray-600"
+                className="mb-3 cursor-pointer text-sm font-bold text-gray-800 hover:text-gray-600"
                 onClick={(e) => {
                   e.preventDefault();
-                  handleDetailsToggle('extra-codes');
+                  handleDetailsToggle("extra-codes");
                   setOpenAccordion(null);
                 }}
               >
                 Extra
               </summary>
-              <div className="ml-2 mt-2">
+              <div className="mt-2 ml-2">
                 {CODES_EXTRA_ACCORDIONS.map((accordion) => {
                   const isOpen = openAccordion === accordion.id;
 
@@ -521,9 +549,11 @@ export default function FilterDrawer({
           </>
         )}
 
-        {type === 'people' && (
+        {type === "people" && (
           <>
-            <h1 className="font-bold text-base capitalize mb-4">Acadêmico</h1>
+            <h3 className="mb-4 text-xs font-extrabold tracking-wider text-green-800 uppercase">
+              Acadêmico
+            </h3>
             {peopleGroupedByLevel.map(([level, coursesInLevel]) => (
               <details
                 key={level}
@@ -531,7 +561,7 @@ export default function FilterDrawer({
                 className="mb-2"
               >
                 <summary
-                  className="font-bold text-sm mb-3 text-gray-800 cursor-pointer hover:text-gray-600"
+                  className="mb-3 cursor-pointer text-sm font-bold text-gray-800 hover:text-gray-600"
                   onClick={(e) => {
                     e.preventDefault();
                     handleDetailsToggle(`people-${level}`);
@@ -540,7 +570,7 @@ export default function FilterDrawer({
                 >
                   {`Cursos | ${level}`}
                 </summary>
-                <div className="ml-2 mt-2">
+                <div className="mt-2 ml-2">
                   {coursesInLevel.map(([course, periods]) => {
                     const accordion = createCourseAccordion(course, periods);
                     const isOpen = openAccordion === accordion.id;
@@ -570,14 +600,14 @@ export default function FilterDrawer({
           </>
         )}
 
-        {type === 'people' && (
+        {type === "people" && (
           <>
-            <details open={openDetails === 'campus'} className="mb-2">
+            <details open={openDetails === "campus"} className="mb-2">
               <summary
-                className="font-bold text-sm mb-3 text-gray-800 cursor-pointer hover:text-gray-600"
+                className="mb-3 cursor-pointer text-sm font-bold text-gray-800 hover:text-gray-600"
                 onClick={(e) => {
                   e.preventDefault();
-                  handleDetailsToggle('campus');
+                  handleDetailsToggle("campus");
                   setOpenAccordion(null);
                 }}
               >
@@ -587,7 +617,7 @@ export default function FilterDrawer({
                 <Accordion
                   id="people-campus"
                   title="Cidades"
-                  isOpen={openAccordion === 'people-campus'}
+                  isOpen={openAccordion === "people-campus"}
                   onToggle={toggleAccordion}
                 >
                   {availableCampuses.map((campus) => (
@@ -602,23 +632,23 @@ export default function FilterDrawer({
             </details>
           </>
         )}
-        {type === 'people' && (
+        {type === "people" && (
           <>
-            <details open={openDetails === 'tipos'} className="mb-6">
+            <details open={openDetails === "tipos"} className="mb-6">
               <summary
-                className="font-bold text-sm mb-3 text-gray-800 cursor-pointer hover:text-gray-600"
+                className="mb-3 cursor-pointer text-sm font-bold text-gray-800 hover:text-gray-600"
                 onClick={(e) => {
                   e.preventDefault();
-                  handleDetailsToggle('tipos');
+                  handleDetailsToggle("tipos");
                   setOpenAccordion(null);
                 }}
               >
                 Perfis
               </summary>
-              <div className="ml-2 mt-2">
+              <div className="mt-2 ml-2">
                 {(() => {
                   const tiposAccordion = PEOPLE_EXTRA_ACCORDIONS.find(
-                    (accordion) => accordion.id === 'people-types'
+                    (accordion) => accordion.id === "people-types",
                   );
                   if (!tiposAccordion) return null;
                   const isOpen = openAccordion === tiposAccordion.id;
@@ -646,15 +676,17 @@ export default function FilterDrawer({
             </details>
           </>
         )}
-        {type === 'people' && (
+        {type === "people" && (
           <>
-            <h1 className="font-bold text-base capitalize mb-4">Outros</h1>
-            <details open={openDetails === 'extra-people'} className="mb-6">
+            <h3 className="mt-8 mb-4 text-xs font-extrabold tracking-wider text-green-800 uppercase">
+              Outros
+            </h3>
+            <details open={openDetails === "extra-people"} className="mb-6">
               <summary
-                className="font-bold text-sm mb-3 text-gray-800 cursor-pointer hover:text-gray-600"
+                className="mb-3 cursor-pointer text-sm font-bold text-gray-800 hover:text-gray-600"
                 onClick={(e) => {
                   e.preventDefault();
-                  handleDetailsToggle('extra-people');
+                  handleDetailsToggle("extra-people");
                   setOpenAccordion(null);
                 }}
               >
@@ -662,7 +694,7 @@ export default function FilterDrawer({
               </summary>
               <div className="mt-2">
                 {PEOPLE_EXTRA_ACCORDIONS.filter(
-                  (accordion) => accordion.id !== 'people-types'
+                  (accordion) => accordion.id !== "people-types",
                 ).map((accordion) => {
                   const isOpen = openAccordion === accordion.id;
 

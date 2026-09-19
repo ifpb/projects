@@ -1,63 +1,51 @@
 ---
-import Filter from '@/components/Filter';
-import GoogleAnalytics from '@/components/GoogleAnalytics.astro';
-import NavBar from '@/components/NavBar.astro';
-import PageFindSearch from '@/components/PageFindSearch.astro';
-import { getAllPersonTags } from '@/helpers/people';
-import { getAllProjectTags } from '@/helpers/tags';
-import { courses, getCourse } from '@/helpers/courses';
-import { getSubject, subjects } from '@/helpers/subjects';
-import type { CourseInfo, SubjectInfo } from '@/lib/taxonomy';
+import Filter from "@/components/Filter";
+import Footer from "@/components/Footer.astro";
+import GoogleAnalytics from "@/components/GoogleAnalytics.astro";
+import NavBar from "@/components/NavBar.astro";
+import { getAllPersonTags } from "@/helpers/people";
+import { getAllProjectTags } from "@/helpers/tags";
+import { courses, getCourse } from "@/helpers/courses";
+import { getSubject, subjects } from "@/helpers/subjects";
+import type { CourseInfo, SubjectInfo } from "@/lib/taxonomy";
+import "@/styles/global.css";
 
-import '@/styles/global.css';
-
-export interface Propos {
+export interface Props {
   pageTitle?: string;
-  tags?: string[];
+  pageDescription?: string;
+  tags?: any;
   type?: string;
   pageFindFilter?: string;
 }
 
-const { pageTitle, tags, type, pageFindFilter } = Astro.props;
-
-const peopleTags = tags && type === 'people' ? await getAllPersonTags() : [];
-
-// Filter out course and subject tags from project tags
+const { pageTitle, pageDescription, tags, type, pageFindFilter } = Astro.props;
+const peopleTags = tags && type === "people" ? await getAllPersonTags() : [];
 const projectTags: string[] =
-  tags && type === 'codes'
+  tags && type === "codes"
     ? (await getAllProjectTags()).filter((tag) => {
-        // Exclude if it's a course tag (format: course-campus)
-        const courseEntry = getCourse(tag);
-        if (courseEntry) return false;
-
-        // Exclude if it's a subject tag
-        const subjectEntry = getSubject(tag);
-        if (subjectEntry) return false;
-
-        // Exclude if it matches subject-period pattern (e.g., "pw2-cstsi-jp-2024.1")
-        const subjectPeriodPattern =
-          /^[a-zA-Z0-9]+-[a-zA-Z]+-[a-zA-Z]+-\d{4}\.\d+$/;
-        if (subjectPeriodPattern.test(tag)) return false;
-
-        return true;
+        if (getCourse(tag) || getSubject(tag)) return false;
+        return !/^[a-zA-Z0-9]+-[a-zA-Z]+-[a-zA-Z]+-\d{4}\.\d+$/.test(tag);
       })
     : [];
 
-// O Filter é uma ilha React: `astro:content` não pode atravessar para o cliente,
-// então as coleções vão achatadas por props.
 const courseInfos: CourseInfo[] = courses.map(({ data }) => ({
   id: data.id,
   name: data.name,
   abbreviation: data.abbreviation,
   level: data.level.compact,
 }));
-
 const subjectInfos: SubjectInfo[] = subjects.map(({ data }) => ({
   id: data.id,
   name: data.name.full,
 }));
-
-const headerTitle = pageTitle ? `IFPB | ${pageTitle}` : 'IFPB Code';
+const headerTitle = pageTitle
+  ? `${pageTitle} | IFPB Projetos`
+  : "IFPB Projetos";
+const hasHeaderActions = Astro.slots.has("header-actions");
+const sectionLabel =
+  type === "people" || pageFindFilter === "tipo:Pessoas"
+    ? "Comunidade IFPB"
+    : "Projetos IFPB";
 ---
 
 <html lang="pt-BR">
@@ -65,59 +53,73 @@ const headerTitle = pageTitle ? `IFPB | ${pageTitle}` : 'IFPB Code';
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/projects/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#168821" />
     <meta name="generator" content={Astro.generator} />
+    <script is:inline>
+      (() => {
+        const savedTheme = localStorage.getItem("ifpb-theme");
+        const systemTheme = matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+        document.documentElement.dataset.theme = savedTheme || systemTheme;
+      })();
+    </script>
+    <meta
+      name="description"
+      content={
+        pageDescription ??
+        "Projetos, pessoas e produção acadêmica da comunidade do IFPB."
+      }
+    />
     <link href="/projects/pagefind/pagefind-ui.css" rel="stylesheet" />
-    <script src="/projects/pagefind/pagefind-ui.js" type="text/javascript"
+    <script
+      src="/projects/pagefind/pagefind-ui.js"
+      type="text/javascript"
     ></script>
     <title>{headerTitle}</title>
   </head>
-  <body class="relative bg-gray-100">
+  <body class="flex min-h-screen flex-col">
     <NavBar />
-    <div class="container lg:max-w-screen-lg mx-auto px-4 py-16">
-      {
-        pageTitle ? (
-          <div class="relative flex items-center justify-center pb-12">
-            <h1
-              class="text-center text-4xl font-bold"
-              data-pagefind-filter={pageFindFilter}
-            >
-              {pageTitle}
-            </h1>
-            {tags && (
-              <div class="absolute right-0">
-                <Filter
-                  type={type}
-                  tags={tags}
-                  peopleTags={peopleTags}
-                  projectTags={projectTags}
-                  courses={courseInfos}
-                  subjects={subjectInfos}
-                  client:idle
-                />
+    <main class="page-shell flex-1 py-8 sm:py-10 lg:py-12">
+      {pageTitle && (
+        <header class="mb-8 border-b border-gray-200 pb-6 sm:mb-10">
+          <p class="section-label mb-2">{sectionLabel}</p>
+          <div class="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+            <div class="max-w-3xl">
+              <h1
+                class="text-3xl font-extrabold leading-tight text-gray-950 sm:text-4xl"
+                data-pagefind-filter={pageFindFilter}
+              >
+                {pageTitle}
+              </h1>
+              {pageDescription && (
+                <p class="mt-3 text-base leading-7 text-gray-600">
+                  {pageDescription}
+                </p>
+              )}
+            </div>
+            {(hasHeaderActions || tags) && (
+              <div class="flex flex-wrap items-center gap-3">
+                <slot name="header-actions" />
+                {tags && (
+                  <Filter
+                    type={type}
+                    tags={tags}
+                    peopleTags={peopleTags}
+                    projectTags={projectTags}
+                    courses={courseInfos}
+                    subjects={subjectInfos}
+                    client:idle
+                  />
+                )}
               </div>
             )}
           </div>
-        ) : (
-          tags && (
-            <div class="flex justify-end pb-8">
-              <Filter
-                type={type}
-                tags={tags}
-                peopleTags={peopleTags}
-                projectTags={projectTags}
-                courses={courseInfos}
-                subjects={subjectInfos}
-                client:idle
-              />
-            </div>
-          )
-        )
-      }
-
-      {tags && <PageFindSearch />}
+        </header>
+      )}
       <slot />
-    </div>
-
+    </main>
+    <Footer />
     <GoogleAnalytics />
   </body>
 </html>

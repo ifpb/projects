@@ -1,0 +1,39 @@
+---
+import { Icon } from "astro-icon/components";
+
+export interface Props {
+  tags: { name: string; label?: string; count: number }[];
+  hrefBase: string;
+  ariaLabel: string;
+}
+
+const { tags, hrefBase, ariaLabel } = Astro.props;
+---
+
+<section
+  class="mb-8 border-b border-gray-200 pb-8 sm:mb-10 sm:pb-10"
+  aria-labelledby="popular-tags-title"
+>
+  <div class="mb-4 flex items-center gap-2">
+    <Icon name="ph:trend-up-bold" size={18} class="text-green-700" />
+    <h2 id="popular-tags-title" class="text-sm font-extrabold text-gray-950">
+      Tags populares
+    </h2>
+  </div>
+  <nav
+    class="tag-cloud-scroll -mx-2 flex gap-2 overflow-x-auto px-2 pb-2 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 sm:pb-0"
+    aria-label={ariaLabel}
+  >
+    {tags.map((tag) => (
+      <a
+        href={`${hrefBase}/${encodeURIComponent(tag.name)}/1`}
+        class="inline-flex shrink-0 items-center gap-2 rounded-full border border-gray-200 bg-white px-3 py-2 text-xs font-bold text-gray-700 transition-colors hover:border-green-700 hover:bg-green-50 hover:text-green-800"
+      >
+        <span>{tag.label ?? tag.name}</span>
+        <span class="grid min-w-5 place-items-center rounded-full bg-gray-100 px-1.5 py-0.5 text-[10px] text-gray-500">
+          {tag.count}
+        </span>
+      </a>
+    ))}
+  </nav>
+</section>

@@ -1,33 +1,122 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Icon } from "astro-icon/components";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import ProjectCard from "@/components/ProjectCard.astro";
+import PersonCard from "@/components/PersonCard.astro";
+import PersonUtil from "@/components/PersonUtil.astro";
+import { getProjects } from "@/helpers/projects";
+import { getPeople, getPeopleWithProjects } from "@/helpers/people";
+
+const [projects, people, collaborators] = await Promise.all([
+  getProjects(),
+  getPeople(),
+  getPeopleWithProjects(),
+]);
+const featuredProjects = projects.slice(0, 6);
+const featuredPeople = collaborators.slice(0, 4);
 ---
 
-<BaseLayout>
-  <div class="mx-auto max-w-2xl py-8 sm:py-12 lg:py-14" data-pagefind-ignore>
-    <div class="text-center">
-      <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-        Projetos
+<BaseLayout pageDescription="Conheça a produção acadêmica e as pessoas que constroem tecnologia, pesquisa e extensão no Instituto Federal da Paraíba.">
+  <PersonUtil />
+  <section
+    class="grid items-center gap-10 border-b border-gray-200 pb-12 lg:grid-cols-[1.15fr_0.85fr] lg:pb-16"
+    data-pagefind-ignore
+  >
+    <div>
+      <p class="section-label mb-4">Conhecimento aberto</p>
+      <h1 class="max-w-3xl text-4xl font-extrabold leading-[1.08] text-gray-950 sm:text-5xl lg:text-6xl">
+        Projetos que nascem no <span class="text-green-700">IFPB</span> e ganham
+        o mundo.
       </h1>
-      <p class="mt-6 text-lg leading-8 text-gray-600">
-        Plataforma para compartilhar e explorar projetos acadêmicos
-        desenvolvidos em disciplinas e atividades de pesquisa e extensão do
-        IFPB.
+      <p class="mt-6 max-w-2xl text-lg leading-8 text-gray-600">
+        Um acervo vivo de software, pesquisa, extensão e trajetórias da nossa
+        comunidade acadêmica.
       </p>
-      <div class="mt-8 flex flex-wrap justify-center gap-4">
+      <div class="mt-8 flex flex-wrap gap-3">
         <a
-          class="block w-full rounded-sm border border-gray-900 bg-gray-900 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-gray-900 focus:outline-hidden active:text-white/75 sm:w-auto"
+          class="inline-flex items-center gap-2 rounded-md bg-green-700 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-green-800"
           href="/projects/codes/page/1"
         >
-          Projetos
+          Explorar projetos <Icon name="ph:arrow-right-bold" size={18} />
         </a>
-
         <a
-          class="block w-full rounded-sm border border-gray-900 px-12 py-3 text-sm font-medium text-gray-900 hover:bg-gray-900 hover:text-white focus:outline-hidden active:bg-gray-500 sm:w-auto"
+          class="inline-flex items-center gap-2 rounded-md border border-gray-300 bg-white px-5 py-3 text-sm font-bold text-gray-800 transition-colors hover:border-green-700 hover:text-green-800"
           href="/projects/people/collaborator/1"
         >
-          Colaboradores
+          Ver colaboradores
         </a>
       </div>
     </div>
-  </div>
+
+    <div class="grid grid-cols-2 border-y border-gray-200 bg-white sm:grid-cols-3 lg:grid-cols-2">
+      <div class="border-b border-r border-gray-200 p-6 sm:border-b-0 lg:border-b">
+        <strong class="block text-3xl font-extrabold text-gray-950">
+          {projects.length}
+        </strong>
+        <span class="mt-1 block text-sm text-gray-600">
+          projetos publicados
+        </span>
+      </div>
+      <div class="border-b border-gray-200 p-6 sm:border-b-0 sm:border-r lg:border-b lg:border-r-0">
+        <strong class="block text-3xl font-extrabold text-gray-950">
+          {people.length}
+        </strong>
+        <span class="mt-1 block text-sm text-gray-600">
+          pessoas na comunidade
+        </span>
+      </div>
+      <div class="col-span-2 p-6 sm:col-span-1 lg:col-span-2">
+        <strong class="block text-3xl font-extrabold text-green-700">
+          {collaborators.length}
+        </strong>
+        <span class="mt-1 block text-sm text-gray-600">
+          autores com projetos
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 lg:py-16" data-pagefind-ignore>
+    <div class="mb-7 flex items-end justify-between gap-4">
+      <div>
+        <p class="section-label mb-2">Em destaque</p>
+        <h2 class="text-2xl font-extrabold text-gray-950 sm:text-3xl">
+          Projetos recentes
+        </h2>
+      </div>
+      <a
+        href="/projects/codes/page/1"
+        class="hidden items-center gap-1 text-sm font-bold text-green-800 hover:text-green-950 sm:inline-flex"
+      >
+        Ver todos <Icon name="ph:arrow-right" size={18} />
+      </a>
+    </div>
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {featuredProjects.map((project, index) => (
+        <ProjectCard project={project} eager={index < 3} />
+      ))}
+    </div>
+  </section>
+
+  <section class="border-t border-gray-200 py-12 lg:py-16" data-pagefind-ignore>
+    <div class="mb-7 flex items-end justify-between gap-4">
+      <div>
+        <p class="section-label mb-2">Nossa comunidade</p>
+        <h2 class="text-2xl font-extrabold text-gray-950 sm:text-3xl">
+          Quem faz acontecer
+        </h2>
+      </div>
+      <a
+        href="/projects/people/collaborator/1"
+        class="hidden items-center gap-1 text-sm font-bold text-green-800 hover:text-green-950 sm:inline-flex"
+      >
+        Ver todos <Icon name="ph:arrow-right" size={18} />
+      </a>
+    </div>
+    <div class="grid gap-5 grid-cols-1 min-[420px]:grid-cols-2 lg:grid-cols-4">
+      {featuredPeople.map((person, index) => (
+        <PersonCard person={person} eager={index < 4} />
+      ))}
+    </div>
+  </section>
 </BaseLayout>

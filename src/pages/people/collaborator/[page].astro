@@ -1,21 +1,27 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import PersonGrid from '@/components/PersonGrid.astro';
-import BaseLayout from '@/layouts/BaseLayout.astro';
-import { getPeopleByTag, isProfessor, sortPeople } from '@/helpers/people';
-import { PAGE_SIZE } from '@/consts';
-import { getProjectsByPerson } from '@/helpers/projects';
+import type { CollectionEntry } from "astro:content";
+import PersonGrid from "@/components/PersonGrid.astro";
+import PeopleViewSwitch from "@/components/PeopleViewSwitch.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import {
+  getAllPeopleTagGroups,
+  getPeopleByTag,
+  isProfessor,
+  sortPeople,
+} from "@/helpers/people";
+import { PAGE_SIZE } from "@/consts";
+import { getProjectsByPerson } from "@/helpers/projects";
 
 // Extend the existing people entry so that projects are nested under data.projects
-export type PersonWithProjects = CollectionEntry<'people'> & {
-  data: CollectionEntry<'people'>['data'] & {
-    projects?: CollectionEntry<'projects'>[];
+export type PersonWithProjects = CollectionEntry<"people"> & {
+  data: CollectionEntry<"people">["data"] & {
+    projects?: CollectionEntry<"projects">[];
   };
 };
 
 export interface Props {
   page: {
-    data: CollectionEntry<'people'>[];
+    data: CollectionEntry<"people">[];
     currentPage: number;
     lastPage: number;
     url: {
@@ -23,17 +29,19 @@ export interface Props {
       next: string;
     };
   };
+  tags: string[];
 }
 
 export async function getStaticPaths({ paginate }) {
-  const peopleWithProjects = await getPeopleByTag('projects');
+  const peopleWithProjects = await getPeopleByTag("projects");
+  const tags = await getAllPeopleTagGroups();
 
   const people = await Promise.all(
     peopleWithProjects.map(async (person) => {
       const projects = await getProjectsByPerson(person);
 
       const personWithProjects: PersonWithProjects = {
-        ...(person as CollectionEntry<'people'>),
+        ...(person as CollectionEntry<"people">),
         data: {
           ...person.data,
           projects,
@@ -41,7 +49,7 @@ export async function getStaticPaths({ paginate }) {
       };
 
       return personWithProjects;
-    })
+    }),
   );
 
   people.sort((a, b) => {
@@ -56,14 +64,21 @@ export async function getStaticPaths({ paginate }) {
 
   const pages = paginate(people, {
     pageSize: PAGE_SIZE,
+    props: { tags },
   });
 
   return pages;
 }
 
-const { page } = Astro.props;
+const { page, tags } = Astro.props;
 ---
 
-<BaseLayout pageTitle="Pessoas com Projetos">
+<BaseLayout
+  pageTitle="Comunidade"
+  pageDescription="Conheça as pessoas que já compartilharam projetos neste acervo."
+  type="people"
+  tags={tags}
+>
+  <PeopleViewSwitch slot="header-actions" active="projects" />
   <PersonGrid page={page} type="people" index="collaborator" />
 </BaseLayout>

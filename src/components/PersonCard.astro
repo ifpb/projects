@@ -1,225 +1,162 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import type { Student } from '@/content.config';
-import { Icon } from 'astro-icon/components';
-import Badge from '@/components/Badge.astro';
-import { getProjectsByPerson } from '@/helpers/projects';
+import type { CollectionEntry } from "astro:content";
+import type { Student } from "@/content.config";
+import { Icon } from "astro-icon/components";
+import Badge from "@/components/Badge.astro";
+import { getProjectsByPerson } from "@/helpers/projects";
 import {
   getFirstPersonId,
   getPersonTags,
   getAvatarImageUrl,
-  isFinishedSomeCourse,
   isProfessor,
   isStudent,
-} from '@/helpers/people';
+} from "@/helpers/people";
 import {
   getCourseAbbreviationByOccupation,
   getCourseAbbreviationCampusByOccupation,
-} from '@/helpers/courses';
+} from "@/helpers/courses";
 
 export interface Props {
-  person: CollectionEntry<'people'>;
-  /** Cards da primeira fileira ficam acima da dobra e não devem ser lazy. */
+  person: CollectionEntry<"people">;
   eager?: boolean;
 }
 
-// `label` é o nome acessível do link: como o conteúdo é só um ícone, sem ele o
-// leitor de tela anuncia apenas "link".
-let icons = [
+const links = [
+  { name: "linkedin", label: "LinkedIn", icon: "ph:linkedin-logo-bold" },
+  { name: "github", label: "GitHub", icon: "mdi:github" },
+  { name: "figma", label: "Figma", icon: "ph:figma-logo-bold" },
+  { name: "instagram", label: "Instagram", icon: "ph:instagram-logo-bold" },
+  { name: "homepage", label: "Site pessoal", icon: "ph:globe-bold" },
+  { name: "researchgate", label: "ResearchGate", icon: "la:researchgate" },
   {
-    name: 'projects',
-    label: 'Projetos',
-    icon: 'ph:code',
-    size: 32,
-  },
-  {
-    name: 'linkedin',
-    label: 'LinkedIn',
-    icon: 'ph:linkedin-logo',
-    size: 32,
-  },
-  {
-    name: 'github',
-    label: 'GitHub',
-    icon: 'icon-park:github-one',
-    size: 32,
-  },
-  {
-    name: 'figma',
-    label: 'Figma',
-    icon: 'ph:figma-logo',
-    size: 32,
-  },
-  {
-    name: 'instagram',
-    label: 'Instagram',
-    icon: 'ph:instagram-logo',
-    size: 32,
-  },
-  {
-    name: 'homepage',
-    label: 'Site pessoal',
-    icon: 'ph:identification-badge',
-    size: 32,
-    // icon: 'ph:address-book',
-  },
-  {
-    name: 'researchgate',
-    label: 'ResearchGate',
-    icon: 'la:researchgate',
-    size: 36,
-    // icon: 'simple-icons:researchgate',
-    // icon: 'ph:graduation-cap',
-    // icon: 'ph:student',
-    // icon: 'ph:flask',
-  },
-  {
-    name: 'lattes',
-    label: 'Currículo Lattes',
-    // icon: 'academicons:lattes',
-    // icon: 'academicons:lattes-square',
-    image: '/projects/imgs/lattes.svg',
-    size: 24,
+    name: "lattes",
+    label: "Currículo Lattes",
+    icon: "ph:identification-card-bold",
   },
 ];
 
 const { person, eager = false } = Astro.props;
-
 const isDev = import.meta.env.DEV;
-
-const {
-  data: { name, addresses, avatar, occupations },
-} = person;
-
+const { name, addresses, occupations } = person.data;
 const id = getFirstPersonId(person);
-
-const codeUrl = `/projects/people/${id}/`;
-
+const profileUrl = `/projects/people/${id}/`;
 const projects = await getProjectsByPerson(person);
-
-const hasProjects = projects.length > 0;
-
-if (hasProjects) {
-  addresses.projects = codeUrl;
-}
-
-let links = icons
+const availableLinks = links
   .filter((link) => addresses[link.name])
-  .map((link) => ({
-    ...link,
-    url: addresses[link.name],
-  }));
-
+  .map((link) => ({ ...link, url: addresses[link.name] }));
 const tags = await getPersonTags(person);
-
-export const fallbackImage = '/projects/imgs/clarity-avatar-solid.svg';
+const personBadges = [
+  ...(isStudent(person)
+    ? occupations
+        .filter(
+          (occupation): occupation is Student =>
+            occupation.type === "student" && !!occupation.course,
+        )
+        .map((occupation) => ({
+          url: `/projects/people/${getCourseAbbreviationByOccupation(occupation)}/1`,
+          text: getCourseAbbreviationCampusByOccupation(occupation),
+        }))
+    : []),
+  ...occupations
+    .filter(
+      (occupation): occupation is Student =>
+        occupation.type === "student" && occupation.isFinished,
+    )
+    .map((occupation) => ({
+      url: `/projects/people/egresso-${occupation.course}/1`,
+      text: "egresso",
+    })),
+  ...(isProfessor(person)
+    ? [{ url: "/projects/people/professor/1", text: "professor" }]
+    : []),
+].filter(
+  (badge, index, badges) =>
+    badges.findIndex((candidate) => candidate.url === badge.url) === index,
+);
+const visibleBadges = personBadges.slice(0, 3);
+const hiddenBadges = personBadges.slice(visibleBadges.length);
+const fallbackImage = "/projects/imgs/clarity-avatar-solid.svg";
 ---
 
-<div
-  class="person-card rounded-md overflow-hidden shadow-lg bg-white text-center w-full min-w-[233px] relative"
-  data-tags={tags.join('-')}
+<article
+  class="person-card surface-card group flex h-full min-w-0 flex-col overflow-hidden"
+  data-tags={tags.join("-")}
 >
-  <figure class="mx-auto overflow-hidden">
-    <a href={addresses.linkedin} target="_blank" class="animate-pulse">
-      <img
-        src={isDev ? fallbackImage : getAvatarImageUrl(person)}
-        alt={name.full}
-        title={name.full}
-        class="bg-gray-300 object-cover w-full h-[233px] hover:scale-105 transition duration-500"
-        loading={eager ? 'eager' : 'lazy'}
-        decoding="async"
-        data-src={getAvatarImageUrl(person)}
-        onload="onLoadPersonImage(this)"
-        onerror="onErrorPersonImage(this)"
-      />
-    </a>
-  </figure>
-  <div>
-    <div class="px-6 py-2">
-      <div class="font-bold text-xl" data-pagefind-ignore>
+  <a
+    href={profileUrl}
+    class="relative block overflow-hidden bg-gray-200"
+    aria-label={`Ver perfil de ${name.full}`}
+  >
+    <img
+      src={isDev ? fallbackImage : getAvatarImageUrl(person)}
+      alt={name.full}
+      class="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]"
+      loading={eager ? "eager" : "lazy"}
+      decoding="async"
+      data-src={getAvatarImageUrl(person)}
+      onload="onLoadPersonImage(this)"
+      onerror="onErrorPersonImage(this)"
+    />
+    {projects.length > 0 && (
+      <span class="absolute bottom-3 left-3 rounded bg-gray-950/85 px-2 py-1 text-[10px] font-extrabold uppercase text-white backdrop-blur">
+        {projects.length} projeto{projects.length !== 1 ? "s" : ""}
+      </span>
+    )}
+  </a>
+
+  <div class="flex flex-1 flex-col p-4">
+    <h2
+      class="text-lg font-extrabold leading-snug text-gray-950"
+      data-pagefind-ignore
+    >
+      <a href={profileUrl} class="hover:text-green-800">
         {name.compact}
-      </div>
+      </a>
+    </h2>
+
+    <div class="mt-3 mb-4 flex flex-wrap gap-1.5">
+      {visibleBadges.map((badge) => (
+        <Badge url={badge.url} text={badge.text} />
+      ))}
+      {hiddenBadges.length > 0 && (
+        <span
+          class="inline-flex items-center rounded-full border border-gray-200 bg-gray-100 px-2.5 py-1 text-[11px] font-bold text-gray-600"
+          title={hiddenBadges.map((badge) => badge.text).join(", ")}
+          aria-label={`Mais ${hiddenBadges.length} tags: ${hiddenBadges.map((badge) => badge.text).join(", ")}`}
+        >
+          +{hiddenBadges.length}
+        </span>
+      )}
     </div>
-    <div class="flex justify-center pb-2">
-      {
-        links.map((link) => (
+
+    <div class="mt-auto flex items-center justify-between border-t border-gray-100 pt-4">
+      <div class="flex items-center gap-1">
+        {availableLinks.slice(0, 5).map((link) => (
           <a
             href={link.url}
             target="_blank"
+            rel="noopener noreferrer"
             title={link.label}
             aria-label={link.label}
-            class="hover:scale-110 transition duration-500 flex items-center justify-center"
+            class="grid h-8 w-8 place-items-center rounded text-gray-500 transition-colors hover:bg-green-50 hover:text-green-800"
           >
-            {link.icon && (
-              <Icon
-                name={link.icon}
-                size={link.size}
-                class={`${link.name}-person-link`}
-                is:inline
-              />
-            )}
-            {link.image && avatar.selected === 'none' && (
-              <img
-                src={link.image}
-                alt={link.label}
-                width={link.size}
-              />
-            )}
+            <Icon
+              name={link.icon}
+              size={19}
+              class={`${link.name}-person-link`}
+              is:inline
+            />
           </a>
-        ))
-      }
+        ))}
+      </div>
+      <a
+        href={profileUrl}
+        title="Ver perfil"
+        aria-label={`Ver perfil de ${name.full}`}
+        class="grid h-8 w-8 place-items-center rounded text-green-800 hover:bg-green-50"
+      >
+        <Icon name="ph:arrow-right-bold" size={17} />
+      </a>
     </div>
-    <div class="tags pb-4 px-2 space-x-1">
-      {
-        isStudent(person) &&
-          occupations
-            .filter((occupation: Student) => occupation.course)
-            .map((occupation) => (
-              <Badge
-                url={`/projects/people/${getCourseAbbreviationByOccupation(occupation)}/1`}
-                text={getCourseAbbreviationCampusByOccupation(occupation)}
-              />
-            ))
-      }
-      {
-        isFinishedSomeCourse(person) &&
-          occupations
-            .filter(
-              (occupation: Student) =>
-                occupation.type === 'student' && occupation.isFinished
-            )
-            .map((occupation) => {
-              // Remove period suffix from course abbreviation for egresso badge
-              const studentOccupation = occupation as Student;
-              const courseCampus = studentOccupation.course; // This is already "cstsi-jp" format
-              return (
-                <Badge
-                  url={`/projects/people/egresso-${courseCampus}/1`}
-                  text={`egresso-${courseCampus}`}
-                />
-              );
-            })
-      }
-      {
-        isProfessor(person) && (
-          <Badge url="/projects/people/professor/1" text="professor" />
-        )
-      }
-      {
-        hasProjects && (
-          <Badge
-            url={codeUrl}
-            text={`${projects.length} projeto${projects.length !== 1 ? 's' : ''}`}
-          />
-        )
-      }
-    </div>
-    <!-- <div>
-      {
-        tags.map((tag) => (
-          <Badge url={`/projects/people/${tag}/1`} text={tag} />
-        ))
-      }
-    </div> -->
   </div>
-</div>
+</article>

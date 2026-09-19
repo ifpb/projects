@@ -1,29 +1,29 @@
-import type { CollectionEntry } from 'astro:content';
-import type { SubjectProject } from '@/content.config';
-import { getCollection } from 'astro:content';
-import { getPeopleByProject } from '@/helpers/people';
+import type { CollectionEntry } from "astro:content";
+import type { SubjectProject } from "@/content.config";
+import { getCollection } from "astro:content";
+import { getPeopleByProject } from "@/helpers/people";
 
 // Ver a nota em `helpers/people.ts`: memoizar é o que mantém o build dentro da memória.
-let projectsCache: Promise<CollectionEntry<'projects'>[]> | undefined;
+let projectsCache: Promise<CollectionEntry<"projects">[]> | undefined;
 
 function allProjects() {
-  projectsCache ??= getCollection('projects');
+  projectsCache ??= getCollection("projects");
   return projectsCache;
 }
 
-export function isSubjectProject(project: CollectionEntry<'projects'>) {
-  return project.data.category.type === 'subject';
+export function isSubjectProject(project: CollectionEntry<"projects">) {
+  return project.data.category.type === "subject";
 }
 
-export function isResearchProject(project: CollectionEntry<'projects'>) {
-  return project.data.category.type === 'research';
+export function isResearchProject(project: CollectionEntry<"projects">) {
+  return project.data.category.type === "research";
 }
 
-export function isExtensionProject(project: CollectionEntry<'projects'>) {
-  return project.data.category.type === 'extension';
+export function isExtensionProject(project: CollectionEntry<"projects">) {
+  return project.data.category.type === "extension";
 }
 
-export function getProjectId(project: CollectionEntry<'projects'>) {
+export function getProjectId(project: CollectionEntry<"projects">) {
   const repository = Array.isArray(project.data.addresses.repository)
     ? project.data.addresses.repository[0]
     : project.data.addresses.repository;
@@ -31,22 +31,27 @@ export function getProjectId(project: CollectionEntry<'projects'>) {
   return repository
     .split(/(github|gitlab).com\//)
     .at(-1)
-    .replace('/', '-');
+    .replace("/", "-");
 }
 
-export function getProjectTags(project: CollectionEntry<'projects'>) {
+export function getProjectTags(project: CollectionEntry<"projects">) {
   if (isSubjectProject(project)) {
     const {
       data: {
         category: { type, subject, period },
-        addresses: { design, workflow, homepage },
+        addresses: { design, template, workflow, homepage },
         tags,
       },
     } = project as {
       data: {
         category: SubjectProject;
         tags: string[];
-        addresses: { design?: string; workflow?: string; homepage?: string };
+        addresses: {
+          design?: string;
+          template?: string;
+          workflow?: string;
+          homepage?: string;
+        };
       };
     };
 
@@ -57,16 +62,16 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
 
     projectTags.sort();
 
-    if (design) {
-      projectTags.unshift('design');
+    if (design || template) {
+      projectTags.unshift("design");
     }
 
     if (workflow) {
-      projectTags.unshift('workflow');
+      projectTags.unshift("workflow");
     }
 
     if (homepage) {
-      projectTags.unshift('homepage');
+      projectTags.unshift("homepage");
     }
 
     // Handle both single subject (string) and multiple subjects (array)
@@ -74,7 +79,7 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
 
     // Add tags for all subjects
     subjects.forEach((sub) => {
-      const [subjectName, course, campus] = sub.split('-');
+      const [subjectName, course, campus] = sub.split("-");
       projectTags.unshift(sub, `${sub}-${period}`, `${course}-${campus}`);
     });
 
@@ -87,7 +92,7 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
       data: {
         tags,
         category,
-        addresses: { design, workflow, homepage },
+        addresses: { design, template, workflow, homepage },
       },
     } = project;
 
@@ -95,21 +100,21 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
 
     projectTags.sort();
 
-    if (design) {
-      projectTags.unshift('design');
+    if (design || template) {
+      projectTags.unshift("design");
     }
 
     if (workflow) {
-      projectTags.unshift('workflow');
+      projectTags.unshift("workflow");
     }
 
     if (homepage) {
-      projectTags.unshift('homepage');
+      projectTags.unshift("homepage");
     }
 
     // Add type and campus for non-subject projects
     projectTags.unshift(category.type);
-    if ('campus' in category && category.campus) {
+    if ("campus" in category && category.campus) {
       projectTags.unshift(category.campus);
     }
 
@@ -117,7 +122,7 @@ export function getProjectTags(project: CollectionEntry<'projects'>) {
   }
 }
 
-export function getProjectTagGroups(project: CollectionEntry<'projects'>) {
+export function getProjectTagGroups(project: CollectionEntry<"projects">) {
   if (isSubjectProject(project)) {
     const { subject, period } = project.data.category as SubjectProject;
 
@@ -126,7 +131,7 @@ export function getProjectTagGroups(project: CollectionEntry<'projects'>) {
 
     // Get all unique courses from subjects
     const courses = subjects.map((sub) => {
-      const [subjectName, course, campus] = sub.split('-');
+      const [subjectName, course, campus] = sub.split("-");
       return `${course}-${campus}`;
     });
     const uniqueCourses = [...new Set(courses)];
@@ -136,19 +141,19 @@ export function getProjectTagGroups(project: CollectionEntry<'projects'>) {
 
     const projectTags = {
       tags: {
-        name: 'tags',
+        name: "tags",
         values: project.data.tags,
       },
       subject: {
-        name: 'disciplina',
+        name: "disciplina",
         values: subjects,
       },
       period: {
-        label: 'Período',
+        label: "Período",
         values: subjectPeriods,
       },
       course: {
-        name: 'curso',
+        name: "curso",
         values: uniqueCourses,
       },
     };
@@ -157,7 +162,7 @@ export function getProjectTagGroups(project: CollectionEntry<'projects'>) {
   } else {
     const projectTags = {
       tags: {
-        name: 'tags',
+        name: "tags",
         values: project.data.tags,
       },
     };
@@ -204,14 +209,14 @@ export async function getAllProjectTagGroups() {
 }
 
 function sortProjects(
-  a: CollectionEntry<'projects'>,
-  b: CollectionEntry<'projects'>
+  a: CollectionEntry<"projects">,
+  b: CollectionEntry<"projects">,
 ) {
-  const hasPreview = (project: CollectionEntry<'projects'>) =>
+  const hasPreview = (project: CollectionEntry<"projects">) =>
     !!project.data.addresses.preview;
 
-  const getPeriod = (project: CollectionEntry<'projects'>) => {
-    if (project.data.category.type === 'subject') {
+  const getPeriod = (project: CollectionEntry<"projects">) => {
+    if (project.data.category.type === "subject") {
       return project.data.category.period;
     }
     return 0;
@@ -236,7 +241,7 @@ export async function getProjects() {
     projects.map(async (project) => ({
       ...project,
       people: await getPeopleByProject(project),
-    }))
+    })),
   );
 }
 
@@ -244,7 +249,7 @@ export async function getProjectsByTag(tag: string) {
   const projects = await allProjects();
 
   const filteredProjects = projects.filter((project) =>
-    getProjectTags(project).includes(tag)
+    getProjectTags(project).includes(tag),
   );
 
   filteredProjects.sort(sortProjects);
@@ -253,11 +258,11 @@ export async function getProjectsByTag(tag: string) {
     filteredProjects.map(async (project) => ({
       ...project,
       people: await getPeopleByProject(project),
-    }))
+    })),
   );
 }
 
-export async function getProjectsByPerson(person: CollectionEntry<'people'>) {
+export async function getProjectsByPerson(person: CollectionEntry<"people">) {
   const projects = await allProjects();
 
   const ids = person.data.occupations.map((occupation) => occupation.id);
@@ -272,6 +277,6 @@ export async function getProjectsByPerson(person: CollectionEntry<'people'>) {
     filteredProjects.map(async (project) => ({
       ...project,
       people: await getPeopleByProject(project),
-    }))
+    })),
   );
 }

@@ -1,8 +1,8 @@
 ---
-import type { ProjectsWithPeople } from '@/pages/codes/page/[page].astro';
-import ProjectCard from '@/components/ProjectCard.astro';
-import PaginationIndex from '@/components/PaginationIndex.astro';
-import PersonUtil from '@/components/PersonUtil.astro';
+import type { ProjectsWithPeople } from "@/pages/codes/page/[page].astro";
+import ProjectCard from "@/components/ProjectCard.astro";
+import PaginationIndex from "@/components/PaginationIndex.astro";
+import PersonUtil from "@/components/PersonUtil.astro";
 
 export interface Props {
   page: {
@@ -26,9 +26,7 @@ const { page, type, index }: Props = Astro.props;
 <PersonUtil />
 
 <main data-pagefind-ignore>
-  <div
-    class="grid justify-items-stretch gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-  >
+  <div class="grid items-stretch gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
     {
       /* A primeira fileira está acima da dobra: deixá-la lazy atrasa justamente o
          que o usuário vê primeiro. Três é o número de colunas no desktop. */
@@ -38,9 +36,7 @@ const { page, type, index }: Props = Astro.props;
     }
   </div>
 
-  {
-    page.lastPage > 1 && (
-      <PaginationIndex page={page} type={type} index={index} />
-    )
-  }
+  {page.lastPage > 1 && (
+    <PaginationIndex page={page} type={type} index={index} />
+  )}
 </main>
