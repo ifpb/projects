@@ -16,7 +16,9 @@ import {
 import {
   getCourseAbbreviationByOccupation,
   getCourseAbbreviationCampusByOccupation,
+  getCourseByAbbreviation,
 } from "@/helpers/courses";
+import { courseLevels } from "@/lib/taxonomy";
 
 export interface Props {
   person: CollectionEntry<"people">;
@@ -46,16 +48,40 @@ const availableLinks = links
   .filter((link) => addresses[link.name])
   .map((link) => ({ ...link, url: addresses[link.name] }));
 const tags = await getPersonTags(person);
-const personBadges = [
-  ...occupations
-    .filter(
-      (occupation): occupation is Student =>
-        occupation.type === "student" && occupation.isFinished,
-    )
-    .map((occupation) => ({
-      url: `/projects/people/egresso-${occupation.course}/1`,
-      text: `egresso-${occupation.course}`,
-    })),
+
+const egressoOccupations = occupations.filter(
+  (occupation): occupation is Student =>
+    occupation.type === "student" && occupation.isFinished,
+);
+
+const getLevelIndex = (courseAbbr: string) => {
+  const course = getCourseByAbbreviation(courseAbbr);
+  const lvl = course?.data?.level?.compact?.split(" ")[0]?.toLowerCase() ?? "";
+  const idx = courseLevels.indexOf(lvl);
+  return idx !== -1 ? idx : 0;
+};
+
+// Ordena todos os egressos pela maior titulação (doutorado > mestrado > graduação > técnico)
+const sortedEgressos = [...egressoOccupations].sort(
+  (a, b) => getLevelIndex(b.course) - getLevelIndex(a.course),
+);
+
+// Ocupações de estudantes ativos (não finalizados)
+const activeStudentOccupations = occupations.filter(
+  (occupation): occupation is Student =>
+    occupation.type === "student" &&
+    !occupation.isFinished &&
+    !!occupation.course,
+);
+
+const allPersonBadges = [
+  ...sortedEgressos.map((occupation) => ({
+    url: `/projects/people/egresso-${occupation.course}/1`,
+    text: `egresso-${occupation.course}`,
+  })),
+  ...(isProfessor(person)
+    ? [{ url: "/projects/people/professor/1", text: "professor" }]
+    : []),
   ...(isStudent(person)
     ? occupations
         .filter(
@@ -67,25 +93,23 @@ const personBadges = [
           text: getCourseAbbreviationCampusByOccupation(occupation),
         }))
     : []),
-  ...(isProfessor(person)
-    ? [{ url: "/projects/people/professor/1", text: "professor" }]
-    : []),
 ].filter(
   (badge, index, badges) =>
     badges.findIndex((candidate) => candidate.url === badge.url) === index,
 );
-const visibleBadges = personBadges.slice(0, 3);
-const hiddenBadges = personBadges.slice(visibleBadges.length);
+
+const visibleBadges = allPersonBadges.slice(0, 2);
+const hiddenBadges = allPersonBadges.slice(2);
 const avatarUrl = getAvatarImageUrl(person, 400);
 ---
 
 <article
-  class="person-card surface-card group flex h-full min-w-0 flex-col overflow-hidden"
+  class="person-card surface-card group relative flex h-full min-w-0 flex-col"
   data-tags={tags.join("-")}
 >
   <a
     href={profileUrl}
-    class="relative block overflow-hidden bg-gray-200"
+    class="relative block overflow-hidden rounded-t-[7px] bg-gray-200"
     aria-label={`Ver perfil de ${name.full}`}
   >
     <Image
@@ -107,9 +131,9 @@ const avatarUrl = getAvatarImageUrl(person, 400);
     )}
   </a>
 
-  <div class="flex flex-1 flex-col p-4">
+  <div class="flex flex-1 flex-col p-3 sm:p-4">
     <h2
-      class="text-lg font-extrabold leading-snug text-gray-950"
+      class="text-base font-extrabold leading-snug text-gray-950 sm:text-lg"
       data-pagefind-ignore
     >
       <a href={profileUrl} class="hover:text-green-800">
@@ -117,36 +141,64 @@ const avatarUrl = getAvatarImageUrl(person, 400);
       </a>
     </h2>
 
-    <div class="mt-3 mb-4 flex flex-wrap gap-1.5">
+    <div class="mt-2.5 mb-3 flex flex-wrap gap-1 sm:mt-3 sm:mb-4 sm:gap-1.5">
       {visibleBadges.map((badge) => (
         <Badge url={badge.url} text={badge.text} />
       ))}
       {hiddenBadges.length > 0 && (
-        <span
-          class="inline-flex items-center rounded-full border border-gray-200 bg-gray-100 px-2.5 py-1 text-[11px] font-bold text-gray-600"
-          title={hiddenBadges.map((badge) => badge.text).join(", ")}
-          aria-label={`Mais ${hiddenBadges.length} tags: ${hiddenBadges.map((badge) => badge.text).join(", ")}`}
-        >
-          +{hiddenBadges.length}
-        </span>
+        <div class="group/tooltip relative inline-flex items-center">
+          <button
+            type="button"
+            class="inline-flex cursor-pointer items-center rounded-full border border-gray-200 bg-gray-100 px-2 py-0.5 text-[10px] font-bold text-gray-600 transition-colors hover:border-gray-300 hover:bg-gray-200 focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:outline-none sm:px-2.5 sm:py-1 sm:text-[11px]"
+            aria-label={`Mais ${hiddenBadges.length} tag${hiddenBadges.length > 1 ? "s" : ""}: ${hiddenBadges.map((badge) => badge.text).join(", ")}`}
+          >
+            +{hiddenBadges.length}
+          </button>
+
+          <div
+            role="tooltip"
+            class="invisible absolute bottom-full left-1/2 z-40 mb-2 -translate-x-1/2 opacity-0 shadow-xl transition-all duration-150 ease-out before:absolute before:top-full before:left-0 before:right-0 before:h-2 before:content-[''] group-hover/tooltip:visible group-hover/tooltip:opacity-100 group-focus-within/tooltip:visible group-focus-within/tooltip:opacity-100"
+          >
+            <div class="relative w-max max-w-[220px] rounded-lg border border-gray-800 bg-gray-950/95 p-2 text-white shadow-2xl backdrop-blur sm:max-w-[260px]">
+              <div class="mb-1.5 flex items-center justify-between gap-2 border-b border-gray-800 pb-1 text-[9px] font-bold uppercase tracking-wider text-gray-400">
+                <span>
+                  {hiddenBadges.length === 1
+                    ? "Tag oculta"
+                    : `Tags ocultas (${hiddenBadges.length})`}
+                </span>
+              </div>
+              <div class="flex flex-wrap gap-1">
+                {hiddenBadges.map((badge) => (
+                  <a
+                    href={badge.url}
+                    class="inline-block rounded border border-white/10 bg-white/10 px-1.5 py-0.5 text-[10px] font-medium text-gray-200 transition-colors hover:border-green-500 hover:bg-green-600 hover:text-white"
+                  >
+                    {badge.text}
+                  </a>
+                ))}
+              </div>
+              <div class="pointer-events-none absolute top-full left-1/2 -mt-px -translate-x-1/2 border-4 border-transparent border-t-gray-950/95" />
+            </div>
+          </div>
+        </div>
       )}
     </div>
 
-    <div class="mt-auto flex items-center justify-between border-t border-gray-100 pt-4">
-      <div class="flex items-center gap-1">
-        {availableLinks.slice(0, 5).map((link) => (
+    <div class="mt-auto flex items-center justify-between border-t border-gray-100 pt-3 sm:pt-4">
+      <div class="flex items-center gap-0.5 sm:gap-1">
+        {availableLinks.slice(0, 4).map((link) => (
           <a
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
             title={link.label}
             aria-label={link.label}
-            class="grid h-8 w-8 place-items-center rounded text-gray-500 transition-colors hover:bg-green-50 hover:text-green-800"
+            class="grid h-7 w-7 sm:h-8 sm:w-8 place-items-center rounded text-gray-500 transition-colors hover:bg-green-50 hover:text-green-800"
           >
             <Icon
               name={link.icon}
-              size={19}
-              class={`${link.name}-person-link`}
+              size={17}
+              class={`${link.name}-person-link sm:w-[19px] sm:h-[19px]`}
               is:inline
             />
           </a>
@@ -156,9 +208,9 @@ const avatarUrl = getAvatarImageUrl(person, 400);
         href={profileUrl}
         title="Ver perfil"
         aria-label={`Ver perfil de ${name.full}`}
-        class="grid h-8 w-8 place-items-center rounded text-green-800 hover:bg-green-50"
+        class="grid h-7 w-7 sm:h-8 sm:w-8 place-items-center rounded text-green-800 hover:bg-green-50"
       >
-        <Icon name="ph:arrow-right-bold" size={17} />
+        <Icon name="ph:arrow-right-bold" size={16} />
       </a>
     </div>
   </div>

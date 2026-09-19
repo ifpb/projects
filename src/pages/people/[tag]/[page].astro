@@ -117,8 +117,9 @@ const formatPageTitle = (tag: string) => {
 const { page } = Astro.props;
 const { tag } = Astro.params;
 const pageTitle = formatPageTitle(tag);
+const pageDescription = `Conheça os estudantes, docentes e colaboradores da comunidade de ${pageTitle} no IFPB.`;
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} pageDescription={pageDescription} type="people">
   <PersonGrid page={page} type="people" index={tag} />
 </BaseLayout>

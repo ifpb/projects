@@ -5,7 +5,7 @@ import PersonCard from "@/components/PersonCard.astro";
 import ProjectCard from "@/components/ProjectCard.astro";
 import Badge from "@/components/Badge.astro";
 import { getProjectsByPerson, isSubjectProject } from "@/helpers/projects";
-import { getPeople, getFirstPersonId } from "@/helpers/people";
+import { getPeople, getFirstPersonId, getAvatarImageUrl } from "@/helpers/people";
 import { getSubjectByProject } from "@/helpers/courses";
 import PersonUtil from "@/components/PersonUtil.astro";
 
@@ -47,11 +47,30 @@ const subjects = [
       .flatMap((project) => getSubjectByProject(project)),
   ),
 ];
+
+const avatarUrl = getAvatarImageUrl(person, 400);
+const ogImage = avatarUrl !== "none" ? avatarUrl : undefined;
+const occupationsSummary = person.data.occupations
+  .map((occ) => {
+    if (occ.type === "student") {
+      return occ.isFinished ? `Egresso (${occ.course})` : `Estudante (${occ.course})`;
+    }
+    if (occ.type === "professor") return "Docente";
+    return "Servidor";
+  })
+  .join(", ");
+const personDescription = `Perfil acadêmico de ${person.data.name.full} no IFPB Projetos.${occupationsSummary ? ` Atuação: ${occupationsSummary}.` : ""}${projects.length ? ` ${projects.length} projeto(s) cadastrado(s).` : ""}`;
 ---
 
 <PersonUtil />
 
-<BaseLayout pageTitle={person.data.name.full} pageFindFilter="tipo:Pessoas">
+<BaseLayout
+  pageTitle={person.data.name.full}
+  pageDescription={personDescription}
+  image={ogImage}
+  ogType="profile"
+  pageFindFilter="tipo:Pessoas"
+>
   <div class="grid items-start gap-8 lg:grid-cols-[17rem_minmax(0,1fr)]">
     <div data-pagefind-filter="tipo:Pessoas" class="hidden">
       {person.data.occupations.map((occupation) => occupation.id).join(", ")}

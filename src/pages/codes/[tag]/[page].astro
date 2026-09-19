@@ -88,8 +88,9 @@ const formatPageTitle = (tag: string) => {
 const { page }: Props = Astro.props;
 const { tag } = Astro.params;
 const pageTitle = formatPageTitle(tag);
+const pageDescription = `Explore os projetos, pesquisas e códigos de ${pageTitle.replace("Projetos | ", "")} desenvolvidos no IFPB.`;
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} pageDescription={pageDescription}>
   <ProjectGrid page={page} type="codes" index={tag} />
 </BaseLayout>

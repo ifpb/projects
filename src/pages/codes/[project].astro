@@ -83,6 +83,8 @@ const previewImage = getPreviewImage(project.id);
   pageTitle={pageTitle}
   pageDescription={project.data.description}
   pageFindFilter="tipo:Projeto"
+  image={previewImage?.src || (typeof project.data.addresses.preview === "string" ? project.data.addresses.preview : undefined)}
+  ogType="article"
 >
   <PersonUtil />
   <div class="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(20rem,0.95fr)]">

@@ -58,8 +58,22 @@ summary {
 }
 
 .page-shell {
-  width: min(100% - 2rem, 75rem);
+  width: 100%;
+  max-width: 75rem;
   margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@media (min-width: 640px) {
+  .page-shell {
+    padding-inline: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-shell {
+    padding-inline: 2rem;
+  }
 }
 .surface-card {
   background: var(--surface);
@@ -183,6 +197,10 @@ summary {
 [data-theme="dark"] select {
   color: var(--ink);
 }
+[data-theme="dark"] .bg-green-700 {
+  background-color: var(--ifpb-green-dark) !important;
+  color: #0c110e !important;
+}
 [data-theme="dark"] img[src*="placeholder"] {
   filter: brightness(0.8);
 }
@@ -191,8 +209,15 @@ summary {
   [data-theme="dark"] .hover\:bg-gray-100:hover {
     background-color: #263028 !important;
   }
+  [data-theme="dark"] .hover\:bg-gray-200:hover {
+    background-color: #2b352e !important;
+  }
   [data-theme="dark"] .hover\:bg-green-50:hover {
     background-color: #173c1d !important;
+  }
+  [data-theme="dark"] .hover\:bg-green-800:hover {
+    background-color: #a4ecab !important;
+    color: #0c110e !important;
   }
   [data-theme="dark"] .hover\:text-gray-950:hover {
     color: #ffffff !important;

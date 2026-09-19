@@ -91,7 +91,7 @@ const featuredPeople = collaborators.slice(0, 4);
         Ver todos <Icon name="ph:arrow-right" size={18} />
       </a>
     </div>
-    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="grid gap-4 sm:gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
       {featuredProjects.map((project) => (
         <ProjectCard project={project} eager={true} />
       ))}
@@ -113,7 +113,7 @@ const featuredPeople = collaborators.slice(0, 4);
         Ver todos <Icon name="ph:arrow-right" size={18} />
       </a>
     </div>
-    <div class="grid gap-5 grid-cols-1 min-[420px]:grid-cols-2 lg:grid-cols-4">
+    <div class="grid gap-3.5 sm:gap-5 grid-cols-2 lg:grid-cols-4">
       {featuredPeople.map((person) => (
         <PersonCard person={person} eager={true} />
       ))}

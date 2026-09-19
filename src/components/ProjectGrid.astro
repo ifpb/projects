@@ -26,7 +26,7 @@ const { page, type, index }: Props = Astro.props;
 <PersonUtil />
 
 <main data-pagefind-ignore>
-  <div class="grid items-stretch gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+  <div class="grid items-stretch gap-4 sm:gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
     {
       /* As primeiras duas fileiras (6 cards no desktop) ficam acima da dobra. */
       page.data.map((project, index) => (
