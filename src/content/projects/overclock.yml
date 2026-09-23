@@ -9,7 +9,7 @@ addresses:
 category:
   type: subject
   subject:
-    - pw2-csbes-jp
+    - pw1-csbes-jp
     - ip-csbes-jp
     - ies-csbes-jp
   period: 2026.1
