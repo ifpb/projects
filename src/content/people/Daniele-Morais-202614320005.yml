@@ -1,0 +1,13 @@
+name:
+  compact: Daniele Morais
+  full: Daniele Vitoria Morais Silva
+avatar:
+  github: https://avatars.githubusercontent.com/u/284750391?s=400&u=2b6fcdc1aa5c544d38090176b81d04fb05752a12&v=4
+occupations:
+  - id: 202614320005
+    type: student
+    course: csbes-jp  # curso-campus (formato unificado)
+    isFinished: false  
+addresses:
+  github: https://github.com/danielemoraissilva137-coder
+  email: daniele.morais@academico.ifpb.edu.br
