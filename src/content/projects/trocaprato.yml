@@ -1,0 +1,20 @@
+name: TrocaPrato
+description:
+  Esta ferrmaneta tem o objetivo de amenizar a monotonia alimentar na dieta de pessoas que fazem acompanhamento nutricional, ajudando o usuário a fazer substituições mais conscientes.
+addresses:
+  preview: https://raw.githubusercontent.com/gabriel-domonte/TrocaPrato/refs/heads/main/app/static/img/hero.png
+  repository: https://github.com/gabriel-domonte/TrocaPrato
+category:
+  type: subject  # ou 'subject', 'research', 'extension', 'open source'
+  subject: pw1-csbes-jp
+  period: 2026.1   # necessário para projetos de disciplina
+tags:
+  - html
+  - css
+  - python
+  - javascript
+owners:
+  - 202614320009  # matrícula/ID dos colaboradores
+  - 202614320010
+  - 202614320005
+  - 202614320016

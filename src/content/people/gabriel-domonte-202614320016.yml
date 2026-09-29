@@ -1,0 +1,15 @@
+name:
+  compact: Gabriel do Monte
+  full: Gabriel do Monte Lima
+avatar:
+  github: https://github.com/gabriel-domonte.png
+  githubUC: https://avatars.githubusercontent.com/u/284524968?v=4
+occupations:
+  - id: 202614320016
+    type: student
+    course: csbes-jp  # curso-campus (formato unificado)
+    isFinished: false  # true se já concluiu, false se ainda está cursando
+addresses:
+  github: https://github.com/gabriel-domonte
+  linkedin: https://www.linkedin.com/in/gdomonte/
+  email: gabrieldomontelima@gmail.com
