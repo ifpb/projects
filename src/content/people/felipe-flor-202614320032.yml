@@ -9,7 +9,6 @@ occupations:
     type: student
     course: csbes-jp
     isFinished: false
-occupations:
   - id: 20231780045
     type: student
     course: ctii-jp
