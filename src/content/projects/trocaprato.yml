@@ -1,0 +1,19 @@
+name: TrocaPrato
+description: Esta ferramenta tem o objetivo de amenizar a monotonia alimentar na dieta de pessoas que fazem acompanhamento nutricional, ajudando o usuário a fazer substituições mais conscientes.
+addresses:
+  preview: https://github.com/gabriel-domonte/TrocaPrato/tree/main/app/static/img/hero.png?raw=true
+  repository: https://github.com/gabriel-domonte/TrocaPrato
+category:
+  type: subject
+  subject: pw1-csbes-jp
+  period: 2026.1
+tags:
+  - html
+  - css
+  - python
+  - javascript
+owners:
+  - 202614320009
+  - 202614320010
+  - 202614320005
+  - 202614320016
