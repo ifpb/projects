@@ -1,0 +1,25 @@
+name: Aptus Defensio - Defesa de TCC
+description: O Aptus Defensio é o sistema definitivo para a gestão de qualificações e defesas de TCC, dissertações e teses. Simplificamos a burocracia da pós-graduação para que alunos, professores e coordenações foquem no que realmente importa, a excelência acadêmica e a pesquisa.
+addresses:
+  preview: 
+  homepage: 
+  repository: https://github.com/jftigre/MedStorage
+category:
+  type: subject
+  subject:
+    - pw2-csbes-jp
+    - ers-csbes-jp
+  period: 2026.2
+tags:
+  - javascript
+  - html
+  - css
+  - figma
+  - web
+  - workflow
+owners:
+  - 202614320025
+  - 202614320011
+  - 202614320013
+  - 202614320032
+  - 202614320033
