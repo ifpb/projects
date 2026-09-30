@@ -1,0 +1,19 @@
+name:
+  compact: Felipe Flor
+  full: Felipe Santos de Oliveira Flor
+avatar:
+  github: https://github.com/FelipeBlossom.png
+  githubUC: https://avatars.githubusercontent.com/u/265695204?v=4
+occupations:
+  - id: 202614320032
+    type: student
+    course: csbes-jp
+    isFinished: false
+occupations:
+  - id: 20231780045
+    type: student
+    course: ctii-jp
+    isFinished: true
+addresses:
+  github: https://github.com/FelipeBlossom
+  linkedin: https://www.linkedin.com/in/felipe-flor-oliveira
