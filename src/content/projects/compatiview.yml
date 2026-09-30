@@ -1,0 +1,21 @@
+name: CompatiView
+description: Sistema Web para análise de compatibilidade entre peças de hardware.
+addresses:
+  preview: https://github.com/Nycolas-Dleon/CompatiView/blob/main/app/static/imgs/readme/homepage.png?raw=true
+  repository: https://github.com/Nycolas-Dleon/CompatiView
+  workflow: https://github.com/users/Nycolas-Dleon/projects/2/views/1
+category:
+  type: subject
+  subject: pw1-csbes-jp
+  period: 2026.1
+tags:
+  - html
+  - css
+  - javascript
+  - python
+  - flask
+owners:
+  - 202614320023
+  - 202614320020
+  - 202614320007
+  - 202614320026
