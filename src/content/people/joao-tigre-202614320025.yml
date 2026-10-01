@@ -1,0 +1,16 @@
+name:
+  compact: João Tigre
+  full: João Felipe Fiari Tigre
+avatar:
+  github: https://github.com/jftigre
+  githubUC: https://github.com/jftigre.png
+occupations:
+  - id: 202614320025
+    type: student
+    course: csbes-jp
+    isFinished: false
+addresses:
+  github: https://github.com/jftigre
+  linkedin: https://www.linkedin.com/in/joaofelipefiaritigre
+  instagram: https://www.instagram.com/joaotigre_
+  email: joaofelipetigre@gmail.com
