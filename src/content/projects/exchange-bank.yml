@@ -1,0 +1,19 @@
+name: SAT
+slug: exchange-bank
+description:
+  A banking application for currency exchange, credit loans, payment simulation, and billing management.
+addresses:
+  preview: 
+  homepage: https://emanuelvictorsat.github.io/sat/
+  repository: https://github.com/EmanuelVictorSat/sat
+category: 
+  type: subject
+  subject: dw-csbes-jp
+  period: 2026.2 #Esse é o período em que estpu criando o projeto
+tags: 
+  - Javascript
+  - HTML
+  - CSS
+  - Python
+owners: 
+  - 202524320013
